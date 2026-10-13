@@ -601,3 +601,1036 @@ $$ d = 4 $$
 So:
 
 $$ 2\begin{bmatrix}{}1\\2\end{bmatrix} + 4\begin{bmatrix}{}3\\1\end{bmatrix} = \begin{bmatrix}{}14\\8\end{bmatrix} $$
+
+---
+
+Page 29
+
+## Problem Set 1.2
+
+1. Calculate the dot products $u \cdot v$ and $u \cdot w$ and $u \cdot (v + w)$
+   and $w \cdot v$:
+
+$$ u = \begin{bmatrix}{}-.6\\.8\end{bmatrix} \quad v = \begin{bmatrix}{}4\\3\end{bmatrix} \quad w = \begin{bmatrix}{}1\\2\end{bmatrix} $$
+
+$$ u \cdot v = \begin{bmatrix}{}-.6\\.8\end{bmatrix} \cdot \begin{bmatrix}{}4\\3\end{bmatrix} $$
+
+$$ = (-.6)(4) + (.8)(3) = -2.4 + 2.4 = 0 $$
+
+$$ u \cdot w = \begin{bmatrix}{}-.6\\.8\end{bmatrix} \cdot \begin{bmatrix}{}1\\2\end{bmatrix} $$
+
+$$ = (-.6)(1) + (.8)(2) = -.6 + 1.6 = 1 $$
+
+$$ u \cdot (v + w) = \begin{bmatrix}{}-.6\\.8\end{bmatrix} \cdot \left(\begin{bmatrix}{}4\\3\end{bmatrix} + \begin{bmatrix}{}1\\2\end{bmatrix}\right) $$
+
+$$ = \begin{bmatrix}{}-.6\\.8\end{bmatrix} \cdot \begin{bmatrix}{}5\\5\end{bmatrix} $$
+
+$$ = (-.6)(5) + (.8)(5) = -3 + 4 = -1 $$
+
+$$ w \cdot v = \begin{bmatrix}{}4\\3\end{bmatrix} \cdot \begin{bmatrix}{}1\\2\end{bmatrix} $$
+
+$$ = (4)(1) + (3)(2) = 4 + 6 = 10 $$
+
+2. Compute the lengths $\|u\|$ and $\|v\|$ and $\|w\|$ of those vectors. Check
+   the Schwarz inequalities $|u \cdot v| \leq \|u\|\|v\|$ and
+   $|v \cdot w| \leq \|v\|\|w\|$.
+
+$$ \|u\| = \sqrt{u \cdot u} $$
+
+$$ u \cdot u = \begin{bmatrix}{}-.6\\.8\end{bmatrix} \cdot \begin{bmatrix}{}-.6\\.8\end{bmatrix} $$
+
+$$ = (-.6)(-.6) + (.8)(.8) $$
+
+$$ = .36 + .64 = 1 $$
+
+$$ \|u\| = \sqrt{1} $$
+
+$$ \|u\| = 1 $$
+
+$$ \|v\| = \sqrt{v \cdot v} $$
+
+$$ v \cdot v = \begin{bmatrix}{}4\\3\end{bmatrix} \cdot \begin{bmatrix}{}4\\3\end{bmatrix} $$
+
+$$ = (4)(4) + (3)(3) = 16 + 9 = 25 $$
+
+$$ \|v\| = \sqrt{25} $$
+
+$$ = 5 $$
+
+$$ \|w\| = \sqrt{w \cdot w} $$
+
+$$ w \cdot w = \begin{bmatrix}{}1\\2\end{bmatrix} \cdot \begin{bmatrix}{}1\\2\end{bmatrix} $$
+
+$$ = (1)(1) + (2)(2) = 1 + 4 = 5 $$
+
+$$ \|w\| = \sqrt{5} $$
+
+Checking Schwarz inequality $|u \cdot v | \leq \|u\|\|v\|$:
+
+By exercise 1:
+
+$$ |u \cdot v| = |0| = 0 $$
+
+And by this exercise:
+
+$$ \|u\|\|v\| = (1)(5) = 5 $$
+
+So:
+
+$$ |u \cdot v| = 0 \leq 5 = \|u\|\|v\| $$
+
+Checking Schwarz inequality $|v \cdot w| \leq \|v\|\|w\|$:
+
+By part 1:
+
+$$ w \cdot v = v \cdot w = 10 $$
+
+so:
+
+$$ |v \cdot w| = |10| = 10 $$
+
+By this exercise:
+
+$$ \|v\|\|w\| = (5)(\sqrt{5}) = 5\sqrt{5} \approx 11.1803 $$
+
+So:
+
+$$ |v \cdot w| = 10 \leq 5\sqrt{5} = \|v\|\|w\| $$
+
+3. Find unit vectors in the directions of $v$ and $w$ in Problem 1, and the
+   cosine of the angle $\theta$. Choose vectors $a$, $b$, $c$ that make
+   $0\degree$, $90\degree$, and $180\degree$ angles with $w$.
+
+Find unit vector in directions of $v$:
+
+Generic unit vector formula:
+
+$$ u_v = \frac{v}{\|v\|} $$
+
+By exercise 2, we know that:
+
+$$ \|v\| = 5 $$
+
+so:
+
+$$ u = \frac{v}{\|v\|} = \begin{bmatrix}{}\frac{4}{5}\\\frac{3}{5}\end{bmatrix} $$
+
+Find unit vectors in direction $w$:
+
+$$ u_w = \frac{w}{\|w\|} $$
+
+By exercise 2, we know that:
+
+$$ \|w\| = \sqrt{5} $$
+
+so:
+
+$$ u_w = \frac{w}{\|w\|} = \begin{bmatrix}{}\frac{1}{\sqrt{5}}\\\frac{2}{\sqrt{5}}\end{bmatrix} $$
+
+Find the cosine of angle $\theta$ (for $v$ and $w$):
+
+Generic cosine formula is:
+
+$$ \cos\theta = \frac{v \cdot w}{\|v\|\|w\|} $$
+
+By exercise 1:
+
+$$ w \cdot v = v \cdot w = 10 $$
+
+By exercise 2:
+
+$$ \|v\| = 5, \|w\| = \sqrt{5} $$
+
+So:
+
+$$ \cos\theta = \frac{10}{5\sqrt{5}} $$
+
+$$ = \frac{2}{\sqrt{5}} $$
+
+$$ = \frac{2\sqrt{5}}{5} $$
+
+Choose vectors $a, b, c$ that make $0\degree, 90\degree$, and $180\degree$
+angles with $w$:
+
+For $0\degree$, we can simply apply a scalar value to $w$, so:
+
+$$ a = 2w = 2\begin{bmatrix}{}1\\2\end{bmatrix} = \begin{bmatrix}{}2\\4\end{bmatrix} $$
+
+We know that when the dot product of any two vectors equals $0$ means those two
+vectors are perpendicular, and therefore there is a $90\degree$ angle between
+them. Thus we need to find some vector $b$ that satisfies:
+
+$$ b \cdot w = 0 $$
+
+Equivalently:
+
+$$ \begin{bmatrix}{}b_1\\b_2\end{bmatrix} \cdot \begin{bmatrix}{}1\\2\end{bmatrix} = 0 $$
+
+$$ (b_1)(1) + (b_2)(2) = 0 $$
+
+So, let $b_1 = -1, b_2 = \dfrac{1}{2}$, then:
+
+$$ (-1)(1) + \left(\frac{1}{2}\right)(2) = 0 $$
+
+Thus:
+
+$$ b = \begin{bmatrix}{}-1\\\frac{1}{2}\end{bmatrix} $$
+
+To find a vector $c$ that forms a $180\degree$ with $w$, simply apply $-1$ (or
+any negative value) as a scalar to $w$:
+
+$$ c = -1(w) = -1\begin{bmatrix}{}1\\2\end{bmatrix} = \begin{bmatrix}{}-1\\-2\end{bmatrix} $$
+
+---
+
+4. For any _unit_ vectors $v$ and $w$, find the dot products (actual numbers) of
+
+a. $v$ and $-v$
+
+Since $v$ is a unit vector:
+
+$$ v \cdot v = 1 $$
+
+We are trying to find:
+
+$$ v \cdot (-v) $$
+
+$$ = v \cdot v \cdot -1 $$
+
+$$ = (v \cdot v)(-1) $$
+
+By substitution:
+
+$$ = (1)(-1) $$
+
+$$ = -1 $$
+
+b. $v + w$ and $v - w$
+
+Again, since $v$ and $w$ are unit vectors, we know:
+
+$$ v \cdot v = 1 $$
+
+and:
+
+$$ w \cdot w = 1 $$
+
+We are trying to find:
+
+$$ (v + w) \cdot (v - w) $$
+
+$$ = (v + w)(v - w) $$
+
+$$ = v^2 + vw - vw - w^2 $$
+
+$$ = v^2 - w^2 $$
+
+$$ = (v \cdot v) - (w \cdot w) $$
+
+By substitution:
+
+$$ = (1) - (1) $$
+
+$$ = 1 - 1 $$
+
+$$ = 0 $$
+
+c. $v - 2w$ and $v + 2w$
+
+Again:
+
+$$ v \cdot v = 1 $$
+
+$$ w \cdot w = 1 $$
+
+So:
+
+$$ (v - 2w) \cdot (v + 2w) $$
+
+$$ = (v - 2w)(v + 2w) $$
+
+$$ = v^2 - 4w^2 $$
+
+$$ = (v \cdot v) - 4(w \cdot w) $$
+
+$$ = (1) - 4(1) $$
+
+$$ = 1 - 4 $$
+
+$$ = -3 $$
+
+5. Find unit vectors $u_1$ and $u_2$ in the directions of $v = (1, 3)$ and
+   $w = (2, 1, 2)$. Find unit vectors $U_1$ and $U_2$ that are perpendicular to
+   $u_1$ and $u_2$.
+
+Find $u_1$:
+
+Generic unit vector formula:
+
+$$ u = \frac{v}{\|v\|} $$
+
+So:
+
+$$ u_1 = \frac{v}{\|v\|} $$
+
+Find $\|v\|$:
+
+$$ \|v\| = \sqrt{v \cdot v} $$
+
+$$ v \cdot v = \begin{bmatrix}{}1\\3\end{bmatrix} \cdot \begin{bmatrix}{}1\\3\end{bmatrix} $$
+
+$$ = (1)(1) + (3)(3) = 1 + 9 = 10 $$
+
+$$ \|v\| = \sqrt{10} $$
+
+$$ u_1 = \frac{v}{\|v\|} = \begin{bmatrix}{}\frac{1}{\sqrt{10}}\\\frac{3}{\sqrt{10}}\end{bmatrix} $$
+
+Find $u_2$:
+
+$$ u_2 = \frac{w}{\|w\|} $$
+
+$$ \|w\| = \sqrt{w \cdot w} $$
+
+$$ w \cdot w = \begin{bmatrix}{}2\\1\\2\end{bmatrix} \cdot \begin{bmatrix}{}2\\1\\2\end{bmatrix} $$
+
+$$ = (2)(2) + (1)(1) + (2)(2) = 4 + 1 + 4 = 9 $$
+
+$$ \|w\| = \sqrt{9} = 3 $$
+
+$$ u_2 = \frac{w}{\|w\|} = \begin{bmatrix}{}\frac{2}{3}\\\frac{1}{3}\\\frac{2}{3}\end{bmatrix} $$
+
+Find $U_1$:
+
+$$ U_1 \cdot u_1 = 0 $$
+
+$$ \begin{bmatrix}{}(U_1)_1\\(U_1)_2\end{bmatrix} \cdot \begin{bmatrix}{}\frac{1}{\sqrt{10}}\\\frac{3}{\sqrt{10}}\end{bmatrix} = 0 $$
+
+$$ (U_1)_1\left(\frac{1}{\sqrt{10}}\right) + (U_1)_2\left(\frac{3}{\sqrt{10}}\right) = 0 $$
+
+$$ \left(\frac{(U_1)_1}{\sqrt{10}}\right) + \left(\frac{3(U_1)_2}{\sqrt{10}}\right) = 0 $$
+
+$$ (U_1)_1 + 3(U_1)_2 = (0)(\sqrt{10}) $$
+
+$$ (U_1)_1 + 3(U_1)_2 = 0 $$
+
+Choose $(U_1)_2 = 1$, then:
+
+$$ (U_1)_1 + 3(1) = 0 $$
+
+$$ (U_1)_1 + 3 = 0 $$
+
+$$ (U_1)_1 = -3 $$
+
+So one choice for $U_1$ is:
+
+$$ U_1 = \begin{bmatrix}{}-3\\1\end{bmatrix} $$
+
+But, since $U_1$ must be a unit vector:
+
+$$ \|U_1\| = \sqrt{(-3)(-3) + (1)(1)} = \sqrt{9 + 1} = \sqrt{10} $$
+
+$$ U_1 = \begin{bmatrix}{}\frac{-3}{\sqrt{10}}\\\frac{1}{\sqrt{10}}\end{bmatrix} $$
+
+Find $U_2$:
+
+$$ U_2 \cdot u_2 = 0 $$
+
+$$ \begin{bmatrix}{}(U_2)_1\\(U_2)_2\\(U_2)_3\end{bmatrix} \cdot \begin{bmatrix}{}\frac{2}{3}\\\frac{1}{3}\\\frac{2}{3}\end{bmatrix} = 0 $$
+
+$$ (U_2)_1\left(\frac{2}{3}\right) + (U_2)_2\left(\frac{1}{3}\right) + (U_2)_3\left(\frac{2}{3}\right) = 0 $$
+
+$$ 2(U_2)_1 + (U_2)_2 + 2(U_2)_3 = 3(0) $$
+
+$$ 2(U_2)_1 + (U_2)_2 + 2(U_2)_3 = 0 $$
+
+Choose $(U_2)_1 = 1, (U_2)_3 = 0$, then:
+
+$$ 2(1) + (U_2)_2 + 2(0) = 0 $$
+
+$$ 2 + (U_2)_2 = 0 $$
+
+$$ (U_2)_2 = -2 $$
+
+So one possible choice for $U_2$ is:
+
+$$ U_2 = \begin{bmatrix}{}1\\-2\\0\end{bmatrix} $$
+
+And again, since $U_2$ must be a unit vector:
+
+$$ \|U_2\| = \sqrt{(1)(1) + (-2)(-2) + (0)(0)} = \sqrt{1 + 4} = \sqrt{5} $$
+
+$$ U_2 = \begin{bmatrix}{}\frac{1}{\sqrt{5}}\\\frac{-2}{\sqrt{5}}\\\frac{0}{\sqrt{5}}\end{bmatrix} $$
+
+$$ U_2 = \begin{bmatrix}{}\frac{\sqrt{5}}{5}\\-\frac{2\sqrt{5}}{5}\\0\end{bmatrix} $$
+
+6.
+
+a. Describe every vector $w = (w_1, w_2)$ that is perpendicular to
+$v = (2, -1)$.
+
+For $w$ to be perpendicular to $v$:
+
+$$ w \cdot v = 0 $$
+
+$$ \begin{bmatrix}{}w_1\\w_2\end{bmatrix} \cdot \begin{bmatrix}{}2\\-1\end{bmatrix} = 0 $$
+
+$$ 2(w_1) + (-1)(w_2) = 0 $$
+
+$$ 2w_1 - w_2 = 0 $$
+
+$$ 2w_1 = w_2 $$
+
+So every vector of the form:
+
+$$ \begin{bmatrix}{}2c\\c\end{bmatrix} $$
+
+for any real number $c$ will be perpendicular to $v$.
+
+b. All vectors perpendicular to $V = (1, 1, 1)$ lie on a ____ in 3 dimensions.
+
+All vectors $(x, y, z)$ where $(x, y, z) \cdot (1, 1, 1) = 0$, this is:
+
+$$ (x)(1) + (y)(1) + (z)(1) = x + y + z = 0 $$
+
+Thus $(x, y, z)$ represents a plane through the origin in 3 dimensional space.
+
+Answer: plane
+
+c. The vectors perpendicular to both $(1, 1, 1)$ and $(1, 2, 3)$ lie on a ____.
+
+This means that there exists some vector $v$ such that if $v = (v_1, v_2, v_3)$:
+
+$$ (v_1, v_2, v_3) \cdot (1, 1, 1) = 0 $$
+
+and
+
+$$ (v_1, v_2, v_3) \cdot (1, 2, 3) = 0 $$
+
+So:
+
+$$ v_1 + v_2 + v_3 = 0 $$
+
+and:
+
+$$ v_1 + 2v_2 + 3v_3 = 0 $$
+
+Now, subtracting one from the other yields:
+
+$$ (v_1 + 2v_2 + 3v_3) - (v_1 + v_2 + v_3) = v_2 + 2v_3 = 0 \Rightarrow v_2 = -2v_3 $$
+
+Substituting back in for $v_2$:
+
+$$ v_1 + (-2v_3) + v_3 = 0 $$
+
+$$ v_1 - v_3 = 0 $$
+
+$$ v_1 = v_3 $$
+
+Thus if we say $v_1 = v_3 = t$, and $v_2 = -2v_3 = -2t$, we get a vector of the
+form:
+
+$$ v = \begin{bmatrix}{}t\\-2t\\t\end{bmatrix} $$
+
+Since this vector is simply scaled by $t$, we can say that this is a line.
+
+Answer: line.
+
+7. Find the angle $\theta$ (from its cosine) between these pairs of vectors:
+
+Recall that the generic cosine formula is:
+
+$$ \cos\theta = \frac{v \cdot w}{\|v\|\|w\|} $$
+
+a. $v = \begin{bmatrix}{}1\\\sqrt{3}\end{bmatrix}$ and
+$w = \begin{bmatrix}{}1\\0\end{bmatrix}$
+
+$$ v \cdot w = \begin{bmatrix}{}1\\\sqrt{3}\end{bmatrix} \cdot \begin{bmatrix}{}1\\0\end{bmatrix} $$
+
+$$ = (1)(1) + (\sqrt{3})(0) = 1 + 0 = 1 $$
+
+$$ \|v\| = \sqrt{v \cdot v} = \sqrt{(1)(1) + (\sqrt{3})(\sqrt{3})} = \sqrt{1 + 3} = \sqrt{4} = 2 $$
+
+$$ \|w\| = \sqrt{w \cdot w} = \sqrt{(1)(1) + (0)(0)} = \sqrt{1} = 1 $$
+
+$$ \cos\theta = \frac{1}{(2)(1)} = \frac{1}{2} $$
+
+$$ \theta = \cos^{-1}\left(\frac{1}{2}\right) $$
+
+$$ \theta = \frac{\pi}{3} $$
+
+b. $v = \begin{bmatrix}{}2\\2\\-1\end{bmatrix}$ and
+$w = \begin{bmatrix}{}2\\-1\\2\end{bmatrix}$
+
+$$ v \cdot w = \begin{bmatrix}{}2\\2\\-1\end{bmatrix} \cdot \begin{bmatrix}{}2\\-1\\2\end{bmatrix} $$
+
+$$ = (2)(2) + (2)(-1) + (-1)(2) = 4 - 2 - 2 = 0 $$
+
+$$ \|v\| = \sqrt{v \cdot v} = \sqrt{(2)(2) + (2)(2) + (-1)(-1)} = \sqrt{4 + 4 + 1} = \sqrt{9} = 3 $$
+
+$$ \|w\| = \sqrt{w \cdot w} = \sqrt{(2)(2) + (-1)(-1) + (2)(2)} = \sqrt{4 + 1 + 4} = \sqrt{9} = 3 $$
+
+$$ \cos\theta = \frac{v \cdot w}{\|v\|\|w\|} $$
+
+$$ \cos\theta = \frac{0}{(3)(3)} = \frac{0}{9} = 0 $$
+
+$$ \theta = \cos^{-1}(0) = \frac{\pi}{2} $$
+
+c. $v = \begin{bmatrix}{}1\\\sqrt{3}\end{bmatrix}$ and
+$w = \begin{bmatrix}{}-1\\\sqrt{3}\end{bmatrix}$
+
+$$ v \cdot w = (1)(-1) + (\sqrt{3})(\sqrt{3}) = -1 + 3 = 2 $$
+
+$$ \|v\| = \sqrt{(1)(1) + (\sqrt{3})(\sqrt{3})} = \sqrt{1 + 3} = \sqrt{4} = 2 $$
+
+$$ \|w\| = \sqrt{(-1)(-1) + (\sqrt{3})(\sqrt{3})} = \sqrt{1 + 3} = \sqrt{4} = 2 $$
+
+$$ \cos\theta = \frac{v \cdot w}{\|v\|\|w\|} $$
+
+$$ \cos\theta = \frac{2}{(2)(2)} = \frac{2}{4} = \frac{1}{2} $$
+
+$$ \theta = \cos^{-1}\left(\frac{1}{2}\right) = \frac{\pi}{3} $$
+
+d. $v = \begin{bmatrix}{}3\\1\end{bmatrix}$ and
+$w = \begin{bmatrix}{}-1\\-2\end{bmatrix}$
+
+$$ v \cdot w = (3)(-1) + (1)(-2) = -3 - 2 = -5 $$
+
+$$ \|v\| = \sqrt{v \cdot v} = \sqrt{(3)(3) + (1)(1)} = \sqrt{9 + 1} = \sqrt{10} $$
+
+$$ \|w\| = \sqrt{w \cdot w} = \sqrt{(-1)(-1) + (-2)(-2)} = \sqrt{1 + 4} = \sqrt{5} $$
+
+$$ \cos\theta = \frac{v \cdot w}{\|v\|\|w\|} $$
+
+$$ \cos\theta = \frac{-5}{(\sqrt{10})(\sqrt{5})} $$
+
+$$ \cos\theta = \frac{-5}{5\sqrt{2}} $$
+
+$$ \cos\theta = \frac{-1}{\sqrt{2}} $$
+
+$$ \cos\theta = -\frac{\sqrt{2}}{2} $$
+
+$$ \theta = \cos^{-1}\left(-\frac{\sqrt{2}}{2}\right) $$
+
+$$ \theta = \frac{3\pi}{4} $$
+
+8. True or false (give a reason if true or find a counterexample if false):
+
+a. If $u = (1, 1, 1)$ is perpendicular to $v$ and $w$, then $v$ is parallel to
+$w$.
+
+**Disproof (by counterexample):**
+
+Suppose $u = \begin{bmatrix}{}1\\1\\1\end{bmatrix}$, and $u$ is perpendicular to
+some vertex $v$ and also perpendicular to some vertex $w$.
+
+It must be shown that $v$ is parallel to $w$.
+
+Since $u$ is perpendicular to $v$ and $w$:
+
+$$ u \cdot v = 0 $$
+
+and:
+
+$$ u \cdot w = 0 $$
+
+To visualize this better, let us use subscript notation to get an idea of what
+is happening:
+
+$$ u \cdot v = (1, 1, 1) \cdot (v_1, v_2, v_3) = 0 $$
+
+So:
+
+$$ v_1(1) + v_2(1) + v_3(1) = v_1 + v_2 + v_3 = 0 $$
+
+Similarly:
+
+$$ u \cdot w = w_1 + w_2 + w_3 = 0 $$
+
+In order for $v$ and $w$ to be parallel, one must be a scalar multiple of the
+other, by some real number. In other words:
+
+$$ v = cw $$
+
+for some scalar $c \in \mathbf{R}$.
+
+However, just because $v_1 + v_2 + v_3 = 0$, does not necessarily mean that
+$v_1 = cw_1, v_2 = cw_2, v_3 = cw_3$, thus a counterexample must exist.
+
+Let $v_1 = 3, v_2 = -2, v_3 = -1$, and also let $w_1 = 4, w_2 = -3, w_3 = -1$.
+
+Now, if $v$ and $w$ were parallel, then there would be a consistent scalar $c$
+that would equate the two:
+
+$$ v_1(c) = w_1, v_2(c) = w_2, v_3(c) = w_3 $$
+
+$$ 3c = 4, -2c = -3, -1c = -1 $$
+
+But as you can see, solving for $c$ yields:
+
+$$ c = \frac{4}{3}, c = \frac{3}{2}, c = 1 $$
+
+Since $c$ cannot equal all of these different values at once (by the laws of
+equality), it follows that this counterexample suitable disproves the
+conclusion.
+
+Q.E.D.
+
+b. If $u$ is perpendicular to $v$ and $w$, then $u$ is perpendicular to
+$v + 2w$.
+
+**Proof:**
+
+Suppose $u$ is any vector such that it is perpendicular to $v$ and $w$.
+
+It must be shown that $u$ is perpendicular to $v + 2w$, equivalently, it must be
+shown that:
+
+$$ u \cdot (v + 2w) = 0 $$
+
+By the supposition, $u$ is perpendicular to $v$ and $w$, in other words:
+
+$$ u \cdot v = 0 $$
+
+and:
+
+$$ u \cdot w = 0 $$
+
+Now, notice that:
+
+$$ u \cdot (v + 2w) = uv + 2uw $$
+
+$$ = (u \cdot v) + 2(u \cdot w) $$
+
+Then, by substitution:
+
+$$ = (0) + 2(0) $$
+
+$$ = 0 + 0 $$
+
+$$ = 0 $$
+
+Thus it has been shown that $u \cdot (v + 2w) = 0$, and therefore $u$ is
+perpendicular to $v + 2w$.
+
+Q.E.D.
+
+c. If $u$ and $v$ are perpendicular unit vectors then $\|u - v \| = \sqrt{2}$ .
+_Yes!_
+
+**Proof:**
+
+Suppose $u$ and $v$ are any perpendicular unit vectors.
+
+It must be shown that $\|u - v\| = \sqrt{2}$.
+
+Since the norm of any vector is nonnegative, $\|u - v\|$ is nonnegative. It
+follows that it suffices to show:
+
+$$ \|u - v\|^2 = 2 $$
+
+Recall that $\|u - v\| = \sqrt{(u - v) \cdot (u - v)}$, and thus:
+
+$$ \|u - v\|^2 = (u - v) \cdot (u - v) $$
+
+$$ = u^2 - 2uv + v^2 $$
+
+$$ = (u \cdot u) - 2(u \cdot v) + (v \cdot v) $$
+
+By the supposition, since $u$ and $v$ are perpendicular, it follows that:
+
+$$ u \cdot v = 0 $$
+
+Thus, by substitution:
+
+$$ \|u - v\|^2 = (u \cdot u) - 2(0) + (v \cdot v) $$
+
+$$ = (u \cdot u) + (v \cdot v) $$
+
+By the supposition, both $u$ and $v$ are unit vectors, which means that their
+lengths are equal to $1$.
+
+$$ \|u\| = 1, \|v\| = 1 $$
+
+Again, since the norm of any vector is nonnegative, it follows that:
+$\|u\|^2 = u \cdot u$ and $\|v\|^2 = v \cdot v$, and thus:
+
+$$ u \cdot u = 1, v \cdot v = 1 $$
+
+Then, by substitution:
+
+$$ \|u - v\|^2 = (u \cdot u) + (v \cdot v) $$
+
+$$ = (1) + (1) $$
+
+$$ = 2 $$
+
+This is what was to be shown.
+
+Q.E.D.
+
+9. The slopes of the arrows from $(0, 0)$ to $(v_1, v_2)$ and $(w_1, w_2)$ are
+   $\dfrac{v_2}{v_1}$ and $\dfrac{w_2}{w_1}$. **Suppose the product
+   $\dfrac{v_2w_2}{v_1w_1}$ of the slopes is $-1$**. Show that $v \cdot w = 0$
+   and the vectors are perpendicular (The line $y = 4x$ is perpendicular to
+   $y = -\dfrac{1}{4}x$.)
+
+**Proof:**
+
+Suppose $v$ and $w$ are two vectors along a standard Cartesian plane such that
+$v$ goes from the origin, $(0, 0)$, to $(v_1, v_2)$ and $w$ goes from the origin
+$(0, 0)$, to $(w_1, w_2)$.
+
+Then, the slopes of these vectors are $\dfrac{v_2}{v_1}$ and $\dfrac{w_2}{w_1}$.
+
+Suppose the product of these two slopes is $-1$:
+
+$$ \frac{v_2}{v_1} \cdot \frac{w_2}{w_1} = \frac{v_2w_2}{v_1w_1} = -1 $$
+
+It must be shown that $v \cdot w = 0$ and the vectors are perpendicular. Since
+these two statements are logically equivalent, it suffices to show that
+$v \cdot w = 0$.
+
+Now, by the definition of the dot product:
+
+$$ v \cdot w = \begin{bmatrix}{}v_1\\v_2\end{bmatrix} \cdot \begin{bmatrix}{}w_1\\w_2\end{bmatrix} $$
+
+$$ = v_1w_1 + v_2w_2 $$
+
+By the supposition:
+
+$$ \frac{v_2w_2}{v_1w_1} = -1 $$
+
+which means that:
+
+$$ v_2w_2 = -v_1w_1 $$
+
+So, by substitution:
+
+$$ v \cdot w = v_1w_1 + v_2w_2 $$
+
+$$ v \cdot w = v_1w_1 + (-v_1w_1) $$
+
+$$ v \cdot w = 0 $$
+
+This is what was to be shown.
+
+Q.E.D.
+
+10. Draw arrows from $(0, 0)$ to the points $v = (1, 2)$ and $w = (-2, 1)$.
+    Multiply their slopes. That answer is a signal that $v \cdot w = 0$ and the
+    arrows are ____.
+
+$$ v_{\text{slope}} = \frac{2}{1} = 2 $$
+
+$$ w_{\text{slope}} = \frac{1}{-2} = -\frac{1}{2} $$
+
+$$ v_{\text{slope}} \cdot w_{\text{slope}} = 2 \cdot \left(-\frac{1}{2}\right) = -1 $$
+
+By the proof of exercise 9, it has been shown that when the product of two
+vectors' slopes is $-1$, that $v \cdot w = 0$.
+
+By the definition of perpendicular vectors, this means that these two arrows are
+_perpendicular_.
+
+Answer: perpendicular
+
+11. If $v \cdot w$ is negative, what does this say about the angle between $v$
+    and $w$? Draw a 3-dimensional vector $v$ (an arrow), and show where to find
+    all $w$'s with $v \cdot w < 0$.
+
+When $v \cdot w < 0$, this implies by the cosine formula that the angle between
+$v$ and $w$, $\theta$, is $\theta > 90\degree$.
+
+The reason for this comes from the cosine formula:
+
+$$ \cos\theta = \frac{v \cdot w}{\|v\|\|w\|} $$
+
+Equivalently, notice that this is:
+
+$$ v \cdot w = \cos\theta(\|v\|\|w\|) $$
+
+By the definition of norm, $\|v\|\|w\| > 0$, so since $v \cdot w < 0$, this
+means that $\cos\theta < 0$. Consulting a basic unit circle will show that
+$\cos^{-1}(0) = \dfrac{\pi}{2} = 90\degree$, so $\theta > 90\degree$.
+
+Once $v$ is drawn in $\mathbf{R}^3$, one can find all $w$'s in half of
+$\mathbf{R}^3$.
+
+Geometrically, the plane through the origin perpendicular to $v$ divides
+$\mathbf{R}^3$ into two half-spaces. All vectors $w$ in the half-space opposite
+the direction of $v$ make an obtuse angle with $v$, so $v \cdot w < 0$; the
+dividing plane itself is excluded because there $v \dot w = 0$.
+
+12. With $v = (1, 1)$ and $w = (1, 5)$ choose a number $c$ so that $w - cv$ is
+    perpendicular to $v$. Then find the formula for $c$ starting from _any_
+    nonzero $v$ and $w$.
+
+For $w - cv$ and $v$ to be perpendicular, it must be true that:
+
+$$ v \cdot (w - cv) = 0 $$
+
+Equivalently:
+
+$$ \begin{bmatrix}{}1\\1\end{bmatrix} \cdot \left(\begin{bmatrix}{}1\\5\end{bmatrix} - c\begin{bmatrix}{}1\\1\end{bmatrix}\right) = 0 $$
+
+$$ \begin{bmatrix}{}1\\1\end{bmatrix} \cdot \left(\begin{bmatrix}{}1\\5\end{bmatrix} - \begin{bmatrix}{}c\\c\end{bmatrix}\right) = 0 $$
+
+$$ \begin{bmatrix}{}1\\1\end{bmatrix} \cdot \begin{bmatrix}{}1 - c\\5 - c\end{bmatrix} = 0 $$
+
+$$ (1)(1 - c) + (1)(5 - c) = 0 $$
+
+$$ 1 - c + 5 - c = 0 $$
+
+$$ 6 - 2c = 0 $$
+
+$$ 6 = 2c $$
+
+$$ 3 = c $$
+
+$$ c = 3 $$
+
+For the more general formula, start from the beginning again:
+
+$$ v \cdot (w - cv) = 0 $$
+
+$$ (v \cdot w) - (v \cdot v \cdot c) = 0 $$
+
+$$ (v \cdot w) - (\|v\|^2 \cdot c) = 0 $$
+
+$$ v \cdot w = \|v\|^2 \cdot c $$
+
+$$ \frac{v \cdot w}{\|v\|^2} = c $$
+
+$$ c = \frac{v \cdot w}{\|v\|^2} $$
+
+13. Find nonzero vectors $v$ and $w$ that are perpendicular to $(1, 0, 1)$ and
+    to each other.
+
+$$ v \cdot \begin{bmatrix}{}1\\0\\1\end{bmatrix} = 0 $$
+
+and:
+
+$$ w \cdot \begin{bmatrix}{}1\\0\\1\end{bmatrix} = 0 $$
+
+and:
+
+$$ v \cdot w = 0 $$
+
+First, evaluate $v$:
+
+$$ v \cdot (1, 0, 1) = \begin{bmatrix}{}v_1\\v_2\\v_3\end{bmatrix} \cdot \begin{bmatrix}{}1\\0\\1\end{bmatrix} = 0 $$
+
+$$ v_1(1) + v_2(0) + v_3(1) = 0 $$
+
+$$ v_1 + v_3 = 0 $$
+
+$$ v_1 = -v_3 $$
+
+Thus:
+
+$$ v = (v_1, v_2, -v_1) $$
+
+Now similarly, for $w$, we can do the same:
+
+$$ w = (w_1, w_2, -w_1) $$
+
+Now, since $v \cdot w = 0$:
+
+$$ v_1w_1 + v_2w_2 + (-v_1)(-w_1) = 0 $$
+
+$$ v_1w_1 + v_2w_2 + v_1w_1 = 0 $$
+
+$$ 2v_1w_1 + v_2w_2 = 0 $$
+
+So, choose $v_1 = 0, v_2 = 1, v_3 = 0$, and $w_1 = 1, w_2 = 0, w_3 = -1$.
+
+Check each:
+
+$$ v \cdot (1, 0, 1) = (0)(1) + (1)(0) + (0)(1) = 0 $$
+
+$$ w \cdot (1, 0, 1) = (1)(1) + (0)(0) + (-1)(1) = 0 $$
+
+$$ v \cdot w = (0)(1) + (1)(0) + (0)(-1) = 0 $$
+
+Thus:
+
+$$ v = \begin{bmatrix}{}0\\1\\0\end{bmatrix}, w = \begin{bmatrix}{}1\\0\\-1\end{bmatrix} $$
+
+14. Find nonzero vectors $u, v, w$ that are perpendicular to $(1, 1, 1, 1)$ and
+    to each other.
+
+Omitted.
+
+15. The geometric mean of $x = 2$ and $y = 8$ is $\sqrt{xy} = 4$. The arithmetic
+    mean is larger: $\dfrac{1}{2}(x + y) =$ ____. This would come in Example 6
+    from the Schwarz inequality for $v = (\sqrt{2}, \sqrt{8})$ and
+    $w = (\sqrt{8}, \sqrt{2})$. Find $\cos\theta$ for this $v$ and $w$.
+
+$$ \frac{1}{2}(x + y) = \frac{1}{2}(2 + 8) = \frac{1}{2}(10) = 5 $$
+
+$$ \sqrt{xy} \leq \frac{x + y}{2} $$
+
+$$ \sqrt{2 \cdot 8} \leq \frac{2 + 8}{2} $$
+
+$$ \sqrt{10} \leq \frac{10}{2} $$
+
+$$ \sqrt{10} \approx 3.162277 \leq 5 $$
+
+$$ \cos\theta = \frac{v \cdot w}{\|v\|\|w\|} $$
+
+$$ v \cdot w = (\sqrt{2})(\sqrt{8}) + (\sqrt{8})(\sqrt{2}) $$
+
+$$ = 2(\sqrt{2})(\sqrt{8}) $$
+
+$$ = 2(\sqrt{2})(2\sqrt{2}) $$
+
+$$ = 4(\sqrt{2})(\sqrt{2}) $$
+
+$$ = 4(2) $$
+
+$$ = 8 $$
+
+$$ \|v\| = \sqrt{(\sqrt{2})(\sqrt{2}) + (\sqrt{8})(\sqrt{8})} $$
+
+$$ = \sqrt{2 + 8} = \sqrt{10} $$
+
+$$ \|w\| = \sqrt{(\sqrt{8})(\sqrt{8}) + (\sqrt{2})(\sqrt{2})} $$
+
+$$ = \sqrt{8 + 2} = \sqrt{10} $$
+
+$$ \cos\theta = \frac{8}{\sqrt{10} \cdot \sqrt{10}} $$
+
+$$ = \frac{8}{10} $$
+
+$$ = \frac{4}{5} $$
+
+This matches the Schwarz inequality:
+
+$$ |v \cdot w| \leq \|v\|\|w\| $$
+
+$$ |8| \leq (\sqrt{10})(\sqrt{10}) $$
+
+$$ 8 \leq 10 $$
+
+16. How long is the vector $v = (1, 1, \dots, 1)$ in 9 dimensions? Find a unit
+    vector $u$ in the same direction as $v$ and a unit vector $w$ that is
+    perpendicular to $v$.
+
+Since
+$\|v\| = \sqrt{v \cdot v} = \sqrt{\underbrace{(1)(1) + (1)(1) + \cdots + (1)(1)}_{\text{summed 9 times}}} = \sqrt{9} = 3$.
+
+Then, finding the unit vector that is parallel (same direction) to $v$:
+
+$$ u = \frac{v}{\|v\|} = \begin{bmatrix}{}\frac{1}{3}\\\frac{1}{3}\\\vdots\\\frac{1}{3}\end{bmatrix} $$
+
+Then, find a unit vector $w_{\text{vec}}$ perpendicular to $v$:
+
+$$ v \cdot w = 0 $$
+
+$$ (1, 1, \dots, 1) \cdot w = 0 $$
+
+$$ 1w_1 + 1w_2 + \cdots + 1w_9 = 0 $$
+
+$$ w_1 + w_2 + \cdots + w_9 = 0 $$
+
+So, $let w_1 = 1$, $w_2, \dots, w_8 = 0$, and $w_9 = -1$.
+
+Thus far, $w$ is:
+
+$$ w = (1, 0, 0, \dots, 0, -1) $$
+
+Now, to find $w_{\text{uv}}$, a unit vector:
+
+$$ w_{\text{uv}} = \frac{w}{\|w\|} $$
+
+$$ \|w\| = \sqrt{w \cdot w} = \sqrt{(1)(1) + (0)(0) + \cdots + (0)(0) + (-1)(-1)} = \sqrt{1 + 1} = \sqrt{2} $$
+
+$$ w_{\text{uv}} = \left(\frac{1}{\sqrt{2}}, 0, 0 \dots, 0, -\frac{1}{\sqrt{2}}\right) $$
+
+[LEFT OFF HERE]
+
+17. What are the cosines of the angles $\alpha, \beta, \theta$ between the
+    vector $(1, 0, -1)$ and the unit vectors $i, j, k$ along the axes? Check the
+    formula $\cos^2\alpha + \cos^2\beta + \cos^2\theta = 1$.
+
+Problems 18-28 lead to the main facts about lengths and angles in triangles.
+
+18. The parallelogram with sides $v = (4, 2)$ and $w = (-1, 2)$ is a rectangle.
+    Check the Pythagoras formula $a^2 + b^2 = c^2$ which is for _right triangles
+    only_:
+
+$$ (\text{length of } v)^2 + (\text{length of } w)^2 = (\text{length of} v + w)^2 $$
+
+19. (Rules for dot products) These equations are simple but useful:
+
+(1) $v \cdot w = w \cdot v$
+
+(2) $u \cdot (v + w) = u \cdot v + u \cdot w$
+
+(3) $(cv) \cdot w = c(v \cdot w)$
+
+Use (2) with $u = v + w$ to prove
+$\|v + w\|^2 = v \cdot v + 2v \cdot w + w \cdot w$.
+
+20. The "Law of Cosines" comes from
+    $(v - w) \cdot (v - w) = v \cdot v - 2v \cdot w + w \cdot w$:
+
+**Cosine Law**
+
+$$ \|v - w\|^2 = \|v\|^2 - 2\|v\|\|w\|\cos\theta + \|w\|^2 $$
+
+Draw a triangle with sides $v$ and $w$ and $v - w$. Which of the angles is
+$\theta$?
+
+21. The _triangle inequality_ says:
+    $(\text{length of } v + w) \leq (\text{length of } v) + (\text{length of } w)$.
+
+Problem 19 found $\|v + w\|^2 = \|v\|^2 + 2v \cdot w + \|w\|^2$. Increase that
+$v \cdot w$ to $\|v\|\|w\|$ to show that $\|\textbf{side 3}\|$ can not exceed
+$\|\textbf{side 1}\| + \|\textbf{side 2}\|$:
+
+**Triangle Inequality**
+
+$$ \|v + w\|^2 \leq (\|v\| + \|w\|)^2 \textbf{ or } \|v + w\| \leq \|v\| + \|w\| $$
+
+(See page 31 for Figure)
+
+22. The Schwarz inequality $|v \cdot w \leq \|v\|\|w\|$ by algebra instead of
+    trigonometry:
+
+a. Multiply out both sides of
+$(v_1w_2 + v_2w_2)^2 \leq \left(v_1^2 + v_2^2\right)\left(w_1^2 + w_2^2\right)$
+
+b. Show that the difference between those two sides equals
+$(v_1w_2 - v_2w_1)^2$. This cannot be negative since it is a square - so the
+inequality is true.
+
+23. The figure shows that $\cos\alpha = \dfrac{v_1}{\|v\|}$ and
+    $\sin\alpha = \dfrac{v_2}{\|v\|}$. Similarly $\cos\beta$ is ____ and
+    $\sin\beta$ is ____. The angle $\theta$ is $\beta - \alpha$. Substitute into
+    the trigonometry formula $\cos\beta\cos\alpha + \sin\beta\sin\alpha$ for
+    $\cos(\beta - \alpha)$ to find $\cos\theta = \dfrac{v \cdot w}{\|v\|\|w\|}$.
+
+24. One-line proof of the inequality $|u \cdot U| \leq 1$ for unit vectors
+    $(u_1, u_2)$ and $(U_1, U_2)$:
+
+$$ |u \cdot U| \leq |u_2||U_1| + |u_2||U_2| \leq \frac{u_1^2 + U_1^2}{2} + \frac{u_2^2 + U_2^2}{2} = 1 $$
+
+Put $(u_1, u_2) = (.6, .8)$ and $(U_1, U_2) = (.8, .6)$ in that whole line and
+find $\cos\theta$.
+
+25. Why is $|\cos\theta|$ never greater than $1$ in the first place?
+
+26. (_Recommended_) Draw a parallelogram
+
+27. Parallelogram with two sides $v$ and $w$. Show that the square diagonal
+    lengths $\|v + w\|^2 + \|v - w\|^2$ add to teh sum of four squared side
+    lengths $2\|v\|^2 + 2\|w\|^2$.
+
+28. If $v = (1, 2)$ draw all vectors $w =(x, y)$ in the $xy$ plane with
+    $v \cdot w = x + 2y = 5$. Why do those $w$'s lie along a line? Which is the
+    shortest $w$?
+
+29. (_Recommended_) If $\|v\| = 5$ and $\|w\| = 3$, what are the smallest and
+    largest possible values of $\|v - w\|$? What are the smallest and largest
+    possible values of $v \cdot w$?
