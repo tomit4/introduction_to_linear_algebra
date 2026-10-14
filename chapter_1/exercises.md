@@ -1965,6 +1965,46 @@ $$ s_1 = \begin{bmatrix}{}1\\1\\1\end{bmatrix} \quad s_2 = \begin{bmatrix}{}0\\1
 
 go into the columns of $S$.
 
+$$ 3s_1 = 3\begin{bmatrix}{}1\\1\\1\end{bmatrix} = \begin{bmatrix}{}3\\3\\3\end{bmatrix} $$
+
+$$ 4s_2 = 4\begin{bmatrix}{}0\\1\\1\end{bmatrix} = \begin{bmatrix}{}0\\4\\4\end{bmatrix} $$
+
+$$ 5s_3 = 5\begin{bmatrix}{}0\\0\\1\end{bmatrix} = \begin{bmatrix}{}0\\0\\5\end{bmatrix} $$
+
+$$ 3s_1 + 4s_2 + 5s_3 = \begin{bmatrix}{}3\\3\\3\end{bmatrix} + \begin{bmatrix}{}0\\4\\4\end{bmatrix} + \begin{bmatrix}{}0\\0\\5\end{bmatrix} $$
+
+$$ = \begin{bmatrix}{}3 + 0 + 0\\3 + 4 + 0\\3 + 4 + 5\end{bmatrix} $$
+
+$$ = \begin{bmatrix}{}3\\7\\12\end{bmatrix} = b $$
+
+_Writing $Sx$:_
+
+$$ x = \begin{bmatrix}{}3\\4\\5\end{bmatrix} $$
+
+$$
+S =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+1 & 1 & 1 \\
+\end{array}\right]
+$$
+
+$$
+Sx =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+1 & 1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}3\\4\\5\end{bmatrix} =
+\begin{bmatrix}{}1(3) + 0(4) + 0(5)\\1(3) + 1(4) + 0(5)\\1(3) + 1(4) + 1(5)\end{bmatrix}
+$$
+
+$$ = \begin{bmatrix}{}3 + 0 + 0\\3 + 4 + 0\\3 + 4 + 5\end{bmatrix} $$
+
+$$ = \begin{bmatrix}{}3\\7\\12\end{bmatrix} $$
+
 2. Solve these equations $Sy = b$ with $s_1, s_2, s_3$ in the columns of $S$:
 
 $$
@@ -1986,6 +2026,70 @@ $$
 
 $S$ is a sum matrix. The sum of the first $5$ odd numbers is ____.
 
+_Solving $Sy = b$ (1<sup>st</sup>):_
+
+$$
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+1 & 1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}y_1\\y_2\\y_3\end{bmatrix} =
+\begin{bmatrix}{}1\\1\\1\end{bmatrix}
+$$
+
+$$ =
+\begin{bmatrix}{}1(y_1) + 0(y_2) + 0(y_3)\\1(y_1) + 1(y_2) + 0(y_3)\\1(y_1) + 1(y_2) + 1(y_3)\end{bmatrix} =
+\begin{bmatrix}{}1\\1\\1\end{bmatrix}
+$$
+
+$$ =
+\begin{bmatrix}{}y_1\\y_1 + y_2\\y_1 + y_2 + y_3\end{bmatrix} =
+\begin{bmatrix}{}1\\1\\1\end{bmatrix}
+$$
+
+$$
+y_1 = 1 \\
+y_2 = 1 - y_1 = 1 - (1) = 0 \\
+y_3 = 1 - y_2 - y_1 = 1 - 0 - 1 = 0
+$$
+
+$$ \boxed{y_1 = 1, y_2 = 0, y_3 = 0} $$
+
+_Solving $Sy = b$ (2<sup>nd</sup>):_
+
+$$
+\left[\begin{array}{ccc}
+1 & 0 & 0\\
+1 & 1 & 0 \\
+1 & 1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}y_1\\y_2\\y_3\end{bmatrix} =
+\begin{bmatrix}{}1\\4\\9\end{bmatrix}
+$$
+
+$$
+\begin{bmatrix}{}1(y_1) + 0(y_2) + 0(y_3)\\1(y_1) + 1(y_2) + 0(y_3)\\1(y_1) +
+1(y_2) + 1(y_3)\end{bmatrix} = \begin{bmatrix}{}1\\4\\9\end{bmatrix}
+$$
+
+$$
+\begin{bmatrix}{}y_1\\y_1 + y_2\\y_1 +
+y_2 + y_3\end{bmatrix} = \begin{bmatrix}{}1\\4\\9\end{bmatrix}
+$$
+
+$$
+y_1 = 1 \\
+y_2 = 4 - y_1 = 4 - (1) = 3 \\
+y_3 = 9 - y_2 - y_1 = 9 - (3) - (1) = 5 \\
+$$
+
+$$ \boxed{y_1 = 1, y_2 = 3, y_3 = 5} $$
+
+_The sum of the first $5$ odd numbers is:_
+
+$$ 1 + 3 + 5 + 7 + 9 = 25 = (5)^2 $$
+
 3. Solve these three equations for $y_1, y_2, y_3$ in terms of $c_1, c_2, c_3$:
 
 $$
@@ -2002,6 +2106,104 @@ $$
 Write the solution $y$ as a matrix $A = S^{-1}$ times the vector $c$. Are the
 columns of $S$ independent or dependent?
 
+_Solving these three equations for $y_1, y_2, y_3$ in terms of $c_1, c_2, c_3$:_
+
+$$
+Sy = c \quad
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+1 & 1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}y_1\\y_2\\y_3\end{bmatrix} =
+\begin{bmatrix}{}c_1\\c_2\\c_3\end{bmatrix}
+$$
+
+$$
+\begin{bmatrix}{}(1)(y_1) + (0)(y_2) + (0)(y_3)\\(1)(y_1) + (1)(y_2) + (0)(y_3)\\(1)(y_1) + (1)(y_2) + (1)(y_3)\end{bmatrix} =
+\begin{bmatrix}{}c_1\\c_2\\c_3\end{bmatrix}
+$$
+
+$$
+\begin{bmatrix}{}y_1\\y_1 + y_2\\y_1 + y_2 + y_3\end{bmatrix} =
+\begin{bmatrix}{}c_1\\c_2\\c_3\end{bmatrix}
+$$
+
+$$
+c_1 = y_1 \\
+c_2 = y_1 + y_2 \\
+c_3 = y_1 + y_2 + y_3 \\
+$$
+
+$$
+y_1 = c_1 \\
+y_2 = c_2 - y_1 \\
+y_3 = c_3 - y_2 - y_1 \\
+$$
+
+$$
+y_1 = c_1 \\
+y_2 = c_2 - c_1 \\
+y_3 = c_3 - (c_2 - c_1) - (c_1) \\
+$$
+
+$$
+y_1 = c_1 \\
+y_2 = c_2 - c_1 \\
+y_3 = c_3 - c_2 + c_1 - c_1 \\
+$$
+
+$$
+y_1 = c_1 \\
+y_2 = c_2 - c_1 \\
+y_3 = c_3 - c_2 \\
+$$
+
+_Write the solution $y$ as a matrix $A = S^{-1}$ times the vector $c$:_
+
+One can find $S^{-1}$ from our solution for $y$, notice:
+
+$$
+y_1 = c_1 \\
+y_2 = c_2 - c_1 \\
+y_3 = c_3 - c_2 \\
+$$
+
+Is:
+
+$$
+y_1 = 1c_1 + 0c_2 + 0c_3 \\
+y_2 = (-1)c_1 + 1c_2 + 0c_3 \\
+y_3 = 0c_1 + (-1)c_2 + 1c_3 \\
+$$
+
+Thus $S^{-1}$ is:
+
+$$
+S^{-1} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+0 & -1 & 1 \\
+\end{array}\right]
+$$
+
+So, writing matrix $A = S^{-1}$ times the vector $c$ should appear as:
+
+$$
+A =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+0 & -1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}c_1\\c_2\\c_3\end{bmatrix}
+$$
+
+_Are the columns of $S$ independent or dependent?:_
+
+Since $S^{-1}$ exists, it implies that the columns of $S$ are independent.
+
 4. Find a combination $x_1w_1 + x_2w_2 + x_3w_3$ that gives the zero vector with
    $x_1 = 1$:
 
@@ -2010,14 +2212,271 @@ $$ w_1 = \begin{bmatrix}{}1\\2\\3\end{bmatrix} \quad w_2 = \begin{bmatrix}{}4\\5
 Those vectors are (independent)(dependent). The three vectors lie in a ____. The
 matrix $W$ with those three columns is _not invertible_.
 
+_Find a combination $x_1w_1 + x_2w_2 + x_3w_3$ that gives the zero vector with
+$x_1 = 1$:_
+
+$$ x_1w_1 + x_2w_2 + x_3w_3 = \mathbf{0} $$
+
+Since $x_1 = 1$:
+
+$$ (1)w_1 + x_2w_2 + x_3w_3 = \mathbf{0} $$
+
+$$ w_1 + x_2w_2 + x_3w_3 = \mathbf{0} $$
+
+$$
+\begin{bmatrix}{}1\\2\\3\end{bmatrix} +
+x_2\begin{bmatrix}{}4\\5\\6\end{bmatrix} +
+x_3\begin{bmatrix}{}7\\8\\9\end{bmatrix} =
+\begin{bmatrix}{}0\\0\\0\end{bmatrix}
+$$
+
+$$
+\begin{bmatrix}{}1\\2\\3\end{bmatrix} +
+\begin{bmatrix}{}4x_2\\5x_2\\6x_2\end{bmatrix} +
+\begin{bmatrix}{}7x_3\\8x_3\\9x_3\end{bmatrix} =
+\begin{bmatrix}{}0\\0\\0\end{bmatrix}
+$$
+
+$$
+\begin{bmatrix}{}1 + 4x_2 + 7x_3\\2 + 5x_2 + 8x_3\\3 + 6x_2 + 9x_3\end{bmatrix} =
+\begin{bmatrix}{}0\\0\\0\end{bmatrix}
+$$
+
+_Evaluating one by one:_
+
+$$ 1 + 4x_2 + 7x_3 = 0 $$
+
+$$ 4x_2 + 7x_3 = -1 $$
+
+$$ 4x_2 = -1 - 7x_3 $$
+
+$$ x_2 = \frac{-1 - 7x_3}{4} $$
+
+$$ 2 + 5x_2 + 8x_3 = 0 $$
+
+$$ 2 + 5\left(\frac{-1 - 7x_3}{4}\right) + 8x_3 = 0 $$
+
+$$ \left(\frac{5(-1 - 7x_3)}{4}\right) + 8x_3 = -2 $$
+
+$$ \left(\frac{-5 - 35x_3}{4}\right) + 8x_3 = -2 $$
+
+$$ \frac{-5 - 35x_3 + 32x_3}{4} = -2 $$
+
+$$ -5 - 35x_3 + 32x_3 = -8 $$
+
+$$ -35x_3 + 32x_3 = -3 $$
+
+$$ -3x_3 = -3 $$
+
+$$ x_3 = 1 $$
+
+$$ x_2 = \frac{-1 - 7x_3}{4} $$
+
+$$ x_2 = \frac{-1 - 7(1)}{4} $$
+
+$$ x_2 = \frac{-1 - 7}{4} $$
+
+$$ x_2 = \frac{-8}{4} $$
+
+$$ x_2 = -2 $$
+
+_Check:_
+
+$$ 3 + 6x_2 + 9x_3 = 0 $$
+
+$$ 3 + 6(-2) + 9(1) = 0 $$
+
+$$ 3 - 12 + 9 = 0 $$
+
+$$ 0 = 0 $$
+
+Thus the combination of $x_1w_1 + x_2w_2 + x_3w_3$ that gives the zero vector
+with $x_1 = 1$ is:
+
+$$ 1w_1 + (-2)w_2 + 1w_3 $$
+
+$$ \boxed{w_1 - 2w_2 + w_3} $$
+
+_Those vectors are (independent)(dependent):_
+
+Since $w_1 - 2w_2 + w_3 = 0$ where not all $x_i$ coefficients are $0$, it
+follows that the vectors are _linearly_ dependent.
+
 5. The rows of that matrix $W$ produce three vectors (_I write them as
    columns_):
 
 $$ r_1 = \begin{bmatrix}{}1\\4\\7\end{bmatrix} \quad r_2 = \begin{bmatrix}{}2\\5\\8\end{bmatrix} \quad r_3 = \begin{bmatrix}{}3\\6\\9\end{bmatrix}$$
 
 Linear algebra says that these vectors must also lie in a plane. There must be
-many combinations with $y_1r_2 + y^2r_2 + y^3r_3 = \mathbf{0}$. Find two sets of
+many combinations with $y_1r_1 + y_2r_2 + y_3r_3 = \mathbf{0}$. Find two sets of
 $y$'s.
+
+_Find two sets of $y$'s:_
+
+_Finding the first $y$:_
+
+$$
+y_1\begin{bmatrix}{}1\\4\\7\end{bmatrix} +
+y_2\begin{bmatrix}{}2\\5\\8\end{bmatrix} +
+y_3\begin{bmatrix}{}3\\6\\9\end{bmatrix} =
+\begin{bmatrix}{}0\\0\\0\end{bmatrix}
+$$
+
+$$
+\begin{bmatrix}{}y_1\\4y_1\\7y_1\end{bmatrix} +
+\begin{bmatrix}{}2y_2\\5y_2\\8y_2\end{bmatrix} +
+\begin{bmatrix}{}3y_3\\6y_3\\9y_3\end{bmatrix} =
+\begin{bmatrix}{}0\\0\\0\end{bmatrix}
+$$
+
+$$
+\begin{bmatrix}{}y_1 + 2y_2 + 3y_3\\4y_1 + 5y_2 + 6y_3\\7y_1 + 8y_2 + 9y_3\end{bmatrix} =
+\begin{bmatrix}{}0\\0\\0\end{bmatrix}
+$$
+
+$$
+y_1 + 2y_2 + 3y_3 = 0 \\
+4y_1 + 5y_2 + 6y_3 = 0 \\
+7y_1 + 8y_2 + 9y_3 = 0 \\
+$$
+
+_Choose $y_1 = 1$, then:_
+
+$$ y_1 + 2y_2 + 3y_3 = 0 $$
+
+$$ (1) + 2y_2 + 3y_3 = 0 $$
+
+$$ 2y_2 + 3y_3 = -1 $$
+
+Now, solve for $y_2$:
+
+$$ 2y_2 = -1 - 3y_3 $$
+
+$$ y_2 = \frac{-1 - 3y_3}{2} $$
+
+Now, substitute $y_2$ and $y_1$ into second equation:
+
+$$ 4y_1 + 5y_2 + 6y_3 = 0 $$
+
+$$ 4(1) + 5\left(\frac{-1 - 3y_3}{2}\right) + 6y_3 = 0 $$
+
+$$ 4 + \left(\frac{5(-1 - 3y_3)}{2}\right) + 6y_3 = 0 $$
+
+$$ \frac{-5 - 15y_3}{2} + 6y_3 = -4 $$
+
+$$ \frac{-5 - 15y_3 + 12y_3}{2} = -4 $$
+
+$$ -5 - 15y_3 + 12y_3 = -8 $$
+
+$$ -15y_3 + 12y_3 = -3 $$
+
+$$ -3y_3 = -3 $$
+
+$$ y_3 = 1 $$
+
+Now, back-substitution to solve for $y_2$:
+
+$$ y_2 = \frac{-1 - 3y_3}{2} $$
+
+$$ y_2 = \frac{-1 - 3(1)}{2} $$
+
+$$ y_2 = \frac{-1 - 3}{2} $$
+
+$$ y_2 = \frac{-4}{2} $$
+
+$$ y_2 = -2 $$
+
+_Check values in 3<sup>rd</sup> equation:_
+
+$$ 7y_1 + 8y_2 + 9y_3 = 0 $$
+
+$$ 7(1) + 8(-2) + 9(1) = 0 $$
+
+$$ 7 - 16 + 9 = 0 $$
+
+$$ 0 = 0 $$
+
+Thus one solution is:
+
+$$ 1r_1 + (-2)r_2 + 1r_3 = \mathbf{0} $$
+
+$$ r_1 - 2r_2 + r_3 = \mathbf{0} $$
+
+_Finding the second $y$:_
+
+To find the second $y$, let's first start off with our generic values for all
+$y_1, y_2, y_3$:
+
+$$
+y_1 + 2y_2 + 3y_3 = 0 \\
+4y_1 + 5y_2 + 6y_3 = 0 \\
+7y_1 + 8y_2 + 9y_3 = 0 \\
+$$
+
+Now, choose values that will not be multiples of the values we found in our
+first pass (otherwise this is just a scalar of the first). Since our first pass
+gave us $(1, -2, 1)$, it follows that any multiple would have the form of
+$(c, -2c, c)$
+
+Let's try and choose $y_1 = 2$, then, our first equation becomes:
+
+$$ y_1 + 2y_2 + 3y_3 = 0 $$
+
+$$ 2 + 2y_2 + 3y_3 = 0 $$
+
+$$ 2y_2 + 3y_3 = -2 $$
+
+Now, solve for $y_2$:
+
+$$ 2y_2 = -2 - 3y_3 $$
+
+$$ y_2 = \frac{-2 - 3y_3}{2} $$
+
+Now plug into the second equation for $y_1, y_2$:
+
+$$ 4y_1 + 5y_2 + 6y_3 = 0 $$
+
+$$ 4(2) + 5\left(\frac{-2 - 3y_3}{2}\right) + 6y_3 = 0 $$
+
+$$ 8 + \left(\frac{5(-2 - 3y_3)}{2}\right) + 6y_3 = 0 $$
+
+$$ \frac{-10 - 15y_3}{2} + 6y_3 = -8 $$
+
+$$ \frac{-10 - 15y_3 + 12y_3}{2} = -8 $$
+
+$$ -10 - 15y_3 + 12y_3 = -16 $$
+
+$$ -15y_3 + 12y_3 = -6 $$
+
+$$ -3y_3 = -6 $$
+
+$$ y_3 = 2 $$
+
+Now, find $y_2$:
+
+$$ y_2 = \frac{-2 - 3y_3}{2} $$
+
+$$ y_2 = \frac{-2 - 3(2)}{2} $$
+
+$$ y_2 = \frac{-2 - 6}{2} $$
+
+$$ y_2 = \frac{-8}{2} $$
+
+$$ y_2 = -4 $$
+
+Now check with 3rd equation:
+
+$$ 7y_1 + 8y_2 + 9y_3 = 0 $$
+
+$$ 7(2) + 8(-4) + 9(2) = 0 $$
+
+$$ 14 - 32 + 18 = 0 $$
+
+$$ 0 = 0 $$
+
+So a valid choice is $(2, -4, 2)$, which sadly is a multiple of $(1, -2, 1)$...
+
+Moving on regardless.
 
 6. Which numbers $c$ give dependent columns so a combination of columns equals
    zero?
@@ -2046,6 +2505,244 @@ $$
 \text{independent for } c \neq 0 \text{?} \\
 $$
 
+_Evaluating first matrix:_
+
+$$
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+3 & 2 & 1 \\
+7 & 4 & c \\
+\end{array}\right]
+\begin{bmatrix}{}x_1\\x_2\\x_3\end{bmatrix} =
+\begin{bmatrix}{}0\\0\\0\end{bmatrix}
+$$
+
+$$
+\begin{bmatrix}{}x_1 + x_2\\3x_1 + 2x_2 + x_3\\7x_1 + 4x_2 + cx_3\end{bmatrix} =
+\begin{bmatrix}{}0\\0\\0\end{bmatrix}
+$$
+
+_Evaluating $x_i$'s:_
+
+$$
+x_1 + x_2 = 0 \\
+3x_1 + 2x_2 + x_3 = 0 \\
+7x_1 + 4x_2 + cx_3 = 0 \\
+$$
+
+Thus, by the first equation:
+
+$$ x_1 + x_2 = 0 $$
+
+$$ x_1 = -x_2 $$
+
+Plug into the second equation:
+
+$$ 3x_1 + 2x_2 + x_3 = 0 $$
+
+$$ 3(-x_2) + 2x_2 + x_3 = 0 $$
+
+Solve for $x_2$:
+
+$$ -3x_2 + 2x_2 + x_3 = 0 $$
+
+$$ -3x_2 + 2x_2 = -x_3 $$
+
+$$ -x_2 = -x_3 $$
+
+$$ x_2 = x_3 $$
+
+So:
+
+$$ x_1 = -x_2 = -x_3 $$
+
+Or:
+
+$$ x_3 = x_2 = -x_1 $$
+
+Now plugging into the third equation all values in terms of $x_3$:
+
+$$ 7x_1 + 4x_2 + cx_3 = 0 $$
+
+$$ 7(-x_3) + 4(x_3) + cx_3 = 0 $$
+
+$$ -7x_3 + 4x_3 + cx_3 = 0 $$
+
+$$ x_3(-7 + 4 + c) = 0 $$
+
+$$ x_3(c - 3) = 0 $$
+
+By the zero-product property:
+
+$$
+x_3 = 0 \text{ or }
+c = 3 \\
+$$
+
+Thus, for the first matrix, $c = 3$ gives dependent columns so a combination of
+columns equals zero.
+
+_Evaluating second matrix:_
+
+$$
+\left[\begin{array}{ccc}
+1 & 0 & c \\
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{ccc}
+1 & 0 & c \\
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}x_1\\x_2\\x_3\end{bmatrix} =
+\begin{bmatrix}{}0\\0\\0\end{bmatrix}
+$$
+
+$$
+\begin{bmatrix}{}x_1 + cx_3\\x_1 + x_2\\x_2 + x_3\end{bmatrix} =
+\begin{bmatrix}{}0\\0\\0\end{bmatrix}
+$$
+
+_Evaluating each equation for $x_i$:_
+
+$$
+x_1 + cx_3 = 0 \\
+x_1 + x_2 = 0 \\
+x_2 + x_3 = 0 \\
+$$
+
+This time, start with the second and third equations as those are easier:
+
+$$ x_1 + x_2 = 0 $$
+
+$$ x_1 = -x_2 $$
+
+Now evaluate the third:
+
+$$ x_2 + x_3 = 0 $$
+
+$$ x_2 = -x_3 $$
+
+So:
+
+$$ x_1 = -x_2 \text{ and } x_2 = -x_3 $$
+
+$$ x_1 = -x_2 = -1(-x_3) = x_3 $$
+
+Now express the first equation as $x_3$:
+
+$$ x_1 + cx_3 = 0 $$
+
+$$ x_3 + cx_3 = 0 $$
+
+$$ x_3(c + 1) = 0 $$
+
+So (by zero product property):
+
+$$
+x_3 = 0 \text{ or } \\
+c = -1 \\
+$$
+
+So $c = -1$ gives dependent columns so a combination of columns equals zero.
+
+_Evaluating the third matrix:_
+
+$$
+\left[\begin{array}{ccc}
+c & c & c \\
+2 & 1 & 5 \\
+3 & 3 & 6 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{ccc}
+c & c & c \\
+2 & 1 & 5 \\
+3 & 3 & 6 \\
+\end{array}\right]
+\begin{bmatrix}{}x_1\\x_2\\x_3\end{bmatrix} =
+\begin{bmatrix}{}0\\0\\0\end{bmatrix}
+$$
+
+$$
+\begin{bmatrix}{}cx_1 + cx_2 + cx_3\\2x_1 + 1x_2 + 5x_3\\3x_1 + 3x_2 + 6x_3\end{bmatrix} =
+\begin{bmatrix}{}0\\0\\0\end{bmatrix}
+$$
+
+_Evaluating functions:_
+
+$$
+cx_1 + cx_2 + cx_3 = 0 \\
+2x_1 + x_2 + 5x_3 = 0 \\
+3x_1 + 3x_2 + 6x_3 = 0 \\
+$$
+
+Staring with the third equation:
+
+$$ 3x_1 + 3x_2 + 6x_3 = 0 $$
+
+$$ x_1 + x_2 + 2x_3 = 0 $$
+
+Now inspect the second equation:
+
+$$ 2x_1 + x_2 + 5x_3 = 0 $$
+
+Subtract the third equation from the second:
+
+$$ 2x_1 + x_2 + 5x_3 = 0 \\
+
+- (x_1 + x_2 + 2x_3 = 0) $$
+
+$$ x_1 + 3x_3 = 0 $$
+
+And evaluate:
+
+$$ x_1 = -3x_3 $$
+
+Plug back into the second equation:
+
+$$ 2x_1 + x_2 + 5x_3 = 0 $$
+
+$$ 2(-3x_3) + x_2 + 5x_3 = 0 $$
+
+$$ -6x_3 + x_2 + 5x_3 = 0 $$
+
+$$ -6x_3 + 5x_3 = -x_2 $$
+
+$$ -x_3 = -x_2 $$
+
+$$ x_3 = x_2 $$
+
+So:
+
+$$ x_3 = x_2 \text{ and } x_1 = -3x_3 $$
+
+Substitute back into first equation in terms of $x_3$:
+
+$$ cx_1 + cx_2 + cx_3 = 0 $$
+
+$$ c(-3x_3) + c(x_3) + cx_3 = 0 $$
+
+$$ -3cx_3 + cx_3 + cx_3 = 0 $$
+
+$$ -3cx_3 + 2cx_3 = 0 $$
+
+$$ x_3(-3c + 2c) = 0 $$
+
+$$ x_3(-c) = 0 $$
+
+By the zero product property:
+
+$$ x_3 = 0 \text{ or } c = 0 $$
+
+Thus $c = 0$ gives dependent columns so a combination of columns equals zero.
+
 7. If the columns combine into $Ax = \mathbf{0}$ then each of the rows has
    $r \cdot x = 0$:
 
@@ -2064,6 +2761,56 @@ $$
 
 The three rows also lie in a plane. Why is that plane perpendicular to $x$?
 
+**Proof:**
+
+Suppose $A$ is a matrix defined as:
+
+$$
+\left[\begin{array}{ccc}
+ &  &  \\
+a_1 & a_2 & a_3 \\
+ &  &  \\
+\end{array}\right]
+$$
+
+And suppose $x$ is a vector defined as:
+
+$$ \begin{bmatrix}{}x_1\\x_2\\x_3\end{bmatrix} $$
+
+Then, let their product equal $\mathbf{0}$, that is:
+
+$$
+\left[\begin{array}{ccc}
+ &  &  \\
+a_1 & a_2 & a_3 \\
+ &  &  \\
+\end{array}\right]
+\begin{bmatrix}{}x_1\\x_2\\x_3\end{bmatrix} =
+\begin{bmatrix}{}0\\0\\0\end{bmatrix}
+$$
+
+This implies that each row denoted $r_i$ for $i = 1, 2, 3$ has a dot product
+with $x$ that is equal to $0$:
+
+$$ r_1 \cdot x = 0 \quad r_2 \cdot x = 0 \quad r_3 \cdot x = 0 $$
+
+This means the three row vectors span a plane.
+
+It must be shown that that plane is perpendicular to $x$.
+
+By the definition of dot product, since $r_i \cdot x = 0$, it can be deduced
+that $x$ is perpendicular to each row vector $r_i$, and since the three row
+vectors span a plane, it follows that $x$ is perpendicular to the plane.
+
+This is what was to be shown.
+
+Q.E.D.
+
+_Note:_ For future reference one could say some vector $x$ is perpendicular to
+some plane $\pi$ like so:
+
+$$ x \perp \pi $$
+
 8. Moving to a $4$ by $4$ difference equation $Ax = b$, find the four components
    $x_1, x_2, x_3, x_4$. Then write this solution as $x = A^{-1}b$ to find the
    inverse matrix:
@@ -2081,10 +2828,195 @@ Ax =
 b
 $$
 
+_Find the four components $x_1, x_2, x_3, x_4$:_
+
+$$
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+-1 & 1 & 0 & 0 \\
+0 & -1 & 1 & 0 \\
+0 & 0 & -1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}x_1\\x_2\\x_3\\x_4\end{bmatrix} =
+\begin{bmatrix}{}b_1\\b_2\\b_3\\b_4\end{bmatrix}
+$$
+
+$$
+\begin{bmatrix}{}1x_1 + 0x_2 + 0x_3 + 0x_4\\(-1)x_1 + 1(x_2) + 0x_3 + 0x_4\\0x_1 + (-1)x_2 + 1x_3 + 0x_4\\0x_1 + 0x_2 + (-1)x_3 + 1x_4\end{bmatrix} = \begin{bmatrix}{}b_1\\b_2\\b_3\\b_4\end{bmatrix}
+$$
+
+$$
+\begin{bmatrix}{}x_1\\-x_1 + x_2\\-x_2 + x_3\\-x_3 + x_4\end{bmatrix} = \begin{bmatrix}{}b_1\\b_2\\b_3\\b_4\end{bmatrix}
+$$
+
+So our four equations are:
+
+$$
+x_1 = b_1 \\
+x_2 - x_1 = b_2 \\
+x_3 - x_2 = b_3 \\
+x_4 - x_3 = b_4 \\
+$$
+
+Evaluating:
+
+$$
+x_1 = b_1 \\
+x_2 - (b_1) = b_2 \\
+x_3 - x_2 = b_3 \\
+x_4 - x_3 = b_4 \\
+$$
+
+$$
+x_1 = b_1 \\
+x_2 = b_2 + b_1 \\
+x_3 - x_2 = b_3 \\
+x_4 - x_3 = b_4 \\
+$$
+
+$$
+x_1 = b_1 \\
+x_2 = b_2 + b_1 \\
+x_3 - (b_2 + b_1) = b_3 \\
+x_4 - x_3 = b_4 \\
+$$
+
+$$
+x_1 = b_1 \\
+x_2 = b_2 + b_1 \\
+x_3 = b_3 + b_2 + b_1 \\
+x_4 - x_3 = b_4 \\
+$$
+
+$$
+x_1 = b_1 \\
+x_2 = b_2 + b_1 \\
+x_3 = b_3 + b_2 + b_1 \\
+x_4 - (b_3 + b_2 + b_1) = b_4 \\
+$$
+
+$$
+x_1 = b_1 \\
+x_2 = b_2 + b_1 \\
+x_3 = b_3 + b_2 + b_1 \\
+x_4 = b_4 + b_3 + b_2 + b_1 \\
+$$
+
+_Write this solution as $x = A^{-1}b$ to find the inverse matrix:_
+
+This is apparent from the previous answer, notice:
+
+$$
+x_1 = b_1 \\
+x_2 = b_2 + b_1 \\
+x_3 = b_3 + b_2 + b_1 \\
+x_4 = b_4 + b_3 + b_2 + b_1 \\
+$$
+
+$$
+x_1 = 1b_1 + 0b_2 + 0b_3 + 0b_4 \\
+x_2 = 1b_1 + 1b_2 + 0b_3 + 0b_4 \\
+x_3 = 1b_1 + 1b_2 + 1b_3 + 0b_4 \\
+x_4 = 1b_1 + 1b_2 + 1b_3 + 1b_4 \\
+$$
+
+Thus $x = A^{-1}b$ is:
+
+$$
+x =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+1 & 1 & 0 & 0 \\
+1 & 1 & 1 & 0 \\
+1 & 1 & 1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}b_1\\b_2\\b_3\\b_4\end{bmatrix}
+$$
+
 9. What is the _cyclic_ $4$ by $4$ difference matrix $C$? It will have $1$ and
    $-1$ in each row and each column. Find all solutions
-   $x = (x_1, x_2, x_3, x_4)$ to $Cx = \mathbf{0}$. The four columns of C$ lie
+   $x = (x_1, x_2, x_3, x_4)$ to $Cx = \mathbf{0}$. The four columns of $C$ lie
    in a "three-dimensional hyperplane" inside four-dimensional space.
+
+Note that a _cyclic_ matrix is a matrix of the following form:
+
+$$
+A :=
+\left[\begin{array}{ccccc}
+a_0 & a_{n - 1} & a_{n - 1} & \cdots & a_1 \\
+a_1 & a_0 & a_{n - 1} & \cdots & a_2 \\
+a_2 & a_1 & a_0 & \cdots & a_3 \\
+& \ddots & \ddots & \ddots & \\
+a_{n - 1} & a_{n - 2} & a_{n - 3} & \cdots & a_0 \\
+\end{array}\right]
+$$
+
+So the rows and columns are obtained by cyclical permutation. Since the zero
+matrix and the identity matrix are cyclic, such matrices may or may not be
+invertible.
+
+This was taken from
+[**math.stackexchange**](https://math.stackexchange.com/questions/2074953/what-are-cyclic-and-difference-matrices).
+
+_What is the _cyclic_ $4$ by $4$ difference matrix $C$?:_
+
+$$
+C =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & -1 \\
+-1 & 1 & 0 & 0 \\
+0 & -1 & 1 & 0 \\
+0 & 0 & -1 & 1 \\
+\end{array}\right]
+$$
+
+_Find all solutions $x = (x_1, x_2, x_3, x_4)$ to $Cx = \mathbf{0}$:_
+
+$$
+Cx =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & -1 \\
+-1 & 1 & 0 & 0 \\
+0 & -1 & 1 & 0 \\
+0 & 0 & -1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}x_1\\x_2\\x_3\\x_4\end{bmatrix} =
+\begin{bmatrix}{}0\\0\\0\\0\end{bmatrix}
+$$
+
+$$ =
+\begin{bmatrix}{}1x_1 + 0x_2 + 0x_3 + (-1)x_4\\(-1)x_1 + 1x_2 + 0x_3 + 0x_4\\0x_1 + (-1)x_2 + 1x_3 + 0x_4\\0x_1 + 0x_2 + (-1)x_3 + 1x_4\end{bmatrix} =
+\begin{bmatrix}{}0\\0\\0\\0\end{bmatrix}
+$$
+
+$$ =
+\begin{bmatrix}{}x_1 - x_4\\-x_1 + x_2\\-x_2 + x_3 \\-x_3 + x_4\end{bmatrix} =
+\begin{bmatrix}{}0\\0\\0\\0\end{bmatrix}
+$$
+
+So our equations are:
+
+$$
+x_1 - x_4 = 0 \\
+x_2 - x_1 = 0 \\
+x_3 - x_2 = 0 \\
+x_4 - x_3 = 0 \\
+$$
+
+Evaluating:
+
+$$
+x_1 = x_4 \\
+x_2 = x_1 \\
+x_3 = x_2 \\
+x_4 = x_3 \\
+$$
+
+So:
+
+$$ x_1 = x_4 = x_3 = x_2 = x_1 $$
+
+Thus the solution is $x_1 = x_2 = x_3 = x_4 = t | t \in \mathbf{R}$.
 
 10. A _forward_ difference matrix $\Delta$ is _upper_ triangular:
 
@@ -2104,10 +3036,242 @@ $$
 Find $z_1, z_2, z_3$ from $b_1, b_2, b_3$. What is the inverse matrix in
 $z = \Delta^{-1}b$?
 
+_Find $z_1, z_2, z_3$ from $b_1, b_2, b_3$:_
+
+So our equations are:
+
+$$
+z_2 - z_1 = b_1 \\
+z_3 - z_2 = b_2 \\
+0 - z_3 = b_3 \\
+$$
+
+Starting from the third equation:
+
+$$ 0 - z_3 = b_3 $$
+
+$$ -z_3 = b_3 $$
+
+$$ z_3 = -b_3 $$
+
+Now substitute this into the second equation:
+
+$$ z_3 - z_2 = b_2 $$
+
+$$ (-b_3) - z_2 = b_2 $$
+
+$$ -z_2 - b_3 = b_2 $$
+
+$$ -z_2 = b_2 + b_3 $$
+
+$$ z_2 = -b_2 - b_3 $$
+
+And now substitute into the first equation:
+
+$$ z_2 - z_1 = b_1 $$
+
+$$ (-b_2 - b_3) - z_1 = b_1 $$
+
+$$ -z_1 = b_1 - (-b_2 - b_3) $$
+
+$$ -z_1 = b_1 + b_2 + b_3 $$
+
+$$ z_1 = -b_1 - b_2 - b_3 $$
+
+So:
+
+$$
+z_1 = -b_1 - b_2 - b_3 \\
+z_2 = -b_2 - b_3 \\
+z_3 = -b_3 \\
+$$
+
+_What is the inverse matrix in $z = \Delta^{-1}b$?:_
+
+Notice that:
+
+$$
+z_1 = -b_1 - b_2 - b_3 \\
+z_2 = -b_2 - b_3 \\
+z_3 = -b_3 \\
+$$
+
+Is:
+
+$$
+z_1 = (-1)b_1 + (-1)b_2 + (-1)b_3 \\
+z_2 = (0)b_1 + (-1)b_2 + (-1)b_3 \\
+z_3 = (0)b_1 + (0)b_2 + (-1)b_3 \\
+$$
+
+Thus $\Delta^{-1}$ is:
+
+$$
+\Delta^{-1} =
+\left[\begin{array}{ccc}
+-1 & -1 & -1 \\
+0 & -1 & -1 \\
+0 & 0 & -1 \\
+\end{array}\right]
+$$
+
+So, $z = \Delta^{-1}b$ is:
+
+$$
+z =
+\left[\begin{array}{ccc}
+-1 & -1 & -1 \\
+0 & -1 & -1 \\
+0 & 0 & -1 \\
+\end{array}\right]
+\begin{bmatrix}{}b_1\\b_2\\b_3\end{bmatrix}
+$$
+
 11. Show that the forward differences $(t + 1)^2 - t^2$ are
     $2t + 1 = \textit{odd numbers}$. As in calculus, the difference
     $(t + 1)^n - t^n$ will begin with the derivative of $t^n$ which is ____.
 
+_Show that the forward differences $(t + 1)^2 - t^2$ are $2t + 1$:_
+
+**Proof:**
+
+Suppose $t \in \mathbf{Z}$. It must be shown that the forward differences
+$(t + 1)^2 - t^2$ are $2t + 1$ (_i.e._ odd numbers).
+
+To show that $(t + 1)^2 - t^2$ are $2t + 1$, simply evaluate algebraically:
+
+$$ (t + 1)^2 - t^2 $$
+
+$$ = t^2 + 2t + 1 - t^2 $$
+
+$$ = 2t + 1 $$
+
+This is odd by the definition of odd.
+
+This is what was to be shown.
+
+Q.E.D.
+
+_The difference $(t + 1)^n - t^n$ will begin with the derivative of $t^n$ which
+is?:_
+
+The derivative of $t^n$ is, by calculus:
+
+$$ (t^n)' = nt^{n - 1} $$
+
 12. The last lines of the Worked Examples say that the $4$ by $4$ centered
     difference matrix in (16) _is_ invertible. Solve $Cx = (b_1, b_2, b_3, b_4)$
     to find its inverse in $x = C^{-1}b$.
+
+(16) reads:
+
+$$
+Cx = b
+\quad \textbf{Centered differences}
+\quad
+\left[\begin{array}{cccc}
+0 & 1 & 0 & 0 \\
+-1 & 0 & 1 & 0 \\
+0 & -1 & 0 & 1 \\
+0 & 0 & -1 &n 0 \\
+\end{array}\right]
+\begin{bmatrix}{}x_1\\x_2\\x_3\\x_4\end{bmatrix} =
+\begin{bmatrix}{}x_2 - 0\\x_3 - x_1\\x_4 - x_2\\0 - x_3\end{bmatrix} =
+\begin{bmatrix}{}b_1\\b_2\\b_3\\b_4\end{bmatrix}
+$$
+
+_Solve $Cx = (b_1, b_2, b_3, b_4)$:_
+
+Our equations are:
+
+$$
+x_2 - 0 = b_1 \\
+x_3 - x_1 = b_2 \\
+x_4 - x_2 = b_3 \\
+0 - x_3 = b_4 \\
+$$
+
+Evaluating:
+
+$$
+x_2 = b_1 \\
+x_3 - x_1 = b_2 \\
+x_4 - x_2 = b_3 \\
+-x_3 = b_4 \\
+$$
+
+$$
+x_2 = b_1 \\
+x_3 - x_1 = b_2 \\
+x_4 - x_2 = b_3 \\
+x_3 = -b_4 \\
+$$
+
+$$
+x_2 = b_1 \\
+-x_1 = b_2 - x_3 \\
+x_4 = b_3 + x_2 \\
+x_3 = -b_4 \\
+$$
+
+$$
+x_2 = b_1 \\
+x_1 = x_3 - b_2 \\
+x_4 = b_3 + x_2 \\
+x_3 = -b_4 \\
+$$
+
+$$
+x_2 = b_1 \\
+x_1 = (-b_4) - b_2 \\
+x_4 = b_3 + (b_1) \\
+x_3 = -b_4 \\
+$$
+
+$$
+x_2 = b_1 \\
+x_1 = -b_4 - b_2 \\
+x_4 = b_3 + b_1 \\
+x_3 = -b_4 \\
+$$
+
+Reordering:
+
+$$
+x_1 = -b_2 - b_4 \\
+x_2 = b_1 \\
+x_3 = -b_4 \\
+x_4 = b_1 + b_3 \\
+$$
+
+_To find its inverse in $x = C^{-1}b$:_
+
+As before, note that:
+
+$$
+x_1 = -b_2 - b_4 \\
+x_2 = b_1 \\
+x_3 = -b_4 \\
+x_4 = b_1 + b_3 \\
+$$
+
+is:
+
+$$
+x_1 = (0)b_1 + (-1)b_2 + (0)b_3 + (-1)b_4 \\
+x_2 = (1)b_1 + (0)b_2 + (0)b_3 + (0)b_4 \\
+x_3 = (0)b_1 + (0)b_2 + (0)b_3 + (-1)b_4 \\
+x_4 = (1)b_1 + (0)b_2 + (1)b_3 + (0)b_4 \\
+$$
+
+So $C^{-1}$ is:
+
+$$
+C^{-1} =
+\left[\begin{array}{cccc}
+0 & -1 & 0 & -1 \\
+1 & 0 & 0 & 0 \\
+0 & 0 & 0 & -1 \\
+1 & 0 & 1 & 0 \\
+\end{array}\right]
+$$
