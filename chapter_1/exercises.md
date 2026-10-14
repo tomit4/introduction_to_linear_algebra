@@ -1950,3 +1950,164 @@ $$ \|v \cdot w \| \leq 15 $$
 
 Thus the smallest possible value for $v \cdot w = -15$, and the largest value
 for $v \cdot w = 15$.
+
+---
+
+Page 40
+
+## Problem Set 1.3
+
+1. Find the linear combination $3s_1 + 4s_2 + 5s_3 = b$. Then write $b$ as a
+   matrix-vector multiplication $Sx$, with $3, 4, 5$ in $x$. Compute the three
+   dot products $(\text{row of } S) \cdot x$:
+
+$$ s_1 = \begin{bmatrix}{}1\\1\\1\end{bmatrix} \quad s_2 = \begin{bmatrix}{}0\\1\\1\end{bmatrix} \quad s_3 = \begin{bmatrix}{}0\\0\\1\end{bmatrix} $$
+
+go into the columns of $S$.
+
+2. Solve these equations $Sy = b$ with $s_1, s_2, s_3$ in the columns of $S$:
+
+$$
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+1 & 1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}y_1\\y_2\\y_3\end{bmatrix} =
+\begin{bmatrix}{}1\\1\\1\end{bmatrix} \quad \text{ and } \quad
+\left[\begin{array}{ccc}
+1 & 0 & 0\\
+1 & 1 & 0 \\
+1 & 1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}y_1\\y_2\\y_3\end{bmatrix} =
+\begin{bmatrix}{}1\\4\\9\end{bmatrix}
+$$
+
+$S$ is a sum matrix. The sum of the first $5$ odd numbers is ____.
+
+3. Solve these three equations for $y_1, y_2, y_3$ in terms of $c_1, c_2, c_3$:
+
+$$
+Sy = c \quad
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+1 & 1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}y_1\\y_2\\y_3\end{bmatrix} =
+\begin{bmatrix}{}c_1\\c_2\\c_3\end{bmatrix}
+$$
+
+Write the solution $y$ as a matrix $A = S^{-1}$ times the vector $c$. Are the
+columns of $S$ independent or dependent?
+
+4. Find a combination $x_1w_1 + x_2w_2 + x_3w_3$ that gives the zero vector with
+   $x_1 = 1$:
+
+$$ w_1 = \begin{bmatrix}{}1\\2\\3\end{bmatrix} \quad w_2 = \begin{bmatrix}{}4\\5\\6\end{bmatrix} \quad w_3 = \begin{bmatrix}{}7\\8\\9\end{bmatrix} $$
+
+Those vectors are (independent)(dependent). The three vectors lie in a ____. The
+matrix $W$ with those three columns is _not invertible_.
+
+5. The rows of that matrix $W$ produce three vectors (_I write them as
+   columns_):
+
+$$ r_1 = \begin{bmatrix}{}1\\4\\7\end{bmatrix} \quad r_2 = \begin{bmatrix}{}2\\5\\8\end{bmatrix} \quad r_3 = \begin{bmatrix}{}3\\6\\9\end{bmatrix}$$
+
+Linear algebra says that these vectors must also lie in a plane. There must be
+many combinations with $y_1r_2 + y^2r_2 + y^3r_3 = \mathbf{0}$. Find two sets of
+$y$'s.
+
+6. Which numbers $c$ give dependent columns so a combination of columns equals
+   zero?
+
+$$
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+3 & 2 & 1 \\
+7 & 4 & c \\
+\end{array}\right] \quad
+\left[\begin{array}{ccc}
+1 & 0 & c \\
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+\end{array}\right] \quad
+\left[\begin{array}{ccc}
+c & c & c \\
+2 & 1 & 5 \\
+3 & 3 & 6 \\
+\end{array}\right]
+$$
+
+$$
+\text{maybe} \\
+\text{always} \\
+\text{independent for } c \neq 0 \text{?} \\
+$$
+
+7. If the columns combine into $Ax = \mathbf{0}$ then each of the rows has
+   $r \cdot x = 0$:
+
+$$
+\left[\begin{array}{ccc}
+ &  &  \\
+a_1 & a_2 & a_3 \\
+ &  &  \\
+\end{array}\right]
+\begin{bmatrix}{}x_1\\x_1\\x_3\end{bmatrix} =
+\begin{bmatrix}{}0\\0\\0\end{bmatrix} \quad
+\textbf{By rows}
+\begin{bmatrix}{}r_1 \cdot x\\r_2 \cdot x\\r_3 \cdot x\end{bmatrix} =
+\begin{bmatrix}{}0\\0\\0\end{bmatrix}
+$$
+
+The three rows also lie in a plane. Why is that plane perpendicular to $x$?
+
+8. Moving to a $4$ by $4$ difference equation $Ax = b$, find the four components
+   $x_1, x_2, x_3, x_4$. Then write this solution as $x = A^{-1}b$ to find the
+   inverse matrix:
+
+$$
+Ax =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+-1 & 1 & 0 & 0 \\
+0 & -1 & 1 & 0 \\
+0 & 0 & -1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}x_1\\x_2\\x_3\\x_4\end{bmatrix} =
+\begin{bmatrix}{}b_1\\b_2\\b_3\\b_4\end{bmatrix} =
+b
+$$
+
+9. What is the _cyclic_ $4$ by $4$ difference matrix $C$? It will have $1$ and
+   $-1$ in each row and each column. Find all solutions
+   $x = (x_1, x_2, x_3, x_4)$ to $Cx = \mathbf{0}$. The four columns of C$ lie
+   in a "three-dimensional hyperplane" inside four-dimensional space.
+
+10. A _forward_ difference matrix $\Delta$ is _upper_ triangular:
+
+$$
+\Delta z =
+\left[\begin{array}{ccc}
+-1 & 1 & 0 \\
+0 & -1 & 1 \\
+0 & 0 & -1 \\
+\end{array}\right]
+\begin{bmatrix}{}z_1\\z_2\\z_3\end{bmatrix} =
+\begin{bmatrix}{}z_2 - z_1\\z_3 - z_2\\0 - z_3\end{bmatrix} =
+\begin{bmatrix}{}b_1\\b_2\\b_3\end{bmatrix} =
+b
+$$
+
+Find $z_1, z_2, z_3$ from $b_1, b_2, b_3$. What is the inverse matrix in
+$z = \Delta^{-1}b$?
+
+11. Show that the forward differences $(t + 1)^2 - t^2$ are
+    $2t + 1 = \textit{odd numbers}$. As in calculus, the difference
+    $(t + 1)^n - t^n$ will begin with the derivative of $t^n$ which is ____.
+
+12. The last lines of the Worked Examples say that the $4$ by $4$ centered
+    difference matrix in (16) _is_ invertible. Solve $Cx = (b_1, b_2, b_3, b_4)$
+    to find its inverse in $x = C^{-1}b$.

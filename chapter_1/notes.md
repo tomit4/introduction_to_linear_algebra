@@ -222,3 +222,112 @@ Page 27
 **TRIANGLE INEQUALITY**
 
 $$ \|v + w\| \leq \|v\| + \|w\| $$
+
+---
+
+Page 33
+
+1. $A = \left[\begin{array}{cc} 1 & 2 \\ 3 & 4 \\ 5 & 6 \\ \end{array}\right]$
+   is a $3$ by $2$ matrix: $m = 3$ rows and $n = 2$ columns.
+
+2. $Ax = \left[\begin{array}{cc} 1 & 2 \\ 3 & 4 \\ 5 & 6 \\ \end{array}\right]\begin{bmatrix}{}x_1\\x_2\end{bmatrix}$
+   is a **combination of the columns**
+   $A_x = x_1\begin{bmatrix}{}1\\3\\5\end{bmatrix} + x_2\begin{bmatrix}{}2\\4\\6\end{bmatrix}$.
+
+3. The $3$ components of $Ax$ are dot products of the $3$ rows of $A$ with the
+   vector $x$:
+
+$$ \text{Row at a time} \quad
+\left[\begin{array}{cc}
+1 & 2 \\
+3 & 4 \\
+5 & 6 \\
+\end{array}\right]
+\begin{bmatrix}{}7\\8\end{bmatrix}
+= \begin{bmatrix}{}1 \cdot 7 + 2 \cdot 8\\3 \cdot 7 + 4 \cdot 8\\ 5 \cdot 7 + 6 \cdot 8\end{bmatrix} = \begin{bmatrix}{}23\\53\\83\end{bmatrix} $$
+
+4 Equations in matrix form
+
+$$ Ax = b: \left[\begin{array}{cc}
+2 & 5 \\
+3 & 7 \\
+\end{array}\right]
+\begin{bmatrix}{}x_1\\x_2\end{bmatrix} =
+\begin{bmatrix}{}b_2\\b_2\end{bmatrix}
+$$
+
+replaces
+
+$$
+2x_1 + 5x_2 = b_2 \\
+3x_2 + 7x_2 = b_2
+$$
+
+5. The solution to $Ax = b$ can be written as $x = A^{-1}b$. But some matrices
+   don't allow $A^{-1}$.
+
+---
+
+Page 33
+
+**Matrix times vector Combination of columns**
+
+$$
+Ax = \left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+0 & -1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}x_1\\x_2\\x_3\end{bmatrix} =
+\begin{bmatrix}{}x_1\\x_2 - x_1\\ x_3 - x_2\end{bmatrix}
+$$
+
+---
+
+Page 35
+
+**Equations $Ax = b$**
+
+$$ x_1 = b_1 \\ -x_1 + x_2 = b_2 \\
+
+- x_2 + x_3 = b_3 $$
+
+**Solution $x = A^{-1}b$**
+
+$$
+x_1 = b_1 \\
+x_2 = b_1 + b_2 \\
+x_3 = b_1 + b_2 + b_3
+$$
+
+---
+
+Page 36
+
+**Cyclic**
+
+$$
+C_x =
+\left[\begin{array}{ccc}
+1 & 0 & -1 \\
+-1 & 1 & 0 \\
+0 & -1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}x_1\\x_2\\x_3\end{bmatrix} =
+\begin{bmatrix}{}x_1 - x_3\\x_2 - x_1\\ x_3 - x_2\end{bmatrix} =
+b
+$$
+
+---
+
+Page 37
+
+**$Cx = b$**
+
+$$ \begin{bmatrix}{}x_1 - x_3\\x_2 - x_1\\ x_3 - x_2\end{bmatrix} = \begin{bmatrix}{}1\\3\\5\end{bmatrix} $$
+
+Left sides add to $0$
+
+Right sides add to $9$.
+
+_No solution_ $x_1, x_2, x_3$
