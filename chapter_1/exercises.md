@@ -1547,11 +1547,62 @@ $$ \|w\| = \sqrt{w \cdot w} = \sqrt{(1)(1) + (0)(0) + \cdots + (0)(0) + (-1)(-1)
 
 $$ w_{\text{uv}} = \left(\frac{1}{\sqrt{2}}, 0, 0 \dots, 0, -\frac{1}{\sqrt{2}}\right) $$
 
-[LEFT OFF HERE]
-
 17. What are the cosines of the angles $\alpha, \beta, \theta$ between the
     vector $(1, 0, -1)$ and the unit vectors $i, j, k$ along the axes? Check the
     formula $\cos^2\alpha + \cos^2\beta + \cos^2\theta = 1$.
+
+Recall the generic cosine formula:
+
+$$ \cos\theta = \frac{v \cdot w}{\|v\|\|w\|} $$
+
+Now, let's define $i$, j, k$:
+
+$$ i = \begin{bmatrix}{}1\\0\\0\end{bmatrix} $$
+
+$$ j = \begin{bmatrix}{}0\\1\\0\end{bmatrix} $$
+
+$$ k = \begin{bmatrix}{}0\\0\\1\end{bmatrix} $$
+
+Now, $\alpha$ is the angle between $(1, 0, -1)$ (let's denote it $v$) and $i$,
+so $\cos\alpha$:
+
+$$ \cos\alpha = \frac{v \cdot i}{\|v\|\|i\|} $$
+
+$$ v \cdot i = (1)(1) + (0)(0) + (0)(-1) = 1 $$
+
+$$ \|v\| = \sqrt{(1)(1) + (0)(0) + (-1)(-1)} = \sqrt{2} $$
+
+$$ \|i\| = \sqrt{(1)(1) + (0)(0) + (0)(0)} = \sqrt{1} = 1 $$
+
+$$ \cos\alpha = \frac{1}{\sqrt{2}(1)} = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2} $$
+
+Now, $\beta$ is the angle between $v$ and $j$, so $\cos\beta$:
+
+$$ \cos\beta = \frac{v \cdot j}{\|v\|\|j\|} $$
+
+$$ v \cdot j = (1)(0) + (0)(1) + (-1)(0) = 0 $$
+
+$$ \|j\| = \sqrt{(0)(0) + (1)(1) + (0)(0)} = \sqrt{1} = 1 $$
+
+$$ \cos\beta = \frac{0}{(\sqrt{2})(1)} = \frac{0}{\sqrt{2}} = 0 $$
+
+Now, $\theta$ is the angle between $v$ and $k$, so $\cos\theta$:
+
+$$ \cos\theta = \frac{v \cdot k}{\|v\|\|k\|} $$
+
+$$ v \cdot k = (1)(0) + (0)(0) + (-1)(1) = -1 $$
+
+$$ \|k\| = \sqrt{(0)(0) + (0)(0) + (-1)(-1)} = \sqrt{1} = 1 $$
+
+$$ \cos\theta = \frac{-1}{(\sqrt{2})(1)} = -\frac{1}{\sqrt{2}} = -\frac{\sqrt{2}}{2} $$
+
+Check that $\cos^2\alpha + \cos^2\beta + \cos^2\theta = 1$:
+
+$$ \cos^2\alpha + \cos^2\beta + \cos^2\theta = \left(\frac{\sqrt{2}}{2}\right)^2 + (0)^2 + \left(-\frac{\sqrt{2}}{2}\right)^2 $$
+
+$$ = \frac{1}{2} + 0 + \frac{1}{2} $$
+
+$$ = \boxed{1} $$
 
 Problems 18-28 lead to the main facts about lengths and angles in triangles.
 
@@ -1560,6 +1611,30 @@ Problems 18-28 lead to the main facts about lengths and angles in triangles.
     only_:
 
 $$ (\text{length of } v)^2 + (\text{length of } w)^2 = (\text{length of} v + w)^2 $$
+
+This means:
+
+$$ \|v\|^2 + \|w\|^2 = \|v + w\|^2 $$
+
+$$ \|v\|^2 = v \cdot v = (4)(4) + (2)(2) = 16 + 4 = 20 $$
+
+$$ \|w\|^2 = w \cdot w = (-1)(-1) + (2)(2) = 1 + 4 = 5  $$
+
+$$ \|v + w\|^2 = (v + w) \cdot (v + w) $$
+
+$$ v + w = \begin{bmatrix}{}4 + (-1)\\2 + 2\end{bmatrix} = \begin{bmatrix}{}3\\4\end{bmatrix} $$
+
+$$ \|v + w\|^2 = (v + w) \cdot (v + w) $$
+
+$$ = (3)(3) + (4)(4) = 9 + 16 = 25 $$
+
+So:
+
+$$ \|v\|^2 + \|w\|^2 = \|v + w\|^2 $$
+
+$$ 20 + 5 = 25 $$
+
+$$ \boxed{25 = 25} $$
 
 19. (Rules for dot products) These equations are simple but useful:
 
@@ -1572,6 +1647,33 @@ $$ (\text{length of } v)^2 + (\text{length of } w)^2 = (\text{length of} v + w)^
 Use (2) with $u = v + w$ to prove
 $\|v + w\|^2 = v \cdot v + 2v \cdot w + w \cdot w$.
 
+**Proof:**
+
+Suppose $u$, $v$, $w$ are any vectors such that
+$u \cdot (v + w) = u \cdot v + u \cdot w$ and $u = v + w$.
+
+It must be shown that $\|v + w\|^2 = v \cdot v + 2v \cdot w + w \cdot w$.
+
+By the supposition, since $u = v + w$, by substitution for $u$ into
+$u \cdot (v + w) = u \cdot v + u \cdot w$ yields:
+
+$$ (v + w) \cdot (v + w) = (v + w) \cdot v + (v + w) \cdot w $$
+
+By the definition of the length of a vector
+$(v + w) \cdot (v + w) = \|v + w\|^2$, so:
+
+$$ \|v + w\|^2 = (v + w) \cdot v + (v + w) \cdot w $$
+
+Then, by algebra:
+
+$$ = (v \cdot v) + (v \cdot w) + (v \cdot w) + (w \cdot w) $$
+
+$$ = v \cdot v + 2 \cdot v \cdot w + w \cdot w $$
+
+This is what was to be shown.
+
+Q.E.D.
+
 20. The "Law of Cosines" comes from
     $(v - w) \cdot (v - w) = v \cdot v - 2v \cdot w + w \cdot w$:
 
@@ -1581,6 +1683,8 @@ $$ \|v - w\|^2 = \|v\|^2 - 2\|v\|\|w\|\cos\theta + \|w\|^2 $$
 
 Draw a triangle with sides $v$ and $w$ and $v - w$. Which of the angles is
 $\theta$?
+
+(Done by hand.)
 
 21. The _triangle inequality_ says:
     $(\text{length of } v + w) \leq (\text{length of } v) + (\text{length of } w)$.
@@ -1593,17 +1697,88 @@ $\|\textbf{side 1}\| + \|\textbf{side 2}\|$:
 
 $$ \|v + w\|^2 \leq (\|v\| + \|w\|)^2 \textbf{ or } \|v + w\| \leq \|v\| + \|w\| $$
 
+**Proof:**
+
+Suppose $v$ and $w$ are any vectors.
+
+It must be shown that:
+
+$$ \|v + w\|^2 \leq \left(\|v\| + \|w\|\right)^2 $$
+
+or equivalently:
+
+$$ \|v + w\| \leq \|v\| + \|w\| $$
+
+By problem 19, it has been shown that:
+
+$$ \|v + w\|^2 = \|v\|^2 + 2v \cdot w + \|w\|^2 $$
+
+Increasing the middle term $2v \cdot w$ to $2\|v\|\|w\|$ yields the following
+inequality:
+
+$$ \|v + w\|^2 \leq \|v\|^2 + 2\|v\|\|w\| + \|w\|^2 $$
+
+Notice that this is a perfect square, and thus factors into:
+
+$$ \|v + w\|^2 \leq \left(\|v\| + \|w\|\right)\left(\|v\| + \|w\|\right) $$
+
+$$ \|v + w\|^2 \leq \left(\|v\| + \|w\|\right)^2 $$
+
+This is what was to be shown.
+
+Q.E.D.
+
 (See page 31 for Figure)
 
 22. The Schwarz inequality $|v \cdot w \leq \|v\|\|w\|$ by algebra instead of
     trigonometry:
 
 a. Multiply out both sides of
-$(v_1w_2 + v_2w_2)^2 \leq \left(v_1^2 + v_2^2\right)\left(w_1^2 + w_2^2\right)$
+$(v_1w_1 + v_2w_2)^2 \leq \left(v_1^2 + v_2^2\right)\left(w_1^2 + w_2^2\right)$
+
+$$ (v_1w_1 + v_2w_2)^2 \leq \left(v_1^2 + v_2^2\right)\left(w_1^2 + w_2^2\right) $$
+
+Expanding left-hand side:
+
+$$ (v_1w_1 + v_2w_2)^2 = (v_1w_1 + v_2w_2)(v_1w_1 + v_2w_2) $$
+
+$$ = (v_1w_1)^2 + 2(v_1w_1)(v_2w_2) + (v_2w_2)^2 $$
+
+Expanding right-hand side:
+
+$$ \left(v_1^2 + v_2^2\right)\left(w_1^2 + w_2^2\right) $$
+
+$$ = v_1^2w_1^2 + v_2^2w_1^2 + v_1^2w_2^2 + v_2^2w_2^2 $$
+
+Thus the final inequality, multiplied out is:
+
+$$ (v_1w_1)^2 + 2(v_1w_1)(v_2w_2) + (v_2w_2)^2 \leq v_1^2w_1^2 + v_2^2w_1^2 + v_1^2w_2^2 + v_2^2w_2^2 $$
 
 b. Show that the difference between those two sides equals
 $(v_1w_2 - v_2w_1)^2$. This cannot be negative since it is a square - so the
 inequality is true.
+
+To show that this inequality is true, subtract the left-hand side from the
+right-hand side:
+
+$$ (v_1^2w_1^2 + v_2^2w_1^2 + v_1^2w_2^2 + v_2^2w_2^2) - ((v_1w_1)^2 + 2(v_1w_1)(v_2w_2) + (v_2w_2)^2) $$
+
+$$ = v_1^2w_1^2 + v_2^2w_1^2 + v_1^2w_2^2 + v_2^2w_2^2 - (v_1w_1)^2 - 2(v_1w_1)(v_2w_2) - (v_2w_2)^2 $$
+
+$$ = v_1^2w_1^2 + v_2^2w_1^2 + v_1^2w_2^2 + v_2^2w_2^2 - v_1^2w_1^2 - 2v_1w_1v_2w_2 - v_2^2w_2^2 $$
+
+$$ = v_2^2w_1^2 + v_1^2w_2^2 - 2v_1w_1v_2w_2 $$
+
+$$ = v_1^2w_2^2 - 2v_1w_1v_2w_2 + v_2^2w_1^2 $$
+
+Notice that this is a perfect square, factoring this yields:
+
+$$ = (v_1w_2 - v_2w_1)(v_1w_2 - v_2w_1) $$
+
+$$ = \boxed{(v_1w_2 - v_2w_1)^2} $$
+
+As stated in the problem statement, this cannot be negative since it is a
+square, and thus the inequality from part (a) holds.
 
 23. The figure shows that $\cos\alpha = \dfrac{v_1}{\|v\|}$ and
     $\sin\alpha = \dfrac{v_2}{\|v\|}$. Similarly $\cos\beta$ is ____ and
@@ -1611,26 +1786,167 @@ inequality is true.
     the trigonometry formula $\cos\beta\cos\alpha + \sin\beta\sin\alpha$ for
     $\cos(\beta - \alpha)$ to find $\cos\theta = \dfrac{v \cdot w}{\|v\|\|w\|}$.
 
+$$ \cos\beta = \frac{w_1}{\|w\|} $$
+
+$$ \sin\beta = \frac{w_2}{\|w\|} $$
+
+This is one of the many trigonometry identities:
+
+$$ \cos(\beta - \alpha) = \cos\beta\cos\alpha + \sin\beta\sin\alpha $$
+
+So, by substitution:
+
+$$ \cos(\beta - \alpha) = \left(\frac{w_1}{\|w\|}\right)\left(\frac{v_1}{\|v\|}\right) + \left(\frac{w_2}{\|w\|}\right)\left(\frac{v_2}{\|v\|}\right) $$
+
+Now, note that $\beta - \alpha = \theta$ (by the shown figure), so:
+
+$$ \cos(\theta) = \left(\frac{w_1}{\|w\|}\right)\left(\frac{v_1}{\|v\|}\right) + \left(\frac{w_2}{\|w\|}\right)\left(\frac{v_2}{\|v\|}\right) $$
+
+Then, by algebra, we can simplify to a single fraction:
+
+$$ \cos(\theta) = \frac{v_1w_1 + v_2w_2}{\|v\|\|w\|} $$
+
+By the definition for dot product $(v \cdot w) = v_1w_1 + v_2w_2$, thus by
+substitution:
+
+$$ \boxed{\cos(\theta) = \frac{v \cdot w}{\|v\|\|w\|}} $$
+
 24. One-line proof of the inequality $|u \cdot U| \leq 1$ for unit vectors
     $(u_1, u_2)$ and $(U_1, U_2)$:
 
-$$ |u \cdot U| \leq |u_2||U_1| + |u_2||U_2| \leq \frac{u_1^2 + U_1^2}{2} + \frac{u_2^2 + U_2^2}{2} = 1 $$
+$$ |u \cdot U| \leq |u_1||U_1| + |u_2||U_2| \leq \frac{u_1^2 + U_1^2}{2} + \frac{u_2^2 + U_2^2}{2} = 1 $$
 
 Put $(u_1, u_2) = (.6, .8)$ and $(U_1, U_2) = (.8, .6)$ in that whole line and
 find $\cos\theta$.
 
+By substitution:
+
+$$ |u \cdot U| \leq |.6||.8| + |.8||.6| \leq \frac{(.6)^2 + (.8)^2}{2} + \frac{(.8)^2 + (.6)^2}{2} = 1 $$
+
+$$ |u \cdot U| \leq .48 + .48 \leq \frac{.36 + .64}{2} + \frac{.64 + .36}{2} = 1 $$
+
+$$ |u \cdot U| \leq .96 \leq \frac{1}{2} + \frac{1}{2} = 1 $$
+
+$$ |u \cdot U| \leq .96 \leq 1 = 1 $$
+
+$$ |u \cdot U| \leq .96 \leq 1 $$
+
+Recall that the cosine formula (with these variable naming conventions )is:
+
+$$ \cos\theta = \frac{u \cdot U}{\|u\|\|U\|} $$
+
+We have calculated $u \cdot U = .96$, and we know that both $u$ and $U$ are unit
+vectors by the problem statement, which means that both their lengths are $1$.
+Thus, the denominator $\|u\|\|U\| = (1)(1) = 1$.
+
+It follows that:
+
+$$ \boxed{\cos\theta = .96} $$
+
 25. Why is $|\cos\theta|$ never greater than $1$ in the first place?
+
+Recall that the general formula for cosine states that for any vectors $v$ and
+$w$:
+
+$$ \cos\theta = \frac{v \cdot w}{\|v\|\|w\|} $$
+
+The problem statement claims that $\|\cos\theta\| \leq 1$, this is true by the
+Schwarz inequality, which itself states that for any given vectors $v$ and $w$:
+
+$$ |v \cdot w| \leq \|v\|\|w\| $$
+
+This means that the numerator of the cosine formula must always be less than or
+equal to the denominator, and thus by the laws of fractions, it is known that
+this fraction must always be $\leq 1$.
 
 26. (_Recommended_) Draw a parallelogram
 
+(Done by hand.)
+
 27. Parallelogram with two sides $v$ and $w$. Show that the square diagonal
-    lengths $\|v + w\|^2 + \|v - w\|^2$ add to teh sum of four squared side
+    lengths $\|v + w\|^2 + \|v - w\|^2$ add to the sum of four squared side
     lengths $2\|v\|^2 + 2\|w\|^2$.
+
+$$ \|v + w\|^2 + \|v - w\|^2 $$
+
+$$ = ((v + w) \cdot (v + w)) + ((v - w) \cdot (v - w)) $$
+
+$$ = (v^2 + 2vw + w^2) + (v^2 - 2vw + w^2) $$
+
+$$ = v^2 + w^2 + v^2 + w^2 $$
+
+$$ = 2v^2 + 2w^2 $$
+
+$$ = 2(v \cdot v) + 2(w \cdot w) $$
+
+$$ = \boxed{2\|v\|^2 + 2\|w\|^2} $$
 
 28. If $v = (1, 2)$ draw all vectors $w =(x, y)$ in the $xy$ plane with
     $v \cdot w = x + 2y = 5$. Why do those $w$'s lie along a line? Which is the
     shortest $w$?
 
+$x + 2y$ is a linear equation in $x$ and $y$, and that is why those $w$'s lie
+along a line. The shortest $w$ is one that satisfies $v \cdot w = x + 2y = 5$,
+which is $w = (1, 2)$.
+
+To verify that this is the shortest $w$, first verify that the two are parallel.
+By definition for parallel, $w$ is parallel since $w$ is a scalar multiple of
+$1$ of $v$, _i.e._ $w = 1v$. It follows that $w$ is perpendicular to the line
+$x + 2y$ since $w = v$, and thus $w = (1, 2)$ is the shortest $w$.
+
 29. (_Recommended_) If $\|v\| = 5$ and $\|w\| = 3$, what are the smallest and
     largest possible values of $\|v - w\|$? What are the smallest and largest
     possible values of $v \cdot w$?
+
+The triangle equality states that for any vectors $v$ and $w$:
+
+$$ \|v + w\| \leq \|v\| + \|w\| $$
+
+Since the length of a vector cannot be negative, it follows that for any vector
+$w$ $\|w\| = \|-w\|$, since $-w$ is just vector $180\degree$ from $w$.
+
+$$ \|v + (-w)\| \leq \|v\| + \|w\| $$
+
+$$ \|v - w\| \leq \|v\| + \|w\| $$
+
+By substitution:
+
+$$ \|v - w\| \leq (5) + (3) $$
+
+$$ \|v - w\| \leq 8 $$
+
+So the largest value of $\|v - w\| = 8$.
+
+To find the smallest value, consider the triangle inequality once again, but
+replace the standard $\|v\|$ with $\|v - w\|$:
+
+$$ \|v + w\| \leq \|v\| + \|w\| $$
+
+becomes:
+
+$$ \|(v - w) + w\| \leq \|v - w \| + \|w\| $$
+
+Now:
+
+$$ \|v\| \leq \|v - w\| + \|w\| $$
+
+$$ \|v\| - \|w\| \leq \|v - w\| $$
+
+$$ (5) - (3) \leq \|v - w\| $$
+
+$$ 2 \leq \|v - w\| $$
+
+And so $\|v - w\| \geq 2$, thus $2$ is the smallest value for $\|v - w\|$.
+
+By the Schwarz inequality, for any vectors $v$ and $w$:
+
+$$ \|v \cdot w \| \leq \|v\|\|w\| $$
+
+By substitution:
+
+$$ \|v \cdot w \| \leq (5)(3) $$
+
+$$ \|v \cdot w \| \leq 15 $$
+
+Thus the smallest possible value for $v \cdot w = -15$, and the largest value
+for $v \cdot w = 15$.
