@@ -1320,3 +1320,261 @@ The components are positive and always add to 1 (this represents a probability,
 they add up to 1 because these represent percentages, _i.e._ $.65 = 65\%$).
 
 See [**Stochastic matrix**](https://en.wikipedia.org/wiki/Stochastic_matrix).
+
+---
+
+## Problem Set 2.2
+
+Page 64
+
+**Problems 1-10 are about elimination on 2 by 2 systems.**
+
+1. What multiple $\ell_{21}$ of equation 1 should be subtracted from equation 2?
+
+$$
+2x + 3y = 1 \\
+10x + 9y = 11
+$$
+
+After elimination, write down the upper triangular system and circle the two
+pivots. The numbers 1 and 11 don't affect the pivots - use them now in back
+substitution.
+
+2. Solve the triangular system of Problem 1 by back substitution, $y$ before
+   $x$. Verify that $x$ times $(2, 10)$ plus $y$ times $(3, 9$)$ equals
+   $(1, 11)$. If the right side changes to $(4, 44)$, what is the new solution?
+
+3. What multiple of equation 1 should be _subtracted_ from equation 2?
+
+$$
+2x - 4y = 6 \\
+-x + 5y = 0
+$$
+
+After this elimination step, solve the triangular system. If the right side
+changes to $(-6, 0)$, what is the new solution?
+
+4. What multiple $\ell$ of equation 1 should be subtracted from equation 2 to
+   remove $c$?
+
+$$
+ax + by = f
+cx + dy = g
+$$
+
+The first pivot is $a$ (assumed nonzero). Elimination produces what formula for
+the second pivot? What is $y$? The second pivot is missing when $ad = bc$:
+singular.
+
+5. Choose a right side which gives no solution and another right side which
+   gives infinitely many solutions. What are two of those solutions?
+
+$$
+\textbf{Singular system} \\
+3x + 2y = 10
+6x + 4y =
+$$
+
+6. Choose a coefficient $b$ that makes this system singular. Then choose a right
+   side $g$ that makes it solvable. Find two solutions in that singular case.
+
+$$
+2x + by = 16
+4x + 8y = g
+$$
+
+7. For which numbers $a$ does elimination break down (1) permanently (2)
+   temporarily?
+
+$$
+ax + 3y = -3 \\
+4x + 6y = 6
+$$
+
+Solve for $x$ and $y$ after fixing the temporary breakdown by a row exchange.
+
+8. For which three numbers $k$ does elimination break down? Which is fixed by a
+   row exchange? In each case, is the number of solutions $0$ or $1$ or
+   $\infty$?
+
+$$
+kx + 3y = 6 \\
+3x + ky = -6
+$$
+
+9. What test on $b_1$ and $b_2$ decides whether these two equations allow a
+   solution? How many solutions will they have? Draw the column picture for
+   $b = (1, 2)$ and $(1, 0)$.
+
+$$
+3x - 2y = b_1 \\
+6x - 4y = b_2
+$$
+
+10. In the $xy$ plane, draw the lines $x + y = 5$ and $x + 2y = 6$ and the
+    equation $y =$ ____ that comes from elimination. The line $5x - 4y = c$ will
+    go through the solution of these equations if $c =$ ____.
+
+**Problems 11-20 study elimination on 3 by 3 systems (and possible failure).**
+
+11. (Recommended) A system of linear equations can't have exactly two solutions.
+    _Why_?
+
+a. If $(x, y, z)$ and $(X, Y, Z)$ are two solutions, what is another solution?
+
+b. If $25$ planes meet at two points, where else do they meet?
+
+12. Reduce this system to upper triangular form by two row operations:
+
+$$
+2x + 3y + z = 8 \\
+4x + 7y + 5z = 20 \\
+-2y + 2z = 0
+$$
+
+Circle the pivots. Solve by back substitution for $z, y, x$.
+
+13. Apply elimination (circle the pivots) and back substitution to solve
+
+$$
+2x - 3y = 3 \\
+4x - 5y + z = 7 \\
+2x - y - 3z = 5
+$$
+
+List the three row operations: Subtract ____ times row ____ from row ____.
+
+14. Which number $d$ forces a row exchange, and what is the triangular system
+    (not singular) for that $d$? Which $d$ makes this system singular (no third
+    pivot)?
+
+$$
+2x + 5y + z = 0 \\
+4x + dy + z = 2 \\
+y - z = 3
+$$
+
+15. Which number $b$ leads later to a row exchange? Which $b$ leads to a missing
+    pivot? In that singular case find a nonzero solution $x, y, z$.
+
+$$
+x + by = 0 \\
+x - 2y - z = 0 \\
+y + z = 0
+$$
+
+16.
+
+a. Construct a 3 by 3 system that needs two row exchanges to reach a triangular
+form and a solution.
+
+b. Construct a 3 by 3 system that needs a row exchange to keep going, but breaks
+down later.
+
+17. If rows 1 and 2 are the same, how far can you get with elimination (allowing
+    row exchange)? If columns 1 and 2 are the same, which pivot is missing?
+
+$$
+\textbf{Equal rows} \\
+2x - y + z = 0 \\
+2x - y + z = 0 \\
+4x + y + z = 2
+$$
+
+$$
+\textbf{Equal columns} \\
+2x + 2y + z = 0 \\
+4x + 4y + z = 0 \\
+6x + 6y + z = 2
+$$
+
+18. Construct a 3 by 3 example that has 9 different coefficients on the left
+    side, but rows 2 and 3 become zero in elimination. How many solutions to
+    your system with $b = (1, 10, 100)$ and how many with $b = (0, 0, 0)$?
+
+19. Which number $q$ makes this system singular and which right side $t$ gives
+    it infinitely many solutions? Find the solution that has $z = 1$.
+
+$$
+x + 4y - 2z = 1 \\
+x + 7y - 6z = 6 \\
+3y + qz = t
+$$
+
+20. Three planes can fail to have an intersection point, even if no planes are
+    parallel. The system is singular if row $3$ of $A$ is a ____ of the first
+    two rows. Find a third equation that can't be solved together with
+    $x + y + z = 0$ and $x - 2y - z = 1$.
+
+21. Find the pivots and the solution for both systems ($Ax = b$ and $Kx = b$):
+
+$$
+2x + y = 0 \\
+x + 2y + z = 0 \\
+y + 2z + t = 0 \\
+z + 2t = 5
+$$
+
+$$
+2x - y = 0 \\
+-x - 2y - z = 0 \\
+-y - 2z - t = 0 \\
+-z - 2t = 5
+$$
+
+22. If you extend Problem 21 following the $1, 2, 1$ pattern or the $-1, 2, -1$
+    pattern, what is the fifth pivot? What is the $n$th pivot? $K$ is my
+    favorite matrix.
+
+23. If elimination leads to $x + y = 1$ and $2y = 3$, find three possible
+    original problems.
+
+24. For which two numbers $a$ will elimination fail on
+    $A = \left[\begin{array}{cc}
+a & 2 \\
+a & a \\
+\end{array}\right]$?
+
+25. For which three numbers $a$ will elimination fail to give three pivots?
+
+$$ A =
+\left[\begin{array}{ccc}
+a & 2 & 3 \\
+a & a & 4 \\
+a & a & a \\
+\end{array}\right] \text{ is singular for three values of } a
+$$
+
+26. Look for a matrix that has row sums $4$ and $8$, and column sums $2$ and
+    $s$:
+
+$$ \text{Matrix } =
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right]
+$$
+
+$$
+a + b = 4 \\
+c + d = 8 \\
+a + c = 2 \\
+b + d = s \\
+$$
+
+The four equations are solvable only if $s =$ ____. Then find two different
+matrices that have the correct row and column sums. _Extra Credit:_ Write down
+the $4$ by $4$ system $Ax = b$ with $x = (a, b, c, d)$ and make $A$ triangular
+by elimination.
+
+27. Elimination in the usual order gives what matrix $U$ and what solution to
+    this "lower triangular" system? We are really solving by _forward
+    substitution_:
+
+$$
+3x = 3 \\
+6x + 2y = 8 \\
+9x - 2y + z = 9
+$$
+
+28. (Omitted, no MATLAB).
