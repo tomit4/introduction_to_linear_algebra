@@ -1340,9 +1340,108 @@ After elimination, write down the upper triangular system and circle the two
 pivots. The numbers 1 and 11 don't affect the pivots - use them now in back
 substitution.
 
+_Solution:_
+
+_What multiple $\ell_{21}$ of equation 1 should be subtracted from equation 2?:_
+
+$$ \ell_{21} = \frac{10}{2} = 5 $$
+
+_Elimination:_
+
+$$ \begin{array}{rrr} 10x + 9y = 11 \\
+
+- 5(2x + 3y = 1) \end{array} $$
+
+$$ \begin{array}{rrr} 10x + 9y = 11 \\
+
+- 10x - 15y = -5 \end{array} $$
+
+$$ -6y = 6 $$
+
+_Pivots:_
+
+$$
+\begin{array}{rrr}
+\boxed{2}x + 3y = 1 \\
+\boxed{-6}y = 6 \\
+\end{array}
+$$
+
+_Solve for $y$:_
+
+$$ y = -1 $$
+
+_Back substitution:_
+
+$$ 2x + 3(-1) = 1 $$
+
+$$ 2x - 3 = 1 $$
+
+$$ 2x = 4 $$
+
+$$ x = 2 $$
+
+Solution is $\boxed{(2, -1)}$.
+
 2. Solve the triangular system of Problem 1 by back substitution, $y$ before
    $x$. Verify that $x$ times $(2, 10)$ plus $y$ times $(3, 9$)$ equals
    $(1, 11)$. If the right side changes to $(4, 44)$, what is the new solution?
+
+_Verify:_
+
+$$ x\begin{bmatrix}{}2\\10\end{bmatrix} + y\begin{bmatrix}{}3\\9\end{bmatrix} = \begin{bmatrix}{}1\\11\end{bmatrix} $$
+
+$$ 2\begin{bmatrix}{}2\\10\end{bmatrix} + (-1)\begin{bmatrix}{}3\\9\end{bmatrix} = \begin{bmatrix}{}1\\11\end{bmatrix} $$
+
+$$ \begin{bmatrix}{}4\\20\end{bmatrix} + \begin{bmatrix}{}-3\\-9\end{bmatrix} = \begin{bmatrix}{}1\\11\end{bmatrix} $$
+
+$$ \begin{bmatrix}{}4 + (-3)\\20 + (-9)\end{bmatrix} = \begin{bmatrix}{}1\\11\end{bmatrix} $$
+
+$$ \begin{bmatrix}{}1\\11\end{bmatrix} = \begin{bmatrix}{}1\\11\end{bmatrix} $$
+
+_Change to $(4, 44)$, new solution?:_
+
+$$
+\begin{array}{rrr}
+2x + 3y = 4 \\
+10x + 9y = 44
+\end{array}
+$$
+
+Elimination:
+
+$$ 10x + 9y = 44 \\
+
+- 5(2x + 3y = 4) $$
+
+$$ 10x + 9y = 44 \\
+
+- 10x - 15y = -20 $$
+
+$$ -6y = 24 $$
+
+$$
+\begin{array}{rrr}
+2x + 3y = 1 \\
+-6y = 24
+\end{array}
+$$
+
+$$ -6y = 24 $$
+
+$$ y = -4 $$
+
+_Back-substitution:_
+
+$$ 2x + 3(-4) = 4 $$
+
+$$ 2x - 12 = 4 $$
+
+$$ 2x = 16 $$
+
+$$ x = 8 $$
+
+New solution is $(8, -4)$.
 
 3. What multiple of equation 1 should be _subtracted_ from equation 2?
 
@@ -1354,11 +1453,64 @@ $$
 After this elimination step, solve the triangular system. If the right side
 changes to $(-6, 0)$, what is the new solution?
 
+_Solution:_
+
+_What multiple of equation 1 should be _subtracted_ from equation 2?_
+
+$$ -x + 5y = 0 \\
+
+- \left(-\frac{1}{2}\right)(2x - 4y = 6) $$
+
+So the multiple is $-\dfrac{1}{2}$.
+
+_Elimination:_
+
+$$ -x + 5y = 0 \\
+
+- \left(-\frac{1}{2}\right)(2x - 4y = 6) $$
+
+$$ -x + 5y = 0 \\
+
+- (-x + 2y = -3) $$
+
+Remaining upper triangular system:
+
+$$
+\begin{array}{rrr}
+2x - 4y = 6 \\
+3y = 3
+\end{array}
+$$
+
+Solving the triangular system:
+
+$$ 3y = 3 $$
+
+$$ y = 1 $$
+
+Back-substitution:
+
+$$ 2x - 4y = 6 $$
+
+$$ 2x - 4(1) = 6 $$
+
+$$ 2x - 4 = 6 $$
+
+$$ 2x = 10 $$
+
+$$ x = 5 $$
+
+So, solution is $(5, 1)$.
+
+_If the right side changes to $(-6, 0)$, what is the new solution?:_
+
+If the right side changes to $(-6, 0)$, then so does the solution: $(-5, -1)$.
+
 4. What multiple $\ell$ of equation 1 should be subtracted from equation 2 to
    remove $c$?
 
 $$
-ax + by = f
+ax + by = f \\
 cx + dy = g
 $$
 
@@ -1366,14 +1518,83 @@ The first pivot is $a$ (assumed nonzero). Elimination produces what formula for
 the second pivot? What is $y$? The second pivot is missing when $ad = bc$:
 singular.
 
+_Solution:_
+
+_What multiple $\ell$ of equation 1 should be subtracted from equation 2 to
+remove $c$?:_
+
+$$ \frac{c}{a} $$
+
+_Elimination produces what formula for the second pivot?:_
+
+$$ \left(d - \frac{c}{a}b\right)y = g - \frac{c}{a}f $$
+
+_What is $y$?:_
+
+$$ y = \frac{g - \dfrac{c}{a}f}{d - \dfrac{c}{a}b}$$
+
+$$ y = \frac{g - \dfrac{cf}{a}}{d - \dfrac{cb}{a}}$$
+
+$$ y = \frac{\dfrac{ga - cf}{a}}{\dfrac{da - cb}{a}}$$
+
+$$ y = \frac{ga - cf}{da - cb} $$
+
 5. Choose a right side which gives no solution and another right side which
    gives infinitely many solutions. What are two of those solutions?
 
 $$
 \textbf{Singular system} \\
-3x + 2y = 10
+3x + 2y = 10 \\
 6x + 4y =
 $$
+
+_Solution:_
+
+_Choose a right side which gives no solution:_
+
+$$ (6x + 4y =) \\
+
+- 2(3x + 2y = 10) $$
+
+$$ 6x + 4y = \\
+
+- 6x - 4y = -20 $$
+
+$$ 6x + 4y = \\
+
+0y = -20 $$
+
+So choosing any right side except for $20$ cause this combination to yield no
+solutions.
+
+_And another right side which gives infinitely many solutions:_
+
+From the above, we can ascertain that choosing $6x + 4y = 20$ will yield:
+
+$$ 0y = 0 $$
+
+And this yields infinitely many solutions for $y$.
+
+_What are two of those solutions?:_
+
+$$
+3x + 2y = 10 \\
+6x + 4y = 20 \\
+$$
+
+$$
+3(2) + 2(2) = 10 \\
+6(2) + 4(2) = 20 \\
+$$
+
+So $(2, 2)$ is one solution.
+
+$$
+3(-2) + 2(8) = 10 \\
+6(-2) + 4(8) = 20 \\
+$$
+
+So $(-2, 8)$ is another solution.
 
 6. Choose a coefficient $b$ that makes this system singular. Then choose a right
    side $g$ that makes it solvable. Find two solutions in that singular case.
@@ -1382,6 +1603,60 @@ $$
 2x + by = 16
 4x + 8y = g
 $$
+
+_Choose a coefficient $b$ that makes this system singular:_
+
+To make it singular, choose $b$ such that there are no or infinitely many
+solutions.
+
+Choose $b = 4$,then:
+
+$$ 4x + 8y = g \\
+
+- 2(2x + 4y = 16) \\ $$
+
+$$ 4x + 8y = g \\
+
+- 4x - 8y = -32 $$
+
+$$
+\begin{array}{rrr}
+2x + by = 16 \\
+0y = g - 32 \\
+\end{array}
+$$
+
+Thus when $b = 4$, this system is singular (the value of $g$ determines if there
+are no solutions, _i.e._ $g \neq 32$, or infinitely many solutions, _i.e._
+$g = 32$).
+
+_Then choose a right side $g$ that makes it solvable:_
+
+Choose $g$ = 32$, then:
+
+$$ (4x + 8y = 32) - 2(2x + 4y = 16) \Rightarrow (4x + 8y = 32) - (4x + 8y = 32) \Rightarrow 0y = 0 $$
+
+_Find two solutions in that singular case:_
+
+_first:_
+
+Choose $b = 4, g = 32, y = 1$:
+
+$$ 2x + 4 = 16 \Rightarrow 2x = 12 \Rightarrow x = 6 $$
+
+$$ 4(6) + 8(1) = 32 \Rightarrow 24 + 8 = 32 \Rightarrow 32 = 32 $$
+
+One solution $(6, 1)$.
+
+_second:_
+
+Choose $b = 4, g = 32, y = 2$:
+
+$$ 2x + 8 = 16 \Rightarrow 2x = 8 \Rightarrow x = 4 $$
+
+$$ 4(4) + 16 = 32 \Rightarrow 16 + 16 = 32 \Rightarrow 32 = 32 $$
+
+Second solution $(4, 2)$.
 
 7. For which numbers $a$ does elimination break down (1) permanently (2)
    temporarily?
@@ -1393,6 +1668,44 @@ $$
 
 Solve for $x$ and $y$ after fixing the temporary breakdown by a row exchange.
 
+_For which numbers $a$ does elimination break down permanently?:_
+
+$$
+ax + 3y = -3 \\
+4x + 6y = 6
+$$
+
+If $a = 2$, then:
+
+$$ 4x + 6y = 6 \\
+
+- 2(2x + 3y = -3) \\ \Rightarrow 4x + 6y = 6 \\
+- (4x + 6y = -6) \Rightarrow 0y = 12 $$
+
+And this has no solution.
+
+_For which numbers $a$ does elimination break down temporarily?:_
+
+Setting $a = 0$, but then a row exchange as follows allows us to solve:
+
+$$
+4x + 6y = 6 \\
+3y = -3 \\
+$$
+
+_Solve for $x$ and $y$ after fixing the temporary breakdown by a row exchange:_
+
+$$
+4x + 6y = 6 \\
+3y = -3 \\
+$$
+
+$$ 3y = -3 \Rightarrow y = -1 $$
+
+$$ 4x + 6(-1) = 6 \Rightarrow 4x - 6 = 6 \Rightarrow 4x = 12 \Rightarrow x = 3 $$
+
+Solution is $(3, -1)$.
+
 8. For which three numbers $k$ does elimination break down? Which is fixed by a
    row exchange? In each case, is the number of solutions $0$ or $1$ or
    $\infty$?
@@ -1401,6 +1714,40 @@ $$
 kx + 3y = 6 \\
 3x + ky = -6
 $$
+
+_For which three numbers $k$ does elimination break down?:_
+
+When $k = 0, 3, -3$.
+
+When $k = 0$, this is temporary, and fixed by a row exchange.
+
+When $k = 3$, we get $0y = -12$, elimination fails and has no solution.
+
+When $k = -3$, we get $0 = 0$ (you must _add_ the two equations for this result,
+otherwise you get a redundant equation when subtracted). In this case, there are
+infinitely many solutions.
+
+_Which is fixed by a row exchange?:_
+
+When $k = 0$, then just exchange rows:
+
+$$
+3x = -6 \\
+3y = 6 \\
+$$
+
+_In each case, is the number of solutions $0$ or $1$ or $\infty$:_
+
+When $k = 0$, the solution is:
+
+$$ (-2, 2) $$
+
+One solution.
+
+When $k = 3$, there is no solution since $0y = -12$ indicates that elimination
+failed.
+
+When $k = -3$, there are $\infty$ solutions, as established earlier.
 
 9. What test on $b_1$ and $b_2$ decides whether these two equations allow a
    solution? How many solutions will they have? Draw the column picture for
@@ -1411,18 +1758,83 @@ $$
 6x - 4y = b_2
 $$
 
+_What test on $b_1$ and $b_2$ decides whether these two equations allow a
+solution?:_
+
+Solving for this yields:
+
+$$ 6x - 4y = b_2 \\
+
+- 2(3x - 2y = b_1) $$
+
+$$ \Rightarrow 6x - 4y = b_2 \\
+
+- 6x + 4y = -2b_1 $$
+
+$$ \Rightarrow
+0 = b_2 - 2b_1
+$$
+
+If $0 = 0$, there are infinitely many solutions, so if $b_2 - 2b_1 \neq 0$,
+there is no solution, this is the test:
+
+$$ b_2 - 2b_1 \stackrel{?}{=} 0 $$
+
+Or equivalently:
+
+$$ b_2 \stackrel{?}{=} 2b_1 $$
+
+_How many solutions will they have?:_
+
+Infinite.
+
+_Draw the column picture for $b = (1, 2)$:_
+
+$$ x\begin{bmatrix}{}3\\6\end{bmatrix} + y\begin{bmatrix}{}-2\\-4\end{bmatrix} = \begin{bmatrix}{}1\\2\end{bmatrix} $$
+
+_and $(1, 0)$:_
+
+$$ x\begin{bmatrix}{}3\\6\end{bmatrix} + y\begin{bmatrix}{}-2\\-4\end{bmatrix} = \begin{bmatrix}{}1\\0\end{bmatrix} $$
+
 10. In the $xy$ plane, draw the lines $x + y = 5$ and $x + 2y = 6$ and the
     equation $y =$ ____ that comes from elimination. The line $5x - 4y = c$ will
     go through the solution of these equations if $c =$ ____.
+
+$$ x + 2y = 6 \\
+
+- (x + y = 5) $$
+
+$$ \boxed{y = 1} $$
+
+$$ x + 2 = 6 \Rightarrow x = 4 $$
+
+$$ 5(4) - 4(1) = c $$
+
+$$ 20 - 4 = c $$
+
+$$ \boxed{16 = c} $$
 
 **Problems 11-20 study elimination on 3 by 3 systems (and possible failure).**
 
 11. (Recommended) A system of linear equations can't have exactly two solutions.
     _Why_?
 
+_Why?:_
+
+Because a system of linear equations can only have no solutions (_i.e._
+$0z \neq 0$), one solution, or infinitely many solutions (_i.e._ $0 = 0$).
+
 a. If $(x, y, z)$ and $(X, Y, Z)$ are two solutions, what is another solution?
 
+Another solution is some scalar multiple of these two solution's sum:
+
+$$ \dfrac{1}{2}(x + X, y + Y, z + Z) $$
+
 b. If $25$ planes meet at two points, where else do they meet?
+
+They meet at all points throughout the line drawn by those two points, since
+there being two points indicates there being two solutions, indicating there are
+infinitely many more.
 
 12. Reduce this system to upper triangular form by two row operations:
 
@@ -1434,6 +1846,67 @@ $$
 
 Circle the pivots. Solve by back substitution for $z, y, x$.
 
+_Solution:_
+
+_Reduce this system to upper triangular form by two row operations:_
+
+$$
+2x + 3y + z = 8 \\
+4x + 7y + 5z = 20 \\
+-2y + 2z = 0
+$$
+
+$$ (4x + 7y + 5z = 20) - 2(2x + 3y + z = 8) = y + 3z = 4 $$
+
+$$
+y + 3z = 4 \\
+-2y + 2z = 0
+$$
+
+$$ (-2y + 2z = 0) + 2(y + 3z = 4) = 8z = 8 $$
+
+$$
+\begin{array}{rrr}
+2x + 3y + z = 8 \\
+y + 3z = 4 \\
+8z = 8 \\
+\end{array}
+$$
+
+_Circle the pivots. Solve by back substitution for $z, y, x$:_
+
+$$
+\begin{array}{rrr}
+\boxed{2}x + 3y + z = 8 \\
+\boxed{1}y + 3z = 4 \\
+\boxed{8}z = 8 \\
+\end{array}
+$$
+
+$$ z = 1 $$
+
+$$ y + 3(1) = 4 $$
+
+$$ y + 3 = 4 $$
+
+$$ y = 4 - 3 $$
+
+$$ y = 1 $$
+
+$$ 2x + 3(1) + 1 = 8 $$
+
+$$ 2x + 3 + 1 = 8 $$
+
+$$ 2x + 4 = 8 $$
+
+$$ 2x = 8 - 4 $$
+
+$$ 2x = 4 $$
+
+$$ x = 2 $$
+
+Solution: $(2, 1, 1)$.
+
 13. Apply elimination (circle the pivots) and back substitution to solve
 
 $$
@@ -1443,6 +1916,78 @@ $$
 $$
 
 List the three row operations: Subtract ____ times row ____ from row ____.
+
+_Solution:_
+
+_Apply elimination:_
+
+$$
+2x - 3y = 3 \\
+4x - 5y + z = 7 \\
+2x - y - 3z = 5
+$$
+
+$$ (4x - 5y + z = 7) - 2(2x - 3y = 3) = (y + z = 1) $$
+
+$$
+2x - 3y = 3 \\
+y + z = 1 \\
+2x - y - 3z = 5
+$$
+
+$$ (2x - y - 3z = 5) - (2x - 3y = 3) = (2y - 3z = 2)  $$
+
+$$
+2x - 3y = 3 \\
+y + z = 1 \\
+2y - 3z = 2
+$$
+
+$$ (2y - 3z = 2) - 2(y + z = 1) = (-5z = 0) $$
+
+$$
+2x - 3y = 3 \\
+y + z = 1 \\
+-5z = 0 \\
+$$
+
+_circle the pivots:_
+
+$$
+\boxed{2}x - 3y = 3 \\
+\boxed{1}y + z = 1 \\
+\boxed{-5}z = 0 \\
+$$
+
+_back substitution to solve:_
+
+$$ -5z = 0 $$
+
+$$ z = 0 $$
+
+$$ y + (0) = 1 $$
+
+$$ y = 1 $$
+
+$$ 2x - 3(1) = 3 $$
+
+$$ 2x - 3 = 3 $$
+
+$$ 2x = 6 $$
+
+$$ x = 3 $$
+
+Solution: $(3, 1, 0)$.
+
+_List the three row operations:_
+
+_Subtract (?) times row (?) from row (?):_
+
+Subtract 2 times row 1 from row 2.
+
+Subtract 1 times row 1 from row 3.
+
+Subtract 2 times row 2 from row 3.
 
 14. Which number $d$ forces a row exchange, and what is the triangular system
     (not singular) for that $d$? Which $d$ makes this system singular (no third
@@ -1454,6 +1999,32 @@ $$
 y - z = 3
 $$
 
+_Solution:_
+
+_Which number $d$ forces a row exchange?:_
+
+$$ (4x + (10)y + z = 2) - 2(2x + 5y + z = 0) = (z = -2) $$
+
+$$ d = 10 $$
+
+forces a row change of rows 2 and 3.
+
+_and what is the triangular system (not singular) for that $d$?:_
+
+$$
+\begin{array}{rrr}
+2x  + 5y + z = 0 \\
+y - z = 3 \\
+z = -2 \\
+\end{array}
+$$
+
+_Which $d$ makes this system singular (no third pivot)?:_
+
+$$ (4x + (11)y + z = 2) - 2(2x + 5y + z = 0) = (y + z = -2) $$
+
+$$ d = 11 $$
+
 15. Which number $b$ leads later to a row exchange? Which $b$ leads to a missing
     pivot? In that singular case find a nonzero solution $x, y, z$.
 
@@ -1463,13 +2034,96 @@ x - 2y - z = 0 \\
 y + z = 0
 $$
 
+_Solution:_
+
+_Which number $b$ leads later to a row exchange?:_
+
+$$ (x - 2y - z = 0) - (x + (-2)y = 0) = (-z = 0)  $$
+
+$$ b = -2 $$
+
+_Which $b$ leads to a missing pivot?:_
+
+$$ (x - 2y - z = 0) - (x + (-1)y = 0) = (-y - z = 0)  $$
+
+$$ b = -1 $$
+
+Because then eliminating the next line $y + z = 0$ is not possible, and row
+exchange cannot fix it.
+
+_In that singular case find a nonzero solution $x, y, z$:_
+
+$$ b = -1 $$
+
+$$
+x + (-1)y = 0 \\
+x - 2y - z = 0 \\
+y + z = 0 \\
+$$
+
+$$
+x - y = 0 \\
+x - 2y - z = 0 \\
+y + z = 0 \\
+$$
+
+$$ (x - 2y - z) - (x - y = 0) = (-y - z = 0) $$
+
+$$
+x - y = 0 \\
+-y - z = 0 \\
+y + z = 0 \\
+$$
+
+$$ (y + z = 0) + (-y - z = 0) = (0 = 0) $$
+
+Infinite solutions, choose $y = 1$:
+
+$$
+x - (1) = 0 \\
+x - 2(1) - z = 0 \\
+(1) + z = 0 \\
+$$
+
+$$
+x = 1 \\
+x - 2 - z = 0 \\
+z = -1 \\
+$$
+
+$$
+x = 1 \\
+(1) - 2 - (-1) = 0 \\
+z = -1 \\
+$$
+
+$$
+x = 1 \\
+0 = 0 \\
+z = -1 \\
+$$
+
+Solution: $(1, 1, -1)$.
+
 16.
 
 a. Construct a 3 by 3 system that needs two row exchanges to reach a triangular
 form and a solution.
 
+$$
+0x + 2y + 0z = 4 \\
+x + 2y + 2z = 5 \\
+0x + 3y + 4z = 6 \\
+$$
+
 b. Construct a 3 by 3 system that needs a row exchange to keep going, but breaks
 down later.
+
+$$
+0x + 3y + 4z = 4 \\
+x + 2y + 2z = 5 \\
+0x + 3y + 4z = 6 \\
+$$
 
 17. If rows 1 and 2 are the same, how far can you get with elimination (allowing
     row exchange)? If columns 1 and 2 are the same, which pivot is missing?
@@ -1487,6 +2141,78 @@ $$
 4x + 4y + z = 0 \\
 6x + 6y + z = 2
 $$
+
+_If rows 1 and 2 are the same, how far can you get with elimination (allowing
+row exchange)?:_
+
+$$
+\textbf{Equal rows} \\
+2x - y + z = 0 \\
+2x - y + z = 0 \\
+4x + y + z = 2 \\
+$$
+
+$$ (2x - y + z = 0) - (2x - y + z = 0) = (0 = 0) $$
+
+$$
+2x - y + z = 0 \\
+0 = 0 \\
+4x + y + z = 2 \\
+$$
+
+$$
+2x - y + z = 0 \\
+4x + y + z = 2 \\
+0 = 0 \\
+$$
+
+$$ (4x + y + z = 2) - 2(2x - y + z = 0) = (3y - z = 2) $$
+
+$$
+2x - y + z = 0 \\
+3y - z = 2 \\
+0 = 0 \\
+$$
+
+No third pivot.
+
+_If columns 1 and 2 are the same, which pivot is missing?:_
+
+$$
+\textbf{Equal columns} \\
+2x + 2y + z = 0 \\
+4x + 4y + z = 0 \\
+6x + 6y + z = 2
+$$
+
+$$ (4x + 4y + z = 0) - 2(2x + 2y + z = 0) = (-z = 0) $$
+
+$$
+\textbf{Equal columns} \\
+2x + 2y + z = 0 \\
+-z = 0\\
+6x + 6y + z = 2
+$$
+
+$$
+\textbf{Equal columns} \\
+2x + 2y + z = 0 \\
+6x + 6y + z = 2 \\
+-z = 0\\
+$$
+
+$$ (6x + 6y + z = 2) - 3(2x + 2y + z = 0) = -2z = 0 $$
+
+$$
+\textbf{Equal columns} \\
+2x + 2y + z = 0 \\
+-2z = 0 \\
+-z = 0\\
+$$
+
+The $y$ pivot is missing.
+
+[LEFT OFF HERE]
 
 18. Construct a 3 by 3 example that has 9 different coefficients on the left
     side, but rows 2 and 3 become zero in elimination. How many solutions to
