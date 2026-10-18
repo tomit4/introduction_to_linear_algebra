@@ -153,3 +153,101 @@ Page 62
 6. When **breakdown** is permanent, $Ax = b$ has no solution or infinitely many.
 
 ---
+
+## 2.3 Elimination Using Matrices
+
+---
+
+Page 69
+
+1. The first step multiplies the equations $Ax = b$ by a matrix $E_{21}$ to
+   produce $E_{21}Ax = E_{21}b$.
+
+2. That matrix $E_{21}A$ has a zero in row 2, column 1 because $x_1$ is
+   eliminated from equation 2.
+
+3. $E_{21}$ is the **identity matrix** (diagonal of $1$'s) minus the multiplier
+   $\dfrac{a_{21}}{a_{11}}$ in row 2, column 1.
+
+4. Matrix-matrix multiplication is $n$ matrix-vector multiplications:
+   $EA = \left[Ea_1 \dots Ea_n\right]$.
+
+5. We must also multiply $Eb$! So $E$ is multiplying the **augmented matrix**
+   $[Ab] = [a_1 \dots a_nb]$.
+
+6. Elimination multiplies $Ax = b$ by $E_{21}, E_{32}, \dots, E_{n1}$, then
+   $E_{32}, E_{42}, \dots, E_{n2}$, and onward.
+
+7. The **row exchange matrix** is not $E_{ij}$ but $P_{ij}$. To find $P_{ij}$,
+   exchange rows $i$ and $j$ of $I$.
+
+---
+
+Page 71
+
+The **identity matrix** has $1$'s on the diagonal and otherwise $0$'s. Then
+$Ib = b$ for all $b$. The **elementary matrix or elimination matrix** $E_{ij}$
+has the extra nonzero entry - $\ell$ in the $i, j$ position. Then $E_{ij}$
+subtracts a multiple $\ell$ of row $j$ from row $i$.
+
+---
+
+Page 72
+
+**Associative law is true**
+
+$$ A(BC) = (AB)C $$
+
+**Commutative law is false**
+
+Often
+
+$$ AB \neq BA $$
+
+---
+
+Page 73
+
+**Matrix multiplication**
+
+$$ AB =
+A\left[\begin{array}{ccc}
+b_1 & b_2 & b_3 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+Ab_1 & Ab_2 & Ab_3 \\
+\end{array}\right]
+$$
+
+---
+
+Page 74
+
+**Row Exchange Matrix**
+
+$P_{ij}$ is the identity matrix with rows $i$ and $j$ reversed. When this
+"**permutation matrix**" $P_{ij}$ multiplies a matrix, it exchanges rows $i$ and
+$j$.
+
+---
+
+Page 75
+
+**REVIEW OF THE KEY IDEAS**
+
+1. $Ax = x_1$ times column $1 + \cdots + x_n$ times column $n$. And
+   $(Ax)_i = \sum_{j = 1}^{n}{a_{ij}x_j}$.
+
+2. Identity matrix $= I$, elimination matrix $= E_{ij}$ using $\ell_{ij}$,
+   exchange matrix $= P_{ij}$.
+
+3. Multiplying $Ax = b$ by $E_{21}$ subtracts a multiple $\ell_{21}$ of equation
+   1 from equation 2. The number $-\ell_{21}$ is the $(2, 1)$ entry of the
+   elimination matrix $E_{21}$.
+
+4. For the augmented matrix
+   $\left[\begin{array}{cc} A & b\\ \end{array}\right]$, that elimination step
+   gives $\left[\begin{array}{cc} E_{21}A & E_{21}b\\ \end{array}\right]$.
+
+5. When $A$ multiplies any matrix $B$, it multiplies each column of $B$
+   separately.

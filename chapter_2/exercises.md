@@ -3024,3 +3024,303 @@ $$
 $$
 
 28. (Omitted, no MATLAB).
+
+---
+
+Page 77
+
+## Problem Set 2.3
+
+**Problems 1-15 are about elimination matrices.**
+
+1. Write down the 3 by 3 matrices that produce these elimination steps:
+
+a. $E_{21}$ subtracts $5$ times row 1 from row 2.
+
+b. $E_{32}$ subtracts $-7$ times row 2 from row 3.
+
+c. $P$ exchanges rows 1 and 2, then rows 2 and 3.
+
+2. In Problem 1, applying $E_{21}$ and then $E_{32}$ to $b = (1, 0, 0)$ gives
+   $E_{32}E_{21}b =$ ____. Applying $E_{32}$ before $E_{21}$ gives
+   $E_{21}E_{32}b =$ ____. When $E_{32}$ comes first, row ____ feels no effect
+   from row ____.
+
+3. Which three matrices $E_{21}, E_{31}, E_{32}$ put $A$ into triangular form
+   $U$?
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+4 & 6 & 1 \\
+-2 & 2 & 0 \\
+\end{array}\right]
+$$
+
+and
+
+$$ E_{32}E_{31}E_{21}A = U $$
+
+Multiply those $E$'s to get one matrix $M$ that does elimination: $MA = U$.
+
+4. Include $b = (1, 0, 0)$ as a fourth column in Problem 3 to produce
+   $\left[\begin{array}{c}A & b \\\end{array}\right]$. Carry out elimination
+   steps on this augmented matrix to solve $Ax = b$.
+
+5. Suppose $a_{33} = 7$ and the third pivot is $5$. If you change $a_{33}$ to
+   $11$, the third pivot is ____. If you change $a_{33}$ to ____, there is no
+   third pivot.
+
+6. If every column of $A$ is a multiple of $(1, 1, 1)$, then $Ax$ is always a
+   multiple of $(1, 1, 1)$. Do a 3 by 3 example. How many pivots are produced by
+   elimination?
+
+7. Suppose $E$ subtracts $7$ times row 1 from row 3.
+
+a. To _invert_ that step should ____ $7$ times row ____ to row ____.
+
+b. What "inverse matrix" $E^{-1}$ takes that reverse step (so $E^{-1}E = I$)?
+
+c. If the reverse step is applied first (and then $E$) show that $EE^{-1} = I$.
+
+8. The _determinant_ of
+   $\left[\begin{array}{cc} a & b \\ c & d \\ \end{array}\right]$ is $\det M =
+   ad - bc$. Subtract $\ell$ times row 1 from row 2 to produce a new $M^*$. Show
+   that $\det M^* = \det M$ for every $\ell$. When $\ell = \dfrac{c}{a}$, _the
+   product pivots equals the determinant:_ $(a)(d - \ell b)$ equals $ad - bc$.
+
+9.
+
+a. $E_{21}$ subtracts row 1 from row 2 and then $P_{23}$ exchanges rows 2 and 3.
+What matrix $M = P_{23}E_{21}$ does both steps at once?
+
+b. $P_{23}$ exchanges rows 2 and 3 and then $E_{31}$ subtracts row 1 from row 3.
+What matrix $M = E_{31}P_{23}$ does both steps at once? Explain why the $M$'s
+are the same but the $E$'s are different.
+
+10.
+
+a. What 3 by 3 matrix $E_{13}$ will add row 3 to row 1?
+
+b. What matrix adds row 1 to row 3 and _at the same time_ row 3 to row 1?
+
+c. What matrix adds row 1 to row 3 and _then_ adds row 3 to row 1?
+
+11. Create a matrix that has $a_{11} = a_{22} = a_{33} = 1$ but elimination
+    produces two negatives pivots without row exchanges. (The first pivot is
+    $1$.)
+
+12. Multiply these matrices:
+
+$$
+\left[\begin{array}{ccc}
+0 & 0 & 1\\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+-1 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+1 & 3 & 1 \\
+1 & 4 & 0 \\
+\end{array}\right]
+$$
+
+13. Explain these facts. If the third column of $B$ is all zero, the third
+    column of $EB$ is all zero (for any $E$). If the third _row_ of $B$ is all
+    zero, the third row of $EB$ might _not_ be zero.
+
+14. This 4 by 4 matrix will need elimination matrices $E_{21}$ and $E_{32}$ and
+    $E_{43}$. What are those matrices?
+
+$$ A =
+\left[\begin{array}{rrrr}
+2 & -1 & 0 & 0 \\
+-1 & 2 & -1 & 0 \\
+0 & -1 & 2 & -1 \\
+0 & 0 & -1 & 2 \\
+\end{array}\right]
+$$
+
+15. Write down the 3 by 3 matrix that has $a_{ij} = 2i - 3j$. This matrix has
+    $a_{32} = 0$, but elimination still needs $E_{32}$ to produce a zero in the
+    $3, 2$ position. Which previous step destroys the original zero and what is
+    $E_{32}$?
+
+**Problems 16-23 are about creating and multiplying matrices.**
+
+16. Write these ancient problems in a 2 by 2 matrix form $Ax = b$ and solve
+    them:
+
+a. $X$ is twice as old as $Y$ and their ages add to $33$.
+
+b. $(x, y) = (2, 5)$ and $(3, 7)$ lie on the line $y = mx + c$. Find $m$ and
+$c$.
+
+17. The parabola $y = a + bx + cx^2$ goes through the points $(x, y) = (1, 4)$
+    and $(2, 8)$ and $(3, 14)$. Find and solve a matrix equation for the
+    unknowns $(a, b, c)$.
+
+18. Multiply these matrices in the orders $EF$ and $FE$.
+
+$$ E =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+a & 1 & 0 \\
+b & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ F =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & c & 1 \\
+\end{array}\right]
+$$
+
+Also compute $E^2 = EE$ and $F^3 = FFF$. You can guess $F^{100}$.
+
+19. Multiply these row exchange matrices in the orders $PQ$ and $QP$ and $P^2$:
+
+$$ P =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+and
+
+$$ Q =
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+\end{array}\right]
+$$
+
+Find another non-diagonal matrix whose square is $M^2 = I$.
+
+20.
+
+a. Suppose all columns of $B$ are the same. Then all columns of $EB$ are the
+same, because each one is $E$ times ____.
+
+b. Suppose all rows of $B$ are
+$\left[\begin{array}{ccc}1 & 2 & 4\\\end{array}\right]$. Show by example that
+all rows of $EB$ are _not_
+$\left[\begin{array}{ccc}1 & 2 & 4\\\end{array}\right]$. It is true that those
+rows are ____.
+
+21. If $E$ adds row 1 to row 2 and $F$ adds row 2 to row 1, does $EF$ equal
+    $FE$?
+
+22. The entries of $A$ and $x$ are $a_{ij}$ and $x_j$. So the first component of
+    $Ax$ is $\sum{a_1jx_j} = a_{11}x_1 + \cdots + a_{1n}x_n$. If $E_{21}$
+    subtracts row 1 from row 2, write a formula for
+
+a. the third component of $Ax$
+
+b. the $(2, 1)$ entry of $E_{21}A$
+
+c. the $(2, 1)$ entry of $E_{21}(E_{21}A)$
+
+d. the first component of $E_{21}Ax$
+
+23. The elimination matrix
+    $E = \left[\begin{array}{cc} 1 & 0 \\ -2 & 1 \\ \end{array}\right]$
+    subtracts $2$ times row 1 of $A$ from row 2 of $A$. The result is $EA$. What
+    is the effect of $E(EA)$? In the opposite order $AE$, we are subtracting $2$
+    times ____ of $A$ from ____. (Do examples.)
+
+**Problems 24-27 include the column $b$ in the augmented matrix
+$\left[\begin{array}{cc} A & b \\ \end{array}\right]$.**
+
+24. Apply elimination to the 2 by 3 augmented matrix
+    $\left[\begin{array}{cc} A & b \\ \end{array}\right]$. What is the
+    triangular system $Ux = c$? What is the solution $x$?
+
+$$ Ax =
+\left[\begin{array}{cc}
+2 & 3 \\
+4 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}x_1\\x_2\end{bmatrix} =
+\begin{bmatrix}{}1\\17\end{bmatrix}
+$$
+
+25. Apply elimination to the 3 by 4 augmented matrix
+    $\left[\begin{array}{cc} A & b \\ \end{array}\right]$. How do you know this
+    system has no solution? Change the last number 6 so there _is_ a solution.
+
+$$ Ax =
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+2 & 3 & 4 \\
+3 & 5 & 7 \\
+\end{array}\right]
+\begin{bmatrix}{}x\\y\\z\end{bmatrix} =
+\begin{bmatrix}{}1\\2\\6\end{bmatrix}
+$$
+
+26. The equations $Ax = b$ and $Ax^* = b^*$ have the same matrix $A$. What
+    double augmented matrix should you use in elimination to solve both
+    equations at once? Solve both of these equations by working on a 2 by 4
+    matrix:
+
+$$
+\left[\begin{array}{cc}
+1 & 4 \\
+2 & 7 \\
+\end{array}\right]
+\begin{bmatrix}{}x\\y\end{bmatrix} =
+\begin{bmatrix}{}1\\0\end{bmatrix}
+$$
+
+and
+
+$$
+\left[\begin{array}{cc}
+1 & 4 \\
+2 & 7 \\
+\end{array}\right]
+\begin{bmatrix}{}u\\v\end{bmatrix} =
+\begin{bmatrix}{}0\\1\end{bmatrix}
+$$
+
+27. Choose the numbers $a, b, c, d$ in this augmented matrix so that there is
+    (a) no solution (b) infinitely many solutions.
+
+$$
+\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+1 & 2 & 3 & a \\
+0 & 4 & 5 & b \\
+0 & 0 & d & c \\
+\end{array}\right]
+$$
+
+Which of the numbers $a, b, c$, or $d$ have no effect on the solvability?
+
+28. If $AB = I$ and $BC = I$ use the associative law to prove $A = C$.
