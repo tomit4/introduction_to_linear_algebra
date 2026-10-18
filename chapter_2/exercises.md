@@ -1600,7 +1600,7 @@ So $(-2, 8)$ is another solution.
    side $g$ that makes it solvable. Find two solutions in that singular case.
 
 $$
-2x + by = 16
+2x + by = 16 \\
 4x + 8y = g
 $$
 
@@ -1632,7 +1632,7 @@ $g = 32$).
 
 _Then choose a right side $g$ that makes it solvable:_
 
-Choose $g$ = 32$, then:
+Choose $g = 32$, then:
 
 $$ (4x + 8y = 32) - 2(2x + 4y = 16) \Rightarrow (4x + 8y = 32) - (4x + 8y = 32) \Rightarrow 0y = 0 $$
 
@@ -2116,6 +2116,72 @@ x + 2y + 2z = 5 \\
 0x + 3y + 4z = 6 \\
 $$
 
+_Solution:_
+
+$$
+2y = 4 \\
+x + 2y + 2z = 5 \\
+3y + 4z = 6 \\
+$$
+
+First row exchange:
+
+$$
+x + 2y + 2z = 5 \\
+2y = 4 \\
+3y + 4z = 6 \\
+$$
+
+Second row exchange:
+
+$$
+\begin{array}{rrr}
+x + 2y + 2z = 5 \\
+3y + 4z = 6 \\
+2y = 4 \\
+\end{array}
+$$
+
+Solve:
+
+$$
+x + 2(2) + 2z = 5 \\
+3(2) + 4z = 6 \\
+y = 2 \\
+$$
+
+$$
+x + 4 + 2z = 5 \\
+6 + 4z = 6 \\
+y = 2 \\
+$$
+
+$$
+x + 4 + 2z = 5 \\
+4z = 0 \\
+y = 2 \\
+$$
+
+$$
+x + 4 + 2(0) = 5 \\
+z = 0 \\
+y = 2 \\
+$$
+
+$$
+x + 4 = 5 \\
+z = 0 \\
+y = 2 \\
+$$
+
+$$
+x = 1 \\
+z = 0 \\
+y = 2 \\
+$$
+
+Solution: $\boxed{(1, 2, 0)}$
+
 b. Construct a 3 by 3 system that needs a row exchange to keep going, but breaks
 down later.
 
@@ -2124,6 +2190,28 @@ $$
 x + 2y + 2z = 5 \\
 0x + 3y + 4z = 6 \\
 $$
+
+_Solution:_
+
+$$
+3y + 4z = 4 \\
+x + 2y + 2z = 5 \\
+3y + 4z = 6 \\
+$$
+
+One row exchange:
+
+$$
+3y + 4z = 4 \\
+3y + 4z = 6 \\
+x + 2y + 2z = 5 \\
+$$
+
+Now, keep going:
+
+$$ (3y + 4z = 6) - (3y + 4z = 4) \Rightarrow 0 = 2 $$
+
+Breakdown, no solution.
 
 17. If rows 1 and 2 are the same, how far can you get with elimination (allowing
     row exchange)? If columns 1 and 2 are the same, which pivot is missing?
@@ -2142,41 +2230,44 @@ $$
 6x + 6y + z = 2
 $$
 
-_If rows 1 and 2 are the same, how far can you get with elimination (allowing
-row exchange)?:_
+_Solution:_
+
+_Equal rows, how far can you get with elimination?:_
 
 $$
 \textbf{Equal rows} \\
 2x - y + z = 0 \\
 2x - y + z = 0 \\
-4x + y + z = 2 \\
+4x + y + z = 2
 $$
 
-$$ (2x - y + z = 0) - (2x - y + z = 0) = (0 = 0) $$
-
-$$
-2x - y + z = 0 \\
-0 = 0 \\
-4x + y + z = 2 \\
-$$
+To avoid immediately running into infinitely many solutions, let's substitute
+first:
 
 $$
 2x - y + z = 0 \\
 4x + y + z = 2 \\
-0 = 0 \\
+2x - y + z = 0 \\
 $$
 
-$$ (4x + y + z = 2) - 2(2x - y + z = 0) = (3y - z = 2) $$
+$$ (4x + y + z = 2) - 2(2x - y + z = 0) \Rightarrow (3y - z = 2) $$
 
 $$
+\begin{array}{rrr}
 2x - y + z = 0 \\
 3y - z = 2 \\
-0 = 0 \\
+2x - y + z = 0 \\
+\end{array}
 $$
 
-No third pivot.
+Then subtract row 1 from row 3:
 
-_If columns 1 and 2 are the same, which pivot is missing?:_
+$$ (2x - y + z = 0) - (2x - y + z = 0) \Rightarrow 0 = 0 $$
+
+No further pivots. This particular breakdown where $0 = 0$ implies infinitely
+many solutions.
+
+_Equal columns, which pivot is missing?:_
 
 $$
 \textbf{Equal columns} \\
@@ -2185,38 +2276,97 @@ $$
 6x + 6y + z = 2
 $$
 
-$$ (4x + 4y + z = 0) - 2(2x + 2y + z = 0) = (-z = 0) $$
+We do start off with a pivot:
 
 $$
 \textbf{Equal columns} \\
-2x + 2y + z = 0 \\
--z = 0\\
+\boxed{2}x + 2y + z = 0 \\
+4x + 4y + z = 0 \\
 6x + 6y + z = 2
 $$
 
-$$
-\textbf{Equal columns} \\
-2x + 2y + z = 0 \\
-6x + 6y + z = 2 \\
--z = 0\\
-$$
-
-$$ (6x + 6y + z = 2) - 3(2x + 2y + z = 0) = -2z = 0 $$
-
-$$
-\textbf{Equal columns} \\
-2x + 2y + z = 0 \\
--2z = 0 \\
--z = 0\\
-$$
-
-The $y$ pivot is missing.
-
-[LEFT OFF HERE]
+But as soon as elimination starts, we get $0 = 0$, this implies that the second
+column has no pivot whenever column 1 = column 2.
 
 18. Construct a 3 by 3 example that has 9 different coefficients on the left
     side, but rows 2 and 3 become zero in elimination. How many solutions to
     your system with $b = (1, 10, 100)$ and how many with $b = (0, 0, 0)$?
+
+_Solution:_
+
+_Construct a 3 by 3 example that has 9 different coefficients on the left side,
+but rows 2 and 3 become zero in elimination:_
+
+In order to deduce such an example, work backwards. Consider two rows that must
+eliminate and result in $0 = 0$, but start initially with different
+coefficients.
+
+$$
+5y + 10z = 0 \\
+20y + 40z = 0 \\
+$$
+
+Then, consider the first row as needing to be subtracted from a second,
+currently unknown, row such that it results in the above (both rows must have
+the $x$ variable and different corresponding coefficients):
+
+$$ (\text{?}x + \text{?}y + \text{?}z = 0) - (\text{?}x + \text{?}y + \text{?}z = 0) \Rightarrow (5y + 10z = 0) $$
+
+Where none of the $\text{?}$ equal any other $\text{?}$.
+
+Try:
+
+$$ (2x + 35y + 60z = 0) - 2(x + 15y + 25z = 0) \Rightarrow (5y + 10z = 0) $$
+
+This leaves us with our solution:
+
+$$
+x + 15y + 25z = 0 \\
+2x + 35y + 60z = 0 \\
+0x + 20y + 40z = 0 \\
+$$
+
+As you can see, all 9 coefficients are unique (1, 15, 25, 2, 35, 60, 0, 20, 40).
+Let's double check to be sure they become zero in elimination.
+
+$$ (2x + 35y + 60z = 0) - 2(x + 15y + 25z = 0) \Rightarrow (5y + 10z = 0) $$
+
+$$
+\begin{array}{rrr}
+x + 15y + 25z = 0 \\
+5y + 10z = 0 \\
+20y + 40z = 0 \\
+\end{array}
+$$
+
+$$ (20y + 40z = 0) - 4(5y + 10z = 0) \Rightarrow (0 = 0) $$
+
+Thus our choice of coefficients satisfies the problem statement's requirements.
+
+_How many solutions to your system with $b = (1, 10, 100)$ and how many with
+$b = (0, 0, 0)$?:_
+
+When $b = (0, 0, 0)$, the amount of solutions is infinite as demonstrated above.
+
+When $b = (1, 10, 100)$:
+
+$$
+x + 15y + 25z = 1 \\
+2x + 35y + 60z = 10 \\
+0x + 20y + 40z = 100 \\
+$$
+
+$$ (2x + 35y + 60z = 10) - 2(x + 15y + 25z = 1) \Rightarrow (5y + 10z = 8) $$
+
+$$
+x + 15y + 25z = 1 \\
+5y + 10z = 8 \\
+20y + 40z = 100 \\
+$$
+
+$$ (20y + 40z = 100) - 4(5y + 10z = 8) \Rightarrow (0 = 68) $$
+
+Thus when $b = (1, 10, 100)$, there are no solutions.
 
 19. Which number $q$ makes this system singular and which right side $t$ gives
     it infinitely many solutions? Find the solution that has $z = 1$.
@@ -2227,10 +2377,123 @@ x + 7y - 6z = 6 \\
 3y + qz = t
 $$
 
+_Solution:_
+
+_Which number $q$ makes this system singular and which right side $t$ gives it
+infinitely many solutions?:_
+
+$$ (x + 7y - 6z = 6) - (x + 4y - 2z = 1) \Rightarrow (3y - 4z = 5) $$
+
+$$
+x + 4y - 2z = 1 \\
+3y - 4z = 5 \\
+3y + qz = t
+$$
+
+To get infinitely many solutions, the final conclusion of elimination must
+result in $0 = 0$, thus the following must be true:
+
+$$ (3y + qz = t) - (3y - 4z = 5) \Rightarrow (0 = 0) $$
+
+Thus, let $q = -4, t = 5$, and:
+
+$$ (3y - 4z = 5) - (3y - 4z = 5) \Rightarrow (0 = 0) $$
+
+So our solution to this problem is $q = -4, t = 5$.
+
+_Find the solution that has $z = 1$:_
+
+$$
+x + 4y - 2z = 1 \\
+x + 7y - 6z = 6 \\
+3y + qz = t
+$$
+
+From the previous part, let $q = -4, t = 5$, and from this part $z = 1$, then:
+
+$$
+x + 4y - 2(1) = 1 \\
+x + 7y - 6(1) = 6 \\
+3y - 4(1) = 5
+$$
+
+$$
+x + 4y - 2 = 1 \\
+x + 7y - 6 = 6 \\
+3y - 4 = 5
+$$
+
+$$
+x + 4y = 3 \\
+x + 7y = 12 \\
+3y = 9
+$$
+
+$$
+x + 4(3) = 3 \\
+x + 7(3) = 12 \\
+y = 3
+$$
+
+$$
+x + 12 = 3 \\
+x + 21 = 12 \\
+y = 3
+$$
+
+$$
+x = -9 \\
+x = -9 \\
+y = 3
+$$
+
+So the solution when $z = 1$ is: $\boxed{(-9, 3, 1)}$.
+
 20. Three planes can fail to have an intersection point, even if no planes are
     parallel. The system is singular if row $3$ of $A$ is a ____ of the first
     two rows. Find a third equation that can't be solved together with
     $x + y + z = 0$ and $x - 2y - z = 1$.
+
+_The system is singular if row $3$ of $A$ is a (?) of the first two rows:_
+
+linear combination
+
+Essentially the third row must have the same equation on the left as the
+difference of the first two rows (after an optional multiple is applied to get
+rid of the initial $x$ column), but the right side of the third row equation
+must not be equal to the right side of the difference equation. This is
+demonstrated in the next part of this problem.
+
+_Find a third equation that can't be solved together with $x + y + z = 0$ and
+$x - 2y - z = 1$:_
+
+$$
+x + y + z = 0 \\
+x - 2y - z = 1 \\
+\text{(?)}
+$$
+
+$$ (x - 2y - z = 1) - (x + y + z = 0) \Rightarrow (-3y - 2z = 1) $$
+
+$$
+x + y + z = 0 \\
+-3y - 2z = 1\\
+\text{(?)}
+$$
+
+Now, our third row must be chosen such that:
+
+$$ \text{(?)} - (-3y - 2z = 1) \Rightarrow (0 \neq 0) $$
+
+Thus:
+
+$$ (-3y - 2z = 2) - (-3y - 2z = 1) \Rightarrow (0 \neq 0) $$
+
+So our third equation is:
+
+$$ \boxed{-3y - 2z = 2} $$
+
+As it results in no solution.
 
 21. Find the pivots and the solution for both systems ($Ax = b$ and $Kx = b$):
 
@@ -2248,18 +2511,290 @@ $$
 -z - 2t = 5
 $$
 
+_Solution:_
+
+_First system:_
+
+$$
+2x + y = 0 \\
+x + 2y + z = 0 \\
+y + 2z + t = 0 \\
+z + 2t = 5
+$$
+
+To find the pivots, first find the upper triangular form:
+
+$$
+2x + y = 0 \\
+x + 2y + z = 0 \\
+y + 2z + t = 0 \\
+z + 2t = 5
+$$
+
+$$ (x + 2y + z = 0) - \left(\frac{1}{2}\right)(2x + y = 0) \Rightarrow \left(\frac{3}{2}y + z = 0\right) $$
+
+$$
+2x + y = 0 \\
+\frac{3}{2}y + z = 0\\
+y + 2z + t = 0 \\
+z + 2t = 5
+$$
+
+$$ (y + 2z + t = 0) - \left(\frac{2}{3}\right)\left(\frac{3}{2}y + z = 0\right) \Rightarrow \left(\frac{4}{3}z + t = 0\right) $$
+
+$$
+2x + y = 0 \\
+\frac{3}{2}y + z = 0\\
+\frac{4}{3}z + t = 0 \\
+z + 2t = 5
+$$
+
+$$ (z + 2t = 5) - \left(\frac{3}{4}\right)\left(\frac{4}{3}z + t = 0\right) \Rightarrow \left(\frac{5}{4}t = 5\right) $$
+
+Thus our pivots are:
+
+$$
+\begin{array}{rrr}
+\boxed{2}x + y = 0 \\
+\boxed{\dfrac{3}{2}}y + z = 0\\
+\boxed{\dfrac{4}{3}}z + t = 0 \\
+\boxed{\dfrac{5}{4}}t = 5 \\
+\end{array}
+$$
+
+Now, to solve (by back substitution):
+
+$$ \frac{5}{4}t = 5  $$
+
+$$ t = 5\left(\frac{4}{5}\right)  $$
+
+$$ t = 4 $$
+
+$$ \frac{4}{3}z + (4) = 0 $$
+
+$$ \frac{4}{3}z = -4 $$
+
+$$ z = -4\left(\frac{3}{4}\right) $$
+
+$$ z = -3 $$
+
+$$ \frac{3}{2}y + (-3) = 0 $$
+
+$$ \frac{3}{2}y = 3 $$
+
+$$ y = 3\left(\frac{2}{3}\right) $$
+
+$$ y = 2 $$
+
+$$ 2x + (2) = 0 $$
+
+$$ 2x = -2 $$
+
+$$ x = -1 $$
+
+Thus our solution is $\boxed{(-1, 2, -3, 4)}$.
+
+_Second system:_
+
+$$
+2x - y = 0 \\
+-x - 2y - z = 0 \\
+-y - 2z - t = 0 \\
+-z - 2t = 5
+$$
+
+Finding pivots:
+
+$$ (-x - 2y - z = 0) - \left(-\frac{1}{2}\right)(2x - y = 0) \Rightarrow \left(-\frac{5}{2}y - z = 0\right) $$
+
+$$
+2x - y = 0 \\
+-\dfrac{5}{2}y - z = 0\\
+-y - 2z - t = 0 \\
+-z - 2t = 5
+$$
+
+$$ (-y - 2z - t = 0) - \left(\frac{2}{5}\right)\left(-\frac{5}{2}y - z = 0\right) \Rightarrow \left(-\frac{8}{5}z - t = 0\right) $$
+
+$$
+2x - y = 0 \\
+-\dfrac{5}{2}y - z = 0 \\
+-\dfrac{8}{5}z - t = 0 \\
+-z - 2t = 5
+$$
+
+$$ (-z - 2t = 5) - \left(\frac{5}{8}\right)\left(-\frac{8}{5}z - t = 0\right) \Rightarrow \left(-\frac{11}{8}t = 5\right) $$
+
+So, our pivots are:
+
+$$
+\boxed{2}x - y = 0 \\
+\boxed{-\dfrac{5}{2}}y - z = 0 \\
+\boxed{-\dfrac{8}{5}}z - t = 0 \\
+\boxed{-\dfrac{11}{8}}t = 5 \\
+$$
+
+Now to find the solution (by back substitution):
+
+$$ -\frac{11}{8}t = 5 $$
+
+$$ t = 5\left(-\frac{8}{11}\right) $$
+
+$$ t = -\frac{40}{11} $$
+
+$$ -\frac{8}{5}z - \left(-\frac{40}{11}\right) = 0 $$
+
+$$ -\frac{8}{5}z = -\frac{40}{11} $$
+
+$$ z = -\frac{40}{11}\left(-\frac{5}{8}\right) $$
+
+$$ z = \frac{25}{11} $$
+
+$$ -\frac{5}{2}y - \left(\frac{25}{11}\right) = 0 $$
+
+$$ -\frac{5}{2}y = \frac{25}{11} $$
+
+$$ y = \frac{25}{11}\left(-\frac{2}{5}\right) $$
+
+$$ y = -\frac{10}{11} $$
+
+$$ 2x - \left(-\frac{10}{11}\right) = 0 $$
+
+$$ 2x = -\frac{10}{11} $$
+
+$$ x = -\frac{10}{11}\left(\frac{1}{2}\right) $$
+
+$$ x = -\frac{5}{11} $$
+
+Thus our solution is:
+
+$$ \boxed{\left(-\frac{5}{11}, -\frac{10}{11}, \frac{25}{11}, -\frac{40}{11}\right)} $$
+
+_Note:_ This solution is to an incorrectly copied problem. Moving on anyways.
+
 22. If you extend Problem 21 following the $1, 2, 1$ pattern or the $-1, 2, -1$
     pattern, what is the fifth pivot? What is the $n$th pivot? $K$ is my
     favorite matrix.
 
+The correct answer to part (b) of 21 was $(1, 2, 3, 4)$ instead of
+$(-1, 2, -3, 4)$. The key was recognizing that whenever you increased the amount
+of pivots from $n$ to $n + 1$, that the pivot took on the form of
+$\dfrac{n + 1}{n}$, thus the fifth pivot would follow $\dfrac{6}{5}$ for both
+matrices multiplied by $1$ or $-1$ depending on the pattern of simply adding all
+coefficients or subtracting all but the first (the $x$ coefficient).
+
 23. If elimination leads to $x + y = 1$ and $2y = 3$, find three possible
     original problems.
+
+_Solution:_
+
+Strang is asking us to find a 2 x 2 system which ends in the upper triangular
+form of:
+
+$$
+\begin{array}{rr}
+x + y = 1 \\
+2y = 3
+\end{array}
+$$
+
+Thus each solution is asking us to find:
+
+$$ (\text{?}) - (x + y = 1) \Rightarrow (2y = 3) $$
+
+_1<sup>st</sup>:_
+
+$$ (x + 3y = 4) - (x + y = 1) \Rightarrow (2y = 3) $$
+
+$$
+x + y = 1 \\
+x + 3y = 4
+$$
+
+_2<sup>nd</sup>:_
+
+$$ (2x + 4y = 5) - 2(x + y = 1) \Rightarrow (2y = 3) $$
+
+$$
+x + y = 1 \\
+2x + 4y = 5
+$$
+
+_3<sup>rd</sup>:_
+
+$$ (3x + 5y = 6) - 3(x + y = 1) \Rightarrow (2y = 3) $$
+
+$$
+x + y = 1 \\
+3x + 5y = 6
+$$
 
 24. For which two numbers $a$ will elimination fail on
     $A = \left[\begin{array}{cc}
 a & 2 \\
 a & a \\
 \end{array}\right]$?
+
+_Solution:_
+
+The problem statement is asking us which $a$ will elimination fail on the
+following system:
+
+$$
+ax + 2y = b_1 \\
+ax + ay = b_2
+$$
+
+So, finding upper triangular form involves the following evaluation:
+
+$$ (ax + ay = b_2) - (ax + 2y = b_1) \Rightarrow ay - 2y = b_2 - b_1 \Rightarrow y(a - 2) = b_2 - b_1 $$
+
+Upper triangular form:
+
+$$
+\begin{array}{rr}
+ax + 2y = b_1 \\
+y(a - 2) = b_2 - b_1
+\end{array}
+$$
+
+If $a = 2$, then:
+
+$$
+(2)x + 2y = b_1 \\
+(2)x + (2)y = b_2
+$$
+
+$$
+2x + 2y = b_1 \\
+2x + 2y = b_2
+$$
+
+$$ (2x + 2y = b_2) - (2x + 2y = b_1) \Rightarrow (0 = b_2 - b_1) $$
+
+Thus if $b_2 - b_1 = 0$, then there are infinite solutions, and if
+$b_2 - b_1 \neq 0$, there are no solutions. This is where elimination breaks
+down.
+
+Now consider $a = 0$:
+
+$$
+(0)x + 2y = b_1 \\
+(0)x + (0)y = b_2
+$$
+
+$$
+0 = b_2
+2y = b_1 \\
+$$
+
+$$
+0 = b_2
+y = \dfrac{b_1}{2} \\
+$$
+
+Thus, since $x$ is now a free variable, there are infinitely many solutions when
+$b_2 = 0$, and no solutions when $b_2 \neq 0$.
 
 25. For which three numbers $a$ will elimination fail to give three pivots?
 
@@ -2270,6 +2805,63 @@ a & a & 4 \\
 a & a & a \\
 \end{array}\right] \text{ is singular for three values of } a
 $$
+
+_Solution:_
+
+This is similar to problem 24.
+
+$$
+ax + 2y + 3z = b_1 \\
+ax + ay + 4z = b_2 \\
+ax + ay + az = b_3 \\
+$$
+
+Upper triangular form:
+
+$$ (ax + ay + 4z = b_2) - (ax + 2y + 3z = b_1) \Rightarrow ((ay - 2y) + (4z - 3z) = (b_2 - b_1)) \Rightarrow ((a - 2)y + z = b_2 - b_1) $$
+
+$$
+ax + 2y + 3z = b_1 \\
+(a - 2)y + z = b_2 - b_1 \\
+ax + ay + az = b_3 \\
+$$
+
+$$ (ax + ay + az = b_3) - (ax + 2y + 3z = b_1) \Rightarrow ((a - 2)y + (a - 3)z = b_3 - b_1) $$
+
+$$
+ax + 2y + 3z = b_1 \\
+(a - 2)y + z = b_2 - b_1 \\
+(a - 2)y + (a - 3)z = b_3 - b_1 \\
+$$
+
+$$ ((a - 2)y + (a - 3)z = b_3 - b_1) - ((a - 2)y + z = b_2 - b_1) \Rightarrow ((a - 3 - 1)z = (b_3 - b_1) - (b_2 - b_1)) $$
+
+$$ \Rightarrow (a - 4)z = b_3 - b_1 - b_2 + b_1 $$
+
+$$ \Rightarrow (a - 4)z = b_3 - b_2 $$
+
+Final upper triangular form:
+
+$$
+\begin{array}{rrr}
+ax + 2y + 3z = b_1 \\
+(a - 2)y + z = b_2 - b_1 \\
+(a - 4)z = b_3 - b_2 \\
+\end{array}
+$$
+
+So, now to find $a$'s where elimination fails, simply set the pivots to $0$.
+Notice the pivots:
+
+$$
+\begin{array}{rrr}
+\boxed{a}x + 2y + 3z = b_1 \\
+\boxed{(a - 2)}y + z = b_2 - b_1 \\
+\boxed{(a - 4)}z = b_3 - b_2 \\
+\end{array}
+$$
+
+So the values for $a$ where elimination fails are at $a = 0, 2, 4$.
 
 26. Look for a matrix that has row sums $4$ and $8$, and column sums $2$ and
     $s$:
@@ -2293,6 +2885,109 @@ matrices that have the correct row and column sums. _Extra Credit:_ Write down
 the $4$ by $4$ system $Ax = b$ with $x = (a, b, c, d)$ and make $A$ triangular
 by elimination.
 
+_The four equations are solvable only if $s =$ (?):_
+
+This is a 4 x 4 system:
+
+$$
+1a + 1b + 0c + 0d = 4 \\
+0a + 0b + 1c + 1d = 8 \\
+1a + 0b + 1c + 0d = 2 \\
+0a + 1b + 0c + 1d = s
+$$
+
+Exchange rows:
+
+$$
+1a + 1b + 0c + 0d = 4 \\
+1a + 0b + 1c + 0d = 2 \\
+0a + 0b + 1c + 1d = 8 \\
+0a + 1b + 0c + 1d = s
+$$
+
+Now, evaluate to find upper triangular form:
+
+$$ (1a + 0b + 1c + 0d = 2) - (1a + 1b + 0c + 0d = 4) \Rightarrow (-1b + 0c + 0d = -2) $$
+
+$$
+1a + 1b + 0c + 0d = 4 \\
+-1b + 0c + 0d = -2 \\
+0b + 1c + 1d = 8 \\
+1b + 0c + 1d = s
+$$
+
+$$ (0b + 1c + 1d = 8) - (-1b + 0c + 0d = -2) \Rightarrow (1b + 1c + 1d = 10) $$
+
+$$
+1a + 1b + 0c + 0d = 4 \\
+-1b + 0c + 0d = -2 \\
+1b + 1c + 1d = 10 \\
+1b + 0c + 1d = s
+$$
+
+$$ (1b + 0c + 1d = s) - (1b + 1c + 1d = 10) \Rightarrow (-1c + 0d = s - 10) $$
+
+$$
+1a + 1b + 0c + 0d = 4 \\
+-1b + 0c + 0d = -2 \\
+1b + 1c + 1d = 10 \\
+-1c + 0d = s - 10
+$$
+
+Thus:
+
+$$ -1c = s - 10 \Rightarrow c = 10 - s $$
+
+Now, by substitution:
+
+$$ c + d = 8 \Rightarrow (10 - s) + d = 8 \Rightarrow d = 8 - 10 + s \Rightarrow d = -2 + s $$
+
+$$ a + c = 2 \Rightarrow a + (10 - s) = 2 \Rightarrow a = 2 - 10 + s \Rightarrow a = -8 + s $$
+
+Then:
+
+$$ b + d = s \Rightarrow b + (-2 + s) = s \Rightarrow b = s + 2 - s \Rightarrow b = 2 $$
+
+$$ a + b = 4 \Rightarrow (-8 + s) + 2 = 4 \Rightarrow -6 + s = 4 \Rightarrow \boxed{s = 10} $$
+
+_Then find two different matrices that have the correct row and column sums:_
+
+We now know from the previous evaluation that:
+
+$$
+a + b = 4 \\
+c + d = 8 \\
+a + c = 2 \\
+b + d = 10 \\
+$$
+
+We are tasked now with finding two different matrices of the form:
+
+$$
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right]
+$$
+
+So, choose $d = 2$, then $b = 8$, $a = -4$, $c = 6$.
+
+$$
+\left[\begin{array}{cc}
+-4 & 8 \\
+6 & 2 \\
+\end{array}\right]
+$$
+
+Then, choose $d = 3$, then $b = 7$, $a = -3$, $c = 5$.
+
+$$
+\left[\begin{array}{cc}
+-3 & 7 \\
+5 & 3 \\
+\end{array}\right]
+$$
+
 27. Elimination in the usual order gives what matrix $U$ and what solution to
     this "lower triangular" system? We are really solving by _forward
     substitution_:
@@ -2301,6 +2996,31 @@ $$
 3x = 3 \\
 6x + 2y = 8 \\
 9x - 2y + z = 9
+$$
+
+_Solution:_
+
+This is essentially working with the lower triangular form, which is the
+opposite of the upper triangular form. Just take the first line and work
+_forward_ from there.
+
+$$ 3x = 3 \Rightarrow x = 1 $$
+
+$$ 6x + 2y = 8 \Rightarrow 6(1) + 2y = 8 \Rightarrow 6 + 2y = 8 \Rightarrow 2y = 2 \Rightarrow y = 1 $$
+
+$$ 9x - 2y + z = 9 \Rightarrow 9(1) - 2(1) + z = 9 \Rightarrow 9 - 2 + z = 9 \Rightarrow 7 + z = 9 \Rightarrow z = 2 $$
+
+So the solution is $(1, 1, 2)$.
+
+The problem statement asks us now to show a matrix $U$ from this, which is just
+the coefficient matrix of the lower triangular form given:
+
+$$
+\left[\begin{array}{ccc}
+3 & 0 & 0 \\
+6 & 2 & 0 \\
+9 & -2 & 1 \\
+\end{array}\right]
 $$
 
 28. (Omitted, no MATLAB).
