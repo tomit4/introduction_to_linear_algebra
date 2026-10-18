@@ -3037,14 +3037,157 @@ Page 77
 
 a. $E_{21}$ subtracts $5$ times row 1 from row 2.
 
+$$ E_{21} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-5 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
 b. $E_{32}$ subtracts $-7$ times row 2 from row 3.
 
+$$ E_{32} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 7 & 1 \\
+\end{array}\right]
+$$
+
 c. $P$ exchanges rows 1 and 2, then rows 2 and 3.
+
+First, exchange rows 1 and 2:
+
+$$ P =
+\left[\begin{array}{rrr}
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+Then exchange rows 2 and 3:
+
+$$ P =
+\left[\begin{array}{rrr}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+\end{array}\right]
+$$
 
 2. In Problem 1, applying $E_{21}$ and then $E_{32}$ to $b = (1, 0, 0)$ gives
    $E_{32}E_{21}b =$ ____. Applying $E_{32}$ before $E_{21}$ gives
    $E_{21}E_{32}b =$ ____. When $E_{32}$ comes first, row ____ feels no effect
    from row ____.
+
+_Applying $E_{21}$ and then $E_{32}$ to $b = (1, 0, 0)$ gives $E_{32}E_{21}b =$
+(?):_
+
+$$ b = \begin{bmatrix}{}1\\0\\0\end{bmatrix} $$
+
+$$ E_{21} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-5 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{32} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 7 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{32}E_{21}b =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 7 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-5 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\0\\0\end{bmatrix}
+$$
+
+For simplicity's sake, let's first multiply $E_{32}E_{21}$ before applying them
+to $b$.
+
+$$ E_{32}E_{21} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 7 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-5 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-5 & 1 & 0 \\
+-35 & 7 & 1 \\
+\end{array}\right]
+$$
+
+Now, to solve:
+
+$$ E_{32}E_{21}b =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-5 & 1 & 0 \\
+-35 & 7 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\0\\0\end{bmatrix} =
+\begin{bmatrix}{}1\\-5\\-35\end{bmatrix}
+$$
+
+_Applying $E_{32}$ before $E_{21}$ gives $E_{21}E_{32}b =$ (?):_
+
+$$ E_{21}E_{32} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-5 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 7 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-5 & 1 & 0 \\
+0 & 7 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{21}E_{32}b =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-5 & 1 & 0 \\
+0 & 7 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\0\\0\end{bmatrix} =
+\begin{bmatrix}{}1\\-5\\0\end{bmatrix}
+$$
+
+_When $E_{32}$ comes first, row (?) feels no effect from row (?):_.
+
+3;1
+
+The reason for this is because $E_{32}$ affects row 3 based off of row 2, then
+$E_{21}$ affects row 2 from row 1, since row 2 has yet to be affected by row 1,
+it follows that row 3 is influenced by row 2 before row 2 is influenced by row
+1, and thus row 3 is never affected by row 1.
 
 3. Which three matrices $E_{21}, E_{31}, E_{32}$ put $A$ into triangular form
    $U$?
@@ -3063,25 +3206,405 @@ $$ E_{32}E_{31}E_{21}A = U $$
 
 Multiply those $E$'s to get one matrix $M$ that does elimination: $MA = U$.
 
+_Solution:_
+
+Let's evaluate what $E_{21}$ should do since it comes first.
+
+$E_{21}$ should subtract 4 times row 1 from row 2, thus:
+
+$$ E_{21} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-4 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+Applying this to $A$ yields:
+
+$$ E_{21}A =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-4 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+4 & 6 & 1 \\
+-2 & 2 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+0 & 2 & 1 \\
+-2 & 2 & 0 \\
+\end{array}\right]
+$$
+
+$E_{31}$ should subtract $-2$ times _current_ row 1 from row 3.
+
+$$ E_{31} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+2 & 0 & 1 \\
+\end{array}\right]
+$$
+
+Apply $E_{31}$ to $E_{21}A$:
+
+$$ E_{31}E_{21}A =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+2 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+0 & 2 & 1 \\
+-2 & 2 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+0 & 2 & 1 \\
+0 & 4 & 0 \\
+\end{array}\right]
+$$
+
+$E_{32}$ should subtract $2$ times _current_ row 2 from row 3.
+
+$$ E_{32} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -2 & 1 \\
+\end{array}\right]
+$$
+
+Apply $E_{32}$ to $E_{31}E_{21}A$:
+
+$$ E_{32}E_{31}E_{21}A  =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+0 & 2 & 1 \\
+0 & 4 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+0 & 2 & 1 \\
+0 & 0 & -2 \\
+\end{array}\right] = U
+$$
+
+Now to find $M$:
+
+$$ E_{32}E_{31} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+2 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+2 & -2 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{32}E_{31}E_{21} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+2 & -2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-4 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-4 & 1 & 0 \\
+10 & -2 & 1 \\
+\end{array}\right] = M
+$$
+
 4. Include $b = (1, 0, 0)$ as a fourth column in Problem 3 to produce
    $\left[\begin{array}{c}A & b \\\end{array}\right]$. Carry out elimination
    steps on this augmented matrix to solve $Ax = b$.
+
+_Solution:_
+
+Adding $b$ as a column to $A$ yields:
+
+$$ \left[\begin{array}{cc}A & b\end{array}\right] =
+\left[\begin{array}{cccc}
+1 & 1 & 0 & 1 \\
+4 & 6 & 1 & 0 \\
+-2 & 2 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$E_{21}$ should subtract 4 times row 1 from row 2, thus:
+
+$$ E_{21} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-4 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+Applying this to $\left[\begin{array}{cc}A & b\end{array}\right]$ yields:
+
+$$ E_{21}\left[\begin{array}{cc}A & b\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-4 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+1 & 1 & 0 & 1 \\
+4 & 6 & 1 & 0 \\
+-2 & 2 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+1 & 1 & 0 & 1 \\
+0 & 2 & 1 & -4 \\
+-2 & 2 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$E_{31}$ should subtract $-2$ times _current_ row 1 from row 3.
+
+$$ E_{31} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+2 & 0 & 1 \\
+\end{array}\right]
+$$
+
+Apply $E_{31}$ to $E_{21}\left[\begin{array}{cc}A & b\end{array}\right]$:
+
+$$ E_{31}E_{21}\left[\begin{array}{cc}A & b\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+2 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+1 & 1 & 0 & 1 \\
+0 & 2 & 1 & -4 \\
+-2 & 2 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+1 & 1 & 0 & 1 \\
+0 & 2 & 1 & -4 \\
+0 & 4 & 0 & 2 \\
+\end{array}\right]
+$$
+
+$E_{32}$ should subtract $2$ times _current_ row 2 from row 3.
+
+$$ E_{32} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -2 & 1 \\
+\end{array}\right]
+$$
+
+Apply $E_{32}$ to $E_{31}E_{21}\left[\begin{array}{cc}A & b\end{array}\right]$:
+
+$$ E_{32}E_{31}E_{21}\left[\begin{array}{cc}A & b\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+1 & 1 & 0 & 1 \\
+0 & 2 & 1 & -4 \\
+0 & 4 & 0 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+1 & 1 & 0 & 1 \\
+0 & 2 & 1 & -4 \\
+0 & 0 & -2 & 10 \\
+\end{array}\right]
+$$
+
+Back substitution gives $z = -5, y = \dfrac{1}{2}, x = \dfrac{1}{2}$. The
+solution is $\boxed{\left(\dfrac{1}{2}, \dfrac{1}{2}, -5\right)}$
 
 5. Suppose $a_{33} = 7$ and the third pivot is $5$. If you change $a_{33}$ to
    $11$, the third pivot is ____. If you change $a_{33}$ to ____, there is no
    third pivot.
 
+_Solution:_
+
+Changing $a_{33}$ from $7$ to $11$ will change the third pivot from
+$5 + (11 - 7) = 5 + 4 = 9$.
+
+If you change $a_{33}$ to $2$, there is no third pivot. The reason for this is
+if $a_{33}$ and the third pivot is $5$, then it means that somewhere along the
+process of elimination, $2$ was subtracted from $7$ to get $5$.
+
 6. If every column of $A$ is a multiple of $(1, 1, 1)$, then $Ax$ is always a
    multiple of $(1, 1, 1)$. Do a 3 by 3 example. How many pivots are produced by
    elimination?
+
+_Solution:_
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+1 & 2 & 3 \\
+1 & 2 & 3 \\
+\end{array}\right]
+$$
+
+$$ Ax =
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+1 & 2 & 3 \\
+1 & 2 & 3 \\
+\end{array}\right]
+\begin{bmatrix}{}x_1\\x_2\\x_3\end{bmatrix} =
+\begin{bmatrix}{}x_1 + 2x_2 + 3x_3\\x_1 + 2x_2 + 3x_3\\x_1 + 2x_2 + 3x_3\end{bmatrix}
+$$
+
+Elimination:
+
+$E_{21}$ subtracts 1 times row 1 from row 2.
+
+$$ E_{21} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+Apply $E_{21}$ to $A$:
+
+$$ E_{21}A =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 2 & 3 \\
+1 & 2 & 3 \\
+1 & 2 & 3 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 2 & 3 \\
+0 & 0 & 0 \\
+1 & 2 & 3 \\
+\end{array}\right]
+$$
+
+$E_{31}$ subtracts 1 times row 1 from row 3.
+
+$$ E_{31} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-1 & 0 & 1 \\
+\end{array}\right]
+$$
+
+Apply $E_{31}$ to $E_{21}A$:
+
+$$ E_{31}E_{21}A =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-1 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 2 & 3 \\
+0 & 0 & 0 \\
+1 & 2 & 3 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 2 & 3 \\
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+_How many pivots are produced by elimination?:
+
+Exactly 1:
+
+$$
+\left[\begin{array}{rrr}
+\boxed{1} & 2 & 3 \\
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
 
 7. Suppose $E$ subtracts $7$ times row 1 from row 3.
 
 a. To _invert_ that step should ____ $7$ times row ____ to row ____.
 
+_Solution:_
+
+add; 1; 3
+
 b. What "inverse matrix" $E^{-1}$ takes that reverse step (so $E^{-1}E = I$)?
 
+$$ E^{-1} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+7 & 0 & 1 \\
+\end{array}\right]
+$$
+
 c. If the reverse step is applied first (and then $E$) show that $EE^{-1} = I$.
+
+$$ E =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-7 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ EE^{-1} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-7 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+7 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] = I
+$$
+
+[LEFT OFF HERE.]
 
 8. The _determinant_ of
    $\left[\begin{array}{cc} a & b \\ c & d \\ \end{array}\right]$ is $\det M =
