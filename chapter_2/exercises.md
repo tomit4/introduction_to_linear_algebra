@@ -3546,7 +3546,7 @@ $$ E_{31}E_{21}A =
 \end{array}\right]
 $$
 
-_How many pivots are produced by elimination?:
+_How many pivots are produced by elimination?:_
 
 Exactly 1:
 
@@ -3604,34 +3604,273 @@ $$ EE^{-1} =
 \end{array}\right] = I
 $$
 
-[LEFT OFF HERE.]
-
 8. The _determinant_ of
    $\left[\begin{array}{cc} a & b \\ c & d \\ \end{array}\right]$ is $\det M =
    ad - bc$. Subtract $\ell$ times row 1 from row 2 to produce a new $M^*$. Show
    that $\det M^* = \det M$ for every $\ell$. When $\ell = \dfrac{c}{a}$, _the
    product pivots equals the determinant:_ $(a)(d - \ell b)$ equals $ad - bc$.
 
+_Solution:_
+
+_Subtract $\ell$ times row 1 from row 2 to produce a new $M^*$:_
+
+$$ M =
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right]
+$$
+
+$$ M^* =
+\left[\begin{array}{cc}
+a & b \\
+c - \ell a & d - \ell b \\
+\end{array}\right]
+$$
+
+_Show that $\det M^* = \det M$ for every $\ell$:_
+
+If we compute the $\det M^*$:
+
+$$ \det M^* = a(d - \ell b) - b(c - \ell a) $$
+
+$$ = ad - \ell ba - bc + \ell ba $$
+
+$$ = ad \cancel{- \ell ba} - bc \cancel{+ \ell ba} $$
+
+$$ = ad - bc  = \det M $$
+
 9.
 
 a. $E_{21}$ subtracts row 1 from row 2 and then $P_{23}$ exchanges rows 2 and 3.
 What matrix $M = P_{23}E_{21}$ does both steps at once?
 
+_Solution:_
+
+$$ E_{21} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ P_{23} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+\end{array}\right]
+$$
+
+$$ P_{23}E_{21} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+-1 & 1 & 0 \\
+\end{array}\right] = M
+$$
+
 b. $P_{23}$ exchanges rows 2 and 3 and then $E_{31}$ subtracts row 1 from row 3.
 What matrix $M = E_{31}P_{23}$ does both steps at once? Explain why the $M$'s
 are the same but the $E$'s are different.
+
+_Solution:_
+
+$$ P_{23} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+\end{array}\right]
+$$
+
+$$ E_{31} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-1 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{31}P_{23} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-1 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+-1 & 1 & 0 \\
+\end{array}\right] = M
+$$
+
+_Explanation:_
+
+The reason is that we're doing the same operation, just in reverse. In part (b)
+we first exchange rows 2 and 3, then subtract row 1 from row 2 (note that row 2
+is the original row 3). Now, here in part (b), we instead first subtract row
+from row 1 from row 3, then exchange row 2 and row 3 (and here, row 2 is the
+original row 3 after row 1 was subtracted from the original row 3).
 
 10.
 
 a. What 3 by 3 matrix $E_{13}$ will add row 3 to row 1?
 
+_Solution:_
+
+$$ E_{13} =
+\left[\begin{array}{ccc}
+1 & 0 & 1 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
 b. What matrix adds row 1 to row 3 and _at the same time_ row 3 to row 1?
 
+_Solution:_
+
+$$
+\left[\begin{array}{ccc}
+1 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 1 \\
+\end{array}\right]
+$$
+
 c. What matrix adds row 1 to row 3 and _then_ adds row 3 to row 1?
+
+_Solution:_
+
+$$
+\left[\begin{array}{ccc}
+1 & 0 & 1 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+1 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+2 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 1 \\
+\end{array}\right]
+$$
 
 11. Create a matrix that has $a_{11} = a_{22} = a_{33} = 1$ but elimination
     produces two negatives pivots without row exchanges. (The first pivot is
     $1$.)
+
+_Solution:_
+
+Let
+
+$$ A =
+\left[\begin{array}{rrr}
+1 & 2 & 2 \\
+1 & 1 & 2 \\
+1 & 2 & 1 \\
+\end{array}\right]
+$$
+
+We are trying to get to:
+
+$$
+\left[\begin{array}{rrr}
+1 & ? & ? \\
+? & -? & ? \\
+? & ? & -? \\
+\end{array}\right]
+$$
+
+Solving $A$ by row, the first thing to do is to subtract row 1 from row 2, so:
+
+$$ E_{21} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+Then, subtract row 1 from row 3:
+
+$$ E_{31} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-1 & 0 & 1 \\
+\end{array}\right]
+$$
+
+That is all that will be necessary, so find $E_{31}E_{21}$a
+
+$$ E_{31}E_{21} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-1 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+-1 & 0 & 1 \\
+\end{array}\right]
+$$
+
+And now $E_{31}E_{21}A$:
+
+$$ E_{31}E_{21}A =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+-1 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 2 & 2 \\
+1 & 1 & 2 \\
+1 & 2 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 2 & 2 \\
+0 & -1 & 0 \\
+0 & 0 & -1 \\
+\end{array}\right]
+$$
+
+This is our solution.
+
+_Note:_ This one took me a while, just think about $A$ as being the identity
+matrix but then change all the $0$'s to some other positive number to start,
+then think on the row operations. I learned during this that the Elimination
+matrices _cannot_ change the $1$'s from the original Identity matrix from which
+they are based. This is because that would be scaling the original matrix's
+constants, which is not what elimination is trying to do (on its face).
 
 12. Multiply these matrices:
 
@@ -3666,9 +3905,231 @@ $$
 \end{array}\right]
 $$
 
+_Solution:_
+
+_First set of matrices:_
+
+$$
+\left[\begin{array}{ccc}
+0 & 0 & 1\\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+\end{array}\right]
+$$
+
+Divide the problem up, first start with the first two matrices on the left:
+
+$$
+\left[\begin{array}{ccc}
+0 & 0 & 1\\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+7 & 8 & 9 \\
+4 & 5 & 6 \\
+1 & 2 & 3 \\
+\end{array}\right]
+$$
+
+Now, multiply this product matrix by the third matrix:
+
+$$
+\left[\begin{array}{ccc}
+7 & 8 & 9 \\
+4 & 5 & 6 \\
+1 & 2 & 3 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+9 & 8 & 7 \\
+6 & 5 & 4 \\
+3 & 2 & 1 \\
+\end{array}\right]
+$$
+
+Notice what has happened here, twice over we have multiplied by a "reverse
+Identity matrix", also known as a permutation matrix. We have essentially
+reversed the rows in the first multiplication, then reversed the columns in the
+second (this is dependent on the order of matrices in the multiplication).
+
+_Second set of matrices:_
+
+$$
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+-1 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 2 & 3 \\
+1 & 3 & 1 \\
+1 & 4 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 2 & 3 \\
+0 & 1 & -2 \\
+0 & 2 & -3 \\
+\end{array}\right]
+$$
+
+_Note:_ This is two Elimination matrices (two subtractions, _i.e._ two row
+operations), but the final form isn't upper triangular, so the elimination step
+isn't finished.
+
 13. Explain these facts. If the third column of $B$ is all zero, the third
     column of $EB$ is all zero (for any $E$). If the third _row_ of $B$ is all
     zero, the third row of $EB$ might _not_ be zero.
+
+_Solution:_
+
+_If the third column of $B$ is all zero, the third column of $EB$ is all zero
+(for any $E$):_
+
+Consider $B$:
+
+$$ B =
+\left[\begin{array}{ccc}
+a & b & 0 \\
+c & d & 0 \\
+e & f & 0 \\
+\end{array}\right]
+$$
+
+Now consider our elimination steps. In order to eliminate the first row's $a$,
+$c - xa = 0$ must occur with $x$ being any positive scalar integer, leaving
+$d - bx$. For simplicity's sake, let $x = 1$, then:
+
+$$ E_{21} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+and:
+
+$$ E_{21}B =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+a & b & 0 \\
+c & d & 0 \\
+e & f & 0 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+a - c & b & 0 \\
+c - a & d - b & 0 \\
+e & f & 0 \\
+\end{array}\right]
+$$
+
+As long as $c - a = 0$, then we can continue multiplying this result by further
+elimination matrices, but the ultimate idea is that the third row times the
+third column (which again, consists of all $0$s), will always result in a
+solution matrix where the third column is also all $0$s.
+
+_If the third _row_ of $B$ is all zero, the third row of $EB$ might _not_ be
+zero:_
+
+Consider $B$:
+
+$$ B =
+\left[\begin{array}{ccc}
+a & b & c \\
+d & e & f \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+Similar to the previous, we start the process of elimination:
+
+$$ E_{21} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{21}B =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+a & b & c \\
+d & e & f \\
+0 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+a - d & b & c \\
+d - a & e - b & f - c \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+Continuing in this way, it might appear that the third row will always be $0$,
+but consider that sometimes the operations involved in elimination sometimes
+involve adding two rows instead of subtraction.
+
+For example, if we add row 2 to row 3 at this point during the elimination, we
+get:
+
+$$
+E_{32} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 1 & 1 \\
+\end{array}\right]
+$$
+
+And the elimination process continues as follows:
+
+$$ E_{32}E_{21}B =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+a - d & b & c \\
+d - a & e - b & f - c \\
+0 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+a - d & b & c \\
+d - a & e - b & f - c \\
+d - a & e - b & f - c \\
+\end{array}\right]
+$$
+
+And it is certainly not always true that $d - a = 0, e - b = 0, f - c = 0$.
 
 14. This 4 by 4 matrix will need elimination matrices $E_{21}$ and $E_{32}$ and
     $E_{43}$. What are those matrices?
@@ -3682,10 +4143,320 @@ $$ A =
 \end{array}\right]
 $$
 
+_Solution:_
+
+$E_{21}$ indicates that we must subtract row 1 from row 2 in some form (by some
+scalar value) in order to get $a_{11} = 0$.
+
+Evaluating for this, we get:
+
+$$ -1 + x \cdot 2 = 0 $$
+
+$$ 2x = 1 $$
+
+$$ x = \frac{1}{2} $$
+
+This is the scalar value, so $E_{21}$ is:
+
+$$ E_{21} =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+\frac{1}{2} & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+Finding $E_{21}A$ is:
+
+$$ E_{21}A =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+\frac{1}{2} & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrrr}
+2 & -1 & 0 & 0 \\
+-1 & 2 & -1 & 0 \\
+0 & -1 & 2 & -1 \\
+0 & 0 & -1 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{rrrr}
+2 & -1 & 0 & 0 \\
+0 & \frac{3}{2} & -1 & 0 \\
+0 & -1 & 2 & -1 \\
+0 & 0 & -1 & 2 \\
+\end{array}\right]
+$$
+
+Moving on, we are tasked with then finding $E_{32}$, where row 2 is subtracted
+from row 3. Again, row 2 might be multiplied by some scalar value so that the
+product matrix has an entry of $a_{32} = 0$.
+
+Evaluating the scalar value:
+
+$$ -1 - y \cdot \frac{3}{2} = 0 $$
+
+$$ -y \cdot \frac{3}{2} = 1 $$
+
+$$ -y = \frac{2}{3} $$
+
+We leave $-y$ as negative because $(E_{21}A)_{32} = -1$.
+
+So, $E_{32}$ is:
+
+$$ E_{32} =
+\left[\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & \frac{2}{3} & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+Now to find $E_{32}E_{21}A$:
+
+$$ E_{32}E_{21}A =
+\left[\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & \frac{2}{3} & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrrr}
+2 & -1 & 0 & 0 \\
+0 & \frac{3}{2} & -1 & 0 \\
+0 & -1 & 2 & -1 \\
+0 & 0 & -1 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{rrrr}
+2 & -1 & 0 & 0 \\
+0 & \frac{3}{2} & -1 & 0 \\
+0 & 0 & \frac{4}{3} & -1 \\
+0 & 0 & -1 & 2 \\
+\end{array}\right]
+$$
+
+Now to find $E_{43}$. Again, $E_{43}$ should subtract row 3 from row 4, where
+row 3 is multiplied by some scalar value. Evaluating:
+
+$$ -1 - z \cdot \frac{4}{3} = 0 $$
+
+$$ -z \cdot \frac{4}{3} = 1 $$
+
+$$ -z = \frac{3}{4} $$
+
+Again, we leave $-z$ as negative, as $(E_{32}E_{21}A)_{43} = -1$.
+
+Thus $E_{43}$ is:
+
+$$ E_{43} =
+\left[\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & \frac{3}{4} & 1 \\
+\end{array}\right]
+$$
+
+Now to find $E_{43}E_{32}E_{21}A$:
+
+$$ E_{43}E_{32}E_{21}A  =
+\left[\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & \frac{3}{4} & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrrr}
+2 & -1 & 0 & 0 \\
+0 & \frac{3}{2} & -1 & 0 \\
+0 & 0 & \frac{4}{3} & -1 \\
+0 & 0 & -1 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{rrrr}
+2 & -1 & 0 & 0 \\
+0 & \frac{3}{2} & -1 & 0 \\
+0 & 0 & \frac{4}{3} & -1 \\
+0 & 0 & 0 & \frac{5}{4} \\
+\end{array}\right]
+$$
+
+And we have reached upper triangular form.
+
+So our elimination matrices are:
+
+$$ E_{21} =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+\frac{1}{2} & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{32} =
+\left[\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & \frac{2}{3} & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{43} =
+\left[\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & \frac{3}{4} & 1 \\
+\end{array}\right]
+$$
+
 15. Write down the 3 by 3 matrix that has $a_{ij} = 2i - 3j$. This matrix has
     $a_{32} = 0$, but elimination still needs $E_{32}$ to produce a zero in the
     $3, 2$ position. Which previous step destroys the original zero and what is
     $E_{32}$?
+
+_Solution:_
+
+_Write down the 3 by 3 matrix that has $a_{ij} = 2i - 3j$:_
+
+$$ a_{11} = 2(1) - 3(1) = 2 - 3 = -1 $$
+
+$$ a_{12} = 2(1) - 3(2) = 2 - 6 = -4 $$
+
+$$ a_{13} = 2(1) - 3(3) = 2 - 9 = -7 $$
+
+$$ a_{21} = 2(2) - 3(1) = 4 - 3 = 1 $$
+
+$$ a_{22} = 2(2) - 3(2) = 4 - 6 = -2 $$
+
+$$ a_{23} = 2(2) - 3(3) = 4 - 9 = -5 $$
+
+$$ a_{31} = 2(3) - 3(1) = 6 - 3 = 3 $$
+
+$$ a_{32} = 2(3) - 3(2) = 6 - 6 = 0 $$
+
+$$ a_{33} = 2(3) - 3(3) = 6 - 9 = -3 $$
+
+$$ A =
+\left[\begin{array}{ccc}
+-1 & -4 & -7 \\
+1 & -2 & -5 \\
+3 & 0 & -3 \\
+\end{array}\right]
+$$
+
+_Which previous step destroys the original zero?:_
+
+Let's just go through elimination on $A$ and see.
+
+$$ A =
+\left[\begin{array}{ccc}
+-1 & -4 & -7 \\
+1 & -2 & -5 \\
+3 & 0 & -3 \\
+\end{array}\right]
+$$
+
+For $E_{21}$, simply add row 1 to row 2:
+
+$$ E_{21} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+Now, find $E_{21}A$:
+
+$$ E_{21}A =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+-1 & -4 & -7 \\
+1 & -2 & -5 \\
+3 & 0 & -3 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+-1 & -4 & -7 \\
+0 & -6 & -12 \\
+3 & 0 & -3 \\
+\end{array}\right]
+$$
+
+Now for $E_{31}$, add 3 times row 1 to row 3:
+
+$$ E_{31} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+3 & 0 & 1 \\
+\end{array}\right]
+$$
+
+Now find $E_{31}E_{21}A$:
+
+$$ E_{31}E_{21}A =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+3 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+-1 & -4 & -7 \\
+0 & -6 & -12 \\
+3 & 0 & -3 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+-1 & -4 & -7 \\
+0 & -6 & -12 \\
+0 & -12 & -24 \\
+\end{array}\right]
+$$
+
+So, the step of elimination that "destroys" the original zero is $E_{31}$.
+
+_What is $E_{32}$?:_
+
+$E_{32}$ should subtract 2 times row 2 from row 3:
+
+$$ E_{32} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -2 & 1 \\
+\end{array}\right]
+$$
+
+Double checking by calculating $E_{32}E_{31}E_{21}A$:
+
+$$ E_{32}E_{31}E_{21}A =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+-1 & -4 & -7 \\
+0 & -6 & -12 \\
+0 & -12 & -24 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+-1 & -4 & -7 \\
+0 & -6 & -12 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+Notice that since the last row is all $0$'s, this tells us that matrix $A$ is
+singular.
 
 **Problems 16-23 are about creating and multiplying matrices.**
 
@@ -3694,12 +4465,271 @@ $$
 
 a. $X$ is twice as old as $Y$ and their ages add to $33$.
 
+$$ X = 2Y \text{ and } X + Y = 33 $$
+
+$$
+X - 2Y = 0 \\
+X + Y = 33 \\
+$$
+
+$$ Ax =
+\left[\begin{array}{rrr}
+1 & -2 \\
+1 & 1 \end{array}\right]
+\begin{bmatrix}{}X\\Y\end{bmatrix} =
+\begin{bmatrix}{}0\\33\end{bmatrix} = b
+$$
+
+Now to solve, eliminate and then back substitute. First, let's express $Ax = b$
+as a single matrix:
+
+$$ [Ax|b] =
+\left[\begin{array}{cc|c}
+1 & -2 & 0 \\
+1 & 1 & 33 \\
+\end{array}\right]
+$$
+
+So, $E_{21}$ should subtract 1 times row 1 from row 2:
+
+$$ E_{21} =
+\left[\begin{array}{rr}
+1 & 0 \\
+-1 & 1\\
+\end{array}\right]
+$$
+
+Now to evaluate $E_{21}[Ax|b]$:
+
+$$ E_{21}[Ax|b] =
+\left[\begin{array}{rr}
+1 & 0 \\
+-1 & 1\\
+\end{array}\right]
+\left[\begin{array}{cc|c}
+1 & -2 & 0 \\
+1 & 1 & 33 \\
+\end{array}\right] =
+\left[\begin{array}{cc|c}
+1 & -2 & 0 \\
+0 & 3 & 33 \\
+\end{array}\right]
+$$
+
+So, $3Y = 33 \Rightarrow \boxed{Y = 11}$, then
+$X - 2(11) = 0 \Rightarrow \boxed{X = 22}$.
+
 b. $(x, y) = (2, 5)$ and $(3, 7)$ lie on the line $y = mx + c$. Find $m$ and
 $c$.
+
+$$
+5 = 2m + c \\
+7 = 3m + c \\
+$$
+
+Equivalently:
+
+$$
+2m + c = 5 \\
+3m + c = 7 \\
+$$
+
+Written as a form of $[Ax | b]$:
+
+$$ [Ax | b] =
+\left[\begin{array}{cc|c}
+2 & 1 & 5 \\
+3 & 1 & 7 \\
+\end{array}\right]
+$$
+
+$E_{21}$ subtracts 3/2 times row 1 from row 2:
+
+$$ E_{21} =
+\left[\begin{array}{cc}
+1 & 0 \\
+-\frac{3}{2} & 1 \\
+\end{array}\right]
+$$
+
+Find $E_{21}[Ax|b]$:
+
+$$ E_{21}[Ax|b] =
+\left[\begin{array}{cc}
+1 & 0 \\
+-\frac{3}{2} & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc|c}
+2 & 1 & 5 \\
+3 & 1 & 7 \\
+\end{array}\right] =
+\left[\begin{array}{cc|c}
+2 & 1 & 5 \\
+0 & -\frac{1}{2} & -\frac{1}{2} \\
+\end{array}\right]
+$$
+
+So $-\dfrac{1}{2}c = -\dfrac{1}{2} \Rightarrow c = 1$, and also
+$2m + 1(1) = 5 \Rightarrow m = 2$.
 
 17. The parabola $y = a + bx + cx^2$ goes through the points $(x, y) = (1, 4)$
     and $(2, 8)$ and $(3, 14)$. Find and solve a matrix equation for the
     unknowns $(a, b, c)$.
+
+_Solution:_
+
+$$ y = a + bx + cx^2 $$
+
+$$ (x, y) = (1, 4), (x, y)  = (2, 8), (x, y) = (3, 14) $$
+
+$$
+4 = a + b(1) + c(1)^2 \\
+8 = a + b(2) + c(2)^2 \\
+14 = a + b(3) + c(3)^2 \\
+$$
+
+Equivalently:
+
+$$
+a + b + c = 4 \\
+a + 2b + 4c = 8 \\
+a + 3b + 9c = 14 \\
+$$
+
+Treat this as an $[Ax | b]$ matrix:
+
+$$ [Ax | b] =
+\left[\begin{array}{rrr|r}
+1 & 1 & 1 & 4 \\
+1 & 2 & 4 & 8 \\
+1 & 3 & 9 & 14
+\end{array}\right]
+$$
+
+Now, eliminate and back substitute:
+
+$$ [Ax | b] =
+\left[\begin{array}{rrr|r}
+1 & 1 & 1 & 4 \\
+1 & 2 & 4 & 8 \\
+1 & 3 & 9 & 14
+\end{array}\right]
+$$
+
+$E_{21}$ should subtract 1 times row 1 from row 2:
+
+$$ E_{21} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+Now evaluate $E_{21}[Ax|b]$:
+
+$$ E_{21}[Ax|b] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr|r}
+1 & 1 & 1 & 4 \\
+1 & 2 & 4 & 8 \\
+1 & 3 & 9 & 14
+\end{array}\right] =
+\left[\begin{array}{rrr|r}
+1 & 1 & 1 & 4 \\
+0 & 1 & 3 & 4 \\
+1 & 3 & 9 & 14 \\
+\end{array}\right]
+$$
+
+Now, $E_{31}$ should subtract 1 times row 1 from row 3:
+
+$$ E_{31} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-1 & 0 & 1 \\
+\end{array}\right]
+$$
+
+Find $E_{31}E_{21}[Ax|b]$:
+
+$$ E_{31}E_{21}[Ax|b] =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-1 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr|r}
+1 & 1 & 1 & 4 \\
+0 & 1 & 3 & 4 \\
+1 & 3 & 9 & 14 \\
+\end{array}\right] =
+\left[\begin{array}{rrr|r}
+1 & 1 & 1 & 4 \\
+0 & 1 & 3 & 4 \\
+0 & 2 & 8 & 10 \\
+\end{array}\right]
+$$
+
+Now, $E_{32}$ should subtract 2 times row 2 from row 3.
+
+$$ E_{32} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -2 & 1 \\
+\end{array}\right]
+$$
+
+Find $E_{32}E_{31}E_{21}[Ax|b]$:
+
+$$ E_{32}E_{31}E_{21}[Ax|b] =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr|r}
+1 & 1 & 1 & 4 \\
+0 & 1 & 3 & 4 \\
+0 & 2 & 8 & 10 \\
+\end{array}\right] =
+\left[\begin{array}{rrr|r}
+1 & 1 & 1 & 4 \\
+0 & 1 & 3 & 4 \\
+0 & 0 & 2 & 2 \\
+\end{array}\right]
+$$
+
+Now back substitute:
+
+$$ 2c = 2 \Rightarrow c = 1 $$
+
+$$ y + 3(1) = 4 \Rightarrow y = 1 $$
+
+$$ a + 1 + 1 = 4 \Rightarrow a = 2 $$
+
+Thus $\boxed{(a, b, c) = (2, 1, 1)}$.
+
+_Note:_
+
+In the solutions section, Strang mentions that:
+
+$$
+\left[\begin{array}{ccc}
+1 & 1 & 1\\
+1 & 2 & 3 \\
+1 & 3 & 9 \\
+\end{array}\right]
+$$
+
+Is what is known as a
+[**Vandermonde matrix**](https://en.wikipedia.org/wiki/Vandermonde_matrix).
 
 18. Multiply these matrices in the orders $EF$ and $FE$.
 
@@ -3720,6 +4750,118 @@ $$ F =
 $$
 
 Also compute $E^2 = EE$ and $F^3 = FFF$. You can guess $F^{100}$.
+
+_Solution:_
+
+$EF$:
+
+$$ EF =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+a & 1 & 0 \\
+b & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & c & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+a & 1 & 0 \\
+b & c & 1 \\
+\end{array}\right]
+$$
+
+$FE$:
+
+$$ FE =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & c & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+a & 1 & 0 \\
+b & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+a & 1 & 0 \\
+ca + b & c & 1 \\
+\end{array}\right]
+$$
+
+$E^2$:
+
+$$ E^2 =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+a & 1 & 0 \\
+b & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+a & 1 & 0 \\
+b & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+2a & 1 & 0 \\
+2b & 0 & 1 \\
+\end{array}\right]
+$$
+
+$F^3$:
+
+$$ F^2 =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & c & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & c & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 2c & 1 \\
+\end{array}\right]
+$$
+
+$$ F^3 = F^2F =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 2c & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & c & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 3c & 1 \\
+\end{array}\right]
+$$
+
+$F^{100}$:
+
+Guess for $F^{100}$, extrapolating from finding $F^3$ is:
+
+$$ F^{100} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 100c & 1 \\
+\end{array}\right]
+$$
 
 19. Multiply these row exchange matrices in the orders $PQ$ and $QP$ and $P^2$:
 
@@ -3743,10 +4885,98 @@ $$
 
 Find another non-diagonal matrix whose square is $M^2 = I$.
 
+_Solution:_
+
+$PQ$:
+
+$$ PQ =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$QP$:
+
+$$ QP =
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+\end{array}\right]
+$$
+
+$P^2$:
+
+$$ P^2 =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] = I
+$$
+
+_Find another non-diagonal matrix whose square is $M^2 = I$:_
+
+Try $Q^2$:
+
+$$ Q^2 =
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] = I
+$$
+
+So $Q = M$, and $Q^2 = M^2 = I$.
+
 20.
 
 a. Suppose all columns of $B$ are the same. Then all columns of $EB$ are the
 same, because each one is $E$ times ____.
+
+that column of $B$.
 
 b. Suppose all rows of $B$ are
 $\left[\begin{array}{ccc}1 & 2 & 4\\\end{array}\right]$. Show by example that
@@ -3754,8 +4984,125 @@ all rows of $EB$ are _not_
 $\left[\begin{array}{ccc}1 & 2 & 4\\\end{array}\right]$. It is true that those
 rows are ____.
 
+_Show by example that all rows of $EB$ are _not_
+$\left[\begin{array}{ccc}1 & 2 & 4\\\end{array}\right]$:_
+
+Suppose $B$ is a 3x3 matrix, then:
+
+$$ B =
+\left[\begin{array}{ccc}
+1 & 2 & 4 \\
+1 & 2 & 4 \\
+1 & 2 & 4 \\
+\end{array}\right]
+$$
+
+Now, let us begin elimination.
+
+$E_{21}$ subtracts 1 times row 1 from row 2:
+
+$$ E_{21} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+Find $E_{21}B$:
+
+$$ E_{21}B =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 2 & 4 \\
+1 & 2 & 4 \\
+1 & 2 & 4 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 2 & 4 \\
+0 & 0 & 0 \\
+1 & 2 & 4 \\
+\end{array}\right]
+$$
+
+Right away, because all rows have the same coefficients (namely,
+$\left[\begin{array}{ccc}
+1 & 2 & 4 \\
+\end{array}\right]$), upon trying even the first form of elimination, we are
+left with a row that is all $0$'s. This implies that all rows of $EB$ are
+multiples of $\left[\begin{array}{ccc}
+1 & 2 & 4\\
+\end{array}\right]$.
+
+_It is true that those rows are (?):_
+
+multiples of $\left[\begin{array}{ccc}
+1 & 2 & 4 \\
+\end{array}\right]$.
+
 21. If $E$ adds row 1 to row 2 and $F$ adds row 2 to row 1, does $EF$ equal
     $FE$?
+
+$$ E =
+\left[\begin{array}{cc}
+1 & 0 \\
+1 & 1 \\
+\end{array}\right]
+$$
+
+$$ F =
+\left[\begin{array}{cc}
+1 & 1 \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+$$ EF =
+\left[\begin{array}{cc}
+1 & 0 \\
+1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 1 \\
+0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 2 \\
+\end{array}\right]
+$$
+
+$$ FE =
+\left[\begin{array}{cc}
+1 & 1 \\
+0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 0 \\
+1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+2 & 1 \\
+1 & 1 \\
+\end{array}\right]
+$$
+
+So no, because:
+
+$$ FE =
+\left[\begin{array}{cc}
+2 & 1 \\
+1 & 1 \\
+\end{array}\right] \neq
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 2 \\
+\end{array}\right] = EF
+$$
 
 22. The entries of $A$ and $x$ are $a_{ij}$ and $x_j$. So the first component of
     $Ax$ is $\sum{a_1jx_j} = a_{11}x_1 + \cdots + a_{1n}x_n$. If $E_{21}$
@@ -3763,17 +5110,46 @@ rows are ____.
 
 a. the third component of $Ax$
 
+$$ (Ax)_{33} = \sum{a_{3j}x_j}$$
+
 b. the $(2, 1)$ entry of $E_{21}A$
+
+$$ a_{21} - a_{11} $$
 
 c. the $(2, 1)$ entry of $E_{21}(E_{21}A)$
 
+$$ a_{21} - 2a_{11} $$
+
 d. the first component of $E_{21}Ax$
+
+$$ (E_{21}Ax)_{11} = (EAx)_1 = (Ax)_1 = \sum{a_{1j}x_j} $$
 
 23. The elimination matrix
     $E = \left[\begin{array}{cc} 1 & 0 \\ -2 & 1 \\ \end{array}\right]$
     subtracts $2$ times row 1 of $A$ from row 2 of $A$. The result is $EA$. What
     is the effect of $E(EA)$? In the opposite order $AE$, we are subtracting $2$
     times ____ of $A$ from ____. (Do examples.)
+
+_What is the effect of $E(EA)$?:_
+
+$E(EA)$ first simply does $EA$, where it subtracts 2 times row 1 from row 2.
+Let's denote this:
+
+$$ EA = r_2 - 2r_1 $$
+
+Then $E(EA)$ subtracts 2 times row 1 from row EA:
+
+$$ E(EA) = (r_2 - 2r_1) - 2r_1 \Rightarrow r_2 - 4r_1 $$
+
+In effect, $E(EA)$ subtracts 4 times row 1 from row 2.
+
+_In the opposite order $AE$, we are subtracting $2$ times (?) of $A$ from (?):_
+
+column 2; column 1
+
+_Do examples:_
+
+Omitted.
 
 **Problems 24-27 include the column $b$ in the augmented matrix
 $\left[\begin{array}{cc} A & b \\ \end{array}\right]$.**
@@ -3791,6 +5167,51 @@ $$ Ax =
 \begin{bmatrix}{}1\\17\end{bmatrix}
 $$
 
+_Solution:_
+
+$$ \left[\begin{array}{cc}
+A & b\\
+\end{array}\right] =
+\left[\begin{array}{cc|c}
+2 & 3 & 1\\
+4 & 1 & 17 \\
+\end{array}\right]
+$$
+
+$$ E_{21} =
+\left[\begin{array}{cc}
+1 & 0 \\
+-2 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{21}\left[\begin{array}{cc}
+A & b\\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 0 \\
+-2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc|c}
+2 & 3 & 1\\
+4 & 1 & 17 \\
+\end{array}\right] =
+\left[\begin{array}{cc|c}
+2 & 3 & 1 \\
+0 & -5 & 15 \\
+\end{array}\right]
+$$
+
+Back substitution yields:
+
+$$ -5x_2 = 15 \Rightarrow x_2 = -3 $$
+
+$$ 2x_1 + 3(-3) = 1 \Rightarrow 2x_1 - 9 = 1 \Rightarrow x_1 = 5 $$
+
+Thus:
+
+$$ x = \begin{bmatrix}{}5\\-3\end{bmatrix} $$
+
 25. Apply elimination to the 3 by 4 augmented matrix
     $\left[\begin{array}{cc} A & b \\ \end{array}\right]$. How do you know this
     system has no solution? Change the last number 6 so there _is_ a solution.
@@ -3804,6 +5225,122 @@ $$ Ax =
 \begin{bmatrix}{}x\\y\\z\end{bmatrix} =
 \begin{bmatrix}{}1\\2\\6\end{bmatrix}
 $$
+
+_Solution:_
+
+$$
+\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{ccc|c}
+1 & 2 & 3 & 1 \\
+2 & 3 & 4 & 2 \\
+3 & 5 & 7 & 6 \\
+\end{array}\right]
+$$
+
+$$ E_{21} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-2 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{21}\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-2 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc|c}
+1 & 2 & 3 & 1 \\
+2 & 3 & 4 & 2 \\
+3 & 5 & 7 & 6 \\
+\end{array}\right] =
+\left[\begin{array}{ccc|c}
+1 & 2 & 3 & 1 \\
+0 & -1 & -2 & 0 \\
+3 & 5 & 7 & 6 \\
+\end{array}\right]
+$$
+
+$$ E_{31} =
+\left[\begin{array}{ccc}
+1 & 0 & 0\\
+0 & 1 & 0 \\
+-3 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{31}E_{21}\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0\\
+0 & 1 & 0 \\
+-3 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc|c}
+1 & 2 & 3 & 1 \\
+0 & -1 & -2 & 0 \\
+3 & 5 & 7 & 6 \\
+\end{array}\right] =
+\left[\begin{array}{ccc|c}
+1 & 2 & 3 & 1 \\
+0 & -1 & -2 & 0 \\
+0 & -1 & -2 & 3 \\
+\end{array}\right]
+$$
+
+$$ E_{32} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -1 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{32}E_{31}E_{21}\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc|c}
+1 & 2 & 3 & 1 \\
+0 & -1 & -2 & 0 \\
+0 & -1 & -2 & 3 \\
+\end{array}\right] =
+\left[\begin{array}{ccc|c}
+1 & 2 & 3 & 1 \\
+0 & -1 & -2 & 0 \\
+0 & 0 & 0 & 3 \\
+\end{array}\right]
+$$
+
+And here we have $0z = 3$, for which there is no solution.
+
+We can get a solution by changing the $6$ to a $3$:
+
+$$ Ax =
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+2 & 3 & 4 \\
+3 & 5 & 7 \\
+\end{array}\right]
+\begin{bmatrix}{}x\\y\\z\end{bmatrix} =
+\begin{bmatrix}{}1\\2\\3\end{bmatrix}
+$$
+
+This is because at elimination
+$E_{32}E_{31}E_{21}\left[\begin{array}{cc}A & b \\\end{array}\right]$,
+$-3 + 0 + 3 = 0$ will ultimately result in a $0z = 0$ back substitution, and
+that will mean there are infinitely many solutions.
 
 26. The equations $Ax = b$ and $Ax^* = b^*$ have the same matrix $A$. What
     double augmented matrix should you use in elimination to solve both
@@ -3830,6 +5367,81 @@ $$
 \begin{bmatrix}{}0\\1\end{bmatrix}
 $$
 
+_Solution:_
+
+Let's express $Ax = b$ as $\left[\begin{array}{cc}A & b\\\end{array}\right]$.
+
+$$ \left[\begin{array}{cc}A & b\\\end{array}\right] =
+\left[\begin{array}{cc|c}
+1 & 4 & 1 \\
+2 & 7 & 0 \\
+\end{array}\right]
+$$
+
+Similarly for $Ax^* = b^*$, expressed as
+$\left[\begin{array}{cc}A^* & b^*\\\end{array}\right]$:
+
+$$ \left[\begin{array}{cc}A^* & b^*\\\end{array}\right] =
+\left[\begin{array}{cc|c}
+1 & 4 & 0 \\
+2 & 7 & 1 \\
+\end{array}\right]
+$$
+
+If we add $b + b^*$, we can find
+$\left[\begin{array}{ccc}A & b & b^*\\\end{array}\right]$:
+
+$$ \left[\begin{array}{ccc}A & b & b^*\\\end{array}\right] =
+\left[\begin{array}{cc|cc}
+1 & 4 & 1 & 0 \\
+2 & 7 & 0 & 1 \\
+\end{array}\right]
+$$
+
+Now, by elimination:
+
+$$ E_{21} =
+\left[\begin{array}{cc}
+1 & 0 \\
+-2 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{21}\left[\begin{array}{ccc}A & b & b^*\\\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 0 \\
+-2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc|cc}
+1 & 4 & 1 & 0 \\
+2 & 7 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc|cc}
+1 & 4 & 1 & 0 \\
+0 & -1 & -2 & 1 \\
+\end{array}\right]
+$$
+
+This gives us both $b$ and $b^*$.
+
+So, for $b$:
+
+$$
+-y = -2 \Rightarrow y = 2 \\
+x + 4(2) = 1 \Rightarrow x = -7 \\
+$$
+
+Thus $x = \begin{bmatrix}{}-7\\2\end{bmatrix}$.
+
+And, for $b^*$:
+
+$$
+-y^* = 1 \Rightarrow y = -1 \\
+x^* + 4(-1) = 0 \Rightarrow x = 4 \\
+$$
+
+Thus $x^* = \begin{bmatrix}{}4\\-1\end{bmatrix}$.
+
 27. Choose the numbers $a, b, c, d$ in this augmented matrix so that there is
     (a) no solution (b) infinitely many solutions.
 
@@ -3846,4 +5458,42 @@ $$
 
 Which of the numbers $a, b, c$, or $d$ have no effect on the solvability?
 
+Omitted.
+
 28. If $AB = I$ and $BC = I$ use the associative law to prove $A = C$.
+
+**Proof:**
+
+Suppose $A, B, C$ are any matrices. Let $I$ denote the identity matrix.
+
+Furthermore, suppose $AB = I$ and $BC = I$.
+
+It is to be shown that $A = C$.
+
+By the definition of the identity matrix, any matrix multiplied by $I$ will
+return that same matrix back as the solution.
+
+Then, it follows that:
+
+$$ A = A(I) $$
+
+By the supposition, since $BC = I$, it follows that:
+
+$$ A(I) = A(BC) $$
+
+By the associative law of matrices, it is known that:
+
+$$ A(BC) = (AB)C $$
+
+Then, by the supposition, since $AB = I$, it follows that:
+
+$$ (AB)C = (I)C = C $$
+
+In totality, this takes the form of:
+
+$$ A = A(I) = A(BC) = (AB)C = I(C) = C $$
+
+It can be derived from the law of equality that $A = C$, and this is what was to
+be shown.
+
+Q.E.D.
