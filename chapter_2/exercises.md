@@ -5497,3 +5497,468 @@ It can be derived from the law of equality that $A = C$, and this is what was to
 be shown.
 
 Q.E.D.
+
+---
+
+Page 88
+
+## Problem Set 2.4
+
+**Problems 1-16 are about the laws of matrix multiplication.**
+
+1. $A$ is $3$ by $5$, $B$ is $5$ by $3$, $C$ is $5$ by $1$, and $D$ is $3$ by
+   $1$. _All entries are $1$_. Which of these matrix operations are allowed, and
+   what are the results?
+
+$$ BA \quad AB \quad ABD \quad DC \quad A(B + C) $$
+
+2. What rows or columns or matrices do you multiply to find
+
+a. the second column of $AB$?
+
+b. the first row of $AB$?
+
+c. the entry in row 3, column 5 of $AB$?
+
+d. the entry in row 1, column 1 of $CDE$?
+
+3. Add $AB$ to $AC$ and compare with $A(B + C)$:
+
+$$ A =
+\left[\begin{array}{cc}
+1 & 5 \\
+2 & 3 \\
+\end{array}\right]
+$$
+
+and
+
+$$ B =
+\left[\begin{array}{cc}
+0 & 2 \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+and
+
+$$ C =
+\left[\begin{array}{cc}
+3 & 1 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+4. In Problem 3, multiply $A$ times $BC$. Then multiply $AB$ times $C$.
+
+5. Compute $A^2$ and $A^3$. Make a prediction for $A^5$ and $A^n$.
+
+$$ A =
+\left[\begin{array}{cc}
+1 & b \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+and
+
+$$ A =
+\left[\begin{array}{cc}
+2 & 2 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+6. Show that $(A + B)^2$ is different from $A^2 + 2AB + B^2$, when
+
+$$ A =
+\left[\begin{array}{cc}
+1 & 2 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+and
+
+$$ B =
+\left[\begin{array}{cc}
+1 & 0 \\
+3 & 0 \\
+\end{array}\right]
+$$
+
+Write down the correct rule for $(A + B)(A + B) = A^2 +$ ____ + $B^2$.
+
+7. True or false. Give a specific example when false:
+
+a. If columns 1 and 3 of $B$ are the same, so are columns 1 and 3 of $AB$.
+
+b. If rows 1 and 3 of $B$ are the same, so are rows 1 and 3 of $AB$.
+
+c. If rows 1 and 3 of $A$ are the same, so are rows 1 and 3 of $ABC$.
+
+d. $(AB)^2 = A^2B^2$.
+
+8. How is each row of $DA$ and $EA$ related to the rows of $A$, when
+
+$$ D =
+\left[\begin{array}{cc}
+3 & 0 \\
+0 & 5 \\
+\end{array}\right]
+$$
+
+and
+
+$$ E =
+\left[\begin{array}{cc}
+0 & 1 \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+and
+
+$$ A =
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right]
+$$
+
+How is each column of $AD$ and $AE$ related to the columns of $A$?
+
+9. Row 1 of $A$ is added to row 2. This gives $EA$ below. Then column 1 of $EA$
+   is added to column 2 to produce $(EA)F$:
+
+$$ EA =
+\left[\begin{array}{cc}
+1 & 0 \\
+1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+a & b \\
+a + c & b + d \\
+\end{array}\right]
+$$
+
+and
+
+$$ (EA)F =
+(EA)\left[\begin{array}{cc}
+1 & 1 \\
+0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+a & a + b \\
+a + c & a + c + b + d \\
+\end{array}\right]
+$$
+
+a. Do those steps in the opposite order. First add column 1 of $A$ to column 2
+by $AF$, then add row 1 of $AF$ to row 2 by $E(AF)$.
+
+b. Compare with $(EA)F$. What law is obeyed by matrix multiplication?
+
+10. Row 1 of $A$ is again added to row 2 to produce $EA$. Then $F$ adds row 2 of
+    $EA$ to row 1. The result is $F(EA)$:
+
+$$ F(EA) =
+\left[\begin{array}{cc}
+1 & 1 \\
+0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+a & b \\
+a + c & b + d \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+2a + c & 2b + d \\
+a + c & b + d \\
+\end{array}\right]
+$$
+
+a. Do those steps in the opposite order: first add row 2 to row 1 by $FA$, then
+add row 1 of $FA$ to row 2.
+
+b. What law is or is not obeyed by matrix multiplication?
+
+11. This fact still amazes me. IF you do a row operation on $A$ and then a
+    column operation, the result is the same as if you did the column operation
+    first. (Try it.) Why is this true?
+
+12. (3 by 3 matrices) Choose the only $B$ so that for every matrix $A$
+
+a. $BA = 4A$
+
+b. $BA = 4B$
+
+c. $BA$ has rows 1 and 3 of $A$ reversed and row 2 unchanged
+
+d. All rows of $BA$ are the same as row 1 of $A$.
+
+13. Suppose $AB = BA$ and $AC = CA$ for these two particular matrices $B$ and
+    $C$:
+
+$$ A =
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right] \quad \text{ commutes with } \quad
+B =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 0 \\
+\end{array}\right] \quad \text{ and } \quad
+C =
+\left[\begin{array}{cc}
+0 & 1 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+Prove that $a = d$ and $b = c = 0$. Then $A$ is a multiple of $I$. The only
+matrices that commute with $B$ and $C$ and all other 2 by 2 matrices are $A =$
+multiple of $I$.
+
+14. Which of the following matrices are guaranteed to equal $(A - B)^2$:
+    $A^2 - B^2$, $(B - A)^2$, $A^2 - 2AB + B^2$, $A(A - B) - B(A - B)$,
+    $A^2 - AB - BA + B^2$?
+
+15. True or false:
+
+a. If $A^2$ is defined then $A$ is necessarily square.
+
+b. If $AB$ and $BA$ are defined then $A$ and $B$ are square.
+
+c. If $AB$ and $BA$ are defined then $AB$ and $BA$ are square.
+
+d. If $AB = B$ then $A = I$.
+
+16. IF $A$ is $m$ by $n$, how many separate multiplications are involved when
+
+a. $A$ multiplies a vector $x$ with $n$ components?
+
+b. $A$ multiplies an $n$ by $p$ matrix $B$?
+
+c. $A$ multiplies itself to produce $A^2$? Here $m = n$.
+
+17. For $A = \left[\begin{array}{cc}2 & -1 \\3 & -2\\\end{array}\right]$ and
+    $B = \left[\begin{array}{cc}1 & 0 & 4 \\1 & 0 & 6\\\end{array}\right]$,
+    compute these answers _and nothing more_:
+
+a. column 2 of $AB$
+
+b. row 2 of $AB$
+
+c. row 2 of $AA = A^2$
+
+d. row 2 of $AAA = A^3$
+
+**Problems 18-20 use $a_{ij}$ for the entry in row $i$, column $j$ of $A$.**
+
+18. Write down the 3 by 3 matrix $A$ whose entries are
+
+a. $a_{ij} = \text{ minimum of } i \text{ and } j$
+
+b. $a_{ij} = (-1)^{i + j}$
+
+c. $a_{ij} = \dfrac{i}{j}$
+
+19. What words would you use to describe each of these classes of matrices? Give
+    a 3 by 3 example in each class. Which matrix belongs to all four classes?
+
+a. $a_{ij} = 0 \text{ if } i \neq j$
+
+b. $a_{ij} = 0 \text{ if } i < j$
+
+c. $a_{ij} = a_{ji}$
+
+d. $a_{ij} = a_{1j}$
+
+20. The entries of $A$ are $a_{ij}$. Assuming that zeros don't appear, what is
+
+a. the first pivot?
+
+b. the multiplier $\ell_{31}$ of row 1 to be subtracted from row 3?
+
+c. the new entry that replaces $a_{32}$ after that subtraction?
+
+d. the second pivot?
+
+**Problems 21-24 involve powers of $A$.**
+
+21. Compute $A^2, A^2, A^4$ and also $Av, A^2v, A^3v, A^4v$ for
+
+$$ A =
+\left[\begin{array}{cccc}
+0 & 2 & 0 & 0 \\
+0 & 0 & 2 & 0 \\
+0 & 0 & 0 & 2 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right] \quad \text{ and } \quad
+v = \begin{bmatrix}{}x\\y\\z\\t\end{bmatrix}
+$$
+
+22. By trial and error find real nonzero 2 by 2 matrices such that
+
+$$ A^2 = -I \quad BC = 0 \quad DE = -ED(\text{not allowing } DE = 0) $$
+
+23.
+
+a. Find a nonzero matrix $A$ for which $A^2 = 0$.
+
+b. Find a matrix that has $A^2 \neq 0$ but $A^3 = 0$.
+
+24. By experiment with $n = 2$ and $n = 3$ predict $A^n$ for these matrices:
+
+$$ A_1 =
+\left[\begin{array}{cc}
+2 & 1 \\
+0 & 1 \\
+\end{array}\right] \quad \text{ and } \quad
+A_2 =
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 1 \\
+\end{array}\right] \quad \text{ and } \quad
+A_3 =
+\left[\begin{array}{cc}
+a & b \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+**Problems 25-31 use column-row multiplication and block multiplication.**
+
+25. Multiply $A$ times $I$ using columns of $A$ (3 by 3) times rows of $I$.
+
+26. Multiply $AB$ using columns times rows:
+
+$$ AB =
+\left[\begin{array}{cc}
+1 & 0 \\
+2 & 4 \\
+2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+3 & 3 & 0 \\
+1 & 2 & 1 \\
+\end{array}\right] =
+\begin{bmatrix}{}1\\1\\2\end{bmatrix}
+\left[\begin{array}{ccc}
+3 & 3 & 0 \\
+\end{array}\right] + \text{(?)} = \text{(?)}
+$$
+
+27. Show that the product of upper triangular matrices is always upper
+    triangular:
+
+$$ AB =
+\left[\begin{array}{ccc}
+x & x & x \\
+0 & x & x \\
+0 & 0 & x \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+x & x & x \\
+0 & x & x \\
+0 & 0 & x \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+\\
+0 & \\
+0 & 0 & \\
+\end{array}\right]
+$$
+
+_Proof using dot products (Row times columns)_ (Row 2 of $A$) $\cdot$ (column 1
+of $B$) $= 0$. Which other dot products give zeros?
+
+_Proof using full matrices (Column times row)_ Draw $x$'s and $0$'s in (column 2
+of $A$) times (row 2 of $B$). Also show (column 3 of $A$) times (row 3 of $B$).
+
+28. Draw the cuts in $A$ (2 by 3) and $B$ (3 by 4) and $AB$ to show how each of
+    the four multiplication rules is really a block multiplication:
+
+(1) Matrix $A$ times columns of $B$. **Columns of $AB$**
+
+(2) Rows of $A$ times the matrix $B$. **Rows of $AB$**
+
+(3) Rows of $A$ times columns of $B$. **Inner products** (numbers in $AB$)
+
+(4) Columns of $A$ times rows of $B$. **Outer products** (matrices add to $AB$)
+
+29. Which matrices $E_{21}$ and $E_{31}$ produce zeros in the $(2, 1)$ and
+    $(3, 1)$ positions of $E_{21}A$ and $E_{31}A$?
+
+$$ A =
+\left[\begin{array}{ccc}
+2 & 1 & 0 \\
+-2 & 0 & 1 \\
+8 & 5 & 3 \\
+\end{array}\right]
+$$
+
+Find the single matrix $E = E_{31}E_{21}$ that produces both zeros at once.
+Multiply $EA$.
+
+30. Block multiplication says that column 1 is eliminated by
+
+$$ EA =
+\left[\begin{array}{cc}
+1 & 0 \\
+-\frac{c}{a} & I \\
+\end{array}\right]
+\left[\begin{array}{cc}
+a & b \\
+c & D \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+a & b \\
+0 & D - \frac{cb}{a} \\
+\end{array}\right]
+$$
+
+In Problem 29, what numbers go into $c$ and $D$ and what is $D - \dfrac{cb}{a}$?
+
+31. With $i^2 = -1$, the product of $(A + iB)$ and $(x + iy)$ is
+    $Ax + iBx + iAy - By$. Use blocks to separate the real part without $i$ from
+    the imaginary part that multiplies $i$:
+
+$$
+\left[\begin{array}{cc}
+A & -B \\
+\text{?} & \text{?} \\
+\end{array}\right]
+\begin{bmatrix}{}x\\y\end{bmatrix} =
+\begin{bmatrix}{}Ax - By\\\text{?}\end{bmatrix} \quad
+\begin{array}{l}
+\text{ real part } \\
+\text{ imaginary part } \\
+\end{array}
+$$
+
+32. _(Very important)_ Suppose you solve $Ax = b$ for three special right sides
+    $b$:
+
+$$ Ax_1 = \begin{bmatrix}{}1\\0\\0\end{bmatrix} \quad \text{ and } \quad Ax_2 = \begin{bmatrix}{}0\\1\\0\end{bmatrix} \quad \text{ and } \quad Ax_3 = \begin{bmatrix}{}0\\0\\1\end{bmatrix} $$
+
+If the three solutions $x_1, x_2, x_3$ are the columns of a matrix $X$, what is
+$A$ times $X$?
+
+33. If the three solutions in Question 32 are $x_1 = (1, 1, 1)$ and
+    $x_2 = (0, 1, 1)$ and $x_3 = (0, 0, 1)$, solve $Ax = b$ when
+    $b = (3, 5, 8)$. Challenge problem: What is $A$?
+
+34. Find all matrices
+    $A = \left[\begin{array}{cc}a & b \\c & d \\\end{array}\right]$ that satisfy
+    $A\left[\begin{array}{cc}1 & 1\\1 & 1\\\end{array}\right] = \left[\begin{array}{cc}1 & 1\\1 & 1\\\end{array}\right]A$.
+
+35. Suppose a "circle graph" has 4 nodes connected (in both directions) by edges
+    around a circle. What is its adjacency matrix $S$ from Worked Example 2.4 A?
+    What is $S^2$? Find all the 2-step paths predicted by $S^2$.

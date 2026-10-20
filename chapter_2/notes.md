@@ -251,3 +251,79 @@ Page 75
 
 5. When $A$ multiplies any matrix $B$, it multiplies each column of $B$
    separately.
+
+---
+
+Page 81
+
+## 2.4 Rules for Matrix Operations
+
+---
+
+Page 81
+
+1. Matrices $A$ with $n$ columns multiply matrices $B$ with $n$ rows:
+   $\boxed{A_{m \times n}B_{n \times p} = C_{m \times p}}$.
+
+2. Each entry in $AB = C$ is a dot product:
+   $C_{ij} = (\text{row } i \text{ of } A) \cdot (\text{column } j \text{ of } B)$.
+
+3. This rule is chosen so that **$AB$ times $C$ equals $A$ times $BC$**. And
+   $(AB)x = A(Bx)$.
+
+4. More ways to compute $AB$: ($A$ times columns of $B$)(rows of $A$ times
+   $B$)(_columns times rows_).
+
+5. It is not usually true that $AB = BA$. In most cases _$A$ doesn't commute
+   with $B$._
+
+6. Matrices can be multiplied by _blocks:_
+   $A = \left[\begin{array}{cc} A_1 & A_2 \\\end{array}\right]$ times
+   $B = \begin{bmatrix}{}B_1\\B_2\end{bmatrix}$ is $A_1B_1 + A_2B_2$.
+
+---
+
+Page 81
+
+**Fundamental Law of Matrix Multiplication**
+
+$AB$ times $C$ equals $A$ times $BC$.
+
+---
+
+Page 85
+
+**Block multiplication**
+
+If blocks of $A$ can multiply blocks of $B$, then block multiplication of $AB$
+is allowed. Cuts between columns of $A$ match cuts between rows of $B$.
+
+$$
+\left[\begin{array}{cc}
+A_{11} & A_{12}\\
+A_{21} & A_{22}\\
+\end{array}\right]
+\begin{bmatrix}{}B_{11}\\B_{12}\end{bmatrix} =
+\begin{bmatrix}{}A_{11}B_{11} + A_{12}B_{21}\\A_{21}B{11} + A_{22}B_{21}\end{bmatrix}
+$$
+
+---
+
+Page 87
+
+**REVIEW OF THE KEY IDEAS**
+
+1. The $(i, j)$ entry of $AB$ is
+   $(\text{row } i \text{ of } A) \cdot (\text{column } j \text{ of } B)$.
+
+2. An $m$ by $n$ matrix times an $n$ by $p$ matrix uses $mnp$ separate
+   multiplications.
+
+3. $A$ times $BC$ equals $AB$ times $C$ (surprisingly important).
+
+4. $AB$ is also the sum of these $n$ matrices:
+   $(\text{column } j \text{ of } A) \text{ times } (\text{row } j \text{ of } B)$.
+
+5. Block multiplication is allowed when the block shapes match correctly.
+
+6. Block elimination produces the _Schur complement_ $D - CA^{-1}B$.
