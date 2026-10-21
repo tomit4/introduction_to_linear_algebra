@@ -327,3 +327,80 @@ Page 87
 5. Block multiplication is allowed when the block shapes match correctly.
 
 6. Block elimination produces the _Schur complement_ $D - CA^{-1}B$.
+
+---
+
+Page 94
+
+## 2.5 Inverse Matrices
+
+---
+
+Page 94
+
+1. If the square matrix $A$ has an inverse, then both $A^{-1}A = I$ and
+   $AA^{-1} = I$.
+
+2. The _algorithm_ to test invertibility is elimination: $A$ must have $n$
+   (nonzero) pivots.
+
+3. The _algebra_ test for invertibility is the determinant of $A$: $\det A$ must
+   not be zero.
+
+4. The _equation_ that tests for invertibility is $Ax = \mathbf{0}$:
+   $x = \mathbf{0}$ **must be the only solution.**
+
+5. If $A$ and $B$ (same size) are invertible then so is $AB$:
+   $\boxed{(AB)^{-1} = B^{-1}A^{-1}}$.
+
+6. $AA^{-1} = I$ is $n$ equations for $n$ columns of $A^{-1}$. Gauss-Jordan
+   eliminates $\left[\begin{array}{cc} A & I \\\end{array}\right]$ to
+   $\left[\begin{array}{cc} I & A^{-1} \\\end{array}\right]$.
+
+7. The last page of the book gives 14 equivalent conditions for a square $A$ to
+   be invertible.
+
+---
+
+Page 94
+
+**Definition**
+
+The matrix $A$ is **invertible** if there exists a matrix $A^{-1}$ that
+"inverts" $A$:
+
+**Two-sided inverse:**
+
+$$ A^{-1}A = I \text{ and } AA^{-1} = I $$
+
+---
+
+Page 95
+
+If $A$ and $B$ are invertible then so is $AB$. The inverse of a product $AB$ is
+
+$$ (AB)^{-1} = B^{-1}A^{-1} $$
+
+---
+
+Page 101
+
+**REVIEW OF THE KEY IDEAS**
+
+1. The inverse matrix gives $AA^{-1} = I$ and $A^{-1}A = I$.
+
+2. $A$ is invertible if and only if it has $n$ pivots (row exchanges allowed).
+
+3. _Important_. If $Ax = \mathbf{0}$ for a nonzero vector $x$, then $A$ has no
+   inverse.
+
+4. The inverse of $AB$ is the reverse product $B^{-1}A^{-1}$. And
+   $(ABC)^{-1} = C^{-1}B^{-1}A^{-1}$.
+
+5. The Gauss-Jordan method solves $AA^{-1} = I$ to find the $n$ columns of
+   $A^{-1}$. The augmented matrix
+   $\left[\begin{array}{cc}A & I \\\end{array}\right]$ is row-reduced to
+   $\left[\begin{array}{cc}I & A^{-1}\\\end{array}\right]$.
+
+6. Diagonally dominant matrices are invertible. Each $|a_{ii}|$ dominates its
+   row.

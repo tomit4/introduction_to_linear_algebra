@@ -8245,3 +8245,420 @@ $$
     What is $S^2$? Find all the 2-step paths predicted by $S^2$.
 
 Omitted.
+
+---
+
+Page 103
+
+## Problem Set 2.5
+
+1. Find the inverses (directly or from the 2 by 2 formula) of $A, B, C$:
+
+$$ A =
+\left[\begin{array}{cc}
+0 & 3 \\
+4 & 0 \\
+\end{array}\right]
+$$
+
+and
+
+$$ B =
+\left[\begin{array}{cc}
+2 & 0 \\
+4 & 2 \\
+\end{array}\right]
+$$
+
+and
+
+$$ C =
+\left[\begin{array}{cc}
+3 & 4 \\
+5 & 7 \\
+\end{array}\right]
+$$
+
+2. For these "permutation matrices" find $P^{-1}$ by trial and error (with $1$'s
+   and $0$'s):
+
+$$ P =
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+\end{array}\right]
+$$
+
+and
+
+$$ P =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+\end{array}\right]
+$$
+
+3. Solve for the first column $(x, y)$ and second column $(t, z)$ of $A^{-1}$:
+
+$$
+\left[\begin{array}{cc}
+10 & 20 \\
+20 & 50 \\
+\end{array}\right]
+\begin{bmatrix}{}x\\y\end{bmatrix} =
+\begin{bmatrix}{}1\\0\end{bmatrix}
+$$
+
+and
+
+$$
+\left[\begin{array}{cc}
+10 & 20 \\
+20 & 50 \\
+\end{array}\right]
+\begin{bmatrix}{}t\\z\end{bmatrix} =
+\begin{bmatrix}{}0\\1\end{bmatrix}
+$$
+
+4. Show that $\left[\begin{array}{cc}1 & 2 \\3 & 6 \\\end{array}\right]$ is not
+   invertible by trying to solve $AA^{-1} = I$ for column 1 of $A^{-1}$:
+
+$$
+\left[\begin{array}{cc}
+1 & 2 \\
+3 & 6 \\
+\end{array}\right]
+\begin{bmatrix}{}x\\y\end{bmatrix} =
+\begin{bmatrix}{}1\\0\end{bmatrix}
+$$
+
+(_For a different_ $A$, could column 1 of $A^{-1}$ be possible to find but not
+column 2?)
+
+5. Find an upper triangular $U$ (not diagonal) with $U^2 = I$ which gives
+   $U = U^{-1}$.
+
+6.
+
+a. If $A$ is invertible and $AB = AC$, prove quickly that $B = C$.
+
+b. If $A = \left[\begin{array}{cc}1 & 1 \\1 & 1 \\\end{array}\right]$, find two
+different matrices such that $AB = AC$.
+
+7. (Important) If $A$ has row 1 + row 2 = row 3, show that $A$ is not
+   invertible:
+
+a. Explain why $Ax = (0, 0, 1)$ cannot have a solution. Add eqn 1 + eqn 2.
+
+b. Which right sides $(b_1, b_2, b_3)$ might allow a solution to $Ax = b$?
+
+c. In elimination, what happens to equation 3?
+
+8. If $A$ has column 1 + column 2 = column 3, show that $A$ is not invertible:
+
+a. Find a nonzero solution $x$ to $Ax = \mathbf{0}$. The matrix is 3 by 3.
+
+b. Elimination keeps column 1 + column 2 = column 3. Explain why there is no
+third pivot.
+
+9. Suppose $A$ is invertible and you exchange its first two rows to reach $B$.
+   Is the new matrix $B$ invertible? How would you find $B^{-1}$ from $A^{-1}$?
+
+10. Find the inverses (in any legal way) of
+
+$$ A =
+\left[\begin{array}{cccc}
+0 & 0 & 0 & 2 \\
+0 & 0 & 3 & 0 \\
+0 & 4 & 0 & 0 \\
+5 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+and
+
+$$ B =
+\left[\begin{array}{cccc}
+3 & 2 & 0 & 0 \\
+4 & 3 & 0 & 0 \\
+0 & 0 & 6 & 5 \\
+0 & 0 & 7 & 6 \\
+\end{array}\right]
+$$
+
+11.
+
+a. Find invertible matrices $A$ and $B$ such that $A + B$ is not invertible.
+
+b. Find singular matrices $A$ and $B$ such that $A + B$ is invertible.
+
+12. If the product $C = AB$ is invertible ($A$ and $B$ are square), then $A$
+    itself is invertible. Find a formula for $A^{-1}$ that involves $C^{-1}$ and
+    $B$.
+
+13. If the product $M =ABC$ of three square matrices is invertible, then $B$ is
+    invertible. (So are $A$ and $C$.) Find a formula for $B^{-1}$ that involves
+    $M^{-1}$ and $A$ and $C$.
+
+14. If you add row 1 of $A$ to row 2 to get $B$, how do you find $B^{-1}$ from
+    $A^{-1}$?
+
+Notice the order.
+
+The inverse of
+$B =\left[\begin{array}{cc}1 & 0 \\1 & 1 \\\end{array}\right]\left[\begin{array}{c}A \\\end{array}\right]$
+is ____.
+
+15. Prove that a matrix with a column of zeros cannot have an inverse.
+
+16. Multiply $\left[\begin{array}{cc}a & b \\c & d \\\end{array}\right]$ times
+    $\left[\begin{array}{cc}d & -b \\-c & a \\\end{array}\right]$. What is the
+    inverse of each matrix if $ad \neq bc$?
+
+17.
+
+a. What 3 by 3 matrix $E$ has the same effect as these three steps? Subtract row
+1 from row 2, subtract row 1 from row 3, then subtract row 2 from row 3.
+
+b. What single matrix $L$ has the same effect as these three reverse steps? Add
+row 2 to row 3, add row 1 to row 3, then add row 1 to row 2.
+
+18. If $B$ is the inverse of $A^2$, show that $AB$ is the inverse of $A$.
+
+19. Find the numbers $a$ and $b$ that give the inverse of
+    $5 \times \text{eye}(4) - \text{ones}(4, 4)$:
+
+$$
+\left[\begin{array}{cccc}
+4 & -1 & -1 & -1 \\
+-1 & 4 & -1 & -1 \\
+-1 & -1 & 4 & -1 \\
+-1 & -1 & -1 & 4 \\
+\end{array}\right]^{-1} =
+\left[\begin{array}{cccc}
+a & b & b & b \\
+b & a & b & b \\
+b & b & a & b \\
+b & b & b & a \\
+\end{array}\right]
+$$
+
+What are $a$ and $b$ in the inverse of $6 * \text{eye}(5) - \text{ones}(5, 5)$?
+
+20. Show that $A = 4 * \text{eye} - \text{ones}(4, 4)$ is _not_ invertible:
+    Multiply $A * \text{ones}(4, 1)$.
+
+21. There are sixteen 2 by 2 matrices whose entries are $1$'s and $0$'s. How
+    many of them are invertible?
+
+**Questions 22-28 are about the Gauss-Jordan method for calculating $A^{-1}$.**
+
+22. Change $I$ into $A^{-1}$ as you reduce $A$ to $I$ (by row operations):
+
+$$
+\left[\begin{array}{cc}
+A & I \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+1 & 3 & 1 & 0 \\
+2 & 7 & 0 & 1 \\
+\end{array}\right]
+$$
+
+and
+
+$$
+\left[\begin{array}{cc}
+A & I \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+1 & 4 & 1 & 0 \\
+3 & 9 & 0 & 1 \\
+\end{array}\right]
+$$
+
+23. Follow the 3 by 3 text example but with plus signs in $A$. Eliminate above
+    and below the pivots to reduce
+    $\left[\begin{array}{cc}A & I \\\end{array}\right]$ to
+    $\left[\begin{array}{cc}I & A^{-1} \\\end{array}\right]$
+
+$$
+\left[\begin{array}{cc}
+A & I \\
+\end{array}\right] =
+\left[\begin{array}{cccccc}
+2 & 1 & 0 & 1 & 0 & 0 \\
+1 & 2 & 1 & 0 & 1 & 0 \\
+0 & 1 & 2 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+24. Use Gauss-Jordan elimination on
+    $\left[\begin{array}{cc}U & I \\\end{array}\right]$ to find the upper
+    triangular $U^{-1}$:
+
+$$ UU^{-1} = I $$
+
+$$
+\left[\begin{array}{ccc}
+1 & a & b \\
+0 & 1 & c \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+x_1 & x_2 & x_3 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+25. Find $A^{-1}$ and $B^{-1}$ (_if they exist_) by elimination on
+    $\left[\begin{array}{cc}A & I \\\end{array}\right]$ and
+    $\left[\begin{array}{cc}B & I \\\end{array}\right]$:
+
+$$ A =
+\left[\begin{array}{ccc}
+2 & 1 & 1 \\
+1 & 2 & 1 \\
+1 & 1 & 2 \\
+\end{array}\right]
+$$
+
+and
+
+$$ B =
+\left[\begin{array}{ccc}
+2 & -1 & -1 \\
+-1 & 2 & -1 \\
+-1 & -1 & 2 \\
+\end{array}\right]
+$$
+
+26. What three matrices $E_{21}$ and $E_{12}$ and $D^{-1}$ reduce
+    $A =\left[\begin{array}{cc}1 & 2 \\2 & 6 \\\end{array}\right]$ to the
+    identity matrix? Multiply $D^{-1}E_{12}E_{21}$ to find $A^{-1}$.
+
+27. Invert these matrices $A$ by the Gauss-Jordan method starting with
+    $\left[\begin{array}{cc}A & I \\\end{array}\right]$:
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+2 & 1 & 3 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+and
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+1 & 2 & 2 \\
+1 & 2 & 3 \\
+\end{array}\right]
+$$
+
+28. Exchange rows and continue with Gauss-Jordan to find $A^{-1}$:
+
+$$
+\left[\begin{array}{cc}
+A & I \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+0 & 2 & 1 & 0 \\
+2 & 2 & 0 & 1 \\
+\end{array}\right]
+$$
+
+29. True or false (with a counterexample if false and a reason if true):
+
+a. A 4 by 4 matrix with a row of zeros is not invertible.
+
+b. Every matrix with $1$'s down the main diagonal is invertible.
+
+c. If $A$ is invertible then $A^{-1}$ and $A^2$ are invertible.
+
+30. (Recommended) Prove that $A$ is invertible if $a \neq 0$ and $a \neq b$
+    (find the pivots or $A^{-1}$). Then find three numbers $c$ so that $C$ is
+    not invertible:
+
+$$ A =
+\left[\begin{array}{ccc}
+a & b & b \\
+a & a & b \\
+a & a & a \\
+\end{array}\right]
+$$
+
+$$ C =
+\left[\begin{array}{ccc}
+2 & c & c \\
+c & c & c \\
+8 & 7 & c \\
+\end{array}\right]
+$$
+
+31. This matrix has a remarkable inverse. Find $A^{-1}$ by elimination on
+    $\left[\begin{array}{cc}A & I \\\end{array}\right]$. Extend to a 5 by 5
+    "alternating matrix" and guess its inverse; then multiply to confirm.
+
+Invert
+
+$$ A =
+\left[\begin{array}{cccc}
+1 & -1 & 1 & -1 \\
+0 & 1 & -1 & 1 \\
+0 & 0 & 1 & -1 \\
+0 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+and solve $Ax = (1, 1, 1, 1)$.
+
+32. Suppose the matrices $P$ and $Q$ have the same rows as $I$ but in any order.
+    They are "permutation matrices". Show that $P - Q$ is singular by solving
+    $(P - Q)x = \mathbf{0}$.
+
+33. Find and check the inverses (assuming they exist) of these block matrices:
+
+$$
+\left[\begin{array}{cc}
+I & 0 \\
+C & I \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc}
+A & 0 \\
+C & D \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc}
+0 & I \\
+I & D \\
+\end{array}\right]
+$$
+
+34. Could a 4 by 4 matrix $A$ be invertible if every row contains the numbers
+    $0, 1, 2, 3$ in some order? What if every row of $B$ contains $0, 1, 2, -3$
+    in some order?
+
+35. In the Worked Example 2.5 C, the triangular Pascal matrix $L$ has
+    $L^{-1} = DLD$, where the diagonal matrix $D$ has alternating entries
+    $1, -1, 1, -1$. Then $LDLD = I$, so what is the inverse of
+    $LD = \text{pascal}(4, 1)$?
+
+36. Omitted (no MATLAB).
+
+37. Omitted (no MATLAB).
+
+38. Omitted (no MATLAB).
