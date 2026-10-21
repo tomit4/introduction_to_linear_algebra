@@ -5512,15 +5512,130 @@ Page 88
 
 $$ BA \quad AB \quad ABD \quad DC \quad A(B + C) $$
 
+_Solution:_
+
+$BA$:
+
+Since any matrix multiplied by another must have the number of columns in the
+first matrix equal the number of rows in the second matrix:
+
+$$ B_{5 \times 3} \cdot A_{3 \times 5} $$
+
+is possible since $3 = 3$, and results in a solution of the following
+dimensions:
+
+$$ (BA)_{5 \times 5} $$
+
+The result then is:
+
+$$ BA =
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccccc}
+1 & 1 & 1 & 1 & 1 \\
+1 & 1 & 1 & 1 & 1 \\
+1 & 1 & 1 & 1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccccc}
+3 & 3 & 3 & 3 & 3 \\
+3 & 3 & 3 & 3 & 3 \\
+3 & 3 & 3 & 3 & 3 \\
+3 & 3 & 3 & 3 & 3 \\
+3 & 3 & 3 & 3 & 3 \\
+\end{array}\right]
+$$
+
+$AB$:
+
+Since $A$ is 3 x 5 matrix and $B$ is a 5 x 3 matrix, this is possible since
+$5 = 5$, $AB$ will have dimensions:
+
+$$ A_{3 \times 5} \cdot B_{5 \times 3} = (AB)_{3 \times 3} $$
+
+The solution then is:
+
+$$ AB =
+\left[\begin{array}{ccccc}
+1 & 1 & 1 & 1 & 1 \\
+1 & 1 & 1 & 1 & 1 \\
+1 & 1 & 1 & 1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+5 & 5 & 5 \\
+5 & 5 & 5 \\
+5 & 5 & 5 \\
+\end{array}\right]
+$$
+
+$ABD$:
+
+From the previous part, we know that $AB$ is 3 x 3, and since $D$ is 3 x 1, this
+is possible since $3 = 3$, and will result in a matrix of the following
+dimensions:
+
+$$ ABD_{3 \times 1} $$
+
+The solution then is:
+
+$$ ABD =
+\left[\begin{array}{ccc}
+5 & 5 & 5 \\
+5 & 5 & 5 \\
+5 & 5 & 5 \\
+\end{array}\right]
+\left[\begin{array}{c}
+1 \\
+1 \\
+1 \\
+\end{array}\right] =
+\left[\begin{array}{c}
+15 \\
+15 \\
+15 \\
+\end{array}\right]
+$$
+
+$DC$:
+
+Since $D$ is 3 X 1 and $C$ is 5 X 1, this is not possible since $1 \neq 5$.
+
+$A(B + C)$:
+
+$B$ and $C$ cannot be added as matrix addition requires both matrices to have
+the same number of rows _and_ same number of columns, and $B$ is 5 x 3 and $C$
+is 5 x 1.
+
 2. What rows or columns or matrices do you multiply to find
 
 a. the second column of $AB$?
 
+all rows of $A$ times the second column of $B$, or more succinctly:
+
+$$ A(B_{i2}) $$
+
 b. the first row of $AB$?
+
+$$ A_{1j}B $$
 
 c. the entry in row 3, column 5 of $AB$?
 
+$$ A_{3j}B_{i5} $$
+
 d. the entry in row 1, column 1 of $CDE$?
+
+$$ (C_{1j}D)E_{i1} $$
 
 3. Add $AB$ to $AC$ and compare with $A(B + C)$:
 
@@ -5549,7 +5664,144 @@ $$ C =
 \end{array}\right]
 $$
 
+_Solution:_
+
+$$ AB =
+\left[\begin{array}{cc}
+1 & 5 \\
+2 & 3 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+0 & 2 \\
+0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+0 & 7 \\
+0 & 7 \\
+\end{array}\right]
+$$
+
+$$ AC =
+\left[\begin{array}{cc}
+1 & 5 \\
+2 & 3 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+3 & 1 \\
+0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+3 & 1 \\
+6 & 2 \\
+\end{array}\right]
+$$
+
+$$ AB + AC =
+\left[\begin{array}{cc}
+0 & 7 \\
+0 & 7 \\
+\end{array}\right] +
+\left[\begin{array}{cc}
+3 & 1 \\
+6 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+3 & 8 \\
+6 & 9 \\
+\end{array}\right]
+$$
+
+$$ B + C =
+\left[\begin{array}{cc}
+0 & 2 \\
+0 & 1 \\
+\end{array}\right] +
+\left[\begin{array}{cc}
+3 & 1 \\
+0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+3 & 3 \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+$$ A(B + C) =
+\left[\begin{array}{cc}
+1 & 5 \\
+2 & 3 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+3 & 3 \\
+0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+3 & 8 \\
+6 & 9 \\
+\end{array}\right] = AB + AC
+$$
+
+This demonstrates the distributive law of matrices.
+
 4. In Problem 3, multiply $A$ times $BC$. Then multiply $AB$ times $C$.
+
+_Solution:_
+
+$$ BC =
+\left[\begin{array}{cc}
+0 & 2 \\
+0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+3 & 1 \\
+0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+0 & 0 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+$$ A(BC) =
+\left[\begin{array}{cc}
+1 & 5 \\
+2 & 3 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+0 & 0 \\
+0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+0 & 0 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+From problem 3, we know that:
+
+$$ AB =
+\left[\begin{array}{cc}
+0 & 7 \\
+0 & 7 \\
+\end{array}\right]
+$$
+
+$$ (AB)C =
+\left[\begin{array}{cc}
+0 & 7 \\
+0 & 7 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+3 & 1 \\
+0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+0 & 0 \\
+0 & 0 \\
+\end{array}\right] = A(BC)
+$$
+
+This demonstrates the associative law of matrices.
 
 5. Compute $A^2$ and $A^3$. Make a prediction for $A^5$ and $A^n$.
 
@@ -5565,6 +5817,126 @@ and
 $$ A =
 \left[\begin{array}{cc}
 2 & 2 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+_Solution:_
+
+_First definition for $A$:_
+
+$$ A =
+\left[\begin{array}{cc}
+1 & b \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+$$ A^2 =
+\left[\begin{array}{cc}
+1 & b \\
+0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & b \\
+0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 2b \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+$$ A^3 = (A^2)A =
+\left[\begin{array}{cc}
+1 & 2b \\
+0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & b \\
+0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 3b \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+Prediction for $A^5$:
+
+$$
+\left[\begin{array}{cc}
+1 & 5b \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+Prediction for $A^n$:
+
+$$
+\left[\begin{array}{cc}
+1 & nb \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+_Second definition for $A$:_
+
+$$ A =
+\left[\begin{array}{cc}
+2 & 2 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+$$ A^2 =
+\left[\begin{array}{cc}
+2 & 2 \\
+0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+2 & 2 \\
+0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+4 & 4 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+$$ A^3 = (A^2)A =
+\left[\begin{array}{cc}
+4 & 4 \\
+0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+2 & 2 \\
+0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+8 & 8 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+Prediction for $A^5$:
+
+$$ A^5 =
+\left[\begin{array}{cc}
+2^5 & 2^5 \\
+0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+32 & 32 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+Prediction for $A^n$:
+
+$$ A^n =
+\left[\begin{array}{cc}
+2^n & 2^n \\
 0 & 0 \\
 \end{array}\right]
 $$
@@ -5589,15 +5961,268 @@ $$
 
 Write down the correct rule for $(A + B)(A + B) = A^2 +$ ____ + $B^2$.
 
+_Solution:_
+
+_Show that $(A + B)^2$ is different from $A^2 + 2AB + B^2$:_
+
+$$ A + B =
+\left[\begin{array}{cc}
+1 & 2 \\
+0 & 0 \\
+\end{array}\right] +
+\left[\begin{array}{cc}
+1 & 0 \\
+3 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+2 & 2 \\
+3 & 0 \\
+\end{array}\right]
+$$
+
+$$ (A + B)^2 =
+\left[\begin{array}{cc}
+2 & 2 \\
+3 & 0 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+2 & 2 \\
+3 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+10 & 4 \\
+6 & 6 \\
+\end{array}\right]
+$$
+
+$$ A^2 =
+\left[\begin{array}{cc}
+1 & 2 \\
+0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 2 \\
+0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 2 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+$$ B^2 =
+\left[\begin{array}{cc}
+1 & 0 \\
+3 & 0 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 0 \\
+3 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 0 \\
+3 & 0 \\
+\end{array}\right]
+$$
+
+$$ AB =
+\left[\begin{array}{cc}
+1 & 2 \\
+0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 0 \\
+3 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+7 & 0 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+$$ 2AB =
+2\left[\begin{array}{cc}
+7 & 0 \\
+0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+14 & 0 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+$$ A^2 + 2AB + B^2 =
+\left[\begin{array}{cc}
+1 & 2 \\
+0 & 0 \\
+\end{array}\right] +
+\left[\begin{array}{cc}
+14 & 0 \\
+0 & 0 \\
+\end{array}\right] +
+\left[\begin{array}{cc}
+1 & 0 \\
+3 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+16 & 2 \\
+3 & 0 \\
+\end{array}\right] \neq
+\left[\begin{array}{cc}
+10 & 4 \\
+6 & 6 \\
+\end{array}\right] = (A + B)^2
+$$
+
+_Write down the correct rule for $(A + B)(A + B) = A^2 +$ (?) + $B^2$:_
+
+We can still FOIL out $(A + B)(A + B)$, we just have to keep in mind that matrix
+multiplication is not commutative, so:
+
+$$ (A + B)(A + B) = \boxed{A^2 + AB + BA + B^2} $$
+
 7. True or false. Give a specific example when false:
 
 a. If columns 1 and 3 of $B$ are the same, so are columns 1 and 3 of $AB$.
 
+$$ B =
+\left[\begin{array}{ccc}
+a & b & a \\
+c & d & c \\
+\end{array}\right]
+$$
+
+$$ A =
+\left[\begin{array}{cc}
+e & f \\
+g & h \\
+\end{array}\right]
+$$
+
+$$ AB =
+\left[\begin{array}{cc}
+e & f \\
+g & h \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+a & b & a \\
+c & d & c \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+ae + cg & be + df & ae + cg \\
+ag + ch & bg + dh & ag + ch \\
+\end{array}\right]
+$$
+
+Yes, this is true.
+
 b. If rows 1 and 3 of $B$ are the same, so are rows 1 and 3 of $AB$.
+
+I guess this is false.
+
+$$ A =
+\left[\begin{array}{ccc}
+e & f & g \\
+h & i & j \\
+\end{array}\right]
+$$
+
+$$ B =
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+a & b \\
+\end{array}\right]
+$$
+
+$$ AB =
+\left[\begin{array}{ccc}
+e & f & g \\
+h & i & j \\
+\end{array}\right]
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+a & b \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+ae + cf + ag & be + df + bg \\
+ah + ci + aj & bh + di + bj \\
+\end{array}\right]
+$$
+
+So definitely false, especially since there is no row 3 of $AB$ (which is
+allowed since the matrix multiplication is correct and $A$ is never given any
+constraints, $A$ can be any matrix which can be multiplied such that $AB$
+exists.)
 
 c. If rows 1 and 3 of $A$ are the same, so are rows 1 and 3 of $ABC$.
 
+Perhaps true.
+
+$$ A =
+\left[\begin{array}{c}
+a \\
+b \\
+a \\
+\end{array}\right]
+$$
+
+$$ B =
+\left[\begin{array}{ccc}
+c & d & e \\
+\end{array}\right]
+$$
+
+$$ C =
+\left[\begin{array}{c}
+f \\
+g \\
+h \\
+\end{array}\right]
+$$
+
+$$ AB =
+\left[\begin{array}{c}
+a \\
+b \\
+a \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+c & d & e \\
+\end{array}\right] =
+\left[\begin{array}{c}
+ac & ad & ae \\
+bc & bd & be \\
+ac & ad & ae \\
+\end{array}\right]
+$$
+
+$$ ABC = (AB)C =
+\left[\begin{array}{c}
+ac & ad & ae \\
+bc & bd & be \\
+ac & ad & ae \\
+\end{array}\right]
+\left[\begin{array}{c}
+f \\
+g \\
+h \\
+\end{array}\right] =
+\left[\begin{array}{c}
+acf + adg + aeh \\
+bcf + bdg + beh \\
+acf + adg + aeh \\
+\end{array}\right]
+$$
+
+So yes, this is true.
+
 d. $(AB)^2 = A^2B^2$.
+
+This is false since $AB^2 = ABAB = (AB)(AB) \neq (AA)(BB) = AABB = A^2B^2$.
+
+Example omitted (this just demonstrates how matrix associativity works).
 
 8. How is each row of $DA$ and $EA$ related to the rows of $A$, when
 
@@ -5627,6 +6252,85 @@ c & d \\
 $$
 
 How is each column of $AD$ and $AE$ related to the columns of $A$?
+
+_Solution:_
+
+_How is each row of $DA$ and $EA$ related to the rows of $A$?:_
+
+$$ DA =
+\left[\begin{array}{cc}
+3 & 0 \\
+0 & 5 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+3a & 3b \\
+5c & 5d \\
+\end{array}\right]
+$$
+
+$$ EA =
+\left[\begin{array}{cc}
+0 & 1 \\
+0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+c & d \\
+c & d \\
+\end{array}\right]
+$$
+
+Each row of $DA$ is related to $A$ in that row $(DA)_{1j}$ multiplies row
+$A_{1j}$ by $3$, and row $(DA)_{2j}$ multiplies row $A_{2j}$ by $5$.$and
+
+Each row of $EA$ is related to $A$ in that each row of $EA$ is equal to row
+$A_{2j}$.
+
+_How is each column of $AD$ and $AE$ related to the columns of $A$?:_
+
+$$ AD =
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right]
+\left[\begin{array}{cc}
+3 & 0 \\
+0 & 5 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+3a & 5b \\
+3c & 5d \\
+\end{array}\right]
+$$
+
+$$ AE =
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right]
+\left[\begin{array}{cc}
+0 & 1 \\
+0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+0 & a + b \\
+0 & c + d \\
+\end{array}\right]
+$$
+
+Each column of $AD$ is related to columns of $A$ by multiplying column $A_{i1}$
+by $3$ to get $(AD)_{i1}$. Similarly, multiplying column $A_{i2}$ by $5$ to get
+$(AD)_{i2}$.
+
+Each column of $AE$ is related to columns of $A$ by adding $A_{i1}$ to $A_{i2}$
+to get $(AE)_{i2}$. Note that $(AE)_{i1} = 0$, which is the same as $E_{i1}$.
 
 9. Row 1 of $A$ is added to row 2. This gives $EA$ below. Then column 1 of $EA$
    is added to column 2 to produce $(EA)F$:
@@ -5662,7 +6366,43 @@ $$
 a. Do those steps in the opposite order. First add column 1 of $A$ to column 2
 by $AF$, then add row 1 of $AF$ to row 2 by $E(AF)$.
 
+_Solution:_
+
+$$ AF =
+\left[\begin{array}{ccc}
+a & b \\
+c & d \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 1 \\
+0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+a & a + b \\
+c & c + d \\
+\end{array}\right]
+$$
+
+$$ E(AF) =
+\left[\begin{array}{cc}
+1 & 0 \\
+1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+a & a + b \\
+c & c + d \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+a & a + b \\
+a + c & a + b + c + d \\
+\end{array}\right] = (EA)F
+$$
+
 b. Compare with $(EA)F$. What law is obeyed by matrix multiplication?
+
+_Solution:_
+
+The law of associativity.
 
 10. Row 1 of $A$ is again added to row 2 to produce $EA$. Then $F$ adds row 2 of
     $EA$ to row 1. The result is $F(EA)$:
@@ -5685,21 +6425,173 @@ $$
 a. Do those steps in the opposite order: first add row 2 to row 1 by $FA$, then
 add row 1 of $FA$ to row 2.
 
+_Solution:_
+
+$$ FA =
+\left[\begin{array}{cc}
+1 & 1 \\
+0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+a + c & b + d \\
+c & d \\
+\end{array}\right]
+$$
+
+Adding row 1 of $FA$ to row 2 is to apply $E$:
+
+$$ E(FA) =
+\left[\begin{array}{cc}
+1 & 0 \\
+1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+a + c & b + d \\
+c & d \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+a + c & b + d \\
+a + 2c & b + 2d \\
+\end{array}\right] \neq
+\left[\begin{array}{cc}
+2a + c & 2b + d \\
+a + c & b + d \\
+\end{array}\right] = F(EA)
+$$
+
 b. What law is or is not obeyed by matrix multiplication?
+
+_Solution:_
+
+This demonstrates that matrix multiplication does not obey the laws of
+commutativity.
 
 11. This fact still amazes me. IF you do a row operation on $A$ and then a
     column operation, the result is the same as if you did the column operation
     first. (Try it.) Why is this true?
 
+_Solution:_
+
+Let $A$ be the $A$ from the previous 2 problems:
+
+$$ A = \left[\begin{array}{cc} a & b \\ c & d \\ \end{array}\right] $$
+
+Now apply a row operation, let's call this operation matrix $R$ (row operations
+go to the left in matrix multiplication):
+
+$$ RA =
+\left[\begin{array}{cc}
+2 & 0 \\
+0 & 2 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+2a & 2b\\
+2c & 2d \\
+\end{array}\right]
+$$
+
+Now apply a column operation $C$ on $RA$ (column operations go on the right side
+of matrix multiplication):
+
+$$ (RA)C =
+\left[\begin{array}{cc}
+2a & 2b\\
+2c & 2d \\
+\end{array}\right]
+\left[\begin{array}{cc}
+3 & 0 \\
+0 & 3 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+6a & 6b \\
+6c & 6d \\
+\end{array}\right]
+$$
+
+Now, do the column operation first, _i.e._ compute $AC$ (again, column goes on
+the right):
+
+$$ AC =
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right]
+\left[\begin{array}{cc}
+3 & 0 \\
+0 & 3 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+3a & 3b \\
+3c & 3d \\
+\end{array}\right]
+$$
+
+Then apply $R$ (again, row operations on the left), $R(AC)$:
+
+$$ R(AC) =
+\left[\begin{array}{cc}
+2 & 0 \\
+0 & 2 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+3a & 3b \\
+3c & 3d \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+6a & 6b \\
+6c & 6d \\
+\end{array}\right] = (RA)C
+$$
+
+This is true because the fact that the row and column operations determine the
+order in which the matrix multiplication occurs means that regardless of whether
+you start with rows or columns, which matrix goes on the left or the right will
+always be the same regardless of which multiplication you do first. This is yet
+another demonstration of the law of associativity.
+
 12. (3 by 3 matrices) Choose the only $B$ so that for every matrix $A$
 
 a. $BA = 4A$
 
+$$ B = 4 \cdot I =
+\left[\begin{array}{ccc}
+4 & 0 & 0 \\
+0 & 4 & 0 \\
+0 & 0 & 4 \\
+\end{array}\right]
+$$
+
 b. $BA = 4B$
+
+$$ B = \mathbf{0} $$
 
 c. $BA$ has rows 1 and 3 of $A$ reversed and row 2 unchanged
 
+$$ B =
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+\end{array}\right]
+$$
+
 d. All rows of $BA$ are the same as row 1 of $A$.
+
+$$ B =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 0 & 0 \\
+1 & 0 & 0 \\
+\end{array}\right]
+$$
 
 13. Suppose $AB = BA$ and $AC = CA$ for these two particular matrices $B$ and
     $C$:
@@ -5725,70 +6617,393 @@ Prove that $a = d$ and $b = c = 0$. Then $A$ is a multiple of $I$. The only
 matrices that commute with $B$ and $C$ and all other 2 by 2 matrices are $A =$
 multiple of $I$.
 
+_Solution:_
+
+_Proof:_
+
+Suppose $A$, $B$, and $C$ are matrices defined as follows:
+
+$$ A =
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right]
+$$
+
+$$
+B =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+$$
+C =
+\left[\begin{array}{cc}
+0 & 1 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+Furthermore, suppose that $AB = BA$ (_i.e._ $A$ and $B$ are commutative), and
+also suppose that $AC = CA$ (_i.e._ $A$ and $C$ are commutative).
+
+It is to be shown that $a = d$ and $b = c = 0$.
+
+Consider what happens when $AB$ and $BA$ are multiplied via demonstration:
+
+$$ AB =
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+a & 0 \\
+c & 0 \\
+\end{array}\right]
+$$
+
+$$ BA =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+a & b \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+By the supposition, $AB = BA$, thus it follows that:
+
+$$
+AB =
+\left[\begin{array}{cc}
+a & 0 \\
+c & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+a & b \\
+0 & 0 \\
+\end{array}\right] = BA
+$$
+
+By the laws of equality, this means that $b = c = 0$.
+
+Similarly, computing $AC$ and $CA$ yields:
+
+$$ AC =
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right]
+\left[\begin{array}{cc}
+0 & 1 \\
+0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+0 & a \\
+0 & c \\
+\end{array}\right]
+$$
+
+$$ CA =
+\left[\begin{array}{cc}
+0 & 1 \\
+0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+c & d \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+By the supposition, since $AC = CA$, the following equality holds:
+
+$$ AC =
+\left[\begin{array}{cc}
+0 & a \\
+0 & c \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+c & d \\
+0 & 0 \\
+\end{array}\right] = CA
+$$
+
+Once again, it follows by the laws of equality that $a = d$.
+
+Thus both $a = d$ and $b = c = 0$ have been demonstrated, and this is what was
+to be shown.
+
+Q.E.D.
+
 14. Which of the following matrices are guaranteed to equal $(A - B)^2$:
     $A^2 - B^2$, $(B - A)^2$, $A^2 - 2AB + B^2$, $A(A - B) - B(A - B)$,
     $A^2 - AB - BA + B^2$?
+
+To easily see which ones, let's FOIL out $(A - B)^2$:
+
+$$ (A - B)^2 = (A - B)(A - B) $$
+
+$$ = A^2 - AB - BA + B^2 $$
+
+Easily we can see the first option $A^2 - B^2 \neq A^2 - AB - BA + B^2$.
+
+The second option, $(B - A)^2$ can be evaluated similarly via FOIL:
+
+$$ (B - A)^2 = (B - A)(B - A) $$
+
+$$ = B^2 - BA - AB + A^2 = A^2 - AB - BA + B^2 $$
+
+So this second option is equivalent.
+
+The third option $A^2 - 2AB + B^2 \neq A^2 - AB - BA + B^2$ as matrix
+multiplication does not conform to the laws of commutativity.
+
+The fourth option $A(A - B) - B(A - B)$ can be FOILed out:
+
+$$ A(A - B) - B(A - B) = A^2 - AB - BA + B^2 $$
+
+So this is equal.
+
+The fifth option is the fully foiled out version of $(A - B)^2$ and thus is
+equal.
 
 15. True or false:
 
 a. If $A^2$ is defined then $A$ is necessarily square.
 
+True, since $A_{r \times c} \cdot A_{c \times r}$ must hold, by the laws of
+matrix multiplication, this means that $r = c$, which means that $A$ is a square
+matrix.
+
 b. If $AB$ and $BA$ are defined then $A$ and $B$ are square.
+
+Not necessarily, no, this is false, consider:
+
+$$ A_{1 \times 2} \cdot B_{2 \times 1} = (AB)_{1 \times 1} $$
+
+This is valid, as $A$'s columns is $2$ which is equal to $B$'s rows. Thus matrix
+multiplication of $AB$ is valid.
+
+Similarly, as $B$'s columns and $A$'s rows are both equal to $1$, this is also
+valid matrix multiplication
+
+$AB$ is indeed square (a 1 x 1 matrix), and $BA$ is indeed square (a 2 x 2
+matrix), but neither $A$ nor $B$ are square.
 
 c. If $AB$ and $BA$ are defined then $AB$ and $BA$ are square.
 
+By part (b), this is true, but let's establish a more general sense as to why:
+
+$$ A_{m \times n} \cdot B_{n \times m} = (AB)_{m \times m}  $$
+
+$$ B_{n \times m} \cdot A_{m \times n} = (BA)_{n \times n} $$
+
+Both of these are square matrices.
+
 d. If $AB = B$ then $A = I$.
+
+Not necessarily, if $B = \mathbf{0}$, then $AB = B = \mathbf{0} \neq I$. So this
+is false.
 
 16. IF $A$ is $m$ by $n$, how many separate multiplications are involved when
 
 a. $A$ multiplies a vector $x$ with $n$ components?
 
+$mn$ (use every entry of $A$).
+
 b. $A$ multiplies an $n$ by $p$ matrix $B$?
 
+$mnp$ (part (a) by the rows of $B$, which is $p$)
+
 c. $A$ multiplies itself to produce $A^2$? Here $m = n$.
+
+$n^3$ ($n^2$ dot products.)
+
+_Note:_ Interestingly, if you think about this, this means matrix multiplication
+have terrible time complexity (roughly $O(n^3)$ according to research). This is
+why GPU's make use of parallelization in data science and graphics processing
+tasks to by pass this poor time efficiency.
 
 17. For $A = \left[\begin{array}{cc}2 & -1 \\3 & -2\\\end{array}\right]$ and
     $B = \left[\begin{array}{cc}1 & 0 & 4 \\1 & 0 & 6\\\end{array}\right]$,
     compute these answers _and nothing more_:
 
+Recall problem 2, this is similar.
+
 a. column 2 of $AB$
+
+$$ A(B_{i2}) $$
+
+$$ (AB)_{i2} = \begin{bmatrix}{}0\\0\end{bmatrix} $$
 
 b. row 2 of $AB$
 
+$$ A_{2j}B $$
+
+$$ (AB)_{2j} =
+\left[\begin{array}{ccc}
+1 & 0 & 0\\
+\end{array}\right]
+$$
+
 c. row 2 of $AA = A^2$
 
+$$ A_{2j}A $$
+
+$$ (AA)_{2j} =
+\left[\begin{array}{cc}
+0 & 1 \\
+\end{array}\right]
+$$
+
 d. row 2 of $AAA = A^3$
+
+$$ (AA)_{2j}A $$
+
+$$ (AAA)_{2j} =
+\left[\begin{array}{cc}
+3 & -2 \\
+\end{array}\right]
+$$
 
 **Problems 18-20 use $a_{ij}$ for the entry in row $i$, column $j$ of $A$.**
 
 18. Write down the 3 by 3 matrix $A$ whose entries are
 
+Throughout this, keep in mind that $i = 1, 2, 3$ and $j = 1, 2, 3$.
+
 a. $a_{ij} = \text{ minimum of } i \text{ and } j$
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+1 & 2 & 2 \\
+1 & 2 & 3 \\
+\end{array}\right]
+$$
 
 b. $a_{ij} = (-1)^{i + j}$
 
+$$ A =
+\left[\begin{array}{rrr}
+1 & -1 & 1 \\
+-1 & 1 & -1 \\
+1 & -1 & 1 \\
+\end{array}\right]
+$$
+
 c. $a_{ij} = \dfrac{i}{j}$
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & \frac{1}{2} & \frac{1}{3} \\
+2 & 1 & \frac{2}{3} \\
+3 & \frac{3}{2} & 1 \\
+\end{array}\right]
+$$
 
 19. What words would you use to describe each of these classes of matrices? Give
     a 3 by 3 example in each class. Which matrix belongs to all four classes?
 
+_Note:_
+
+Base example:
+
+$$ A =
+\left[\begin{array}{ccc}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33} \\
+\end{array}\right]
+$$
+
 a. $a_{ij} = 0 \text{ if } i \neq j$
+
+$$ A =
+\left[\begin{array}{ccc}
+a_{11} & 0 & 0 \\
+0 & a_{22} & 0 \\
+0 & 0 & a_{33} \\
+\end{array}\right]
+$$
+
+This is a Diagonal Matrix, where only the diagonal can be nonzero.
 
 b. $a_{ij} = 0 \text{ if } i < j$
 
+$$ A =
+\left[\begin{array}{ccc}
+a_{11} & 0 & 0 \\
+a_{21} & a_{22} & 0 \\
+a_{31} & a_{32} & a_{33} \\
+\end{array}\right]
+$$
+
+This is in lower triangular form, and thus is a Lower Triangular Matrix.
+
 c. $a_{ij} = a_{ji}$
 
+$$ A =
+\left[\begin{array}{ccc}
+a_{11} & a_{21} & a_{31} \\
+a_{12} & a_{22} & a_{32} \\
+a_{13} & a_{23} & a_{33} \\
+\end{array}\right]
+$$
+
+This matrix is a Symmetric matrix, the entries are mirrored along the main
+diagonal.
+
 d. $a_{ij} = a_{1j}$
+
+$$ A =
+\left[\begin{array}{ccc}
+a_{11} & a_{12} & a_{13} \\
+a_{11} & a_{12} & a_{13} \\
+a_{11} & a_{12} & a_{13} \\
+\end{array}\right]
+$$
+
+This matrix has the same entries in each of its columns, and each row is the
+same.
+
+_Which matrix belongs to all four classes?:_
+
+The $\mathbf{0}$ matrix.
 
 20. The entries of $A$ are $a_{ij}$. Assuming that zeros don't appear, what is
 
 a. the first pivot?
 
+$a_{11}$
+
 b. the multiplier $\ell_{31}$ of row 1 to be subtracted from row 3?
+
+$\dfrac{a_{31}}{a_{11}}$
 
 c. the new entry that replaces $a_{32}$ after that subtraction?
 
+$$ a_{32} - \dfrac{a_{31}a_{12}}{a_{11}} $$
+
 d. the second pivot?
+
+$$ a_{22} - \dfrac{a_{21}a_{12}}{a_{11}} $$
 
 **Problems 21-24 involve powers of $A$.**
 
@@ -5804,15 +7019,443 @@ $$ A =
 v = \begin{bmatrix}{}x\\y\\z\\t\end{bmatrix}
 $$
 
+$A^2$:
+
+$$ A^2 =
+\left[\begin{array}{cccc}
+0 & 2 & 0 & 0 \\
+0 & 0 & 2 & 0 \\
+0 & 0 & 0 & 2 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+0 & 2 & 0 & 0 \\
+0 & 0 & 2 & 0 \\
+0 & 0 & 0 & 2 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+0 & 0 & 4 & 0 \\
+0 & 0 & 0 & 4 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$A^3$:
+
+$$ A^3 = (A^2)A =
+\left[\begin{array}{cccc}
+0 & 0 & 4 & 0 \\
+0 & 0 & 0 & 4 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+0 & 2 & 0 & 0 \\
+0 & 0 & 2 & 0 \\
+0 & 0 & 0 & 2 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+0 & 0 & 0 & 8 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$A^4$:
+
+$$ A^4 = (A^3)A =
+\left[\begin{array}{cccc}
+0 & 0 & 0 & 8 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+0 & 2 & 0 & 0 \\
+0 & 0 & 2 & 0 \\
+0 & 0 & 0 & 2 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right] = \mathbf{0}
+$$
+
+$Av$:
+
+$$ Av =
+\left[\begin{array}{cccc}
+0 & 2 & 0 & 0 \\
+0 & 0 & 2 & 0 \\
+0 & 0 & 0 & 2 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+\begin{bmatrix}{}x\\y\\z\\t\end{bmatrix} =
+\begin{bmatrix}{}2y\\2z\\2t\\0\end{bmatrix}
+$$
+
+$A^2v$:
+
+$$ A^2v =
+\left[\begin{array}{cccc}
+0 & 0 & 4 & 0 \\
+0 & 0 & 0 & 4 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+\begin{bmatrix}{}x\\y\\z\\t\end{bmatrix} =
+\begin{bmatrix}{}4z\\4t\\0\\0\end{bmatrix}
+$$
+
+$A^3v$:
+
+$$ A^3v =
+\left[\begin{array}{cccc}
+0 & 0 & 0 & 8 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+\begin{bmatrix}{}x\\y\\z\\t\end{bmatrix} =
+\begin{bmatrix}{}8t\\0\\0\\0\end{bmatrix}
+$$
+
+$A^4v$:
+
+$$ A^4v =
+\left[\begin{array}{cccc}
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+\begin{bmatrix}{}x\\y\\z\\t\end{bmatrix} =
+\begin{bmatrix}{}0\\0\\0\\0\end{bmatrix}
+$$
+
 22. By trial and error find real nonzero 2 by 2 matrices such that
 
 $$ A^2 = -I \quad BC = 0 \quad DE = -ED(\text{not allowing } DE = 0) $$
+
+$A^2 = -I$:
+
+$$ -I =
+-1\left[\begin{array}{cc}
+1 & 0 \\
+0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+-1 & 0 \\
+0 & -1 \\
+\end{array}\right]
+$$
+
+$$ A^2 =
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right]
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+a^2 + bc = -1 & ab + bd = 0 \\
+ca + dc = 0 & cb + d^2 = -1 \\
+\end{array}\right]
+$$
+
+$$
+a^2 + bc = -1 \\
+ca + dc = 0 \\
+ab + bd = 0 \\
+cb + d^2 = -1 \\
+$$
+
+Infinitely many solutions, just find one that works, set $a = 0$ and $d = 0$,
+then:
+
+$$
+(0)^2 + bc = -1 \\
+c(0) + (0)c = 0 \\
+(0)b + b(0) = 0 \\
+cb + (0)^2 = -1 \\
+$$
+
+$$
+bc = -1 \\
+cb = -1 \\
+$$
+
+So either $b = 1, c = -1$ or $b = -1, c = 1$.
+
+Choose $b = 1, c = -1$, then:
+
+$$ A =
+\left[\begin{array}{cc}
+0 & 1 \\
+-1 & 0 \\
+\end{array}\right]
+$$
+
+Check:
+
+$$ A^2 =
+\left[\begin{array}{cc}
+0 & 1 \\
+-1 & 0 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+0 & 1 \\
+-1 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+-1 & 0 \\
+0 & -1 \\
+\end{array}\right] = -I
+$$
+
+$BC = \mathbf{0}$:
+
+$$ BC =
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right]
+\left[\begin{array}{cc}
+e & f \\
+g & i \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+0 & 0 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+$$
+ae + bg = 0 \\
+ce + dg = 0 \\
+af + bi = 0 \\
+cf + di = 0 \\
+$$
+
+By evaluation, we can go slowly and find entries that will work:
+
+$$
+ae + bg = 0 \\
+(-1)(1) + (-1)(-1) = 0 \\
+ce + dg = 0 \\
+(-1)(1) + (-1)(-1) = 0 \\
+af + bi = 0 \\
+(-1)(-1) + (-1)(1) = 0 \\
+cf + di = 0 \\
+(-1)(-1) + (-1)(1) = 0 \\
+$$
+
+$$ a = -1, b = -1, c = -1, d = -1, e = 1, f = -1, g = -1, i = 1 $$
+
+This works, so:
+
+$$ BC =
+\left[\begin{array}{cc}
+-1 & -1 \\
+-1 & -1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & -1 \\
+-1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+0 & 0 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+$DE = -ED$ (not allowing $DE$ = 0):
+
+Doing this got complex, try $A$ from earlier:
+
+$$ A = E =
+\left[\begin{array}{rr}
+0 & 1 \\
+-1 & 0 \\
+\end{array}\right]
+$$
+
+Try the permutation matrix for $D$:
+
+$$ D =
+\left[\begin{array}{cc}
+0 & 1 \\
+1 & 0 \\
+\end{array}\right]
+$$
+
+Then:
+
+$$ DE =
+\left[\begin{array}{cc}
+0 & 1 \\
+1 & 0 \\
+\end{array}\right]
+\left[\begin{array}{rr}
+0 & 1 \\
+-1 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{rr}
+-1 & 0 \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+Then find $ED$:
+
+$$ ED =
+\left[\begin{array}{rr}
+0 & 1 \\
+-1 & 0 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+0 & 1 \\
+1 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{rr}
+1 & 0 \\
+0 & -1 \\
+\end{array}\right]
+$$
+
+Then find $-ED$:
+
+$$ -ED =
+-1\left[\begin{array}{rr}
+1 & 0 \\
+0 & -1 \\
+\end{array}\right] =
+\left[\begin{array}{rr}
+-1 & 0 \\
+0 & 1 \\
+\end{array}\right] = DE
+$$
 
 23.
 
 a. Find a nonzero matrix $A$ for which $A^2 = 0$.
 
+$$ A^2 =
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right]
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+0 & 0 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+$$
+a^2 + bc = 0 \\
+ca + dc = 0 \\
+ab + bd = 0 \\
+cb + d^2 = 0 \\
+$$
+
+Choose $a = -1, b = 1, c = -1, d = 1$, then:
+
+$$
+a^2 + bc = (-1)(-1) + (1)(-1) = 0 \\
+ca + dc = (-1)(-1) + (1)(-1) = 0 \\
+ab + bd = (-1)(1) + (1)(1) = 0 \\
+cb + d^2 = (-1)(1) + (1)(1) = 0 \\
+$$
+
+So this works, let's fill in:
+
+$$ A =
+\left[\begin{array}{cc}
+-1 & 1 \\
+-1 & 1 \\
+\end{array}\right]
+$$
+
+Checking:
+
+$$ A^2 =
+\left[\begin{array}{cc}
+-1 & 1 \\
+-1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+-1 & 1 \\
+-1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+0 & 0 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
 b. Find a matrix that has $A^2 \neq 0$ but $A^3 = 0$.
+
+Try an upper triangular matrix:
+
+$$ A =
+\left[\begin{array}{ccc}
+0 & 1 & 0\\
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+As seen in problem 21, this will eventually become $\mathbf{0}$ the more we
+continually exponentiate upon it:
+
+$$ A^2 =
+\left[\begin{array}{ccc}
+0 & 1 & 0\\
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+0 & 1 & 0\\
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ A^3 = (A^2)A =
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+0 & 1 & 0\\
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+0 & 0 & 0\\
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
 
 24. By experiment with $n = 2$ and $n = 3$ predict $A^n$ for these matrices:
 
@@ -5833,9 +7476,190 @@ a & b \\
 \end{array}\right]
 $$
 
+$A_1$:
+
+$$ A_1 =
+\left[\begin{array}{cc}
+2 & 1 \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+$$ A_1^2 =
+\left[\begin{array}{cc}
+2 & 1 \\
+0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+2 & 1 \\
+0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+4 & 3 \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+$$ A_1^3 = (A_1^2)A_1 =
+\left[\begin{array}{cc}
+4 & 3 \\
+0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+2 & 1 \\
+0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+8 & 7 \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+$$ A_1^n =
+\left[\begin{array}{cc}
+2^n & 2^n - 1 \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+$A_2$:
+
+$$ A_2 =
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 1 \\
+\end{array}\right]
+$$
+
+$$ A_2^2 =
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+2 & 2 \\
+2 & 2 \\
+\end{array}\right]
+$$
+
+$$ A_2^3 = (A_2^2)A_2 =
+\left[\begin{array}{cc}
+2 & 2 \\
+2 & 2 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+4 & 4 \\
+4 & 4 \\
+\end{array}\right]
+$$
+
+$$ A_2^n =
+\left[\begin{array}{cc}
+2^{n - 1} & 2^{n - 1} \\
+2^{n - 1} & 2^{n - 1} \\
+\end{array}\right]
+$$
+
+$A_3$:
+
+$$ A_3 =
+\left[\begin{array}{cc}
+a & b \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+$$ A_3^2 =
+\left[\begin{array}{cc}
+a & b \\
+0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+a & b \\
+0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+a^2 & ab \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+$$ A_3^3 = (A_3^2)A_3 =
+\left[\begin{array}{cc}
+a^2 & ab \\
+0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+a & b \\
+0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+a^3 & a^2b \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+$$ A^n =
+\left[\begin{array}{cc}
+a^n & a^{n - 1}b \\
+0 & 0 \\
+\end{array}\right]
+$$
+
 **Problems 25-31 use column-row multiplication and block multiplication.**
 
 25. Multiply $A$ times $I$ using columns of $A$ (3 by 3) times rows of $I$.
+
+$$ A =
+\left[\begin{array}{ccc}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33} \\
+\end{array}\right]
+$$
+
+$$ I =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+Column-row multiplication of $AI$:
+
+$$ \begin{bmatrix}{}a_{11}\\a_{21}\\a_{31}\end{bmatrix} \left[\begin{array}{ccc}1 & 0 & 0\end{array}\right] + \begin{bmatrix}{}a_{12}\\a_{22}\\a_{32}\end{bmatrix} \left[\begin{array}{ccc}0 & 1 & 0\end{array}\right] + \begin{bmatrix}{}a_{13}\\a_{23}\\a_{33}\end{bmatrix} \left[\begin{array}{ccc}0 & 0 & 1\end{array}\right] $$
+
+$$
+\left[\begin{array}{ccc}
+a_{11} & 0 & 0 \\
+a_{21} & 0 & 0 \\
+a_{31} & 0 & 0 \\
+\end{array}\right] +
+\left[\begin{array}{ccc}
+0 & a_{12} & 0 \\
+0 & a_{22} & 0 \\
+0 & a_{32} & 0 \\
+\end{array}\right] +
+\left[\begin{array}{ccc}
+0 & 0 & a_{13} \\
+0 & 0 & a_{23} \\
+0 & 0 & a_{33} \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33} \\
+\end{array}\right] = A
+$$
 
 26. Multiply $AB$ using columns times rows:
 
@@ -5849,10 +7673,50 @@ $$ AB =
 3 & 3 & 0 \\
 1 & 2 & 1 \\
 \end{array}\right] =
-\begin{bmatrix}{}1\\1\\2\end{bmatrix}
+\begin{bmatrix}{}1\\2\\2\end{bmatrix}
 \left[\begin{array}{ccc}
 3 & 3 & 0 \\
 \end{array}\right] + \text{(?)} = \text{(?)}
+$$
+
+_Solution:_
+
+$$ AB =
+\left[\begin{array}{cc}
+1 & 0 \\
+2 & 4 \\
+2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+3 & 3 & 0 \\
+1 & 2 & 1 \\
+\end{array}\right] =
+\begin{bmatrix}{}1\\2\\2\end{bmatrix}
+\left[\begin{array}{ccc}
+3 & 3 & 0 \\
+\end{array}\right] +
+\begin{bmatrix}{}0\\4\\1\end{bmatrix}
+\left[\begin{array}{ccc}
+1 & 2 & 1 \\
+\end{array}\right]
+$$
+
+$$ =
+\left[\begin{array}{ccc}
+3 & 3 & 0 \\
+6 & 6 & 0 \\
+6 & 6 & 0 \\
+\end{array}\right] +
+\left[\begin{array}{ccc}
+0 & 0 & 0 \\
+4 & 8 & 4 \\
+1 & 2 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+3 & 3 & 0 \\
+10 & 14 & 4 \\
+7 & 8 & 1 \\
+\end{array}\right] = AB
 $$
 
 27. Show that the product of upper triangular matrices is always upper
@@ -5882,16 +7746,170 @@ of $B$) $= 0$. Which other dot products give zeros?
 _Proof using full matrices (Column times row)_ Draw $x$'s and $0$'s in (column 2
 of $A$) times (row 2 of $B$). Also show (column 3 of $A$) times (row 3 of $B$).
 
+_Solution:_
+
+_Proof (using row times columns):_
+
+Suppose $A$ and $B$ are upper triangular matrices where:
+
+$$ A =
+\left[\begin{array}{ccc}
+a_{11} & a_{12} & a_{13} \\
+0 & a_{22} & a_{23} \\
+0 & 0 & a_{33} \\
+\end{array}\right]
+$$
+
+$$ B =
+\left[\begin{array}{ccc}
+b_{11} & b_{12} & b_{13} \\
+0 & b_{22} & b_{23} \\
+0 & 0 & b_{33} \\
+\end{array}\right]
+$$
+
+It is to be shown that $AB$ is always an upper triangular matrix.
+
+Consider the product as it stands:
+
+$$ AB =
+\left[\begin{array}{ccc}
+a_{11} & a_{12} & a_{13} \\
+0 & a_{22} & a_{23} \\
+0 & 0 & a_{33} \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+b_{11} & b_{12} & b_{13} \\
+0 & b_{22} & b_{23} \\
+0 & 0 & b_{33} \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+a_{11}b_{11} & a_{11}b_{12} + a_{12}b_{22} & a_{11}b_{13} + a_{12}b_{23} + a_{13}b_{33} \\
+0 & a_{22}b_{22} & a_{22}b_{23} + a_{23}b_{33} \\
+0 & 0 & a_{33}b_{33} \\
+\end{array}\right]
+$$
+
+By the definition of an upper triangular matrix, where $0$'s span in the entries
+below the diagonal, $AB$ is an upper triangular matrix. This is what was to be
+shown.
+
+Q.E.D.
+
 28. Draw the cuts in $A$ (2 by 3) and $B$ (3 by 4) and $AB$ to show how each of
     the four multiplication rules is really a block multiplication:
 
+_Note:_
+
+Basis matrices:
+
+$$ A =
+\left[\begin{array}{ccc}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+\end{array}\right]
+$$
+
+$$ B =
+\left[\begin{array}{cccc}
+b_{11} & b_{12} & b_{13} & b_{14} \\
+b_{21} & b_{22} & b_{23} & b_{24} \\
+b_{31} & b_{32} & b_{33} & b_{34} \\
+\end{array}\right]
+$$
+
 (1) Matrix $A$ times columns of $B$. **Columns of $AB$**
+
+$$ A =
+\left[\begin{array}{ccc}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+\end{array}\right]
+$$
+
+$$ B_C =
+\left[\begin{array}{c|c|c|c}
+b_{11} & b_{12} & b_{13} & b_{14} \\
+b_{21} & b_{22} & b_{23} & b_{24} \\
+b_{31} & b_{32} & b_{33} & b_{34} \\
+\end{array}\right]
+$$
+
+To denote this, consider $B_{j}$ where $j$ represents the column of $B$:
+
+$$ AB =
+\left[\begin{array}{c|c|c|c}
+AB_1 & AB_2 & AB_3 & AB_4 \\
+\end{array}\right]
+$$
+
+Or, more specifically:
+
+$$ AB =
+A\left[\begin{array}{c|c|c|c}
+b_{11} & b_{12} & b_{13} & b_{14} \\
+b_{21} & b_{22} & b_{23} & b_{24} \\
+b_{31} & b_{32} & b_{33} & b_{34} \\
+\end{array}\right]
+$$
 
 (2) Rows of $A$ times the matrix $B$. **Rows of $AB$**
 
+Denote the rows of $A$ as $A_R$, then:
+
+$$ A_R =
+\left[\begin{array}{ccc}
+a_{11} & a_{12} & a_{13} \\
+\hline
+a_{21} & a_{22} & a_{23} \\
+\end{array}\right]
+$$
+
+$$ A_RB =
+\left[\begin{array}{ccc}
+a_{11} & a_{12} & a_{13} \\
+\hline
+a_{21} & a_{22} & a_{23} \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+b_{11} & b_{12} & b_{13} & b_{14} \\
+b_{21} & b_{22} & b_{23} & b_{24} \\
+b_{31} & b_{32} & b_{33} & b_{34} \\
+\end{array}\right]
+$$
+
 (3) Rows of $A$ times columns of $B$. **Inner products** (numbers in $AB$)
 
+$$ A_RB_C =
+\left[\begin{array}{ccc}
+a_{11} & a_{12} & a_{13} \\
+\hline
+a_{21} & a_{22} & a_{23} \\
+\end{array}\right]
+\left[\begin{array}{c|c|c|c}
+b_{11} & b_{12} & b_{13} & b_{14} \\
+b_{21} & b_{22} & b_{23} & b_{24} \\
+b_{31} & b_{32} & b_{33} & b_{34} \\
+\end{array}\right]
+$$
+
+This is the standard dot product method.
+
 (4) Columns of $A$ times rows of $B$. **Outer products** (matrices add to $AB$)
+
+$$ A_CB_R =
+\left[\begin{array}{c|c|c}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+b_{11} & b_{12} & b_{13} & b_{14} \\
+\hline
+b_{21} & b_{22} & b_{23} & b_{24} \\
+\hline
+b_{31} & b_{32} & b_{33} & b_{34} \\
+\end{array}\right]
+$$
 
 29. Which matrices $E_{21}$ and $E_{31}$ produce zeros in the $(2, 1)$ and
     $(3, 1)$ positions of $E_{21}A$ and $E_{31}A$?
@@ -5906,6 +7924,82 @@ $$
 
 Find the single matrix $E = E_{31}E_{21}$ that produces both zeros at once.
 Multiply $EA$.
+
+_Solution:_
+
+_Which matrices $E_{21}$ produce zeros in the $(2, 1)$ position of $E_{21}A$?:_
+
+$$ A =
+\left[\begin{array}{ccc}
+2 & 1 & 0 \\
+-2 & 0 & 1 \\
+8 & 5 & 3 \\
+\end{array}\right]
+$$
+
+To produce zeros in the $(2,1)$ entry of $A$ (row $2$, column $1$ of $A$),
+$E_{21}$ should add 1 times row 1 to row 2.
+
+$$ E_{21} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+_Which matrix $E_{31}$ produce zeros in the $(3, 1)$ position of $E_{31}A$?:_
+
+To produce zeros in the $(3, 1)$ position of $A$, $E_{31}$ should subtract 4
+times row 1 from row 3:
+
+$$ E_{31} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-4 & 0 & 1 \\
+\end{array}\right]
+$$
+
+_Find the single matrix $E = E_{31}E_{21}$ that produces both zeros at once:_
+
+$$ E = E_{31}E_{21} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-4 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+-4 & 0 & 1 \\
+\end{array}\right]
+$$
+
+_Multiply $EA$:_
+
+$$ EA =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+-4 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+2 & 1 & 0 \\
+-2 & 0 & 1 \\
+8 & 5 & 3 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+2 & 1 & 0 \\
+0 & 1 & 1 \\
+0 & 1 & 3 \\
+\end{array}\right]
+$$
 
 30. Block multiplication says that column 1 is eliminated by
 
@@ -5926,6 +8020,29 @@ $$
 
 In Problem 29, what numbers go into $c$ and $D$ and what is $D - \dfrac{cb}{a}$?
 
+_Solution:_
+
+$$ c =
+\left[\begin{array}{r}
+-2 \\
+8 \\
+\end{array}\right]
+$$
+
+$$ D =
+\left[\begin{array}{cc}
+0 & 1 \\
+5 & 3 \\
+\end{array}\right]
+$$
+
+$$ D - \dfrac{cb}{a} =
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 3 \\
+\end{array}\right]
+$$
+
 31. With $i^2 = -1$, the product of $(A + iB)$ and $(x + iy)$ is
     $Ax + iBx + iAy - By$. Use blocks to separate the real part without $i$ from
     the imaginary part that multiplies $i$:
@@ -5943,6 +8060,8 @@ A & -B \\
 \end{array}
 $$
 
+Omitted.
+
 32. _(Very important)_ Suppose you solve $Ax = b$ for three special right sides
     $b$:
 
@@ -5951,14 +8070,178 @@ $$ Ax_1 = \begin{bmatrix}{}1\\0\\0\end{bmatrix} \quad \text{ and } \quad Ax_2 = 
 If the three solutions $x_1, x_2, x_3$ are the columns of a matrix $X$, what is
 $A$ times $X$?
 
+_Solution:_
+
+So, let's break this down a bit, let's first define $X$:
+
+$$ X =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+Notice that this is the identity matrix, so, $AX = I$.
+
+This means that $X = A^{-1}$, since any matrix multiplied by it's own inverse is
+$I$.
+
 33. If the three solutions in Question 32 are $x_1 = (1, 1, 1)$ and
     $x_2 = (0, 1, 1)$ and $x_3 = (0, 0, 1)$, solve $Ax = b$ when
     $b = (3, 5, 8)$. Challenge problem: What is $A$?
+
+_Solution:_
+
+Evaluating the question yields:
+
+$$ A\begin{bmatrix}{}1\\1\\1\end{bmatrix} =
+\begin{bmatrix}{}1\\0\\0\end{bmatrix}
+$$
+
+$$ A\begin{bmatrix}{}0\\1\\1\end{bmatrix} =
+\begin{bmatrix}{}0\\1\\0\end{bmatrix}
+$$
+
+$$ A\begin{bmatrix}{}0\\0\\1\end{bmatrix} =
+\begin{bmatrix}{}0\\0\\1\end{bmatrix}
+$$
+
+This means that $X$ from problem 32 is:
+
+$$ X =
+\left[\begin{array}{ccc}
+1 & 0 & 0\\
+1 & 1 & 0\\
+1 & 1 & 1 \\
+\end{array}\right]
+$$
+
+Now, we're trying to find little $x$.
+
+We know that:
+
+$$ Ax = b $$
+
+$$ Ax = \begin{bmatrix}{}3\\5\\8\end{bmatrix} $$
+
+In problem 32, we established that $X = A^{-1}$. Let's go step by step:
+
+$$ Ax = b $$
+
+$$ A^{-1}(Ax) = A^{-1}b $$
+
+$$ Ix = A^{-1}b $$
+
+Since $Ix = x$:
+
+$$ x = A^{-1}b $$
+
+And since $X = A^{-1}$:
+
+$$ x = Xb $$
+
+So now:
+
+$$ x =
+\left[\begin{array}{ccc}
+1 & 0 & 0\\
+1 & 1 & 0\\
+1 & 1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}3\\5\\8\end{bmatrix} =
+\begin{bmatrix}{}3\\8\\16\end{bmatrix}
+$$
+
+Challenge problem omitted.
 
 34. Find all matrices
     $A = \left[\begin{array}{cc}a & b \\c & d \\\end{array}\right]$ that satisfy
     $A\left[\begin{array}{cc}1 & 1\\1 & 1\\\end{array}\right] = \left[\begin{array}{cc}1 & 1\\1 & 1\\\end{array}\right]A$.
 
+_Solution:_
+
+If we consider $A$ as given:
+
+$$ A =
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right]
+$$
+
+Let $O$ represent the $1$'s matrix given:
+
+$$ O =
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 1 \\
+\end{array}\right]
+$$
+
+Then $AO$ is:
+
+$$ AO =
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+a + b & a + b \\
+c + d & c + d \\
+\end{array}\right]
+$$
+
+Then $OA$ is:
+
+$$ OA =
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+a + c & b + d \\
+a + c & b + d \\
+\end{array}\right]
+$$
+
+So, in order for $AO = OA$, the following must be true:
+
+$$
+a + b = a + c \\
+c + d = a + c \\
+a + b = b + d \\
+c + d = b + d \\
+$$
+
+Simplifying:
+
+$$
+b = c \\
+d = a \\
+a = d \\
+c = b \\
+$$
+
+So, as long as $a = d$ and $b = c$, $AO = OA$, thus:
+
+$$ A =
+\left[\begin{array}{cc}
+a & b \\
+b & a \\
+\end{array}\right]
+$$
+
 35. Suppose a "circle graph" has 4 nodes connected (in both directions) by edges
     around a circle. What is its adjacency matrix $S$ from Worked Example 2.4 A?
     What is $S^2$? Find all the 2-step paths predicted by $S^2$.
+
+Omitted.
