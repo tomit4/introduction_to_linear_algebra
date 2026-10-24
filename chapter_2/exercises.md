@@ -8279,6 +8279,83 @@ $$ C =
 \end{array}\right]
 $$
 
+_Solution:_
+
+$A^{-1}$:
+
+$$ A =
+\left[\begin{array}{cc}
+0 & 3 \\
+4 & 0 \\
+\end{array}\right]
+$$
+
+$$ \det A = (0)(0) - (3)(4) = -12 $$
+
+$$ A^{-1} = \frac{1}{-12}
+\left[\begin{array}{cc}
+0 & -3 \\
+-4 & 0 \\
+\end{array}\right]
+$$
+
+$$ A^{-1} =
+\left[\begin{array}{cc}
+0 & \frac{1}{4} \\
+\frac{1}{3} & 0 \\
+\end{array}\right]
+$$
+
+$B^{-1}$:
+
+$$ B =
+\left[\begin{array}{cc}
+2 & 0 \\
+4 & 2 \\
+\end{array}\right]
+$$
+
+$$ \det B = (2)(2) - (0)(4) = 4 $$
+
+$$ B^{-1} = \frac{1}{4}
+\left[\begin{array}{cc}
+2 & -0 \\
+-4 & 2 \\
+\end{array}\right]
+$$
+
+$$ B^{-1} =
+\left[\begin{array}{cc}
+\frac{1}{2} & 0 \\
+-1 & \frac{1}{2} \\
+\end{array}\right]
+$$
+
+$C^{-1}$:
+
+$$ C =
+\left[\begin{array}{cc}
+3 & 4 \\
+5 & 7 \\
+\end{array}\right]
+$$
+
+$$ \det C = (3)(7) - (4)(5) = 1 $$
+
+$$ C^{-1} = \frac{1}{1}
+\left[\begin{array}{cc}
+7 & -4 \\
+-5 & 3 \\
+\end{array}\right]
+$$
+
+$$ C^{-1} =
+\left[\begin{array}{cc}
+7 & -4 \\
+-5 & 3 \\
+\end{array}\right]
+$$
+
 2. For these "permutation matrices" find $P^{-1}$ by trial and error (with $1$'s
    and $0$'s):
 
@@ -8297,6 +8374,68 @@ $$ P =
 0 & 1 & 0 \\
 0 & 0 & 1 \\
 1 & 0 & 0 \\
+\end{array}\right]
+$$
+
+_Solution:_
+
+_First $P$:_
+
+$$ P =
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+\end{array}\right]
+$$
+
+Row exchanges yield $I$:
+
+$$ P =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] = I
+$$
+
+So $P^{-1} = P$.
+
+_Second $P$:_
+
+$$ P =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ \left[\begin{array}{cc}P & I \\\end{array}\right] =
+\left[\begin{array}{ccc|ccc}
+0 & 1 & 0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 & 1 & 0 \\
+1 & 0 & 0 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+Swap row 3 and row 1:
+
+$$ \left[\begin{array}{cc}P & I \\\end{array}\right] =
+\left[\begin{array}{ccc|ccc}
+1 & 0 & 0 & 0 & 0 & 1 \\
+0 & 1 & 0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 & 1 & 0 \\
+\end{array}\right]
+$$
+
+And now we have $\left[\begin{array}{cc}I & P^{-1} \\\end{array}\right]$:
+
+$$ P^{-1} =
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+0 & 1 & 0 \\
 \end{array}\right]
 $$
 
@@ -8322,6 +8461,95 @@ $$
 \begin{bmatrix}{}0\\1\end{bmatrix}
 $$
 
+_Solution:_
+
+_Solving for $(x, y)$:_
+
+$$
+10x + 20y = 1 \\
+20x + 50y = 0 \\
+$$
+
+$$
+\left[\begin{array}{rr}
+1 & 0 \\
+-2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rr|r}
+10 & 20 & 1 \\
+20 & 50 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{rr|r}
+10 & 20 & 1 \\
+0 & 10 & -2 \\
+\end{array}\right]
+$$
+
+Back substitute:
+
+$$ 10y = -2 \Rightarrow y = -\frac{1}{5} $$
+
+$$ 10x + 20\left(-\frac{1}{5}\right) = 1 \Rightarrow 10x - 4 = 1 \Rightarrow 10x = 5 \Rightarrow x = \frac{1}{2} $$
+
+$$
+\begin{bmatrix}{}x\\y\end{bmatrix} =
+\begin{bmatrix}{}\frac{1}{2}\\-\frac{1}{5}\end{bmatrix}
+$$
+
+_Solving for $(t, z)$:_
+
+$$
+10t + 20z = 0 \\
+20t + 50z = 1 \\
+$$
+
+$$
+\left[\begin{array}{rr}
+1 & 0 \\
+-2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc|c}
+10 & 20 & 0 \\
+20 & 50 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc|c}
+10 & 20 & 0 \\
+0 & 10 & 1 \\
+\end{array}\right]
+$$
+
+Back substitution:
+
+$$ 10z = 1 \Rightarrow z = \frac{1}{10} $$
+
+$$ 10t + 20\left(\frac{1}{10}\right) = 0 \Rightarrow 10t + 2 = 0 \Rightarrow 10t = -2 \Rightarrow t = -\frac{1}{5} $$
+
+$$
+\begin{bmatrix}{}t\\z\end{bmatrix} =
+\begin{bmatrix}{}-\frac{1}{5}\\\frac{1}{10}\end{bmatrix}
+$$
+
+Thus $A^{-1}$ is:
+
+$$
+\begin{bmatrix}{}t\\z\end{bmatrix} =
+\begin{bmatrix}{}-\frac{1}{5}\\\frac{1}{10}\end{bmatrix}
+$$
+
+$$ A^{-1} =
+\left[\begin{array}{cc}
+\frac{1}{2} & -\frac{1}{5} \\
+-\frac{1}{5} & \frac{1}{10} \\
+\end{array}\right]
+$$
+
+$$ A^{-1} = \frac{1}{10}
+\left[\begin{array}{cc}
+5 & -2 \\
+-2 & 1 \\
+\end{array}\right]
+$$
+
 4. Show that $\left[\begin{array}{cc}1 & 2 \\3 & 6 \\\end{array}\right]$ is not
    invertible by trying to solve $AA^{-1} = I$ for column 1 of $A^{-1}$:
 
@@ -8337,15 +8565,171 @@ $$
 (_For a different_ $A$, could column 1 of $A^{-1}$ be possible to find but not
 column 2?)
 
+_Solution:_
+
+$$ A =
+\left[\begin{array}{cc|c}
+1 & 2 & 1 \\
+3 & 6 & 0 \\
+\end{array}\right]
+$$
+
+$$ E_{12}A =
+\left[\begin{array}{cc}
+1 & 0 \\
+-3 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc|c}
+1 & 2 & 1 \\
+3 & 6 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc|c}
+1 & 2 & 1 \\
+0 & 0 & -3 \\
+\end{array}\right]
+$$
+
+By elimination we are left with $0y = -3$, for which there is _no solution._
+Thus $A$ is not invertible.
+
+It is not possible to find a different $A$ where column 1 of $A^{-1}$ is
+possible to find but not column 2 (this is because $y$ is a scalar of $x$ in the
+second row).
+
 5. Find an upper triangular $U$ (not diagonal) with $U^2 = I$ which gives
    $U = U^{-1}$.
+
+$$ U =
+\left[\begin{array}{cc}
+1 & 1 \\
+0 & -1 \\
+\end{array}\right]
+$$
+
+Then:
+
+$$ U^2 =
+\left[\begin{array}{cc}
+1 & 1 \\
+0 & -1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 1 \\
+0 & -1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 1 \\
+\end{array}\right] = I
+$$
+
+Since $UU = I$, it follows by the property of inverse matrices that
+$U = U^{-1}$.
 
 6.
 
 a. If $A$ is invertible and $AB = AC$, prove quickly that $B = C$.
 
+**Proof:**
+
+Suppose $A$ is any matrix where $A$ is invertible and $AB = AC$ .
+
+It must be shown that $B = C$.
+
+Since $A$ is invertible (by the supposition), this means there exists some
+inverse matrix, $A^{-1}$ such that $A^{-1}A = I$.
+
+Multiplying both sides of $AB = AC$ by $A^{-1}$ (in effect applying $A^{-1}$ _on
+the left_) yields:
+
+$$ A^{-1}(AB) = A^{-1}(AC) $$
+
+By the law of associativity, this can be rewritten as:
+
+$$ (A^{-1}A)B = (A^{-1}A)C $$
+
+By the definition of invertible matrices, $A^{-1}A = I$, and thus it follows by
+substitution that:
+
+$$ (I)B = (I)C $$
+
+And by the definition of the identity matrix, any matrix multiplied by the
+identity matrix is equal to itself, and thus:
+
+$$ (I)B = B = C = (I)C $$
+
+By the definition of equality, this means that:
+
+$$ B = C $$
+
+Which is what was to be shown.
+
+Q.E.D.
+
 b. If $A = \left[\begin{array}{cc}1 & 1 \\1 & 1 \\\end{array}\right]$, find two
 different matrices such that $AB = AC$.
+
+Since $\det A = (1)(1) - (1)(1) = 0 $, $A^{-1}$ does not exist. Thus any
+matrices $B$ and $C$ where the form of $B - C$ takes the form of
+$B - C = \left[\begin{array}{cc}
+x & y \\
+-x & - y\\
+\end{array}\right]$ will satisfy the property that $AB = AC$.
+
+This insight is garnered by the fact that we're trying to get to $AB = AC$:
+
+$$ AB = AC \Rightarrow AB - AC = \mathbf{0} \Rightarrow A(B - C) = \mathbf{0} $$
+
+Consider:
+
+$$ B - C =
+\left[\begin{array}{cc}
+3 & 4 \\
+2 & 3 \\
+\end{array}\right] -
+\left[\begin{array}{cc}
+2 & 3 \\
+3 & 4 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 1 \\
+-1 & -1 \\
+\end{array}\right]
+$$
+
+Then:
+
+$$ AB =
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+3 & 4 \\
+2 & 3 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+5 & 7 \\
+5 & 7 \\
+\end{array}\right]
+$$
+
+$$ AC =
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+2 & 3 \\
+3 & 4 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+5 & 7 \\
+5 & 7 \\
+\end{array}\right]
+$$
+
+Thus $AB = AC$.
 
 7. (Important) If $A$ has row 1 + row 2 = row 3, show that $A$ is not
    invertible:
@@ -8356,6 +8740,83 @@ b. Which right sides $(b_1, b_2, b_3)$ might allow a solution to $Ax = b$?
 
 c. In elimination, what happens to equation 3?
 
+_Solution:_
+
+Show that $A$ is not invertible:
+
+Consider the following definition for $A$ row 1 + row 2 = row 3:
+
+$$ A =
+\left[\begin{array}{ccc}
+3 & 2 & 1 \\
+1 & 2 & 3 \\
+4 & 4 & 4 \\
+\end{array}\right]
+$$
+
+a.
+
+Since row 1 + row 2 = row 3, in elimination eventually, row 3 is reduced to 0
+since it is the sum of rows 1 and 2, and thus row 3 becomes an expression of
+$0z \neq 0$, which has no solution.
+
+b. If $b_1 + b_2 = b_3$, then there might be a solution allowed for $Ax = b$.
+
+c.
+
+Consider the following:
+
+$$ Ax =
+\left[\begin{array}{ccc|c}
+1 & 2 & 3 & 0 \\
+3 & 2 & 1 & 0 \\
+4 & 4 & 4 & 1 \\
+\end{array}\right]
+$$
+
+Then, we begin elimination on $Ax$ with $E_{12}$:
+
+$$ E_{12}Ax =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-3 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc|c}
+1 & 2 & 3 & 0 \\
+3 & 2 & 1 & 0 \\
+4 & 4 & 4 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr|r}
+1 & 2 & 3 & 0 \\
+0 & -4 & -8 & 0 \\
+4 & 4 & 4 & 1 \\
+\end{array}\right]
+$$
+
+Then, continue elimination with $E_{13}$:
+
+$$ E_{13}E_{12}Ax =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-4 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr|r}
+1 & 2 & 3 & 0 \\
+0 & -4 & -8 & 0 \\
+4 & 4 & 4 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr|r}
+1 & 2 & 3 & 0 \\
+0 & -4 & -8 & 0 \\
+0 & -4 & -8 & 1 \\
+\end{array}\right]
+$$
+
+Further elimination causes equation 3 to to be zeroed out to the form of
+$0z = 1$, which has _no solution._
+
 8. If $A$ has column 1 + column 2 = column 3, show that $A$ is not invertible:
 
 a. Find a nonzero solution $x$ to $Ax = \mathbf{0}$. The matrix is 3 by 3.
@@ -8363,8 +8824,199 @@ a. Find a nonzero solution $x$ to $Ax = \mathbf{0}$. The matrix is 3 by 3.
 b. Elimination keeps column 1 + column 2 = column 3. Explain why there is no
 third pivot.
 
+_Solution:_
+
+Show that $A$ is not invertible:
+
+Consider the following definition for $A$ where column 1 + column 2 = column 3:
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+2 & 3 & 5 \\
+3 & 4 & 7 \\
+\end{array}\right]
+$$
+
+a.
+
+Consider:
+
+$$ Ax =
+\left[\begin{array}{ccc|c}
+1 & 2 & 3 & 0 \\
+2 & 3 & 5 & 0 \\
+3 & 4 & 7 & 0 \\
+\end{array}\right]
+$$
+
+Let's find $x$.
+
+$$ E_{21}Ax =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-2 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc|c}
+1 & 2 & 3 & 0 \\
+2 & 3 & 5 & 0 \\
+3 & 4 & 7 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{rrr|r}
+1 & 2 & 3 & 0 \\
+0 & -1 & -1 & 0 \\
+3 & 4 & 7 & 0 \\
+\end{array}\right]
+$$
+
+$$ E_{31}E_{21}Ax =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-3 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr|r}
+1 & 2 & 3 & 0 \\
+0 & -1 & -1 & 0 \\
+3 & 4 & 7 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{rrr|r}
+1 & 2 & 3 & 0 \\
+0 & -1 & -1 & 0 \\
+0 & -2 & -2 & 0 \\
+\end{array}\right]
+$$
+
+$$ E_{23}E_{31}E_{21}Ax =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr|r}
+1 & 2 & 3 & 0 \\
+0 & -1 & -1 & 0 \\
+0 & -2 & -2 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{rrr|r}
+1 & 2 & 3 & 0 \\
+0 & -1 & -1 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+Thus $z$ can be any number, let $z = 1$ and back substitute:
+
+$$ -y + -1(1) = 0 \Rightarrow -y - 1 = 0 \Rightarrow -y = 1 \Rightarrow y = -1 $$
+
+$$ x + 2(-1) + 3(1) = 0 \Rightarrow x - 2 + 3 = 0 \Rightarrow x + 1 = 0 \Rightarrow x = -1 $$
+
+$$ \boxed{x = \begin{bmatrix}{}-1\\-1\\1\end{bmatrix}} $$
+
+b.
+
+The reason there is no third pivot is because if column 1 + column 2 = column 3,
+this means that during elimination, the third row will always end up being a
+scalar multiple of row 2 or row 1, resulting in a final elimination result of
+$0z = 0$ (_i.e._ infinite solutions for $z$).
+
 9. Suppose $A$ is invertible and you exchange its first two rows to reach $B$.
    Is the new matrix $B$ invertible? How would you find $B^{-1}$ from $A^{-1}$?
+
+**Proof:**
+
+Suppose $A$ is any matrix such that it is invertible. Furthermore suppose the
+first two rows of $A$ are exchanged to reach a new matrix $B$.
+
+It is to be shown that $B$ is invertible, and it is to be demonstrated how one
+might find $B^{-1}$ from $A^{-1}$.
+
+Consider this general form for $A$:
+
+$$ A =
+\left[\begin{array}{cccc}
+a_{11} & a_{12} & \dots & a_{1j} \\
+a_{21} & a_{22} & \dots & a_{2j} \\
+\vdots & \vdots & \vdots & \vdots \\
+a_{i1} & a_{i2} & \dots & a_{ij} \\
+\end{array}\right]
+$$
+
+By the supposition, $A$ is invertible, thus there exists some inverse matrix
+$A^{-1}$, where the following property of inverses is true:
+
+$$ AA^{-1} =
+\left[\begin{array}{cccc}
+a_{11} & a_{12} & \dots & a_{1j} \\
+a_{21} & a_{22} & \dots & a_{2j} \\
+\vdots & \vdots & \vdots & \vdots \\
+a_{i1} & a_{i2} & \dots & a_{ij} \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+(a^{-1})_{11} & (a^{-1})_{12} & \dots & (a^{-1})_{1j} \\
+(a^{-1})_{21} & (a^{-1})_{22} & \dots & (a^{-1})_{2j} \\
+\vdots & \vdots & \vdots & \vdots \\
+(a^{-1})_{i1} & (a^{-1})_{i2} & \dots & (a^{-1})_{ij} \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+1 & 0 & \dots & 0 \\
+0 & 1 & \dots & 0 \\
+\vdots &\vdots & \ddots & 0 \\
+0 & 0 & \dots & 1 \\
+\end{array}\right] = I
+$$
+
+Now, since $B$ is simply $A$ with it's first two rows exchanged, this means that
+$B$ is:
+
+$$ B =
+\left[\begin{array}{cccc}
+a_{21} & a_{22} & \dots & a_{2j} \\
+a_{11} & a_{12} & \dots & a_{1j} \\
+\vdots & \vdots & \vdots & \vdots \\
+a_{i1} & a_{i2} & \dots & a_{ij} \\
+\end{array}\right]
+$$
+
+To get $B$, there is a permutation matrix $P_{12}$ that exchanges rows 1 and 2:
+
+$$ P_{12} =
+\left[\begin{array}{cccc}
+0 & 1 & \dots & 0 \\
+1 & 0 & \dots & 0 \\
+\vdots & \vdots & \vdots & \vdots \\
+0 & 0 & \dots & 1 \\
+\end{array}\right]
+$$
+
+When $P_{12}$ is applied to $A$, the result is $B$.
+
+$$ P_{12}A = B $$
+
+Since $B = P_{12}A$, by substitution, $B^{-1}$ can be expressed as:
+
+$$ B^{-1} = (P_{12}A)^{-1} $$
+
+And by the "distributive" property of inverses:
+
+$$ B^{-1} = A^{-1}(P_{12})^{-1} $$
+
+By problem 2, it is known that any permutation matrix that exchanges 2 rows is
+its own inverse, and thus the product of any permutation matrix (that has this
+property) with itself will result in the identity matrix.
+
+It follows by substitution that:
+
+$$ B^{-1} = A^{-1}P_{12} $$
+
+By the supposition and by the definition for $P_{12}$, $B^{-1}$ is well defined,
+and thus it has been shown that $B^{-1}$ exists, and therefore $B$ is
+invertible.
+
+The above formula also demonstrates how one might find $B^{-1}$.
+
+Q.E.D.
 
 10. Find the inverses (in any legal way) of
 
@@ -8388,19 +9040,288 @@ $$ B =
 \end{array}\right]
 $$
 
+_Solution:_
+
+_Finding $A^{-1}$:_
+
+$$ A =
+\left[\begin{array}{cccc}
+0 & 0 & 0 & 2 \\
+0 & 0 & 3 & 0 \\
+0 & 4 & 0 & 0 \\
+5 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+Since all other entries on each row are $0$, $A^{-1}$ can be found by simply
+finding the inverse of each number and leaving them in their appropriate entry
+place.
+
+$$ A^{-1} =
+\left[\begin{array}{cccc}
+0 & 0 & 0 & \frac{1}{2} \\
+0 & 0 & \frac{1}{3} & 0 \\
+0 & \frac{1}{4} & 0 & 0 \\
+\frac{1}{5} & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+_Finding $B^{-1}$:_
+
+$$ B =
+\left[\begin{array}{cccc}
+3 & 2 & 0 & 0 \\
+4 & 3 & 0 & 0 \\
+0 & 0 & 6 & 5 \\
+0 & 0 & 7 & 6 \\
+\end{array}\right]
+$$
+
+Here, solve for the two 2 x 2 blocks through the determinant formula:
+
+$$ B_{1}
+\left[\begin{array}{cc}
+3 & 2 \\
+4 & 3 \\
+\end{array}\right]
+$$
+
+$$ \det B_{1} = (3)(3) - (2)(4) = 9 - 8 = 1 $$
+
+$$ (B_{1})^{-1} =
+1
+\left[\begin{array}{cc}
+3 & -2 \\
+-4 & 3 \\
+\end{array}\right]
+$$
+
+$$ (B_{1})^{-1} =
+\left[\begin{array}{cc}
+3 & -2 \\
+-4 & 3 \\
+\end{array}\right]
+$$
+
+Now the other block:
+
+$$ B_{2}  =
+\left[\begin{array}{cc}
+6 & 5 \\
+7 & 6 \\
+\end{array}\right]
+$$
+
+$$ \det B_{2} = (6)(6) - (5)(7) = 36 - 35 = 1 $$
+
+$$ (B_{2})^{-1} =
+1
+\left[\begin{array}{cc}
+6 & -5 \\
+-7 & 6 \\
+\end{array}\right]
+$$
+
+$$ (B_{2})^{-1} =
+\left[\begin{array}{cc}
+6 & -5 \\
+-7 & 6 \\
+\end{array}\right]
+$$
+
+So:
+
+$$ B^{-1} =
+\left[\begin{array}{rrrr}
+3 & -2 & 0 & 0 \\
+-4 & 3 & 0 & 0 \\
+0 & 0 & 6 & -5 \\
+0 & 0 & -7 & 6 \\
+\end{array}\right]
+$$
+
 11.
 
 a. Find invertible matrices $A$ and $B$ such that $A + B$ is not invertible.
 
+If $B = -A$, then $A + B = A + (-A) = \mathbf{0}$, which is not invertible.
+
+So:
+
+$$ A =
+\left[\begin{array}{cc}
+2 & 1 \\
+4 & 3 \\
+\end{array}\right]
+$$
+
+Then:
+
+$$ \det A = (2)(3) - (1)(4) = 2 $$
+
+$$ A^{-1} =
+\frac{1}{2}\left[\begin{array}{cc}
+3 & -1 \\
+-4 & 2\\
+\end{array}\right]
+$$
+
+$$ A^{-1} =
+\left[\begin{array}{cc}
+\frac{3}{2} & -\frac{1}{2} \\
+-2 & 1 \\
+\end{array}\right]
+$$
+
+Then, since $B = -A$:
+
+$$ B =
+-1
+\left[\begin{array}{cc}
+2 & 1 \\
+4 & 3 \\
+\end{array}\right]
+$$
+
+$$ B =
+\left[\begin{array}{cc}
+-2 & -1 \\
+-4 & -3 \\
+\end{array}\right]
+$$
+
+$$ \det B = (-2)(-3) - (-1)(-4) = 2 $$
+
+$$ B^{-1} =
+\frac{1}{2}
+\left[\begin{array}{cc}
+-3 & 1 \\
+4 & -2 \\
+\end{array}\right]
+$$
+
+$$ B^{-1} =
+\left[\begin{array}{cc}
+-\frac{3}{2} & \frac{1}{2} \\
+2 & -1 \\
+\end{array}\right]
+$$
+
+So both $A$ and $B$ are invertible, but:
+
+$$ A + B =
+\left[\begin{array}{cc}
+2 & 1 \\
+4 & 3 \\
+\end{array}\right] +
+\left[\begin{array}{cc}
+-2 & -1 \\
+-4 & -3 \\
+\end{array}\right] = \mathbf{0}
+$$
+
+And thus $A + B$ is not invertible.
+
 b. Find singular matrices $A$ and $B$ such that $A + B$ is invertible.
+
+For $A + B$ to be invertible, it must be that $(A + B)(A + B)^{-1} = I$ or
+$(A + B)^{-1}(A + B) = I$.
+
+To keep it simple, let:
+
+$$ A =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+and let:
+
+$$ B =
+\left[\begin{array}{cc}
+0 & 0 \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+Both $A$ and $B$ are singular, and thus are not invertible, but:
+
+$$ A + B =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 1 \\
+\end{array}\right] = I
+$$
+
+And since $A + B = I$, $A + B$ is invertible since $(A + B)^{-1} = I$ also.
 
 12. If the product $C = AB$ is invertible ($A$ and $B$ are square), then $A$
     itself is invertible. Find a formula for $A^{-1}$ that involves $C^{-1}$ and
     $B$.
 
+_Solution:_
+
+Suppose $C = AB$ is invertible and that $A$ is invertible.
+
+By equality, it is trivial that:
+
+$$ C^{-1} = C^{-1} $$
+
+Then, apply $C$ to both sides:
+
+$$ CC^{-1} = CC^{-1} $$
+
+Then, substitute $C = AB$ to one side:
+
+$$ (AB)C^{-1} = CC^{-1} $$
+
+By the identity property for inverses:
+
+$$(AB)C^{-1} = I $$
+
+By the associative property of matrix multiplication:
+
+$$ ABC^{-1} = I $$
+
+By the supposition, $A^{-1}$ exists, and $ABC^{-1} = I$ implies that
+$A^{-1} = BC^{-1}$ since $AA^{-1} = I$.
+
+Thus a formula for $A^{-1}$ that involves $C^{-1}$ and $B$ is:
+
+$$ \boxed{A^{-1} = BC^{-1}} $$
+
 13. If the product $M =ABC$ of three square matrices is invertible, then $B$ is
     invertible. (So are $A$ and $C$.) Find a formula for $B^{-1}$ that involves
     $M^{-1}$ and $A$ and $C$.
+
+_Solution:_
+
+By the supposition $M = ABC$ is invertible, and $B$ is invertible.
+
+$$ M = ABC $$
+
+$$ A^{-1}M = A^{-1}(ABC) $$
+
+$$ A^{-1}M = (A^{-1}A)BC $$
+
+$$ A^{-1}M = (I)BC $$
+
+$$ A^{-1}M = BC $$
+
+$$ A^{-1}MC^{-1} = BCC^{-1} $$
+
+$$ A^{-1}MC^{-1} = B(CC^{-1}) $$
+
+$$ A^{-1}MC^{-1} = B(I) $$
+
+$$ A^{-1}MC^{-1} = B $$
+
+$$ (A^{-1}MC^{-1})^{-1} = B^{-1} $$
+
+$$ CM^{-1}A = B^{-1} $$
+
+$$ B^{-1} = CM^{-1}A $$
 
 14. If you add row 1 of $A$ to row 2 to get $B$, how do you find $B^{-1}$ from
     $A^{-1}$?
@@ -8411,21 +9332,250 @@ The inverse of
 $B =\left[\begin{array}{cc}1 & 0 \\1 & 1 \\\end{array}\right]\left[\begin{array}{c}A \\\end{array}\right]$
 is ____.
 
+_Solution:_
+
+$$ B^{-1} =
+\left(
+\left[\begin{array}{cc}
+1 & 0 \\
+1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{c}
+A \\
+\end{array}\right]
+\right)^{-1}
+$$
+
+By the "distributive" property of inverse:
+
+$$ B^{-1} =
+\left[\begin{array}{c}
+A \\
+\end{array}\right]^{-1}
+\left[\begin{array}{cc}
+1 & 0 \\
+1 & 1 \\
+\end{array}\right]^{-1}
+$$
+
+Now, the augmented matrix with just $A^{-1}$ is simply $A^{-1}$. The inverse of
+the elimination matrix follows from the logic of the statement. Since $B$ is
+derived from adding row 1 of $A$ to row 2 of $A$, it follows that $A$ is derived
+from subtracting row 1 of $B$ from row 2 of $B$, thus $B^{-1}$ is:
+
+$$ B^{-1} =
+A^{-1}
+\left[\begin{array}{cc}
+1 & 0 \\
+-1 & 1 \\
+\end{array}\right]
+$$
+
 15. Prove that a matrix with a column of zeros cannot have an inverse.
+
+**Proof (by contradiction):**
+
+Suppose $A$ is any matrix with a column of zeros, and suppose that $A$ is
+invertible.
+
+Let $k$ be the column of $A$ with all zeros.
+
+Now suppose $x$ is a vector with a $1$ in the position $k$. So,
+$x_k = 1 \neq 0$. Now, because there are all $0$'s in $k$, it follows that
+$Ax = 0$.
+
+Now, apply $A^{-1}$ to both sides of $Ax = 0$:
+
+$$ A^{-1}Ax = A^{-1}0 $$
+
+$$ Ix = 0 $$
+
+$$ x = 0 $$
+
+So $x_k = 1 \neq 0$ and $x_k = 0$. This is a contradiction.
+
+Since a contradiction has been derived, the supposition must be false and
+therefore a matrix with a column of zeros cannot have an inverse.
+
+Q.E.D.
 
 16. Multiply $\left[\begin{array}{cc}a & b \\c & d \\\end{array}\right]$ times
     $\left[\begin{array}{cc}d & -b \\-c & a \\\end{array}\right]$. What is the
     inverse of each matrix if $ad \neq bc$?
+
+_Solution:_
+
+Denote the given matrices $A$ and $B$, then:
+
+$$ AB =
+\left[\begin{array}{rr}
+a & b \\
+c & d \\
+\end{array}\right]
+\left[\begin{array}{rr}
+d & -b \\
+-c & a \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+ad - bc & 0 \\
+0 & ad - bc \\
+\end{array}\right]
+$$
+
+Now, if we factor out $ad - bc$:
+
+$$ AB =
+(ad - bc)
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+Which gives us $AB = (ad - bc)I$.
+
+It follows that since $AA^{-1} = I$ that:
+
+$$ \frac{1}{ad - bc }AB = I $$
+
+Then:
+
+$$ A\left(\frac{1}{ad - bc }B\right) = I $$
+
+$$ A^{-1} = \frac{1}{ad - bc}B $$
+
+Similarly:
+
+$$ B\left(\frac{1}{ad - bc }A\right) = I $$
+
+$$ B^{-1} = \frac{1}{ad - bc }A $$
 
 17.
 
 a. What 3 by 3 matrix $E$ has the same effect as these three steps? Subtract row
 1 from row 2, subtract row 1 from row 3, then subtract row 2 from row 3.
 
+$$ E_{21} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{31}E_{21} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-1 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+-1 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{23}E_{31}E_{21} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+-1 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+0 & -1 & 1 \\
+\end{array}\right]
+$$
+
+$$ E =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+0 & -1 & 1 \\
+\end{array}\right]
+$$
+
 b. What single matrix $L$ has the same effect as these three reverse steps? Add
 row 2 to row 3, add row 1 to row 3, then add row 1 to row 2.
 
+$$ L = E^{-1} =
+\left[\begin{array}{ccc|ccc}
+1 & 0 & 0 & 1 & 0 & 0 \\
+-1 & 1 & 0 & 0 & 1 & 0 \\
+0 & -1 & 1  & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ L =
+\left[\begin{array}{ccc|ccc}
+1 & 0 & 0 & 1 & 0 & 0 \\
+0 & 1 & 0 & 1 & 1 & 0 \\
+0 & -1 & 1  & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ L =
+\left[\begin{array}{ccc|ccc}
+1 & 0 & 0 & 1 & 0 & 0 \\
+0 & 1 & 0 & 1 & 1 & 0 \\
+0 & 0 & 1  & 0 & 1 & 1 \\
+\end{array}\right]
+$$
+
+$$ L =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+\end{array}\right]
+$$
+
 18. If $B$ is the inverse of $A^2$, show that $AB$ is the inverse of $A$.
+
+**Proof:**
+
+Suppose $A$ and $B$ are any matrices such that $B$ is the inverse of $A^2$.
+
+It is to be shown that $AB$ is the inverse of $A$, or equivalently, that
+$A^{-1} = AB$.
+
+By the supposition:
+
+$$ B = (A^2)^{-1} $$
+
+$$ B = (AA)^{-1} $$
+
+$$ B = A^{-1}A^{-1} $$
+
+Apply $A$ on the left to both sides:
+
+$$ AB = A(A^{-1}A^{-1}) $$
+
+By the associative property of matrix multiplication:
+
+$$ AB = (AA^{-1})A^{-1} $$
+
+By the identity property for inverses:
+
+$$ AB = (I)A^{-1} $$
+
+$$ AB = A^{-1} $$
+
+This is what was to be shown.
+
+Q.E.D.
 
 19. Find the numbers $a$ and $b$ that give the inverse of
     $5 \times \text{eye}(4) - \text{ones}(4, 4)$:
@@ -8447,11 +9597,18 @@ $$
 
 What are $a$ and $b$ in the inverse of $6 * \text{eye}(5) - \text{ones}(5, 5)$?
 
+Omitted, no MATLAB.
+
 20. Show that $A = 4 * \text{eye} - \text{ones}(4, 4)$ is _not_ invertible:
     Multiply $A * \text{ones}(4, 1)$.
 
+Omitted, no MATLAB.
+
 21. There are sixteen 2 by 2 matrices whose entries are $1$'s and $0$'s. How
     many of them are invertible?
+
+Six. Four of them are invertible by having three 1's. The other two are $I$ and
+$P$.
 
 **Questions 22-28 are about the Gauss-Jordan method for calculating $A^{-1}$.**
 
@@ -8479,6 +9636,87 @@ A & I \\
 \end{array}\right]
 $$
 
+_Solution:_
+
+_First:_
+
+$$
+\left[\begin{array}{cc}
+A & I \\
+\end{array}\right] =
+\left[\begin{array}{cc|cc}
+1 & 3 & 1 & 0 \\
+2 & 7 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc}
+A & I \\
+\end{array}\right] =
+\left[\begin{array}{cc|cc}
+1 & 3 & 1 & 0 \\
+0 & 1 & -2 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc}
+A & I \\
+\end{array}\right] =
+\left[\begin{array}{cc|cc}
+1 & 0 & 1 & -3 \\
+0 & 1 & -2 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+I & A^{-1} \\
+\end{array}\right]
+$$
+
+_Second:_
+
+$$
+\left[\begin{array}{cc}
+A & I \\
+\end{array}\right] =
+\left[\begin{array}{cc|cc}
+1 & 4 & 1 & 0 \\
+3 & 9 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc}
+A & I \\
+\end{array}\right] =
+\left[\begin{array}{cc|cc}
+1 & 4 & 1 & 0 \\
+0 & -3 & -3 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc}
+A & I \\
+\end{array}\right] =
+\left[\begin{array}{cc|cc}
+1 & 0 & 1 & \frac{4}{3} \\
+0 & -3 & -3 & 1 \\
+\end{array}\right]
+$$
+
+Here, just divide row 2 by $3$, (just a scalar).
+
+$$
+\left[\begin{array}{cc}
+A & I \\
+\end{array}\right] =
+\left[\begin{array}{cc|cc}
+1 & 0 & 1 & \frac{4}{3} \\
+0 & 1 & 1 & -\frac{1}{3} \\
+\end{array}\right]
+$$
+
 23. Follow the 3 by 3 text example but with plus signs in $A$. Eliminate above
     and below the pivots to reduce
     $\left[\begin{array}{cc}A & I \\\end{array}\right]$ to
@@ -8492,6 +9730,88 @@ A & I \\
 2 & 1 & 0 & 1 & 0 & 0 \\
 1 & 2 & 1 & 0 & 1 & 0 \\
 0 & 1 & 2 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+_Solution:_
+
+$$
+\left[\begin{array}{cc}
+A & I \\
+\end{array}\right] =
+\left[\begin{array}{ccc|ccc}
+2 & 1 & 0 & 1 & 0 & 0 \\
+0 & \frac{3}{2} & 1 & -\frac{1}{2} & 1 & 0 \\
+0 & 1 & 2 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc}
+A & I \\
+\end{array}\right] =
+\left[\begin{array}{ccc|ccc}
+2 & 1 & 0 & 1 & 0 & 0 \\
+0 & \frac{3}{2} & 1 & -\frac{1}{2} & 1 & 0 \\
+0 & 0 & \frac{4}{3} & 0 & -\frac{2}{3} & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc}
+A & I \\
+\end{array}\right] =
+\left[\begin{array}{ccc|ccc}
+2 & 1 & 0 & 1 & 0 & 0 \\
+0 & \frac{3}{2} & 1 & -\frac{1}{2} & 1 & 0 \\
+0 & 0 & 1 & 0 & -\frac{1}{2} & \frac{3}{4} \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc}
+A & I \\
+\end{array}\right] =
+\left[\begin{array}{ccc|ccc}
+2 & 1 & 0 & 1 & 0 & 0 \\
+0 & \frac{3}{2} & 0 & -\frac{1}{2} & \frac{3}{2} & -\frac{3}{4} \\
+0 & 0 & 1 & 0 & -\frac{1}{2} & \frac{3}{4} \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc}
+A & I \\
+\end{array}\right] =
+\left[\begin{array}{ccc|ccc}
+2 & 1 & 0 & 1 & 0 & 0 \\
+0 & 1 & 0 & -\frac{1}{3} & 1 & -\frac{1}{2} \\
+0 & 0 & 1 & 0 & -\frac{1}{2} & \frac{3}{4} \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc}
+A & I \\
+\end{array}\right] =
+\left[\begin{array}{ccc|ccc}
+2 & 0 & 0 & \frac{4}{3} & -1 & \frac{1}{2} \\
+0 & 1 & 0 & -\frac{1}{3} & 1 & -\frac{1}{2} \\
+0 & 0 & 1 & 0 & -\frac{1}{2} & \frac{3}{4} \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc}
+A & I \\
+\end{array}\right] =
+\left[\begin{array}{ccc|ccc}
+1 & 0 & 0 & \frac{2}{3} & -\frac{1}{2} & \frac{1}{4} \\
+0 & 1 & 0 & -\frac{1}{3} & 1 & -\frac{1}{2} \\
+0 & 0 & 1 & 0 & -\frac{1}{2} & \frac{3}{4} \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+I & A^{-1} \\
 \end{array}\right]
 $$
 
@@ -8517,6 +9837,35 @@ x_1 & x_2 & x_3 \\
 \end{array}\right]
 $$
 
+_Solution:_
+
+$$
+\left[\begin{array}{ccc|ccc}
+1 & a & b & 1 & 0 & 0 \\
+0 & 1 & c & 0 & 1 & 0 \\
+0 & 0 & 1 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{ccc|ccc}
+1 & a & 0 & 1 & 0 & -b \\
+0 & 1 & 0 & 0 & 1 & -c \\
+0 & 0 & 1 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{ccc|ccc}
+1 & 0 & 0 & 1 & -a & ac - b \\
+0 & 1 & 0 & 0 & 1 & -c \\
+0 & 0 & 1 & 0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+I & U^{-1} \\
+\end{array}\right]
+$$
+
 25. Find $A^{-1}$ and $B^{-1}$ (_if they exist_) by elimination on
     $\left[\begin{array}{cc}A & I \\\end{array}\right]$ and
     $\left[\begin{array}{cc}B & I \\\end{array}\right]$:
@@ -8539,9 +9888,230 @@ $$ B =
 \end{array}\right]
 $$
 
+_Solution:_
+
+_Find $A^{-1}$:_
+
+$$ A =
+\left[\begin{array}{ccc}
+2 & 1 & 1 \\
+1 & 2 & 1 \\
+1 & 1 & 2 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc}
+A & I \\
+\end{array}\right] =
+\left[\begin{array}{ccc|ccc}
+2 & 1 & 1 & 1 & 0 & 0 \\
+1 & 2 & 1 & 0 & 1 & 0 \\
+1 & 1 & 2 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ =
+\left[\begin{array}{ccc|ccc}
+1 & -1 & 0 & 1 & -1 & 0 \\
+1 & 2 & 1 & 0 & 1 & 0 \\
+1 & 1 & 2 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ =
+\left[\begin{array}{ccc|ccc}
+1 & -1 & 0 & 1 & -1 & 0 \\
+0 & 3 & 1 & -1 & 2 & 0 \\
+1 & 1 & 2 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ =
+\left[\begin{array}{ccc|ccc}
+1 & -1 & 0 & 1 & -1 & 0 \\
+0 & 3 & 1 & -1 & 2 & 0 \\
+0 & 2 & 2 & -1 & 1 & 1 \\
+\end{array}\right]
+$$
+
+$$ =
+\left[\begin{array}{ccc|ccc}
+1 & -1 & 0 & 1 & -1 & 0 \\
+0 & 1 & \frac{1}{3} & -\frac{1}{3} & \frac{2}{3} & 0 \\
+0 & 2 & 2 & -1 & 1 & 1 \\
+\end{array}\right]
+$$
+
+$$ =
+\left[\begin{array}{ccc|ccc}
+1 & -1 & 0 & 1 & -1 & 0 \\
+0 & 1 & \frac{1}{3} & -\frac{1}{3} & \frac{2}{3} & 0 \\
+0 & 0 & \frac{4}{3} & -\frac{1}{3} & -\frac{1}{3} & 1 \\
+\end{array}\right]
+$$
+
+$$ =
+\left[\begin{array}{ccc|ccc}
+1 & -1 & 0 & 1 & -1 & 0 \\
+0 & 1 & 0 & -\frac{1}{4} & \frac{3}{4} & -\frac{1}{4} \\
+0 & 0 & \frac{4}{3} & -\frac{1}{3} & -\frac{1}{3} & 1 \\
+\end{array}\right]
+$$
+
+$$ =
+\left[\begin{array}{ccc|ccc}
+1 & -1 & 0 & 1 & -1 & 0 \\
+0 & 1 & 0 & -\frac{1}{4} & \frac{3}{4} & -\frac{1}{4} \\
+0 & 0 & 1 & -\frac{1}{4} & -\frac{1}{4} & \frac{3}{4} \\
+\end{array}\right]
+$$
+
+$$ =
+\left[\begin{array}{ccc|ccc}
+1 & 0 & 0 & \frac{3}{4} & -\frac{1}{4} & -\frac{1}{4} \\
+0 & 1 & 0 & -\frac{1}{4} & \frac{3}{4} & -\frac{1}{4} \\
+0 & 0 & 1 & -\frac{1}{4} & -\frac{1}{4} & \frac{3}{4} \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+I & A^{-1} \\
+\end{array}\right]
+$$
+
+_Find $B^{-1}$:_
+
+$$ B =
+\left[\begin{array}{ccc}
+2 & -1 & -1 \\
+-1 & 2 & -1 \\
+-1 & -1 & 2 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc}
+B & I \\
+\end{array}\right] =
+\left[\begin{array}{ccc|ccc}
+2 & -1 & -1 & 1 & 0 & 0 \\
+-1 & 2 & -1 & 0 & 1 & 0 \\
+-1 & -1 & 2 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ =
+\left[\begin{array}{ccc|ccc}
+1 & 1 & -2 & 1 & 1 & 0 \\
+-1 & 2 & -1 & 0 & 1 & 0 \\
+-1 & -1 & 2 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ =
+\left[\begin{array}{ccc|ccc}
+1 & 1 & -2 & 1 & 1 & 0 \\
+0 & 3 & -3 & 1 & 2 & 0 \\
+-1 & -1 & 2 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ =
+\left[\begin{array}{ccc|ccc}
+1 & 1 & -2 & 1 & 1 & 0 \\
+0 & 3 & -3 & 1 & 2 & 0 \\
+0 & 0 & 0 & 1 & 1 & 1 \\
+\end{array}\right]
+$$
+
+$B^{-1}$ does not exist.
+
 26. What three matrices $E_{21}$ and $E_{12}$ and $D^{-1}$ reduce
     $A =\left[\begin{array}{cc}1 & 2 \\2 & 6 \\\end{array}\right]$ to the
     identity matrix? Multiply $D^{-1}E_{12}E_{21}$ to find $A^{-1}$.
+
+_Solution:_
+
+$$ A =
+\left[\begin{array}{cc}
+1 & 2 \\
+2 & 6 \\
+\end{array}\right]
+$$
+
+$$ E_{21}A =
+\left[\begin{array}{cc}
+1 & 0 \\
+-2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 2 \\
+2 & 6 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 2 \\
+0 & 2 \\
+\end{array}\right]
+$$
+
+$$ E_{12}E_{21}A =
+\left[\begin{array}{cc}
+1 & -1 \\
+0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 2 \\
+0 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 2 \\
+\end{array}\right]
+$$
+
+$$ D^{-1}E_{12}E_{21}A =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & \frac{1}{2} \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 1 \\
+\end{array}\right] = I
+$$
+
+$$ E_{12}E_{21} =
+\left[\begin{array}{cc}
+1 & -1 \\
+0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 0 \\
+-2 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+3 & -1 \\
+-2 & 1 \\
+\end{array}\right]
+$$
+
+$$ D^{-1}E_{12}E_{21} =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & \frac{1}{2} \\
+\end{array}\right]
+\left[\begin{array}{cc}
+3 & -1 \\
+-2 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+3 & -1 \\
+-1 & \frac{1}{2} \\
+\end{array}\right]
+$$
 
 27. Invert these matrices $A$ by the Gauss-Jordan method starting with
     $\left[\begin{array}{cc}A & I \\\end{array}\right]$:
@@ -8564,6 +10134,120 @@ $$ A =
 \end{array}\right]
 $$
 
+_Solution:_
+
+_First:_
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+2 & 1 & 3 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc}
+A & I \\
+\end{array}\right] =
+\left[\begin{array}{ccc|ccc}
+1 & 0 & 0 & 1 & 0 & 0 \\
+2 & 1 & 3 & 0 & 1 & 0 \\
+0 & 0 & 1 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ =
+\left[\begin{array}{ccc|ccc}
+1 & 0 & 0 & 1 & 0 & 0 \\
+0 & 1 & 3 & -2 & 1 & 0 \\
+0 & 0 & 1 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ =
+\left[\begin{array}{ccc|ccc}
+1 & 0 & 0 & 1 & 0 & 0 \\
+0 & 1 & 0 & -2 & 1 & -3 \\
+0 & 0 & 1 & 0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+I & A^{-1} \\
+\end{array}\right]
+$$
+
+_Second:_
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+1 & 2 & 2 \\
+1 & 2 & 3 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc}
+A & I \\
+\end{array}\right] =
+\left[\begin{array}{ccc|ccc}
+1 & 1 & 1 & 1 & 0 & 0 \\
+1 & 2 & 2 & 0 & 1 & 0 \\
+1 & 2 & 3 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{ccc|ccc}
+1 & 1 & 1 & 1 & 0 & 0 \\
+0 & 1 & 1 & -1 & 1 & 0 \\
+1 & 2 & 3 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{ccc|ccc}
+1 & 1 & 1 & 1 & 0 & 0 \\
+0 & 1 & 1 & -1 & 1 & 0 \\
+0 & 1 & 2 & -1 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{ccc|ccc}
+1 & 1 & 1 & 1 & 0 & 0 \\
+0 & 1 & 1 & -1 & 1 & 0 \\
+0 & 0 & 1 & 0 & -1 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{ccc|ccc}
+1 & 1 & 1 & 1 & 0 & 0 \\
+0 & 1 & 0 & -1 & 2 & -1 \\
+0 & 0 & 1 & 0 & -1 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{ccc|ccc}
+1 & 0 & 1 & 2 & -2 & 1 \\
+0 & 1 & 0 & -1 & 2 & -1 \\
+0 & 0 & 1 & 0 & -1 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{ccc|ccc}
+1 & 0 & 0 & 2 & -1 & 0 \\
+0 & 1 & 0 & -1 & 2 & -1 \\
+0 & 0 & 1 & 0 & -1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+I & A^{-1} \\
+\end{array}\right]
+$$
+
 28. Exchange rows and continue with Gauss-Jordan to find $A^{-1}$:
 
 $$
@@ -8576,13 +10260,55 @@ A & I \\
 \end{array}\right]
 $$
 
+_Solution:_
+
+$$
+\left[\begin{array}{cc|cc}
+2 & 2 & 0 & 1 \\
+0 & 2 & 1 & 0 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc|cc}
+1 & 1 & 0 & \frac{1}{2} \\
+0 & 2 & 1 & 0 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc|cc}
+1 & 1 & 0 & \frac{1}{2} \\
+0 & 1 & \frac{1}{2} & 0 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc|cc}
+1 & 0 & -\frac{1}{2} & \frac{1}{2} \\
+0 & 1 & \frac{1}{2} & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+I & A^{-1} \\
+\end{array}\right]
+$$
+
 29. True or false (with a counterexample if false and a reason if true):
 
 a. A 4 by 4 matrix with a row of zeros is not invertible.
 
+True, if $A$ has a row of zeros, then $AB$ has one too, and it is impossible to
+find such a matrix $B$ where $AB = I$.
+
 b. Every matrix with $1$'s down the main diagonal is invertible.
 
+False, if the matrix is filled with $1$'s, then the matrix is singular, and
+therefore not invertible.
+
 c. If $A$ is invertible then $A^{-1}$ and $A^2$ are invertible.
+
+True, the inverse of $A^{-1}$ is $A$, and if $A$ is invertible, then $A^2$ is
+invertible as $(A^{-1}A^{-1}) = (A^{-1})^2$.
 
 30. (Recommended) Prove that $A$ is invertible if $a \neq 0$ and $a \neq b$
     (find the pivots or $A^{-1}$). Then find three numbers $c$ so that $C$ is
@@ -8604,6 +10330,125 @@ c & c & c \\
 \end{array}\right]
 $$
 
+_Solution:_
+
+**Proof:**
+
+Suppose $A$ is a matrix defined as such:
+
+$$ A =
+\left[\begin{array}{ccc}
+a & b & b \\
+a & a & b \\
+a & a & a \\
+\end{array}\right]
+$$
+
+Furthermore, suppose $a \neq 0$ and $a \neq b$.
+
+It must be shown that $A$ is invertible.
+
+Using Gauss-Jordan elimination on $A$, we can find $A^{-1}$, and thus
+demonstrate that $A$ is invertible.
+
+$$
+\left[\begin{array}{cc}
+A & I \\
+\end{array}\right] =
+\left[\begin{array}{ccc|ccc}
+a & b & b & 1 & 0 & 0 \\
+a & a & b & 0 & 1 & 0 \\
+a & a & a & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{ccc|ccc}
+a & b & b & 1 & 0 & 0 \\
+0 & a - b & 0 & -1 & 1 & 0 \\
+a & a & a & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{ccc|ccc}
+a & b & b & 1 & 0 & 0 \\
+0 & a - b & 0 & -1 & 1 & 0 \\
+0 & a - b & a - b & -1 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{ccc|ccc}
+a & b & b & 1 & 0 & 0 \\
+0 & a - b & 0 & -1 & 1 & 0 \\
+0 & 0 & a - b & 0 & -1 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{ccc|ccc}
+a & b & b & 1 & 0 & 0 \\
+0 & 1 & 0 & -\frac{1}{a - b} & \frac{1}{a - b} & 0 \\
+0 & 0 & a - b & 0 & -1 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{ccc|ccc}
+a & b & b & 1 & 0 & 0 \\
+0 & 1 & 0 & -\frac{1}{a - b} & \frac{1}{a - b} & 0 \\
+0 & 0 & 1 & 0 & -\frac{1}{a - b} & \frac{1}{a - b} \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{ccc|ccc}
+a & b & 0 & 1 & \frac{b}{a - b} & -\frac{b}{a - b} \\
+0 & 1 & 0 & -\frac{1}{a - b} & \frac{1}{a - b} & 0 \\
+0 & 0 & 1 & 0 & -\frac{1}{a - b} & \frac{1}{a - b} \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{ccc|ccc}
+a & 0 & 0 & \frac{a}{a - b} & 0 & -\frac{b}{a - b} \\
+0 & 1 & 0 & -\frac{1}{a - b} & \frac{1}{a - b} & 0 \\
+0 & 0 & 1 & 0 & -\frac{1}{a - b} & \frac{1}{a - b} \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{ccc|ccc}
+1 & 0 & 0 & \frac{1}{a - b} & 0 & -\frac{b}{a(a - b)} \\
+0 & 1 & 0 & -\frac{1}{a - b} & \frac{1}{a - b} & 0 \\
+0 & 0 & 1 & 0 & -\frac{1}{a - b} & \frac{1}{a - b} \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+I & A^{-1}\\
+\end{array}\right]
+$$
+
+By the supposition $a \neq 0$ and $a \neq b$, thus all denominators in this
+general $A^{-1}$ are well defined, and it an be concluded that $A^{-1}$ exists,
+demonstrating that $A$ is invertible.
+
+This is what was to be shown.
+
+Q.E.D.
+
+_Find three numbers $c$ so that $C$ is not invertible:_
+
+$$ C =
+\left[\begin{array}{ccc}
+2 & c & c \\
+c & c & c \\
+8 & 7 & c \\
+\end{array}\right]
+$$
+
+$$ c = 0, c = 2, c = 7 $$
+
 31. This matrix has a remarkable inverse. Find $A^{-1}$ by elimination on
     $\left[\begin{array}{cc}A & I \\\end{array}\right]$. Extend to a 5 by 5
     "alternating matrix" and guess its inverse; then multiply to confirm.
@@ -8621,9 +10466,84 @@ $$
 
 and solve $Ax = (1, 1, 1, 1)$.
 
+_Solution:_
+
+$$
+\left[\begin{array}{cc}
+A & I \\
+\end{array}\right] =
+\left[\begin{array}{rrrr|rrrr}
+1 & -1 & 1 & -1 & 1 & 0 & 0 & 0 \\
+0 & 1 & -1 & 1 & 0 & 1 & 0 & 0 \\
+0 & 0 & 1 & -1 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{rrrr|rrrr}
+1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 \\
+0 & 1 & -1 & 1 & 0 & 1 & 0 & 0 \\
+0 & 0 & 1 & -1 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{rrrr|rrrr}
+1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 1 & 1 & 0 \\
+0 & 0 & 1 & -1 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{rrrr|rrrr}
+1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 1 & 1 & 0 \\
+0 & 0 & 1 & 0 & 0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+I & A^{-1} \\
+\end{array}\right]
+$$
+
+_Extend to a 5 by 5 "alternating matrix" and guess its inverse, then multiply to
+confirm:_
+
+Guess for $A^{-1}$ is:
+
+$$
+\left[\begin{array}{rrrrr}
+1 & 1 & 0 & 0 & 0 \\
+0 & 1 & 1 & 0 & 0 \\
+0 & 0 & 1 & 1 & 0 \\
+0 & 0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+I & A^{-1} \\
+\end{array}\right]
+$$
+
+Multiply to confirm:
+
+Omitted.
+
 32. Suppose the matrices $P$ and $Q$ have the same rows as $I$ but in any order.
     They are "permutation matrices". Show that $P - Q$ is singular by solving
     $(P - Q)x = \mathbf{0}$.
+
+_Solution:_
+
+First, consider that $P - Q$ will output a matrix of mostly $0$'s in the rows
+save for the rows that were exchanged. The difference in each row where the
+exchanges differ will either be $1$ or $-1$. Then consider a vector $x$ where
+$x = (1, 1, \dots, 1)$, then $(P - Q)x = \mathbf{0}$. This is because then when
+$P - Q$ is multiplied by the vector $x$, the $-1$ and $1$ rows are added,
+$-1 + 1 = 0$, which means every row in the product is filled with $0$'s.
 
 33. Find and check the inverses (assuming they exist) of these block matrices:
 
@@ -8648,14 +10568,121 @@ I & D \\
 \end{array}\right]
 $$
 
+_Solution:_
+
+_First:_
+
+$$
+\left[\begin{array}{cc}
+I & 0 \\
+C & I \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc}
+I & 0  \\
+-C & I \\
+\end{array}\right]
+$$
+
+_Second:_
+
+$$
+\left[\begin{array}{cc|cc}
+A & 0 & I & 0 \\
+C & D & 0 & I \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc|cc}
+I & 0 & A^{-1} & 0 \\
+C & D & 0 & I \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc|cc}
+I & 0 & A^{-1} & 0 \\
+C - CI & D - C(0) & 0 - CA^{-1} & I - C(0) \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc|cc}
+I & 0 & A^{-1} & 0 \\
+0 & D & -CA^{-1} & I \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc|cc}
+I & 0 & A^{-1} & 0 \\
+0 & D^{-1}D & D^{-1}(-CA^{-1}) & D^{-1}(I) \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc|cc}
+I & 0 & A^{-1} & 0 \\
+0 & I & -D^{-1}CA^{-1} & D^{-1} \\
+\end{array}\right]
+$$
+
+_Third:_
+
+$$
+\left[\begin{array}{cc}
+0 & I \\
+I & D \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc|cc}
+0 & I & I & 0 \\
+I & D & 0 & I \\
+\end{array}\right]
+$$
+
+Switch rows:
+
+$$
+\left[\begin{array}{cc|cc}
+I & D & 0 & I \\
+0 & I & I & 0 \\
+\end{array}\right]
+$$
+
+Subtract $D$ times row 2 from row 1:
+
+$$
+\left[\begin{array}{cc|cc}
+I - D(0) & D - D(I) & 0 - D(I) & I - D(0) \\
+0 & I & I & 0 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc|cc}
+I & 0 & -D & I \\
+0 & I & I & 0 \\
+\end{array}\right]
+$$
+
 34. Could a 4 by 4 matrix $A$ be invertible if every row contains the numbers
     $0, 1, 2, 3$ in some order? What if every row of $B$ contains $0, 1, 2, -3$
     in some order?
+
+Omitted.
 
 35. In the Worked Example 2.5 C, the triangular Pascal matrix $L$ has
     $L^{-1} = DLD$, where the diagonal matrix $D$ has alternating entries
     $1, -1, 1, -1$. Then $LDLD = I$, so what is the inverse of
     $LD = \text{pascal}(4, 1)$?
+
+Omitted.
 
 36. Omitted (no MATLAB).
 
