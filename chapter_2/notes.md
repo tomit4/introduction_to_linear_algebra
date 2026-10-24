@@ -404,3 +404,63 @@ Page 101
 
 6. Diagonally dominant matrices are invertible. Each $|a_{ii}|$ dominates its
    row.
+
+---
+
+## 2.6 Elimination = Factorization: $A = LU$
+
+---
+
+Page 108
+
+1. Each elimination step $E_{ij}$ is inverted by $L_{ij}$. Off the main diagonal
+   change $-\ell_{ij}$ to $+\ell_{ij}$.
+
+2. The whole forward elimination process (with no row exchanges) is inverted by
+   $L$:
+
+$$ L = (L_{21}L_{31} \dots L_{n1})(L_{32} \dots L_{n2})(L_{43} \dots L_{n3})\dots(L_{n}L_{n - 1}) $$
+
+3. The product matrix $L$ is still lower triangular. **Every mutiplier
+   $\ell_{ij}$ is in row $i$, column $j$**.
+
+4. The original $A$ is recovered from $U$ by $A = LU =$ (lower triangular)(upper
+   triangular).
+
+5. Elimination on $Ax = b$ reaches $Ux = c$. Then back-substitution solves
+   $Ux = c$.
+
+6. Solving a triangular system takes $\dfrac{n^2}{2}$ multiply-subtracts.
+   Elimination to find $U$ takes $\dfrac{n^3}{3}$.
+
+---
+
+Page 109
+
+$$ A = LU $$
+
+**This is elimination without row exchanges.** The upper triangular $U$ has the
+pivots on its diagonal. The lower triangular $L$ has all $1$'s on its diagonal.
+**The multipliers $\ell_{ij}$ are below the diagonal of $L$.**
+
+---
+
+Page 113
+
+**REVIEW OF THE KEY IDEAS**
+
+1. Gaussian elimination (with no row exchanges) factors $A$ into $L$ times $U$.
+
+2. The lower triangular $L$ contains the numbers $\ell_{ij}$ that multiply pivot
+   rows, going from $A$ to $U$. The product $LU$ adds those rows back to recover
+   $A$.
+
+3. On the right side we solve $Lc = b$ (forward) and $Ux = c$ (backward).
+
+4. _Factor:_ There are $\dfrac{1}{3}(n^3 - n)$ multiplications and subtractions
+   on the left side.
+
+5. _Solve:_ There are $n^2$ multiplications and subtractions on the right side.
+
+6. For a band matrix, change $\dfrac{1}{3}n^3$ to $nw^2$ and change $n^2$ to
+   $2wn$.

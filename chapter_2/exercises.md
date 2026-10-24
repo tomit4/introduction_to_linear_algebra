@@ -10689,3 +10689,395 @@ Omitted.
 37. Omitted (no MATLAB).
 
 38. Omitted (no MATLAB).
+
+---
+
+Page 115
+
+## Problem Set 2.6
+
+**Problems 1-14 compute the factorization $A = LU$** (and also $A = LDU$).
+
+1. (Important) Forward elimination changes
+   $\left[\begin{array}{cc}1 & 1\\1 & 2 \end{array}\right]x = b$ to a triangular
+   $\left[\begin{array}{cc}1 & 1\\0 & 1 \end{array}\right]x = c$:
+
+$$
+\begin{array}{r}
+x + y = 5 \\
+x + 2y = 7
+\end{array} \to
+\begin{array}{r}
+x + y = 5 \\
+y = 2
+\end{array} \quad
+\left[\begin{array}{ccc}
+1 & 1 & 5 \\
+1 & 2 & 7 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+1 & 1 & 5 \\
+0 & 1 & 2 \\
+\end{array}\right]
+$$
+
+That step subtracted $\ell_{21} =$ ____ times row 1 from row 2. The reverse step
+_adds_ $\ell_{21}$ times row 1 to row 2. The matrix for that reverse step is
+$L =$ ____. Multiply this $L$ times the triangular system
+$\left[\begin{array}{cc}1 & 1 \\0 & 1 \\\end{array}\right]x_1 = \begin{bmatrix}{}5\\2\end{bmatrix}$
+to get ____ = ____. In letters, $L$ multiplies $Ux = c$ to give ____.
+
+2. Write down the 2 by 2 triangular system $Lc = b$ and $Ux = c$ from Problem 1.
+   Check that $c = (5, 2)$ solves the first one. Find $x$ that solves the second
+   one.
+
+3. (Move to 3 by 3) Forward elimination changes $Ax = b$ to a triangular
+   $Ux = c$:
+
+$$
+\begin{array}{r}
+x + y + z = 5 \\
+x + 2y + 3z = 7 \\
+x + 3y + 6z = 11 \\
+\end{array} \quad
+\begin{array}{r}
+x + y + z = 5 \\
+y + 2z = 2 \\
+2y + 5z = 6 \\
+\end{array} \quad
+\begin{array}{r}
+x + y + z = 5 \\
+y + 2z = 2 \\
+z = 2 \\
+\end{array}
+$$
+
+The equation $z = 2$ in $Ux = c$ comes from the original $x + 3y + 6z = 11$ in
+$Ax = b$ by subtracting $\ell_{31} =$ ____ times equation 1 and $\ell_{32} =$
+____ times the _final_ equation 2. Reverse that to recover
+$\left[\begin{array}{cccc}1 & 3 & 6 & 11\\\end{array}\right]$ in the last row of
+$A$ and $b$ from the final
+$\left[\begin{array}{cccc}1 & 1 & 1 & 5\\\end{array}\right]$ and
+$\left[\begin{array}{cccc}0 & 0 & 1 & 2\\\end{array}\right]$ in $U$ and $c$:
+
+$$ \text{Row 3 of } \left[\begin{array}{cc} A & b\\\end{array}\right] =
+(\ell_{31}\text{Row 1} + \ell_{32}\text{Row 2} + 1\text{Row 3}) \text{of }
+\left[\begin{array}{cc} U & c\\\end{array}\right]
+$$
+
+In matrix notation this is multiplication by $L$. So $A = LU$ and $b = Lc$.
+
+4. What are the 3 by 3 triangular systems $Lc = b$ and $Ux = c$ from Problem 3?
+   Check that $c = (5, 2, 2)$ solves the first one. Which $x$ solves the second
+   one?
+
+5. What matrix $E$ puts $A$ into triangular form $EA = U$? Multiply $E^{-1} = L$
+   to factor $A$ into $LU$:
+
+$$ A =
+\left[\begin{array}{ccc}
+2 & 1 & 0 \\
+0 & 4 & 2 \\
+6 & 3 & 5 \\
+\end{array}\right]
+$$
+
+6. What two elimination matrices $E_{21}$ and $E_{32}$ put $A$ into upper
+   triangular form $E_{32}E_{21}A = U$? Multiply $E_{32}^{-1}$ and $E_{21}^{-1}$
+   to factor $A$ into $LU = E^{21}^{-1}E_{32}^{-1}U$:
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+2 & 4 & 5 \\
+0 & 4 & 0 \\
+\end{array}\right]
+$$
+
+7. What three elimination matrices $E_{21}, E_{31}, E_{32}$ put $A$ into its
+   upper triangular form $E_{32}E_{31}E_{21}A = U$? Multiply
+   $E_{32}^{-1}, E_{31}^{-1}$ and $E_{21}^{-1}$ to factor $A$ into $L$ times
+   $U$:
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 0 & 1 \\
+2 & 2 & 2 \\
+3 & 4 & 5 \\
+\end{array}\right] \quad L = E_{21}^{-1}E_{31}^{-1}E_{32}^{-1}
+$$
+
+8. **This is the problem that shows how the inverses $E_{ij}^{-1} multiply to
+   give $L$.** You see this best when $A$ is already lower triangular with $1$'s
+   on the diagonal. **Then $U = I$!**
+
+$$ A = L =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+a & 1 & 0 \\
+b & c & 1 \\
+\end{array}\right]
+$$
+
+The elimination matrices $E_{21}, E_{31}, E_{32}$ contain $-a$ then $-b$ then
+$-c$.
+
+a. Multiply $E_{32}E_{31}E_{21}$ to find the single matrix $E$ that produces
+$EA = I$.
+
+b. Multiply $E_{21}^{-1}E_{31}^{-1}E_{32}^{-1}$ to bring back $L$. **The
+multipliers $a, b, c$ are mixed up in $E$ but perfect in $L$.**
+
+9. _When zero appears in a pivot position, $A = LU$ is not possible!_ (We are
+   requiring nonzero pivots in $U$.) Show directly why these equations are both
+   impossible:
+
+$$
+\left[\begin{array}{cc}
+0 & 1 \\
+2 & 3 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 0 \\
+\ell & 1
+\end{array}\right]
+\left[\begin{array}{cc}
+d & e \\
+0 & f \\
+\end{array}\right] \quad
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+1 & 1 & 2 \\
+1 & 2 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & & \\
+\ell & 1 & \\
+m & n & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+d & e & g \\
+& f & h \\
+& & i \\
+\end{array}\right]
+$$
+
+These matrices need a row exchange. That uses a _"permutation matrix"_ $P$.
+
+10. Which number $c$ leads to zero in the second pivot position? A row exchange
+    is needed and $A = LU$ will not be possible. Which $c$ produces zero in the
+    third pivot position? Then a row exchange can't help and elimination fails:
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & c & 0 \\
+2 & 4 & 1 \\
+3 & 5 & 1 \\
+\end{array}\right]
+$$
+
+11. What are $L$ and $D$ (the diagonal _pivot matrix_) for this matrix $A$? What
+    is $U$ in $A = LU$ and what is the new $U$ in $A = LDU$?
+
+**Already triangular**
+
+$$ A =
+\left[\begin{array}{ccc}
+2 & 4 & 8 \\
+0 & 3 & 9 \\
+0 & 0 & 7 \\
+\end{array}\right]
+$$
+
+12. $A$ and $B$ are symmetric across the diagonal (because $4 = 4$). Find their
+    triple factorization $LDU$ and say how $U$ is related to $L$ for those
+    symmetric matrices:
+
+**Symmetric**
+
+$$ A =
+\left[\begin{array}{cc}
+2 & 4 \\
+4 & 11 \\
+\end{array}\right] \quad \text{and} \quad
+B =
+\left[\begin{array}{rrr}
+1 & 4 & 0 \\
+4 & 12 & 4 \\
+0 & 4 & 0 \\
+\end{array}\right]
+$$
+
+13. (_Recommended_) Compute $L$ and $U$ for the symmetric matrix $A$:
+
+$$ A =
+\left[\begin{array}{cccc}
+a & a & a & a \\
+a & b & b & b \\
+a & b & c & c \\
+a & b & c & d \\
+\end{array}\right]
+$$
+
+Find four conditions on $a, b, c, d$ to get $A = LU$ with four pivots.
+
+14. This nonsymmetric matrix will have the same $L$ as in Problem 13:
+
+**Find $L$ and $U$ for**
+
+$$ A =
+\left[\begin{array}{cccc}
+a & r & r & r \\
+a & b & s & s \\
+a & b & c & t \\
+a & b & c & d \\
+\end{array}\right]
+$$
+
+Find four conditions on $a, b, c, d, r, s, t$ to get $A = LU$ with four pivots.
+
+**Problems 15-16 use $L$ and $U$ (without needing $A$) to solve $Ax = b$.**
+
+15. Solve the triangular system $Lc = b$ to find $c$. Then solve $Ux = c$ to
+    find $x$:
+
+$$ L =
+\left[\begin{array}{cc}
+1 & 0 \\
+4 & 1 \\
+\end{array}\right] \text{ and }
+U =
+\left[\begin{array}{cc}
+2 & 4 \\
+0 & 1 \\
+\end{array}\right] \text{ and }
+b = \begin{bmatrix}{}2\\11\end{bmatrix}
+$$
+
+For safety multiply $LU$ sand solve $Ax = b$ as usual. Circle $c$ when you see
+it.
+
+16. Solve $Lc = b$ to find $c$. Then solve $Ux = c$ to find $x$. **What was
+    $A$**?
+
+$$ L =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+1 & 1 & 1 \\
+\end{array}\right] \text{ and }
+U =
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+0 & 1 & 1 \\
+0 & 0 & 1 \\
+\end{array}\right] \text{ and }
+b = \begin{bmatrix}{}4\\5\\6\end{bmatrix}
+$$
+
+17.
+
+a. When you apply the usual elimination steps to $L$, what matrix do you reach?
+
+$$ L =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+\ell_{21} & 1 & 0 \\
+\ell_{31} & \ell_{32} & 1 \\
+\end{array}\right]
+$$
+
+b. When you apply the same steps to $I$, what matrix do you get?
+
+c. When you apply the same steps to $LU$, what matrix do you get?
+
+18. If $A = LDU$ and also $A = L_1D_1U_1$, with all factors invertible, then
+    $L = L_1$ and $D = D_1$ and $U = U_1$. "_The three factors are unique._"
+
+Derive the equation $L_{1}^{-1}LD = D_1U_1U^{-1}$. Are the two sides triangular
+or diagonal? Deduce $L = L_1$ and $U = U_1$ (they all have diagonal $1$'s). Then
+$D = D_1$.
+
+19. _Tridiagonal matrices_ have zero entries except on the main diagonal and the
+    two adjacent diagonals. Factor these into $A = LU$ and $A = LDL^T$:
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+1 & 2 & 1 \\
+0 & 1 & 2 \\
+\end{array}\right] \text{ and }
+A =
+\left[\begin{array}{ccc}
+a & a & 0 \\
+a & a + b & b \\
+0 & b & b + c \\
+\end{array}\right]
+$$
+
+20. When $T$ is tridiagonal, its $L$ and $U$ factors have only two nonzero
+    diagonals. How would you take advantage of knowing the zeros in $T$, in a
+    code for Gaussian elimination? Find $L$ and $U$.
+
+**Tridiagonal**
+
+$$ T =
+\left[\begin{array}{cccc}
+1 & 2 & 0 & 0 \\
+2 & 3 & 1 & 0 \\
+0 & 1 & 2 & 3 \\
+0 & 0 & 3 & 4 \\
+\end{array}\right]
+$$
+
+21. If $A$ and $B$ have nonzeros in the positions marked by $x$, which zeros
+    (marked by $0$) _stay zero_ in their factors $L$ and $U$?
+
+$$ A =
+\left[\begin{array}{cccc}
+x & x & x & x \\
+x & x & x & 0 \\
+0 & x & x & x \\
+0 & 0 & x & x \\
+\end{array}\right] \quad
+B =
+\left[\begin{array}{cccc}
+x & x & x & 0 \\
+x & x & 0 & x \\
+x & 0 & x & x \\
+0 & x & x & x \\
+\end{array}\right]
+$$
+
+22. Suppose you eliminate upwards (almost unheard of). Use the last row to
+    produce zeros in the last column (the pivot is $1$). Then use the second row
+    to produce zero above the second pivot. Find the factors in the unusual
+    order $A = UL$.
+
+**Upper times lower**
+
+$$ A =
+\left[\begin{array}{ccc}
+5 & 3 & 1 \\
+3 & 3 & 1 \\
+1 & 1 & 1 \\
+\end{array}\right]
+$$
+
+23. _Easy but important_. If $A$ has pivots $5, 9, 3$ with no row exchanges,
+    what are the pivots for the upper left $2$ by $2$ submatrix $A_2$ (without
+    row $3$ and column $3$)?
+
+24. Which invertible matrices allow $A = LU$ (elimination without row
+    exchanges)? _Good question!_ Look at each of the square upper left
+    submatrices $A_k$ of $A$.
+
+_All upper left $k$ by $k$ submatrices $A_k$ must be invertible (sizes
+$k = 1, \dots, n$)._
+
+Explain that answer: $A_k$ factors into ____ because
+$LU = \left[\begin{array}{cc}L_k & 0 \\* & * \\\end{array}\right]\left[\begin{array}{cc}U_k & * \\0 & * \\\end{array}\right]$.
+
+25. Omitted (no MATLAB).
+
+26. Omitted (no MATLAB).
