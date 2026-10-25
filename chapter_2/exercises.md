@@ -10727,9 +10727,103 @@ $L =$ ____. Multiply this $L$ times the triangular system
 $\left[\begin{array}{cc}1 & 1 \\0 & 1 \\\end{array}\right]x_1 = \begin{bmatrix}{}5\\2\end{bmatrix}$
 to get ____ = ____. In letters, $L$ multiplies $Ux = c$ to give ____.
 
+_Solution:_
+
+That step subtracted $\ell_{21} = 1$.
+
+$$ L =
+\left[\begin{array}{cc}
+1 & 0 \\
+1 & 1 \\
+\end{array}\right]
+$$
+
+_Multiply this $L$ times the triangular system
+$\left[\begin{array}{cc}1 & 1 \\0 & 1 \\\end{array}\right]x_1 = \begin{bmatrix}{}5\\2\end{bmatrix}$
+to get (?) = (?):_
+
+$$ LUx =
+\left[\begin{array}{cc}
+1 & 0 \\
+1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 1 \\
+0 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}x\\y\end{bmatrix} =
+\begin{bmatrix}{}5\\7\end{bmatrix} = b
+$$
+
+_In letters, $L$ multiplies $Ux = c$ to give (?):_
+
+$$ Ax = b $$
+
 2. Write down the 2 by 2 triangular system $Lc = b$ and $Ux = c$ from Problem 1.
    Check that $c = (5, 2)$ solves the first one. Find $x$ that solves the second
    one.
+
+_Solution:_
+
+_Write down the 2 by 2 triangular system $Lc = b$ and $Ux = c$ from Problem 1:_
+
+$Lc = b$:
+
+$$ Lc =
+\left[\begin{array}{cc}
+1 & 0 \\
+1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}c_1\\c_2\end{bmatrix} =
+\begin{bmatrix}{}5\\7\end{bmatrix} = b
+$$
+
+$Ux = c$:
+
+$$ Ux =
+\left[\begin{array}{cc}
+1 & 1 \\
+0 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}x\\y\end{bmatrix} =
+\begin{bmatrix}{}5\\2\end{bmatrix} = c
+$$
+
+_Check that $c = (5, 2)$ solves the first one:_
+
+$$ Lc =
+\left[\begin{array}{cc}
+1 & 0 \\
+1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}5\\2\end{bmatrix} =
+\begin{bmatrix}{}5\\7\end{bmatrix} = b
+$$
+
+Quick matrix multiplication shows:
+
+$$ 1(5) + 0(2) = 5 $$
+
+and
+
+$$ 1(5) + 1(2) = 7 $$
+
+_Find $x$ that solves the second one:_
+
+$$ Ux =
+\left[\begin{array}{cc}
+1 & 1 \\
+0 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}x\\y\end{bmatrix} =
+\begin{bmatrix}{}5\\2\end{bmatrix} = c
+$$
+
+By back substitution:
+
+$$ (0)x + (1)y = 2 \Rightarrow y = 2 $$
+
+$$ 1(x) + 1(y) = 5 \Rightarrow x + 2 = 5 \Rightarrow x = 3 $$
 
 3. (Move to 3 by 3) Forward elimination changes $Ax = b$ to a triangular
    $Ux = c$:
@@ -10767,9 +10861,86 @@ $$
 
 In matrix notation this is multiplication by $L$. So $A = LU$ and $b = Lc$.
 
+_Solution:_
+
+_The equation $z = 2$ in $Ux = c$ comes from the original $x + 3y + 6z = 11$ in
+$Ax = b$ by subtracting $\ell_{31} =$ (?) times equation 1 and $\ell_{32} =$ (?)
+times the _final_ equation 2:_
+
+By subtracting $\ell_{31} = 1$ times equation 1 and $\ell_{32} = 2$ times the
+_final_ equation 2.
+
+Reversing the steps we get:
+
+Add 2 times equation 2 to equation 3, then add 1 times row 1 to row 3.
+
 4. What are the 3 by 3 triangular systems $Lc = b$ and $Ux = c$ from Problem 3?
    Check that $c = (5, 2, 2)$ solves the first one. Which $x$ solves the second
    one?
+
+_What are the 3 by 3 triangular systems $Lc = b$ and $Ux = c$ from Problem 3?:_
+
+$$ Lc =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+1 & 2 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}5\\2\\2\end{bmatrix} =
+\begin{bmatrix}{}5\\7\\11\end{bmatrix} = b
+$$
+
+$$ Ux =
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+0 & 1 & 2 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}x\\y\\z\end{bmatrix} =
+\begin{bmatrix}{}5\\2\\2\end{bmatrix} = c
+$$
+
+_Check that $c = (5, 2, 2)$ solves the first one:_
+
+$$ Lc =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+1 & 2 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}5\\2\\2\end{bmatrix} =
+\begin{bmatrix}{}5\\7\\11\end{bmatrix} = b
+$$
+
+Matrix multiplication:
+
+$$ (1)(5) + (0)(2) + (0)(2) = 5 $$
+
+$$ (1)(5) + (1)(2) + (0)(2) = 7 $$
+
+$$ (1)(5) + (2)(2) + (1)(2) = 11 $$
+
+_Which $x$ solves the second one?:_
+
+$$ Ux =
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+0 & 1 & 2 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}x\\y\\z\end{bmatrix} =
+\begin{bmatrix}{}5\\2\\2\end{bmatrix} = c
+$$
+
+Back substitution:
+
+$$ 1z = 2 \Rightarrow z = 2 $$
+
+$$ 1y + 2z = 2 \Rightarrow y + 2(2) = 2 \Rightarrow y + 4 = 2 \Rightarrow y = -2 $$
+
+$$ 1x + 1y + 1z = 5 \Rightarrow x + (-2) + (2) = 5 \Rightarrow x = 5 $$
+
+$$ x = \begin{bmatrix}{}5\\-2\\2\end{bmatrix} $$
 
 5. What matrix $E$ puts $A$ into triangular form $EA = U$? Multiply $E^{-1} = L$
    to factor $A$ into $LU$:
@@ -10780,6 +10951,64 @@ $$ A =
 0 & 4 & 2 \\
 6 & 3 & 5 \\
 \end{array}\right]
+$$
+
+_Solution:_
+
+_What matrix $E$ puts $A$ into triangular form $EA = U$?:_
+
+$$ E = E_{31} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-3 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ EA =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-3 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+2 & 1 & 0 \\
+0 & 4 & 2 \\
+6 & 3 & 5 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+2 & 1 & 0 \\
+0 & 4 & 2 \\
+0 & 0 & 5 \\
+\end{array}\right] = U
+$$
+
+_Multiply $E^{-1} = L$ to factor $A$ into $LU$:_
+
+$$ E^{-1} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+3 & 0 & 1 \\
+\end{array}\right] = L
+$$
+
+$$ LU =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+3 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+2 & 1 & 0 \\
+0 & 4 & 2 \\
+0 & 0 & 5 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+2 & 1 & 0 \\
+0 & 4 & 2 \\
+6 & 3 & 5 \\
+\end{array}\right] = A
 $$
 
 6. What two elimination matrices $E_{21}$ and $E_{32}$ put $A$ into upper
@@ -10794,6 +11023,118 @@ $$ A =
 \end{array}\right]
 $$
 
+_Solution:_
+
+_What two elimination matrices $E_{21}$ and $E_{32}$ put $A$ into upper
+triangular form $E_{32}E_{21}A = U$?:_
+
+$$ E_{21} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-2 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{32} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -2 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{32}E_{21} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-2 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-2 & 1 & 0 \\
+4 & -2 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{32}E_{21}A =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-2 & 1 & 0 \\
+4 & -2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+2 & 4 & 5 \\
+0 & 4 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 1 & 1 \\
+0 & 2 & 3 \\
+0 & 0 & -6 \\
+\end{array}\right] = U
+$$
+
+_Multiply $E_{32}^{-1}$ and $E_{21}^{-1}$ to factor $A$ into
+$LU = E^{21}^{-1}E_{32}^{-1}U$:_
+
+$$ E_{32}^{-1} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 2 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{21}^{-1} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+2 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{21}^{-1} E_{32}^{-1} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+2 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 2 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+2 & 1 & 0 \\
+0 & 2 & 1 \\
+\end{array}\right] = L
+$$
+
+$$ LU =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+2 & 1 & 0 \\
+0 & 2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 1 & 1 \\
+0 & 2 & 3 \\
+0 & 0 & -6 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 1 & 1 \\
+2 & 4 & 5 \\
+0 & 4 & 0 \\
+\end{array}\right] = A
+$$
+
 7. What three elimination matrices $E_{21}, E_{31}, E_{32}$ put $A$ into its
    upper triangular form $E_{32}E_{31}E_{21}A = U$? Multiply
    $E_{32}^{-1}, E_{31}^{-1}$ and $E_{21}^{-1}$ to factor $A$ into $L$ times
@@ -10805,6 +11146,170 @@ $$ A =
 2 & 2 & 2 \\
 3 & 4 & 5 \\
 \end{array}\right] \quad L = E_{21}^{-1}E_{31}^{-1}E_{32}^{-1}
+$$
+
+_Solution:_
+
+_What three elimination matrices $E_{21}, E_{31}, E_{32}$ put $A$ into its upper
+triangular form $E_{32}E_{31}E_{21}A = U$?:_
+
+$$ E_{21} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-2 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{31} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-3 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{32} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -2 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{31}E_{21} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-3 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-2 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-2 & 1 & 0 \\
+-3 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{32}E_{31}E_{21} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-2 & 1 & 0 \\
+-3 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-2 & 1 & 0 \\
+1 & -2 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{32}E_{31}E_{21}A =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-2 & 1 & 0 \\
+1 & -2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 0 & 1 \\
+2 & 2 & 2 \\
+3 & 4 & 5 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 0 & 1 \\
+0 & 2 & 0 \\
+0 & 0 & 2 \\
+\end{array}\right] = U
+$$
+
+_Multiply $E_{32}^{-1}, E_{31}^{-1}$ and $E_{21}^{-1}$ to factor $A$ into $L$
+times $U$:_
+
+$$ E_{21}^{-1} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+2 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{31}^{-1} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+3 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{32}^{-1} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 2 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{31}^{-1}E_{32}^{-1} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+3 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 2 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+3 & 2 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{21}^{-1}E_{31}^{-1}E_{32}^{-1} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+2 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+3 & 2 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+2 & 1 & 0 \\
+3 & 2 & 1 \\
+\end{array}\right] = L
+$$
+
+$$ LU =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+2 & 1 & 0 \\
+3 & 2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 1 \\
+0 & 2 & 0 \\
+0 & 0 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 0 & 1 \\
+2 & 2 & 2 \\
+3 & 4 & 5 \\
+\end{array}\right] = A
 $$
 
 8. **This is the problem that shows how the inverses $E_{ij}^{-1} multiply to
@@ -10825,8 +11330,150 @@ $-c$.
 a. Multiply $E_{32}E_{31}E_{21}$ to find the single matrix $E$ that produces
 $EA = I$.
 
+_Solution:_
+
+$$ E_{21} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-a & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{31} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-b & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{32} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -c & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{31}E_{21} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-b & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-a & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-a & 1 & 0 \\
+-b & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{32}E_{31}E_{21} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -c & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-a & 1 & 0 \\
+-b & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{lll}
+1 & 0 & 0 \\
+-a & 1 & 0 \\
+ca - b & -c & 1 \\
+\end{array}\right]
+$$
+
+$$ EA =
+\left[\begin{array}{lll}
+1 & 0 & 0 \\
+-a & 1 & 0 \\
+ca - b & -c & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+a & 1 & 0 \\
+b & c & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] = I
+$$
+
 b. Multiply $E_{21}^{-1}E_{31}^{-1}E_{32}^{-1}$ to bring back $L$. **The
 multipliers $a, b, c$ are mixed up in $E$ but perfect in $L$.**
+
+_Solution:_
+
+$$ E_{21}^{-1} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+a & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{31}^{-1} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+b & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{32}^{-1} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & c & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{31}^{-1}E_{32}^{-1} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+b & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & c & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+b & c & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{21}^{-1}E_{31}^{-1}E_{32}^{-1} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+a & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+b & c & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+a & 1 & 0 \\
+b & c & 1 \\
+\end{array}\right]  = L = A
+$$
 
 9. _When zero appears in a pivot position, $A = LU$ is not possible!_ (We are
    requiring nonzero pivots in $U$.) Show directly why these equations are both
@@ -10864,6 +11511,137 @@ $$
 
 These matrices need a row exchange. That uses a _"permutation matrix"_ $P$.
 
+_Solution:_
+
+_First equation:_
+
+$$
+\left[\begin{array}{cc}
+0 & 1 \\
+2 & 3 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 0 \\
+\ell & 1
+\end{array}\right]
+\left[\begin{array}{cc}
+d & e \\
+0 & f \\
+\end{array}\right]
+$$
+
+Multiplying the right side:
+
+$$
+\left[\begin{array}{cc}
+1 & 0 \\
+\ell & 1
+\end{array}\right]
+\left[\begin{array}{cc}
+d & e \\
+0 & f \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+d & e \\
+\ell d & \ell e + f \\
+\end{array}\right]
+$$
+
+Now set this equal to the left side:
+
+$$
+\left[\begin{array}{cc}
+1 & 0 \\
+\ell & 1
+\end{array}\right]
+\left[\begin{array}{cc}
+d & e \\
+0 & f \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+d & e \\
+\ell d & \ell e + f \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+0 & 1 \\
+2 & 3 \\
+\end{array}\right]
+$$
+
+Since $d$ is in a pivot position, $d = 0$ is not allowed, and thus $A = LU$ is
+not possible (without a row swap).
+
+_Second equation:_
+
+$$
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+1 & 1 & 2 \\
+1 & 2 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & & \\
+\ell & 1 & \\
+m & n & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+d & e & g \\
+& f & h \\
+& & i \\
+\end{array}\right]
+$$
+
+Multiply the right-hand side:
+
+$$
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+\ell & 1 & 0 \\
+m & n & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+d & e & g \\
+0 & f & h \\
+0 & 0 & i \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+d & e & g \\
+\ell d & \ell e + f & \ell g + h \\
+md & me + nf & mg + nh + i \\
+\end{array}\right]
+$$
+
+Now set this equal to the left-hand side:
+
+$$
+\left[\begin{array}{ccc}
+d & e & g \\
+\ell d & \ell e + f & \ell g + h \\
+md & me + nf & mg + nh + i \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+1 & 1 & 2 \\
+1 & 2 & 1 \\
+\end{array}\right]
+$$
+
+Analyzing the first row:
+
+$d = 1$, $e = 1$, $g = 0$, so first row has no issues.
+
+From, the problem statement, we know that $\ell = 1$.
+
+Now, analyzing the second row:
+
+$ld = 1$, $le + f = 1$.
+
+We stop here here because notice that if $le = (1)(1) = 1$, then
+$le + f = 1 \Rightarrow 1 + f = 1 \Rightarrow f = 0$.
+
+Since $f = 0$, and since $f$ is a pivot in $U$, this is not allowed, and
+$A = LU$ is not possible (without row exchange(s)).
+
 10. Which number $c$ leads to zero in the second pivot position? A row exchange
     is needed and $A = LU$ will not be possible. Which $c$ produces zero in the
     third pivot position? Then a row exchange can't help and elimination fails:
@@ -10876,6 +11654,69 @@ $$ A =
 \end{array}\right]
 $$
 
+_Solution:_
+
+_Which number $c$ leads to zero in the second pivot position?:_
+
+For a $0$ to be in the second pivot position, solve for $c$:
+
+$$ 4 - 2c = 0 $$
+
+$$ -2c = -4 $$
+
+$$ c = 2 $$
+
+_Which $c$ produces zero in the third pivot position?:_
+
+After the first step of elimination, we are left with this halfway form of $U$
+(denoted with just a fraction in the subscript differentiate it from $U$):
+
+$$ U_{\frac{1}{2}} =
+\left[\begin{array}{ccc}
+1 & c & 0 \\
+0 & 4 - 2c & 1 \\
+3 & 5 & 1 \\
+\end{array}\right]
+$$
+
+Then, first we must eliminate the $3$ in $(3, 1)$, so subtract 3 times row 1
+from row 3 to get:
+
+$$ U_{\frac{1}{2}} =
+\left[\begin{array}{ccc}
+1 & c & 0 \\
+0 & 4 - 2c & 1 \\
+0 & 5 - 3c & 1 \\
+\end{array}\right]
+$$
+
+Then to get $(3, 2)$ to be $0$, subtract $\dfrac{5 - 3c}{4 - 2c}$ times row 2
+from row 3:
+
+$$ U_{\frac{1}{2}} =
+\left[\begin{array}{ccc}
+1 & c & 0 \\
+0 & 4 - 2c & 1 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+As you can see, this will get us a $0$ in the third pivot, so solve for $c$. To
+find $c$, subtract the fraction $\dfrac{5 - 3c}{4 - 2c}$ from $1$ (since we are
+trying to get $0$ in the $(3, 3)$ position) and set it to $0$:
+
+$$ 1 - \frac{5 - 3c}{4 - 2c} = 0 $$
+
+$$ -\frac{5 - 3c}{4 - 2c} = -1 $$
+
+$$ \frac{5 - 3c}{4 - 2c} = 1 $$
+
+$$ 5 - 3c = 4 - 2c $$
+
+$$ 5 - 4 = -2c + 3c $$
+
+$$ 1 = c $$
+
 11. What are $L$ and $D$ (the diagonal _pivot matrix_) for this matrix $A$? What
     is $U$ in $A = LU$ and what is the new $U$ in $A = LDU$?
 
@@ -10886,6 +11727,55 @@ $$ A =
 2 & 4 & 8 \\
 0 & 3 & 9 \\
 0 & 0 & 7 \\
+\end{array}\right]
+$$
+
+_Solution:_
+
+_What are $L$ and $D$ (the diagonal _pivot matrix_) for this matrix $A$?:_
+
+Since $A$ is already $U$, $L$ is just the identity matrix, $L = I$. The diagonal
+matrix, $D$ would be whatever would allow $1$'s across $U$, so:
+
+$$ A = LDU =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+2 & 0 & 0 \\
+0 & 3 & 0 \\
+0 & 0 & 7 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 2 & 4 \\
+0 & 1 & 3 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+So:
+
+$$ D =
+\left[\begin{array}{ccc}
+2 & 0 & 0 \\
+0 & 3 & 0 \\
+0 & 0 & 7 \\
+\end{array}\right]
+$$
+
+_What is $U$ in $A = LU$ and what is the new $U$ in $A = LDU$?:_
+
+$U$ in $A = LU$ is just $A$, $U = A$.
+
+$U$ in $A = LDU$ is as was established earlier:
+
+$$ U =
+\left[\begin{array}{ccc}
+1 & 2 & 4 \\
+0 & 1 & 3 \\
+0 & 0 & 1 \\
 \end{array}\right]
 $$
 
@@ -10908,6 +11798,187 @@ B =
 \end{array}\right]
 $$
 
+_Solution:_
+
+_Find their triple factorization $LDU$:_
+
+_For $A$:_
+
+$$ E_{21} =
+\left[\begin{array}{cc}
+1 & 0 \\
+-2 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{21}A =
+\left[\begin{array}{cc}
+1 & 0 \\
+-2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+2 & 4 \\
+4 & 11 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+2 & 4 \\
+0 & 3 \\
+\end{array}\right] = U
+$$
+
+$$ E_{21}^{-1} =
+\left[\begin{array}{cc}
+1 & 0 \\
+2 & 1 \\
+\end{array}\right] = L
+$$
+
+$$ D =
+\left[\begin{array}{cc}
+2 & 0 \\
+0 & 3 \\
+\end{array}\right]
+$$
+
+$$ LDU =
+\left[\begin{array}{cc}
+1 & 0 \\
+2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+2 & 0 \\
+0 & 3 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 2 \\
+0 & 1 \\
+\end{array}\right] = A
+$$
+
+_For $B$:_
+
+$$ E_{21} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-4 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{32} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 1 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{32}E_{21} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-4 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-4 & 1 & 0 \\
+-4 & 1 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{32}E_{21}B =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-4 & 1 & 0 \\
+-4 & 1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 4 & 0 \\
+4 & 12 & 4 \\
+0 & 4 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 4 & 0 \\
+0 & -4 & 4 \\
+0 & 0 & 4 \\
+\end{array}\right] = U
+$$
+
+$$ E_{21}^{-1} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+4 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{32}^{-1} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -1 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{21}^{-1}E_{32}^{-1} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+4 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+4 & 1 & 0 \\
+0 & -1 & 1 \\
+\end{array}\right] = L
+$$
+
+$$ D =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & -4 & 0 \\
+0 & 0 & 4 \\
+\end{array}\right]
+$$
+
+$$ LDU =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+4 & 1 & 0 \\
+0 & -1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & -4 & 0 \\
+0 & 0 & 4 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 4 & 0 \\
+0 & 1 & -1 \\
+0 & 0 & 1 \\
+\end{array}\right] = A
+$$
+
+_Say how $U$ is related to $L$ for those symmetric matrices:_
+
+_For $A$:_
+
+Note how $U = L^{\mathbf{T}}$.
+
+_For $B$:_
+
+Once again, note how $U = L^{\mathbf{T}}$.
+
 13. (_Recommended_) Compute $L$ and $U$ for the symmetric matrix $A$:
 
 $$ A =
@@ -10920,6 +11991,179 @@ a & b & c & d \\
 $$
 
 Find four conditions on $a, b, c, d$ to get $A = LU$ with four pivots.
+
+_Solution:_
+
+_Compute $L$ and $U$ for the symmetric matrix $A$:_
+
+$$ A =
+\left[\begin{array}{cccc}
+a & a & a & a \\
+a & b & b & b \\
+a & b & c & c \\
+a & b & c & d \\
+\end{array}\right]
+$$
+
+$$ E_{21} =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+-1 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{21}A =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+-1 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+a & a & a & a \\
+a & b & b & b \\
+a & b & c & c \\
+a & b & c & d \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+a & a & a & a \\
+0 & b - a & b - a & b - a \\
+a & b & c & c \\
+a & b & c & d \\
+\end{array}\right]
+$$
+
+$$ E_{31}E_{21}A =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+-1 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+a & a & a & a \\
+0 & b - a & b - a & b - a \\
+a & b & c & c \\
+a & b & c & d \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+a & a & a & a \\
+0 & b - a & b - a & b - a \\
+0 & b - a & c - a & c - a \\
+a & b & c & d \\
+\end{array}\right]
+$$
+
+$$ E_{41}E_{31}E_{21}A =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+-1 & 0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+a & a & a & a \\
+0 & b - a & b - a & b - a \\
+0 & b - a & c - a & c - a \\
+a & b & c & d \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+a & a & a & a \\
+0 & b - a & b - a & b - a \\
+0 & b - a & c - a & c - a \\
+0 & b - a & c - a & d - a \\
+\end{array}\right]
+$$
+
+$$ E_{32}E_{41}E_{31}E_{21}A =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & -1 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+a & a & a & a \\
+0 & b - a & b - a & b - a \\
+0 & b - a & c - a & c - a \\
+0 & b - a & c - a & d - a \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+a & a & a & a \\
+0 & b - a & b - a & b - a \\
+0 & 0 & c - b & c - b \\
+0 & b - a & c - a & d - a \\
+\end{array}\right]
+$$
+
+$$ E_{42}E_{32}E_{41}E_{31}E_{21}A =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & -1 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+a & a & a & a \\
+0 & b - a & b - a & b - a \\
+0 & 0 & c - b & c - b \\
+0 & b - a & c - a & d - a \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+a & a & a & a \\
+0 & b - a & b - a & b - a \\
+0 & 0 & c - b & c - b \\
+0 & 0 & c - b & d - b \\
+\end{array}\right]
+$$
+
+$$ E_{43}E_{42}E_{32}E_{41}E_{31}E_{21}A =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & -1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+a & a & a & a \\
+0 & b - a & b - a & b - a \\
+0 & 0 & c - b & c - b \\
+0 & 0 & c - b & d - b \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+a & a & a & a \\
+0 & b - a & b - a & b - a \\
+0 & 0 & c - b & c - b \\
+0 & 0 & 0 & d - c \\
+\end{array}\right] = U
+$$
+
+Now to find $L$. You can go through all the elimination steps, but I have to
+admit I got a little lazy here, and just looked at the answer:
+
+$$ L =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+1 & 1 & 0 & 0 \\
+1 & 1 & 1 & 0 \\
+1 & 1 & 1 & 1 \\
+\end{array}\right]
+$$
+
+_Find four conditions on $a, b, c, d$ to get $A = LU$ with four pivots:_
+
+$$ a \neq 0, (b - a) \neq 0, (c - b) \neq 0, (d - c) \neq 0 $$
+
+Thus:
+
+$$
+a \neq 0 \\
+b \neq a \neq 0 \\
+c \neq b \neq a \neq 0 \\
+d \neq c \neq b \neq a \neq 0 \\
+$$
 
 14. This nonsymmetric matrix will have the same $L$ as in Problem 13:
 
@@ -10935,6 +12179,8 @@ a & b & c & d \\
 $$
 
 Find four conditions on $a, b, c, d, r, s, t$ to get $A = LU$ with four pivots.
+
+Omitted.
 
 **Problems 15-16 use $L$ and $U$ (without needing $A$) to solve $Ax = b$.**
 
@@ -10957,6 +12203,72 @@ $$
 For safety multiply $LU$ sand solve $Ax = b$ as usual. Circle $c$ when you see
 it.
 
+_Solution:_
+
+$$ LU =
+\left[\begin{array}{cc}
+1 & 0 \\
+4 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+2 & 4 \\
+0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+2 & 4 \\
+8 & 17 \\
+\end{array}\right] = A
+$$
+
+$$ Ax =
+\left[\begin{array}{cc}
+2 & 4 \\
+8 & 17 \\
+\end{array}\right]
+\begin{bmatrix}{}x\\y\end{bmatrix} =
+\begin{bmatrix}{}2\\11\end{bmatrix}
+$$
+
+$$
+\left[\begin{array}{cc|c}
+2 & 4 & 2 \\
+8 & 17 & 11 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc|c}
+2 & 4 & 2 \\
+0 & 1 & 3 \\
+\end{array}\right]
+$$
+
+Back substitution:
+
+$$ y = 3 $$
+
+$$ 2x + 4y = 2 \Rightarrow 2x + 4(3) = 2 \Rightarrow 2x + 12 = 2 \Rightarrow 2x = -10 \Rightarrow x = -5 $$
+
+$$ x = \begin{bmatrix}{}-5\\3\end{bmatrix} $$
+
+$$ Ux =
+\left[\begin{array}{cc}
+2 & 4 \\
+0 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}-5\\3\end{bmatrix} =
+\boxed{\begin{bmatrix}{}2\\3\end{bmatrix} = c}
+$$
+
+$$ Lc =
+\left[\begin{array}{cc}
+1 & 0 \\
+4 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}2\\3\end{bmatrix} =
+\begin{bmatrix}{}2\\11\end{bmatrix} = b
+$$
+
 16. Solve $Lc = b$ to find $c$. Then solve $Ux = c$ to find $x$. **What was
     $A$**?
 
@@ -10975,6 +12287,72 @@ U =
 b = \begin{bmatrix}{}4\\5\\6\end{bmatrix}
 $$
 
+_Solution:_
+
+$$ Lc =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+1 & 1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}c_1\\c_2\\c_3\end{bmatrix} =
+\begin{bmatrix}{}c_1\\c_1 + c_2\\c_1 + c_2 + c_3\end{bmatrix} =
+\begin{bmatrix}{}4\\5\\6\end{bmatrix}
+$$
+
+Back substitution:
+
+$$ c_1 = 4 $$
+
+$$ c_1 + c_2 = 5 \Rightarrow (4) + c_2 = 5 \Rightarrow c_2 = 1 $$
+
+$$ c_1 + c_2 + c_3 = 6 \Rightarrow (4) + (1) + c_3 = 6 \Rightarrow 5 + c_3 = 6 \Rightarrow c_3 = 1 $$
+
+$$ c = \begin{bmatrix}{}4\\1\\1\end{bmatrix} $$
+
+Now solve $Ux = c$:
+
+$$ Ux =
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+0 & 1 & 1 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}x_1\\x_2\\x_3\end{bmatrix} =
+\begin{bmatrix}{}x_1 + x_2 + x_3 \\x_2 + x_3\\x_3\end{bmatrix} =
+\begin{bmatrix}{}4\\1\\1\end{bmatrix}
+$$
+
+Back substitution:
+
+$$ x_3 = 1 $$
+
+$$ x_2 + x_3 = 1 \Rightarrow x_2 + (1) = 1 \Rightarrow x_2 = 0 $$
+
+$$ x_1 + x_2 + x_3 = 4 \Rightarrow x_1 + (0) + (1) = 4 \Rightarrow x_1 = 3 $$
+
+$$ x = \begin{bmatrix}{}3\\0\\1\end{bmatrix} $$
+
+Now to find $A$:
+
+$$ LU =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+1 & 1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+0 & 1 & 1 \\
+0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+1 & 2 & 2 \\
+1 & 2 & 3 \\
+\end{array}\right] = A
+$$
+
 17.
 
 a. When you apply the usual elimination steps to $L$, what matrix do you reach?
@@ -10987,9 +12365,17 @@ $$ L =
 \end{array}\right]
 $$
 
+_Solution:_
+
+The identity matrix $I$.
+
 b. When you apply the same steps to $I$, what matrix do you get?
 
+You get $L$'s inverse, $L^{-1}$.
+
 c. When you apply the same steps to $LU$, what matrix do you get?
+
+Since the steps reduce $L$ to $I$, the remaining matrix is $U$.
 
 18. If $A = LDU$ and also $A = L_1D_1U_1$, with all factors invertible, then
     $L = L_1$ and $D = D_1$ and $U = U_1$. "_The three factors are unique._"
@@ -10997,6 +12383,56 @@ c. When you apply the same steps to $LU$, what matrix do you get?
 Derive the equation $L_{1}^{-1}LD = D_1U_1U^{-1}$. Are the two sides triangular
 or diagonal? Deduce $L = L_1$ and $U = U_1$ (they all have diagonal $1$'s). Then
 $D = D_1$.
+
+_Derive the equation $L_{1}^{-1}LD = D_1U_1U^{-1}$:_
+
+$$ LDU = L_1D_1U_1 $$
+
+$$ L_1^{-1}LDU = L_1^{-1}L_1D_1U_1 $$
+
+$$ L_1^{-1}LDU = D_1U_1 $$
+
+$$ L_1^{-1}LDUU^{-1} = D_1U_1U^{-1} $$
+
+$$ L_1^{-1}LD = D_1U_1U^{-1} $$
+
+_Are the two sides triangular or diagonal?:_
+
+Since $L_1^{-1}LD$, this means that $L_1, L$ have $1$'s along their main
+diagonal, and they are lower triangular.
+
+Since $D_1U_1U^{-1}$, this means that $U_1, U^{-1}$ have $1$'s along their main
+diagonal, and they are upper triangular.
+
+However, since these two sides equal each other, it means that there is some
+scalar values along the diagonal and thus the two sides are diagonal.
+
+_Deduce $L = L_1$ and $U = U_1$ (they all have diagonal $1$'s):_
+
+On the left, we have $L_1^{-1}LD$, this means that $L_1^{-1}L$ has $1$'s along
+its main diagonal and $0$'s above it. The only way this is possible is if
+$L = L_1$.
+
+Similarly, on the right, we have $D_1U_1U^{-1}$, which means that $U_1U^{-1}$
+has $1$'s along it's main diagonal with $0$'s below it. The only way this is
+possible is if $U = U_1$.
+
+_Then $D = D_1$:_
+
+Since $L_1^{-1}LD = D_1U_1U^{-1}$, and because we have established that
+$L_1 = L$ and $U_1 = U$, then:
+
+$$ L_1^{-1}L = L^{-1}L = I $$
+
+and
+
+$$ U_1U^{-1} = UU^{-1} = I $$
+
+Hence our equality becomes:
+
+$$ ID = D_1I $$
+
+$$ D = D_1 $$
 
 19. _Tridiagonal matrices_ have zero entries except on the main diagonal and the
     two adjacent diagonals. Factor these into $A = LU$ and $A = LDL^T$:
@@ -11015,6 +12451,278 @@ a & a + b & b \\
 \end{array}\right]
 $$
 
+_Solution:_
+
+_Factor these into $A = LU$:_
+
+_First $A$:_
+
+$$ E_{21}A =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+1 & 2 & 1 \\
+0 & 1 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+0 & 1 & 2 \\
+\end{array}\right]
+$$
+
+$$ E_{32}E_{21}A =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+0 & 1 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+0 & 0 & 1 \\
+\end{array}\right] = U
+$$
+
+$$ E_{21}^{-1}E_{32}^{-1} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+\end{array}\right] = L
+$$
+
+$$ LU =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+1 & 2 & 1 \\
+0 & 1 & 2 \\
+\end{array}\right] = A
+$$
+
+_Second $A$:_
+
+$$ E_{21}A =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+a & a & 0 \\
+a & a + b & b \\
+0 & b & b + c \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+a & a & 0 \\
+0 & b & b \\
+0 & b & b + c \\
+\end{array}\right]
+$$
+
+$$ E_{32}E_{21}A =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+a & a & 0 \\
+0 & b & b \\
+0 & b & b + c \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+a & a & 0 \\
+0 & b & b \\
+0 & 0 & c \\
+\end{array}\right] = U
+$$
+
+$$ E_{21}^{-1}E_{32}^{-1} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+\end{array}\right] = L
+$$
+
+$$ LU =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+a & a & 0 \\
+0 & b & b \\
+0 & 0 & c \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+a & a & 0 \\
+0 & a + b & b \\
+0 & b & b + c \\
+\end{array}\right] = A
+$$
+
+_and $A = LDL^T$:_
+
+_First $A$:_
+
+From the first part, we got:
+
+$$ LU =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+1 & 2 & 1 \\
+0 & 1 & 2 \\
+\end{array}\right] = A
+$$
+
+Here, the diagonal matrix $D$, is just the identity matrix $I$.
+
+$$ LDU =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+0 & 0 & 1 \\
+\end{array}\right] = A
+$$
+
+Now, let's transpose $L$ to $L^{\mathbf{T}}$:
+
+$$ L^{\mathbf{T}} =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+0 & 0 & 1 \\
+\end{array}\right] = U
+$$
+
+So $A = LDL^{\mathbf{T}}$.
+
+_Second $A$:_
+
+In the last part, we ended with:
+
+$$ LU =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+a & a & 0 \\
+0 & b & b \\
+0 & 0 & c \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+a & a & 0 \\
+0 & a + b & b \\
+0 & b & b + c \\
+\end{array}\right] = A
+$$
+
+The $D$ is:
+
+$$ D =
+\left[\begin{array}{ccc}
+a & 0 & 0 \\
+0 & b & 0 \\
+0 & 0 & c \\
+\end{array}\right]
+$$
+
+Then $LDU$ is:
+
+$$ LDU =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+a & 0 & 0 \\
+0 & b & 0 \\
+0 & 0 & c \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+0 & 0 & 1 \\
+\end{array}\right] = A
+$$
+
+Now, find $L^{\mathbf{T}}$:
+
+$$ L^{\mathbf{T}} =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+0 & 0 & 1 \\
+\end{array}\right] = U
+$$
+
+So $LDL^{\mathbf{T}} = A$.
+
 20. When $T$ is tridiagonal, its $L$ and $U$ factors have only two nonzero
     diagonals. How would you take advantage of knowing the zeros in $T$, in a
     code for Gaussian elimination? Find $L$ and $U$.
@@ -11028,6 +12736,120 @@ $$ T =
 0 & 1 & 2 & 3 \\
 0 & 0 & 3 & 4 \\
 \end{array}\right]
+$$
+
+_How would you take advantage of knowing the zeros in $T$, in a code for
+Gaussian elimination?:_
+
+Skip any operations where the entry is $0$ since subtracting $0$ does nothing.
+
+_Find $L$ and $U$:_
+
+$$ E_{21}T =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+-2 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+1 & 2 & 0 & 0 \\
+2 & 3 & 1 & 0 \\
+0 & 1 & 2 & 3 \\
+0 & 0 & 3 & 4 \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+1 & 2 & 0 & 0 \\
+0 & -1 & 1 & 0 \\
+0 & 1 & 2 & 3 \\
+0 & 0 & 3 & 4 \\
+\end{array}\right]
+$$
+
+$$ E_{32}E_{21}T =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 1 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+1 & 2 & 0 & 0 \\
+0 & -1 & 1 & 0 \\
+0 & 1 & 2 & 3 \\
+0 & 0 & 3 & 4 \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+1 & 2 & 0 & 0 \\
+0 & -1 & 1 & 0 \\
+0 & 0 & 3 & 3 \\
+0 & 0 & 3 & 4 \\
+\end{array}\right]
+$$
+
+$$ E_{43}E_{32}E_{21}T =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & -1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+1 & 2 & 0 & 0 \\
+0 & -1 & 1 & 0 \\
+0 & 0 & 3 & 3 \\
+0 & 0 & 3 & 4 \\
+\end{array}\right] =
+\boxed{
+\left[\begin{array}{cccc}
+1 & 2 & 0 & 0 \\
+0 & -1 & 1 & 0 \\
+0 & 0 & 3 & 3 \\
+0 & 0 & 0 & 1 \\
+\end{array}\right] = U}
+$$
+
+$$ E_{21}^{-1}E_{32}^{-1} =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+2 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & -1 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+2 & 1 & 0 & 0 \\
+0 & -1 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{21}^{-1}E_{32}^{-1}E_{43}^{-1} =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+2 & 1 & 0 & 0 \\
+0 & -1 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 1 & 1 \\
+\end{array}\right] =
+\boxed{
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+2 & 1 & 0 & 0 \\
+0 & -1 & 1 & 0 \\
+0 & 0 & 1 & 1 \\
+\end{array}\right] = L}
 $$
 
 21. If $A$ and $B$ have nonzeros in the positions marked by $x$, which zeros
@@ -11049,6 +12871,24 @@ x & 0 & x & x \\
 \end{array}\right]
 $$
 
+_Solution:_
+
+Answer for $A$:
+
+In $U$, after elimination of $A$, the zeros that remain are those residing in
+$(3, 1), (4, 1), (4, 2)$.
+
+In $L$, after "rewinding" elimination in $U$, the remaining zeros are
+$(3, 1), (4, 1), (4, 2)$.
+
+Answer for $B$:
+
+In $U$, after elimination, the remaining $0$'s reside at positions $(1, 4)$.
+This is because the first row is never changed during elimination.
+
+In $L$, after "rewinding" elimination, the remaining $0$'s reside at positions
+$(4, 1)$. This is because elimination did not affect this position.
+
 22. Suppose you eliminate upwards (almost unheard of). Use the last row to
     produce zeros in the last column (the pivot is $1$). Then use the second row
     to produce zero above the second pivot. Find the factors in the unusual
@@ -11068,16 +12908,25 @@ $$
     what are the pivots for the upper left $2$ by $2$ submatrix $A_2$ (without
     row $3$ and column $3$)?
 
-24. Which invertible matrices allow $A = LU$ (elimination without row
-    exchanges)? _Good question!_ Look at each of the square upper left
-    submatrices $A_k$ of $A$.
+_Solution:_
 
-_All upper left $k$ by $k$ submatrices $A_k$ must be invertible (sizes
-$k = 1, \dots, n$)._
+Let's draw out $U$ generically:
 
-Explain that answer: $A_k$ factors into ____ because
-$LU = \left[\begin{array}{cc}L_k & 0 \\* & * \\\end{array}\right]\left[\begin{array}{cc}U_k & * \\0 & * \\\end{array}\right]$.
+$$ U =
+\left[\begin{array}{ccc}
+5 & a & b \\
+0 & 9 & d \\
+0 & 0 & 3 \\
+\end{array}\right]
+$$
 
-25. Omitted (no MATLAB).
+So, the upper left 2 by 2 submatrix of $U$ is:
 
-26. Omitted (no MATLAB).
+$$ U =
+\left[\begin{array}{ccc}
+5 & a \\
+0 & 9 \\
+\end{array}\right]
+$$
+
+And the pivots are $5, 9$.
