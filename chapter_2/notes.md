@@ -464,3 +464,81 @@ Page 113
 
 6. For a band matrix, change $\dfrac{1}{3}n^3$ to $nw^2$ and change $n^2$ to
    $2wn$.
+
+---
+
+Page 120
+
+## 2.7 Transposes and Permutations
+
+---
+
+Page 120
+
+1. The transposes of $Ax$ and $AB$ and $A^{-1}$ are
+   $x^{\mathbf{T}}A^{\mathbf{T}}$ and $B^{\mathbf{T}}A^{\mathbf{T}}$ and
+   $(A^{\mathbf{T}})^{-1}$.
+
+2. The dot product (inner product) is $x \cdot y = x^{\mathbf{T}}y$. This is
+   $(1 \times n)(n \times 1) = (1 \times 1)$. The outer product is
+   $xy^{\mathbf{T}} =$ column times row
+   $= (n \times 1)(1 \times n) = n \times n$ matrix.
+
+3. The idea behind $A^{\mathbf{T}}$ is that $Ax \cdot y$ equals
+   $x \cdot A^{\mathbf{T}}y$ because
+   $(Ax)^{\mathbf{T}}y = x^{\mathbf{T}}A^{\mathbf{T}}y = x^{\mathbf{T}}(A^{\mathbf{T}}y)$.
+
+4. A **symmetric matrix** has $S^{\mathbf{T}} = S$ (and the product
+   $A^{\mathbf{T}}A$ is always symmetric).
+
+5. An **orthogonal matrix** has $Q^{\mathbf{T}} = Q^{-1}$. The columns of $Q$
+   are orthogonal unit vectors.
+
+6. A **permutation matrix** $P$ has the same rows as $I$ (in any order). There
+   are $n!$ different orders.
+
+7. Then $Px$ puts the components $x_1, x_2, \dots, x_n$ in that new order. And
+   $P^{\mathbf{T}}$ equals $P^{-1}$.
+
+---
+
+Page 122
+
+**Definition**
+
+A **symmetric matrix has $S^{\mathbf{T}} = S$**. This means that
+$s_{ji} = s_{ij}$.
+
+---
+
+Page 124
+
+**Definition**
+
+A **permutation matrix $P$ has the rows of the identity $I$ in any order.**
+
+---
+
+Page 126
+
+**REVIEW OF THE KEY IDEAS**
+
+1. The transpose puts the rows of $A$ into the columns of $A^{\mathbf{T}}$. Then
+   $(A^{\mathbf{T}})_{ij} = A_{ji}$.
+
+2. The transpose of $AB$ is $B^{\mathbf{T}}A^{\mathbf{T}}$. The transpose of
+   $A^{-1}$ is the inverse of $A^{\mathbf{T}}$.
+
+3. The dot product is $x \cdot y = x^{\mathbf{T}}y$. Then $(Ax)^{\mathbf{T}}y$
+   equals the dot product $x^{\mathbf{T}}(A^{\mathbf{T}}y)$.
+
+4. When $S$ is symmetric ($S^{\mathbf{T}} = S$), its $LDU$ factorization is
+   symmetric: $S = LDL^{\mathbf{T}}$.
+
+5. A permutation matrix $P$ has a $1$ in each row and column, and
+   $P^{\mathbf{T}} = P^{-1}$.
+
+6. There are $n!$ permutation matrices of size $n$. _Half even, half odd._
+
+7. If $A$ is invertible then a permutation $P$ will reorder its rows for
+   $PA = LU$.

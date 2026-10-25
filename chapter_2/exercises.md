@@ -12930,3 +12930,376 @@ $$ U =
 $$
 
 And the pivots are $5, 9$.
+
+---
+
+Page 128
+
+## Problem Set 2.7
+
+**Questions 1-7 are about the rules for transpose matrices.**
+
+1. Find $A^{\mathbf{T}}$ and $A^{-1}$ and $(A^{-1})^{\mathbf{T}}$ and
+   $(A^{\mathbf{T}})^{-1}$ for
+
+$$ A =
+\left[\begin{array}{cc}
+1 & 0 \\
+9 & 3 \\
+\end{array}\right]
+$$
+
+and also
+
+$$ A =
+\left[\begin{array}{cc}
+1 & c \\
+c & 0 \\
+\end{array}\right]
+$$
+
+2. Verify that $(AB)^{\mathbf{T}}$ equals $B^{\mathbf{T}}A^{\mathbf{T}}$ but
+   those are different from $A^{\mathbf{T}}B^{\mathbf{T}}$:
+
+$$ A =
+\left[\begin{array}{cc}
+1 & 0 \\
+2 & 1 \\
+\end{array}\right] \quad
+B =
+\left[\begin{array}{cc}
+1 & 3 \\
+0 & 1 \\
+\end{array}\right] \quad
+AB =
+\left[\begin{array}{cc}
+1 & 3 \\
+2 & 7 \\
+\end{array}\right]
+$$
+
+Show also that $AA^{\mathbf{T}}$ is different from $A^{\mathbf{T}}A$. But both
+of those matrices are ____.
+
+3.
+
+a. The matrix $((AB)^{-1})^{\mathbf{T}}$ comes from $(A^{-1})^{\mathbf{T}}$ and
+$(B^{-1})^{\mathbf{T}}$. _In what order?_
+
+b. If $U$ is upper triangular then $(U^{-1})^{\mathbf{T}}$ is ____ triangular.
+
+4. Show that $A^2 = 0$ is possible but $A^{\mathbf{T}}A = 0$ is not possible
+   (unless $A =$ zero matrix).
+
+5.
+
+a. The row vector $x^{\mathbf{T}}$ times $A$ times the column $y$ produces what
+number?
+
+$$ x^{\mathbf{T}}Ay =
+\left[\begin{array}{cc}
+0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+\end{array}\right]
+\begin{bmatrix}{}0\\1\\0\end{bmatrix} = \text{(?)}
+$$
+
+b. This is the row $x^{\mathbf{T}}A =$ ____ times the column $y = (0, 1, 0)$.
+
+c. This is the row
+$x^{\mathbf{T}} = \left[\begin{array}{cc}0 & 1 \\\end{array}\right]$ times the
+column $Ay =$ ____.
+
+6. The transpose of a block matrix
+   $M = \left[\begin{array}{cc}A & B \\C & D \\\end{array}\right]$ is
+   $M^{\mathbf{T}} =$ ____. Test an example. Under what conditions on
+   $A, B, C, D$ is the block matrix symmetric?
+
+7. True or false:
+
+a. The block matrix $\left[\begin{array}{cc}0 & A \\A & 0 \\\end{array}\right]$
+is automatically symmetric.
+
+b. If $A$ and $B$ are symmetric then their product $AB$ is symmetric.
+
+c. If $A$ is not symmetric then $A^{-1}$ is not symmetric.
+
+d. When $A, B, C$ are symmetric, the transpose of $ABC$ is $CBA$.
+
+**Questions 8-15 are about permutation matrices.**
+
+8. Why are there $n!$ permutation matrices of order $n$?
+
+9. If $P_1$ and $P_2$ are permutation matrices, so is $P_1P_2$. This still has
+   the rows of $I$ in some order. Give examples with $P_1P_2 \neq P_2P_1$ and
+   $P_3P_4 = P_4P_3$.
+
+10. There are 12 "_even_" permutations of $(1, 2, 3, 4)$ with an _even number of
+    exchanges_. Two of them are $(1, 2, 3, 4)$ with no exchanges and
+    $(4, 3, 2, 1)$ with two exchanges. List the other ten. Instead 9f writing
+    each 4 by 4 matrix, just order the numbers.
+
+11. Which permutation makes $PA$ upper triangular? Which permutations make
+    $P_1AP_2$ lower triangular? Multiplying $A$ on the right by $P_2$ exchanges
+    the ____ of $A$.
+
+$$ A =
+\left[\begin{array}{ccc}
+0 & 0 & 6 \\
+1 & 2 & 3 \\
+0 & 4 & 5 \\
+\end{array}\right]
+$$
+
+12. Explain why the dot product of $x$ and $y$ equals the dot product $Px$ and
+    $Py$. Then $(Px)^{\mathbf{T}}(Py) = x^{\mathbf{T}}y$ tells us that
+    $P^{\mathbf{T}}P = I$ for any permutation. With $x = (1, 2, 3)$ and
+    $y = (1, 4, 2)$ choose $P$ to show that $Px \cdot y$ is not always
+    $x \cdot Py$.
+
+13.
+
+a. Find a 3 by 3 permutation matrix with $P^3 = I$ (but not $P = I$).
+
+b. Find a 4 by 4 permutation $\hat{P}$ with $\hat{P}^4 \neq I$.
+
+14. If $P$ has $1$'s on the antidiagonal form $(1, n)$ to $(n, 1)$, describe
+    $PAP$. Note $P = P^{\mathbf{T}}$.
+
+15. All row exchange matrices are symmetric: $P^{\mathbf{T}} = P$. Then
+    $P^{\mathbf{T}}P = I$ becomes $P^2 = I$. Other permutation matrices may or
+    may not be symmetric.
+
+a. If $P$ sends row 1 to row 4, then $P^{\mathbf{T}}$ sends row ____ to row
+____. When $P^{\mathbf{T}} = P$ the row exchanges come in pairs with no overlap.
+
+b. Find a 4 by 4 example with $P^{\mathbf{T}} = P$ that moves all four rows.
+
+**Questions 16-21 are about symmetric matrices and their factorizations.**
+
+16. If $A = A^{\mathbf{T}}$ and $B = B^{\mathbf{T}}$, which of these matrices
+    are certainly symmetric?
+
+a. $A^2 - B^2$
+
+b. $(A + B)(A - B)$
+
+c. $ABA$
+
+d. $ABAB$
+
+17. Find 2 by 2 symmetric matrices $S = S^{\mathbf{T}}$ with these properties:
+
+a. $S$ is not invertible.
+
+b. $S$ is invertible but cannot be factored into $LU$ (row exchanges needed).
+
+c. $S$ can be factored into $LDL^{\mathbf{T}}$ but not into $LL^{\mathbf{T}}$
+(because of negative $D$).
+
+18.
+
+a. How many entries of $S$ can be chosen independently, if $S = S^{\mathbf{T}}$
+is 5 by 5?
+
+b. How do $L$ and $D$ (still 5 by 5) give the same number of choices in
+$LDL^{\mathbf{T}}$?
+
+c. How many entries can be chosen if $A$ is _skew-symmetric_?
+($A^{\mathbf{T}} = -A$).
+
+19. Suppose $A$ is rectangular ($m$ by $n$) and $S$ is symmetric ($m$ by $m$).
+
+a. Transpose $A^{\mathbf{T}}SA$ to show its symmetry. What shape is this matrix?
+
+b. Show why $A^{\mathbf{T}}A$ has no negative numbers on its diagonal.
+
+20. Factor these symmetric matrices into $S = LDL^{\mathbf{T}}$. The pivot
+    matrix $D$ is diagonal:
+
+$$ S =
+\left[\begin{array}{cc}
+1 & 3 \\
+3 & 2 \\
+\end{array}\right]
+$$
+
+and
+
+$$ S =
+\left[\begin{array}{cc}
+1 & b \\
+b & c \\
+\end{array}\right]
+$$
+
+and
+
+$$ S =
+\left[\begin{array}{rrr}
+2 & -1 & 0 \\
+-1 & 2 & -1 \\
+0 & -1 & 2 \\
+\end{array}\right]
+$$
+
+21. After elimination clears out column 1 below the first pivot, find the
+    symmetric 2 by 2 matrix that appears in the lower right corner:
+
+Start from
+
+$$ S =
+\left[\begin{array}{ccc}
+2 & 4 & 8 \\
+4 & 3 & 9 \\
+8 & 9 & 0 \\
+\end{array}\right]
+$$
+
+and
+
+$$ S =
+\left[\begin{array}{ccc}
+1 & b & c \\
+b & d & e \\
+c & e & f \\
+\end{array}\right]
+$$
+
+**Questions 22-24 are about the factorizations $PA = LU$ and $A = L_1P_1U_1$.
+
+22. Find the $PA = LU$ factorizations (and check them) for
+
+$$ A =
+\left[\begin{array}{ccc}
+0 & 1 & 1 \\
+1 & 0 & 1 \\
+2 & 3 & 4 \\
+\end{array}\right]
+$$
+
+and
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 2 & 0 \\
+2 & 4 & 1 \\
+1 & 1 & 1 \\
+\end{array}\right]
+$$
+
+23. Find a 4 by 4 permutation matrix (call it $A$) that needs 3 row exchanges to
+    reach the end of elimination. For this matrix, what are its factors $P, L$,
+    and $U$?
+
+24. Factor the following matrix into $PA = LU$. Factor it also into
+    $A = L_1P_1U_1$ (hold the exchange of row 3 until 3 times row 1 is
+    subtracted from row 2):
+
+$$ A =
+\left[\begin{array}{ccc}
+0 & 1 & 2 \\
+0 & 3 & 8 \\
+2 & 1 & 1 \\
+\end{array}\right]
+$$
+
+25. Prove that the identity matrix cannot be the product of three row exchanges
+    (or five). It can be the product of two exchanges (or four).
+
+26.
+
+a. Choose $E_{21}$ to remove the $3$ below the first pivot. Then multiply
+$E_{21}SE_{21}^{\mathbf{T}}$ to remove both $3$'s:
+
+$$ S =
+\left[\begin{array}{rrr}
+1 & 3 & 0 \\
+3 & 11 & 4 \\
+0 & 4 & 9 \\
+\end{array}\right]
+$$
+
+is going toward
+
+$$ D =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 2 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+b. Choose $E_{32}$ to remove the $4$ below the second pivot. Then $S$ is reduced
+to $D$ by $E_{32}E_{21}SE_{21}^{\mathbf{T}}E_{32}^{\mathbf{T}} = D$. Invert the
+$E$'s to find $L$ in $S = LDL^{\mathbf{T}}$.
+
+27. If every row of a 4 by 4 matrix contains the numbers $0, 1, 2, 3$ in some
+    order, can the matrix be symmetric?
+
+28. Prove that no reordering of rows and reordering of columns can transpose a
+    typical matrix. (Watch the diagonal entries.)
+
+**The next three questions are about applications of the identity
+$(Ax)^{\mathbf{T}}y = x^{\mathbf{T}}(A^{\mathbf{T}}y)$.**
+
+29. Wires go between Boston, Chicago, and Seattle. Those cities are at voltages
+    $x_B, x_C, x_S$. With unit resistances between cities, the currents between
+    cities are in $y$:
+
+$$ y = Ax $$
+
+is
+
+$$ \begin{bmatrix}{}y_{BC}\\y_{CS}\\y_{BS}\end{bmatrix} =
+\left[\begin{array}{rrr}
+1 & -1 & 0 \\
+0 & 1 & -1 \\
+1 & 0 & -1 \\
+\end{array}\right]
+\begin{bmatrix}{}x_B\\x_C\\x_S\end{bmatrix}
+$$
+
+a. Find the total currents $A^{\mathbf{T}}y$ out of the three cities.
+
+b. Verify that $(Ax)^{\mathbf{T}}y$ agrees with
+$x^{\mathbf{T}}(A^{\mathbf{T}}y)$ - six terms in both.
+
+30. Producing $x_1$ trucks and $x_2$ planes needs $x_1 + 50x_2$ tons of steel,
+    $40x_1 + 1000x_2$ pounds of rubber, and $2x_1 + 50x_2$ months of labor. If
+    the unit costs $y_1, y_2, y_3$ are $700 per ton, $3 per pound, and $3000 per
+    month, what are the values of one truck and one plane? Those are the
+    components of $A^{\mathbf{T}}y$.
+
+31. $Ax$ gives the amount of steel, rubber, and labor to produce $x$ in
+    Problem 31. Find $A$. Then $Ax \cdot y$ is the ____ of inputs while
+    $x \cdot A^{\mathbf{T}}y$ is the value of ____.
+
+32. The matrix $P$ that multiplies $(x, y, z)$ to give $(z, x, y)$ is also a
+    rotation matrix. Find $P$ and $P^3$. The rotation axis $a = (1, 1, 1)$
+    doesn't move, it equals $Pa$. What is the angle of rotation from
+    $v = (2, 3, -5)$ to $Pv = (-5, 2, 3)$?
+
+33. Write $A = \left[\begin{array}{cc}1 & 2 \\4 & 9 \\\end{array}\right]$ as the
+    product $ES$ of an elementary row operation matrix $E$ and a symmetric
+    matrix $S$.
+
+34. Here is a new factorization of A$ into $LS$: _triangular_ (with $1$'s)
+    _times symmetric_:
+
+Start from $A = LDU$. Then $A$ equals $L(U^{\mathbf{T}})^{-1}$ times
+$S = U^{\mathbf{T}}DU$.
+
+Why is $L(U^{\mathbf{T}})^{-1}$ triangular? Its diagonal is all $1$'s. Why is
+$U^{\mathbf{T}}DU$ symmetric?
+
+35. A _group_ of matrices includes $AB$ and $A^{-1}$ if it includes $A$ and $B$.
+    "Products and inverses stay in the group." Which of these sets are groups?
+
+Lower triangular matrices $L$ with $1$'s on the diagonal, symmetric matrices
+$S$, positive matrices $M$, diagonal invertible matrices $D$, permutation
+matrices $P$, matrices with $Q^{\mathbf{T}} = Q^{-1}$. _Invent two more matrix
+groups._
