@@ -12958,6 +12958,162 @@ c & 0 \\
 \end{array}\right]
 $$
 
+_Solution:_
+
+_First $A$:_
+
+$$ A =
+\left[\begin{array}{cc}
+1 & 0 \\
+9 & 3 \\
+\end{array}\right]
+$$
+
+$A^{\mathbf{T}}$:
+
+$$ A^{\mathbf{T}} =
+\left[\begin{array}{cc}
+1 & 9 \\
+0 & 3 \\
+\end{array}\right]
+$$
+
+$A^{-1}$:
+
+$$ A^{-1} =
+\frac{1}{(1)(3) - (0)(9)}
+\left[\begin{array}{cc}
+3 & -0 \\
+-9 & 1 \\
+\end{array}\right]
+$$
+
+$$ A^{-1} =
+\frac{1}{3}
+\left[\begin{array}{cc}
+3 & 0 \\
+9 & 1 \\
+\end{array}\right]
+$$
+
+$$ A^{-1} =
+\left[\begin{array}{cc}
+1 & 0 \\
+-3 & \frac{1}{3} \\
+\end{array}\right]
+$$
+
+$(A^{-1})^{\mathbf{T}}$:
+
+$$ (A^{-1})^{\mathbf{T}} =
+\left[\begin{array}{cc}
+1 & -3 \\
+0 & \frac{1}{3} \\
+\end{array}\right]
+$$
+
+$(A^{\mathbf{T}})^{-1}$:
+
+$$ (A^{\mathbf{T}})^{-1} =
+\frac{1}{(1)(3) - (9)(0)}
+\left[\begin{array}{cc}
+3 & -9 \\
+-0 & 1 \\
+\end{array}\right]
+$$
+
+$$ (A^{\mathbf{T}})^{-1} =
+\frac{1}{3}
+\left[\begin{array}{cc}
+3 & -9 \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+$$ (A^{\mathbf{T}})^{-1} =
+\left[\begin{array}{cc}
+1 & -3 \\
+0 & \frac{1}{3} \\
+\end{array}\right] = (A^{-1})^{\mathbf{T}}
+$$
+
+_Second $A$:_
+
+$$ A =
+\left[\begin{array}{cc}
+1 & c \\
+c & 0 \\
+\end{array}\right]
+$$
+
+$A^{\mathbf{T}}$:
+
+$$ A^{\mathbf{T}} =
+\left[\begin{array}{cc}
+1 & c \\
+c & 0 \\
+\end{array}\right] = A
+$$
+
+$A^{-1}$:
+
+$$ A^{-1} =
+\frac{1}{(1)(0) - (c)(c)}
+\left[\begin{array}{cc}
+0 & -c \\
+-c & 1 \\
+\end{array}\right]
+$$
+
+$$ A^{-1} =
+-\frac{1}{c^2}
+\left[\begin{array}{cc}
+0 & -c \\
+-c & 1 \\
+\end{array}\right]
+$$
+
+$$ A^{-1} =
+\left[\begin{array}{cc}
+0 & \frac{1}{c} \\
+\frac{1}{c} & -\frac{1}{c^2} \\
+\end{array}\right]
+$$
+
+$(A^{-1})^{\mathbf{T}}$:
+
+$$ (A^{-1})^{\mathbf{T}} =
+\left[\begin{array}{cc}
+0 & \frac{1}{c} \\
+\frac{1}{c} & -\frac{1}{c^2} \\
+\end{array}\right] = A^{-1}
+$$
+
+$(A^{\mathbf{T}})^{-1}$:
+
+$$ (A^{\mathbf{T}})^{-1} =
+\frac{1}{(1)(0) - (c)(c)}
+\left[\begin{array}{cc}
+1 & -c \\
+-c & 0 \\
+\end{array}\right]
+$$
+
+$$ (A^{\mathbf{T}})^{-1} =
+-\frac{1}{c^2}
+\left[\begin{array}{cc}
+1 & -c \\
+-c & 0 \\
+\end{array}\right]
+$$
+
+$$ (A^{\mathbf{T}})^{-1} =
+\left[\begin{array}{cc}
+-\frac{1}{c^2} & \frac{1}{c} \\
+\frac{1}{c} & 0 \\
+\end{array}\right]
+$$
+
 2. Verify that $(AB)^{\mathbf{T}}$ equals $B^{\mathbf{T}}A^{\mathbf{T}}$ but
    those are different from $A^{\mathbf{T}}B^{\mathbf{T}}$:
 
@@ -12981,15 +13137,270 @@ $$
 Show also that $AA^{\mathbf{T}}$ is different from $A^{\mathbf{T}}A$. But both
 of those matrices are ____.
 
+_Solution:_
+
+_Verify that $(AB)^{\mathbf{T}}$ equals $B^{\mathbf{T}}A^{\mathbf{T}}$ but those
+are different from $A^{\mathbf{T}}B^{\mathbf{T}}$:_
+
+$$ (AB)^{\mathbf{T}} =
+\left[\begin{array}{cc}
+1 & 2 \\
+3 & 7 \\
+\end{array}\right]
+$$
+
+$$ B^{\mathbf{T}} =
+B =
+\left[\begin{array}{cc}
+1 & 0 \\
+3 & 1 \\
+\end{array}\right]
+$$
+
+$$ A^{\mathbf{T}} =
+\left[\begin{array}{cc}
+1 & 2 \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+$$ B^{\mathbf{T}}A^{\mathbf{T}} =
+\left[\begin{array}{cc}
+1 & 0 \\
+3 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 2 \\
+0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 2 \\
+3 & 7 \\
+\end{array}\right] = (AB)^{\mathbf{T}}
+$$
+
+$$ A^{\mathbf{T}}B^{\mathbf{T}} =
+\left[\begin{array}{cc}
+1 & 2 \\
+0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 0 \\
+3 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+7 & 2 \\
+3 & 1 \\
+\end{array}\right] \neq B^{\mathbf{T}}A^{\mathbf{T}} = (AB)^{\mathbf{T}}
+$$
+
+_Show also that $AA^{\mathbf{T}}$ is different from $A^{\mathbf{T}}A$. But both
+of those matrices are (?):_
+
+$$ AA^{\mathbf{T}} =
+\left[\begin{array}{cc}
+1 & 0 \\
+2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 2 \\
+0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 2 \\
+2 & 5 \\
+\end{array}\right]
+$$
+
+$$ A^{\mathbf{T}}A =
+\left[\begin{array}{cc}
+1 & 2 \\
+0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 0 \\
+2 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+5 & 2 \\
+2 & 1 \\
+\end{array}\right] \neq AA^{\mathbf{T}}
+$$
+
+Both of these matrices are symmetric.
+
 3.
 
 a. The matrix $((AB)^{-1})^{\mathbf{T}}$ comes from $(A^{-1})^{\mathbf{T}}$ and
 $(B^{-1})^{\mathbf{T}}$. _In what order?_
 
+$$ ((AB)^{-1})^{\mathbf{T}} =
+(B^{-1}A^{-1})^{\mathbf{T}} =
+(A^{-1})^{\mathbf{T}}(B^{-1})^{\mathbf{T}}
+$$
+
 b. If $U$ is upper triangular then $(U^{-1})^{\mathbf{T}}$ is ____ triangular.
+
+lower
 
 4. Show that $A^2 = 0$ is possible but $A^{\mathbf{T}}A = 0$ is not possible
    (unless $A =$ zero matrix).
+
+**Proof:**
+
+Suppose that $A$ is any nonzero matrix.
+
+_Proof (that $A^2 = \mathbf{0}$ is possible):_
+
+Let $A$ be generally defined as:
+
+$$ A =
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right]
+$$
+
+Then $A^2$ is:
+
+$$ A^2 =
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right]
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+a^2 + bc & ab + bd \\
+ca + cd & cb + d^2 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+0 & 0 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+Thus, for $A^2 = \mathbf{0}$, it must be true that:
+
+$$
+a^2 + bc = 0 \\
+ca + cd = 0 \\
+ab + bd = 0 \\
+cb + d^2 = 0 \\
+$$
+
+$$
+a^2 = -bc \\
+ca = -cd \\
+ab = -bd \\
+d^2 = -bc \\
+$$
+
+$$
+a^2 = d^2 \\
+a = -d \\
+d^2 = a^2 \\
+$$
+
+For simplicity's sake, let $a = 1, b = -1, c = 1, d= -1$, then:
+
+$$ A^2 =
+\left[\begin{array}{cc}
+(1)^2 + (-1)(1) & (1)(-1) + (-1)(-1) \\
+(1)(1) + (1)(-1) & (1)(-1) + (-1)^2 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+0 & 0 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+Thus $A$ is:
+
+$$ A =
+\left[\begin{array}{cc}
+1 & -1 \\
+1 & -1 \\
+\end{array}\right]
+$$
+
+This is $A^2 = \mathbf{0}$, demonstrating that such an equality is possible.
+
+_Proof ($A^{\mathbf{T}}A = \mathbf{0}$ is not possible):_
+
+Let $A$ be some general matrix defined as such:
+
+$$ A =
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right]
+$$
+
+Then, find $A^{\mathbf{T}}$:
+
+$$ A^{\mathbf{T}} =
+\left[\begin{array}{cc}
+a & c \\
+b & d \\
+\end{array}\right]
+$$
+
+Now find $A^{\mathbf{T}}A$:
+
+$$ A^{\mathbf{T}}A =
+\left[\begin{array}{cc}
+a & c \\
+b & d \\
+\end{array}\right]
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+a^2 + c^2 & ab + cd \\
+ab + cd& b^2 + d^2 \\
+\end{array}\right]
+$$
+
+Suppose each entry of $A^{\mathbf{T}}A = 0$, that is:
+
+$$
+a^2 + c^2 = 0 \\
+ab + cd = 0 \\
+b^2 + d^2 = 0 \\
+$$
+
+To show that $A^{\mathbf{T}}A \neq \mathbf{0}$, a contradiction to these
+equalities must be derived. Evaluation of the equalities follows:
+
+$$
+a^2 + c^2 = 0 \\
+ab + cd = 0 \\
+b^2 + d^2 = 0 \\
+$$
+
+Since $A$ is nonzero, it follows that at least one of the following inequalities
+is true:
+
+$$ a^2 > 0, b^2 > 0, c^2 > 0, d^2 > 0 $$
+
+The above follows since multiplying any nonzero number by itself results in a
+positive number.
+
+Then, by summation, it follows that $a^2 + c^2 > 0$ or $b^2 + d^2 > 0$, which
+contradicts $a^2 + c^2 = 0$ or $b^2 + d^2 = 0$ respectively.
+
+Thus a contradiction to the supposition of the above equalities has been derived
+and thus $A^{\mathbf{T}}A \neq \mathbf{0}$ for any $A \neq \mathbf{0}$.
+
+_Conclusion:_
+
+Since both proofs have been demonstrated, this overall proof has been shown.
+
+Q.E.D.
 
 5.
 
@@ -13007,40 +13418,349 @@ $$ x^{\mathbf{T}}Ay =
 \begin{bmatrix}{}0\\1\\0\end{bmatrix} = \text{(?)}
 $$
 
+_Solution:_
+
+$$ Ay =
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+\end{array}\right]
+\begin{bmatrix}{}0\\1\\0\end{bmatrix} =
+\begin{bmatrix}{}2\\5\end{bmatrix}
+$$
+
+$$ x^{\mathbf{T}}Ay =
+\left[\begin{array}{cc}
+0 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}2\\5\end{bmatrix} = 5
+$$
+
 b. This is the row $x^{\mathbf{T}}A =$ ____ times the column $y = (0, 1, 0)$.
+
+$$ x^{\mathbf{T}}A =
+\left[\begin{array}{cc}
+0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+4 & 5 & 6 \\
+\end{array}\right]
+$$
 
 c. This is the row
 $x^{\mathbf{T}} = \left[\begin{array}{cc}0 & 1 \\\end{array}\right]$ times the
 column $Ay =$ ____.
+
+$$ Ay =
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+\end{array}\right]
+\begin{bmatrix}{}0\\1\\0\end{bmatrix} =
+\begin{bmatrix}{}2\\5\end{bmatrix}
+$$
 
 6. The transpose of a block matrix
    $M = \left[\begin{array}{cc}A & B \\C & D \\\end{array}\right]$ is
    $M^{\mathbf{T}} =$ ____. Test an example. Under what conditions on
    $A, B, C, D$ is the block matrix symmetric?
 
+_Solution:_
+
+$$ M^{\mathbf{T}} =
+\left[\begin{array}{cc}
+A^{\mathbf{T}} & C^{\mathbf{T}} \\
+B^{\mathbf{T}} & D^{\mathbf{T}} \\
+\end{array}\right]
+$$
+
+For $M$ to be symmetric, $M = M^{\mathbf{T}}$, thus for this to be true,
+$A^{\mathbf{T}} = A$, $B^{\mathbf{T}} = C$, $C^{\mathbf{T}} = B$, and
+$D^{\mathbf{T}} = D$.
+
 7. True or false:
 
 a. The block matrix $\left[\begin{array}{cc}0 & A \\A & 0 \\\end{array}\right]$
 is automatically symmetric.
 
+False, call this given block matrix $S$, then for $S$ to be symmetric, the
+equality $S = S^{\mathbf{T}}$ must hold. Consider $S^{\mathbf{T}}$ is:
+
+$$ S^{\mathbf{T}} =
+\left[\begin{array}{cc}
+0 & A^{\mathbf{T}} \\
+A^{\mathbf{T}} & 0 \\
+\end{array}\right]
+$$
+
+Thus when written out explicitly:
+
+$$ S =
+\left[\begin{array}{cc}
+0 & A \\
+A & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+0 & A^{\mathbf{T}} \\
+A^{\mathbf{T}} & 0 \\
+\end{array}\right] = S^{\mathbf{T}}
+$$
+
+So the only way for $S$ to be symmetric is for $A = A^{\mathbf{T}}$ (_i.e._ the
+matrix $A$ must itself be symmetric), which is not automatically the case.
+
 b. If $A$ and $B$ are symmetric then their product $AB$ is symmetric.
+
+False. Not necessarily. Suppose $A$ and $B$ are symmetric, then
+$A = A^{\mathbf{T}}$ and $B = B^{\mathbf{T}}$. Thus the product $AB$ is:
+
+$$ AB = A^{\mathbf{T}}B^{\mathbf{T}} $$
+
+But, for the product $AB$ to be symmetric, it must equal its transpose:
+
+$$ AB = (AB)^{\mathbf{T}} $$
+
+Recall that when "distributed", the transpose reverses the order of the given
+matrices:
+
+$$ AB = (AB)^{\mathbf{T}} = B^{\mathbf{T}}A^{\mathbf{T}} $$
+
+And because matrices are not commutative, it follows that the following
+inequality is potentially true:
+
+$$ AB = A^{\mathbf{T}}B^{\mathbf{T}} \neq B^{\mathbf{T}}A^{\mathbf{T}} = (AB)^{\mathbf{T}} $$
+
+This means that $AB$ is not necessarily symmetric if $A$ and $B$ are symmetric.
+In order for this to be true, it would have to mean that:
+
+$$ AB = BA $$
 
 c. If $A$ is not symmetric then $A^{-1}$ is not symmetric.
 
+Suppose not, that is suppose $A^{-1}$ is symmetric, but $A$ is not symmetric.
+
+A contradiction to this supposition is to be derived.
+
+By the definition of the transpose function on an inverse matrix, this means
+that:
+
+$$ (A^{-1})^{\mathbf{T}} = (A^{\mathbf{T}})^{-1} $$
+
+Since $A^{-1}$ is symmetric, this means that:
+
+$$ A^{-1} = (A^{-1})^{\mathbf{T}} = (A^{\mathbf{T}})^{-1} $$
+
+$$ A^{-1} = (A^{\mathbf{T}})^{-1} $$
+
+If we then take the inverse of both sides, we arrive at:
+
+$$ (A^{-1})^{-1} = ((A^{\mathbf{T}})^{-1})^{-1} $$
+
+$$ A = A^{\mathbf{T}} $$
+
+Since $A = A^{\mathbf{T}}$, this means that $A$ is also symmetric, which
+contradicts the supposition.
+
+Thus the statement is true, that is:
+
+If $A$ is not symmetric, then $A^{-1}$ is not symmetric.
+
 d. When $A, B, C$ are symmetric, the transpose of $ABC$ is $CBA$.
+
+Suppose $A, B, C$ are symmetric matrices.
+
+It is to be shown that the transpose of $ABC$ is $CBA$, or equivalently, that
+$(ABC)^{\mathbf{T}} = CBA$.
+
+By the supposition, since $A, B, C$ are symmetric, it follows by the definition
+of symmetric matrices that:
+
+$$ A = A^{\mathbf{T}}, B = B^{\mathbf{T}}, C = C^{\mathbf{T}} $$
+
+Consider that:
+
+$$ (ABC)^{\mathbf{T}} = C^{\mathbf{T}}B^{\mathbf{T}}A^{\mathbf{T}} $$
+
+and then, by substitution (from the supposition):
+
+$$ (ABC)^{\mathbf{T}} = CBA $$
+
+This is what was to be shown, and the given statement is true.
 
 **Questions 8-15 are about permutation matrices.**
 
 8. Why are there $n!$ permutation matrices of order $n$?
 
+The $1$ in row 1 has $n$ choices, then the $1$ in row 2 has $n - 1$ choices and
+so on, each choice multiplies on the previous, providing the classic
+$(n)(n - 1) \cdots (1) = n!$ pattern.
+
 9. If $P_1$ and $P_2$ are permutation matrices, so is $P_1P_2$. This still has
    the rows of $I$ in some order. Give examples with $P_1P_2 \neq P_2P_1$ and
    $P_3P_4 = P_4P_3$.
+
+_Give examples with $P_1P_2 \neq P_2P_1$:_
+
+Let $P_1$ and $P_2$ be defined as:
+
+$$ P_1 =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ P_2 =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+\end{array}\right]
+$$
+
+Then:
+
+$$ P_1P_2 =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+\end{array}\right]
+$$
+
+And:
+
+$$ P_2P_1 =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+\end{array}\right] \neq
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+\end{array}\right] = P_1P_2
+$$
+
+_and $P_3P_4 = P_4P_3$:_
+
+Let $P_3$ and $P_4$ be defined as follows:
+
+$$ P_3 =
+\left[\begin{array}{cccc}
+0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ P_4 =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0 \\
+\end{array}\right]
+$$
+
+Notice that both $P$'s permute different rows.
+
+Now:
+
+$$ P_3P_4 =
+\left[\begin{array}{cccc}
+0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0 \\
+\end{array}\right]
+$$
+
+And:
+
+$$ P_4P_3 =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0 \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0 \\
+\end{array}\right] = P_3P_4
+$$
 
 10. There are 12 "_even_" permutations of $(1, 2, 3, 4)$ with an _even number of
     exchanges_. Two of them are $(1, 2, 3, 4)$ with no exchanges and
     $(4, 3, 2, 1)$ with two exchanges. List the other ten. Instead 9f writing
     each 4 by 4 matrix, just order the numbers.
+
+_Solution:_
+
+In total (12, including the given two permutations):
+
+$$
+(1, 2, 3, 4) \\
+(2, 1, 3, 4) \to (2, 3, 1, 4) \\
+(2, 1, 3, 4) \to (2, 1, 4, 3) \\
+(2, 1, 3, 4) \to (4, 1, 3, 2) \\
+(3, 2, 1, 4) \to (3, 1, 2, 4) \\
+(3, 2, 1, 4) \to (3, 2, 4, 1) \\
+(3, 2, 1, 4) \to (4, 2, 1, 3) \\
+(4, 2, 3, 1) \to (4, 3, 2, 1) \\
+(1, 3, 2, 4) \to (1, 3, 4, 2) \\
+(1, 3, 2, 4) \to (1, 4, 2, 3) \\
+(1, 4, 3, 2) \to (2, 4, 3, 1) \\
+(1, 4, 3, 2) \to (3, 4, 1, 2) \\
+$$
 
 11. Which permutation makes $PA$ upper triangular? Which permutations make
     $P_1AP_2$ lower triangular? Multiplying $A$ on the right by $P_2$ exchanges
@@ -13054,20 +13774,234 @@ $$ A =
 \end{array}\right]
 $$
 
+_Solution:_
+
+_Which permutation makes $PA$ upper triangular?:_
+
+$$ P =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+\end{array}\right]
+$$
+
+_Which permutations make $P_1AP_2$ lower triangular?:_
+
+$$ P_1 =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+\end{array}\right]
+$$
+
+$$ P_1A =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+0 & 0 & 6 \\
+1 & 2 & 3 \\
+0 & 4 & 5 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+0 & 0 & 6 \\
+0 & 4 & 5 \\
+1 & 2 & 3 \\
+\end{array}\right]
+$$
+
+$$ P_1AP_2 =
+\left[\begin{array}{ccc}
+0 & 0 & 6 \\
+0 & 4 & 5 \\
+1 & 2 & 3 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+6 & 0 & 0 \\
+5 & 4 & 0 \\
+3 & 2 & 1 \\
+\end{array}\right]
+$$
+
+_Multiplying $A$ on the right by $P_2$ exchanges the (?) of $A$:_
+
+columns
+
 12. Explain why the dot product of $x$ and $y$ equals the dot product $Px$ and
     $Py$. Then $(Px)^{\mathbf{T}}(Py) = x^{\mathbf{T}}y$ tells us that
     $P^{\mathbf{T}}P = I$ for any permutation. With $x = (1, 2, 3)$ and
     $y = (1, 4, 2)$ choose $P$ to show that $Px \cdot y$ is not always
     $x \cdot Py$.
 
+_Solution:_
+
+_Explain why the dot product of $x$ and $y$ equals the dot product $Px$ and
+$Py$:_
+
+Consider $x \cdot y = z$, since $Px$ simply reorders the entries in $x$ and $Py$
+reorders the entries in $y$ in the same order that $P$ reordered $x$, it stands
+to reason that the dot product, $Px \cdot Py$, would be the same as $x \cdot y$
+as the summations during evaluation do not change (they are simply done in a
+different order).
+
+_With $x = (1, 2, 3)$ and $y = (1, 4, 2)$ choose $P$ to show that $Px \cdot y$
+is not always $x \cdot Py$:_
+
+$$ P =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ Px =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\2\\3\end{bmatrix} =
+\begin{bmatrix}{}2\\3\\1\end{bmatrix}
+$$
+
+$$ Px \cdot y =
+\begin{bmatrix}{}2\\3\\1\end{bmatrix}
+\begin{bmatrix}{}1\\4\\2\end{bmatrix} = 16
+$$
+
+$$ Py =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\4\\2\end{bmatrix} =
+\begin{bmatrix}{}4\\2\\1\end{bmatrix}
+$$
+
+$$ xPy =
+\begin{bmatrix}{}1\\2\\3\end{bmatrix}
+\begin{bmatrix}{}4\\2\\1\end{bmatrix} = 11 \neq 16 = Px \cdot y
+$$
+
 13.
 
 a. Find a 3 by 3 permutation matrix with $P^3 = I$ (but not $P = I$).
 
+$$ P =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ P^2 =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+\end{array}\right]
+$$
+
+$$ P^3 = (P^2)P =
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] = I
+$$
+
 b. Find a 4 by 4 permutation $\hat{P}$ with $\hat{P}^4 \neq I$.
+
+$$ \hat{P} =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 1 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ \hat{P}^2 =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 1 & 0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 1 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+\end{array}\right]
+$$
+
+$$ \hat{P}^4 = (\hat{P}^2)(\hat{P}^2) =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0\\
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & 1\\
+0 & 1 & 0 & 0\\
+\end{array}\right] \neq I
+$$
 
 14. If $P$ has $1$'s on the antidiagonal form $(1, n)$ to $(n, 1)$, describe
     $PAP$. Note $P = P^{\mathbf{T}}$.
+
+_Solution:_
+
+$P$ swaps reverses the row order of $A$. Then $PAP$ reverses the column order of
+$PA$, a complete reflection of the matrix (not the transpose of $A$).
 
 15. All row exchange matrices are symmetric: $P^{\mathbf{T}} = P$. Then
     $P^{\mathbf{T}}P = I$ becomes $P^2 = I$. Other permutation matrices may or
@@ -13076,7 +14010,18 @@ b. Find a 4 by 4 permutation $\hat{P}$ with $\hat{P}^4 \neq I$.
 a. If $P$ sends row 1 to row 4, then $P^{\mathbf{T}}$ sends row ____ to row
 ____. When $P^{\mathbf{T}} = P$ the row exchanges come in pairs with no overlap.
 
+4 to row 1.
+
 b. Find a 4 by 4 example with $P^{\mathbf{T}} = P$ that moves all four rows.
+
+$$ P =
+\left[\begin{array}{cccc}
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0 \\
+0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+\end{array}\right] = P^{\mathbf{T}}
+$$
 
 **Questions 16-21 are about symmetric matrices and their factorizations.**
 
@@ -13085,37 +14030,117 @@ b. Find a 4 by 4 example with $P^{\mathbf{T}} = P$ that moves all four rows.
 
 a. $A^2 - B^2$
 
+Consider:
+
+$$ (A^2 - B^2)^{\mathbf{T}} = (A^2)^{\mathbf{T}} - (B^2)^{\mathbf{t}} = A^2 - B^2 $$
+
+Since $A^2 - B^2 = (A^2 - B^2)^{\mathbf{T}}$, by the definition of symmetric
+matrices, $A^2 - B^2$ is symmetric.
+
 b. $(A + B)(A - B)$
+
+$$ ((A + B)(A - B))^{\mathbf{T}} $$
+
+$$ = (A - B)^{\mathbf{T}}(A + B)^{\mathbf{T}} $$
+
+$$ = (A^{\mathbf{T}} - B^{\mathbf{T}})(A^{\mathbf{T}} + B^{\mathbf{T}}) $$
+
+$$ = (A - B)(A + B) \neq (A + B)(A - B) $$
+
+This inequality is true since matrix multiplication is not commutative. Thus
+$(A + B)(A - B)$ cannot be determined to be symmetric.
 
 c. $ABA$
 
+$$ (ABA)^{\mathbf{T}} = A^{\mathbf{T}}B^{\mathbf{T}}A^{\mathbf{T}} $$
+
+Note that the switching of the order of matrices still happened here, it just
+turns out its the same order as the original.
+
+$$ (ABA)^{\mathbf{T}} = ABA $$
+
+Thus it can be concluded that $ABA$ is symmetric.
+
 d. $ABAB$
+
+$$ (ABAB)^{\mathbf{T}} = B^{\mathbf{T}}A^{\mathbf{T}}B^{\mathbf{T}}A^{\mathbf{T}} $$
+
+$$ (ABAB)^{\mathbf{T}} = BABA \neq ABAB $$
+
+Thus $ABAB$ cannot be determined to be symmetric.
 
 17. Find 2 by 2 symmetric matrices $S = S^{\mathbf{T}}$ with these properties:
 
 a. $S$ is not invertible.
 
+$$ S =
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 1 \\
+\end{array}\right]
+$$
+
+Since $S$'s determinant is $0$.
+
 b. $S$ is invertible but cannot be factored into $LU$ (row exchanges needed).
+
+$$ S =
+\left[\begin{array}{cc}
+0 & 1 \\
+1 & 1 \\
+\end{array}\right]
+$$
 
 c. $S$ can be factored into $LDL^{\mathbf{T}}$ but not into $LL^{\mathbf{T}}$
 (because of negative $D$).
+
+$$ S =
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 0 \\
+\end{array}\right]
+$$
+
+Notice that after elimination we get a negative coefficient on the last pivot.
 
 18.
 
 a. How many entries of $S$ can be chosen independently, if $S = S^{\mathbf{T}}$
 is 5 by 5?
 
+$$ \binom{5}{2} + 5 = 15 $$
+
+Where $\binom{5}{2}$ is the amount of entries in the lower triangular matrix
+$L$, while $5$ are the entries along the diagonal matrix $D$.
+
 b. How do $L$ and $D$ (still 5 by 5) give the same number of choices in
 $LDL^{\mathbf{T}}$?
 
+$L$ has 10, while $D$ has 5, giving a total of 15 choices in $LDL^{\mathbf{T}}$.
+
 c. How many entries can be chosen if $A$ is _skew-symmetric_?
 ($A^{\mathbf{T}} = -A$).
+
+If $A^{\mathbf{T}} = -A$, then $-A$ is symmetric, and the diagonal is all $0$'s
+(since $a_{ij} = -a_{ij} \Rightarrow a_{ij} = 0$), forcing the amount of choices
+to simply be the upper (or lower) triangular entries, meaning the amount of
+choices is reduced to 10.
 
 19. Suppose $A$ is rectangular ($m$ by $n$) and $S$ is symmetric ($m$ by $m$).
 
 a. Transpose $A^{\mathbf{T}}SA$ to show its symmetry. What shape is this matrix?
 
+$$ (A^{\mathbf{T}}SA)^{\mathbf{T}} = A^{\mathbf{T}}S^{\mathbf{T}}(A^{\mathbf{T}})^{\mathbf{T}} = A^{\mathbf{T}}SA $$
+
+Since $A$ is $m \times n$, it's transpose, $A^{\mathbf{T}}$ is $n \times m$.
+This leaves the dimensions of $A^{\mathbf{T}}S$ as $(n \times m)(m \times m)$
+which means that $A^{\mathbf{T}}S$ is $n \times m$. Then $A^{\mathbf{T}}SA$ is
+$(n \times m)(m \times n)$, meaning $A^{\mathbf{T}}SA$ is $n \times n$. This the
+shape of this matrix.
+
 b. Show why $A^{\mathbf{T}}A$ has no negative numbers on its diagonal.
+
+$$ (A^{\mathbf{T}}A)_{jj} = (\text{column } j \text{ of } A) \cdot (\text{column } j \text{ of } A) \geq 0 $$
 
 20. Factor these symmetric matrices into $S = LDL^{\mathbf{T}}$. The pivot
     matrix $D$ is diagonal:
@@ -13146,6 +14171,304 @@ $$ S =
 \end{array}\right]
 $$
 
+_Solution:_
+
+_First:_
+
+$$ S =
+\left[\begin{array}{cc}
+1 & 3 \\
+3 & 2 \\
+\end{array}\right]
+$$
+
+$$ E_{21} =
+\left[\begin{array}{cc}
+1 & 0 \\
+-3 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{21}S =
+\left[\begin{array}{cc}
+1 & 0 \\
+-3 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 3 \\
+3 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 3 \\
+0 & -7 \\
+\end{array}\right] = U
+$$
+
+$$ L = E_{21}^{-1} =
+\left[\begin{array}{cc}
+1 & 0 \\
+3 & 1 \\
+\end{array}\right]
+$$
+
+$$ L^{\mathbf{T}} =
+\left[\begin{array}{cc}
+1 & 3 \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+$$ D =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & -7 \\
+\end{array}\right]
+$$
+
+$$ DL^{\mathbf{T}} =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & -7 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 3 \\
+0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 3 \\
+0 & -7 \\
+\end{array}\right] = U
+$$
+
+$$ LDL^{\mathbf{T}} =
+\left[\begin{array}{cc}
+1 & 0 \\
+3 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 3 \\
+0 & -7 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 3 \\
+3 & 2 \\
+\end{array}\right] = S
+$$
+
+_Second:_
+
+$$ S =
+\left[\begin{array}{cc}
+1 & b \\
+b & c \\
+\end{array}\right]
+$$
+
+$$ E_{21} =
+\left[\begin{array}{cc}
+1 & 0 \\
+-b & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{21}S =
+\left[\begin{array}{cc}
+1 & 0 \\
+-b & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & b \\
+b & c \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & b \\
+0 & c - b^2 \\
+\end{array}\right] = U
+$$
+
+$$ L = E_{21}^{-1} =
+\left[\begin{array}{cc}
+1 & 0 \\
+b & 1 \\
+\end{array}\right]
+$$
+
+$$ L^{\mathbf{T}} =
+\left[\begin{array}{cc}
+1 & b \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+$$ D =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & c - b^2 \\
+\end{array}\right]
+$$
+
+$$ DL^{\mathbf{T}} =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & c - b^2 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & b \\
+0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & b \\
+0 & c - b^2 \\
+\end{array}\right] = U
+$$
+
+$$ LDL^{\mathbf{T}} =
+\left[\begin{array}{cc}
+1 & 0 \\
+b & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & b \\
+0 & c - b^2 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & b \\
+b & c \\
+\end{array}\right] = S
+$$
+
+_Third:_
+
+$$ S =
+\left[\begin{array}{rrr}
+2 & -1 & 0 \\
+-1 & 2 & -1 \\
+0 & -1 & 2 \\
+\end{array}\right]
+$$
+
+$$ E_{21} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+\frac{1}{2} & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{21}S =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+\frac{1}{2} & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+2 & -1 & 0 \\
+-1 & 2 & -1 \\
+0 & -1 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+2 & -1 & 0 \\
+0 & \frac{3}{2} & -1 \\
+0 & -1 & 2 \\
+\end{array}\right]
+$$
+
+$$ E_{32} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & \frac{2}{3} & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{32}E_{21}S  =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & \frac{2}{3} & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+2 & -1 & 0 \\
+0 & \frac{3}{2} & -1 \\
+0 & -1 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+2 & -1 & 0 \\
+0 & \frac{3}{2} & -1 \\
+0 & 0 & \frac{4}{3} \\
+\end{array}\right] = U
+$$
+
+$$ L = E_{21}^{-1}E_{32}^{-1} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-\frac{1}{2} & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -\frac{2}{3} & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-\frac{1}{2} & 1 & 0 \\
+0 & -\frac{2}{3} & 1 \\
+\end{array}\right]
+$$
+
+$$ L^{\mathbf{T}} =
+\left[\begin{array}{rrr}
+1 & -\frac{1}{2} & 0 \\
+0 & 1 & -\frac{2}{3} \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ D =
+\left[\begin{array}{rrr}
+2 & 0 & 0 \\
+0 & \frac{3}{2} & 0 \\
+0 & 0 & \frac{4}{3} \\
+\end{array}\right]
+$$
+
+$$ DL^{\mathbf{T}} =
+\left[\begin{array}{rrr}
+2 & 0 & 0 \\
+0 & \frac{3}{2} & 0 \\
+0 & 0 & \frac{4}{3} \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & -\frac{1}{2} & 0 \\
+0 & 1 & -\frac{2}{3} \\
+0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+2 & -1 & 0 \\
+0 & \frac{3}{2} & -1 \\
+0 & 0 & \frac{4}{3} \\
+\end{array}\right] = U
+$$
+
+$$ LDL^{\mathbf{T}} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-\frac{1}{2} & 1 & 0 \\
+0 & -\frac{2}{3} & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+2 & -1 & 0 \\
+0 & \frac{3}{2} & -1 \\
+0 & 0 & \frac{4}{3} \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+2 & -1 & 0 \\
+-1 & 2 & -1 \\
+0 & -1 & 2 \\
+\end{array}\right] = S
+$$
+
 21. After elimination clears out column 1 below the first pivot, find the
     symmetric 2 by 2 matrix that appears in the lower right corner:
 
@@ -13166,6 +14489,151 @@ $$ S =
 1 & b & c \\
 b & d & e \\
 c & e & f \\
+\end{array}\right]
+$$
+
+_Solution:_
+
+_First:_
+
+$$ S =
+\left[\begin{array}{ccc}
+2 & 4 & 8 \\
+4 & 3 & 9 \\
+8 & 9 & 0 \\
+\end{array}\right]
+$$
+
+$$ E_{21} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-2 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{21}S =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-2 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+2 & 4 & 8 \\
+4 & 3 & 9 \\
+8 & 9 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+2 & 4 & 8 \\
+0 & -5 & -7 \\
+8 & 9 & 0 \\
+\end{array}\right]
+$$
+
+$$ E_{31} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-4 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{31}E_{21}S =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-4 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+2 & 4 & 8 \\
+0 & -5 & -7 \\
+8 & 9 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+2 & 4 & 8 \\
+0 & -5 & -7 \\
+0 & -7 & -32 \\
+\end{array}\right]
+$$
+
+Elimination has cleared out column 1 from the first pivot at this point, so the
+symmetric 2 by 2 matrix that appears in the lower right corner is:
+
+$$
+\left[\begin{array}{rr}
+-5 & -7 \\
+-7 & -32 \\
+\end{array}\right]
+$$
+
+_Second:_
+
+$$ S =
+\left[\begin{array}{ccc}
+1 & b & c \\
+b & d & e \\
+c & e & f \\
+\end{array}\right]
+$$
+
+$$ E_{21} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-b & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{21}S =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-b & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & b & c \\
+b & d & e \\
+c & e & f \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & b & c \\
+0 & d - b^2 & e - bc \\
+c & e & f \\
+\end{array}\right]
+$$
+
+$$ E_{31} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-c & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{31}E_{21}S =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-c & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & b & c \\
+0 & d - b^2 & e - bc \\
+c & e & f \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & b & c \\
+0 & d - b^2 & e - bc \\
+0 & e - bc & f - c^2 \\
+\end{array}\right]
+$$
+
+So our symmetric 2 by 2 matrix that appears in the lower right corner is:
+
+$$
+\left[\begin{array}{cc}
+d - b^2 & e - bc \\
+e - bc & f - c^2 \\
 \end{array}\right]
 $$
 
@@ -13191,9 +14659,298 @@ $$ A =
 \end{array}\right]
 $$
 
+_Solution:_
+
+_First:_
+
+$$ A =
+\left[\begin{array}{ccc}
+0 & 1 & 1 \\
+1 & 0 & 1 \\
+2 & 3 & 4 \\
+\end{array}\right]
+$$
+
+$$ P_{13} =
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ P_{13}A =
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+0 & 1 & 1 \\
+1 & 0 & 1 \\
+2 & 3 & 4 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+2 & 3 & 4 \\
+1 & 0 & 1 \\
+0 & 1 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{21} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-\frac{1}{2} & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{21}P_{13}A =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-\frac{1}{2} & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+2 & 3 & 4 \\
+1 & 0 & 1 \\
+0 & 1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+2 & 3 & 4 \\
+0 & -\frac{3}{2} & -1 \\
+0 & 1 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{32} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & \frac{2}{3} & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{32}E_{21}P_{13}A =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & \frac{2}{3} & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+2 & 3 & 4 \\
+0 & -\frac{3}{2} & -1 \\
+0 & 1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+2 & 3 & 4 \\
+0 & -\frac{3}{2} & -1 \\
+0 & 0 & \frac{1}{3} \\
+\end{array}\right] = U
+$$
+
+$$ L = E_{21}^{-1}E_{32}^{-1} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+\frac{1}{2} & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -\frac{2}{3} & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+\frac{1}{2} & 1 & 0 \\
+0 & -\frac{2}{3} & 1 \\
+\end{array}\right]
+$$
+
+$$ LU =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+\frac{1}{2} & 1 & 0 \\
+0 & -\frac{2}{3} & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+2 & 3 & 4 \\
+0 & -\frac{3}{2} & -1 \\
+0 & 0 & \frac{1}{3} \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+2 & 3 & 4 \\
+1 & 0 & 1 \\
+0 & 1 & 1 \\
+\end{array}\right] = P_{13}A
+$$
+
+_Second:_
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 2 & 0 \\
+2 & 4 & 1 \\
+1 & 1 & 1 \\
+\end{array}\right]
+$$
+
+$$ P_{12} =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ P_{12}A =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 2 & 0 \\
+2 & 4 & 1 \\
+1 & 1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+2 & 4 & 1 \\
+1 & 2 & 0 \\
+1 & 1 & 1 \\
+\end{array}\right]
+$$
+
+$$ P_{23} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+\end{array}\right]
+$$
+
+$$ P_{23}P_{12}A =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+2 & 4 & 1 \\
+1 & 2 & 0 \\
+1 & 1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+2 & 4 & 1 \\
+1 & 1 & 1 \\
+1 & 2 & 0 \\
+\end{array}\right]
+$$
+
+$$ E_{21} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-\frac{1}{2} & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{21}P_{23}P_{12}A =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-\frac{1}{2} & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+2 & 4 & 1 \\
+1 & 1 & 1 \\
+1 & 2 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+2 & 4 & 1 \\
+0 & -1 & \frac{1}{2} \\
+1 & 2 & 0 \\
+\end{array}\right]
+$$
+
+$$ E_{31} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-\frac{1}{2} & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{31}E_{21}P_{23}P_{12}A =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-\frac{1}{2} & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+2 & 4 & 1 \\
+0 & -1 & \frac{1}{2} \\
+1 & 2 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+2 & 4 & 1 \\
+0 & -1 & \frac{1}{2} \\
+0 & 0 & -\frac{1}{2} \\
+\end{array}\right] = U
+$$
+
+$$ L = E_{21}^{-1}E_{31}^{-1} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+\frac{1}{2} & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+\frac{1}{2} & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+\frac{1}{2} & 1 & 0 \\
+\frac{1}{2} & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ LU =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+\frac{1}{2} & 1 & 0 \\
+\frac{1}{2} & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+2 & 4 & 1 \\
+0 & -1 & \frac{1}{2} \\
+0 & 0 & -\frac{1}{2} \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+2 & 4 & 1 \\
+1 & 1 & 1 \\
+1 & 2 & 0 \\
+\end{array}\right] = P_{23}P_{12}A
+$$
+
 23. Find a 4 by 4 permutation matrix (call it $A$) that needs 3 row exchanges to
     reach the end of elimination. For this matrix, what are its factors $P, L$,
     and $U$?
+
+_Solution:_
+
+$$ A =
+\left[\begin{array}{cccc}
+0 & 0 & 0 & 1 \\
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+\end{array}\right] = P
+$$
+
+$$ L = U = I $$
 
 24. Factor the following matrix into $PA = LU$. Factor it also into
     $A = L_1P_1U_1$ (hold the exchange of row 3 until 3 times row 1 is
@@ -13207,8 +14964,275 @@ $$ A =
 \end{array}\right]
 $$
 
+_Solution:_
+
+_Factor the following matrix into $PA = LU$:_
+
+$$ A =
+\left[\begin{array}{ccc}
+0 & 1 & 2 \\
+0 & 3 & 8 \\
+2 & 1 & 1 \\
+\end{array}\right]
+$$
+
+$$ P_{13} =
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ P_{13}A =
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+0 & 1 & 2 \\
+0 & 3 & 8 \\
+2 & 1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+2 & 1 & 1 \\
+0 & 3 & 8 \\
+0 & 1 & 2 \\
+\end{array}\right]
+$$
+
+$$ E_{32} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -\frac{1}{3} & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{32}P_{13}A =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -\frac{1}{3} & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+2 & 1 & 1 \\
+0 & 3 & 8 \\
+0 & 1 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+2 & 1 & 1 \\
+0 & 3 & 8 \\
+0 & 0 & -\frac{2}{3} \\
+\end{array}\right] = U
+$$
+
+$$ L = E_{32}^{-1} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & \frac{1}{3} & 1 \\
+\end{array}\right]
+$$
+
+$$ LU =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & \frac{1}{3} & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+2 & 1 & 1 \\
+0 & 3 & 8 \\
+0 & 0 & -\frac{2}{3} \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+2 & 1 & 1 \\
+0 & 3 & 8 \\
+0 & 1 & 2 \\
+\end{array}\right] = P_{13}A
+$$
+
+_Factor it also into $A = L_1P_1U_1$:_
+
+$$ A =
+\left[\begin{array}{ccc}
+0 & 1 & 2 \\
+0 & 3 & 8 \\
+2 & 1 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{21} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-3 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{21}A =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-3 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+0 & 1 & 2 \\
+0 & 3 & 8 \\
+2 & 1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+0 & 1 & 2 \\
+0 & 0 & 2 \\
+2 & 1 & 1 \\
+\end{array}\right]
+$$
+
+$$ P_{13} =
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ P_{13}E_{21}A =
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+0 & 1 & 2 \\
+0 & 0 & 2 \\
+2 & 1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+2 & 1 & 1 \\
+0 & 0 & 2 \\
+0 & 1 & 2 \\
+\end{array}\right]
+$$
+
+$$ P_{23} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+\end{array}\right]
+$$
+
+$$ P_{23}P_{13}E_{21}A =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+2 & 1 & 1 \\
+0 & 0 & 2 \\
+0 & 1 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+2 & 1 & 1 \\
+0 & 1 & 2 \\
+0 & 0 & 2 \\
+\end{array}\right] = U = U_1
+$$
+
+$$ L_1 = E_{21}^{-1} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+3 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ P_1 = P_{13}P_{23} =
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ P_1U_1 =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+2 & 1 & 1 \\
+0 & 1 & 2 \\
+0 & 0 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+0 & 1 & 2 \\
+0 & 0 & 2 \\
+2 & 1 & 1 \\
+\end{array}\right]
+$$
+
+$$ L_1P_1U_1 =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+3 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+0 & 1 & 2 \\
+0 & 0 & 2 \\
+2 & 1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+0 & 1 & 2 \\
+0 & 3 & 8 \\
+2 & 1 & 1 \\
+\end{array}\right] = A
+$$
+
 25. Prove that the identity matrix cannot be the product of three row exchanges
     (or five). It can be the product of two exchanges (or four).
+
+**Proof:**
+
+It is to be shown that the identity matrix $I$ cannot be the product of an odd
+number of row exchanges, but can be the product of an even number of exchanges.
+
+Recall that each row exchange multiplies the determinant of a matrix by $-1$.
+This follows from the properties of the determinant: swapping any two rows
+negates it.
+
+The determinant of the identity matrix is $\det(I) = 1$.
+
+Suppose we apply $k$ row exchanges to $I$, starting from $I$ itself (which has
+determinant $1$). Each exchange multiplies the determinant by $-1$, so after $k$
+exchanges the determinant is $(-1)^k$.
+
+For the result to equal $I$, the determinant must equal $1$, so we need:
+
+$$ (-1)^k = 1 $$
+
+This holds if and only if $k$ is even.
+
+Therefore, the product of an odd number of row exchanges ($k = 1, 3, 5, \dots$)
+gives determinant $-1 \neq 1$, and so cannot equal $I$. The product of an even
+number ($k = 2, 4, \dots$) gives determinant $1$, consistent with equaling $I$.
+
+Q.E.D.
 
 26.
 
@@ -13233,15 +15257,226 @@ $$ D =
 \end{array}\right]
 $$
 
+_Solution:_
+
+_Choose $E_{21}$ to remove the $3$ below the first pivot:_
+
+$$ E_{21} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-3 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+_Then multiply $E_{21}SE_{21}^{\mathbf{T}}$ to remove both $3$'s:_
+
+$$ E_{21}^{\mathbf{T}} =
+\left[\begin{array}{rrr}
+1 & -3 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ SE_{21}^{\mathbf{T}} =
+\left[\begin{array}{rrr}
+1 & 3 & 0 \\
+3 & 11 & 4 \\
+0 & 4 & 9 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & -3 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+3 & 2 & 4 \\
+0 & 4 & 9 \\
+\end{array}\right]
+$$
+
+$$ E_{21}SE_{21}^{\mathbf{T}} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-3 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+3 & 2 & 4 \\
+0 & 4 & 9 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 2 & 4 \\
+0 & 4 & 9 \\
+\end{array}\right]
+$$
+
 b. Choose $E_{32}$ to remove the $4$ below the second pivot. Then $S$ is reduced
 to $D$ by $E_{32}E_{21}SE_{21}^{\mathbf{T}}E_{32}^{\mathbf{T}} = D$. Invert the
 $E$'s to find $L$ in $S = LDL^{\mathbf{T}}$.
 
+_Solution:_
+
+_Choose $E_{32}$ to remove the $4$ below the second pivot:_
+
+$$ E_{21}SE_{21}^{\mathbf{T}} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 2 & 4 \\
+0 & 4 & 9 \\
+\end{array}\right]
+$$
+
+$$ E_{32} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -2 & 1 \\
+\end{array}\right]
+$$
+
+_Then $S$ is reduced to $D$ by
+$E_{32}E_{21}SE_{21}^{\mathbf{T}}E_{32}^{\mathbf{T}} = D$:_
+
+$$ E_{32}^{\mathbf{T}} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & -2 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{21}SE_{21}^{\mathbf{T}}E_{32}^{\mathbf{T}} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 2 & 4 \\
+0 & 4 & 9 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & -2 \\
+0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 2 & 0 \\
+0 & 4 & 9 \\
+\end{array}\right]
+$$
+
+$$ E_{32}E_{21}SE_{21}^{\mathbf{T}}E_{32}^{\mathbf{T}} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 2 & 0 \\
+0 & 4 & 9 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 2 & 0 \\
+0 & 0 & 9 \\
+\end{array}\right] = D \text{?}
+$$
+
+_Invert the $E$'s to find $L$ in $S = LDL^{\mathbf{T}}$:_
+
+$$ L = E_{21}^{-1}E_{32}^{-1} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+3 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 2 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+3 & 1 & 0 \\
+0 & 2 & 1 \\
+\end{array}\right]
+$$
+
+$$ L^{\mathbf{T}} =
+\left[\begin{array}{rrr}
+1 & 3 & 0 \\
+0 & 1 & 2 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ DL^{\mathbf{T}} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 2 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 3 & 0 \\
+0 & 1 & 2 \\
+0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 3 & 0 \\
+0 & 2 & 4 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ LDL^{\mathbf{T}} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+3 & 1 & 0 \\
+0 & 2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 3 & 0 \\
+0 & 2 & 4 \\
+0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 3 & 0 \\
+3 & 11 & 4 \\
+0 & 4 & 9 \\
+\end{array}\right] = S
+$$
+
 27. If every row of a 4 by 4 matrix contains the numbers $0, 1, 2, 3$ in some
     order, can the matrix be symmetric?
 
+_Solution:_
+
+$$ A =
+\left[\begin{array}{cccc}
+0 & 1 & 2 & 3 \\
+1 & 2 & 3 & 0 \\
+2 & 3 & 0 & 1 \\
+3 & 0 & 1 & 2 \\
+\end{array}\right]
+$$
+
+$$ A^{\mathbf{T}} =
+\left[\begin{array}{cccc}
+0 & 1 & 2 & 3 \\
+1 & 2 & 3 & 0 \\
+2 & 3 & 0 & 1 \\
+3 & 0 & 1 & 2 \\
+\end{array}\right] = A
+$$
+
 28. Prove that no reordering of rows and reordering of columns can transpose a
     typical matrix. (Watch the diagonal entries.)
+
+Omitted.
 
 **The next three questions are about applications of the identity
 $(Ax)^{\mathbf{T}}y = x^{\mathbf{T}}(A^{\mathbf{T}}y)$.**
@@ -13265,8 +15500,71 @@ $$
 
 a. Find the total currents $A^{\mathbf{T}}y$ out of the three cities.
 
+_Solution:_
+
+$$ A^{\mathbf{T}} =
+\left[\begin{array}{rrr}
+1 & 0 & 1 \\
+-1 & 1 & 0 \\
+0 & -1 & -1 \\
+\end{array}\right]
+$$
+
+$$ A^{\mathbf{T}}y =
+\left[\begin{array}{rrr}
+1 & 0 & 1 \\
+-1 & 1 & 0 \\
+0 & -1 & -1 \\
+\end{array}\right]
+\begin{bmatrix}{}y_{BC}\\y_{CS}\\y_{BS}\end{bmatrix} =
+\begin{bmatrix}{}y_{BC} + y_{BS}\\y_{CS} - y_{BC}\\-y_{CS} - y_{BS}\end{bmatrix}
+$$
+
 b. Verify that $(Ax)^{\mathbf{T}}y$ agrees with
 $x^{\mathbf{T}}(A^{\mathbf{T}}y)$ - six terms in both.
+
+$$ Ax =
+\left[\begin{array}{rrr}
+1 & -1 & 0 \\
+0 & 1 & -1 \\
+1 & 0 & -1 \\
+\end{array}\right]
+\begin{bmatrix}{}x_B\\x_C\\x_S\end{bmatrix} =
+\begin{bmatrix}{}x_B -x_C\\x_C - x_S\\x_B - x_S\end{bmatrix}
+$$
+
+$$ (Ax)^{\mathbf{T}} =
+\left[\begin{array}{ccc}
+x_B - x_C & x_C - x_S & x_B - x_S \\
+\end{array}\right]
+$$
+
+$$ (Ax)^{\mathbf{T}}y =
+\left[\begin{array}{ccc}
+x_B - x_C & x_C - x_S & x_B - x_S \\
+\end{array}\right]
+\begin{bmatrix}{}y_{BC}\\y_{CS}\\y_{BS}\end{bmatrix} =  (x_B - x_C)(y_{BC}) + (x_C - x_S)(y_{CS}) + (x_B - x_S)(y_{BS})
+$$
+
+$$ = x_By_{BC} - x_Cy_{BC} + x_Cy_{CS} - x_Sy_{CS} + x_By_{BS} - x_Sy_{BS} $$
+
+$$ x^{\mathbf{T}} =
+\left[\begin{array}{ccc}
+x_B & x_C & x_S \\
+\end{array}\right]
+$$
+
+$$ x^{\mathbf{T}}(A^{T}y) =
+\left[\begin{array}{ccc}
+x_B & x_C & x_S \\
+\end{array}\right]
+\begin{bmatrix}{}y_{BC} + y_{BS}\\y_{CS} - y_{BC}\\-y_{CS} - y_{BS}\end{bmatrix} =
+x_B(y_{BC} + y_{BS}) + x_C(y_{CS} - y_{BC}) + x_S(-y_{CS} - y_{BS})
+$$
+
+$$ = x_By_{BC} + x_By_{BS} + x_Cy_{CS} - x_Cy_{BC} - x_Sy_{CS} - x_Sy_{BS} $$
+
+Careful inspection shows that these are the same six terms.
 
 30. Producing $x_1$ trucks and $x_2$ planes needs $x_1 + 50x_2$ tons of steel,
     $40x_1 + 1000x_2$ pounds of rubber, and $2x_1 + 50x_2$ months of labor. If
@@ -13274,18 +15572,217 @@ $x^{\mathbf{T}}(A^{\mathbf{T}}y)$ - six terms in both.
     month, what are the values of one truck and one plane? Those are the
     components of $A^{\mathbf{T}}y$.
 
+_Solution:_
+
+Let $A$ be the matrix representing the resources necessary:
+
+$$ A =
+\left[\begin{array}{cc}
+1 & 50 \\
+40 & 1000 \\
+2 & 50 \\
+\end{array}\right]
+$$
+
+$$ A^{\mathbf{T}} =
+\left[\begin{array}{ccc}
+1 & 40 & 2 \\
+50 & 1000 & 50 \\
+\end{array}\right]
+$$
+
+Now, let $y$ be a vector that represents that costs, where $y_1$ represents the
+costs per ton of steel, $y_2$ represents the costs per pound of rubber, and
+$y_3$ represents the costs per month of labor.
+
+$$ y =
+\begin{bmatrix}{}700\\3\\3000\end{bmatrix}
+$$
+
+The aim is to find the value of one truck and one plane. Strang gives us the
+formula for finding it as $A^{\mathbf{T}}y$, let's see what happens:
+
+$$ A^{\mathbf{T}} =
+\left[\begin{array}{ccc}
+1 & 40 & 2 \\
+50 & 1000 & 50 \\
+\end{array}\right]
+$$
+
+$$ A^{\mathbf{T}}y =
+\left[\begin{array}{ccc}
+1 & 40 & 2 \\
+50 & 1000 & 50 \\
+\end{array}\right]
+\begin{bmatrix}{}700\\3\\3000\end{bmatrix} =
+\begin{bmatrix}{}6820\\188000\end{bmatrix}
+$$
+
+Presumably, the cost for a single truck is $6,820. The cost for a single plane
+is $188,000.
+
 31. $Ax$ gives the amount of steel, rubber, and labor to produce $x$ in
     Problem 31. Find $A$. Then $Ax \cdot y$ is the ____ of inputs while
     $x \cdot A^{\mathbf{T}}y$ is the value of ____.
+
+_Solution:_
+
+_Find $A$:_
+
+$$ A =
+\left[\begin{array}{cc}
+1 & 50 \\
+40 & 1000 \\
+2 & 50 \\
+\end{array}\right]
+$$
+
+_Then $Ax \cdot y$ is the (?) of inputs:_
+
+cost
+
+_while $x \cdot A^{\mathbf{T}}y$ is the value of (?):_
+
+outputs/units produced (_cost_ of total units produced)
 
 32. The matrix $P$ that multiplies $(x, y, z)$ to give $(z, x, y)$ is also a
     rotation matrix. Find $P$ and $P^3$. The rotation axis $a = (1, 1, 1)$
     doesn't move, it equals $Pa$. What is the angle of rotation from
     $v = (2, 3, -5)$ to $Pv = (-5, 2, 3)$?
 
+_Solution:_
+
+_Find $P$ and $P^3$:_
+
+$$ P =
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+\end{array}\right]
+$$
+
+$$ Px =
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+\end{array}\right]
+\begin{bmatrix}{}x\\y\\z\end{bmatrix} =
+\begin{bmatrix}{}z\\x\\y\end{bmatrix}
+$$
+
+$$ P^2 =
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ P^3 = (P^2)P =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] = I
+$$
+
+_What is the angle of rotation from $v = (2, 3, -5)$ to $Pv = (-5, 2, 3)$?:_
+
+Thinking on this, if $P^3 = I$, this means that after $P^3$ is applied to the
+given vector, it returns that vector to its original position, _i.e._
+$360\degree$. However, since we are applying $P$, not $P^3$, it stands to reason
+that $P$ rotates the given vector $\dfrac{360}{3}\degree = 120\degree$.
+
 33. Write $A = \left[\begin{array}{cc}1 & 2 \\4 & 9 \\\end{array}\right]$ as the
     product $ES$ of an elementary row operation matrix $E$ and a symmetric
     matrix $S$.
+
+_Solution:_
+
+An elementary matrix is an elimination matrix, but in this case the resulting
+$U$ must be symmetric. To do so, we must choose an $E$ such that it results in a
+symmetric $U$. Considering our simple $A$, we can simply try to get a $2$ in the
+$A_{21}$ position, since $A_{12} = 2$.
+
+$$ A =
+\left[\begin{array}{cc}
+1 & 2 \\
+4 & 9 \\
+\end{array}\right]
+$$
+
+$$ E_{21} =
+\left[\begin{array}{cc}
+1 & 0 \\
+-2 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{21}A =
+\left[\begin{array}{cc}
+1 & 0 \\
+-2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 2 \\
+4 & 9 \\
+\end{array}\right] =
+\left[\begin{array}{rr}
+1 & 2 \\
+2 & 5 \\
+\end{array}\right] = U
+$$
+
+There, now our $U$ is symmetric. We are now tasked as expressing this as
+$A = ES$. Since $U$ is symmetric, simply let $S = U$ and since $E_{21}$ has
+accomplished the goal of only eliminating enough to get $S$ after $AE$ has been
+computed, let us say that $E = E_{21}^{-1}$:
+
+$$ E_{21}^{-1} =
+\left[\begin{array}{cc}
+1 & 0 \\
+2 & 1 \\
+\end{array}\right] = E
+$$
+
+$$ ES =
+\left[\begin{array}{cc}
+1 & 0 \\
+2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rr}
+1 & 2 \\
+2 & 5 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 2 \\
+4 & 9 \\
+\end{array}\right] = A
+$$
+
+This is what was to be shown.
 
 34. Here is a new factorization of A$ into $LS$: _triangular_ (with $1$'s)
     _times symmetric_:
@@ -13296,6 +15793,8 @@ $S = U^{\mathbf{T}}DU$.
 Why is $L(U^{\mathbf{T}})^{-1}$ triangular? Its diagonal is all $1$'s. Why is
 $U^{\mathbf{T}}DU$ symmetric?
 
+Omitted.
+
 35. A _group_ of matrices includes $AB$ and $A^{-1}$ if it includes $A$ and $B$.
     "Products and inverses stay in the group." Which of these sets are groups?
 
@@ -13303,3 +15802,5 @@ Lower triangular matrices $L$ with $1$'s on the diagonal, symmetric matrices
 $S$, positive matrices $M$, diagonal invertible matrices $D$, permutation
 matrices $P$, matrices with $Q^{\mathbf{T}} = Q^{-1}$. _Invent two more matrix
 groups._
+
+Omitted.

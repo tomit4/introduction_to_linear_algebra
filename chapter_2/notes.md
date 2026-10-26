@@ -542,3 +542,76 @@ Page 126
 
 7. If $A$ is invertible then a permutation $P$ will reorder its rows for
    $PA = LU$.
+
+---
+
+Page 128
+
+**2.7 C**
+
+For a rectangular $A$, this _saddle-point matrix_ $S$ is symmetric and
+important:
+
+**Block matrix from least squares**
+
+$$ S =
+\left[\begin{array}{cc}
+I & A \\
+A^{\mathbf{T}} & \mathbf{0} \\
+\end{array}\right] =
+S^{\mathbf{T}} \text{ has size } m + n
+$$
+
+Apply block elimination to find a **block factorization**
+$S = LDL^{\mathbf{T}}$. Then test invertibility:
+
+$$ S \textit{ is invertible } \Leftrightarrow A^{\mathbf{T}}A \textit{ is invertible } \Leftrightarrow Ax \neq \mathbf{0} \textit{ whenever } x \neq \mathbf{0} $$
+
+**Solution**
+
+The first block pivot is $I$. Subtract $A^{\mathbf{T}}$ times row 1 from row 2:
+
+**Block elimination**
+
+$$ S =
+\left[\begin{array}{cc}
+I & A \\
+A^{\mathbf{T}} & \mathbf{0} \\
+\end{array}\right] \text{ goes to }
+\left[\begin{array}{cc}
+I & A \\
+\mathbf{0} & -A^{\mathbf{T}}A \\
+\end{array}\right] \text{ This is } U
+$$
+
+The block pivot matrix $D$ contains $I$ and $-A^{\mathbf{T}}A$. Then $L$ and
+$L^{\mathbf{T}}$ contain $A^{\mathbf{T}}$ and $A$:
+
+**Block factorization**
+
+$$ S = LDL^{\mathbf{T}} =
+\left[\begin{array}{cc}
+I & \mathbf{0} \\
+A^{\mathbf{T}} & I \\
+\end{array}\right]
+\left[\begin{array}{cc}
+I & \mathbf{0} \\
+\mathbf{0} & -A^{\mathbf{T}}A \\
+\end{array}\right]
+\left[\begin{array}{cc}
+I & A \\
+\mathbf{0} & I \\
+\end{array}\right]
+$$
+
+$L$ is certainly invertible, with diagonal $1$'s. The inverse of the middle
+matrix involves $(A^{\mathbf{T}}A)^{-1}$. Section 4.2 answers a key question
+about the matrix $A^{\mathbf{T}}A$:
+
+**When is $A^{\mathbf{T}}A$ invertible?**
+
+_Answer:_
+
+$A$ must have independent columns. Then $Ax = \mathbf{0}$ only if
+$x = \mathbf{0}$. Otherwise $Ax = \mathbf{0}$ will lead to
+$A^{\mathbf{T}}Ax = \mathbf{0}$.
