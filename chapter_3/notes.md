@@ -144,3 +144,68 @@ Page 140
 $$ C(A) = \textbf{all combinations of the columns } = \textbf{ all vectors } Ax $$
 
 ---
+
+Page 146
+
+## 3.2 The Nullspace of $A$: Solving $Ax = 0$ and $Rx = 0$
+
+---
+
+Page 146
+
+1. The **nullspace** $N(A)$ in $\R^n$ contains all solutions $x$ to
+   $Ax = \mathbf{0}$. This includes $x = \mathbf{0}$.
+
+2. Elimination (from $A$ to $U$ to $R$) does not change the nullspace:
+   $N(A) = N(U) = N(R)$.
+
+3. The **reduced row echelon form** $R = \text{rref}(A)$ has all pivots $= 1$,
+   with zeros above and below.
+
+4. If column $j$ of $R$ is free (no pivot), there is a "_special solution_" to
+   $Ax = \mathbf{0}$ with $x_j = 1$.
+
+5. Number of pivots = number of nonzero rows in $R = \textbf{rank} r$. There are
+   $n - r$ free columns.
+
+6. Every matrix with $m < n$ has nonzero solutions to $Ax = \mathbf{0}$ in its
+   nullspace.
+
+---
+
+Page 146
+
+The nullspace $N(A)$ consists of all solutions to $Ax = \mathbf{0}$. These
+vectors $x$ are in $\R^n$.
+
+---
+
+Page 150
+
+**DEFINITION OF RANK**
+
+The rank of $A$ is the number of pivots. This number is $r$.
+
+---
+
+Page 152
+
+**REVIEW OF THE KEY IDEAS**
+
+1. The nullspace $N(A)$ is a subspace of $\R^n$. It contains all solutions to
+   $Ax = \mathbf{0}$.
+
+2. Elimination on $A$ produces a row reduced $R$ with pivot columns and free
+   columns.
+
+3. Every free column leads to a special solution. That free variable is $1$, the
+   others are $0$.
+
+4. The _rank_ $r$ of $A$ is the number of pivots. All pivots are $1$'s in
+   $R = \text{rref}(A)$.
+
+5. The complete solution to $Ax = \mathbf{0}$ is a combination of the $n -
+   special solutions.
+
+6. $A$ always has a free column if $n > m$, giving a _nonzesro solution_ to
+   $Ax = \mathbf{0}$.
