@@ -1365,3 +1365,560 @@ Here, $C(A)$ spans a line through $(1, 1, 0)$.
 _Solution:_
 
 $\R^9$
+
+---
+
+Page 153
+
+## Problem Set 3.2
+
+1. Reduce $A$ and $B$ to their triangular echelon forms $U$. Which variables are
+   free?
+
+a.
+
+$$ A =
+\left[\begin{array}{ccccc}
+1 & 2 & 2 & 4 & 6 \\
+1 & 2 & 3 & 6 & 9 \\
+0 & 0 & 1 & 2 & 3 \\
+\end{array}\right]
+$$
+
+b.
+
+$$ B =
+\left[\begin{array}{ccc}
+2 & 4 & 2 \\
+0 & 4 & 4 \\
+0 & 8 & 8 \\
+\end{array}\right]
+$$
+
+2. For the matrices in Problem 1, find a special solution for each free
+   variable. (Set the free variable to $1$. Set the other free variables to
+   zero.)
+
+3. By further row operations on each $U$ in Problem 1, find the reduced echelon
+   form $R$. _True or flase with a reason:_ The nullspace of $R$ equals the
+   nullspace of $U$.
+
+4. For the same $A$ and $B$, find the special solutions to $Ax = \mathbf{0}$ and
+   $Bx = \mathbf{0}$. For an $m$ by $n$ matrix, the number of pivot variables
+   plus the number of free variables is ____. This is the **Counting Theorem:**
+   $r + (n - r) = n$.
+
+a.
+
+$$ A =
+\left[\begin{array}{rrr}
+-1 & 3 & 5 \\
+-2 & 6 & 10 \\
+\end{array}\right]
+$$
+
+b.
+
+$$ B =
+\left[\begin{array}{rrr}
+-1 & 3 & 5 \\
+-2 & 6 & 7 \\
+\end{array}\right]
+$$
+
+**Questions 5-14 are about free variables and pivot variables.**
+
+5. True or false (with reason if true or example to show it is false):
+
+a. A square matrix has no free variables.
+
+b. An invertible matrix has no free variables.
+
+c. An $m$ by $n$ matrix has no more than $n$ pivot variables.
+
+d. An $m$ by $n$ matrix has no more than $m$ pivot variables.
+
+6. Put as many $1$'s as possible in a 4 by 7 echelon matrix $U$ whose pivot
+   columns are
+
+a. $2, 4, 5$
+
+b. $1, 3, 6, 7$
+
+c. $4$ and $6$
+
+7. Put as many $1$'s as possible in a 4 by 8 _reduced_ echelon matrix $R$ so
+   that the free columns are
+
+a. $2, 4, 5, 6$
+
+b. $1, 3, 6, 7, 8$
+
+8. Suppose column 4 f a 3 by 5 matrix is all zero. Then $x_4$ is certainly a
+   ____ variable. The special solution for this variable is the vector $x =$
+   ____.
+
+9. Suppose the first and last columns of a 3 by 5 matrix are the same (not
+   zero). Then ____ is a free variable. Find the special solution for this
+   variable.
+
+10. Suppose an $m$ by $n$ matrix has $r$ pivots. The number of special solutions
+    is ____. The nullspace contains only $x = \mathbf{0}$ when $r =$ ____. The
+    column space is all of $\R^m$ when $r =$ ____.
+
+11. The nullspace of a 5 by 5 matrix contains only $x = \mathbf{0}$ when the
+    matrix has ____ pivots. The column space is $\R^5$ when there are ____
+    pivots. Explain why.
+
+12. The equation $x - 3y - z = 0$ determines a plane in $\R^3$. What is the
+    matrix $A$ in this equation? Which variables are free? The special solutions
+    are ____ and ____.
+
+13. (Recommended) The plane $x - 3y - z = 12$ is parallel to $x - 3y - z = 0$.
+    One particular point on this plane is $(12, 0, 0)$. All points on the plane
+    have the form
+
+$$
+\begin{bmatrix}{}x\\y\\z\end{bmatrix} =
+\begin{bmatrix}{}\\0\\0\end{bmatrix} +
+y\begin{bmatrix}{}\\1\\0\end{bmatrix} +
+z\begin{bmatrix}{}\\0\\1\end{bmatrix}
+$$
+
+14. Suppose
+    $\text{column } 1 + \text{column } 3 + \text{column } 5 = \mathbf{0}$ in a 4
+    by 5 matrix with four pivots. Which column has no pivot? What is the special
+    solution? Describe $N(A)$.
+
+**Questions 15-22 ask for matrices (if possible) with specific properties.**
+
+15. Construct a matrix for which $N(A) =$ all combinations of $(2, 2, 1, 0)$ and
+    $(3, 1, 0, 1)$.
+
+16. Construct $A$ so that $N(A) =$ all multiples of $(4, 3, 2, 1)$. Its rank is
+    ____.
+
+17. Construct a matrix whose column space contains $(1, 1, 5)$ and $(0, 3, 1)$
+    and whose nullspace contains $(1, 1, 2)$.
+
+18. Construct a matrix whose column space contains $(1, 1, 0)$ and $(0, 1, 1)$
+    and whose nullspace contains $(1, 0, 1)$ and $(0, 0, 1)$.
+
+19. Construct a matrix whose column space contains $(1, 1, 1)$ and whose
+    nullspace is the line of multiples of $(1, 1, 1, 1)$.
+
+20. Construct a 2 by 2 matrix whose nullspace equals its column space. This is
+    possible.
+
+21. Why does no 3 by 3 matrix have a nullspace that equals its column space?
+
+22. If $AB = 0$ then the column space of $B$ is contained in the ____ of $A$.
+    Why?
+
+23. The reduced form $R$ of a 3 by 3 matrix with randomly chosen entries is
+    almost sure to be ____. What $R$ is virtually certain if the random $A$ is 4
+    by 3?
+
+24. Show by example that these three statements are generally _false_:
+
+a. $A$ and $A^{\mathbf{T}}$ have the same nullspace.
+
+b. $A$ and $A^{\mathbf{T}}$ have the same free variables.
+
+c. If $R$ is the reduced form $\mathbf{rref}(A)$ then $R^{\mathbf{T}}$ is
+$\mathbf{rref}(A^{\mathbf{T}})$.
+
+25. If $N(A) =$ all multiples of $x = (2, 1, 0, 1)$, what is $R$ and what is its
+    rank?
+
+26. If the special solutions to $Rx = \mathbf{0}$ are in the columns of these
+    nullspace matrices $N$, go backwards to find the nonzero rows of the reduced
+    matrices $R$:
+
+$$ N =
+\left[\begin{array}{cc}
+2 & 3 \\
+1 & 0 \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+and
+
+$$ N =
+\left[\begin{array}{c}
+0 \\
+0 \\
+1 \\
+\end{array}\right]
+$$
+
+and
+
+$$ N =
+\left[\begin{array}{c}
+ \\
+ \\
+ \\
+\end{array}\right]
+$$
+
+(empty 3 by 1).
+
+27.
+
+a. What are the five 2 by 2 reduced matrices $R$ whose entries are all $0$'s and
+$1$'s?
+
+b. What are the eight 1 by 3 matrices containing only $0$'s and $1$'s? Are all
+eight of them reduced echelon matrices $R$?
+
+28. Explain why $A$ and $-A$ always have the same reduced echelon form $R$.
+
+29. If $A$ is 4 by 4 and invertible, describe the nullspace of the 4 by 8 matrix
+    $B = \left[\begin{array}{cc}A & A \\\end{array}\right]$.
+
+30. How is the nullspace $N(C)$ related to the spaces $N(A)$ and $N(B)$, if
+    $C = \left[\begin{array}{c}A \\B \\\end{array}\right]$?
+
+31. Find the reduced row echelon forms $R$ and the rank of these matrices:
+
+a. The 3 by 4 matrix with all entries equal to 4.
+
+b. The 3 by 4 matrix with $a_{ij} = i + j - 1$.
+
+c. The 3 by 4 matrix with $a_{ij} = (-1)^j$.
+
+32. Kirchhoff's Current Law $A^{\mathbf{T}}y = \mathbf{0}$ says that
+    $\textit{current in } = \textit{ current out}$ at every node. At node 1 this
+    is $y_3 = y_1 + y_4$. Write the four eequations for Kirchhoff's Law at the
+    four nodes (arrows show the positive direction of each $y$). Reduce
+    $A^{\mathbf{T}}$ to $R$ and find three special solutions in the nullspace of
+    $A^{\mathbf{T}}$ (4 by 6 matrix).
+
+(See Page 156 for graph.)
+
+$$ A =
+\left[\begin{array}{rrrr}
+-1 & 1 & 0 & 0 \\
+0 & -1 & 1 & 0 \\
+1 & 0 & -1 & 0 \\
+-1 & 0 & 0 & 1 \\
+0 & -1 & 0 & 1 \\
+0 & 0 & -1 & 1 \\
+\end{array}\right]
+$$
+
+33. Which of these rules gives a correct definition of the _rank_ of $A$?
+
+a. The number of nonzero rows in $R$.
+
+b. The number of columns minus the total number of rows.
+
+c. The number of columns minus the number of free columns.
+
+d. The number of $1$'s in the matrix $R$.
+
+34. Find the reduced $R$ for each of these (block) matrices:
+
+$$ A =
+\left[\begin{array}{ccc}
+0 & 0 & 0 \\
+0 & 0 & 3 \\
+2 & 4 & 6 \\
+\end{array}\right]
+$$
+
+$$ B =
+\left[\begin{array}{cc}
+A & A \\
+\end{array}\right]
+$$
+
+$$ C =
+\left[\begin{array}{cc}
+A & A \\
+A & 0 \\
+\end{array}\right]
+$$
+
+35. Suppose all the pivot variables come _last_ instead of first. Describe all
+    four blocks in reduced echelon form (the block $B$ should be $r$ by $r$):
+
+$$ R =
+\left[\begin{array}{cc}
+A & B \\
+C & D \\
+\end{array}\right]
+$$
+
+What is the nullspace matrix $N$ containing the special solutions?
+
+36. (Silly problem) Describe all 2 by 3 matrices $A_1$ and $A_2$, with row
+    echelon forms $R_1$ and $R_2$, such that $R_1 + R_2$ is the row echelon form
+    ,of $A_1 + A_2$. Is it true that $R_1 = A_1$ and $R_2 = A_2$ in this case?
+    Does $R_1 - R_2$ equal $\mathbf{rref}(A_1 -A_2)$?
+
+37. If $A$ has $r$ pivot columns, how do you know that $A^{\mathbf{T}}$ has $r$
+    pivot columns? Give a 3 by 3 example with different column numbers in
+    _pivcol_ for $A$ and $A^{\mathbf{T}}$.
+
+38. What are the special solutions to $Rx = \mathbf{0}$ and
+    $y^{\mathbf{T}}R = \mathbf{0}$ for these $R$?
+
+$$ R =
+\left[\begin{array}{cccc}
+1 & 0 & 2 & 3 \\
+0 & 1 & 4 & 5 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ R =
+\left[\begin{array}{ccc}
+0 & 1 & 2 \\
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+39. Fill out these matrices so that they have rank 1:
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 2 & 4 \\
+2 & & \\
+4 & & \\
+\end{array}\right]
+$$
+
+and
+
+$$ B =
+\left[\begin{array}{rrr}
+& 9 & \\
+1 & & \\
+2 & 6 & -3 \\
+\end{array}\right]
+$$
+
+and
+
+$$ M =
+\left[\begin{array}{cc}
+a & b \\
+c & \\
+\end{array}\right]
+$$
+
+40. If $A$ is an $m$ by $n$ matrix with $r = 1$, its columns are multiples of
+    one column and its rows are multiples of one row. The column space is a ____
+    in $\R^m$. The nullspace is a ____ in $\R^n$. The nullspace matrix $N$ has
+    shape ____.
+
+41. Choose vectors $u$ and $v$ so that $A = uv^{\mathbf{T}} =$ column times row:
+
+$$ A =
+\left[\begin{array}{ccc}
+3 & 6 & 6 \\
+1 & 2 & 2 \\
+4 & 8 & 8 \\
+\end{array}\right]
+$$
+
+and
+
+$$ A =
+\left[\begin{array}{rrrr}
+2 & 2 & 6 & 4 \\
+-1 & -1 & -3 & -2 \\
+\end{array}\right]
+$$
+
+$A = uv^{\mathbf{T}}$ _is the natural form for every matrix that has rank
+$r = 1$_.
+
+42. If $A$ is a rank one matrix, the second row of $R$ is ____. Do an example.
+
+**Problems 43-45 are about $r$ by $r$ invertible matrices inside $A$.**
+
+43. _If $A$ has rank $r$, then it has an $r$ by $r$ submatrix $S$ that is
+    invertible._ Remove $m - r$ rows and $n - r$ columns to find an invertible
+    submatrix $S$ inside $A$, $B$, and $C$. You could keep the pivot rows and
+    pivot columns:
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+1 & 2 & 4 \\
+\end{array}\right]
+$$
+
+$$ B =
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+2 & 4 & 6 \\
+\end{array}\right]
+$$
+
+$$ C =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+44. Suppose $P$ contains only the $r$ pivot columns of an $m$ by $n$ matrix.
+    Explain why this $m$ by $r$ submatrix $P$ has rank $r$.
+
+45. Transpose $P$ in Problem 44. Find the $r$ pivot columns of $P^{\mathbf{T}}$
+    (which is $r$ by $m$). Transposing back, **this produces an $r$ by $r$
+    invertible submatrix $S$ inside $P$ and $A$**:
+
+For
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+2 & 4 & 6 \\
+2 & 4 & 7 \\
+\end{array}\right]
+$$
+
+find $P$ (3 by 2) and then the invertible $S$ (2 by 2).
+
+**Problems 46-51 show that rank $(AB)$ is not greater than rank $(A)$ or rank
+$(B)$.**
+
+46. Find the ranks of $AB$ and $AC$ (rank one matrix times rank one matrix):
+
+$$ A =
+\left[\begin{array}{cc}
+1 & 2 \\
+2 & 4 \\
+\end{array}\right]
+$$
+
+$$ B =
+\left[\begin{array}{ccc}
+2 & 1 & 4 \\
+3 & 1.5 & 6 \\
+\end{array}\right]
+$$
+
+$$ C =
+\left[\begin{array}{cc}
+1 & b \\
+c & bc \\
+\end{array}\right]
+$$
+
+47. The rank one matrix $uv^{\mathbf{T}}$ times the rank one matrix
+    $wz^{\mathbf{T}}$ is $uz^{\mathbf{T}}$ times the number ____. This product
+    $uv^{\mathbf{T}}wz^{\mathbf{T}}$ also has rank one unless ____ $= 0$.
+
+48.
+
+a. Suppose column $j$ of $B$ is a combination of previous columns of $B$. Show
+that column $j$ of $AB$ is the same combination of previous columns of $AB$.
+Then $AB$ cannot have new pivot columns, so
+$\textbf{rank}(AB) \leq \textbf{rank}(B)$.
+
+b. Find $A_1$ and $A_2$ so that $\text{rank}(A_1B) = 1$ and
+$\text{rank}(A_2B) = 0$ for
+$B =\left[\begin{array}{cc}1 & 1 \\1 & 1 \\\end{array}\right]$.
+
+49. Problem 48 proved that $\text{rank}(AB) \leq \text{rank}(B)$. Then the same
+    reasoning gives
+    $\text{rank}(B^{\mathbf{T}}A^{\mathbf{T}}) \leq \text{rank}(A^{\mathbf{T}})$.
+    How do you deduce that $\text{rank}(AB) \leq \text{rank}A$?
+
+50. (Important) Suppose $A$ and $B$ are $n$ by $n$ matrices, and $AB = I$. Prove
+    from $\text{rank}(AB) \leq \text{rank}(A)$ that the rank of $A$ is $n$. So
+    $A$ is invertible and $B$ must be its two-sided inverse (Section 2.5).
+    Therefore $BA = I$ (_which is not so obvious!_)
+
+51. If $A$ is 2 by 3 and $B$ is 3 by 2 and $AB = I$, show from its rank that
+    $BA \neq I$. Give an example of $A$ and $B$ with $AB = I$. For $m < n$, a
+    right inverse is not a left inverse.
+
+52. Suppose $A$ and $B$ have the _same_ reduced row echelon form $R$.
+
+a. Show that $A$ and $B$ have the same nullspace and the same row space.
+
+b. We know $E_1A = R$ and $E_2B = R$. So $A$ equals an ____ matrix times $B$.
+
+53. Express $A$ and then $B$ as the sum of two rank one matrices:
+
+$$ \textbf{rank} = 2 $$
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+1 & 1 & 4 \\
+1 & 1 & 8 \\
+\end{array}\right]
+$$
+
+$$ B =
+\left[\begin{array}{cc}
+2 & 2 \\
+2 & 3 \\
+\end{array}\right]
+$$
+
+54. Answer the same questions as in Worked Example 3.2C for
+
+$$ A =
+\left[\begin{array}{cccc}
+1 & 1 & 2 & 2 \\
+2 & 2 & 4 & 4 \\
+1 & c & 2 & 2 \\
+\end{array}\right]
+$$
+
+and
+
+$$ B =
+\left[\begin{array}{cc}
+1 - c & 2 \\
+0 & 2 - c \\
+\end{array}\right]
+$$
+
+55. What is the nullspace matrix $N$ (containing the special solutions) for
+    $A, B, C$?
+
+Block matrices
+
+$$ A =
+\left[\begin{array}{cc}
+I & I \\
+\end{array}\right]
+$$
+
+and
+
+$$ B =
+\left[\begin{array}{cc}
+I & I \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+and
+
+$$ C =
+\left[\begin{array}{ccc}
+I & I & I \\
+\end{array}\right]
+$$
+
+56. _Neat fact_ _Every $m$ by $n$ matrix of rank $r$ reduces to ($m$ by $r$)
+    **times** ($r$ by $n$):_
+
+> $A = (\text{pivot columns of } A)(\text{first } r \text{ rows of } R) = (\textbf{COL})(\textbf{ROW})$
+
+Write the 3 by 4 matrix $A$ of all ones as the product of the 3 by 1 matrix from
+the pivot columns and the 1 by 4 matrix from $R$.
