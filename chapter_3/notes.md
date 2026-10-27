@@ -81,6 +81,51 @@ $A$.
 
 ---
 
+Page 140
+
+**Example 5**
+
+Describe the column spaces (they are subspaces of $\mathbf{R}^2$) for
+
+$$ I =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 1 \\
+\end{array}\right] \quad \text{ and } \quad
+A =
+\left[\begin{array}{cc}
+1 & 2 \\
+2 & 4 \\
+\end{array}\right] \quad \text{ and } \quad
+B =
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+0 & 0 & 4 \\
+\end{array}\right]
+$$
+
+**Solution**
+
+The column space of $I$ is the _whole space_ $\mathbf{R}^2$. Every vector is a
+combination of the columns of $I$. In vector space language, $C(I)$ is
+$\mathbf{R}^2$.
+
+The column space of $A$ is only a line. The second column $(2, 4)$ is a multiple
+of the first column $(1, 2)$. Those vectors are different, but our eye is on
+vector _spaces_. The column space contains $(1, 2)$ and $(2, 4)$ and all other
+vectors $(c, 2c)$ along that line. The equation $Ax = b$ is only solvable when
+$b$ is on the line.
+
+For the third matrix (with three columns) the column space $C(B)$ is all of
+$\mathbf{R}^2$. Every $b$ is attainable. The vector $b = (5, 4)$ is column 2
+plus column 3, so another possible $x$ is $(2, 0, 1)$. This matrix has the same
+column space as $I$ - any $b$ is allowed. But now $x$ has extra components and
+there are more solutions - more combinations that give $b$.
+
+---
+
+Page 140
+
 **REVIEW OF THE KEY IDEAS**
 
 1. $\mathbf{R}^n$ contains all column vectors with $n$ real components.
@@ -97,3 +142,5 @@ $A$.
 5. $Ax = b$ has a solution exactly when $b$ is the column space of $A$.
 
 $$ C(A) = \textbf{all combinations of the columns } = \textbf{ all vectors } Ax $$
+
+---
