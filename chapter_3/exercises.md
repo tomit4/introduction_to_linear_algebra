@@ -2611,9 +2611,123 @@ the nullspace of $A$ with the nullspace of $B$: $N(C) = N(A) \cap N(B)$.
 
 a. The 3 by 4 matrix with all entries equal to 4.
 
+_Solution:_
+
+$$ A =
+\left[\begin{array}{cccc}
+4 & 4 & 4 & 4 \\
+4 & 4 & 4 & 4 \\
+4 & 4 & 4 & 4 \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{cccc}
+4 & 4 & 4 & 4 \\
+0 & 0 & 0 & 0 \\
+4 & 4 & 4 & 4 \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{cccc}
+4 & 4 & 4 & 4 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ R =
+\left[\begin{array}{cccc}
+1 & 1 & 1 & 1 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+The rank of $A$ is 1, $r = 1$.
+
 b. The 3 by 4 matrix with $a_{ij} = i + j - 1$.
 
+_Solution:_
+
+$$ A =
+\left[\begin{array}{cccc}
+1 & 2 & 3 & 4 \\
+2 & 3 & 4 & 5 \\
+3 & 4 & 5 & 6 \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{rrrr}
+1 & 2 & 3 & 4 \\
+0 & -1 & -2 & -3 \\
+0 & -2 & -4 & -6 \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{rrrr}
+1 & 2 & 3 & 4 \\
+0 & -1 & -2 & -3 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{rrrr}
+1 & 2 & 3 & 4 \\
+0 & 1 & 2 & 3 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ R =
+\left[\begin{array}{rrrr}
+1 & 0 & -1 & -2 \\
+0 & 1 & 2 & 3 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+The rank of $A$ is $2$, $r = 2$.
+
 c. The 3 by 4 matrix with $a_{ij} = (-1)^j$.
+
+$$ A =
+\left[\begin{array}{rrrr}
+-1 & 1 & -1 & 1 \\
+-1 & 1 & -1 & 1 \\
+-1 & 1 & -1 & 1 \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{rrrr}
+-1 & 1 & -1 & 1 \\
+0 & 0 & 0 & 0 \\
+-1 & 1 & -1 & 1 \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{rrrr}
+-1 & 1 & -1 & 1 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ R =
+\left[\begin{array}{rrrr}
+1 & -1 & 1 & -1 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+The rank of $A$ is $1$, $r = 1$.
 
 32. Kirchhoff's Current Law $A^{\mathbf{T}}y = \mathbf{0}$ says that
     $\textit{current in } = \textit{ current out}$ at every node. At node 1 this
@@ -2635,15 +2749,40 @@ $$ A =
 \end{array}\right]
 $$
 
+_Solution:_
+
+At Node 1, one current, $y_3$, inputs, while at node 1, two currents output,
+$y_1, y_4$, thus the equation at node 1 is $y_3 = y_1 + y_4$.
+
+At Node 2, $y_1$ inputs, while $y_2, y_5$ output, so, the equation at node 2 is
+$y_1 = y_2 + y_5$.
+
+At node 3, $y_2 = y_3 + y_6$.
+
+At node 4...this graph is wrong, nothing leaves node 4.
+
+Omitted.
+
 33. Which of these rules gives a correct definition of the _rank_ of $A$?
 
 a. The number of nonzero rows in $R$.
 
+This gives the rank of $A$, as these nonzero rows are guaranteed to have pivots
+(which is what we are counting with rank/$r$).
+
 b. The number of columns minus the total number of rows.
+
+False.
 
 c. The number of columns minus the number of free columns.
 
+This gives the correct definition of the rank, as $r$ or rank, simply refers to
+the total number of pivots in $A$, which can be calculated by taking the total
+number of columns and subtracting the number of free columns.
+
 d. The number of $1$'s in the matrix $R$.
+
+False, there might be $1$'s in the nonpivot columns.
 
 34. Find the reduced $R$ for each of these (block) matrices:
 
@@ -2668,6 +2807,173 @@ A & 0 \\
 \end{array}\right]
 $$
 
+_Solution:_
+
+_First:_
+
+$$ A =
+\left[\begin{array}{ccc}
+0 & 0 & 0 \\
+0 & 0 & 3 \\
+2 & 4 & 6 \\
+\end{array}\right]
+$$
+
+$$ A =
+\left[\begin{array}{ccc}
+2 & 4 & 6 \\
+0 & 0 & 3 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{ccc}
+2 & 4 & 6 \\
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ R =
+\left[\begin{array}{ccc}
+1 & 2 & 0 \\
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+_Second:_
+
+$$ B =
+\left[\begin{array}{cc}
+A & A \\
+\end{array}\right]
+$$
+
+$$ B =
+\left[\begin{array}{cccccc}
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 3 & 0 & 0 & 3 \\
+2 & 4 & 6 & 2 & 4 & 6 \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{cccccc}
+2 & 4 & 6 & 2 & 4 & 6 \\
+0 & 0 & 3 & 0 & 0 & 3 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{cccccc}
+2 & 4 & 6 & 2 & 4 & 6 \\
+0 & 0 & 1 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{cccccc}
+1 & 2 & 3 & 1 & 2 & 3 \\
+0 & 0 & 1 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ R =
+\left[\begin{array}{cccccc}
+1 & 2 & 0 & 1 & 2 & 0 \\
+0 & 0 & 1 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+_Third:_
+
+$$ C =
+\left[\begin{array}{cc}
+A & A \\
+A & 0 \\
+\end{array}\right]
+$$
+
+$$ C =
+\left[\begin{array}{cccccc}
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 3 & 0 & 0 & 3 \\
+2 & 4 & 6 & 2 & 4 & 6 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 3 & 0 & 0 & 0 \\
+2 & 4 & 6 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ C =
+\left[\begin{array}{cccccc}
+2 & 4 & 6 & 2 & 4 & 6 \\
+2 & 4 & 6 & 0 & 0 & 0 \\
+0 & 0 & 3 & 0 & 0 & 3 \\
+0 & 0 & 3 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{cccccc}
+2 & 4 & 6 & 2 & 4 & 6 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 3 & 0 & 0 & 3 \\
+0 & 0 & 3 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{rrrrrr}
+2 & 4 & 6 & 2 & 4 & 6 \\
+0 & 0 & 3 & 0 & 0 & 3 \\
+0 & 0 & 0 & 0 & 0 & -3 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{rrrrrr}
+1 & 2 & 3 & 1 & 2 & 3 \\
+0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ R =
+\left[\begin{array}{rrrrrr}
+1 & 2 & 0 & 1 & 2 & 0 \\
+0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
 35. Suppose all the pivot variables come _last_ instead of first. Describe all
     four blocks in reduced echelon form (the block $B$ should be $r$ by $r$):
 
@@ -2680,14 +2986,62 @@ $$
 
 What is the nullspace matrix $N$ containing the special solutions?
 
+_Solution:_
+
+If all the pivot variables come _last_ instead of first, then the reduced row
+echelon form becomes:
+
+$$ R =
+\left[\begin{array}{cc}
+0 & I \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+The nullspace matrix $N$ containing the special solutions takes the form of:
+
+$$ N =
+\left[\begin{array}{c}
+I \\
+0 \\
+\end{array}\right]
+$$
+
 36. (Silly problem) Describe all 2 by 3 matrices $A_1$ and $A_2$, with row
     echelon forms $R_1$ and $R_2$, such that $R_1 + R_2$ is the row echelon form
     ,of $A_1 + A_2$. Is it true that $R_1 = A_1$ and $R_2 = A_2$ in this case?
     Does $R_1 - R_2$ equal $\mathbf{rref}(A_1 -A_2)$?
 
+Omitted. This problem simply demonstrates that row reduction doesn't distribute.
+
 37. If $A$ has $r$ pivot columns, how do you know that $A^{\mathbf{T}}$ has $r$
     pivot columns? Give a 3 by 3 example with different column numbers in
     _pivcol_ for $A$ and $A^{\mathbf{T}}$.
+
+_Solution:_
+
+$$ A =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+1 Pivots
+
+$$ A^{\mathbf{T}} =
+\left[\begin{array}{ccc}
+0 & 0 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+1 Pivot
+
+The point is that even when you transpose a matrix, the amount of pivots remain
+the same.
 
 38. What are the special solutions to $Rx = \mathbf{0}$ and
     $y^{\mathbf{T}}R = \mathbf{0}$ for these $R$?
@@ -2707,6 +3061,157 @@ $$ R =
 0 & 0 & 0 \\
 \end{array}\right]
 $$
+
+_Solution:_
+
+_First:_
+
+$$ R =
+\left[\begin{array}{cccc}
+1 & 0 & 2 & 3 \\
+0 & 1 & 4 & 5 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ x_2 + 4x_3 + 5x_4 = 0 $$
+
+Choose $x_3 = 1, x_4 = 0$:
+
+$$ x_2 + 4(1) + 5(0) = 0 $$
+
+$$ x_2 = -4 $$
+
+Then:
+
+$$ x_1 + 2x_3 + 3x_4 = 0 $$
+
+$$ x_1 + 2(1) + 3(0) = 0 $$
+
+$$ x_1 + 2 = 0 $$
+
+$$ x_1 = -2 $$
+
+$$ s_1 = \begin{bmatrix}{}-2\\-4\\1\\0\end{bmatrix} $$
+
+Choose $x_3 = 0, x_4 = 1$:
+
+$$ x_2 + 4(0) + 5(1) = 0 $$
+
+$$ x_2 = -5 $$
+
+$$ x_1 + 2(0) + 3(1) = 0 $$
+
+$$ x_1 = -3 $$
+
+$$ s_2 = \begin{bmatrix}{}-3\\-5\\0\\1\end{bmatrix} $$
+
+Now:
+
+$$ y^{\mathbf{T}}R = 0 $$
+
+$$
+\left[\begin{array}{ccc}
+y_1 & y_2 & y_3 \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+1 & 0 & 2 & 3 \\
+0 & 1 & 4 & 5 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cccc}
+y_1 & y_2 & 2y_1 + 4y_2 & 3y_1 + 5y_2 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$
+y_1 = 0 \\
+y_2 = 0 \\
+$$
+
+$y_3$ is free, so:
+
+$$ y_3 = 1 $$
+
+Then, one (and only, since there was only one free variable) solution for $y$
+is:
+
+$$ y = \begin{bmatrix}{}0\\0\\1\end{bmatrix} $$
+
+_Second:_
+
+$$ R =
+\left[\begin{array}{ccc}
+0 & 1 & 2 \\
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ 0(x_1) + 1(x_2) + 2x_3 = 0 $$
+
+Choose $x_1 = 1, x_3 = 0$:
+
+$$ 0(1) + x_2 + 2(0) = 0 $$
+
+$$ x_2 = 0 $$
+
+$$ s_1 = \begin{bmatrix}{}1\\0\\0\end{bmatrix} $$
+
+Choose $x_1 = 0, x_3 = 1$:
+
+$$ 0(0) + x_2 + 2(1) = 0 $$
+
+$$ x_2 = -2 $$
+
+$$ s_2 = \begin{bmatrix}{}0\\-2\\1\end{bmatrix} $$
+
+Now:
+
+$$ y^{\mathbf{T}}R = \mathbf{0} $$
+
+$$
+\left[\begin{array}{ccc}
+y_1 & y_2 & y_3 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+0 & 1 & 2 \\
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ =
+\left[\begin{array}{ccc}
+0 & y_1 & 2y_1 \\
+\end{array}\right]
+$$
+
+$$ y_1 = 0 $$
+
+Free variables $y_2, y_3$.
+
+Choose $y_2 = 1, y_3 = 0$, then:
+
+$$ s_3 = \begin{bmatrix}{}0\\1\\0\end{bmatrix} $$
+
+Choose $y_2 = 0, y_3 = 1$, then:
+
+$$ s_4 = \begin{bmatrix}{}0\\0\\1\end{bmatrix} $$
+
+(LEFT OFF HERE).
 
 39. Fill out these matrices so that they have rank 1:
 
