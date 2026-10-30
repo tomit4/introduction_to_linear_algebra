@@ -1385,6 +1385,34 @@ $$ A =
 \end{array}\right]
 $$
 
+_Solution:_
+
+$$ A =
+\left[\begin{array}{ccccc}
+1 & 2 & 2 & 4 & 6 \\
+1 & 2 & 3 & 6 & 9 \\
+0 & 0 & 1 & 2 & 3 \\
+\end{array}\right]
+$$
+
+$$ A =
+\left[\begin{array}{ccccc}
+1 & 2 & 2 & 4 & 6 \\
+0 & 0 & 1 & 2 & 3 \\
+0 & 0 & 1 & 2 & 3 \\
+\end{array}\right]
+$$
+
+$$ A =
+\left[\begin{array}{ccccc}
+1 & 2 & 2 & 4 & 6 \\
+0 & 0 & 1 & 2 & 3 \\
+0 & 0 & 0 & 0 & 0 \\
+\end{array}\right] = U
+$$
+
+Pivot variables are $x_1, x_3$, free variables are $x_2, x_4, x_5$.
+
 b.
 
 $$ B =
@@ -1395,13 +1423,176 @@ $$ B =
 \end{array}\right]
 $$
 
+_Solution:_
+
+$$ B =
+\left[\begin{array}{ccc}
+2 & 4 & 2 \\
+0 & 4 & 4 \\
+0 & 8 & 8 \\
+\end{array}\right]
+$$
+
+$$ B =
+\left[\begin{array}{ccc}
+2 & 4 & 2 \\
+0 & 4 & 4 \\
+0 & 0 & 0 \\
+\end{array}\right] = U
+$$
+
+Pivots are $x_1, x_2$ and free variables are $x_3$.
+
 2. For the matrices in Problem 1, find a special solution for each free
    variable. (Set the free variable to $1$. Set the other free variables to
    zero.)
 
+_Solution:_
+
+a.
+
+$$ A =
+\left[\begin{array}{ccccc}
+1 & 2 & 2 & 4 & 6 \\
+0 & 0 & 1 & 2 & 3 \\
+0 & 0 & 0 & 0 & 0 \\
+\end{array}\right] = U
+$$
+
+Pivot variables are $x_1, x_3$, free variables are $x_2, x_4, x_5$.
+
+So, set $x_2 = 1, x_4 = 0, x_5 = 0$:
+
+$$ 1x_3 + 2x_4 + 3x_5 = 0 \Rightarrow  1x_3 + 2(0) + 3(0) = 0 \Rightarrow x_3 = 0 $$
+
+$$ x_1 + 2x_2 + 2x_3 + 4x_4 + 6x_5 = 0 \Rightarrow x_1 + 2(1) + 2(0) + 4(0) + 6(0) = 0 \Rightarrow x_1 + 2 = 0 \Rightarrow x_1 = -2 $$
+
+$$ s = \begin{bmatrix}{}-2\\1\\0\\0\\0\end{bmatrix} $$
+
+b.
+
+$$ B =
+\left[\begin{array}{ccc}
+2 & 4 & 2 \\
+0 & 4 & 4 \\
+0 & 0 & 0 \\
+\end{array}\right] = U
+$$
+
+Pivots are $x_1, x_2$ and free variables are $x_3$.
+
+Pick $x_3 = 1$, then:
+
+$$ 4x_2 + 4x_3 = 0 \Rightarrow 4x_2 + 4(1) = 0 \Rightarrow 4x_2 = -4 \Rightarrow x_2 = -1 $$
+
+$$ 2x_1 + 4x_2 + 2x_3 = 0 \Rightarrow 2x_1 + 4(-1) + 2(1) = 0 \Rightarrow 2x_1 - 4 + 2 = 0 \Rightarrow 2x_1 - 2 = 0 \Rightarrow 2x_1 = 2 \Rightarrow x_1 = 1 $$
+
+$$ s = \begin{bmatrix}{}1\\-1\\1\end{bmatrix} $$
+
 3. By further row operations on each $U$ in Problem 1, find the reduced echelon
    form $R$. _True or flase with a reason:_ The nullspace of $R$ equals the
    nullspace of $U$.
+
+_Solution:_
+
+a.
+
+$$ A =
+\left[\begin{array}{ccccc}
+1 & 2 & 2 & 4 & 6 \\
+0 & 0 & 1 & 2 & 3 \\
+0 & 0 & 0 & 0 & 0 \\
+\end{array}\right] = U
+$$
+
+Pivot variables are $x_1, x_3$, free variables are $x_2, x_4, x_5$.
+
+_Find reduced row echelon matrix $R$ (by both/either use pivot rows to eliminate
+upward in $R$/divide the whole pivot row by its pivot.):_
+
+$$ U =
+\left[\begin{array}{ccccc}
+1 & 2 & 2 & 4 & 6 \\
+0 & 0 & 1 & 2 & 3 \\
+0 & 0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+Subtract 2 times row 2 from row 1:
+
+$$ R =
+\left[\begin{array}{ccccc}
+1 & 2 & 0 & 0 & 0 \\
+0 & 0 & 1 & 2 & 3 \\
+0 & 0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+_True or false with a reason. The nullspace of $R$ equals the nullspace of $U$:_
+
+Yes, the nullspace of $R$ equals the nullspace of $U$ as throughout the
+evaluation that gets us from $U$ to $R$, at no point does the values for any
+$x_j$ change relations to any other $x_j$. (This is because all row operations
+remain invertible).
+
+b.
+
+$$ B =
+\left[\begin{array}{ccc}
+2 & 4 & 2 \\
+0 & 4 & 4 \\
+0 & 0 & 0 \\
+\end{array}\right] = U
+$$
+
+Pivots are $x_1, x_2$ and free variables are $x_3$.
+
+Find $R$:
+
+$$ B =
+\left[\begin{array}{ccc}
+2 & 4 & 2 \\
+0 & 4 & 4 \\
+0 & 0 & 0 \\
+\end{array}\right] = U
+$$
+
+Divide row 1 by 2:
+
+$$ U =
+\left[\begin{array}{ccc}
+1 & 2 & 1 \\
+0 & 4 & 4 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+Divide row 2 by 4:
+
+$$ U =
+\left[\begin{array}{ccc}
+1 & 2 & 1 \\
+0 & 1 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+Subtract 2 times row 2 from row 1:
+
+$$ R =
+\left[\begin{array}{rrr}
+1 & 0 & -1 \\
+0 & 1 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+_True or false with a reason. The nullspace of $R$ equals the nullspace of $U$:_
+
+Yes, the nullspace of $R$ equals the nullspace of $U$ as throughout the
+evaluation that gets us from $U$ to $R$, at no point does the values for any
+$x_j$ change relations to any other $x_j$. (This is because all row operations
+remain invertible).
 
 4. For the same $A$ and $B$, find the special solutions to $Ax = \mathbf{0}$ and
    $Bx = \mathbf{0}$. For an $m$ by $n$ matrix, the number of pivot variables
@@ -1417,6 +1608,48 @@ $$ A =
 \end{array}\right]
 $$
 
+_Solution:_
+
+_For the same $A$ and $B$, find the special solutions to $Ax = \mathbf{0}$ and
+$Bx = \mathbf{0}$:_
+
+$$ A =
+\left[\begin{array}{rrr}
+-1 & 3 & 5 \\
+-2 & 6 & 10 \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{rrr}
+-1 & 3 & 5 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ R =
+\left[\begin{array}{rrr}
+1 & -3 & -5 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+Choose $x_2 = 1$, then $x_3 = 0$ and:
+
+$$ 1x_1 - 3x_2 - 5x_3 = 0 \Rightarrow x_1 - 3(1) - 5(0) = 0 \Rightarrow x_1 - 3 = 0 \Rightarrow x_1 = 3 $$
+
+So, special solution $s_1$ is:
+
+$$ s_1 = \begin{bmatrix}{}3\\1\\0\end{bmatrix} $$
+
+Second special solution, choose $x_3 = 1$, then $x_2 = 0$ and:
+
+$$ 1x_1 - 3x_2 - 5x_3 = 0 \Rightarrow x_1 - 3(0) - 5(1) = 0 \Rightarrow x_1 - 5 = 0 \Rightarrow x_1 = 5 $$
+
+So, special solution $s_1$ is:
+
+$$ s_2 = \begin{bmatrix}{}5\\0\\1\end{bmatrix} $$
+
 b.
 
 $$ B =
@@ -1426,53 +1659,241 @@ $$ B =
 \end{array}\right]
 $$
 
+_Solution:_
+
+_For the same $A$ and $B$, find the special solutions to $Ax = \mathbf{0}$ and
+$Bx = \mathbf{0}$:_
+
+$$ B =
+\left[\begin{array}{rrr}
+-1 & 3 & 5 \\
+-2 & 6 & 7 \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{rrr}
+-1 & 3 & 5 \\
+0 & 0 & -3 \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{rrr}
+1 & -3 & -5 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ R =
+\left[\begin{array}{rrr}
+1 & -3 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+Pivot variables are $x_1, x_3$ and free variables are $x_2$.
+
+Choose $x_2 = 1$, then:
+
+$$ 1x_1 - 3x_2 + 0x_3 = 0 \Rightarrow x_1 - 3(1) + 0(0) = 0 \Rightarrow x_1 - 3 = 0 \Rightarrow x_1 = 3 $$
+
+So, special solution $s$ is:
+
+$$ s = \begin{bmatrix}{}3\\1\\0\end{bmatrix} $$
+
+_Overall solution:_
+
+_For an $m$ by $n$ matrix, the number of pivot variables plus the number of free
+variables is (?):_
+
+The number of pivot variables plus the number of free variables is equal to the
+number of columns $n$.
+
 **Questions 5-14 are about free variables and pivot variables.**
 
 5. True or false (with reason if true or example to show it is false):
 
 a. A square matrix has no free variables.
 
+False, consider this square matrix:
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 2 & 2 \\
+3 & 5 & 5 \\
+2 & 4 & 6 \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{ccc}
+1 & 2 & 2 \\
+0 & -4 & -4 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{ccc}
+1 & 2 & 2 \\
+0 & 1 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+Here we have pivots $x_1, x_2$ and free variable $x_3$.
+
 b. An invertible matrix has no free variables.
+
+True. Because an invertible matrix has a nonzero determinant, it follows that no
+row goes to zero during elimination, resulting in there being no row without a
+pivot, and thus there is no free variable.
 
 c. An $m$ by $n$ matrix has no more than $n$ pivot variables.
 
+True, since $n$ represents the amount of columns in the matrix, it follows that
+there cannot be more than $n$ pivot variables after elimination.
+
 d. An $m$ by $n$ matrix has no more than $m$ pivot variables.
+
+True, since $m$ represents the amount of rows in the matrix, it follows that
+there can't be more than $m$ pivot variables after elimination. (note that since
+both parts \(c\) and (d) are true, this means that there can't be more than
+$\text{min}(m, n)$ pivots).
 
 6. Put as many $1$'s as possible in a 4 by 7 echelon matrix $U$ whose pivot
    columns are
 
 a. $2, 4, 5$
 
+_Solution:_
+
+$$ U =
+\left[\begin{array}{ccccccc}
+0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+0 & 0 & 0 & 0 & 1 & 1 & 1 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
 b. $1, 3, 6, 7$
 
+_Solution:_
+
+$$ U =
+\left[\begin{array}{ccccccc}
+1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+0 & 0 & 0 & 0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
 c. $4$ and $6$
+
+_Solution:_
+
+$$ U =
+\left[\begin{array}{ccccccc}
+0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+0 & 0 & 0 & 0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
 
 7. Put as many $1$'s as possible in a 4 by 8 _reduced_ echelon matrix $R$ so
    that the free columns are
 
 a. $2, 4, 5, 6$
 
+_Solution:_
+
+$$ R =
+\left[\begin{array}{cccccccc}
+1 & 1 & 0 & 1 & 1 & 1 & 0 & 0 \\
+0 & 0 & 1 & 1 & 1 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
 b. $1, 3, 6, 7, 8$
+
+_Solution:_
+
+$$ R =
+\left[\begin{array}{cccccccc}
+0 & 1 & 1 & 0 & 0 & 1 & 1 & 1 \\
+0 & 0 & 0 & 1 & 0 & 1 & 1 & 1 \\
+0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
 
 8. Suppose column 4 f a 3 by 5 matrix is all zero. Then $x_4$ is certainly a
    ____ variable. The special solution for this variable is the vector $x =$
    ____.
 
+_Solution:_
+
+free; $(0, 0, 0, 1, 0)$, because $1$ will multiply the zero column to give
+$Ax = \mathbf{0}$.
+
 9. Suppose the first and last columns of a 3 by 5 matrix are the same (not
    zero). Then ____ is a free variable. Find the special solution for this
    variable.
+
+_Solution:_
+
+$x_5$, since column 1 = column 5, x_5 will be reduced to 0 during elimination.
+$s = (-1, 0, 0, 0, 1)$.
 
 10. Suppose an $m$ by $n$ matrix has $r$ pivots. The number of special solutions
     is ____. The nullspace contains only $x = \mathbf{0}$ when $r =$ ____. The
     column space is all of $\R^m$ when $r =$ ____.
 
+_Solution:_
+
+The number of special solutions is $n - r$; the nullspace only contains
+$x = \mathbf{0}$ when $r = n$; The column space is all of $R^m$ when $r = m$.
+
 11. The nullspace of a 5 by 5 matrix contains only $x = \mathbf{0}$ when the
     matrix has ____ pivots. The column space is $\R^5$ when there are ____
     pivots. Explain why.
 
+_Solution:_
+
+$5$ pivots; $5$ pivots; This is because when we can solve $Ax = b$, every $b$ is
+in the column space.
+
 12. The equation $x - 3y - z = 0$ determines a plane in $\R^3$. What is the
     matrix $A$ in this equation? Which variables are free? The special solutions
     are ____ and ____.
+
+_Solution:_
+
+The matrix $A$ is:
+
+$$ A =
+\left[\begin{array}{rrr}
+1 & -3 & -1 \\
+\end{array}\right]
+$$
+
+The free variables are $x_2, x_1$.
+
+The special solutions are $s_1 = (1, 0, 1), s_2 = (3, 1, 0)$
 
 13. (Recommended) The plane $x - 3y - z = 12$ is parallel to $x - 3y - z = 0$.
     One particular point on this plane is $(12, 0, 0)$. All points on the plane
@@ -1485,51 +1906,396 @@ y\begin{bmatrix}{}\\1\\0\end{bmatrix} +
 z\begin{bmatrix}{}\\0\\1\end{bmatrix}
 $$
 
+_Solution:_
+
+$$
+\begin{bmatrix}{}x\\y\\z\end{bmatrix} =
+x\begin{bmatrix}{}1\\0\\0\end{bmatrix} +
+y\begin{bmatrix}{}3\\1\\0\end{bmatrix} +
+z\begin{bmatrix}{}1\\0\\1\end{bmatrix}
+$$
+
 14. Suppose
     $\text{column } 1 + \text{column } 3 + \text{column } 5 = \mathbf{0}$ in a 4
     by 5 matrix with four pivots. Which column has no pivot? What is the special
     solution? Describe $N(A)$.
+
+_Solution:_
+
+Since $c_1, c_3, c_5$ sum to $0$, it means that column 5 cannot be a pivot
+column since it is just a linear combination of columns 1 and 3,
+$c_5 = -c_1 - c_3$, and since $c_5$ comes last in elimination, it follows that
+this column cannot have a pivot.
+
+The special solution then is $(1, 0, 1, 0, 1)$.
+
+$N(A)$ simply contains all multiples of this special solution, which is just a
+line in $\mathbf{R}^5$.
 
 **Questions 15-22 ask for matrices (if possible) with specific properties.**
 
 15. Construct a matrix for which $N(A) =$ all combinations of $(2, 2, 1, 0)$ and
     $(3, 1, 0, 1)$.
 
+_Solution:_
+
+$$ s_1 = \begin{bmatrix}{}2\\2\\1\\0 \end{bmatrix} $$
+
+$$ s_2 = \begin{bmatrix}{}3\\1\\0\\1 \end{bmatrix} $$
+
+Since $s_1$ has a $1$ in $x_3$ and $0$ in $x_4$, and $s_2$ has $0$ in $x_3$ and
+a $1$ in $x_4$, this indicates there are free variables in $x_3, x_4$, and
+pivots in $x_1, x_2$. Thus our row echelon matrix $R$ is:
+
+$$ R =
+\left[\begin{array}{cccc}
+1 & 0 & -2 & -3 \\
+0 & 1 & -2 & -1 \\
+\end{array}\right]
+$$
+
+$A$ can be any 2 by 2 matrix times this $R$.
+
 16. Construct $A$ so that $N(A) =$ all multiples of $(4, 3, 2, 1)$. Its rank is
     ____.
+
+_Solution:_
+
+Since the special solution is $(4, 3, 2, 1)$, we see there is no $0$ in our
+solution, and so $1$ is where the free variable is in $R$.
+
+$$ R =
+\left[\begin{array}{rrrr}
+1 & 0 & 0 & -4 \\
+0 & 1 & 0 & -3 \\
+0 & 0 & 1 & -2 \\
+\end{array}\right]
+$$
+
+This is a line through the given solution vector.
 
 17. Construct a matrix whose column space contains $(1, 1, 5)$ and $(0, 3, 1)$
     and whose nullspace contains $(1, 1, 2)$.
 
+_Solution:_
+
+Constructing the column space is simple:
+
+$$
+\left[\begin{array}{ccc}
+1 & 0 & \\
+1 & 3 & \\
+5 & 1 & \\
+\end{array}\right]
+$$
+
+Now, adding the nullspace means we need $Ax = \mathbf{0}$ when $x = (1, 1, 2)$.
+
+So we need column 1 + column 2 + column 3 = 0:
+
+$$ 1c_1 + 1c_2 + 2c_3 = 0 $$
+
+$$ 1(1) + 1(0) + 2c_3 = 0 $$
+
+$$ 1 + 2c_3 = 0 $$
+
+$$ 2c_3 = -1 $$
+
+$$ c_3 = -\frac{1}{2} $$
+
+$$
+\left[\begin{array}{ccc}
+1 & 0 & -\frac{1}{2} \\
+1 & 3 & \\
+5 & 1 & \\
+\end{array}\right]
+$$
+
+Now the other entry:
+
+$$ 1c_1 + 1c_2 + 2c_3 = 0 $$
+
+$$ 1(1) + 1(3) + 2c_3 = 0 $$
+
+$$ 1 + 3 + 2c_3 = 0 $$
+
+$$ 4 + 2c_3 = 0 $$
+
+$$ 2c_3 = -4 $$
+
+$$ c_3 = -2 $$
+
+$$
+\left[\begin{array}{ccc}
+1 & 0 & -\frac{1}{2} \\
+1 & 3 & -2 \\
+5 & 1 & \\
+\end{array}\right]
+$$
+
+$$ 1c_1 + 1c_2 + 2c_3 = 0 $$
+
+$$ 1(5) + 1(1) + 2c_3 = 0 $$
+
+$$ 5 + 1 + 2c_3 = 0 $$
+
+$$ 6 + 2c_3 = 0 $$
+
+$$ 2c_3 = -6 $$
+
+$$ c_3 = -3 $$
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 0 & -\frac{1}{2} \\
+1 & 3 & -2 \\
+5 & 1 & -3 \\
+\end{array}\right]
+$$
+
 18. Construct a matrix whose column space contains $(1, 1, 0)$ and $(0, 1, 1)$
     and whose nullspace contains $(1, 0, 1)$ and $(0, 0, 1)$.
+
+_Solution:_
+
+Examining the special solutions in the nullspace we find $(1, 0, 1)$ and
+$(0, 0, 1)$:
+
+$(0, 0, 1)$:
+
+Tells us there is a free variable in $x_3$.
+
+$(1, 0, 1)$:
+
+We cannot determine the free variable here as to find a free variable we must
+set a 1 to the first free variable and a 0 everywhere else, but here we have
+$(1,0,1)$.
+
+The construction of this is impossible for a 3 by 3 matrix (and we cannot
+construct a larger matrix since all columns given have 3 entries, or in other
+words, 3 rows).
 
 19. Construct a matrix whose column space contains $(1, 1, 1)$ and whose
     nullspace is the line of multiples of $(1, 1, 1, 1)$.
 
+_Solution:_
+
+Since the column space contains 3 rows, we know that the number of rows in $A$
+is 3. Since the nullspace contains 4 entries in a single special solution, we
+know that the amount of free variables is 1 (equal to the number of special
+solutions), and we know that the number of pivots is 4 - (number of free
+variables), so we have 3 pivots.
+
+$$ R =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & ? \\
+0 & 1 & 0 & ? \\
+0 & 0 & 1 & ? \\
+\end{array}\right]
+$$
+
+We need to set the free variable $c_4$, whatever will cancel out the $1$'s to
+give us our solution $0$:
+
+$$ R =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & -1 \\
+0 & 1 & 0 & -1 \\
+0 & 0 & 1 & -1 \\
+\end{array}\right]
+$$
+
+This can be $A$.
+
 20. Construct a 2 by 2 matrix whose nullspace equals its column space. This is
     possible.
 
+_Solution:_
+
+For the nullspace and column space to be the same, they must have the same
+solutions or some linear combination of the same solutions.
+
+Let's start off simple:
+
+$$ A =
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 1 \\
+\end{array}\right]
+$$
+
+Here the column space is $(1, 1)$ and all linear combinations of that vector. If
+we now eliminate to find $U$, we get:
+
+$$ U =
+\left[\begin{array}{cc}
+1 & 1 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+We can set $x_2$ to anything, as it is a free variable so try $x_2 = 1$, then
+$x_1 = -1$, and so our nullspace becomes $(-1, 1)$, which does not occupy the
+same space as our column space of $(1, 1)$. Let's try:
+
+$$ A =
+\left[\begin{array}{rr}
+-1 & -1 \\
+1 & 1 \\
+\end{array}\right]
+$$
+
+Here $C(A)$ is $(-1, 1)$, now eliminate:
+
+$$ U =
+\left[\begin{array}{rr}
+-1 & -1 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+Set $x_2 = 1$, then
+$-x_1 + -1(1) = 0 \Rightarrow -x_1 = 1 \Rightarrow x_1 = -1$. So nullspace is
+$(-1, 1)$, so this is the same as our column space. All good.
+
 21. Why does no 3 by 3 matrix have a nullspace that equals its column space?
+
+_Solution:_
+
+Recall that the complete solution to $Ax = \mathbf{0}$ is a combination of the
+$n - r$ special solutions (where $n$ is the number of columns and $r$ is the
+number of pivots).
+
+This means the nullspace is $n - r$, but the number of vectors in the column
+space is $r$, this leaves us with:
+
+$$ \text{the number of solutions in the nullspace } = n - r = r = \text{the number of vectors in the column space} $$
+
+So now, we know we have a 3 by 3 matrix, which means we have 3 columns, so
+$n = 3$, then:
+
+$$ 3 - r = r $$
+
+$$ 3 = 2r $$
+
+$$ r = \frac{3}{2} $$
+
+Which is not possible, since the number of pivots is always a whole integer.
 
 22. If $AB = 0$ then the column space of $B$ is contained in the ____ of $A$.
     Why?
+
+nullspace;
+
+The reason why is because after multiplication all $Ab_i = 0$, and this is in
+the nullspace of $A$, by definition of what it means for a column to be in the
+nullspace of a matrix.
 
 23. The reduced form $R$ of a 3 by 3 matrix with randomly chosen entries is
     almost sure to be ____. What $R$ is virtually certain if the random $A$ is 4
     by 3?
 
+$I$.
+
+$$ R =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+Note that when rows exceed columns, you don't quite get I, but a row of $0$'s
+below is generated as you go from $U$ to $R$.
+
 24. Show by example that these three statements are generally _false_:
 
 a. $A$ and $A^{\mathbf{T}}$ have the same nullspace.
 
+Briefly, this is false intuitively, taking the transpose of any matrix will
+usually mix up the pivots and create a different nullspace.
+
+$$ A =
+\left[\begin{array}{cc}
+2 & 1 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+$$ R =
+\left[\begin{array}{cc}
+1 & \frac{1}{2} \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+$$ N(A) = \left\{\begin{bmatrix}{}-\dfrac{1}{2}\\1\end{bmatrix}\right\} $$
+
+$$ A^{\mathbf{T}} =
+\left[\begin{array}{cc}
+2 & 0 \\
+1 & 0 \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{cc}
+2 & 0 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+$$ R =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+$$ N(A^{\mathbf{T}}) = \left\{\begin{bmatrix}{}0\\1\end{bmatrix}\right\}$$
+
+So $N(A) \neq N(A^{\mathbf{T}})$.
+
 b. $A$ and $A^{\mathbf{T}}$ have the same free variables.
+
+$$ A =
+\left[\begin{array}{cc}
+0 & 1 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+Free variables are $x_1$.
+
+$$ A^{\mathbf{T}} =
+\left[\begin{array}{cc}
+0 & 0 \\
+1 & 0 \\
+\end{array}\right]
+$$
+
+Free variables are $x_2$.
 
 c. If $R$ is the reduced form $\mathbf{rref}(A)$ then $R^{\mathbf{T}}$ is
 $\mathbf{rref}(A^{\mathbf{T}})$.
 
+Part (a) also demonstrated that this is not true.
+
 25. If $N(A) =$ all multiples of $x = (2, 1, 0, 1)$, what is $R$ and what is its
     rank?
+
+_Solution:_
+
+$$  R =
+\left[\begin{array}{rrrr}
+1 & 0 & 0 & -2 \\
+0 & 1 & 0 & -1 \\
+0 & 0 & 1 & 0 \\
+\end{array}\right]
+$$
+
+$R$ has 3 pivots (one free variable/special solution at $x_4$).
 
 26. If the special solutions to $Rx = \mathbf{0}$ are in the columns of these
     nullspace matrices $N$, go backwards to find the nonzero rows of the reduced
@@ -1565,21 +2331,281 @@ $$
 
 (empty 3 by 1).
 
+_Solution:_
+
+_First:_
+
+$$ N =
+\left[\begin{array}{cc}
+2 & 3 \\
+1 & 0 \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+These are special solutions, so:
+
+$$ s_1 = \begin{bmatrix}{}2\\1\\0\end{bmatrix} $$
+
+$$ s_2 = \begin{bmatrix}{}3\\0\\1\end{bmatrix} $$
+
+Free variables at $x_2, x_3$.
+
+Note that in $R$, this means that $x_1$ must be expressed as a $1$, so:
+
+$$ R =
+\left[\begin{array}{ccc}
+1 & c_2 & c_3 \\
+\end{array}\right]
+$$
+
+If we choose $x_2 = 1$, then we are left with $s_1$, so:
+
+$$ 2c_1 + 1c_2 + 0c_3 = 0 \Rightarrow 2(1) + 1c_2 + 0(0) = 0 \Rightarrow 2 + c_2 = 0 \Rightarrow c_2 = -2 $$
+
+If we choose $x_3 = 1$a, then we are left with $s_2$, so:
+
+$$ 3c_1 + 0c_2 + 1c_3 = 0 \Rightarrow 3(1) + 0(0) + 1c_3 = 0 \Rightarrow c_3 = -3 $$
+
+Thus our final $R$ is:
+
+$$ R =
+\left[\begin{array}{ccc}
+1 & -2 & -3 \\
+\end{array}\right]
+$$
+
+_Second:_
+
+$$ N =
+\left[\begin{array}{c}
+0 \\
+0 \\
+1 \\
+\end{array}\right]
+$$
+
+We just have one solution in $N$, so:
+
+$$ s_1 = \begin{bmatrix}{}0\\0\\1\end{bmatrix} $$
+
+Thus we have a free variable in $x_3$, and two pivot variables $x_1, x_2$. In
+our $R$, we must have all pivots equal $1$, so $x_1 = 1, x_2 = 1$
+
+$$ R =
+\left[\begin{array}{ccc}
+1 & c_{12} & c_{13} \\
+0 & 1 & c_{23} \\
+\end{array}\right]
+$$
+
+Starting in the second row, we have:
+
+$$ 1x_2 + c_{23}x_3 = 0 $$
+
+Since we have one solution, we know that $x_2 = 0, x_3 = 1$ , so:
+
+$$ 1(0) + c_{23}(1) = 0 $$
+
+$$ c_{23} = 0 $$
+
+So our updated $R$ is:
+
+$$ R =
+\left[\begin{array}{ccc}
+1 & c_{12} & c_{13} \\
+0 & 1 & 0 \\
+\end{array}\right]
+$$
+
+In the first row, we use our special solution again:
+
+$$ c_{11}x_1 + c_{12}x_2 + c_{13}x_3 = 0 $$
+
+$$ 1(0) + c_{12}(0) + c_{13}(1) = 0 $$
+
+$$ c_{13} = 0 $$
+
+Updated $R$ again:
+
+$$ R =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+\end{array}\right]
+$$
+
+_Third:_
+
+$$ N =
+\left[\begin{array}{c}
+ \\
+ \\
+ \\
+\end{array}\right]
+$$
+
+(empty 3 by 1).
+
+The nullspace is empty, or so it seems. Recall that all spaces contain
+$\mathbf{0}$. So there is no special solution, but if there were, it would have
+3 rows (since it is an empty 3 by 1). This tells us there are 3 pivots and no
+free variables. Since $R$ must have a $1$ at the pivot after further
+transformation from $U$, this means that:
+
+$$ R =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] = I_3
+$$
+
 27.
 
 a. What are the five 2 by 2 reduced matrices $R$ whose entries are all $0$'s and
 $1$'s?
 
+_Solution:_
+
+$$ R =
+\left[\begin{array}{cc}
+1 & 1 \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+$$ R =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+$$ R =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+$$ R =
+\left[\begin{array}{cc}
+0 & 1 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+$$ R =
+\left[\begin{array}{cc}
+0 & 0 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
 b. What are the eight 1 by 3 matrices containing only $0$'s and $1$'s? Are all
 eight of them reduced echelon matrices $R$?
 
+$$
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{ccc}
+1 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{ccc}
+0 & 1 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{ccc}
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+\end{array}\right]
+$$
+
+All eight matrices are $R$'s
+
 28. Explain why $A$ and $-A$ always have the same reduced echelon form $R$.
+
+_Solution:_
+
+Because multiplying every entry of $A$ by $-1$ does not change the location of
+the pivots, and ultimately does not change the outcome of the normalization
+process of going from $A$ or $-A$ to $U$ to $R$.
 
 29. If $A$ is 4 by 4 and invertible, describe the nullspace of the 4 by 8 matrix
     $B = \left[\begin{array}{cc}A & A \\\end{array}\right]$.
 
+_Solution:_
+
+First, establish $Bx$ where $x$ is some 8 by 1 vector, as equaling $0$ in order
+to find the nullspace.
+
+$$ Bx = \mathbf{0} $$
+
+Since $B$ is simply two block matrices of identical 4 by 4 matrices $A$, we can
+say that $B$ is the sum of two $A$ by two separate $x$ vectors (4 by 1 vectors):
+
+$$ Ax_1 + Ax_2 = \mathbf{0} $$
+
+$$ A(x_1 + x_2) = \mathbf{0} $$
+
+Multiplying both sides by $A^{-1}$ yields:
+
+$$ A^{-1}A(x_1 + x_2) = A^{-1}\mathbf{0} $$
+
+$$ I(x_1 + x_2) = \mathbf{0} $$
+
+$$ x_1 + x_2 = \mathbf{0} $$
+
+Evaluating further reveals:
+
+$$ x_1 = -x_2 $$
+
+$$ x_2 = -x_1 $$
+
+Thus all vectors $x$ are in the $N(B)$ of the form
+$x = \begin{bmatrix}{}-x_2\\x_2\end{bmatrix}$ for $x_2 \in \mathbf{R}^4$.
+
 30. How is the nullspace $N(C)$ related to the spaces $N(A)$ and $N(B)$, if
     $C = \left[\begin{array}{c}A \\B \\\end{array}\right]$?
+
+_Solution:_
+
+If $C(x) = \mathbf{0}$, then this means that $A(x) = \mathbf{0}$ and
+$B(x) = \mathbf{0}$. In other words, the nullspace of $C$ is the intersection of
+the nullspace of $A$ with the nullspace of $B$: $N(C) = N(A) \cap N(B)$.
 
 31. Find the reduced row echelon forms $R$ and the rank of these matrices:
 
