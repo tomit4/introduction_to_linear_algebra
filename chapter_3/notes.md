@@ -209,3 +209,85 @@ Page 152
 
 6. $A$ always has a free column if $n > m$, giving a _nonzesro solution_ to
    $Ax = \mathbf{0}$.
+
+---
+
+Page 161
+
+## The Complete Solution to $Ax = b$
+
+---
+
+Page 161
+
+1. **Complete Solution** to $Ax = b$:
+   $x = (\text{one particular solution } x_p) + (\text{any } x_n \text{ in the nullspace})$.
+
+2. Elimination on $\begin{bmatrix}{}A\\b\end{bmatrix}$ leads to
+   $\begin{bmatrix}{}R\\d\end{bmatrix}$. Then $Ax = b$ is equivalent to
+   $Rx = d$.
+
+3. $Ax = b$ and $Rx = d$ are solvable only when all zero rows of $R$ have zeros
+   in $d$.
+
+4. When $Rx = d$ is solvable, one very particular solution $x_p$ has all free
+   variables equal to zero.
+
+5. $A$ has **full column rank** $r = n$ when its nullspace $N(A) =$ zero vector:
+   _no free variables_.
+
+6. $A$ has **full row rank** $r = m$ when its column space $C(A)$ is
+   $\R^{m}: Ax = b$ is always solvable.
+
+7. The four cases are $r = m = n$ ($A$ is invertible) and $r = m < n$ (every
+   $Ax = b$ is solvable) and $r = n < m$ ($Ax = b$ has $1$ or $0$ solutions) and
+   $r < m, r < n$ ($0$ or $\infty$ solutions).
+
+---
+
+Page 164
+
+Every matrix $A$ with $\textbf{full column rank} (r = n)$ has all these
+properties:
+
+1. All columns of $A$ are pivot columns.
+
+2. There are no free variables or special solutions.
+
+3. The nullspace $N(A)$ contains only the zero vector $x = \mathbf{0}$.
+
+4. If $Ax = b$ has a solution (it might not) then it has only _one solution_.
+
+---
+
+Page 165
+
+Every matrix $A$ with $\textbf{full row rank} (r = m)$ has all these properties:
+
+1. All rows have pivots, and $R$ **has no zero rows.**
+
+2. $Ax = b$ has a **solution for every right side** $b$.
+
+3. The column space is the whole space $\R^m$.
+
+4. There are $n - r = n - m$ special solutions in the nullspace of $A$.
+
+---
+
+Page 166
+
+**REVIEW OF THE KEY IDEAS**
+
+1. The rank $r$ is the number of pivots. The matrix $R$ has $m - r$ zero rows.
+
+2. $Ax = b$ is solvable if and only if the last $m - r$ equations reduce to
+   $0 = 0$.
+
+3. One particular solution $x_p$ has all free variables equal to zero.
+
+4. The pivot variables are determined after the free variables are chosen.
+
+5. Full column rank $r = n$ means no free variables: one solution or none.
+
+6. Full row rank $r = m$ means one solution if $m = n$ or infinitely many if
+   $m < n$.

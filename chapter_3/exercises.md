@@ -4048,3 +4048,450 @@ Write the 3 by 4 matrix $A$ of all ones as the product of the 3 by 1 matrix from
 the pivot columns and the 1 by 4 matrix from $R$.
 
 Omitted.
+
+---
+
+Page 169
+
+## Problem Set 3.3
+
+1. (Recommended ) Execute the six steps of Worked Example 3.3A to describe the
+   column space and nullspace of $A$ and the complete solution to $Ax = b$:
+
+$$ A =
+\left[\begin{array}{cccc}
+2 & 4 & 6 & 4 \\
+2 & 5 & 7 & 6 \\
+2 & 3 & 5 & 2 \\
+\end{array}\right]
+$$
+
+$$ b =
+\begin{bmatrix}{}b_1\\b_2\\b_3\end{bmatrix} =
+\begin{bmatrix}{}4\\3\\5\end{bmatrix}
+$$
+
+2. Carry out the same six steps for this matrix $A$ with rank one. You will find
+   _two_ conditions on $b_1, b_2, b_3$ for $Ax = b$ to be solvable. Together
+   these two conditions put $b$ into the ____ space (two planes give a line):
+
+$$ A =
+\begin{bmatrix}{}1\\3\\2\end{bmatrix}
+\left[\begin{array}{ccc}
+2 & 1 & 3 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+2 & 1 & 3 \\
+6 & 3 & 9 \\
+4 & 2 & 6 \\
+\end{array}\right]
+$$
+
+$$ b =
+\begin{bmatrix}{}b_1\\b_2\\b_3\end{bmatrix} =
+\begin{bmatrix}{}10\\30\\20\end{bmatrix}
+$$
+
+**Questions 3-15 are about the solution of $Ax = b$. Follow the steps in the
+text to $x_p$ and $x_n$. Start from the augmented matrix with last column $b$.**
+
+3. Write the complete solution as $x_p$ plus any multiple of $s$ in the
+   nullspace:
+
+$$
+x + 3y + 3z = 1 \\
+2x + 6y + 9z = 5 \\
+-x - 3y + 3z = 5
+$$
+
+4. Find the complete solution (also called the _general solution_) to
+
+$$
+\left[\begin{array}{cccc}
+1 & 3 & 1 & 2 \\
+2 & 6 & 4 & 8 \\
+0 & 0 & 2 & 4 \\
+\end{array}\right]
+\begin{bmatrix}{}x\\y\\z\\t\end{bmatrix} =
+\begin{bmatrix}{}1\\3\\1\end{bmatrix}
+$$
+
+5. Under what condition on $b_1, b_2, b_3$ is this system solvable? Include $b$
+   as a fourth column in elimination. Find all solutions when that condition
+   holds:
+
+$$
+x + 2y - 2z = b_1 \\
+2x + 5y - 4z = b_2 \\
+4x + 9y - 8z = b_3
+$$
+
+6. What conditions on $b_1, b_2, b_3, b_4$ make each system solvable? Find $x$
+   in that case:
+
+$$
+\left[\begin{array}{cc}
+1 & 2 \\
+2 & 4 \\
+2 & 5 \\
+3 & 9 \\
+\end{array}\right]
+\begin{bmatrix}{}x_1\\x_2\end{bmatrix} =
+\begin{bmatrix}{}b_1\\b_2\\b_3\\b_4\end{bmatrix}
+$$
+
+$$
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+2 & 4 & 6 \\
+2 & 4 & 7 \\
+3 & 9 & 12 \\
+\end{array}\right]
+\begin{bmatrix}{}x_1\\x_2\\x_3\end{bmatrix} =
+\begin{bmatrix}{}b_1\\b_2\\b_3\\b_4\end{bmatrix}
+$$
+
+7. Show by elimination that $(b_1, b_2, b_3)$ is in the column space if
+   $b_3 - 2b_2 + 4b_1 = 0$.
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 3 & 1 \\
+3 & 8 & 2 \\
+2 & 4 & 0 \\
+\end{array}\right]
+$$
+
+What combination of the rows of $A$ gives the zero row?
+
+8. Which vectors $(b_1, b_2, b_3)$ are in the column space of $A$? Which
+   combinations of the rows of $A$ give zero?
+
+a.
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 2 & 1 \\
+2 & 6 & 3 \\
+0 & 2 & 5 \\
+\end{array}\right]
+$$
+
+b.
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+1 & 2 & 4 \\
+2 & 4 & 8 \\
+\end{array}\right]
+$$
+
+9.
+
+a. The Worked Example 3.3A reached
+$\left[\begin{array}{cc}U & c \\\end{array}\right]$ from
+$\left[\begin{array}{cc}A & b \\\end{array}\right]$. Put the multipliers into
+$L$ and verify that $LU$ equals $A$ and $Lc$ equals $b$.
+
+b. Combine the pivot columns of $A$ with the numbers $-9$ and $3$ in the
+particular solution $x_p$. What is the linear combination and why?
+
+10. Construct a 2 by 3 system $Ax = b$ with particular solution
+    $x_p = (2, 4, 0)$ and homogeneous solution $x_n =$ any multiple of
+    $(1, 1, 1)$.
+
+11. Why can't a $1$ by $3$ system have $x_p = (2, 4, 0)$ and $x_n =$ any
+    multiple of $(1, 1, 1)$?
+
+12.
+
+a. If $Ax = b$ has two solutions $x_1$ and $x_2$, find two solutions to
+$Ax = \mathbf{0}$.
+
+b. Then find another solution to $Ax = \mathbf{0}$ and another solution to
+$Ax = b$.
+
+13. Explain why these are all false:
+
+a. The complete solution is any linear combination of $x_p$ and $x_n$.
+
+b. A system $Ax = b$ has at most one particular solution.
+
+c. The solution $x_p$ with all free variables zero is the shortest solution
+(minimum length $||x||$). Find a 2 by 2 counterexample.
+
+d. If $A$ is invertible there is no solution $x_n$ in the nullspace.
+
+14. Suppose column $5$ of $U$ has no pivot. Then $x_5$ is a ____ variable. The
+    zero vector (is) (is not) the only solution to $Ax = \mathbf{0}$. If
+    $Ax = b$ has a solution, then it has ____ solutions.
+
+15. Suppose row 3 of $U$ has no pivot. Then that row is ____. The equation
+    $Ux = c$ is only solvable provided ____. The equation $Ax = b$ (is)(is
+    not)(might not be) solvable.
+
+**Questions 16-20 are about matrices of "full rank" $r = m$ or $r = n$.**
+
+16. The largest possible rank of a 3 by 5 matrix is ____. Then there is a pivot
+    in every ____ of $U$ and $R$. The solution to $Ax = b$ (always exists) (is
+    unique). The column space of $A$ is ____. An example is $A =$ ____.
+
+17. The largest possible rank of a 6 by 4 matrix is ____. Then there is a pivot
+    in every ____ of $U$ and $R$. The solution to $Ax = b$ (always exists) (is
+    unique). The nullspace of $A$ is ____. An example is $A =$ ____.
+
+18. Find by elimination the rank of $A$ and also the rank of $A^{\mathbf{T}}$:
+
+$$ A =
+\left[\begin{array}{rrr}
+1 & 4 & 0 \\
+2 & 11 & 5 \\
+-1 & 2 & 10 \\
+\end{array}\right]
+$$
+
+and
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 0 & 1 \\
+1 & 1 & 2 \\
+1 & 1 & q \\
+\end{array}\right]
+$$
+
+(rank depends on $q$).
+
+19. Find the rank of $A$ and also of $A^{\mathbf{T}}A$ and also of
+    $AA^{\mathbf{T}}$:
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 1 & 5 \\
+1 & 0 & 1 \\
+\end{array}\right]
+$$
+
+and
+
+$$ A =
+\left[\begin{array}{cc}
+2 & 0 \\
+1 & 1 \\
+1 & 2 \\
+\end{array}\right]
+$$
+
+20. Reduce $A$ to its echelon form $U$. Then find a triangular $L$ so that
+    $A = LU$.
+
+$$ A =
+\left[\begin{array}{cccc}
+3 & 4 & 1 & 0 \\
+6 & 5 & 2 & 1 \\
+\end{array}\right]
+$$
+
+and
+
+$$ A =
+\left[\begin{array}{cccc}
+1 & 0 & 1 & 0 \\
+2 & 2 & 0 & 3 \\
+0 & 6 & 5 & 4 \\
+\end{array}\right]
+$$
+
+21. Find the complete solution in the form $x_p + x_n$ to these full rank
+    systems:
+
+a. $x + y + z = 4$
+
+b.
+
+$$
+x + y + z = 4 \\
+x - y + z = 4 \\
+$$
+
+22. If $Ax = b$ has infinitely many solutions, why is it impossible for $Ax = B$
+    (new right side) to have only one solution? Could $Ax = B$ have no solution?
+
+23. Choose the number $q$ so that (if possible) the ranks are (a) 1, (b) 2,
+    \(c\) 3:
+
+$$ A =
+\left[\begin{array}{rrr}
+6 & 4 & 2 \\
+-3 & -2 & -1 \\
+9 & 6 & q \\
+\end{array}\right]
+$$
+
+and
+
+$$ B =
+\left[\begin{array}{ccc}
+3 & 1 & 3 \\
+q & 2 & q \\
+\end{array}\right]
+$$
+
+24. Give examples of matrices $A$ for which the number of solutions to $Ax = b$
+    is
+
+a. $0$ or $1$, depending on $b$
+
+b. $\infty$, regardless of $b$
+
+c. $0$ or $\infty$, depending on $b$
+
+d. $1$, regardless of $b$
+
+25. Write down all the known relations between $r$ and $m$ and $n$ if $Ax = b$
+    has
+
+a. no solution for some $b$
+
+b. infinitely many solutions for every $b$
+
+c. exactly one solution for some $b$, no solution for other $b$
+
+d. exactly one solution for every $b$
+
+**Questions 26-33 are about Gauss-Jordan elimination (upwards as well as
+downwards and the reduced echelon matrix $R$.**
+
+26. Continue elimination from $U$ to $R$. Divide rows by pivots so the new
+    pivots are all $1$. Then produce zeros _above_ those pivots to reach $R$:
+
+$$ U =
+\left[\begin{array}{ccc}
+2 & 4 & 4 \\
+0 & 3 & 6 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+and
+
+$$ U =
+\left[\begin{array}{ccc}
+2 & 4 & 4 \\
+0 & 3 & 6 \\
+0 & 0 & 5 \\
+\end{array}\right]
+$$
+
+27. If $A$ is a triangular matrix, when is $R = \text{rref}(A)$ equal to $I$?
+
+28. Apply Gauss-Jordan elimination to $Ux = \mathbf{0}$ and $Ux = c$. Reach
+    $Rx = \mathbf{0}$ and $Rx = d$:
+
+$$
+\left[\begin{array}{cc}
+U & \mathbf{0} \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+1 & 2 & 3 & \mathbf{0} \\
+0 & 0 & 4 & \mathbf{0} \\
+\end{array}\right]
+$$
+
+and
+
+$$
+\left[\begin{array}{cc}
+U & c \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+1 & 2 & 3 & 5 \\
+0 & 0 & 4 & 8 \\
+\end{array}\right]
+$$
+
+Solve $Rx = \mathbf{0}$ to find $x_n$ (its free variable is $x_2 = 1$). Solve
+$Rx = d$ to find $x_p$ (its free variable is $x_2 = 0$).
+
+29. Apply Gauss-Jordan elimination to reduce to $Rx = \mathbf{0}$ and $Rx = d$:
+
+$$
+\left[\begin{array}{cc}
+& \\
+U & 0 \\
+& \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+3 & 0 & 6 & \mathbf{0} \\
+0 & 0 & 2 & \mathbf{0} \\
+0 & 0 & 0 & \mathbf{0} \\
+\end{array}\right]
+$$
+
+and
+
+$$
+\left[\begin{array}{cc}
+& \\
+U & c \\
+& \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+3 & 0 & 6 & 9 \\
+0 & 0 & 2 & 4 \\
+0 & 0 & 0 & 5 \\
+\end{array}\right]
+$$
+
+Solve $Ux = \mathbf{0}$ or $Rx = \mathbf{0}$ to find $x_n$ (free variable
+$= 1$). What are the solutions to $Rx = d$?
+
+30. Reduce to $Ux = c$ (Gaussian elimination) and then $Rx = d$ (Gauss-Jordan):
+
+$$ Ax =
+\left[\begin{array}{cccc}
+1 & 0 & 2 & 3 \\
+1 & 3 & 2 & 0 \\
+2 & 0 & 4 & 9 \\
+\end{array}\right]
+\begin{bmatrix}{}x_1\\x_2\\x_3\\x_4\end{bmatrix} =
+\begin{bmatrix}{}2\\5\\10\end{bmatrix} = b
+$$
+
+Find a particular solution $x_p$ and all homogeneous solutions $x_n$.
+
+31. Find matrices $A$ and $B$ with the given property or explain why you can't:
+
+a. The only solution of $Ax = \begin{bmatrix}{}1\\2\\3\end{bmatrix}$ is
+$x = \begin{bmatrix}{}0\\1\end{bmatrix}$.
+
+b. The only solution of $Bx = \begin{bmatrix}{}0\\1\end{bmatrix}$ is
+$x = \begin{bmatrix}{}1\\2\\3\end{bmatrix}$.
+
+32. Find the $LU$ factorization of $A$ and the complete solution to $Ax = b$:
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 3 & 1 \\
+1 & 2 & 3 \\
+2 & 4 & 6 \\
+1 & 1 & 5 \\
+\end{array}\right]
+$$
+
+and
+
+$$ b =
+\begin{bmatrix}{}1\\3\\6\\5\end{bmatrix}
+$$
+
+and then
+
+$$ b =
+\begin{bmatrix}{}1\\0\\0\\0\end{bmatrix}
+$$
+
+33. The complete solution to $Ax = \begin{bmatrix}{}1\\3\end{bmatrix}$ is
+    $x = \begin{bmatrix}{}1\\0\end{bmatrix} + c\begin{bmatrix}{}0\\1\end{bmatrix}$.
+    Find $A$.
