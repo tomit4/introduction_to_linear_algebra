@@ -3211,8 +3211,6 @@ Choose $y_2 = 0, y_3 = 1$, then:
 
 $$ s_4 = \begin{bmatrix}{}0\\0\\1\end{bmatrix} $$
 
-(LEFT OFF HERE).
-
 39. Fill out these matrices so that they have rank 1:
 
 $$ A =
@@ -3242,10 +3240,46 @@ c & \\
 \end{array}\right]
 $$
 
+_Solution:_
+
+_First:_
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 2 & 4 \\
+2 & 4 & 6 \\
+4 & 8 & 16 \\
+\end{array}\right]
+$$
+
+_Second:_
+
+$$ B =
+\left[\begin{array}{rrr}
+3 & 9 & -\frac{1}{2} \\
+1 & 3 & -\frac{3}{2} \\
+2 & 6 & -3 \\
+\end{array}\right]
+$$
+
+_Third:_
+
+$$ M =
+\left[\begin{array}{cc}
+a & b \\
+c & \frac{bc}{a} \\
+\end{array}\right]
+$$
+
 40. If $A$ is an $m$ by $n$ matrix with $r = 1$, its columns are multiples of
     one column and its rows are multiples of one row. The column space is a ____
     in $\R^m$. The nullspace is a ____ in $\R^n$. The nullspace matrix $N$ has
     shape ____.
+
+_Solution:_
+
+line;plane;$n$ by $n - 1$ (with $n - 1$ being special special solutions in its
+columns)
 
 41. Choose vectors $u$ and $v$ so that $A = uv^{\mathbf{T}} =$ column times row:
 
@@ -3269,7 +3303,106 @@ $$
 $A = uv^{\mathbf{T}}$ _is the natural form for every matrix that has rank
 $r = 1$_.
 
+_Solution:_
+
+_First:_
+
+$$ A =
+\left[\begin{array}{ccc}
+3 & 6 & 6 \\
+1 & 2 & 2 \\
+4 & 8 & 8 \\
+\end{array}\right]
+$$
+
+Since $A$'s columns are all multiples of the first, this indicates that $u$ is a
+vector that represents the fact that $A$ is rank 1. Thus $u$ can be represented
+by this first column:
+
+$$ u = \begin{bmatrix}{}3\\1\\4\end{bmatrix} $$
+
+So, to get $uv^{\mathbf{T}} = A$, we need to multiply $u$ by some vector which
+will give us $A$, it follows that we can multiply by the base row in $A$ that is
+the base off of which the other rows are multiples, in this case that is row 2:
+
+$$ v^{\mathbf{T}} =
+\left[\begin{array}{ccc}
+1 & 2 & 2 \\
+\end{array}\right]
+$$
+
+Thus:
+
+$$ uv^{\mathbf{T}} =
+\begin{bmatrix}{}3\\1\\4\end{bmatrix}
+\left[\begin{array}{ccc}
+1 & 2 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+3 & 6 & 6 \\
+1 & 2 & 2 \\
+4 & 8 & 8 \\
+\end{array}\right] = A
+$$
+
+_Second:_
+
+$$ A =
+\left[\begin{array}{rrrr}
+2 & 2 & 6 & 4 \\
+-1 & -1 & -3 & -2 \\
+\end{array}\right]
+$$
+
+Similar to the first:
+
+$$ u = \begin{bmatrix}{}2\\-1\end{bmatrix} $$
+
+And:
+
+$$ v^{\mathbf{T}} =
+\left[\begin{array}{rrrr}
+1 & 1 & 3 & 2 \\
+\end{array}\right]
+$$
+
+Note here we choose $v$ after we divide by $-1$ to get it into reduced form.
+
+$$ uv^{\mathbf{T}} =
+\begin{bmatrix}{}2\\-1\end{bmatrix}
+\left[\begin{array}{rrrr}
+1 & 1 & 3 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{rrrr}
+2 & 2 & 6 & 4 \\
+-1 & -1 & -3 & -2 \\
+\end{array}\right] = A
+$$
+
 42. If $A$ is a rank one matrix, the second row of $R$ is ____. Do an example.
+
+a zero row.
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+2 & 4 & 6 \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ R =
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
 
 **Problems 43-45 are about $r$ by $r$ invertible matrices inside $A$.**
 
@@ -3300,8 +3433,102 @@ $$ C =
 \end{array}\right]
 $$
 
+_Solution:_
+
+_First:_
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+1 & 2 & 4 \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ R =
+\left[\begin{array}{ccc}
+1 & 2 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+Remove $m - r$ rows is remove $2 - 2 = 0$ rows, and $n - r$ columns is
+$3 - 2 = 1$ columns to find an invertible submatrix inside $A$, $S$:
+
+$$ S =
+\left[\begin{array}{cc}
+1 & 3 \\
+1 & 4 \\
+\end{array}\right]
+$$
+
+Notice we removed the pivot column.
+
+_Second:_
+
+$$ B =
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+2 & 4 & 6 \\
+\end{array}\right]
+$$
+
+$$ R =
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+Remove $2 - 1 = 1$ rows and $3 - 1 = 2$ columns to find $S$.
+
+$$ S =
+\left[\begin{array}{c}
+1 \\
+\end{array}\right]
+$$
+
+_Third:_
+
+$$ C =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ R =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+Remove $3 - 2 = 1$ rows and $3 - 2 = 1$ columns to get $S$:
+
+$$ S =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 1 \\
+\end{array}\right]
+$$
+
 44. Suppose $P$ contains only the $r$ pivot columns of an $m$ by $n$ matrix.
     Explain why this $m$ by $r$ submatrix $P$ has rank $r$.
+
+_Solution:_
+
+Since $P$ only contains the $r$ pivot columns from the original matrix,
+elimination will produce the same pivot columns in $P$ as elimination did in the
+original.
 
 45. Transpose $P$ in Problem 44. Find the $r$ pivot columns of $P^{\mathbf{T}}$
     (which is $r$ by $m$). Transposing back, **this produces an $r$ by $r$
@@ -3318,6 +3545,58 @@ $$ A =
 $$
 
 find $P$ (3 by 2) and then the invertible $S$ (2 by 2).
+
+_Solution:_
+
+_Find $P$ (3 by 2):_
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+2 & 4 & 6 \\
+2 & 4 & 7 \\
+\end{array}\right]
+$$
+
+$$ R =
+\left[\begin{array}{ccc}
+1 & 2 & 0 \\
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+Now find $P$ (only the $r$ pivot columns of $A$). Remove $n - r = 3 - 2 = 1$
+(non pivot) columns of $A$, from $R$ we have.
+
+$$ R =
+\left[\begin{array}{ccc}
+1 & 0 \\
+0 & 1 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+Now apply to $R$ to $A$ to find $P$:
+
+$$ R =
+\left[\begin{array}{ccc}
+1 & 3 \\
+2 & 6 \\
+2 & 7 \\
+\end{array}\right]
+$$
+
+_Find invertible $S$ (2 by 2):_
+
+Remove the $m - r = 3 - 2 = 1$ rows:
+
+$$ S =
+\left[\begin{array}{ccc}
+1 & 3 \\
+2 & 7 \\
+\end{array}\right]
+$$
 
 **Problems 46-51 show that rank $(AB)$ is not greater than rank $(A)$ or rank
 $(B)$.**
@@ -3345,9 +3624,90 @@ c & bc \\
 \end{array}\right]
 $$
 
+_Solution:_
+
+_First:_
+
+$$ AB =
+\left[\begin{array}{cc}
+1 & 2 \\
+2 & 4 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+2 & 1 & 4 \\
+3 & 1.5 & 6 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+8 & 4 & 16 \\
+16 & 8 & 32 \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{ccc}
+8 & 4 & 16 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ R =
+\left[\begin{array}{ccc}
+1 & \frac{1}{2} & 2 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ r_{AB} = 1 $$
+
+_Second:_
+
+$$ AC =
+\left[\begin{array}{cc}
+1 & 2 \\
+2 & 4 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & b \\
+c & bc \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 + 2c & b + 2bc \\
+2 + 4c & 2b + 4bc \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{cc}
+1 + 2c & b + 2bc \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+$$ R =
+\left[\begin{array}{cc}
+1 & b \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+$$ r_{AC} = 1 $$
+
 47. The rank one matrix $uv^{\mathbf{T}}$ times the rank one matrix
     $wz^{\mathbf{T}}$ is $uz^{\mathbf{T}}$ times the number ____. This product
     $uv^{\mathbf{T}}wz^{\mathbf{T}}$ also has rank one unless ____ $= 0$.
+
+_Solution:_
+
+$$ (uv^{\mathbf{T}})(wz^{\mathbf{T}}) = uz^{\mathbf{T}} \cdot \text{(?)} $$
+
+$$ u(v^{\mathbf{T}}w)z^{\mathbf{T}} = uz^{\mathbf{T}} \cdot \text{(?)} $$
+
+Note here that $(v^{\mathbf{T}}w)$ is a scalar here, and thus the laws of
+commutativity are fine to apply:
+
+$$ u(v^{\mathbf{T}}w)z^{\mathbf{T}} = uz^{\mathbf{T}} \cdot v^{\mathbf{T}}w $$
+
+This product has rank one unless $v^{\mathbf{T}}w = 0$.
 
 48.
 
@@ -3356,29 +3716,165 @@ that column $j$ of $AB$ is the same combination of previous columns of $AB$.
 Then $AB$ cannot have new pivot columns, so
 $\textbf{rank}(AB) \leq \textbf{rank}(B)$.
 
+_Solution:_
+
+By matrix multiplication, every column of $AB$ is a combination of the column of
+$A$ times the corresponding column of $B$. Since column $j$ of $B$ is a
+combination of the previous columns, it follows that when $B$ is multiplied by
+$A$, that same column $j$ in $AB$ is the same combination of previous columns of
+$AB$. Then $\text{rank}(AB) \leq \text{rank}(B)$, and so it follows that $AB$
+cannot have any new pivot columns.
+
 b. Find $A_1$ and $A_2$ so that $\text{rank}(A_1B) = 1$ and
 $\text{rank}(A_2B) = 0$ for
 $B =\left[\begin{array}{cc}1 & 1 \\1 & 1 \\\end{array}\right]$.
+
+_Solution:_
+
+$$ A_1B =
+\left[\begin{array}{cc}
+1 & 0 \\
+1 & 2 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 1 \\
+3 & 3 \\
+\end{array}\right]
+$$
+
+$$ \text{rank}(A_1B) = 1 $$
+
+$$ A_2B =
+\left[\begin{array}{cc}
+1 & -1 \\
+1 & -1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+0 & 0 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+$$ \text{rank}(A_2B) = 0 $$
 
 49. Problem 48 proved that $\text{rank}(AB) \leq \text{rank}(B)$. Then the same
     reasoning gives
     $\text{rank}(B^{\mathbf{T}}A^{\mathbf{T}}) \leq \text{rank}(A^{\mathbf{T}})$.
     How do you deduce that $\text{rank}(AB) \leq \text{rank}A$?
 
+_Solution:_
+
+Since transposes retain the same rank as their original matrices, it follows
+that since
+$\text{rank}(B^{\mathbf{T}}A^{\mathbf{T}}) \leq \text{rank}(A^{\mathbf{T}})$
+that $\text{rank}(AB) \leq \text{rank}(A)$.
+
 50. (Important) Suppose $A$ and $B$ are $n$ by $n$ matrices, and $AB = I$. Prove
     from $\text{rank}(AB) \leq \text{rank}(A)$ that the rank of $A$ is $n$. So
     $A$ is invertible and $B$ must be its two-sided inverse (Section 2.5).
     Therefore $BA = I$ (_which is not so obvious!_)
 
+_Solution:_
+
+**Proof:**
+
+Suppose $A$ and $B$ are any two matrices of dimensions $n$ by $n$ (where $n$ is
+an integer). Furthermore, suppose $AB = I$.
+
+It is to be shown that the rank of $A$ is $n$ and that $BA = I$.
+
+By matrix multiplication, it is known that $AB$ is an $n$ by $n$ matrix, and by
+the supposition, since $AB = I$, it follows that
+$\text{rank}(I) = \text{rank}(AB) = n$.
+
+By problem 48, we know that $\text{rank}(AB) \leq \text{rank}(A)$, which forces
+the rank of $A$ to be $n$.
+
+Since $A$ is an $n$ by $n$ matrix of rank $n$, it follows that $A$ is
+invertible.
+
+Furthermore, by the definition for inverses, since $AB = I$, it follows that
+$B = A^{-1}$, and this means that $B$ is $A$'s two-sided inverse.
+
+It therefore follows that $BA = I$.
+
+Q.E.D.
+
 51. If $A$ is 2 by 3 and $B$ is 3 by 2 and $AB = I$, show from its rank that
     $BA \neq I$. Give an example of $A$ and $B$ with $AB = I$. For $m < n$, a
     right inverse is not a left inverse.
+
+_Solution:_
+
+**Proof:**
+
+Suppose $A$ is a 2 by 3 matrix, $B$ is a 3 by 2 matrix, and $AB = I$.
+
+It is to be shown that $BA \neq I$.
+
+Since $A$ is a 2 by 3 matrix, it follows that $\text{rank}(A) \leq 2$.
+
+Similarly, since $B$ is a 3 by 2 matrix, it follows that
+$\text{rank}(B) \leq 2$.
+
+It follows from problem 48 that $\text{rank}(AB) = \text{rank}(I) \leq 2$.
+
+Now, by matrix multiplication, the dimensions of $BA$ are 3 by 3. By similar
+logic, this means that $\text{rank}(BA) \leq 3$.
+
+Now, by problem 48 again, we know that
+$\text{rank}(BA) \leq \text{rank}(A) \leq 2$, which means that
+$\text{rank}(BA) \leq 2 < 3$. Now, a 3 by 3 identity matrix has a rank of $3$,
+and so it follows that
+$\text{rank}(BA) \leq 2 \neq \text{rank}(I_{3 \times 3}) = 3$.
+
+It can thus be concluded that $BA \neq I$.
+
+This is what was to be shown.
+
+Q.E.D.
+
+Example:
+
+$$ AB =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 0 \\
+0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 1 \\
+\end{array}\right] = I
+$$
 
 52. Suppose $A$ and $B$ have the _same_ reduced row echelon form $R$.
 
 a. Show that $A$ and $B$ have the same nullspace and the same row space.
 
+_Solution:_
+
+Since $A$ and $B$ have the same $R$, it follows that they have the same
+nullspace (since the nullspace is derived from $R$), and they share the same row
+space since row operations on either $A$ and $B$ do not change $R$.
+
 b. We know $E_1A = R$ and $E_2B = R$. So $A$ equals an ____ matrix times $B$.
+
+_Solution:_
+
+invertible
 
 53. Express $A$ and then $B$ as the sum of two rank one matrices:
 
@@ -3399,6 +3895,89 @@ $$ B =
 \end{array}\right]
 $$
 
+_Solution:_
+
+_First:_
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+1 & 1 & 4 \\
+1 & 1 & 8 \\
+\end{array}\right]
+$$
+
+$A = (\text{pivot columns})(\text{nonzero rows of } R) = uv^{\mathbf{T}}$
+
+$$ R =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ A =
+\left[\begin{array}{cc}
+1 & 0 \\
+1 & 4 \\
+1 & 8 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+1 & 1 & 0 \\
+1 & 1 & 0 \\
+\end{array}\right] +
+\left[\begin{array}{ccc}
+0 & 0 & 0 \\
+0 & 0 & 4 \\
+0 & 0 & 8 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+1 & 1 & 4 \\
+1 & 1 & 8 \\
+\end{array}\right] = A
+$$
+
+_Second:_
+
+$$ B =
+\left[\begin{array}{cc}
+2 & 2 \\
+2 & 3 \\
+\end{array}\right]
+$$
+
+$$ R =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+$$ B =
+\left[\begin{array}{c}
+2 & 2 \\
+2 & 3 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+2 & 0 \\
+2 & 0 \\
+\end{array}\right] +
+\left[\begin{array}{cc}
+0 & 2 \\
+0 & 3 \\
+\end{array}\right] = B
+$$
+
 54. Answer the same questions as in Worked Example 3.2C for
 
 $$ A =
@@ -3417,6 +3996,8 @@ $$ B =
 0 & 2 - c \\
 \end{array}\right]
 $$
+
+Omitted.
 
 55. What is the nullspace matrix $N$ (containing the special solutions) for
     $A, B, C$?
@@ -3446,6 +4027,18 @@ I & I & I \\
 \end{array}\right]
 $$
 
+_Solution:_
+
+$N(A) = \begin{bmatrix}{}I\\-I\end{bmatrix}, $N(B) = N(A)$$
+
+$$ N(C) =
+\left[\begin{array}{cc}
+I & -I \\
+I & 0 \\
+0 & I \\
+\end{array}\right]
+$$
+
 56. _Neat fact_ _Every $m$ by $n$ matrix of rank $r$ reduces to ($m$ by $r$)
     **times** ($r$ by $n$):_
 
@@ -3453,3 +4046,5 @@ $$
 
 Write the 3 by 4 matrix $A$ of all ones as the product of the 3 by 1 matrix from
 the pivot columns and the 1 by 4 matrix from $R$.
+
+Omitted.
