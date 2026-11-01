@@ -4071,6 +4071,175 @@ $$ b =
 \begin{bmatrix}{}4\\3\\5\end{bmatrix}
 $$
 
+_Solution:_
+
+Refer to the six steps here:
+
+(1) Reduce $\left[\begin{array}{cc}A & b\\\end{array}\right]$ to
+$\left[\begin{array}{cc}U & c\\\end{array}\right]$, so that $Ax = b$ becomes a
+triangular system $Ux = c$.
+
+(2) Find the condition on $b_1, b_2, b_3$ for $Ax = b$ to have a solution.
+
+(3) Describe the column space of $A$. Which plane in $\R^3$?
+
+(4) Describe the nullspace of $A$. Which special solutions in $\R^4$?
+
+(5) Reduce $\left[\begin{array}{cc}U & c\\\end{array}\right]$ to
+$\left[\begin{array}{cc}R & d\\\end{array}\right]$: Special solutions from $R$,
+particular solution from $d$.
+
+(6) Find a particular solution to $Ax = (0, 6, -6)$ and then the complete
+solution.
+
+_(1):_
+
+Take $Ax = b$ to $Ux = c$:
+
+$$ A =
+\left[\begin{array}{cccc}
+2 & 4 & 6 & 4 \\
+2 & 5 & 7 & 6 \\
+2 & 3 & 5 & 2 \\
+\end{array}\right]
+$$
+
+$$ b =
+\begin{bmatrix}{}b_1\\b_2\\b_3\end{bmatrix} =
+\begin{bmatrix}{}4\\3\\5\end{bmatrix}
+$$
+
+$$
+\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+2 & 4 & 6 & 4 & b_1 \\
+2 & 5 & 7 & 6 & b_2 \\
+2 & 3 & 5 & 2 & b_3 \\
+\end{array}\right] \to
+\left[\begin{array}{llll|l}
+2 & 4 & 6 & 4 & b_1 \\
+0 & 1 & 1 & 2 & b_2 - b_1 \\
+0 & -1 & -1 & -2 & b_3 - b_1 \\
+\end{array}\right] \to
+\left[\begin{array}{llll|l}
+2 & 4 & 6 & 4 & b_1 \\
+0 & 1 & 1 & 2 & b_2 - b_1 \\
+0 & 0 & 0 & 0 & b_3 + b_2 - 2b_1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+U & c \\
+\end{array}\right]
+$$
+
+_(2):_
+
+For $Ax = b$ to have a solution, the last row indicates that the following
+equality must hold: $b_3 + b_2 - 2b_1 = 0$, then $0 = 0$.
+
+_(3):_
+
+The column space is the plane containing all combinations of the pivot columns.
+Here, that is specifically $(2, 2, 2)$ and $(4, 5, 3)$. The pivots are in
+columns 1 and 2. Another description would be that the column space contains all
+vectors with $b_3 + b_2 - 2b_1 = 0$, which makes $Ax = b$ solvable, so $b$ is in
+the column space. Since all columns of $A$ pass this test of
+$b_3 + b_2 - 2b_1 = 0$, this is the equation for the plane. _(4):_
+
+_(4):_
+
+To find the special solutions, set free variables $x_3 = 1, x_4 = 0$, as well as
+$x_3 = 0, x_4 = 1$ in $Ux = 0$:
+
+$$
+\left[\begin{array}{llll|l}
+2 & 4 & 6 & 4 & b_1 \\
+0 & 1 & 1 & 2 & b_2 - b_1 \\
+0 & 0 & 0 & 0 & b_3 + b_2 - 2b_1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+U & c \\
+\end{array}\right]
+$$
+
+$x_3 = 1, x_4 = 0$:
+
+$$ 1(x_2) + 1(x_3) + 2(x_4) = 0 \Rightarrow x_2 + 1(1) + 2(0) = 0 \Rightarrow x_2 + 1 = 0 \Rightarrow x_2 = -1 $$
+
+$$ 2x_1 + 4x_2 + 6x_3 + 4x_4 = 0 \Rightarrow 2x_1 + 4(-1) + 6(1) + 4(0) = 0 \Rightarrow 2x_1 - 4 + 6 = 0 \Rightarrow 2x_1 + 2 = 0 \Rightarrow 2x_1 = -2 \Rightarrow x_1 = -1 $$
+
+$$ s_1 = \begin{bmatrix}{}-1\\-1\\1\\0\end{bmatrix} $$
+
+$x_3 = 0, x_4 = 1$:
+
+$$ 1(x_2) + 1(x_3) + 2(x_4) = 0 \Rightarrow x_2 + 1(0) + 2(1) = 0 \Rightarrow x_2 + 2 = 0 \Rightarrow x_2 = -2 $$
+
+$$ 2x_1 + 4x_2 + 6x_3 + 4x_4 = 0 \Rightarrow 2x_1 + 4(-2) + 6(0) + 4(1) = 0 \Rightarrow 2x_1 - 8 + 4 = 0 \Rightarrow 2x_1 - 4 = 0 \Rightarrow 2x_1 = 4 \Rightarrow x_1 = 2 $$
+
+$$ s_2 = \begin{bmatrix}{}2\\-2\\0\\1\end{bmatrix} $$
+
+And thus the nullspace $N(A)$ in $\R^4$ contains all $x_n = c_1s_1 + c_2s_2$.
+
+_(5):_
+
+Reduce $Ux = c$ to $Rx = d$:
+
+$$
+\left[\begin{array}{cc}
+U & c \\
+\end{array}\right] =
+\left[\begin{array}{llll|l}
+2 & 4 & 6 & 4 & b_1 \\
+0 & 1 & 1 & 2 & b_2 - b_1 \\
+0 & 0 & 0 & 0 & b_3 + b_2 - 2b_1 \\
+\end{array}\right] \to
+\left[\begin{array}{llll|l}
+2 & 0 & 2 & -4 & 5b_1 - 4b_2 \\
+0 & 1 & 1 & 2 & b_2 - b_1 \\
+0 & 0 & 0 & 0 & b_3 + b_2 - 2b_1 \\
+\end{array}\right] \to
+\left[\begin{array}{llll|l}
+1 & 0 & 1 & -2 & \frac{5b_1 - 4b_2}{2} \\
+0 & 1 & 1 & 2 & b_2 - b_1 \\
+0 & 0 & 0 & 0 & b_3 + b_2 - 2b_1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+R & d \\
+\end{array}\right]
+$$
+
+Here, we now solve by actually plugging in for $b$ to find $d$:
+
+$$
+\left[\begin{array}{cc}
+R & d \\
+\end{array}\right] =
+\left[\begin{array}{llll|l}
+1 & 0 & 1 & -2 & \frac{5(4) - 4(3)}{2} \\
+0 & 1 & 1 & 2 & (3) - (4) \\
+0 & 0 & 0 & 0 & (5) + (3) - 2(4) \\
+\end{array}\right] \to
+\left[\begin{array}{rrrr|r}
+1 & 0 & 1 & -2 & 4 \\
+0 & 1 & 1 & 2 & -1 \\
+0 & 0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+_(6):_
+
+Find the particular solution $x_p$ where free variables are set to $0$. Back
+substitute in $Ux = c$. This yields:
+
+$$ x_p = \begin{bmatrix}{}4\\-1\\0\\0\end{bmatrix} $$
+
+Finally, the complete solution is expressed as:
+
+$$ x_{\text{complete}} = x_p + c_1s_1 + c_2s_2 $$
+
+(You can expand this out if desired, but this is the general form.)
+
 2. Carry out the same six steps for this matrix $A$ with rank one. You will find
    _two_ conditions on $b_1, b_2, b_3$ for $Ax = b$ to be solvable. Together
    these two conditions put $b$ into the ____ space (two planes give a line):
@@ -4092,6 +4261,155 @@ $$ b =
 \begin{bmatrix}{}10\\30\\20\end{bmatrix}
 $$
 
+_Solution:_
+
+_(1):_
+
+$$ A =
+\begin{bmatrix}{}1\\3\\2\end{bmatrix}
+\left[\begin{array}{ccc}
+2 & 1 & 3 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+2 & 1 & 3 \\
+6 & 3 & 9 \\
+4 & 2 & 6 \\
+\end{array}\right]
+$$
+
+$$ b =
+\begin{bmatrix}{}b_1\\b_2\\b_3\end{bmatrix} =
+\begin{bmatrix}{}10\\30\\20\end{bmatrix}
+$$
+
+$$
+\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{ccc|c}
+2 & 1 & 3 & b_1 \\
+6 & 3 & 9 & b_2 \\
+4 & 2 & 6 & b_3 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc|c}
+2 & 1 & 3 & b_1 \\
+0 & 0 & 0 & b_2 - 3b_1 \\
+4 & 2 & 6 & b_3 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc|c}
+2 & 1 & 3 & b_1 \\
+0 & 0 & 0 & b_2 - 3b_1 \\
+0 & 0 & 0 & b_3 - 2b_1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+U & c \\
+\end{array}\right]
+$$
+
+_(2):_
+
+For $Ax = b$ to have a solution both $b_3 - 2b_1 = 0$ and $b_2 - 3b_1 = 0$ must
+hold (then $0 = 0$ for both conditions).
+
+_(3):_
+
+$$ C(A) = \begin{bmatrix}{}2\\6\\4\end{bmatrix} $$
+
+So the column space is the _line_ containing all combinations of the pivot
+columns $(2, 6, 4)$.
+
+_(4):_
+
+Find special solutions from $Ux = 0$ by setting $x_2 = 1, x_3 = 0$ and
+$x_2 = 0, x_3 = 1$:
+
+$$
+\left[\begin{array}{cc}
+U & c \\
+\end{array}\right] =
+\left[\begin{array}{ccc|c}
+2 & 1 & 3 & b_1 \\
+0 & 0 & 0 & b_2 - 3b_1 \\
+0 & 0 & 0 & b_3 - 2b_1 \\
+\end{array}\right]
+$$
+
+$x_2 = 1, x_3 = 0$:
+
+$$ 2x_1 + 1x_2 + 3x_3 = 0 \Rightarrow 2x_1 + 1(1) + 3(0) = 0 \Rightarrow 2x_1 + 1 = 0 \Rightarrow 2x_1 = -1 \Rightarrow x_1 = -\frac{1}{2} $$
+
+$$ s_1 = \begin{bmatrix}{}-\frac{1}{2}\\1\\0\end{bmatrix} $$
+
+$x_2 = 0, x_3 = 1$:
+
+$$ 2x_1 + 1x_2 + 3x_3 = 0 \Rightarrow 2x_1 + 1(0) + 3(1) = 0 \Rightarrow 2x_1 + 3 = 0 \Rightarrow 2x_1 = -3 \Rightarrow x_1 = -\frac{3}{2} $$
+
+$$ s_2 = \begin{bmatrix}{}-\frac{3}{2}\\0\\1\end{bmatrix} $$
+
+The nullspace $N(A)$ in $\R^3$ is $x_n = c_1s_1 + c_2s_2$.
+
+_(5):_
+
+Reduce $Ux = c$ to $Rx = d$:
+
+$$
+\left[\begin{array}{cc}
+U & c \\
+\end{array}\right] =
+\left[\begin{array}{ccc|c}
+2 & 1 & 3 & b_1 \\
+0 & 0 & 0 & b_2 - 3b_1 \\
+0 & 0 & 0 & b_3 - 2b_1 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc|c}
+1 & \frac{1}{2} & \frac{3}{2} & \frac{b_1}{2} \\
+0 & 0 & 0 & b_2 - 3b_1 \\
+0 & 0 & 0 & b_3 - 2b_1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+R & d \\
+\end{array}\right]
+$$
+
+To find the particular solution for $d$, plug in for $b$ to find $d$:
+
+$$
+\left[\begin{array}{cc}
+R & d \\
+\end{array}\right] =
+\left[\begin{array}{ccc|c}
+2 & 1 & 3 & b_1 \\
+0 & 0 & 0 & b_2 - 3b_1 \\
+0 & 0 & 0 & b_3 - 2b_1 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc|c}
+1 & \frac{1}{2} & \frac{3}{2} & \frac{(10)}{2} \\
+0 & 0 & 0 & (30) - 3(10) \\
+0 & 0 & 0 & (20) - 2(10) \\
+\end{array}\right] \to
+\left[\begin{array}{ccc|c}
+1 & \frac{1}{2} & \frac{3}{2} & 5 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+This shows that $5$ is in $x_p$.
+
+_(6):_
+
+To find $x_p$, take the particular solution for $Rx = d$ and plug in the pivots
+in their respective positions, and $0$'s in the positions of the free variables:
+
+$$ x_p = \begin{bmatrix}{}5\\0\\0\end{bmatrix} $$
+
+The complete solution is:
+
+$$ x_{\text{complete}} = x_p + c_1s_1 + c_2s_2 $$
+
+The two conditions of $b_3 - 2b_1 = 0$ and $b_2 - 3b_1 = 0$ must lie within the
+_column_ space of $A$.
+
 **Questions 3-15 are about the solution of $Ax = b$. Follow the steps in the
 text to $x_p$ and $x_n$. Start from the augmented matrix with last column $b$.**
 
@@ -4103,6 +4421,99 @@ x + 3y + 3z = 1 \\
 2x + 6y + 9z = 5 \\
 -x - 3y + 3z = 5
 $$
+
+_Solution:_
+
+Note that here we don't generalize $b$ since the conditions under which $Ax = b$
+are solvable is not asked by the problem statement.
+
+$$
+x + 3y + 3z = 1 \\
+2x + 6y + 9z = 5 \\
+-x - 3y + 3z = 5
+$$
+
+Find $Ux = c$:
+
+$$
+\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{rrr|r}
+1 & 3 & 3 & 1 \\
+2 & 6 & 9 & 5 \\
+-1 & -3 & 3 & 5 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr|r}
+1 & 3 & 3 & 1 \\
+0 & 0 & 3 & 3 \\
+-1 & -3 & 3 & 5 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr|r}
+1 & 3 & 3 & 1 \\
+0 & 0 & 3 & 3 \\
+0 & 0 & 6 & 6 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr|r}
+1 & 3 & 3 & 1 \\
+0 & 0 & 3 & 3 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+U & c \\
+\end{array}\right]
+$$
+
+Find $N(A)$:
+
+For there to be a solution $x_3 = 1$, then choose $x_2 = 1$ (note here that
+setting $x_2 = 0$ gives only a trivial solution and is not checked since there
+is only one free variable).
+
+$x_2 = 1$:
+
+$$ 1x_1 + 3x_2 + 3x_3 = 0 \Rightarrow x_1 + 3(1) + 3(1) = 0 \Rightarrow x_1 + 6 = 0 \Rightarrow x_1 = -6 $$
+
+$$ s = \begin{bmatrix}{}-6\\1\\1\end{bmatrix} $$
+
+Find $Rx = d$:
+
+$$
+\left[\begin{array}{cc}
+U & c \\
+\end{array}\right] =
+\left[\begin{array}{rrr|r}
+1 & 3 & 3 & 1 \\
+0 & 0 & 3 & 3 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr|r}
+1 & 3 & 0 & -2 \\
+0 & 0 & 3 & 3 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr|r}
+1 & 3 & 0 & -2 \\
+0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+R & d \\
+\end{array}\right]
+$$
+
+Find $x_p$, which again, is the same as $Rx = d$, just with $0$'s in the free
+variable positions:
+
+$$ x_p = \begin{bmatrix}{}-2\\0\\1\end{bmatrix} $$
+
+Then, the complete solution is:
+
+$$ x_{\text{complete}} = x_p + x_2s $$
+
+Specifically in this case:
+
+$$ x_{\text{complete}} = \begin{bmatrix}{}-2\\0\\1\end{bmatrix} + x_2\begin{bmatrix}{}-6\\1\\1\end{bmatrix} $$
 
 4. Find the complete solution (also called the _general solution_) to
 
@@ -4116,6 +4527,89 @@ $$
 \begin{bmatrix}{}1\\3\\1\end{bmatrix}
 $$
 
+_Solution:_
+
+Same process as problem 3.
+
+Find $Ux = c$:
+
+$$
+\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{cccc|c}
+1 & 3 & 1 & 2 & 1 \\
+2 & 6 & 4 & 8 & 3 \\
+0 & 0 & 2 & 4 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{cccc|c}
+1 & 3 & 1 & 2 & 1 \\
+0 & 0 & 2 & 4 & 1 \\
+0 & 0 & 2 & 4 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{cccc|c}
+1 & 3 & 1 & 2 & 1 \\
+0 & 0 & 2 & 4 & 1 \\
+0 & 0 & 0 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+U & c \\
+\end{array}\right]
+$$
+
+Find $N(A)$ by back substitution through $Ux = c$ and setting free variable(s)
+to $1, 0$:
+
+Free variables are $x_2, x_4$, so set $x_2 = 1, x_4 = 0$ and $x_2 = 0, x_4 = 1$:
+
+$x_2 = 1, x_4 = 0$:
+
+$$ 2x_3 + 4x_4 = 0 \Rightarrow 2x_3 + 4(0) = 0 \Rightarrow 2x_3 = 0 \Rightarrow x_3 = 0 $$
+
+$$ 1x_1 + 3x_2 + 1x_3 + 2x_4 = 0 \Rightarrow x_1 + 3(1) + 1(0) + 4(0) = 0 \Rightarrow x_1 + 3 = 0 \Rightarrow x_1 = -3 $$
+
+$$ s_1 = \begin{bmatrix}{}-3\\1\\0\\0\end{bmatrix} $$
+
+$x_2 = 0, x_4 = 1$:
+
+$$ 2x_3 + 4x_4 = 0 \Rightarrow 2x_3 + 4(1) = 0 \Rightarrow 2x_3 + 4 = 0 \Rightarrow 2x_3 = -4 \Rightarrow x_3 = -2 $$
+
+$$ 1x_1 + 3x_2 + 1x_3 + 2x_4 = 0 \Rightarrow x_1 + 3(0) + 1(-2) + 4(1) = 0 \Rightarrow x_1 - 2 + 4 = 0 \Rightarrow x_1 + 2 = 0 \Rightarrow x_1 = -2 $$
+
+$$ s_2 = \begin{bmatrix}{}-2\\0\\-2\\1\end{bmatrix} $$
+
+Find $Rx = d$:
+
+$$
+\left[\begin{array}{cc}
+U & c \\
+\end{array}\right] =
+\left[\begin{array}{cccc|c}
+1 & 3 & 1 & 2 & 1 \\
+0 & 0 & 2 & 4 & 1 \\
+0 & 0 & 0 & 0 & 0 \\
+\end{array}\right] \to
+\left[\begin{array}{cccc|c}
+1 & 3 & 0 & 0 & -\frac{1}{2} \\
+0 & 0 & 2 & 4 & 1 \\
+0 & 0 & 0 & 0 & 0 \\
+\end{array}\right] \to
+\left[\begin{array}{cccc|c}
+1 & 3 & 0 & 0 & -\frac{1}{2} \\
+0 & 0 & 1 & 2 & \frac{1}{2} \\
+0 & 0 & 0 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+R & d \\
+\end{array}\right]
+$$
+
+$$ x_p = \begin{bmatrix}{}-\frac{1}{2}\\0\\\frac{1}{2}\\0\end{bmatrix} $$
+
+$$ x_{\text{complete}} = x_p + x_2s_1 + x_4s_2 $$
+
+$$ x_{\text{complete}} = \begin{bmatrix}{}-\frac{1}{2}\\0\\\frac{1}{2}\\0\end{bmatrix} + x_2\begin{bmatrix}{}-3\\1\\0\\0\end{bmatrix} + x_4\begin{bmatrix}{}-2\\0\\-2\\1\end{bmatrix} $$
+
 5. Under what condition on $b_1, b_2, b_3$ is this system solvable? Include $b$
    as a fourth column in elimination. Find all solutions when that condition
    holds:
@@ -4125,6 +4619,88 @@ x + 2y - 2z = b_1 \\
 2x + 5y - 4z = b_2 \\
 4x + 9y - 8z = b_3
 $$
+
+_Solution:_
+
+Here we do have to find the conditions using a generalized $b$, then solve the
+complete solution.
+
+Find $Ux = c$:
+
+$$
+\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{rrr|r}
+1 & 2 & -2 & b_1 \\
+2 & 5 & -4 & b_2 \\
+4 & 9 & -8 & b_3 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr|l}
+1 & 2 & -2 & b_1 \\
+0 & 1 & 0 & b_2 - 2b_1 \\
+4 & 9 & -8 & b_3 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr|l}
+1 & 2 & -2 & b_1 \\
+0 & 1 & 0 & b_2 - 2b_1 \\
+0 & 1 & 0 & b_3 - 4b_1 \\
+\end{array}\right] \to
+$$
+
+$$
+\left[\begin{array}{rrr|l}
+1 & 2 & -2 & b_1 \\
+0 & 1 & 0 & b_2 - 2b_1 \\
+0 & 0 & 0 & b_3 - b_2 - 2b_1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+U & c \\
+\end{array}\right]
+$$
+
+So, the condition on which $Ax = b$ is solvable is $b_3 - b_2 - 2b_1 = 0$.
+
+Now to find all solutions when this condition holds.
+
+First find $N(A)$:
+
+Two pivots, one free variable $= x_3$. Choose $x_3 = 1$, then:
+
+$$ 1x_2 + 0x_3 = 0 \Rightarrow x_2 + 0(1) = 0 \Rightarrow x_2 = 0 $$
+
+$$ 1x_1 + 2x_2 + (-2)x_3 = 0 \Rightarrow x_1 + 2(0) + (-2)(1) = 0 \Rightarrow x_1 - 2 = 0 \Rightarrow x_1 = 2 $$
+
+$$ s = \begin{bmatrix}{}2\\0\\1\end{bmatrix} $$
+
+Now, find $Rx = d$:
+
+$$
+\left[\begin{array}{cc}
+U & c \\
+\end{array}\right] =
+\left[\begin{array}{rrr|l}
+1 & 2 & -2 & b_1 \\
+0 & 1 & 0 & b_2 - 2b_1 \\
+0 & 0 & 0 & b_3 - b_2 - 2b_1 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr|l}
+1 & 0 & -2 & 5b_1 - 2b_2 \\
+0 & 1 & 0 & b_2 - 2b_1 \\
+0 & 0 & 0 & b_3 - b_2 - 2b_1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+R & d \\
+\end{array}\right]
+$$
+
+So $x_p$ is:
+
+$$ x_p = \begin{bmatrix}{}5b_1 - 2b_2\\b_2 - 2b_1\\0\end{bmatrix} $$
+
+$$ x_{\text{complete}} = x_p + x_3s $$
+
+$$ x_{\text{complete}} = \begin{bmatrix}{}5b_1 - 2b_2\\b_2 - 2b_1\\0\end{bmatrix} + x_3\begin{bmatrix}{}2\\0\\1\end{bmatrix} $$
 
 6. What conditions on $b_1, b_2, b_3, b_4$ make each system solvable? Find $x$
    in that case:
@@ -4151,6 +4727,191 @@ $$
 \begin{bmatrix}{}b_1\\b_2\\b_3\\b_4\end{bmatrix}
 $$
 
+_Solution:_
+
+_First:_
+
+$$
+\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{cc|c}
+1 & 2 & b_1 \\
+2 & 4 & b_2 \\
+2 & 5 & b_3 \\
+3 & 9 & b_4 \\
+\end{array}\right] \to
+\left[\begin{array}{cc|l}
+1 & 2 & b_1 \\
+0 & 0 & b_2 - 2b_1 \\
+0 & 1 & b_3 - 2b_1 \\
+0 & 3 & b_4 - 3b_1 \\
+\end{array}\right] \to
+\left[\begin{array}{cc|l}
+1 & 2 & b_1 \\
+0 & 1 & b_3 - 2b_1 \\
+0 & 3 & b_4 - 3b_1 \\
+0 & 0 & b_2 - 2b_1 \\
+\end{array}\right] \to
+$$
+
+$$
+\left[\begin{array}{cc|l}
+1 & 2 & b_1 \\
+0 & 1 & b_3 - 2b_1 \\
+0 & 0 & b_4 - 3b_3 + 3b_1 \\
+0 & 0 & b_2 - 2b_1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+U & c \\
+\end{array}\right]
+$$
+
+So, the conditions on which this system is solvable are $b_2 - 2b_1 = 0$ and
+$b_4 - 3b_3 + 3b_1 = 0$.
+
+Now to solve for $x$ (complete):
+
+Find $N(A)$:
+
+We have two pivots and no free variables, so $N(A) = \mathbf{0}$.
+
+Now find $Rx = d$:
+
+$$
+\left[\begin{array}{cc}
+U & c \\
+\end{array}\right] =
+\left[\begin{array}{cc|l}
+1 & 2 & b_1 \\
+0 & 1 & b_3 - 2b_1 \\
+0 & 0 & b_4 - 3b_3 + 3b_1 \\
+0 & 0 & b_2 - 2b_1 \\
+\end{array}\right] \to
+\left[\begin{array}{cc|l}
+1 & 0 & 5b_1 - 2b_3 \\
+0 & 1 & b_3 - 2b_1 \\
+0 & 0 & b_4 - 3b_3 + 3b_1 \\
+0 & 0 & b_2 - 2b_1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+R & d \\
+\end{array}\right]
+$$
+
+$$ x_p = \begin{bmatrix}{}5b_1 - 2b_3\\b_3 - 2b_1\end{bmatrix} $$
+
+And:
+
+$$ x_{\text{complete}} = x_p $$
+
+$$ x_{\text{complete}} = \begin{bmatrix}{}5b_1 - 2b_3\\b_3 - 2b_1\end{bmatrix} $$
+
+_Second:_
+
+$$
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+2 & 4 & 6 \\
+2 & 4 & 7 \\
+3 & 9 & 12 \\
+\end{array}\right]
+\begin{bmatrix}{}x_1\\x_2\\x_3\end{bmatrix} =
+\begin{bmatrix}{}b_1\\b_2\\b_3\\b_4\end{bmatrix}
+$$
+
+Find $Ux = c$:
+
+$$
+\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{ccc|c}
+1 & 2 & 3 & b_1 \\
+2 & 4 & 6 & b_2 \\
+2 & 5 & 7 & b_3 \\
+3 & 9 & 12 & b_4 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc|l}
+1 & 2 & 3 & b_1 \\
+0 & 0 & 0 & b_2 - 2b_1 \\
+2 & 5 & 7 & b_3 \\
+3 & 9 & 12 & b_4 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc|l}
+1 & 2 & 3 & b_1 \\
+0 & 0 & 0 & b_2 - 2b_1 \\
+0 & 1 & 1 & b_3 - 2b_1 \\
+3 & 9 & 12 & b_4 \\
+\end{array}\right] \to
+$$
+
+$$
+\left[\begin{array}{ccc|l}
+1 & 2 & 3 & b_1 \\
+0 & 0 & 0 & b_2 - 2b_1 \\
+0 & 1 & 1 & b_3 - 2b_1 \\
+0 & 3 & 3 & b_4 - 3b_1 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc|l}
+1 & 2 & 3 & b_1 \\
+0 & 1 & 1 & b_3 - 2b_1 \\
+0 & 3 & 3 & b_4 - 3b_1 \\
+0 & 0 & 0 & b_2 - 2b_1 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc|l}
+1 & 2 & 3 & b_1 \\
+0 & 1 & 1 & b_3 - 2b_1 \\
+0 & 0 & 0 & b_4 - 3b_3 + 3b_1 \\
+0 & 0 & 0 & b_2 - 2b_1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+U & c \\
+\end{array}\right]
+$$
+
+So the conditions on which $Ax = b$ is solvable are $b_4 - 3b_3 + 3b_1 = 0$ and
+$b_2 - 2b_1 = 0$.
+
+Find $N(A)$:
+
+We have two pivots and 1 free variable $= x_3$. So, set $x_3 = 1$, and then:
+
+$$ 1x_2 + 1x_3 = 0 \Rightarrow x_2 + 1(1) = 0 \Rightarrow x_2 + 1 = 0 \Rightarrow x_2 = -1 $$
+
+$$ 1x_1 + 2x_2 + 3x_3 = 0 \Rightarrow x_1 + 2(-1) + 3(1) = 0 \Rightarrow x_1 - 2 + 3 = 0 \Rightarrow x_1 + 1 = 0 \Rightarrow x_1 = -1 $$
+
+$$ s = \begin{bmatrix}{}-1\\-1\\1\end{bmatrix} $$
+
+Find $Rx = d$:
+
+$$
+\left[\begin{array}{cc}
+U & c \\
+\end{array}\right] =
+\left[\begin{array}{ccc|l}
+1 & 2 & 3 & b_1 \\
+0 & 1 & 1 & b_3 - 2b_1 \\
+0 & 0 & 0 & b_4 - 3b_3 + 3b_1 \\
+0 & 0 & 0 & b_2 - 2b_1 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc|l}
+1 & 0 & 1 & 5b_1 - 2b_3 \\
+0 & 1 & 1 & b_3 - 2b_1 \\
+0 & 0 & 0 & b_4 - 3b_3 + 3b_1 \\
+0 & 0 & 0 & b_2 - 2b_1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+R & d \\
+\end{array}\right]
+$$
+
+$$ x_p = \begin{bmatrix}{}5b_1 - 2b_3\\b_3 - 2b_1\\0\end{bmatrix} $$
+
+$$ x_{\text{complete}} = x_p + x_3s $$
+
+$$ x_{\text{complete}} = \begin{bmatrix}{}5b_1 - 2b_3\\b_3 - 2b_1\\0\end{bmatrix} + \begin{bmatrix}{}-1\\-1\\1\end{bmatrix} $$
+
 7. Show by elimination that $(b_1, b_2, b_3)$ is in the column space if
    $b_3 - 2b_2 + 4b_1 = 0$.
 
@@ -4163,6 +4924,52 @@ $$ A =
 $$
 
 What combination of the rows of $A$ gives the zero row?
+
+_Solution:_
+
+_Show by elimination that $(b_1, b_2, b_3)$ is in the column space if
+$b_3 - 2b_2 + 4b_1 = 0$:_
+
+$$
+\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{ccc|c}
+1 & 3 & 1 & b_1 \\
+3 & 8 & 2 & b_2 \\
+2 & 4 & 0 & b_3 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc|l}
+1 & 3 & 1 & b_1 \\
+0 & -1 & -1 & b_2 - 3b_1 \\
+2 & 4 & 0 & b_3 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc|l}
+1 & 3 & 1 & b_1 \\
+0 & -1 & -1 & b_2 - 3b_1 \\
+0 & -2 & -2 & b_3 - 2b_1 \\
+\end{array}\right] \to
+$$
+
+$$
+\left[\begin{array}{ccc|l}
+1 & 3 & 1 & b_1 \\
+0 & -1 & -1 & b_2 - 3b_1 \\
+0 & 0 & 0 & b_3 - 2b_2 + 4b_1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+U & c \\
+\end{array}\right]
+$$
+
+Thus, by elimination, $(b_1, b_2, b_3)$ is in the column space if
+$b_3 - 2b_2 + 4b_1 = 0$.
+
+_What combination of the rows of $A$ gives the zero row?:_
+
+The above elimination steps show the combination, in essence we have
+$(\text{row } 3) -
+2(\text{row } 2) + 4(\text{row } 1)$.
 
 8. Which vectors $(b_1, b_2, b_3)$ are in the column space of $A$? Which
    combinations of the rows of $A$ give zero?
@@ -4177,6 +4984,47 @@ $$ A =
 \end{array}\right]
 $$
 
+_Solution:_
+
+_Which vectors $(b_1, b_2, b_3)$ are in the column space of $A$?:_
+
+We can find the column space of $A$ by taking $Ax = b \to Ux = c$ and looking at
+the pivots.
+
+$$
+\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{ccc|c}
+1 & 2 & 1 & b_1 \\
+2 & 6 & 3 & b_2 \\
+0 & 2 & 5 & b_3 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc|l}
+1 & 2 & 1 & b_1 \\
+0 & 2 & 1 & b_2 - 2b_1 \\
+0 & 2 & 5 & b_3 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc|l}
+1 & 2 & 1 & b_1 \\
+0 & 2 & 1 & b_2 - 2b_1 \\
+0 & 0 & 4 & b_3 - b_2 + 2b_1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+U & c \\
+\end{array}\right]
+$$
+
+So all 3 columns of $A$ are in the column space of $A$ (since there are no free
+rows in $Ux = c$):
+
+$$ C(A) = \text{span}\left\{\begin{bmatrix}{}1\\2\\0\end{bmatrix}, \begin{bmatrix}{}2\\6\\2\end{bmatrix}, \begin{bmatrix}{}1\\3\\5\end{bmatrix}\right\} $$
+
+_Which combinations of the rows of $A$ give zero?:__
+
+The only combinations of the rows of $A$ that give zero is $\mathbf{0}$ (since
+there are no free rows).
+
 b.
 
 $$ A =
@@ -4187,6 +5035,54 @@ $$ A =
 \end{array}\right]
 $$
 
+_Solution:_
+
+_Which vectors $(b_1, b_2, b_3)$ are in the column space of $A$?:_
+
+Again, we can find the column space of $A$ by going from $Ax = b \to Ux = c$:
+
+$$
+\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{ccc|c}
+1 & 1 & 1 & b_1 \\
+1 & 2 & 4 & b_2 \\
+2 & 4 & 8 & b_3 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc|l}
+1 & 1 & 1 & b_1 \\
+0 & 1 & 3 & b_2 - b_1 \\
+2 & 4 & 8 & b_3 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc|l}
+1 & 1 & 1 & b_1 \\
+0 & 1 & 3 & b_2 - b_1 \\
+0 & 2 & 6 & b_3 - 2b_1 \\
+\end{array}\right] \to
+$$
+
+$$
+\left[\begin{array}{ccc|l}
+1 & 1 & 1 & b_1 \\
+0 & 1 & 3 & b_2 - b_1 \\
+0 & 0 & 0 & b_3 - 2b_2 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+U & c \\
+\end{array}\right]
+$$
+
+So, we can see that the third column is a free column, and thus the column space
+of $A$ spans all linear combinations of the first two columns of $A$:
+
+$$ C(A) = \text{span}\left\{\begin{bmatrix}{}1\\1\\2\end{bmatrix}, \begin{bmatrix}{}1\\2\\4\end{bmatrix}\right\} $$
+
+_Which combinations of the rows of $A$ give zero?:__
+
+The combinations of the rows of $A$ that give zero are
+$\text{row } 3 - 2\text{row } 2 = 0$.
+
 9.
 
 a. The Worked Example 3.3A reached
@@ -4194,42 +5090,359 @@ $\left[\begin{array}{cc}U & c \\\end{array}\right]$ from
 $\left[\begin{array}{cc}A & b \\\end{array}\right]$. Put the multipliers into
 $L$ and verify that $LU$ equals $A$ and $Lc$ equals $b$.
 
+_Solution:_
+
+Let's examine step 1 of 3A first, that way we can find the various $E$'s in the
+elimination step, then take their inverse (and reverse order) to find $L$:
+
+$$
+\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{cccc|c}
+1 & 2 & 3 & 5 & b_1 \\
+2 & 4 & 8 & 12 & b_2 \\
+3 & 6 & 7 & 13 & b_3 \\
+\end{array}\right]
+$$
+
+$$ E_{21} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-2 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{cccc|c}
+1 & 2 & 3 & 5 & b_1 \\
+2 & 4 & 8 & 12 & b_2 \\
+3 & 6 & 7 & 13 & b_3 \\
+\end{array}\right] \to
+\left[\begin{array}{cccc|l}
+1 & 2 & 3 & 5 & b_1 \\
+0 & 0 & 2 & 2 & b_2 - 2b_1 \\
+3 & 6 & 7 & 13 & b_3 \\
+\end{array}\right]
+$$
+
+$$ E_{31} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-3 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{cccc|c}
+1 & 2 & 3 & 5 & b_1 \\
+2 & 4 & 8 & 12 & b_2 \\
+3 & 6 & 7 & 13 & b_3 \\
+\end{array}\right] \to
+\left[\begin{array}{cccc|l}
+1 & 2 & 3 & 5 & b_1 \\
+0 & 0 & 2 & 2 & b_2 - 2b_1 \\
+3 & 6 & 7 & 13 & b_3 \\
+\end{array}\right] \to
+\left[\begin{array}{rrrr|l}
+1 & 2 & 3 & 5 & b_1 \\
+0 & 0 & 2 & 2 & b_2 - 2b_1 \\
+0 & 0 & -2 & -2 & b_3 - 3b_1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+U & c \\
+\end{array}\right]
+$$
+
+_Put the multipliers into $L$:_
+
+So now to find $L$ by reversing the order of the $E$'s and taking their
+inverses:
+
+$$ L = E_{31}^{-1}E_{21}^{-1} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+3 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+2 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+2 & 1 & 0 \\
+3 & 0 & 1 \\
+\end{array}\right]
+$$
+
+_Verify that $LU$ equals $A$ and $Lc$ equals $b$:_
+
+$$
+L\left[\begin{array}{cc}
+U & c \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+2 & 1 & 0 \\
+3 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrrr|l}
+1 & 2 & 3 & 5 & b_1 \\
+0 & 0 & 2 & 2 & b_2 - 2b_1 \\
+0 & 0 & -2 & -2 & b_3 - 3b_1 \\
+\end{array}\right] =
+\left[\begin{array}{cccc|l}
+1 & 2 & 3 & 5 & b_1 \\
+2 & 4 & 8 & 12 & b_2 \\
+3 & 6 & 7 & 13 & b_3 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+A & b \\
+\end{array}\right]
+$$
+
 b. Combine the pivot columns of $A$ with the numbers $-9$ and $3$ in the
 particular solution $x_p$. What is the linear combination and why?
+
+_Solution:_
+
+_Combine the pivot columns of $A$ with the numbers $-9$ and $3$ in the
+particular solution $x_p$:_
+
+In 3A, it was found that the pivot columns were $x_1, x_3$, with free variables
+being $x_2, x_4$, so, if $-9$ and $3$ are combined with these pivot columns to
+find $x_p$, this means that $x_p$ is:
+
+$$ x_p = \begin{bmatrix}{}-9\\0\\3\\0\end{bmatrix} $$
+
+_What is the linear combination and why?:_
+
+The linear combination then takes $x_p$ and multiplies the pivots by the column
+space vectors and then sums them together:
+
+$$ -9\begin{bmatrix}{}1\\2\\3\end{bmatrix} + 3\begin{bmatrix}{}3\\8\\7\end{bmatrix} = \begin{bmatrix}{}-9\\-18\\-27\end{bmatrix} + \begin{bmatrix}{}9\\24\\21\end{bmatrix} = \begin{bmatrix}{}0\\6\\-6\end{bmatrix} $$
+
+Notice that this is the particular solution $x_p$ that was found in step 6 of
+3A. In other words this is $Ax_p = b$.
 
 10. Construct a 2 by 3 system $Ax = b$ with particular solution
     $x_p = (2, 4, 0)$ and homogeneous solution $x_n =$ any multiple of
     $(1, 1, 1)$.
 
+_Solution:_
+
+Note that "homogeneous solution" means the nullspace solutions.
+
+_Construct a 2 by 3 system $Ax = b$ with particular solution $x_p = (2, 4, 0)$:_
+
+$$
+\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{ccc|c}
+2 & 0 & -2 & b_1 \\
+0 & 4 & -4 & b_2 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+U & c \\
+\end{array}\right]
+$$
+
+Let's confirm:
+
+First, find $N(A)$, there are two pivots and 1 free variable $= x_3$, so choose
+$x_3 = 1$:
+
+$$ 4x_2 + (-4)x_3 = 0 \Rightarrow 4x_2 + (-4)(1) = 0 \Rightarrow 4x_2 - 4 = 0 \Rightarrow 4x_2 = 4 \Rightarrow x_2 = 1 $$
+
+$$ 2x_1 + 0x_2 + (-2)x_3 = 0 \Rightarrow 2x_1 + 0(2) + (-2)(1) = 0 \Rightarrow 2x_1 - 2 = 0 \Rightarrow 2x_1 = 2 \Rightarrow x_1 = 1 $$
+
+$$ s = \begin{bmatrix}{}1\\1\\1\end{bmatrix} $$
+
+Thus $x_n$ is a multiple of $(1, 1, 1)$.
+
+Now, find $Rx = d$:
+
+$$
+\left[\begin{array}{cc}
+U & c \\
+\end{array}\right] =
+\left[\begin{array}{ccc|c}
+2 & 0 & -2 & b_1 \\
+0 & 4 & -4 & b_2 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc|c}
+1 & 0 & -1 & \frac{b_1}{2} \\
+0 & 1 & -1 & \frac{b_2}{4} \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+R & d \\
+\end{array}\right]
+$$
+
+So $x_p$ is:
+
+$$ x_p = \begin{bmatrix}{}2\\4\\0\end{bmatrix} $$
+
+Thus the particular solution is validated.
+
 11. Why can't a $1$ by $3$ system have $x_p = (2, 4, 0)$ and $x_n =$ any
     multiple of $(1, 1, 1)$?
+
+_Solution:_
+
+By the problem statement, we're saying that $Ax = b$ has $x_p = (2, 4, 0)$ as a
+solution with two pivots and one free variable, the same in fact as problem 10.
+But a 1 by 3 matrix can have at most 1 pivot (since there is only 1 row), thus
+this is not possible.
 
 12.
 
 a. If $Ax = b$ has two solutions $x_1$ and $x_2$, find two solutions to
 $Ax = \mathbf{0}$.
 
+_Solution:_
+
+Since $Ax = b$ has solutions $x_1, x_2$, it follows that:
+
+$$ Ax_1 = b \text{ and } Ax_2 = b $$
+
+It follows that if we are to say that $b = 0$, then:
+
+$$ Ax_1 = 0 \text{ and } Ax_2 = 0 $$
+
+Now, consider:
+
+$$ A(x_1 - x_2) = A(x_1) - A(x_2) = b - b = 0 $$
+
+Similarly $x_2 - x_1$ is also a solution, but it is a linear combination of
+$x_1 - x_2$ (because it's just $-1$ times $x_1 - x_2$), and thus is not a
+separate solution.
+
+The other solution is (trivially) when $x = \mathbf{0}$.
+
+So, two solutions are $x_1 - x_2$ and $x = \mathbf{0}$.
+
 b. Then find another solution to $Ax = \mathbf{0}$ and another solution to
 $Ax = b$.
+
+_Solution:_
+
+Any multiple of $A(x_1 - x_2)$ is another solution to $Ax = \mathbf{0}$:
+
+$$ A(2(x_1 - x_2)) = A(2x_1 - 2x_2) = A(2x_1) - A(2x_2) = 2b - 2b = 2(0) - 2(0) = 0 - 0 = 0 $$
+
+Any addition of $x_1$ is also another solution to $Ax = b$:
+
+$$ A(2x_1 - x_2) = 2(A(x_1)) - (A(x_2)) = 2b - b = b $$
 
 13. Explain why these are all false:
 
 a. The complete solution is any linear combination of $x_p$ and $x_n$.
 
+No, because $x_p$ has no multiple other than $1$.
+
 b. A system $Ax = b$ has at most one particular solution.
+
+No, if $r = m$ and $r < n$ (_i.e._ the matrix is "short and wide"), then
+$Ax = b$ has $\infty$ solutions.
+
+Also, if $r < m$ and $r < n$ (_i.e._ the matrix is not full rank), then $Ax = b$
+has either $0$ or $\infty$ solutions.
 
 c. The solution $x_p$ with all free variables zero is the shortest solution
 (minimum length $||x||$). Find a 2 by 2 counterexample.
 
+No, since $x = x_p + x_n$, this suggests that
+$\text{length}(x_p) \leq \text{length}(x_p) + \text{length}(x_n)$, but it is
+possible that $\text{length}(x_n) < \text{length}(x_p)$.
+
+Consider:
+
+$$
+\left[\begin{array}{cc|c}
+3 & 3 & 6 \\
+3 & 3 & 6 \\
+\end{array}\right]
+$$
+
+This reduces to $Ux = c$:
+
+$$
+\left[\begin{array}{cc|c}
+3 & 3 & 6 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+Then, $N(A)$ is:
+
+$$ 3x_1 + 3x_2 = 0 \Rightarrow 3x_1 + 3(1) = 0 \Rightarrow 3x_1 = -3 \Rightarrow x_1 = -1 $$
+
+$$ s = \begin{bmatrix}{}-1\\1\end{bmatrix} $$
+
+Then, $Rx = d$ yields:
+
+$$
+\left[\begin{array}{cc|c}
+1 & 1 & 2 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+So,
+
+$$ x_p = \begin{bmatrix}{}2\\0\end{bmatrix} $$
+
+Then:
+
+$$ x = x_p + x_n $$
+
+$$ x = \begin{bmatrix}{}2\\0\end{bmatrix} + \begin{bmatrix}{}-1\\1\end{bmatrix} = \begin{bmatrix}{}1\\1\end{bmatrix}$$
+
+To calculate the length, simply take the Euclidiean distance of the two
+coordinates:
+
+$$ ||x_p|| = \sqrt{(2)^2 + (0)^2} = \sqrt{4} = 2 $$
+
+$$ ||x_p + x_n|| = \sqrt{(1)^2 + (1)^2} = \sqrt{2} $$
+
+Now, simply observe that:
+
+$$ ||x_p|| = 2 \geq \sqrt{2} = ||x_p + x_n|| $$
+
+Thus $x_p$ is not the shortest solution.
+
 d. If $A$ is invertible there is no solution $x_n$ in the nullspace.
+
+The only homogeneous solution in the nullspace is $x_n = \mathbf{0}$ when $A$ is
+invertible. An invertible matrix indicates that $A$ is a square matrix, and thus
+is full rank (both full column and full row), it follows that there are no free
+variables in $A$, and thus the only vector that spans $N(A)$ is $\mathbf{0}$.
 
 14. Suppose column $5$ of $U$ has no pivot. Then $x_5$ is a ____ variable. The
     zero vector (is) (is not) the only solution to $Ax = \mathbf{0}$. If
     $Ax = b$ has a solution, then it has ____ solutions.
 
+free; is not (since there is a free variable); infinite (because it has any
+multiple of the nullspace solution)
+
 15. Suppose row 3 of $U$ has no pivot. Then that row is ____. The equation
     $Ux = c$ is only solvable provided ____. The equation $Ax = b$ (is)(is
     not)(might not be) solvable.
+
+a $0$ row; $c_3 = 0$; might not be (not solvable if $c_3 \neq 0$ or any other
+$0$ row where $c_i \neq 0$).
 
 **Questions 16-20 are about matrices of "full rank" $r = m$ or $r = n$.**
 
@@ -4237,9 +5450,16 @@ d. If $A$ is invertible there is no solution $x_n$ in the nullspace.
     in every ____ of $U$ and $R$. The solution to $Ax = b$ (always exists) (is
     unique). The column space of $A$ is ____. An example is $A =$ ____.
 
+$3$; row; always exists; all of $\R^3$; $A = [\begin{array}{c}I & F\end{array}]$
+for any 3 by 2 matrix $F$.
+
 17. The largest possible rank of a 6 by 4 matrix is ____. Then there is a pivot
     in every ____ of $U$ and $R$. The solution to $Ax = b$ (always exists) (is
     unique). The nullspace of $A$ is ____. An example is $A =$ ____.
+
+$4$; column; is unique; only $\mathbf{0}$;
+$\left[\begin{array}{c}I\\ \mathbf{0}\end{array}\right]$ where $I$ is a 4 by 4
+identity matrix, and $\mathbf{0}$ is a 2 by 4 zero matrix.
 
 18. Find by elimination the rank of $A$ and also the rank of $A^{\mathbf{T}}$:
 
@@ -4263,6 +5483,134 @@ $$
 
 (rank depends on $q$).
 
+_Solution:_
+
+_First:_
+
+$$ A =
+\left[\begin{array}{rrr}
+1 & 4 & 0 \\
+2 & 11 & 5 \\
+-1 & 2 & 10 \\
+\end{array}\right]
+$$
+
+Rank of $A$:
+
+$$ A =
+\left[\begin{array}{rrr}
+1 & 4 & 0 \\
+2 & 11 & 5 \\
+-1 & 2 & 10 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 4 & 0 \\
+0 & 3 & 5 \\
+-1 & 2 & 10 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 4 & 0 \\
+0 & 3 & 5 \\
+0 & 6 & 10 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 4 & 0 \\
+0 & 3 & 5 \\
+0 & 0 & 0 \\
+\end{array}\right] \to
+$$
+
+So $r(A) = 2$.
+
+Rank of $A^{\mathbf{T}}$:
+
+$$ A^{\mathbf{T}} =
+\left[\begin{array}{rrr}
+1 & 2 & -1 \\
+4 & 11 & 2 \\
+0 & 5 & 10 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 2 & -1 \\
+0 & 3 & 6 \\
+0 & 5 & 10 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 2 & -1 \\
+0 & 3 & 6 \\
+0 & 0 & 0 \\
+\end{array}\right] \to
+$$
+
+So $r(A^{\mathbf{T}}) = 2$.
+
+_Second:_
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 0 & 1 \\
+1 & 1 & 2 \\
+1 & 1 & q \\
+\end{array}\right]
+$$
+
+(rank depends on $q$).
+
+Rank of $A$:
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 0 & 1 \\
+1 & 1 & 2 \\
+1 & 1 & q \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+1 & 0 & 1 \\
+0 & 1 & 1 \\
+1 & 1 & q \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+1 & 0 & 1 \\
+0 & 1 & 1 \\
+0 & 1 & q - 1 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+1 & 0 & 1 \\
+0 & 1 & 1 \\
+0 & 0 & q - 2 \\
+\end{array}\right]
+$$
+
+So if $q - 2 = 0 \to q = 2$, then $r(A) = 2$, otherwise $r(A) = 3$.
+
+Rank of $A^{\mathbf{T}}$:
+
+$$ A^{\mathbf{T}} =
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+0 & 1 & 1 \\
+1 & 2 & q \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+1 & 2 & q \\
+0 & 1 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+0 & 1 & q - 1 \\
+0 & 1 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+0 & 1 & q - 1 \\
+0 & 0 & 2 - q \\
+\end{array}\right] \to
+$$
+
+Similarly if $2 - q = 0 \to q = 2$, then $r(A^{\mathbf{T}}) = 2$, otherwise
+$r(A^{\mathbf{T}}) = 3$.
+
 19. Find the rank of $A$ and also of $A^{\mathbf{T}}A$ and also of
     $AA^{\mathbf{T}}$:
 
@@ -4282,6 +5630,234 @@ $$ A =
 1 & 2 \\
 \end{array}\right]
 $$
+
+_Solution:_
+
+_First:_
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 1 & 5 \\
+1 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$r(A)$:
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 1 & 5 \\
+1 & 0 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 1 & 5 \\
+0 & -1 & -4 \\
+\end{array}\right]
+$$
+
+so $r(A) = 2$
+
+$r(A^{\mathbf{T}}A)$:
+
+$$ A^{\mathbf{T}} =
+\left[\begin{array}{ccc}
+1 & 1 \\
+1 & 0 \\
+5 & 1 \\
+\end{array}\right]
+$$
+
+$$ A^{\mathbf{T}}A =
+\left[\begin{array}{ccc}
+1 & 1 \\
+1 & 0 \\
+5 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 1 & 5 \\
+1 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+2 & 1 & 6 \\
+1 & 1 & 5 \\
+6 & 5 & 26 \\
+\end{array}\right]
+$$
+
+$$ A^{\mathbf{T}}A =
+\left[\begin{array}{ccc}
+2 & 1 & 6 \\
+1 & 1 & 5 \\
+6 & 5 & 26 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+2 & 1 & 6 \\
+0 & \frac{1}{2} & 2 \\
+6 & 5 & 26 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+2 & 1 & 6 \\
+0 & \frac{1}{2} & 2 \\
+0 & 2 & 8 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+2 & 1 & 6 \\
+0 & \frac{1}{2} & 2 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+So $r(A^{\mathbf{T}}A) = 2$ .
+
+$r(AA^{\mathbf{T}})$:
+
+$$ AA^{\mathbf{T}} =
+\left[\begin{array}{ccc}
+1 & 1 & 5 \\
+1 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 1 \\
+1 & 0 \\
+5 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+27 & 6 \\
+6 & 2 \\
+\end{array}\right]
+$$
+
+$$ AA^{\mathbf{T}} =
+\left[\begin{array}{cc}
+27 & 6 \\
+6 & 2 \\
+\end{array}\right] \to
+\left[\begin{array}{cc}
+27 & 6 \\
+0 & \frac{2}{3} \\
+\end{array}\right]
+$$
+
+So $r(AA^{\mathbf{T}}) = 2$.
+
+_Second:_
+
+$$ A =
+\left[\begin{array}{cc}
+2 & 0 \\
+1 & 1 \\
+1 & 2 \\
+\end{array}\right]
+$$
+
+$r(A)$:
+
+$$ A =
+\left[\begin{array}{cc}
+2 & 0 \\
+1 & 1 \\
+1 & 2 \\
+\end{array}\right] \to
+\left[\begin{array}{cc}
+2 & 0 \\
+0 & 1 \\
+1 & 2 \\
+\end{array}\right] \to
+\left[\begin{array}{cc}
+2 & 0 \\
+0 & 1 \\
+0 & 2 \\
+\end{array}\right] \to
+\left[\begin{array}{cc}
+2 & 0 \\
+0 & 1 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+So $r(A) = 2$.
+
+$r(A^{\mathbf{T}}A)$:
+
+$$ A^{\mathbf{T}} =
+\left[\begin{array}{ccc}
+2 & 1 & 1 \\
+0 & 1 & 2 \\
+\end{array}\right]
+$$
+
+$$ A^{\mathbf{T}}A =
+\left[\begin{array}{ccc}
+2 & 1 & 1 \\
+0 & 1 & 2 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+2 & 0 \\
+1 & 1 \\
+1 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+6 & 3 \\
+3 & 5 \\
+\end{array}\right]
+$$
+
+$$ A^{\mathbf{T}}A =
+\left[\begin{array}{cc}
+6 & 3 \\
+3 & 5 \\
+\end{array}\right] \to
+\left[\begin{array}{cc}
+6 & 3 \\
+0 & \frac{7}{2} \\
+\end{array}\right]
+$$
+
+So $r(A^{\mathbf{T}}A) = 2$.
+
+$r(AA^{\mathbf{T}})$:
+
+$$ AA^{\mathbf{T}} =
+\left[\begin{array}{cc}
+2 & 0 \\
+1 & 1 \\
+1 & 2 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+2 & 1 & 1 \\
+0 & 1 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+4 & 2 & 2 \\
+2 & 2 & 3 \\
+2 & 3 & 5 \\
+\end{array}\right]
+$$
+
+$$ AA^{\mathbf{T}} =
+\left[\begin{array}{ccc}
+4 & 2 & 2 \\
+2 & 2 & 3 \\
+2 & 3 & 5 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+4 & 2 & 2 \\
+0 & 1 & 2 \\
+2 & 3 & 5 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+4 & 2 & 2 \\
+0 & 1 & 2 \\
+0 & 2 & 4 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+4 & 2 & 2 \\
+0 & 1 & 2 \\
+0 & 0 & 0 \\
+\end{array}\right] \to
+$$
+
+So $r(AA^{\mathbf{T}}) = 2$.
 
 20. Reduce $A$ to its echelon form $U$. Then find a triangular $L$ so that
     $A = LU$.
@@ -4303,10 +5879,206 @@ $$ A =
 \end{array}\right]
 $$
 
+_Solution:_
+
+_First:_
+
+$$ A =
+\left[\begin{array}{cccc}
+3 & 4 & 1 & 0 \\
+6 & 5 & 2 & 1 \\
+\end{array}\right]
+$$
+
+_Reduce $A$ to its echelon form $U$:_
+
+$$ A =
+\left[\begin{array}{cccc}
+3 & 4 & 1 & 0 \\
+6 & 5 & 2 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{rrrr}
+3 & 4 & 1 & 0 \\
+0 & -3 & 0 & 1 \\
+\end{array}\right] = U
+$$
+
+_Then find a triangular $L$ so that $A = LU$:_
+
+$$ E_{21} =
+\left[\begin{array}{rr}
+1 & 0 \\
+-2 & 1 \\
+\end{array}\right]
+$$
+
+$$ L = E_{21}^{-1} =
+\left[\begin{array}{rr}
+1 & 0 \\
+2 & 1 \\
+\end{array}\right]
+$$
+
+$$ LU =
+\left[\begin{array}{rr}
+1 & 0 \\
+2 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrrr}
+3 & 4 & 1 & 0 \\
+0 & -3 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrrr}
+3 & 4 & 1 & 0 \\
+6 & 5 & 2 & 1 \\
+\end{array}\right] = A
+$$
+
+_Second:_
+
+$$ A =
+\left[\begin{array}{cccc}
+1 & 0 & 1 & 0 \\
+2 & 2 & 0 & 3 \\
+0 & 6 & 5 & 4 \\
+\end{array}\right]
+$$
+
+_Reduce $A$ to its echelon form $U$:_
+
+$$ A =
+\left[\begin{array}{cccc}
+1 & 0 & 1 & 0 \\
+2 & 2 & 0 & 3 \\
+0 & 6 & 5 & 4 \\
+\end{array}\right] \to
+\left[\begin{array}{rrrr}
+1 & 0 & 1 & 0 \\
+0 & 2 & -2 & 3 \\
+0 & 6 & 5 & 4 \\
+\end{array}\right] \to
+\left[\begin{array}{rrrr}
+1 & 0 & 1 & 0 \\
+0 & 2 & -2 & 3 \\
+0 & 0 & 11 & -5 \\
+\end{array}\right] = U
+$$
+
+_Then find a triangular $L$ so that $A = LU$:_
+
+$$ E_{21} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+-2 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ E_{32} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -3 & 1 \\
+\end{array}\right]
+$$
+
+$$ L = E_{32}^{-1}E_{21}^{-1} =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 3 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+2 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+2 & 1 & 0 \\
+0 & 3 & 1 \\
+\end{array}\right]
+$$
+
+$$ LU =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+2 & 1 & 0 \\
+0 & 3 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rrrr}
+1 & 0 & 1 & 0 \\
+0 & 2 & -2 & 3 \\
+0 & 0 & 11 & -5 \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+1 & 0 & 1 & 0 \\
+2 & 2 & 0 & 3 \\
+0 & 6 & 5 & 4 \\
+\end{array}\right] = A
+$$
+
 21. Find the complete solution in the form $x_p + x_n$ to these full rank
     systems:
 
 a. $x + y + z = 4$
+
+_Solution:_
+
+Find $Ux = c$:
+
+$$
+\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{ccc|c}
+1 & 1 & 1 & 4 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+U & c \\
+\end{array}\right]
+$$
+
+Find $N(A)$:
+
+We have one pivot and 2 free variables $y, z$, so let $y = 1, z = 0$ and
+$y = 0, z = 1$:
+
+$y = 1, z = 0$:
+
+$$ 1x + 1y + 1z = 0 \Rightarrow x + 1(1) + 1(0) = 0 \Rightarrow x + 1 = 0 \Rightarrow x = -1 $$
+
+$$ s_1 = \begin{bmatrix}{}-1\\1\\0\end{bmatrix} $$
+
+$y = 0, z = 1$:
+
+$$ 1x + 1y + 1z = 0 \Rightarrow x + 1(0) + 1(1) = 0 \Rightarrow x + 1 = 0 \Rightarrow x = -1 $$
+
+$$ s_2 = \begin{bmatrix}{}-1\\0\\1\end{bmatrix} $$
+
+Find $Rx = d$:
+
+$$
+\left[\begin{array}{cc}
+U & c \\
+\end{array}\right] =
+\left[\begin{array}{ccc|c}
+1 & 1 & 1 & 4 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+R & d \\
+\end{array}\right]
+$$
+
+So $x_p$ is:
+
+$$ x_p = \begin{bmatrix}{}4\\0\\0\end{bmatrix} $$
+
+So:
+
+$$ x = x_p + ys_1 + zs_2 $$
+
+$$ x = \begin{bmatrix}{}4\\0\\0\end{bmatrix} + y\begin{bmatrix}{}-1\\1\\0\end{bmatrix} + z\begin{bmatrix}{}-1\\0\\1\end{bmatrix} $$
 
 b.
 
@@ -4315,8 +6087,79 @@ x + y + z = 4 \\
 x - y + z = 4 \\
 $$
 
+_Solution:_
+
+Find $Ux = c$:
+
+$$
+\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{rrr|r}
+1 & 1 & 1 & 4 \\
+1 & -1 & 1 & 4 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr|r}
+1 & 1 & 1 & 4 \\
+0 & -2 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+U & c \\
+\end{array}\right]
+$$
+
+Find $N(A)$:
+
+There are two pivots and 1 free variable $z$, so set $z = 1$:
+
+$$ -2y + 0z = 0 \Rightarrow -2y = 0 \Rightarrow y = 0 $$
+
+$$ 1x + 1y + 1z = 0 \Rightarrow x + 1(0) + 1(1) = 0 \Rightarrow x + 1 = 0 \Rightarrow x = -1 $$
+
+$$ s = \begin{bmatrix}{}-1\\0\\1\end{bmatrix} $$
+
+Find $Rx = d$:
+
+$$
+\left[\begin{array}{cc}
+U & c \\
+\end{array}\right] =
+\left[\begin{array}{rrr|r}
+1 & 1 & 1 & 4 \\
+0 & -2 & 0 & 0 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr|r}
+1 & 0 & 1 & 4 \\
+0 & 2 & 0 & 0 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr|r}
+1 & 0 & 1 & 4 \\
+0 & 1 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+R & d \\
+\end{array}\right]
+$$
+
+So $x_p$ is:
+
+$$ x_p = \begin{bmatrix}{}4\\0\\0\end{bmatrix} $$
+
+Then:
+
+$$ x = x_p + zs $$
+
+$$ x = \begin{bmatrix}{}4\\0\\0\end{bmatrix} + z\begin{bmatrix}{}-1\\0\\1\end{bmatrix} $$
+
 22. If $Ax = b$ has infinitely many solutions, why is it impossible for $Ax = B$
     (new right side) to have only one solution? Could $Ax = B$ have no solution?
+
+_Solution:_
+
+Consider $A(x_1 - x_2) = \mathbf{0}$, then we can add $x_1 - x_2$ to $B$, but
+the solution will not be unique. There will be no solution to $Ax = B$ unless
+$B$ is in the column space of $A$ (in which case $B$ is one of the solutions of
+$b$).
 
 23. Choose the number $q$ so that (if possible) the ranks are (a) 1, (b) 2,
     \(c\) 3:
@@ -4338,27 +6181,239 @@ q & 2 & q \\
 \end{array}\right]
 $$
 
+_Solution:_
+
+_First:_
+
+$$ A =
+\left[\begin{array}{rrr}
+6 & 4 & 2 \\
+-3 & -2 & -1 \\
+9 & 6 & q \\
+\end{array}\right]
+$$
+
+$$ A =
+\left[\begin{array}{rrr}
+6 & 4 & 2 \\
+-3 & -2 & -1 \\
+9 & 6 & q \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+6 & 4 & 2 \\
+0 & 0 & 0 \\
+9 & 6 & q \\
+\end{array}\right] \to
+\left[\begin{array}{lll}
+6 & 4 & 2 \\
+0 & 0 & 0 \\
+0 & 0 & q - 3 \\
+\end{array}\right]
+$$
+
+a. $r(A) = 1$
+
+$$ q - 3 = 0 \to q = 3 $$
+
+b. $r(A) = 2$
+
+$$ q - 3 \neq 0 $$
+
+c. $r(A) = 3$
+
+Not possible, there is a single free row that makes it so the highest rank is 2.
+
+_Second:_
+
+$$ B =
+\left[\begin{array}{ccc}
+3 & 1 & 3 \\
+q & 2 & q \\
+\end{array}\right]
+$$
+
+$$ B =
+\left[\begin{array}{ccc}
+3 & 1 & 3 \\
+q & 2 & q \\
+\end{array}\right] \to
+\left[\begin{array}{lll}
+3 & 1 & 3 \\
+q - 3 & 1 & q - 3 \\
+\end{array}\right]
+$$
+
+a. $r(B) = 1$
+
+Then elimination must take a different route from above:
+
+$$ B =
+\left[\begin{array}{ccc}
+3 & 1 & 3 \\
+q & 2 & q \\
+\end{array}\right] \to
+\left[\begin{array}{lll}
+3 & 1 & 3 \\
+q - 6  & 0 & q - 6 \\
+\end{array}\right]
+$$
+
+So to have $r(B) = 1$, $q - 6 = 0 \to q = 6$.
+
+b. $r(B) = 2$
+
+Then the original elimination stands, and $q - 3 = 0 \to q = 3$ to have
+$r(B) = 2$.
+
+c. $r(B) = 3$
+
+There cannot be rank 3 as there are only 2 rows and 3 columns.
+
 24. Give examples of matrices $A$ for which the number of solutions to $Ax = b$
     is
 
 a. $0$ or $1$, depending on $b$
 
+_Solution:_
+
+$$
+\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{c|c}
+1 & b_1 \\
+1 & b_2 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{c|c}
+1 & b_1 \\
+1 & b_2 \\
+\end{array}\right] \to
+\left[\begin{array}{c|c}
+1 & b_1 \\
+0 & b_2 - b_1 \\
+\end{array}\right]
+$$
+
+So, there are $0$ solutions if $b_2 - b_1 \neq 0$, and $1$ solution if
+$b_2 - b_1 = 0$.
+
 b. $\infty$, regardless of $b$
+
+_Solution:_
+
+$$
+\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{ccc|c}
+1 & 1 & 1 & 1 \\
+1 & 2 & 1 & 3 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{ccc|c}
+1 & 1 & 1 & 1 \\
+1 & 2 & 1 & 3 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc|c}
+1 & 1 & 1 & 1 \\
+0 & 1 & 0 & 2 \\
+\end{array}\right]
+$$
+
+So we have 1 free variable, which ensures that there is at least one non zero
+vector special solution in the nullspace, and any multiple times that solution
+is also a solution, ad infinitum.
 
 c. $0$ or $\infty$, depending on $b$
 
+_Solution:_
+
+$$
+\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{ccc|c}
+1 & 2 & 3 & b_1 \\
+1 & 3 & 3 & b_2 \\
+2 & 4 & 6 & b_3 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc|c}
+1 & 2 & 3 & b_1 \\
+0 & 1 & 0 & b_2 - b_1 \\
+2 & 4 & 6 & b_3 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc|c}
+1 & 2 & 3 & b_1 \\
+0 & 1 & 0 & b_2 - b_1 \\
+0 & 0 & 0 & b_3 - b_1 \\
+\end{array}\right]
+$$
+
+Here, the matrix is not full rank ($r < m$ and $r < n$), if in the second row
+after elimination $b_3 - b_1 \neq 0$, then there are no solutions, however if
+$b_3 - b_1 = 0$, then there are infinitely many (as then the nullspace is filled
+by some nonzero special solution as column 3 is free).
+
 d. $1$, regardless of $b$
+
+_Solution:_
+
+$$
+\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{cc|c}
+1 & 2 & b_1 \\
+1 & 5 & b_2 \\
+\end{array}\right] \to
+\left[\begin{array}{cc|c}
+1 & 2 & b_1 \\
+0 & 3 & b_2 - b_1 \\
+\end{array}\right]
+$$
+
+Here, the matrix is square and invertible ($r = m$ and $r = n$). There is
+exactly one solution where $3x_2 = b_2 - b_1 \to x_2 = \dfrac{b_2 - b_1}{3}$,
+and thus the sole solution can be derived from
+$x_1 + 2\left(\dfrac{b_2 - b_1}{3}\right) = b_1$.
 
 25. Write down all the known relations between $r$ and $m$ and $n$ if $Ax = b$
     has
 
 a. no solution for some $b$
 
+_Solution:_
+
+$r < m$
+
 b. infinitely many solutions for every $b$
+
+_Solution:_
+
+$r < n$
 
 c. exactly one solution for some $b$, no solution for other $b$
 
+_Solution:_
+
+$r < m$ and $r = n$
+
 d. exactly one solution for every $b$
+
+_Solution:_
+
+$r = m$ and $r = n$
 
 **Questions 26-33 are about Gauss-Jordan elimination (upwards as well as
 downwards and the reduced echelon matrix $R$.**
@@ -4384,7 +6439,84 @@ $$ U =
 \end{array}\right]
 $$
 
+_Solution:_
+
+_First:_
+
+$$ U =
+\left[\begin{array}{ccc}
+2 & 4 & 4 \\
+0 & 3 & 6 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{ccc}
+2 & 4 & 4 \\
+0 & 3 & 6 \\
+0 & 0 & 0 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+2 & 4 & 4 \\
+0 & 1 & 2 \\
+0 & 0 & 0 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 0 & -2 \\
+0 & 1 & 2 \\
+0 & 0 & 0 \\
+\end{array}\right] = R
+$$
+
+_Second:_
+
+$$ U =
+\left[\begin{array}{ccc}
+2 & 4 & 4 \\
+0 & 3 & 6 \\
+0 & 0 & 5 \\
+\end{array}\right]
+$$
+
+$$ U =
+\left[\begin{array}{ccc}
+2 & 4 & 4 \\
+0 & 3 & 6 \\
+0 & 0 & 5 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+1 & 2 & 2 \\
+0 & 1 & 2 \\
+0 & 0 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+1 & 2 & 2 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+1 & 2 & 0\\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+1 & 0 & 0\\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] = I
+$$
+
+This is a bit tricky, after dividing all rows so you get 1's in the pivots, you
+then subtract 2 times row 3 from row 2, then you subtract 2 times row 3 from row
+1, then you subtract 2 times row 2 from row 1.
+
 27. If $A$ is a triangular matrix, when is $R = \text{rref}(A)$ equal to $I$?
+
+_Solution:_
+
+$R = I$ when $A$ is a square invertible matrix. In this case, since $A$ is
+triangular, this means that all values along the main diagonal must be nonzero.
 
 28. Apply Gauss-Jordan elimination to $Ux = \mathbf{0}$ and $Ux = c$. Reach
     $Rx = \mathbf{0}$ and $Rx = d$:
@@ -4413,6 +6545,8 @@ $$
 
 Solve $Rx = \mathbf{0}$ to find $x_n$ (its free variable is $x_2 = 1$). Solve
 $Rx = d$ to find $x_p$ (its free variable is $x_2 = 0$).
+
+Omitted.
 
 29. Apply Gauss-Jordan elimination to reduce to $Rx = \mathbf{0}$ and $Rx = d$:
 
@@ -4447,6 +6581,8 @@ $$
 Solve $Ux = \mathbf{0}$ or $Rx = \mathbf{0}$ to find $x_n$ (free variable
 $= 1$). What are the solutions to $Rx = d$?
 
+Omitted.
+
 30. Reduce to $Ux = c$ (Gaussian elimination) and then $Rx = d$ (Gauss-Jordan):
 
 $$ Ax =
@@ -4461,13 +6597,60 @@ $$
 
 Find a particular solution $x_p$ and all homogeneous solutions $x_n$.
 
+Omitted.
+
 31. Find matrices $A$ and $B$ with the given property or explain why you can't:
 
 a. The only solution of $Ax = \begin{bmatrix}{}1\\2\\3\end{bmatrix}$ is
 $x = \begin{bmatrix}{}0\\1\end{bmatrix}$.
 
+_Solution:_
+
+With $b = \begin{bmatrix}{}1\\2\\3\end{bmatrix}$ and
+$x = \begin{bmatrix}{}0\\1\end{bmatrix}$, these indicate that $A$ is a 3 by 2
+matrix. Since there is 1 solution, this indicates that the nullspace only has
+$\mathbf{0}$, and thus there are no free variables. Consider:
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 1 \\
+0 & 2 \\
+0 & 3 \\
+\end{array}\right]
+$$
+
+Here, we have 2 pivots, no free variables, so check $Ax$:
+
+$$ Ax =
+\left[\begin{array}{ccc}
+1 & 1 \\
+0 & 2 \\
+0 & 3 \\
+\end{array}\right]
+\begin{bmatrix}{}0\\1\end{bmatrix} =
+\left[\begin{array}{c}
+1 \\
+2 \\
+3 \\
+\end{array}\right] = b
+$$
+
 b. The only solution of $Bx = \begin{bmatrix}{}0\\1\end{bmatrix}$ is
 $x = \begin{bmatrix}{}1\\2\\3\end{bmatrix}$.
+
+_Solution:_
+
+Since there is $1$ solution, this means that $r = n$
+
+To get $b = \begin{bmatrix}{}0\\1\end{bmatrix}$, the dimensions of $Bx$ must
+result in a $m = 2, n = 1$ matrix. Since $x$ is a 3 by 1 matrix, this means that
+the dimensions of $Bx$ are expressed as $(2 \times n_1) \times (3 \times 1)$.
+Thus $B$ must be a $2 \times 3$ matrix (as it must be the case that $n_1 = 3$).
+
+But for there to be 1 solution, $r = n$, or in this case $r = 3$. But the amount
+of rows in $B$ is 2, $m = 2$, so it must be that $r \leq 2$, and thus
+$r \neq 3$. This contradicts the requirement for a single solution, and thus
+this is not possible.
 
 32. Find the $LU$ factorization of $A$ and the complete solution to $Ax = b$:
 
@@ -4492,6 +6675,10 @@ $$ b =
 \begin{bmatrix}{}1\\0\\0\\0\end{bmatrix}
 $$
 
+Omitted.
+
 33. The complete solution to $Ax = \begin{bmatrix}{}1\\3\end{bmatrix}$ is
     $x = \begin{bmatrix}{}1\\0\end{bmatrix} + c\begin{bmatrix}{}0\\1\end{bmatrix}$.
     Find $A$.
+
+Omitted.

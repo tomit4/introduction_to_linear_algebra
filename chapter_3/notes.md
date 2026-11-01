@@ -276,6 +276,59 @@ Every matrix $A$ with $\textbf{full row rank} (r = m)$ has all these properties:
 
 Page 166
 
+**The four possibilities for linear equations depend on the rank $r$**
+
+$$ \begin{array}{l}
+r = m \text{ and } r = n \quad \textit{Square and invertible} \quad Ax = b
+\quad \text{has } 1 \text{ solution} \\ r = m \text{ and } r < n \quad
+\textit{Short and wide} \quad Ax = b \quad \text{has } \infty \text{ solution} \\
+r < m \text{ and } r = n \quad \textit{Tall and thin} \quad Ax = b \quad
+\text{has } 0 \text{ or } 1 \text{ solution} \\
+r < m \text{ and } r < n \quad \textit{Not full rank} \quad Ax = b \quad
+\text{has } 0 \text{ or } \infty \text{ solution} \\
+\end{array}
+$$
+
+---
+
+Page 166
+
+**Four types for $R$ and Their ranks**
+
+$$
+\left[\begin{array}{c}
+I\\
+\end{array}\right] \\
+r = m = n
+$$
+
+$$
+\left[\begin{array}{cc}
+I & F \\
+\end{array}\right] \\
+r = m < n
+$$
+
+$$
+\left[\begin{array}{c}
+I \\
+F \\
+\end{array}\right] \\
+r = n < m
+$$
+
+$$
+\left[\begin{array}{cc}
+I & F \\
+0 & 0 \\
+\end{array}\right] \\
+r < m, r < n
+$$
+
+---
+
+Page 166
+
 **REVIEW OF THE KEY IDEAS**
 
 1. The rank $r$ is the number of pivots. The matrix $R$ has $m - r$ zero rows.
@@ -291,3 +344,26 @@ Page 166
 
 6. Full row rank $r = m$ means one solution if $m = n$ or infinitely many if
    $m < n$.
+
+---
+
+Page 167
+
+**The six steps to finding the complete solution (3.3A)**
+
+1. Reduce $\left[\begin{array}{cc}A & b\\\end{array}\right]$ to
+   $\left[\begin{array}{cc}U & c\\\end{array}\right]$, so that $Ax = b$ becomes
+   a triangular system $Ux = c$.
+
+2. Find the condition on $b_1, b_2, b_3$ for $Ax = b$ to have a solution.
+
+3. Describe the column space of $A$. Which plane in $\R^3$?
+
+4. Describe the nullspace of $A$. Which special solutions in $\R^4$?
+
+5. Reduce $\left[\begin{array}{cc}U & c\\\end{array}\right]$ to
+   $\left[\begin{array}{cc}R & d\\\end{array}\right]$: Special solutions from
+   $R$, particular solution from $d$.
+
+6. Find a particular solution to $Ax = (0, 6, -6)$ and then the complete
+   solution.
