@@ -6682,3 +6682,388 @@ Omitted.
     Find $A$.
 
 Omitted.
+
+---
+
+Page 186
+
+## Problem Set 3.4
+
+**Questions 1-10 are about linear independence and linear dependence.**
+
+1. Show that $v_1, v_2, v_3$ are independent but $v_1, v_2, v_3, v_4$ are
+   dependent:
+
+$$ v_1 = \begin{bmatrix}{}1\\0\\0\end{bmatrix} \quad v_2 = \begin{bmatrix}{}1\\1\\0\end{bmatrix} \quad v_3 = \begin{bmatrix}{}1\\1\\1\end{bmatrix} \quad v_4 = \begin{bmatrix}{}2\\3\\4\end{bmatrix} $$
+
+Solve $c_1v_1 + c_2v_2 + c_3v_3 + c_4v_4 = \mathbf{0}$ or $Ax = \mathbf{0}$. The
+$v$'s go in the columns of $A$.
+
+2. (Recommended) Find the largest possible of independent vectors among
+
+$$ v_1 =
+\begin{bmatrix}{}1\\-1\\0\\0\end{bmatrix}
+$$
+
+$$ v_2 =
+\begin{bmatrix}{}1\\0\\-1\\0\end{bmatrix}
+$$
+
+$$ v_3 =
+\begin{bmatrix}{}1\\0\\0\\-1\end{bmatrix}
+$$
+
+$$ v_4 =
+\begin{bmatrix}{}0\\1\\-1\\0\end{bmatrix}
+$$
+
+$$ v_5 =
+\begin{bmatrix}{}0\\1\\0\\-1\end{bmatrix}
+$$
+
+$$ v_6 =
+\begin{bmatrix}{}0\\0\\1\\-1\end{bmatrix}
+$$
+
+3. Prove that if $a = 0$ or $d = 0$ or $f = 0$ (3 cases), the columns of $U$ are
+   dependent:
+
+$$ U =
+\left[\begin{array}{ccc}
+a & b & c \\
+0 & d & e \\
+0 & 0 & f \\
+\end{array}\right]
+$$
+
+4. If $a, d, f$ in Question 3 are all nonzero, show that the only solution to
+   $Ux = \mathbf{0}$ is $x = \mathbf{0}$. Then the upper triangular $U$ has
+   independent columns.
+
+5. Decide the dependence or independence of
+
+a. the vectors $(1, 3, 2)$ and $(2, 1, 3)$ and $(3, 2, 1)$
+
+b. the vectors $(1, -3, 2)$ and $(2, 1, -3)$ and $(-3, 2, 1)$.
+
+6. Choose three independent columns of $U$. Then make two other choices. Do the
+   same for $A$.
+
+$$ U =
+\left[\begin{array}{cccc}
+2 & 3 & 4 & 1 \\
+0 & 6 & 7 & 0 \\
+0 & 0 & 0 & 9 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+and
+
+$$ A =
+\left[\begin{array}{cccc}
+2 & 3 & 4 & 1 \\
+0 & 6 & 7 & 0 \\
+0 & 0 & 0 & 9 \\
+4 & 6 & 8 & 2 \\
+\end{array}\right]
+$$
+
+7. If $w_1, w_2, w_3$ are independent vectors, show that the differences
+   $v_1 = w_2 - w_3$ and $v_2 = w_1 - w_3$ and $v_3 = w_1 - w_2$ are
+   _dependent_. Find a combination of the $v$'s that gives zero. Which matrix
+   $A$ in
+   $\left[\begin{array}{ccc}v_1 & v_2 & v_3 \\\end{array}\right] = \left[\begin{array}{ccc}w_1 & w_2 & w_3 \\\end{array}\right]$
+   $A$ is singular?
+
+8. If $w_1, w_2, w_3$ are independent vectors, show that the sums
+   $v_1 = w_2 + w_3$ and $v_2 = w_1 + w_3$ and $v_3 = w_1 + w_2$ are
+   _independent_. (Write $c_1v_1 + c_2v_2 + c_3v_2 = \mathbf{0}$ in terms of the
+   $w$'s. Find and solve equations for the $c$'s, to show they are zero.)
+
+9. Suppose $v_1, v_2, v_3, v_4$ are vectors in $\R^3$.
+
+a. These four vectors are dependent because ____.
+
+b. The two vectors $v_1$ and $v_2$ will be dependent if ____.
+
+c. The vectors $v_1$ and $(0, 0, 0)$ are dependent because ____.
+
+10. Find two independent vectors on the plane $x + 2y - 3z - t = 0$ in $\R^4$.
+    Then find three independent vectors. Why not four? This plane is the
+    nullspace of what matrix?
+
+**Questions 11-14 are about the space _spanned_ by a set of vectors. Take all
+linear combinations of the vectors.**
+
+11. Describe the subspace of $\R^3$ (is it a line or plane or $\R^3$?) spanned
+    by
+
+a. the two vectors $(1, 1, -1)$ and $(-1, -1, 1)$
+
+b. the three vectors $(0, 1, 1)$ and $(1, 1, 0)$ and $(0, 0, 0)$
+
+c. all vectors in $\R^3$ with whole number components
+
+d. all vectors with positive components
+
+12. The vector $b$ is in the subspace spanned by the columns of $A$ when ____
+    has a solution. The vector $c$ is in the row space of $A$ when ____ has a
+    solution.
+
+_True or false_: If the zero vector is in the row space, the rows are dependent.
+
+13. Find the dimensions of these 4 spaces. Which two of the spaces are the same?
+    (a) column space of $A$, (b) column space of $U$, \(c\) row space of $A$,
+    (d) row space of $U$:
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+1 & 3 & 1 \\
+3 & 1 & -1 \\
+\end{array}\right]
+$$
+
+and
+
+$$ U =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+0 & 2 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+14. $v + w$ and $v - w$ are combinations of $v$ and $w$. Write $v$ and $w$ as
+    combinations of $v + w$ and $v - w$. The two pairs of vectors ____ the same
+    space. When are they a basis for the same space?
+
+**Questions 15-25 are about the requirements for a basis.**
+
+15. If $v_1, \dots, v_n$ are linearly independent, the space they span has
+    dimension ____. These vectors are a ____ for that space. If the vectors are
+    the columns of an $m$ by $n$ matrix, then $m$ is ____ than $m$. If $m = n$,
+    that matrix is ____.
+
+16. Find a basis for each of these subspaces of $\R^4$:
+
+a. All vectors whose components are equal.
+
+b. All vectors whose components add to zero.
+
+c. All vectors that are perpendicular to $(1, 1, 0, 0)$ and $(1, 0, 1, 1)$.
+
+d. The column space and the nullspace of $I$ (4 by 4).
+
+17. Find three different bases for the column space of
+    $U = \left[\begin{array}{ccccc}1 & 0 & 1 & 0 & 1 \\0 & 1 & 0 & 1 & 0  \\\end{array}\right]$.
+    Then find two different bases for the row space of $U$.
+
+18. Suppose $v_1, v_2, \dots, v_6$ are six vectors in $\R^4$.
+
+a. Those vectors (do)(do not)(might not) span $\R^4$.
+
+b. Those vectors (are)(are not)(might be) linearly independent.
+
+c. Any four of those vectors (are)(are not)(might be) a basis for $\R^4$.
+
+19. The columns of $A$ are $n$ vectors from $\R^m$. If they are linearly
+    independent, what is the rank of $A$? If they span $\R^m$, what is the rank?
+    If they are a basis for $\R^m$, what then? _Looking ahead_: The rank $r$
+    counts the number of ____ columns.
+
+20. Find a basis for the plane $x - 2y + 3z = 0$ in $\R^3$. Then find a basis
+    for the intersection of that plane with the $xy$ plane. Then find a basis
+    for all vectors perpendicular to the plane.
+
+21. Suppose the columns of a 5 by 5 matrix $A$ are the basis for $\R^5$.
+
+a. The equation $Ax = \mathbf{0}$ has only the solution $x = 0$ because ____.
+
+b. If $b$ is in $\R^5$ then $Ax = b$ is solvable because the basis vectors ____
+$\R^5$.
+
+Conclusion: $A$ is invertible. Its rank is $5$. Its rows are also a basis for
+$\R^5$.
+
+22. Suppose $\mathbf{S}$ is a 5-dimensional subspace of $\R^6$. True or false
+    (example if false):
+
+a. Every basis for $\mathbf{S}$ can be extended to a basis for $\R^6$ by adding
+one more vector.
+
+b. Every basis for $\R^6$ can be reduced to a basis for $\mathbf{S}$ by removing
+one vector.
+
+23. $U$ comes from $A$ by subtracting row 1 from row 3:
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 3 & 2 \\
+0 & 1 & 1 \\
+1 & 3 & 2 \\
+\end{array}\right]
+$$
+
+and
+
+$$ U =
+\left[\begin{array}{cc|c}
+1 & 3 & 2 \\
+0 & 1 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+Find the bases for the two column spaces. Find bases for the two row spaces.
+Find bases for the two nullspaces. Which spaces stay fixed in elimination?
+
+24. True or false (give a good reason):
+
+a. If the columns of a matrix are dependent, so are the rows.
+
+b. The column space of a 2 by 2 matrix is the same as its row space.
+
+c. The column space of a 2 by 2 matrix has the same dimension as its row space.
+
+d. The columns of a matrix are a basis for the column space.
+
+25. For which numbers $c$ and $d$ do these matrices have rank $2$?
+
+$$ A =
+\left[\begin{array}{ccccc}
+1 & 2 & 5 & 0 & 5 \\
+0 & 0 & c & 2 & 2 \\
+0 & 0 & 0 & d & 2 \\
+\end{array}\right]
+$$
+
+and
+
+$$ B =
+\left[\begin{array}{cc}
+c & d \\
+d & c \\
+\end{array}\right]
+$$
+
+**Questions 26-30 are about spaces where the "vectors" are matrices.**
+
+a. All diagonal matrices.
+
+b. All symmetric matrices ($A^{\mathbf{T}} = A$).
+
+c. All skew-symmetric matrices ($A^{\mathbf{T}} = -A$).
+
+27. Construct six linearly independent 3 by 3 echelon matrices
+    $U_1, \dots, U_6$.
+
+28. Find a basis for the space of all 2 by 3 matrices whose columns add to zero.
+    Find a basis for the subspace whose rows also add to zero.
+
+29. What subspace of 3 by 3 matrices is spanned (take all combinations) by
+
+a. the invertible matrices?
+
+b. the rank one matrices?
+
+c. the identity matrix?
+
+30. Find a basis for the space of 2 by 3 matrices whose nullspace contains
+    $(2, 1, 1)$.
+
+**Questions 31-35 are about spaces where the "vectors" are functions.**
+
+31.
+
+a. Find all functions that satisfy $\dfrac{dy}{dx} = 0$.
+
+b. Choose a particular function that satisfies $\dfrac{dy}{dx} = 3$.
+
+c. Find all functions that satisfy $\dfrac{dy}{dx} = 3$.
+
+32. The cosine space $\mathbf{F}_3$ contains all combinations
+    $y(x) = A\cos x + B\cos 2x + C\cos 3x$. Find a basis for the subspace with
+    $y(0) = 0$.
+
+33. Find a basis for the space of functions that satisfy
+
+a. $\dfrac{dy}{dx} - 2y = 0$
+
+b. $\dfrac{dy}{dx} - \dfrac{y}{x} = 0$.
+
+34. Suppose $y_1(x), y_2(x), y_3(x)$ are three different functions of $x$. The
+    vector space they span could have dimension $1$, $2$, or $3$. Give an
+    example of $y_1, y_2, y_3$ to show each possibility.
+
+35. Find a basis for the space of polynomials $p(x)$ of degree $\leq 3$. Find a
+    basis for the subspace with $p(1) = 0$.
+
+36. Find a basis for the space $\mathbf{S}$ of vectors $(a, b, c, d)$ with
+    $a + c + d = 0$ and also for the space $\mathbf{T}$ with $a + b = 0$ and
+    $c = 2d$. What is the dimension of the intersection
+    $\mathbf{S} \cap \mathbf{T}$?
+
+37. If $AS = SA$ for the _shift matrix_ $S$, show that $A$ must have this
+    special form:
+
+If
+
+$$
+\left[\begin{array}{ccc}
+a & b & c \\
+d & e & f \\
+g & h & i \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+a & b & c \\
+d & e & f \\
+g & h & i \\
+\end{array}\right]
+$$
+
+then
+
+$$ A =
+\left[\begin{array}{ccc}
+a & b & c \\
+0 & a & b \\
+0 & 0 & a \\
+\end{array}\right]
+$$
+
+"The subspace of matrices that commute with the shift $S$ has dimension ____."
+
+38. Which of the following are bases for $\R^3$?
+
+a. $(1, 2, 0)$ and $(0, 1, -1)$
+
+b. $(1, 1, -1), (2, 3, 4), (4, 1, -1), (0, 1, -1)$
+
+c. $(1, 2, 2), (-1, 2, 1), (0, 8, 0)$
+
+d. $(1, 2, 2), (-1, 2, 1), (0, 8, 6)$
+
+39. Suppose $A$ is a $5$ by $4$ with rank $4$. Show that $Ax = b$ has no
+    solution when the $5$ by $5$ matrix
+    $\left[\begin{array}{cc}A & b\\\end{array}\right]$ is invertible. Show that
+    $Ax = b$ is solvable when $\left[\begin{array}{cc}A & b\\\end{array}\right]$
+    is singular.
+
+40.
+
+a. Find a basis for all solutions to $\dfrac{d^4y}{dx^4} = y(x)$.
+
+b. Find a particular solution to $\dfrac{d^4y}{dx^4} = y(x) + 1$. Find the
+complete solution.

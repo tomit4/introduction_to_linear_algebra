@@ -367,3 +367,165 @@ Page 167
 
 6. Find a particular solution to $Ax = (0, 6, -6)$ and then the complete
    solution.
+
+---
+
+Page 175
+
+## 3.4 Independence, Basis and Dimension
+
+---
+
+Page 175
+
+1. **Independent columns** of $A$: The only solution to $Ax = \mathbf{0}$ is
+   $x = \mathbf{0}$. The nullspace is $\Z$.
+
+2. Independent vectors: The only zero combination $c_1v_1 + \cdots + c_kv_k = 0$
+   has all $c$'s $= 0$.
+
+3. A matrix with $m < n$ has **dependent columns**: At least $n - m$ free
+   variables/ special solutions.
+
+4. The vectors $v_1, \dots, v_k$ **span the space** $S$ if $S =$ all
+   combinations of the $v$'s.
+
+5. The vectors $v_1, \dots, v_k$ are a **basis for** $S$ if they are independent
+   and they span $S$.
+
+6. The **dimension of a space** $S$ is the number of vectors in every basis for
+   $S$.
+
+7. If $A$ is 4 by 4 and invertible, its columns are a basis for $\R^4$. The
+   dimension of $\R^4$ is 4.
+
+---
+
+Page 175
+
+1. Independent vectors _(no extra vectors)_
+
+2. Spanning a space _(enough vectors to produce the rest)_
+
+3. Basis for a space _(not too many or two few)_
+
+4. Dimension of a space _(the number of vectors in a basis)_
+
+---
+
+Page 175
+
+**DEFINITION**
+
+The columns of $A$ are _linearly independent_ when the only solution to
+$Ax = \mathbf{0}$ is $x = \mathbf{0}$. _No other combination $Ax$ of the columns
+gives the zero vector_.
+
+---
+
+Page 176
+
+**DEFINITION**
+
+The sequence of vectors $v_1, \dots, v_n$ is _linearly independent_ if the only
+combination that gives the zero vector is $0v_1 + 0v_2 + \cdots + 0v_n$.
+
+**Linear independence**
+
+$x_1v_1 + x_2v_2 + \cdots x_nv_n = \mathbf{0}$ only happens when all $x$'s are
+zero.
+
+---
+
+Page 177
+
+**Full column rank**
+
+The columns of $A$ are independent exactly when the rank is $r = n$. There are
+$n$ pivots and no free variables. Only $x = \mathbf{0}$ is in the nullspace.
+
+---
+
+Page 177
+
+Any set of $n$ vectors in $\R^m$ must be linearly dependent if $n > m$.
+
+---
+
+Page 178
+
+**DEFINITION**
+
+A set of vectors _spans_ a space if their linear combinations fill the space.
+
+---
+
+Page 179
+
+**DEFINITION**
+
+The _row space_ of a matrix is the subspace $\R^n$ spanned by the rows.
+
+_The row space of $A$ is $C(A^{\mathbf{T}})$. It is the column space of
+$A^{\mathbf{T}}$_.
+
+---
+
+Page 179
+
+**DEFINITION**
+
+A _basis_ for a vector space is a sequence of vectors with two properties:
+
+_The basis vectors are linearly independent and they span the space._
+
+---
+
+Page 180
+
+The vectors $v_1, \dots, v_n$ are a _basis for $\R^n$_ exactly when they are
+_the columns of an $n$ by $n$ invertible matrix_. Thus $\R^n$ has infinitely
+many different bases.
+
+---
+
+Page 180
+
+_The pivot columns of $A$ are a basis for its column space._ The pivot rows of
+$A$ are a basis for its row space. So are the pivot rows of its echelon form
+$R$.
+
+---
+
+Page 181
+
+If $v_1, \dots, v_m$ and $w_1, \dots, w_n$ are both bases for the same vector
+space, then $m = n$.
+
+---
+
+Page 182
+
+**DEFINITION**
+
+The _dimension of a space is the number of vectors in every basis_.
+
+---
+
+Page 184
+
+**REVIEW OF THE KEY IDEAS**
+
+1. The columns of $A$ are _independent_ if $x = \mathbf{0}$ is the only solution
+   to $Ax = \mathbf{0}$.
+
+2. The vectors $v_1, \dots, v_r$ _span_ a space if their combinations fill that
+   space.
+
+3. _A basis consists of linearly independent vectors that span the space._ Every
+   vector in the space is a _unique_ combination of the basis vectors.
+
+4. All bases for a space have the same number of vectors. This number of vectors
+   in a basis is the _dimension_ of the space.
+
+5. The pivot columns are one basis for the column space. The dimension is $r$.
