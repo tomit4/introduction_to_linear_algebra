@@ -6699,6 +6699,68 @@ $$ v_1 = \begin{bmatrix}{}1\\0\\0\end{bmatrix} \quad v_2 = \begin{bmatrix}{}1\\1
 Solve $c_1v_1 + c_2v_2 + c_3v_3 + c_4v_4 = \mathbf{0}$ or $Ax = \mathbf{0}$. The
 $v$'s go in the columns of $A$.
 
+_Solution:_
+
+_Show that $v_1, v_2, v_3$ are independent:_
+
+Line the first three $v$'s up as columns in a matrix and set them to $0$:
+
+$$
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+0 & 1 & 1 \\
+0 & 0 & 1 \\
+\end{array}\right] = 0
+$$
+
+Since this is already in $R$ form, this can only be true where
+$c_1 = c_2 = c_3 = 0$, and thus $v_1, v_2, v_3$ are independent.
+
+_but $v_1, v_2, v_3, v_4$ are dependent:_
+
+Similar to before, set these up in a matrix:
+
+$$
+\left[\begin{array}{ccc}
+1 & 1 & 1 & 2 \\
+0 & 1 & 1 & 3 \\
+0 & 0 & 1 & 4 \\
+\end{array}\right] =
+\begin{bmatrix}{}0\\0\\0\end{bmatrix}
+$$
+
+Notice now that we are left with a free column (column 4), so our nullspace is
+not only $\mathbf{0}$. This indicates that $v_1, v_2, v_3, v_4$ are dependent.
+This will be demonstrated by solving for the $c$ vector in the next part.
+
+_Solve $c_1v_1 + c_2v_2 + c_3v_3 + c_4v_4 = \mathbf{0}$ or $Ax = \mathbf{0}$:_
+
+$$
+\left[\begin{array}{ccc}
+1 & 1 & 1 & 2 \\
+0 & 1 & 1 & 3 \\
+0 & 0 & 1 & 4 \\
+\end{array}\right] =
+\begin{bmatrix}{}0\\0\\0\end{bmatrix}
+$$
+
+$$
+x + y + z + 2a = 0 \\
+y + z + 3a = 0 \\
+z + 4a = 0 \\
+$$
+
+Set $a = 1$:
+
+$$ z + 4a = 0 \Rightarrow z + 4(1) = 0 \Rightarrow z + 4 = 0 \Rightarrow z = -4 $$
+
+$$ y + z + 3a = 0 \Rightarrow y + (-4) + 3(1) = 0 \Rightarrow y - 4 + 3 = 0 \Rightarrow y - 1 = 0 \Rightarrow y = 1 $$
+
+$$ x + y + z + 2a = 0 \Rightarrow x + (1) + (-4) + 2(1) = 0 \Rightarrow x + 1 - 4 + 2 = 0 \Rightarrow x - 1 = 0 \Rightarrow x = 1 $$
+
+So $c_1v_1 + c_2v_2 + c_3v_3 + c_4v_4 = \mathbf{0}$ is solved by
+$\begin{bmatrix}{}1\\1\\-4\\1\end{bmatrix}$.
+
 2. (Recommended) Find the largest possible of independent vectors among
 
 $$ v_1 =
@@ -6725,6 +6787,24 @@ $$ v_6 =
 \begin{bmatrix}{}0\\0\\1\\-1\end{bmatrix}
 $$
 
+_Solution:_
+
+$$
+\left[\begin{array}{rrr}
+1 & 1 & 1 \\
+-1 & 0 & 0 \\
+0 & -1 & 0 \\
+0 & 0 & -1 \\
+\end{array}\right]
+$$
+
+So $v_1, v_2, v_3$ are independent, adding any further vectors, or taking other
+combinations of the other vectors, introduces dependence. The reason for this is
+that each vector is in $\R^4$. Taking linear combinations can only ever add to
+$\mathbf{0}$ for vectors to be independent. Notice that adding any of the other
+vectors would immediately cause one of the columns to be free, violating the
+definition for independence that only $\mathbf{0}$ can span the nullspace.
+
 3. Prove that if $a = 0$ or $d = 0$ or $f = 0$ (3 cases), the columns of $U$ are
    dependent:
 
@@ -6736,15 +6816,234 @@ a & b & c \\
 \end{array}\right]
 $$
 
+**Proof:**
+
+Suppose $U$ is a matrix defined as follows:
+
+$$ U =
+\left[\begin{array}{ccc}
+a & b & c \\
+0 & d & e \\
+0 & 0 & f \\
+\end{array}\right]
+$$
+
+It is to be shown that if $a = 0$, or if $d = 0$, or if $f = 0$, then the
+columns of $U$ are dependent.
+
+_Case ($a = 0$):
+
+In the case that $a = 0$, $U$ becomes:
+
+$$ U =
+\left[\begin{array}{ccc}
+0 & b & c \\
+0 & d & e \\
+0 & 0 & f \\
+\end{array}\right]
+$$
+
+By the definition of independence on 3 vectors in $\R^3$,
+$c_1v_1 + c_2v_2 + c_3v_3 = \mathbf{0}$, the vectors are independent if, and
+only if, they satisfy $Uc = 0$ where every $c$ equals $0$. But notice that
+$v_1 = \mathbf{0}$ in $U$. Any coefficient multiplied by $\mathbf{0}$ equals
+$\mathbf{0}$, violating that every $c$ equals $0$. It can be concluded that the
+entire set (of columns) is dependent.
+
+_Case ($d = 0$):
+
+In the case that $d = 0$, $U$ becomes:
+
+$$ U =
+\left[\begin{array}{ccc}
+a & b & c \\
+0 & 0 & e \\
+0 & 0 & f \\
+\end{array}\right]
+$$
+
+In this case $v_2$ is a free column, producing a special solution other than
+$\mathbf{0}$ that occupies the nullspace. Thus any $c_2$ can be chosen to
+multiply $v_2$ as follows: $c_2v_2 = 0$. This, once again, violates the
+definition of independence that $c = 0$ for every coefficient that satisfies
+$Ux = 0$. It can be concluded that the entire set of columns is dependent.
+
+_Case ($f = 0$):
+
+In the case that $f = 0$, $U$ becomes:
+
+$$ U =
+\left[\begin{array}{ccc}
+a & b & c \\
+0 & d & e \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+Here $v_3$ is a free column, and similar reasoning applies as was in the
+previous case of $d = 0$.
+
+_Conclusion:_
+
+Since all three cases have been demonstrated, it can be concluded that when
+$a = 0$, or $d = 0$, or $f = 0$, that the three columns of $U$ are dependent.
+This is what was to be shown.
+
+Q.E.D.
+
 4. If $a, d, f$ in Question 3 are all nonzero, show that the only solution to
    $Ux = \mathbf{0}$ is $x = \mathbf{0}$. Then the upper triangular $U$ has
    independent columns.
+
+_Solution:_
+
+**Proof:**
+
+Suppose $U$ is a matrix defined as follows:
+
+$$ U =
+\left[\begin{array}{ccc}
+a & b & c \\
+0 & d & e \\
+0 & 0 & f \\
+\end{array}\right]
+$$
+
+Furthermore, suppose $a \neq 0, d \neq 0, f \neq 0$.
+
+It is to be shown that the only solution to $Ux = \mathbf{0}$ is
+$x = \mathbf{0}$.
+
+Consider:
+
+$$ Ux =
+\left[\begin{array}{ccc}
+a & b & c \\
+0 & d & e \\
+0 & 0 & f \\
+\end{array}\right]
+\begin{bmatrix}{}x_1\\x_2\\x_3\end{bmatrix} =
+\begin{bmatrix}{}0\\0\\0\end{bmatrix}
+$$
+
+By matrix multiplication this becomes the following algebraic expressions:
+
+$$
+ax_1 + bx_2 + cx_3 = 0 \\
+0x_1 + dx_2 + ex_3 = 0 \\
+0x_1 + 0x_2 + fx_3 = 0 \\
+$$
+
+$$
+ax_1 + bx_2 + cx_3 = 0 \\
+dx_2 + ex_3 = 0 \\
+fx_3 = 0 \\
+$$
+
+Since, by the supposition, $f \neq 0$, it follows that $fx_3 = 0 \to x_3 = 0$.
+
+Then, since $x_3 = 0$, and since (by the supposition) $d \neq 0$, it follows
+that $dx_2 + ex_3 = 0 \to dx_2 + e(0) = 0 \to dx_2 = 0 \to x_2 = 0$.
+
+Then, since $x_2 = 0$, and since (by the supposition) $a \neq 0$, it follows
+that
+$ax_1 + bx_2 + cx_3 = 0 \to ax_1 + b(0) + c(0) = 0 \to ax_1 = 0 \to x_1 = 0$.
+
+Combining these solutions into the final vector $x$ yields
+$x = \begin{bmatrix}{}0\\0\\0\end{bmatrix}$, and thus $x = \mathbf{0}$.
+
+This is what was to be shown.
+
+Q.E.D.
 
 5. Decide the dependence or independence of
 
 a. the vectors $(1, 3, 2)$ and $(2, 1, 3)$ and $(3, 2, 1)$
 
+_Solution:_
+
+Set them up in a matrix.
+
+$$
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+3 & 1 & 2 \\
+2 & 3 & 1 \\
+\end{array}\right]
+$$
+
+Note here you can either eliminate or find the determinant, (elimination leading
+to $0$ rows or to free columns means dependent, determinant equal $0$ means
+dependent). Here, I go with elimination:
+
+$$
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+3 & 1 & 2 \\
+2 & 3 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 2 & 3 \\
+0 & -5 & -7 \\
+2 & 3 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 2 & 3 \\
+0 & -5 & -7 \\
+0 & -1 & -5 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 2 & 3 \\
+0 & -5 & -7 \\
+0 & 0 & -\frac{18}{5} \\
+\end{array}\right]
+$$
+
+Since elimination yields no free variables, we can conclude that these vectors
+are independent.
+
 b. the vectors $(1, -3, 2)$ and $(2, 1, -3)$ and $(-3, 2, 1)$.
+
+_Solution:_
+
+Again, we set up a matrix with each vector being a column:
+
+$$
+\left[\begin{array}{rrr}
+1 & 2 & -3 \\
+-3 & 1 & 2 \\
+2 & -3 & 1 \\
+\end{array}\right]
+$$
+
+Once again, we eliminate:
+
+$$
+\left[\begin{array}{rrr}
+1 & 2 & -3 \\
+-3 & 1 & 2 \\
+2 & -3 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 2 & -3 \\
+0 & 7 & -7 \\
+2 & -3 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 2 & -3 \\
+0 & 7 & -7 \\
+0 & -7 & 7 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 2 & -3 \\
+0 & 7 & -7 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+Here, the third row yielding $0$ means that the third row was a linear
+combination of one or both of the other two rows, indicating that these vectors
+are dependent.
 
 6. Choose three independent columns of $U$. Then make two other choices. Do the
    same for $A$.
@@ -6769,6 +7068,61 @@ $$ A =
 \end{array}\right]
 $$
 
+_Solution:_
+
+_Choose three independent columns of $U$. Then make two other choices:_
+
+$$ U =
+\left[\begin{array}{cccc}
+2 & 3 & 4 & 1 \\
+0 & 6 & 7 & 0 \\
+0 & 0 & 0 & 9 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+Choices are denoted $C_1, C_2, C_3$.
+
+$C_1$:
+
+$$ C_1 = \left\{\begin{bmatrix}{}2\\0\\0\\0\end{bmatrix}, \begin{bmatrix}{}3\\6\\0\\0\end{bmatrix}, \begin{bmatrix}{}1\\0\\9\\0\end{bmatrix}\right\} $$
+
+$C_2$:
+
+$$ C_2 = \left\{\begin{bmatrix}{}2\\0\\0\\0\end{bmatrix}, \begin{bmatrix}{}4\\7\\0\\0\end{bmatrix}, \begin{bmatrix}{}1\\0\\9\\0\end{bmatrix}\right\} $$
+
+$C_3$:
+
+$$ C_3 = \left\{\begin{bmatrix}{}3\\6\\0\\0\end{bmatrix}, \begin{bmatrix}{}4\\7\\0\\0\end{bmatrix}, \begin{bmatrix}{}1\\0\\9\\0\end{bmatrix}\right\} $$
+
+_Do the same for $A$:_
+
+$$ A =
+\left[\begin{array}{cccc}
+2 & 3 & 4 & 1 \\
+0 & 6 & 7 & 0 \\
+0 & 0 & 0 & 9 \\
+4 & 6 & 8 & 2 \\
+\end{array}\right]
+$$
+
+Choices are denoted $C_1, C_2, C_3$.
+
+$C_1$:
+
+$$ C_1 = \left\{\begin{bmatrix}{}2\\0\\0\\4\end{bmatrix}, \begin{bmatrix}{}3\\6\\0\\6\end{bmatrix}, \begin{bmatrix}{}1\\0\\9\\2\end{bmatrix}\right\}$$
+
+$C_2$:
+
+$$ C_2 = \left\{\begin{bmatrix}{}2\\0\\0\\4\end{bmatrix}, \begin{bmatrix}{}4\\7\\0\\8\end{bmatrix}, \begin{bmatrix}{}1\\0\\9\\2\end{bmatrix}\right\}$$
+
+$C_3$:
+
+$$ C_3 = \left\{\begin{bmatrix}{}3\\6\\0\\6\end{bmatrix}, \begin{bmatrix}{}4\\7\\0\\8\end{bmatrix}, \begin{bmatrix}{}1\\0\\9\\2\end{bmatrix}\right\}$$
+
+Notice that the column choices for $A$ are the same as for $U$ (since $A$
+eliminates to $U$).
+
 7. If $w_1, w_2, w_3$ are independent vectors, show that the differences
    $v_1 = w_2 - w_3$ and $v_2 = w_1 - w_3$ and $v_3 = w_1 - w_2$ are
    _dependent_. Find a combination of the $v$'s that gives zero. Which matrix
@@ -6776,22 +7130,297 @@ $$
    $\left[\begin{array}{ccc}v_1 & v_2 & v_3 \\\end{array}\right] = \left[\begin{array}{ccc}w_1 & w_2 & w_3 \\\end{array}\right]$
    $A$ is singular?
 
+_Solution:_
+
+_If $w_1, w_2, w_3$ are independent vectors, show that the differences
+$v_1 = w_2 - w_3$ and $v_2 = w_1 - w_3$ and $v_3 = w_1 - w_2$ are dependent:_
+
+**Proof:**
+
+Suppose $w_1, w_2, w_3$ are independent vectors.
+
+It is to be shown that the differences $v_1 = w_2 - w_3$, $v_2 = w_1 - w_3$, and
+$v_3 = w_1 - w_2$ are dependent.
+
+By definition of dependence, this means that it is to be shown that:
+
+$$ c_1v_1 + c_2v_2 + c_3v_3 = \mathbf{0} $$
+
+Where at least one of the following inequalities must hold: $c_1 \neq 0$, or
+$c_2 \neq 0$ or $c_3 \neq 0$.
+
+Now, by substitution of the differences into the linear combination above, this
+yields:
+
+$$ c_1(w_2 - w_3) + c_2(w_1 - w_3) + c_3(w_1 - w_2) = \mathbf{0} $$
+
+By distribution:
+
+$$ c_1w_2 - c_1w_3 + c_2w_1 - c_2w_3 + c_3w_1 - c_3w_2 = \mathbf{0} $$
+
+Now, group by $w$'s and factor:
+
+$$ c_1w_2 - c_3w_2 - c_1w_3 - c_2w_3 + c_2w_1 + c_3w_1 = \mathbf{0} $$
+
+$$ w_2(c_1 - c_3) - w_3(c_1 + c_2) + w_1(c_2 + c_3) = \mathbf{0} $$
+
+By the supposition, since $w_1, w_2, w_3$ are independent, this means that
+$c_1 - c_3 = 0$, $c_1 + c_2 = 0$ and $c_2 + c_3 = 0$.
+
+Evaluating each of these yields:
+
+$$ c_1 - c_3 = 0 \to c_1 = c_3 $$
+
+$$ c_1 + c_2 = 0 \to c_1 = -c_2 $$
+
+$$ c_2 + c_3 = 0 \to c_2 = -c_3 $$
+
+This is true, considering that:
+
+$$ c_2 = -c_3 \to c_1 = -(-c_3) \to c_1 = c_3 $$
+
+So these equalities hold.
+
+Let $t \in \mathbf{R}$ with $t \neq 0$, then:
+
+$$ c_1 = c_3 = t, c_2 = -t $$
+
+It can be concluded that there exists some nonzero number $t$ which is equal to
+$c_1, c_3$, and it's negative $-t$ equals $c_2$, and thus the difference vectors
+$v_1, v_2, v_3$ are dependent.
+
+This is what was to be shown.
+
+Q.E.D.
+
+_Find a combination of the $v$'s that gives zero:_
+
+Consider:
+
+$$ v_1 - v_2 + v_3 $$
+
+Then, by substitution:
+
+$$ (w_2 - w_3) - (w_1 - w_3) + (w_1 - w_2) $$
+
+$$ w_2 - w_3 - w_1 + w_3 + w_1 - w_2 $$
+
+$$ = \mathbf{0} $$
+
+_Which matrix $A$ in
+$\left[\begin{array}{ccc}v_1 & v_2 & v_3 \\\end{array}\right] = \left[\begin{array}{ccc}w_1 & w_2 & w_3 \\\end{array}\right]$
+$A$ is singular?:_
+
+Think carefully on what each $v$ means in terms of $w$, each $v$ is a difference
+of $w$, so construct a 3 by 3 matrix with this into account.
+
+$$ A =
+\left[\begin{array}{ccc}
+v_1 & v_2 & v_3 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+(w_2 - w_3) & (w_1 - w_3) & (w_1 - w_2) \\
+\end{array}\right]
+$$
+
+We are thus trying to find some $A$ that satisfies:
+
+$$ A =
+\left[\begin{array}{ccc}
+(w_2 - w_3) & (w_1 - w_3) & (w_1 - w_2) \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+w_1 & w_2 & w_3 \\
+\end{array}\right]
+$$
+
+Let's consider the first $v_1$:
+
+$$ v_1 = w_2 - w_3 \to v_1 = 0w_1 + 1w_2 + (-1)w_3 \to v_1 = \begin{bmatrix}{}0\\1\\-1\end{bmatrix} $$
+
+As shown above, since $v$ is a vector/column, express this as
+$v_1 = \begin{bmatrix}{}0\\1\\-1\end{bmatrix}$.
+
+Similarly for $v_2, v_3$:
+
+$$ v_2 = w_1 - w_3 \to v_2 = 1w_1 + 0w_2 + (-1)w_3 \to v_2 = \begin{bmatrix}{}1\\0\\-1\end{bmatrix} $$
+
+$$ v_3 = w_1 - w_2 \to v_2 = 1w_1 + (-1)w_2 + 0w_3 \to v_3 = \begin{bmatrix}{}1\\-1\\0\end{bmatrix} $$
+
+And so our final $A$ is:
+
+$$ A =
+\left[\begin{array}{rrr}
+0 & 1 & 1 \\
+1 & 0 & -1 \\
+-1 & -1 & 0 \\
+\end{array}\right]
+$$
+
+Note that this combined with our proof shows that if $A$ has dependent columns,
+then $A$ is singular.
+
 8. If $w_1, w_2, w_3$ are independent vectors, show that the sums
    $v_1 = w_2 + w_3$ and $v_2 = w_1 + w_3$ and $v_3 = w_1 + w_2$ are
    _independent_. (Write $c_1v_1 + c_2v_2 + c_3v_2 = \mathbf{0}$ in terms of the
    $w$'s. Find and solve equations for the $c$'s, to show they are zero.)
 
+Omitted.
+
 9. Suppose $v_1, v_2, v_3, v_4$ are vectors in $\R^3$.
 
 a. These four vectors are dependent because ____.
 
+These vectors, when lined up in a matrix, form a 3 by 4 matrix. This indicates
+that after elimination, at least one column is eliminated to a free column. Thus
+the nullspace is not spanned solely by $\mathbf{0}$, which is a clear indicator
+that the vectors are dependent.
+
 b. The two vectors $v_1$ and $v_2$ will be dependent if ____.
 
+When set up in a simple block matrix:
+
+$$
+\left[\begin{array}{cc}
+v_1 & v_2 \\
+\end{array}\right]
+$$
+
+If this matrix has rank $0$ or rank $1$, then there will be a free
+column/variable, and again, the nullspace will not be spanned solely by
+$\mathbf{0}$, and thus the two vectors will then be dependent.
+
 c. The vectors $v_1$ and $(0, 0, 0)$ are dependent because ____.
+
+Consider:
+
+$$ c_1v_1 + c_2\begin{bmatrix}{}0\\0\\0\end{bmatrix} = \mathbf{0} $$
+
+This means that $v_1$ and $(0, 0, 0)$ are dependent since it is certainly
+possible that $c_2 \neq 0$.
 
 10. Find two independent vectors on the plane $x + 2y - 3z - t = 0$ in $\R^4$.
     Then find three independent vectors. Why not four? This plane is the
     nullspace of what matrix?
+
+_Solution:_
+
+_Find two independent vectors on the plane $x + 2y - 3z - t = 0$ in $\R^4$:_
+
+Simply solving this equation will give vectors in the nullspace, just make sure
+that the two solutions you come up with aren't a linear combination of the
+other.
+
+Let $y = 1$, then:
+
+$$ x + 2(1) - 3z - t = 0 $$
+
+$$ x - 3z - t + 2 = 0 $$
+
+$$ x - 3z - t = -2 $$
+
+Then let $z = 0$:
+
+$$ x - 3(0) - t = -2 $$
+
+$$ x - t = -2 $$
+
+Then let $t = 0$:
+
+$$ x - 0 = -2 $$
+
+$$ x = -2 $$
+
+So one vector that lies on the plane is
+$\begin{bmatrix}{}-2\\1\\0\\0\end{bmatrix}$.
+
+Now, to find the other vector and to ensure it's independent of this first one,
+assign from the other end of the variables, in other words, let $t = 1$:
+
+$$ x + 2y - 3z - t = 0 $$
+
+$$ x + 2y - 3z - (1) = 0 $$
+
+$$ x + 2y - 3z = 1 $$
+
+Now, let $z = 0$:
+
+$$ x + 2y - 3(0) = 1 $$
+
+$$ x + 2y = 1 $$
+
+Now, let $y = 0$:
+
+$$ x + 2(0) = 1 $$
+
+$$ x = 1 $$
+
+So another vector is $\begin{bmatrix}{}1\\0\\0\\1\end{bmatrix}$.
+
+Consider that they are independent:
+
+$$ \begin{bmatrix}{}-2\\1\\0\\0\end{bmatrix}, \begin{bmatrix}{}1\\0\\0\\1\end{bmatrix} $$
+
+_Then find three independent vectors:_
+
+Another third independent vector can be found by setting $z = 1$, and then
+evaluating from there:
+
+$$ x + 2y - 3z - t = 0 $$
+
+$$ x + 2y - 3(1) - t = 0 $$
+
+$$ x + 2y - 3 - t = 0 $$
+
+$$ x + 2y - t = 3 $$
+
+Now set $t = 0$
+
+$$ x + 2y - 0 = 3 $$
+
+$$ x + 2y = 3 $$
+
+And now set $y = 0$:
+
+$$ x + 2(0) = 3 $$
+
+$$ x = 3 $$
+
+And so a third vector is $\begin{bmatrix}{}3\\0\\1\\0\end{bmatrix}$.
+
+Consider all three for independence:
+
+$$ \begin{bmatrix}{}-2\\1\\0\\0\end{bmatrix}, \begin{bmatrix}{}1\\0\\0\\1\end{bmatrix}, \begin{bmatrix}{}3\\0\\1\\0\end{bmatrix} $$
+
+_Why not four?:_
+
+There are only three free variables available in any given evaluation for a
+special solution (as done above), the fourth variable is determined by the
+choices of the previous three variables. This indicates that the nullspace is
+occupied by 3 special solution vectors (aside from $\mathbf{0}$), and cannot be
+occupied by a fourth.
+
+_This plane is the nullspace of what matrix?:_
+
+This is asking us to find an $A$ such that:
+
+$$ Ax = \mathbf{0} $$
+
+$$ Ax
+\left[\begin{array}{rrrr}
+1 & 2 & -3 & -1 \\
+\end{array}\right]
+\begin{bmatrix}{}x\\y\\z\\t\end{bmatrix} =
+\mathbf{0}
+$$
+
+Thus $A$ is:
+
+$$ A =
+\left[\begin{array}{rrrr}
+1 & 2 & -3 & -1 \\
+\end{array}\right]
+$$
 
 **Questions 11-14 are about the space _spanned_ by a set of vectors. Take all
 linear combinations of the vectors.**
@@ -6801,17 +7430,49 @@ linear combinations of the vectors.**
 
 a. the two vectors $(1, 1, -1)$ and $(-1, -1, 1)$
 
+Consider:
+
+$$ c_1\begin{bmatrix}{}1\\1\\-1\end{bmatrix} + c_2\begin{bmatrix}{}-1\\-1\\1\end{bmatrix} $$
+
+$$ = \begin{bmatrix}{}c_1 - c_2\\c_1 - c_2\\-c_1 + c_2\end{bmatrix} $$
+
+This can be factored as:
+
+$$ = (c_1 - c_2)\begin{bmatrix}{}1\\1\\-1\end{bmatrix} $$
+
+Thus these two vectors share a scalar multiple (namely $c_1 - c_2$), and they
+span a line within $\R^3$.
+
 b. the three vectors $(0, 1, 1)$ and $(1, 1, 0)$ and $(0, 0, 0)$
+
+$$ c_1\begin{bmatrix}{}0\\1\\1\end{bmatrix} + c_2\begin{bmatrix}{}1\\1\\0\end{bmatrix} + c_3\begin{bmatrix}{}0\\0\\0\end{bmatrix} $$
+
+$$ = \begin{bmatrix}{}c_2\\c_1 + c_2\\c_1\end{bmatrix} $$
+
+Notice that the linear combination of these three vectors has a second component
+that depends on the addition of the first two, thus we cannot freely choose our
+second coordinate. It follows that only $c_1, c_2$ are freely chosen, and it can
+be concluded that these vectors span a plane within $\R^3$.
 
 c. all vectors in $\R^3$ with whole number components
 
+These vectors will span all of $\R^3$.
+
 d. all vectors with positive components
+
+These vectors will span all of $\R^3$.
 
 12. The vector $b$ is in the subspace spanned by the columns of $A$ when ____
     has a solution. The vector $c$ is in the row space of $A$ when ____ has a
     solution.
 
 _True or false_: If the zero vector is in the row space, the rows are dependent.
+
+_Solution:_
+
+When $Ax = b$ has a solution; When $A^{\mathbf{T}}y = c$ has a solution.
+
+False, the zero vector is always in the row space.
 
 13. Find the dimensions of these 4 spaces. Which two of the spaces are the same?
     (a) column space of $A$, (b) column space of $U$, \(c\) row space of $A$,
@@ -6835,9 +7496,230 @@ $$ U =
 \end{array}\right]
 $$
 
+**Solution:**
+
+a.
+
+$$ A =
+\left[\begin{array}{rrr}
+1 & 1 & 0 \\
+1 & 3 & 1 \\
+3 & 1 & -1 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 1 & 0 \\
+0 & 2 & 1 \\
+3 & 1 & -1 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 1 & 0 \\
+0 & 2 & 1 \\
+0 & -2 & -1 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 1 & 0 \\
+0 & 2 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right] = U
+$$
+
+$$ U =
+\left[\begin{array}{rrr}
+1 & 1 & 0 \\
+0 & 2 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 1 & 0 \\
+0 & 1 & \frac{1}{2} \\
+0 & 0 & 0 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & \frac{1}{2} \\
+0 & 0 & 0 \\
+\end{array}\right] = R
+$$
+
+Our pivot columns are columns $1$ and $2$ from $A$, thus $C(A)$ is:
+
+$$ C(A) = \left\{\begin{bmatrix}{}1\\1\\3\end{bmatrix}, \begin{bmatrix}{}1\\3\\1\end{bmatrix}\right\} $$
+
+b. Notice that we eliminated $A$ to get $U$ in part (a), thus we can apply the
+reasoning of from our derived $R$ to find $C(U)$:
+
+$$ C(U) = \left\{\begin{bmatrix}{}1\\0\\0\end{bmatrix}, \begin{bmatrix}{}1\\2\\1\end{bmatrix}\right\} $$
+
+c. Recall that finding the row space of $A$ is simply finding the column space
+of $A^{\mathbf{T}}$.
+
+$$ R(A) = C(A^{\mathbf{T}}) $$
+
+So first, find $A^{\mathbf{T}}$:
+
+$$ A^{\mathbf{T}} =
+\left[\begin{array}{rrr}
+1 & 1 & 3 \\
+1 & 3 & 1 \\
+0 & 1 & -1 \\
+\end{array}\right]
+$$
+
+And now eliminate to $U$ and $R$:
+
+$$ A^{\mathbf{T}} =
+\left[\begin{array}{rrr}
+1 & 1 & 3 \\
+1 & 3 & 1 \\
+0 & 1 & -1 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 1 & 3 \\
+0 & 2 & -2 \\
+0 & 1 & -1 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 1 & 3 \\
+0 & 2 & -2 \\
+0 & 0 & 0 \\
+\end{array}\right] = U
+$$
+
+$$ U =
+\left[\begin{array}{rrr}
+1 & 1 & 3 \\
+0 & 2 & -2 \\
+0 & 0 & 0 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 1 & 3 \\
+0 & 1 & -1 \\
+0 & 0 & 0 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 0 & 4 \\
+0 & 1 & -1 \\
+0 & 0 & 0 \\
+\end{array}\right] = R
+$$
+
+Thus we have pivots in columns 1 and 2 of $A^{\mathbf{T}}$, so:
+
+$$ A^{\mathbf{T}} =
+\left[\begin{array}{rrr}
+1 & 1 & 3 \\
+1 & 3 & 1 \\
+0 & 1 & -1 \\
+\end{array}\right]
+$$
+
+$$ R(A) = C(A^{\mathbf{T}}) = \left\{\begin{bmatrix}{}1\\1\\0\end{bmatrix}, \begin{bmatrix}{}1\\3\\1\end{bmatrix}\right\} $$
+
+d. Find the transpose of $U$ first:
+
+$$ U^{\mathbf{T}} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 2 & 0 \\
+0 & 1 & 0 \\
+\end{array}\right]
+$$
+
+Now find the upper echelon form of this (denoted $U_e$, I know its confusing but
+just go with it):
+
+$$ U^{\mathbf{T}} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 2 & 0 \\
+0 & 1 & 0 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 2 & 0 \\
+0 & 1 & 0 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 2 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right] = U_e
+$$
+
+Now find $R$:
+
+$$ U_e =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 2 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right] = R
+$$
+
+Once again, our pivots are in columns 1 and 2, so find them from
+$U^{\mathbf{T}}$:
+
+$$ R(U) = C(U^{\mathbf{T}}) = \left\{\begin{bmatrix}{}1\\1\\0\end{bmatrix}, \begin{bmatrix}{}0\\2\\1\end{bmatrix}\right\} $$
+
+_Conclusion:_
+
+The dimensions of all spaces are 2 (because the pivots in all cases are 2). The
+$R(A) = R(U)$ since:
+
+$$ 1\begin{bmatrix}{}1\\1\\0\end{bmatrix} + 1\begin{bmatrix}{}0\\2\\1\end{bmatrix} = \begin{bmatrix}{}1\\3\\1\end{bmatrix} \in R(A) $$
+
+and:
+
+$$ 1\begin{bmatrix}{}1\\3\\1\end{bmatrix} - 1\begin{bmatrix}{}0\\2\\1\end{bmatrix} = \begin{bmatrix}{}1\\1\\0\end{bmatrix} \in R(U) $$
+
 14. $v + w$ and $v - w$ are combinations of $v$ and $w$. Write $v$ and $w$ as
     combinations of $v + w$ and $v - w$. The two pairs of vectors ____ the same
     space. When are they a basis for the same space?
+
+_Solution:_
+
+_Write $v$ and $w$ as combinations of $v + w$ and $v - w$:_
+
+$$ (v + w) + (v - w) $$
+
+$$ = v + w + v - w $$
+
+$$ = 2v $$
+
+This means that:
+
+$$ 2v = (v + w) + (v - w) $$
+
+$$ v = \frac{1}{2}[(v + w) + (v - w)] $$
+
+Similarly:
+
+$$ (v + w) - (v - w) $$
+
+$$ = v + w - v + w $$
+
+$$ = 2w $$
+
+Which means that:
+
+$$ 2w = (v + w) - (v - w) $$
+
+$$ w = \frac{1}{2}[(v + w) - (v - w)] $$
+
+_The two pairs of vectors ____ the same space:_
+
+span
+
+_When are they a basis for the same space?:_
+
+They are a basis when $v$ and $w$ are independent.
+
+(LEFT OFF HERE)
 
 **Questions 15-25 are about the requirements for a basis.**
 
