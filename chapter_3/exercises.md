@@ -9012,3 +9012,345 @@ b. Find a particular solution to $\dfrac{d^4y}{dx^4} = y(x) + 1$. Find the
 complete solution.
 
 Omitted.
+
+---
+
+Page 201
+
+## Problem Set 3.5
+
+1.
+
+a. If a 7 by 9 matrix has rank 5, what are the dimensions of the four subspaces?
+
+b. If a 3 by 4 matrix has rank 3, what are its column space and left nullspace?
+
+2. Find bases and dimensions for the four subspaces associated with $A$ and $B$:
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 2 & 4 \\
+2 & 4 & 8 \\
+\end{array}\right]
+$$
+
+$$ B =
+\left[\begin{array}{ccc}
+1 & 2 & 4 \\
+2 & 5 & 8 \\
+\end{array}\right]
+$$
+
+3. Find a basis for each of the four subspaces associated with $A$:
+
+$$ A =
+\left[\begin{array}{ccccc}
+0 & 1 & 2 & 3 & 4 \\
+0 & 1 & 2 & 4 & 6 \\
+0 & 0 & 0 & 1 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccccc}
+0 & 1 & 2 & 3 & 4 \\
+0 & 0 & 0 & 1 & 2 \\
+0 & 0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+4. Construct a matrix with the required property or explain why this is
+   impossible:
+
+a. Column space contains
+$\begin{bmatrix}{}1\\1\\0\end{bmatrix}, \begin{bmatrix}{}0\\0\\1\end{bmatrix}$,
+row space contains
+$\begin{bmatrix}{}1\\2\end{bmatrix}, \begin{bmatrix}{}2\\5\end{bmatrix}$.
+
+b. Column space has basis $\begin{bmatrix}{}1\\1\\3\end{bmatrix}$, nullspace has
+basis $\begin{bmatrix}{}3\\1\\1\end{bmatrix}$.
+
+c. Dimension of nullspace $= 1 +$ dimension of left nullspace.
+
+d. Nullspace contains $\begin{bmatrix}{}1\\3\end{bmatrix}$, column space
+contains $\begin{bmatrix}{}3\\1\end{bmatrix}$.
+
+e. Row space $=$ column space, nullspace $\neq$ left nullspace.
+
+5. If $\mathbf{V}$ is the subspace spanned by $(1, 1, 0)$ and $(2, 1, 0)$, find
+   a matrix $A$ that has $\mathbf{V}$ as its row space. Find a matrix $B$ that
+   has $\mathbf{V}$ as its nullspace. Multiply $AB$.
+
+6. Without using elimination, find dimensions and bases for the four subspaces
+   for
+
+$$ A =
+\left[\begin{array}{cccc}
+0 & 3 & 3 & 3 \\
+0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 1 \\
+\end{array}\right]
+$$
+
+and
+
+$$ B = \begin{bmatrix}{}1\\4\\5\end{bmatrix} $$
+
+7. Suppose the 3 by 3 matrix $A$ is invertible. Write down bases for the four
+   subspaces for $A$, and also for the 3 by 6 matrix
+   $B = \left[\begin{array}{cc|c}A & A \\\end{array}\right]$. (The basis for
+   $\Z$ is empty.)
+
+8. What are the dimensions of the four subspaces for $A, B$, and $C$, if $I$ is
+   the 3 by 3 identity matrix and $0$ is the 3 by 2 zero matrix?
+
+$$ A =
+\left[\begin{array}{cc}
+I & 0 \\
+\end{array}\right]
+$$
+
+and
+
+$$ B =
+\left[\begin{array}{cc}
+I & I \\
+0^{\mathbf{T}} & 0^{\mathbf{T}} \\
+\end{array}\right]
+$$
+
+and
+
+$$ C = [0] $$
+
+9. Which subspaces are the same for these matrices of different sizes?
+
+a. $[A]$ and $\begin{bmatrix}{}A\\A\end{bmatrix}$
+
+b. $\begin{bmatrix}{}A\\A\end{bmatrix}$ and
+$\left[\begin{array}{cc}A & A \\A & A \\\end{array}\right]$
+
+Prove that all three of those matrices have the _same rank_ $r$.
+
+10. If the entries of a 3 by 3 matrix are chosen randomly between $0$ and $1$,
+    what are the most likely dimensions of the four subspaces? What if the
+    random matrix is 3 by 5?
+
+11. (Important) $A$ is an $m$ by $n$ matrix of rank $r$. Suppose there are right
+    sides $b$ for which $Ax = b$ has _no solution_.
+
+a. What are all inequalities ($<$ or $\leq$) that must be true between $m, n$
+and $r$?
+
+b. How do you know that $A^{\mathbf{T}} = 0$ has solutions other than
+$y = \mathbf{0}$?
+
+12. Construct a matrix with $(1, 0, 1)$ and $(1, 2, 0)$ as a basis for its row
+    space and its column space. Why can't this be a basis for the row space and
+    nullspace?
+
+13. True or false (with a reason or a counterexample):
+
+a. If $m = n$ then the row space of $A$ equals the column space.
+
+b. The matrices $A$ and $-A$ share the same four subspaces.
+
+c. If $A$ and $B$ share the same four subspaces then $A$ is a multiple of $B$.
+
+14. Without computing $A$, find bases for its four fundamental subspaces:
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+6 & 1 & 0 \\
+9 & 8 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+1 & 2 & 3 & 4 \\
+0 & 1 & 2 & 3 \\
+0 & 0 & 1 & 2 \\
+\end{array}\right]
+$$
+
+15. If you exchange the first two rows of $A$, which of the four subspaces stay
+    the same? If $v = (1, 2, 3, 4)$ is in the left nullspace of $A$, write down
+    a vector in the left nullspace of the new matrix after the row exchange.
+
+16. _Explain why $v = (1, 0, -1)$ cannot be a row of $A$ and also in the
+    nullspace_.
+
+17. Describe the four subspaces of $\R^3$ associated with
+
+$$ A =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+and
+
+$$ I + A =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+18. (Left nullspace) Add the extra column $b$ and reduce $A$ to echelon form:
+
+$$
+\left[\begin{array}{cc}
+A & b\\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+1 & 2 & 3 & b_1 \\
+4 & 5 & 6 & b_2 \\
+7 & 8 & 9 & b_3 \\
+\end{array}\right] \to
+\left[\begin{array}{rrrr}
+1 & 2 & 3 & b_1 \\
+0 & -3 & -6 & b_2 - 4b_1 \\
+0 & 0 & 0 & b_3 - 2b_2 + b_1 \\
+\end{array}\right]
+$$
+
+A combination of the rows of $A$ has produced the zero row. What combination is
+it? (Look at $b_3 - 2b_2 + b_1$ on the right side.) Which vectors are in the
+nullspace of $A^{\mathbf{T}}$ and which vectors are in the nullspace of $A$?
+
+19. Following the method of Problem 18, reduce $A$ to echelon form and look at
+    zero rows. The $b$ column tells which combinations you have taken of the
+    rows:
+
+a.
+
+$$
+\left[\begin{array}{ccc}
+1 & 2 & b_1 \\
+3 & 4 & b_2 \\
+4 & 6 & b_3 \\
+\end{array}\right]
+$$
+
+b.
+
+$$
+\left[\begin{array}{ccc}
+1 & 2 & b_1 \\
+2 & 3 & b_2 \\
+2 & 4 & b_3 \\
+2 & 5 & b_4 \\
+\end{array}\right]
+$$
+
+From the $b$ column after elimination, read off $m - r$ basis vectors in the
+left nullspace. Those $y$'s are combinations of rows that give zero rows in the
+echelon form.
+
+20.
+
+a. Check that the solutions to $Ax = \mathbf{0}$ are perpendicular to the rows
+of $A$:
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+2 & 1 & 0 \\
+3 & 4 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+4 & 2 & 0 & 1 \\
+0 & 0 & 1 & 3 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right] = ER
+$$
+
+b. How many independent solutions to $A^{\mathbf{T}}y = \mathbf{0}$? Why does
+$y^{\mathbf{T}} = \text{row } 3 \text{ of } E^{-1}$?
+
+21. Suppose $A$ is the sum of two matrices of rank one:
+    $A = uv^{\mathbf{T}} + wz^{\mathbf{T}}$.
+
+a. Which vectors span the column space of $A$?
+
+b. Which vectors span the row space of $A$?
+
+c. The rank is less than $2$ if ____ or if ____.
+
+d. Compute $A$ and its rank if $u = z = (1, 0, 0)$ and $v = w = (0, 0, 1)$.
+
+22. Construct $A = uv^{\mathbf{T}} + wz^{\mathbf{T}}$ whose column space has
+    basis $(1, 2, 4)$, $(2, 2, 1)$ and whose row space has basis
+    $(1, 0), (1, 1)$. Write $A$ as (3 by 2) times (2 by 2).
+
+23. Without multiplying matrices, find bases for the row and column spaces of
+    $A$:
+
+$$ A =
+\left[\begin{array}{cc}
+1 & 2 \\
+4 & 5 \\
+2 & 7 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+3 & 0 & 3 \\
+1 & 1 & 2 \\
+\end{array}\right]
+$$
+
+How do you know from these shapes that $A$ cannot be invertible?
+
+24. (Important) $A^{\mathbf{T}}y = d$ is solvable when $d$ is in which of the
+    four subspaces? The solution $y$ is unique when the ____ contains only the
+    zero vector.
+
+25. True or false (with a reason or a counterexample):
+
+a. $A$ and $A^{\mathbf{T}}$ have the same number of pivots.
+
+b. $A$ and $A^{\mathbf{T}}$ have the same left nullspace.
+
+c. If the row space equals the column space then $A^{\mathbf{T}} = A$.
+
+d. If $A^{\mathbf{T}} = -A$ then the row space of $A$ equals the column space.
+
+26. If $a, b, c$ are given with $a \neq 0$, how would you choose $d$ so that
+    $\left[\begin{array}{cc}a & b \\c & d \\\end{array}\right]$ has rank 1? Find
+    a basis for the row space and nullspace. Show they are perpendicular!
+
+27. Find the ranks of the 8 by 8 checkerboard matrix $B$ and the chess matrix
+    $C$:
+
+$$ B =
+\left[\begin{array}{cccccccc}
+1 & 0 & 1 & 0 & 1 & 0 & 1 & 0 \\
+0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 \\
+1 & 0 & 1 & 0 & 1 & 0 & 1 & 0 \\
+\cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot \\
+0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 \\
+\end{array}\right]
+$$
+
+and
+
+$$ C =
+\left[\begin{array}{cccccccc}
+r & n & b & q & k & b & n & r \\
+p & p & p & p & p & p & p & p \\
+&&& \text{ four zero rows } &&&& \\
+p & p & p & p & p & p & p & p \\
+r & n & b & q & k & b & n & r \\
+\end{array}\right]
+$$
+
+The numbers $r, n, b, q, k, p$ are all different. Find bases for the row space
+and left nullspace of $B$ and $C$. Challenge problem: Find a basis for the
+nullspace of $C$.
+
+28. Can tic-tac-toe be completed (5 ones and 4 zeros in $A$) so that rank
+    $(A) = 2$ but neither side passed up a winning move?

@@ -529,3 +529,77 @@ Page 184
    in a basis is the _dimension_ of the space.
 
 5. The pivot columns are one basis for the column space. The dimension is $r$.
+
+---
+
+Page 192
+
+## 3.5 Dimensions of the Four Subspaces
+
+---
+
+Page 192
+
+1. The column space $C(A)$ and the row space $C(A^{\mathbf{T}})$ both have
+   _dimension_ $r$ (the rank of $A$).
+
+2. The nullspace $N(A)$ has _dimension_ $n - r$. The left nullspace
+   $N(A^{\mathbf{T}})$ has _dimension_ $m - r$.
+
+3. Elimination produces bases for the row space and nullspace of $A$: They are
+   the same as for $R$.
+
+4. Elimination often changes the column space and left nullspace (but dimensions
+   don't change).
+
+5. **Rank one matrices**: $A = uv^{\mathbf{T}} = \text{ column times row }$:
+   $C(A)$ has basis $u$, $C(A^{\mathbf{T}})$ has basis $v$.
+
+---
+
+Page 192
+
+**Four Fundamental Subspaces**
+
+1. The _row space_ is $C(A^{\mathbf{T}})$, a subspace of $\R^n$.
+
+2. The _column space_ is $C(A)$, a subspace of $\R^m$.
+
+3. The _nullspace_ is $N(A)$, a subspace of $\R^n$.
+
+4. The _left nullspace_ is $N(A^{\mathbf{T}})$, a subspace of $\R^m$. This is
+   our new space.
+
+---
+
+Page 194
+
+In $\R^n$ the row space and nullspace have dimensions $r$ and $n - r$ (adding to
+$n$).
+
+In $\R^m$ the column space and left nullspace have dimensions $r$ and $m - r$
+(total $m$).
+
+---
+
+Page 196
+
+$$ (\text{dimension of column space}) + (\text{dimension of nullspace}) = \text{dimension of } \R^n $$
+
+---
+
+Page 196
+
+**Fundamental Theorem of Linear Algebra, Part 1**
+
+The column space and row space both have dimension $r$.
+
+The nullspaces have dimensions $n - r$ and $m - r$.
+
+---
+
+Page 199
+
+Every rank one matrix is one column times one row
+
+$$ A = uv^{\mathbf{T}} $$
