@@ -7719,52 +7719,286 @@ _When are they a basis for the same space?:_
 
 They are a basis when $v$ and $w$ are independent.
 
-(LEFT OFF HERE)
-
 **Questions 15-25 are about the requirements for a basis.**
 
 15. If $v_1, \dots, v_n$ are linearly independent, the space they span has
     dimension ____. These vectors are a ____ for that space. If the vectors are
-    the columns of an $m$ by $n$ matrix, then $m$ is ____ than $m$. If $m = n$,
+    the columns of an $m$ by $n$ matrix, then $m$ is ____ than $n$. If $m = n$,
     that matrix is ____.
+
+$n$; basis; not less than; invertible
 
 16. Find a basis for each of these subspaces of $\R^4$:
 
 a. All vectors whose components are equal.
 
+The vector $\begin{bmatrix}{}1\\1\\1\\1\end{bmatrix}$ for the space of all
+constant vectors $\begin{bmatrix}{}c\\c\\c\\c\end{bmatrix}$.
+
 b. All vectors whose components add to zero.
+
+Consider a vector as:
+
+$$ \begin{bmatrix}{}a\\b\\c\\d\end{bmatrix} $$
+
+$$ a + b + c + d = 0 $$
+
+Here, we can choose three of the four components freely. As we have done
+traditionally, let us choose $1$ for our initial free variable $b$, _i.e._
+$b = 1$:
+
+$$ a + 1 + c + d = 0 $$
+
+$$ a + c + d = -1 $$
+
+Now choose $0$ for $c$ and $d$:
+
+$$ a + 0 + 0 = -1 $$
+
+$$ a = -1 $$
+
+And so a basis vector can be:
+
+$$ \begin{bmatrix}{}-1\\1\\0\\0\end{bmatrix} $$
+
+And any $c$ scalar that takes this form could work. Similarly, any two
+components where adding them equals $0$ and the other two components equal $0$
+could work, and also any combination where two components cancel each other out,
+or where one component is the negative of the sum of the other components, but
+we are trying to define the _basis_.
+
+This means, given our other choices, we have these two other basis vectors:
+
+$$ \begin{bmatrix}{}-1\\0\\1\\0\end{bmatrix} $$
+
+$$ \begin{bmatrix}{}-1\\0\\0\\1\end{bmatrix} $$
+
+Together, these three vectors define the basis.
+
+Strang answers this as $(1, -1, 0, 0), (1, 0, -1, 0), (1, 0, 0, -1)$. This is
+the same answer as ours except these are ours multiplied by $-1$. c. All vectors
+that are perpendicular to $(1, 1, 0, 0)$ and $(1, 0, 1, 1)$.
 
 c. All vectors that are perpendicular to $(1, 1, 0, 0)$ and $(1, 0, 1, 1)$.
 
+Two vectors are perpendicular when their dot product is equal to $0$. Let's
+multiply each vector by a generic vector and then set that dot product to $0$:
+
+$$
+\begin{bmatrix}{}1\\1\\0\\0\end{bmatrix} \cdot
+\begin{bmatrix}{}a\\b\\c\\d\end{bmatrix} =
+(1)(a) + (1)(b) + (0)(c) + (0)(d) = a + b
+$$
+
+$$
+\begin{bmatrix}{}1\\0\\1\\1\end{bmatrix} \cdot
+\begin{bmatrix}{}a\\b\\c\\d\end{bmatrix} =
+(1)(a) + (0)(b) + (1)(c) + (1)(d) = a + c + d
+$$
+
+Now, set both dot products to $0$:
+
+$$
+a + b = 0 \\
+a + c + d = 0 \\
+$$
+
+Evaluate:
+
+$$
+a + b = 0 \\
+a = -c - d \\
+$$
+
+$$
+-c - d = -b \\
+a = -c - d \\
+$$
+
+$$
+c + d = b \\
+a = -c - d \\
+$$
+
+We can now write our generic vector as:
+
+$$ \begin{bmatrix}{}-c - d\\c + d\\c\\d\end{bmatrix} $$
+
+This can be evaluated further as a sum of two vectors:
+
+$$ c\begin{bmatrix}{}-1\\1\\1\\0\end{bmatrix} + d\begin{bmatrix}{}-1\\1\\0\\1\end{bmatrix} $$
+
+Notice that these two vectors are our basis. They span a 2 dimensional subspace
+of $\R^4$ (they span 2 dimensional space because the two vectors "point" in two
+different directions), and are linearly independent.
+
+Thus the two vectors that define the basis are
+$\begin{bmatrix}{}-1\\1\\1\\0\end{bmatrix}, \begin{bmatrix}{}-1\\1\\0\\1\end{bmatrix}$.
+
 d. The column space and the nullspace of $I$ (4 by 4).
+
+Consider the 4 by 4 $I$:
+
+$$
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+The four columns of $I$ span the column space, and the nullspace is only spanned
+by $\mathbf{0}$.
+
+Thus the basis in this case is just the for columns of $I$:
+
+$$ \begin{bmatrix}{}1\\0\\0\\0\end{bmatrix}, \begin{bmatrix}{}0\\1\\0\\0\end{bmatrix}, \begin{bmatrix}{}0\\0\\1\\0\end{bmatrix}, \begin{bmatrix}{}0\\0\\0\\1\end{bmatrix} $$
 
 17. Find three different bases for the column space of
     $U = \left[\begin{array}{ccccc}1 & 0 & 1 & 0 & 1 \\0 & 1 & 0 & 1 & 0  \\\end{array}\right]$.
     Then find two different bases for the row space of $U$.
 
+_Solution:_
+
+This matrix $U$ is already in upper echelon (and reduced row echelon) form. We
+can see that the first two columns span the column space:
+
+$$ \left\{\begin{bmatrix}{}1\\0\end{bmatrix}, \begin{bmatrix}{}0\\1\end{bmatrix}\right\} $$
+
+This is _one_ basis (one basis, two vectors, a basis can have as many vectors as
+there are dimensions in the space, as long as they span the same subspace and
+they are linearly independent, this redundancy is because I am struggling with
+this).
+
+Since the overall column space spans all of $\R^2$, and these columns take the
+form of $\begin{bmatrix}{}a\\b\end{bmatrix}$, we really can choose any two 2
+dimensional vectors that are linearly independent. So, take any vector that is
+not a scalar multiple of the previously one.
+
+$$ \left\{\begin{bmatrix}{}2\\2\end{bmatrix}, \begin{bmatrix}{}3\\-3\end{bmatrix}\right\} $$
+
+$$ \left\{\begin{bmatrix}{}2\\1\end{bmatrix}, \begin{bmatrix}{}1\\2\end{bmatrix}\right\} $$
+
 18. Suppose $v_1, v_2, \dots, v_6$ are six vectors in $\R^4$.
 
 a. Those vectors (do)(do not)(might not) span $\R^4$.
 
+might not
+
 b. Those vectors (are)(are not)(might be) linearly independent.
 
+are not
+
 c. Any four of those vectors (are)(are not)(might be) a basis for $\R^4$.
+
+might be
 
 19. The columns of $A$ are $n$ vectors from $\R^m$. If they are linearly
     independent, what is the rank of $A$? If they span $\R^m$, what is the rank?
     If they are a basis for $\R^m$, what then? _Looking ahead_: The rank $r$
     counts the number of ____ columns.
 
+_Solution:_
+
+_If they are linearly independent, what is the rank of $A$?:_
+
+_If they span $\R^m$, what is the rank?:_
+
+$r = n$
+
+_If they are a basis for $\R^m$, what then?:_
+
+The columns span all of $\R^m$, and thus $r = m$. So $r = n = m$.
+
+_The rank $r$ counts the number of (?) columns:_
+
+independent
+
 20. Find a basis for the plane $x - 2y + 3z = 0$ in $\R^3$. Then find a basis
     for the intersection of that plane with the $xy$ plane. Then find a basis
     for all vectors perpendicular to the plane.
+
+_Solution:_
+
+_Find a basis for the plane $x - 2y + 3z = 0$ in $\R^3$:_
+
+Choose $y = 1, z = 0$, then:
+
+$$ x - 2y + 3z = 0 \Rightarrow x - 2(1) + 3(0) = 0 \Rightarrow x = 2 $$
+
+So one vector in the basis is $\begin{bmatrix}{}2\\1\\0\end{bmatrix}$
+
+Another vector in the basis can be found (we can potentially find 3 as we are in
+$\R^3$), choose $y = 0, z = 1$:
+
+$$ x - 2y + 3z = 0 \Rightarrow x - 2(0) + 3(1) = 0 \Rightarrow x = -3 $$
+
+Another vector then is $\begin{bmatrix}{}-3\\0\\1\end{bmatrix}$
+
+Let us attempt $y = 1, z = 1$:
+
+$$ x - 2y + 3z = 0 \Rightarrow x - 2(1) + 3(1) = 0 \Rightarrow x = -1 $$
+
+$$ \begin{bmatrix}{}-1\\1\\1\end{bmatrix} $$
+
+But this vector is a linear combination of the previous two:
+
+$$ \begin{bmatrix}{}2\\1\\0\end{bmatrix} + \begin{bmatrix}{}-3\\0\\1\end{bmatrix} = \begin{bmatrix}{}-1\\1\\1\end{bmatrix} $$
+
+Thus it appears we have found the basis for this plane:
+
+$$ B = \left\{\begin{bmatrix}{}2\\1\\0\end{bmatrix}, \begin{bmatrix}{}-3\\0\\1\end{bmatrix}\right\} $$
+
+_Then find a basis for the intersection of that plane with the $xy$ plane:_
+
+A plane in $\R^3$ intersects the $xy$ plane when $z = 0$.
+
+This restricts us to:
+
+$$ x - 2y + 3z = 0 \Rightarrow x - 2y + 3(0) = 0 \Rightarrow x - 2y = 0 \Rightarrow x = 2y $$
+
+Choose $y = 1$, then:
+
+$$ x = 2y \Rightarrow x = 2(1) \Rightarrow x = 2 $$
+
+So one vector that intersects the plane's basis is
+$\begin{bmatrix}{}2\\1\\0\end{bmatrix}$
+
+We know that we cannot go further than this because we only have one free
+variable (either $x$ or $y$), and this indicates we will have only one vector in
+the basis (notice the connection between the vectors in the basis and the
+nullspace, all vectors in the basis span the entire nullspace).
+
+_Then find a basis for all vectors perpendicular to the plane:_
+
+A vector is perpendicular to the plane when the dot product is $0$. This means
+that:
+
+$$ \begin{bmatrix}{}1\\-2\\3\end{bmatrix} \cdot \begin{bmatrix}{}x\\y\\z\end{bmatrix} = 0 $$
+
+This is equivalent to the original plane equation. Since this corresponds to our
+original plane equation, and since this dot product does equal $0$, it follows
+that this vector is perpendicular to the given plane.
+
+$$ B = \left\{\begin{bmatrix}{}1\\-2\\3\end{bmatrix}\right\} $$
 
 21. Suppose the columns of a 5 by 5 matrix $A$ are the basis for $\R^5$.
 
 a. The equation $Ax = \mathbf{0}$ has only the solution $x = 0$ because ____.
 
+Since the columns of $A$ are the basis for $\R^5$, this means that the basis
+spans all of $\R^5$, and all the columns are linearly independent.
+
+This indicates that there are no free variables, the nullspace is spanned solely
+by $\mathbf{0}$, and as indicated in a previous problem, the basis columns do
+span all of the nullspace. It follows that the only solution left is
+$x = \mathbf{0}$.
+
 b. If $b$ is in $\R^5$ then $Ax = b$ is solvable because the basis vectors ____
 $\R^5$.
+
+spans
 
 Conclusion: $A$ is invertible. Its rank is $5$. Its rows are also a basis for
 $\R^5$.
@@ -7775,8 +8009,28 @@ $\R^5$.
 a. Every basis for $\mathbf{S}$ can be extended to a basis for $\R^6$ by adding
 one more vector.
 
+True
+
 b. Every basis for $\R^6$ can be reduced to a basis for $\mathbf{S}$ by removing
 one vector.
+
+False. The basis vectors of $\R^6$ might not be in $\mathbf{S}$.
+
+Because the basis for $\mathbf{S}$ is not defined, let the basis for
+$\mathbf{S}$ be all vectors where the last component of the vector is $0$, then
+the basis for $\mathbf{S}$ is:
+
+$$ B_{\mathbf{S}} = \left\{\begin{bmatrix}{}1\\0\\0\\0\\0\\0\end{bmatrix}, \begin{bmatrix}{}0\\1\\0\\0\\0\\0\end{bmatrix}, \begin{bmatrix}{}0\\0\\1\\0\\0\\0\end{bmatrix}, \begin{bmatrix}{}0\\0\\0\\1\\0\\0\end{bmatrix}, \begin{bmatrix}{}0\\0\\0\\0\\1\\0\end{bmatrix}\right\} $$
+
+Now, consider that the basis for $\R^6$ can have two vectors where the last
+component is not $0$:
+
+$$ B_{\mathbf{R}^6} = \left\{\dots,\begin{bmatrix}{}1\\0\\0\\0\\0\\1\end{bmatrix}, \begin{bmatrix}{}0\\1\\0\\0\\0\\1\end{bmatrix},\dots\right\} $$
+
+As you can see, if we only remove vector, there still remains at least one
+vector that violates the constraints under which $B_{\mathbf{S}}$ is defined.
+This remaining vector would be within that basis, but that basis would not be
+$B_{\mathbf{S}}$.
 
 23. $U$ comes from $A$ by subtracting row 1 from row 3:
 
@@ -7791,7 +8045,7 @@ $$
 and
 
 $$ U =
-\left[\begin{array}{cc|c}
+\left[\begin{array}{ccc}
 1 & 3 & 2 \\
 0 & 1 & 1 \\
 0 & 0 & 0 \\
@@ -7800,6 +8054,153 @@ $$
 
 Find the bases for the two column spaces. Find bases for the two row spaces.
 Find bases for the two nullspaces. Which spaces stay fixed in elimination?
+
+_Solution:_
+
+_Find the bases for the two column spaces:_
+
+From $U$, we can ascertain that the two pivot columns are column 1 and column 2,
+thus our basis vectors are column 1 and column 2 of $A$ and column and column 2
+of $U$ (since we are asked to find the bases for the two column spaces).
+
+$$ B_A = \left\{\begin{bmatrix}{}1\\0\\1\end{bmatrix}, \begin{bmatrix}{}3\\1\\3\end{bmatrix}\right\} $$
+
+$$ B_U = \left\{\begin{bmatrix}{}1\\0\\0\end{bmatrix}, \begin{bmatrix}{}3\\1\\0\end{bmatrix}\right\} $$
+
+_Find bases for the two row spaces:_
+
+We can find the row spaces by first transposing both $A$ and $U$.
+
+$$ A^{\mathbf{T}} =
+\left[\begin{array}{ccc}
+1 & 0 & 1 \\
+3 & 1 & 3 \\
+2 & 1 & 2 \\
+\end{array}\right]
+$$
+
+Now reduce to upper echelon form (denoted $U_A$):
+
+$$ A^{\mathbf{T}} =
+\left[\begin{array}{ccc}
+1 & 0 & 1 \\
+3 & 1 & 3 \\
+2 & 1 & 2 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+1 & 0 & 1 \\
+0 & 1 & 0 \\
+2 & 1 & 2 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+1 & 0 & 1 \\
+0 & 1 & 0 \\
+0 & 1 & 0 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+1 & 0 & 1 \\
+0 & 1 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right] = U_A
+$$
+
+Now do the same for $U$:
+
+$$ U^{\mathbf{T}} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+3 & 1 & 0 \\
+2 & 1 & 0 \\
+\end{array}\right]
+$$
+
+And find upper echelon form (denoted $U_U$):
+
+$$ U^{\mathbf{T}} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+3 & 1 & 0 \\
+2 & 1 & 0 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+2 & 1 & 0 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 1 & 0 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right] = U_U
+$$
+
+So for both, the bases for the two row spaces are the first two columns of
+$A^{\mathbf{T}}$ and the first two columns of $U^{\mathbf{T}}$:
+
+$$ B_{A^{\mathbf{T}}} = \left\{\begin{bmatrix}{}1\\3\\2\end{bmatrix}, \begin{bmatrix}{}0\\1\\1\end{bmatrix}\right\} $$
+
+$$ B_{U^{\mathbf{T}}} = \left\{\begin{bmatrix}{}1\\3\\2\end{bmatrix}, \begin{bmatrix}{}0\\1\\1\end{bmatrix}\right\} $$
+
+Notice that $B_{A^{\mathbf{T}}} = B_{U^{\mathbf{T}}}$. This can more easily be
+found by simply identifying the nonzero rows of $U$, but my mathematical
+intuition is very bad.
+
+_Find bases for the two nullspaces:_
+
+First let's find the nullspaces of $A$ and $U$.
+
+Since $U$ is the upper echelon form of $A$, we can further reduce $U$ to reduced
+row echelon form $R$.
+
+$$ U =
+\left[\begin{array}{ccc}
+1 & 3 & 2 \\
+0 & 1 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 0 & -1 \\
+0 & 1 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right] = R
+$$
+
+Since we have a free column (column 3), this means that the nullspace is not
+spanned solely by $\mathbf{0}$. We can find our special solution by setting
+$Rx = 0$:
+
+$$
+x_1 + 0x_2 + (-1)x_3 = 0 \\
+x_2 + x_3 = 0 \\
+$$
+
+Choose $x_3 = 1$:
+
+$$ x_2 + x_3 = 0 \Rightarrow x_2 + (1) = 0 \Rightarrow x_2 = -1 $$
+
+$$ x_1 + 0x_2 + (-1)x_3 = 0 \Rightarrow x_1 + (0)(-1) + (-1)(1) = 0 \Rightarrow x_1 - 1 = 0 \Rightarrow x_1 = 1 $$
+
+So one special solution is $\begin{bmatrix}{}1\\-1\\1\end{bmatrix}$ (we do not
+check for more as there is only one free variable, there is no need to check for
+$x_3 = 0$, it will just be a linear combination of this special solution).
+
+Now we check for special solutions in $A$... except to find for special
+solutions, one reduces $A$ to $U$ to $R$ and then uses that to find the special
+solutions in the nullspace. So $N(A) = N(U)$.
+
+This vector spans the entire nullspace. Since this vector is not $\mathbf{0}$,
+it follows that this vector is linearly independent. Thus the requisite
+definitions for basis have been satisfied, and therefore the basis for the
+nullspace of both $A$ and $U$ is this vector.
+
+_Which spaces stay fixed in elimination?:_
+
+Both the row spaces and the nullspaces stay fixed in elimination.
 
 24. True or false (give a good reason):
 
@@ -7810,6 +8211,61 @@ b. The column space of a 2 by 2 matrix is the same as its row space.
 c. The column space of a 2 by 2 matrix has the same dimension as its row space.
 
 d. The columns of a matrix are a basis for the column space.
+
+24. True or false (give a good reason):
+
+a. If the columns of a matrix are dependent, so are the rows.
+
+False, consider the simple matrix:
+
+$$
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+\end{array}\right]
+$$
+
+Here the columns are dependent (to see this, consider that there are more
+columns than rows, thus we are guaranteed to get a free column after
+elimination, and thus one column is a linear combination of at least one other
+column and thus dependent).
+
+Now consider the rows, neither is a linear combination of the other, and thus
+are independent.
+
+Here, the columns are dependent, however the rows are independent.
+
+b. The column space of a 2 by 2 matrix is the same as its row space.
+
+False, consider:
+
+$$
+\left[\begin{array}{ccc}
+0 & 1 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+Here the column space is spanned by $\begin{bmatrix}{}1\\0\end{bmatrix}$, where
+as the row space is spanned by
+$\left[\begin{array}{cc}0 & 1 \\\end{array}\right]$.
+
+c. The column space of a 2 by 2 matrix has the same dimension as its row space.
+
+True.
+
+If $A$ is invertible, then the dimension of its column space is $2$, and the
+dimension of its row space is $2$.
+
+If $A = \mathbf{0}$, then the dimension of both its column and row space is $0$.
+
+For all other 2 by 2 matrices, the rank is $1$, and thus the dimension of both
+the column and row space is $1$.
+
+d. The columns of a matrix are a basis for the column space.
+
+False, if any of the columns of the matrix are dependent, then they are not in
+the basis.
 
 25. For which numbers $c$ and $d$ do these matrices have rank $2$?
 
@@ -7830,30 +8286,356 @@ d & c \\
 \end{array}\right]
 $$
 
+_Solution:_
+
+For $A$:
+
+$$ A =
+\left[\begin{array}{ccccc}
+1 & 2 & 5 & 0 & 5 \\
+0 & 0 & c & 2 & 2 \\
+0 & 0 & 0 & d & 2 \\
+\end{array}\right]
+$$
+
+$c = 0, d = 2$
+
+For $B$:
+
+$$ B =
+\left[\begin{array}{cc}
+c & d \\
+d & c \\
+\end{array}\right]
+$$
+
+$B$ has rank $2$ for any $c$ and $d$ as long as $c \neq \pm d$.
+
 **Questions 26-30 are about spaces where the "vectors" are matrices.**
+
+26. Find a basis (and the dimension) for each of these subspaces of 3 by 3
+    matrices:
 
 a. All diagonal matrices.
 
+$$ B_{\text{diagonal matrices}} = \left\{
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right],
+\left[\begin{array}{ccc}
+0 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right],
+\left[\begin{array}{ccc}
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right],
+\right\} $$
+
+The dimension of this subspace is $3$.
+
 b. All symmetric matrices ($A^{\mathbf{T}} = A$).
 
+The previous matrices from part (a) are in the basis of all symmetric matrices.
+
+$$ B_{\text{symmetric matrices}} = \left\{
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right],
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+1 & 0 & 0 \\
+\end{array}\right],
+\left[\begin{array}{ccc}
+0 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+\end{array}\right]
+\right\} $$
+
+The dimension is $6$.
+
 c. All skew-symmetric matrices ($A^{\mathbf{T}} = -A$).
+
+$$ B_{\text{skew-symmetric matrices}} = \left\{
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+-1 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right],
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+-1 & 0 & 0 \\
+\end{array}\right],
+\left[\begin{array}{ccc}
+0 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & -1 & 0 \\
+\end{array}\right]
+\right\} $$
+
+The dimension is $3$.
 
 27. Construct six linearly independent 3 by 3 echelon matrices
     $U_1, \dots, U_6$.
 
+_Solution:_
+
+$$ U_1 =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ U_2 =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 2 \\
+\end{array}\right]
+$$
+
+$$ U_3 =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 2 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ U_4 =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ U_5 =
+\left[\begin{array}{ccc}
+1 & 0 & 1 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ U_6 =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 1 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
 28. Find a basis for the space of all 2 by 3 matrices whose columns add to zero.
     Find a basis for the subspace whose rows also add to zero.
+
+_Solution:_
+
+_Find a basis for the space of all 2 by 3 matrices whose columns add to zero:_
+
+$$ B_{\text{all 2 by 3 matrices whose columns add to zero}} = \left\{
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-1 & 0 & 0 \\
+\end{array}\right],
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+0 & -1 & 0 \\
+\end{array}\right],
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 0 & -1 \\
+\end{array}\right]
+\right\} $$
+
+_Find a basis for the subspace whose rows also add to zero:_
+
+$$ B_{\text{rows add to zero}} = \left\{
+\left[\begin{array}{ccc}
+1 & 0 & -1 \\
+-1 & 0 & 1 \\
+\end{array}\right],
+\left[\begin{array}{ccc}
+1 & -1 & 0 \\
+-1 & 1 & 0 \\
+\end{array}\right]
+\right\}$$
 
 29. What subspace of 3 by 3 matrices is spanned (take all combinations) by
 
 a. the invertible matrices?
 
+The subspace of all 3 by 3 invertible matrices is spanned by all of
+3-dimensional matrices, denoted $M_{3 \times 3}$.
+
 b. the rank one matrices?
+
+Consider that all rank one matrices have the form akin to one of the following:
+
+$$
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right],
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right],
+\left[\begin{array}{ccc}
+0 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right],
+\left[\begin{array}{ccc}
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right], \dots
+$$
+
+As you can see, this means that the $1$ could occupy any one of the $9$
+coordinates, and this means that the subspace of 3 by 3 rank one matrices also
+occupies the subspace of all possible 3 by 3 matrices, $M_{3 \times 3}$.
 
 c. the identity matrix?
 
+The 3 by 3 identity matrix:
+
+$$ I =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+This matrix can be multiplied by any scalar real number, $c$, and that would
+span the subspace of 3 by 3 matrices in which it is a part, we can denote this
+as:
+
+$$ \text{span } \{I_3\} = \{cI_3 | c \in \R\} $$
+
 30. Find a basis for the space of 2 by 3 matrices whose nullspace contains
     $(2, 1, 1)$.
+
+_Solution:_
+
+Let's consider what the nullspace containing the vector
+$\begin{bmatrix}{}2\\1\\1\end{bmatrix}$ means. This means that there is a
+special solution such that:
+
+$$ 2x_1 + 1x_2 + 1x_3 = 0 $$
+
+Now, a 2 by 3 matrix has the form of:
+
+$$
+\left[\begin{array}{ccc}
+a & b & c \\
+d & e & f \\
+\end{array}\right]
+$$
+
+For there to be a special solution, this means that the 2 by 3 matrix has a free
+column, which means that this free column is linearly dependent on the other
+columns.
+
+Let's say that the third column is this free column, then the following equation
+follows:
+
+$$ 2x_1 + 1x_2 + 1x_3 = 0 \Rightarrow x_3 = -2x_1 - x_2 $$
+
+From here then, let's take our given vector and multiply it by our generic
+matrix:
+
+$$
+\left[\begin{array}{ccc}
+a & b & c \\
+d & e & f \\
+\end{array}\right]
+\begin{bmatrix}{}2\\1\\1\end{bmatrix} =
+\begin{bmatrix}{}2a + b + c\\2d + e + f\end{bmatrix}
+$$
+
+We now set this vector to $\mathbf{0}$:
+
+$$
+\begin{bmatrix}{}2a + b + c\\2d + e + f\end{bmatrix} = \mathbf{0}
+$$
+
+Evaluating:
+
+$$
+2a + b + c = 0 \\
+2d + e + f = 0 \\
+$$
+
+$$
+c = -2a - b \\
+f = -2d - e \\
+$$
+
+Now, let's substitute these back into our generic matrix:
+
+$$
+\left[\begin{array}{ccc}
+a & b & -2a - b \\
+d & e & -2d - e \\
+\end{array}\right]
+$$
+
+Now we finally are able to find the matrices that are in the basis:
+
+Choose $a = 1, b = d = e = 0$:
+
+$$
+\left[\begin{array}{ccc}
+1 & 0 & -2 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+Choose $b = 1, a = d = e = 0$:
+
+$$
+\left[\begin{array}{ccc}
+0 & 1 & -1 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+Choose $d = 1, a = b = e = 0$:
+
+$$
+\left[\begin{array}{ccc}
+0 & 0 & 0 \\
+1 & 0 & -2 \\
+\end{array}\right]
+$$
+
+Choose $e = 1, a = b = d = 0$:
+
+$$
+\left[\begin{array}{ccc}
+0 & 0 & 0 \\
+0 & 1 & -1 \\
+\end{array}\right]
+$$
+
+These are our four matrices that are the basis for the space of 2 by 3 matrices
+whose nullspace contains $(2, 1, 1)$.
 
 **Questions 31-35 are about spaces where the "vectors" are functions.**
 
@@ -7861,31 +8643,267 @@ c. the identity matrix?
 
 a. Find all functions that satisfy $\dfrac{dy}{dx} = 0$.
 
+For $f'(x) = 0$, $f(x) = C$ for some constant $C$.
+
 b. Choose a particular function that satisfies $\dfrac{dy}{dx} = 3$.
 
+$$ f(x) = 3x $$
+
 c. Find all functions that satisfy $\dfrac{dy}{dx} = 3$.
+
+$$ f(x) = 3x + C $$
 
 32. The cosine space $\mathbf{F}_3$ contains all combinations
     $y(x) = A\cos x + B\cos 2x + C\cos 3x$. Find a basis for the subspace with
     $y(0) = 0$.
 
+_Solution:_
+
+Let's substitute in, since $y(0) = 0$, this means that:
+
+$$ y(0) = A\cos(0) + B\cos(2(0)) + C\cos(3(0)) = 0 $$
+
+$$ A\cos(0) + B\cos(0) + C\cos(0) = 0 $$
+
+Now, $\cos(0) = 1$a, so:
+
+$$ A(1) + B(1) + C(1) = 0 $$
+
+$$ A + B + C = 0 $$
+
+Now, this means we have two free variables (and one pivot). Choose $B$ and $C$
+as free variables, then:
+
+$$ C = -A - B $$
+
+We can then substitute this into our original function:
+
+$$ y(x) = A\cos x + B\cos 2x + (-A - B)\cos 3x $$
+
+We can then distribute and evaluate as follows:
+
+$$ y(x) = A\cos x + B\cos 2x -A\cos 3x - B\cos 3x $$
+
+$$ y(x) = A(\cos x - \cos 3x) + B(\cos 2x - \cos 3x) $$
+
+Thus two functions that span the cosine space $\mathbf{F}_3$ are
+$\cos x - \cos 3x$ and $\cos 2x - \cos 3x$.
+
 33. Find a basis for the space of functions that satisfy
 
 a. $\dfrac{dy}{dx} - 2y = 0$
 
+Evaluating this yields(expressed with prime notation instead):
+
+$$ f'(x) - 2f(x) = 0 $$
+
+$$ f'(x) = 2f(x) $$
+
+$$ f(x) = C\mathbf{e}^{2x} $$
+
+for some constant $C$.
+
 b. $\dfrac{dy}{dx} - \dfrac{y}{x} = 0$.
+
+Again, using prime notation instead:
+
+$$ f'(x) - \frac{f(x)}{x} = 0 $$
+
+$$ f'(x) = \frac{f(x)}{x} $$
+
+---
+
+See Paul's Math notes 3.9 chain rule, example 3c for this:
+
+Find the outside function for:
+
+$$ f(x) = \ln(g(x)) $$
+
+$$ f'(x) = \frac{1}{g(x)}g'(x) = \frac{g'(x)}{g(x)} $$
+
+---
+
+With this in consideration, now return to this:
+
+$$ f'(x) = \frac{f(x)}{x} $$
+
+Rewrite it as:
+
+$$ f'(x) = f(x)\frac{1}{x} $$
+
+$$ \frac{f'(x)}{f(x)} = \frac{1}{x} $$
+
+$$ (\ln|f(x)|)' = \frac{1}{x} $$
+
+Take the integral of both sides (see Paul's math notes on indefinite integrals
+and derivatives of logarithmic functions)
+
+$$ \int{(\ln|f(x)|)'\, dx} = \int{\frac{1}{x}\, dx} $$
+
+$$ \ln(|f(x)|) + C_1 = \ln(|x|) + C_2 $$
+
+$$ \ln(|f(x)|) - \ln(|x|) = C $$
+
+Exponentiate both sides by $\mathbf{e}$:
+
+$$ \mathbf{e}^{\ln(|f(x)|) - \ln(|x|)} = \mathbf{e}^C $$
+
+Recall that the subtraction of two logs can be expressed as a fraction:
+
+$$ \mathbf{e}^{\ln(\frac{|f(x)|}{|x|})} = \mathbf{e}^C $$
+
+$$ \frac{|f(x)|}{|x|}= \mathbf{e}^C $$
+
+$$ |f(x)| = |x|\mathbf{e}^C $$
+
+Notice that this ultimately means that $f(x)$ is some scalar multiple of $x$,
+thus the basis for the given equation is $x$.
 
 34. Suppose $y_1(x), y_2(x), y_3(x)$ are three different functions of $x$. The
     vector space they span could have dimension $1$, $2$, or $3$. Give an
     example of $y_1, y_2, y_3$ to show each possibility.
 
+$$ y_1, y_2, y_3 = x, 2x, 3x $$
+
+Here each function is a scalar multiple of the other, and so the dimension is
+$1$.
+
+$$ y_1, y_2, y_3 = x, 2x, x^2 $$
+
+Here one function is a scalar multiple of the other ($x, 2x$), while the other
+is an exponent ($x^2, which is not a linear combination of the others), so
+dimension is $2$.
+
+$$ y_1, y_2, y_3 = x, x^2, x^3 $$
+
+And here no function is a linear combination of any of the others, making them
+linearly independent, and thus the dimension is $3$.
+
 35. Find a basis for the space of polynomials $p(x)$ of degree $\leq 3$. Find a
     basis for the subspace with $p(1) = 0$.
+
+_Solution:_
+
+_Find a basis for the space of polynomials $p(x)$ of degree $\leq 3$:_
+
+Consider that this is asking us for the basis of the space of all polynomails of
+degree $\leq 3$. A basic degree 3 polynomial is:
+
+$$ c_1x^3 + c_2x^2 + c_3x + c_4 $$
+
+This indicates that the basis for the space of polynomials $p(x)$ of degree
+$\leq 3$ is $\{x^3, x^2, x, 1\}$.
+
+_Find a basis for the subspace with $p(1) = 0$:_
+
+To satisfy $p(1) = 0$, set the generic equation:
+
+$$ p(x) c_1x^3 + c_2x^2 + c_3x + c_4 $$
+
+to:
+
+$$ p(1) = c_1(1)^3 + c_2(1)^2 + c_3(1) + c_4 = 0 $$
+
+$$ p(1) = c_1 + c_2 + c_3 + c_4 = 0 $$
+
+Consider then that our last coefficient, $c_4$ can be expressed as:
+
+$$ c_4 = -c_1 - c_2 - c_3 $$
+
+Plugging this back into our original equation we have:
+
+$$ p(x) = c_1x^3 + c_2x^2 + c_3x + (-c_1 - c_2 - c_3) $$
+
+Now group the like terms:
+
+$$ = c_1(x^3 - 1) + c_2(x^2 - 1) + c_3(x - 1) $$
+
+And the three functions that are the basis for the subspace with $p(1) = 0$ are:
+
+$$ \{x_3 - 1, x_2 - 1, x - 1\} $$
 
 36. Find a basis for the space $\mathbf{S}$ of vectors $(a, b, c, d)$ with
     $a + c + d = 0$ and also for the space $\mathbf{T}$ with $a + b = 0$ and
     $c = 2d$. What is the dimension of the intersection
     $\mathbf{S} \cap \mathbf{T}$?
+
+_Solution:_
+
+_Find a basis for the space $\mathbf{S}$ of vectors $(a, b, c, d)$ with
+$a + c + d = 0$:_
+
+Since $a + c + d = 0$, this means that:
+
+$$ d = -a - c $$
+
+Thus our generic given vector becomes:
+
+$$ (a, b, c, -a - c) $$
+
+So our free variables are $a, b, c$, start choosing $1$ and $0$'s to find your
+basis:
+
+Choose $a = 1, b = 0, c = 0$:
+
+$$ (1, 0, 0, -1) $$
+
+Choose $a = 0, b = 1, c = 0$:
+
+$$ (0, 1, 0, 0) $$
+
+Choose $a = 0, b = 0, c = 1$:
+
+$$ (0, 0, 1, -1) $$
+
+Thus our basis is:
+
+$$ B_{\mathbf{S}} = \{(1, 0, 0, -1), (0, 1, 0, 0), (0, 0, 1, -1)\} $$
+
+_and also for the space $\mathbf{T}$ with $a + b = 0 and $c = 2d$:_
+
+Since $a + b = 0 \to a = -b$, and also since $c = 2d$, this means that our
+vector $(a, b, c, d)$ can be expressed as:
+
+$$ (-b, b, 2d, d) $$
+
+Thus we have two free variables $b, d$.
+
+Choose $b = 1, d = 0$:
+
+$$ (-1, 1, 0, 0) $$
+
+Choose $b = 0, d = 1$:
+
+$$ (0, 0, 2, 1) $$
+
+Thus our basis for space $\mathbf{T}$ is:
+
+$$ B_{\mathbf{T}} = \{(-1, 1, 0, 0), (0, 0, 2, 1)\} $$
+
+_What is the dimension of the intersection $\mathbf{S} \cap \mathbf{T}$?:_
+
+By the definition of intersection, this means we are first looking for the
+elements in both $\mathbf{S}$ and $\mathbf{T}$. Let us first determine what is
+actually in $\mathbf{S} \cap \mathbf{T}$. This means we must apply all three
+constraints from the previous parts of this problem, namely, $a + c + d = 0$,
+$a + b = 0$, and $c = 2d$.
+
+Since $a + b = 0 \to a = -b$, this means that
+$a + c + d = 0 \to -b + c + d = 0$, and since $c = 2d$, this means that
+$-b + c + d = 0 \to -b + 2d + d = 0 \to -b + 3d = 0 \to -b = -3d \to b = 3d$,
+and thus $a = -b \to a = -3d$.
+
+Applying all three of these constraints to our generic vector $(a, b, c, d)$, we
+find:
+
+$$ (-3d, 3d, 2d, d) $$
+
+Thus we only have a single free variable $d$. Choose $d = 1$:
+
+$$ (-3, 3, 2, 1) $$
+
+This vector is the only vector in $\mathbf{S} \cap \mathbf{T}$, and thus the
+dimension is $1$.
 
 37. If $AS = SA$ for the _shift matrix_ $S$, show that $A$ must have this
     special form:
@@ -7927,15 +8945,54 @@ $$
 
 "The subspace of matrices that commute with the shift $S$ has dimension ____."
 
+Omitted.
+
 38. Which of the following are bases for $\R^3$?
 
 a. $(1, 2, 0)$ and $(0, 1, -1)$
 
+No, two vectors can't span $\R^3$.
+
 b. $(1, 1, -1), (2, 3, 4), (4, 1, -1), (0, 1, -1)$
+
+I'll write these out as vectors since it helps me visualize better:
+
+$$
+\begin{bmatrix}{}1\\1\\-1\end{bmatrix}, \begin{bmatrix}{}2\\3\\4\end{bmatrix}, \begin{bmatrix}{}4\\1\\-1\end{bmatrix}, \begin{bmatrix}{}0\\1\\-1\end{bmatrix}
+$$
+
+No, since these vectors are all dependent.
 
 c. $(1, 2, 2), (-1, 2, 1), (0, 8, 0)$
 
+$$ \begin{bmatrix}{}1\\2\\2\end{bmatrix}, \begin{bmatrix}{}-1\\2\\1\end{bmatrix}, \begin{bmatrix}{}0\\8\\0\end{bmatrix} $$
+
+Yes, none of the vectors are dependent, and they span $\R^3$.
+
 d. $(1, 2, 2), (-1, 2, 1), (0, 8, 6)$
+
+$$ \begin{bmatrix}{}1\\2\\2\end{bmatrix}, \begin{bmatrix}{}-1\\2\\1\end{bmatrix}, \begin{bmatrix}{}0\\8\\6\end{bmatrix} $$
+
+No, these vectors are dependent, consider:
+
+$$ c_1\begin{bmatrix}{}1\\2\\2\end{bmatrix} + c_2\begin{bmatrix}{}-1\\2\\1\end{bmatrix} + c_3\begin{bmatrix}{}0\\8\\6\end{bmatrix} = \begin{bmatrix}{}0\\0\\0\end{bmatrix} $$
+
+$$ \begin{bmatrix}{}c_1 - c_2\\2c_1 + 2c_2 + 8c_3\\2c_1 + c_2 + 6c_3\end{bmatrix} = \begin{bmatrix}{}0\\0\\0\end{bmatrix} $$
+
+Now evaluate:
+
+$$ c_1 - c_2 = 0 \to c_1 = c_2 $$
+
+Substitute this into the second and third equations:
+
+$$ 2c_1 + 2c_2 + 8c_3 = 0 \to 2c_2 + 2c_2 + 8c_3 = 0 \to 4c_2 + 8c_3 = 0 \to 4c_2 = -8c_3 \to c_2 = -2c_3 $$
+
+$$ 2c_1 + c_2 + 6c_3 = 0 \to 2c_2 + c_2 + 6c_3 = 0 \to 3c_2 + 6c_3 = 0 \to 3c_2 = -6c_3 \to c_2 = -2c_3 $$
+
+Thus both $c_1, c_2$ are dependent on $c_3$, and thus they cannot form a basis
+for $\R^3$.
+
+The previous 3 can be elaborated on in a similar manner.
 
 39. Suppose $A$ is a $5$ by $4$ with rank $4$. Show that $Ax = b$ has no
     solution when the $5$ by $5$ matrix
@@ -7943,9 +9000,15 @@ d. $(1, 2, 2), (-1, 2, 1), (0, 8, 6)$
     $Ax = b$ is solvable when $\left[\begin{array}{cc}A & b\\\end{array}\right]$
     is singular.
 
+Omitted.
+
 40.
 
 a. Find a basis for all solutions to $\dfrac{d^4y}{dx^4} = y(x)$.
 
+Omitted.
+
 b. Find a particular solution to $\dfrac{d^4y}{dx^4} = y(x) + 1$. Find the
 complete solution.
+
+Omitted.

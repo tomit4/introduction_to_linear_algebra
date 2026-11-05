@@ -40,3 +40,5 @@ of" followed by some equation. It is important to note that the "combinations"
 wording refers to a description of the vector space as it _spans_ across the
 overall space, and the "solutions" of wording refers to a description of how
 that subspace is _constrained_ within the overall space.
+
+---
