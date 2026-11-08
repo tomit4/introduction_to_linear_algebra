@@ -10045,8 +10045,6 @@ False, consider if $B = A^{-1}$, where $A$ and $B$ have the same dimensions,
 then $A$ and $B$ share the same four subspaces, but $B$ is not a multiple of
 $A$.
 
-(LEFT OFF HERE.)
-
 14. Without computing $A$, find bases for its four fundamental subspaces:
 
 $$ A =
@@ -10062,12 +10060,109 @@ $$ A =
 \end{array}\right]
 $$
 
+_Solution:_
+
+Notice that $A$ is expressed as the multiplication of a Lower Triangular and
+Upper Triangular form, denoted $L$ and $U$.
+
+We can find $C(A^{\mathbf{T}})$ by simply looking at the nonzero rows of $U$,
+thus the bases for $C(A^{\mathbf{T}})$ is:
+
+$$ (1, 2, 3, 4), (0, 1, 2, 3), (0, 0, 1, 2) $$
+
+Similarly, we can look at the nonzero columns of $L$ to find $C(A)$, but we must
+first row reduce to $R$:
+
+$$
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+6 & 1 & 0 \\
+9 & 8 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+9 & 8 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 8 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] = R = I
+$$
+
+So our bases for $C(A)$ is:
+
+$$ (1, 0, 0), (0, 1, 0), (0, 0, 1) $$
+
+Now, $N(A)$ can be found by looking at $U$'s free variables, which there is $1$
+(see column $4$).
+
+Let $x_4 = 1$:
+
+$$ 1x_3 + 2x_4 = 0 \Rightarrow x_3 + 2(1) = 0 \Rightarrow x_3 = -2 $$
+
+$$ 1x_2 + 2x_3 + 3x_4 = 0 \Rightarrow x_2 + 2(-2) + 3(1) = 0 \Rightarrow x_2 - 4 + 3 = 0 \Rightarrow x_2 = 1 $$
+
+$$ 1x_1 + 2x_2 + 3x_3 + 4x_4 = 0 \Rightarrow x_1 + 2(1) + 3(-2) + 4(1) = 0 \Rightarrow x_1 + 2 - 6 + 4 = 0 \Rightarrow x_1 = 0 $$
+
+So the basis for $N(A)$ is:
+
+$$ (0, 1, -2, 1) $$
+
+Finally, $N(A^{\mathbf{T}})$ can be found by looking at $L$'s free rows, of
+which there are none, so $L$'s basis is empty (except for the $\mathbf{0}$ row).
+
 15. If you exchange the first two rows of $A$, which of the four subspaces stay
     the same? If $v = (1, 2, 3, 4)$ is in the left nullspace of $A$, write down
     a vector in the left nullspace of the new matrix after the row exchange.
 
+_Solution:_
+
+_If you exchange the first two rows of $A$, which of the four subspaces stay the
+same?:_
+
+The two subspaces that stay the same are $C(A^{\mathbf{T}})$ and $N(A)$.
+
+_If $v = (1, 2, 3, 4)$ is in the left nullspace of $A$, write down a vector in
+the left nullspace of the new matrix after the row exchange:_
+
+Since the row exchange was on $A$, this means that the first two rows of $A$
+were exchanged. This correlates to the first two column exchanges of
+$A^{\mathbf{T}}$, and thus if $(1, 2, 3, 4) \in N(A^{\mathbf{T}})$, after the
+row exchange, $(2, 1, 3, 4) \in N(A^{\mathbf{T}})$.
+
 16. _Explain why $v = (1, 0, -1)$ cannot be a row of $A$ and also in the
     nullspace_.
+
+**Proof (by contradiction):**
+
+Suppose $v = \left[\begin{array}{ccc}1 & 0 & -1 \\\end{array}\right]$ is a row
+of a matrix $A$. Furthermore suppose $v \in N(A)$.
+
+A contradiction is to be derived in order to demonstrate that $v \notin N(A)$.
+
+Since $v \in N(A)$, this means that $v$ is a special solution for
+$Av = \mathbf{0}$.
+
+And since $v \in A$, this means that when multiplying $Av$, the dot product of
+$v \cdot v$ occurs during the evaluation, and the equality $v \cdot v = 0$ must
+hold.
+
+$$ v \cdot v =
+\left[\begin{array}{ccc}1 & 0 & -1 \\\end{array}\right] \cdot
+\begin{bmatrix}{}1\\0\\-1\end{bmatrix} = (1)(1) + (0)(0) + (-1)(-1) = 2 \neq 0
+$$
+
+Since the equality of $v \cdot v \neq 0$, this contradicts the supposition that
+$v$ is a special solution, and it can be concluded that $v \notin N(A)$.
+
+Q.E.D.
 
 17. Describe the four subspaces of $\R^3$ associated with
 
@@ -10088,6 +10183,68 @@ $$ I + A =
 0 & 0 & 1 \\
 \end{array}\right]
 $$
+
+_Solution:_
+
+_For $A$:_
+
+$$ A =
+\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+First, let's consider $C(A^{\mathbf{T}})$, which is spanned by all nonzero rows
+of $A$. This includes $(0, 1, 0), (0, 0, 1)$. This can be described as spanning
+the entire $yz$ plane.
+
+Now, let's consider $C(A)$, which includes all pivot columns of $A$. This
+includes $(1, 0, 0), (0, 1, 0)$. This can be described as spanning the entire
+$xy$ plane.
+
+Now, let's consider $N(A)$, which can be found by inspecting all free columns of
+$A$. The free column of $A$ is in column one, set $x_1 = 1$, then:
+
+$$ 1x_3 = 0 \Rightarrow x_3 = 0 $$
+
+$$ 0x_1 + 1x_2 + 0x_3 = 0 \Rightarrow x_2 = 0 $$
+
+So $N(A)$ is spanned by $(1, 0, 0)$, which can be described simply as the $x$
+axis.
+
+Now, consider $N(A^{\mathbf{T}})$ which can be found by inspecting the free rows
+of $A$. In this case, $A$ has a free row on row 3, so let $y_3 = 1$.
+
+$$ A^{\mathbf{T}}y =
+\left[\begin{array}{ccc}
+0 & 0 & 0 \\
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+\end{array}\right]
+\begin{bmatrix}{}y_1\\y_2\\1\end{bmatrix} =
+\begin{bmatrix}{}0\\y_1\\y_2\end{bmatrix} = \mathbf{0}
+$$
+
+Thus $N(A^{\mathbf{T}})$ is spanned by $(0, 0, 1)$, which can be described as
+the $z$-axis.
+
+_For $I + A$:_
+
+$$ I + A =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$C(A^{\mathbf{T}})$ has $(1, 1, 0), (0, 1, 1), (0, 0, 1)$, which is $\R^3$.
+
+$C(A)$ has $(1, 0, 0), (1, 1, 0), (0, 1, 1)$, which is also $\R^3$.
+
+$N(A)$ and $N(A^{\mathbf{T}})$ only have $\mathbf{0}$, which is $\Z$.
 
 18. (Left nullspace) Add the extra column $b$ and reduce $A$ to echelon form:
 
@@ -10110,6 +10267,32 @@ $$
 A combination of the rows of $A$ has produced the zero row. What combination is
 it? (Look at $b_3 - 2b_2 + b_1$ on the right side.) Which vectors are in the
 nullspace of $A^{\mathbf{T}}$ and which vectors are in the nullspace of $A$?
+
+_Solution:_
+
+_What combination is it?:_
+
+Since $b_3 - 2b_2 + b_1$ expresses row 3 - 2(row 2) + row 1, we can express the
+combination as $c(1, -2, 1)$for some scalar multiple $c$.
+
+_Which vectors are in the nullspace of $A^{\mathbf{T}}$?:_
+
+The vector $(1, -2, 1)$ is in $N(A^{\mathbf{T}})$ since that is the special
+solution derived from evaluation of the $0$ row.
+
+_Which vectors are in the nullspace of $A$?:_
+
+The free column $(3, -6, 0)$ can be evaluated to find $N(A)$.
+
+Set $x_3 = 1$, then:
+
+$$ -3x_2 + (-6)x_3 = 0 \Rightarrow -3x_2 - 6 = 0 \Rightarrow -3x_2 = 6 \Rightarrow x_2 = -2 $$
+
+$$ 1x_1 + 2x_2 + 3x_3 = 0 \Rightarrow x_1 + 2(-2) + 3(1) = 0 \Rightarrow x_1 - 4 + 3 = 0 \Rightarrow x_1 - 1 = 0 \Rightarrow x_1 = 1 $$
+
+So $(1, -2, 1)$ is in $N(A)$.
+
+Notice it's the same, this is a coincidence.
 
 19. Following the method of Problem 18, reduce $A$ to echelon form and look at
     zero rows. The $b$ column tells which combinations you have taken of the
@@ -10140,6 +10323,69 @@ From the $b$ column after elimination, read off $m - r$ basis vectors in the
 left nullspace. Those $y$'s are combinations of rows that give zero rows in the
 echelon form.
 
+_Solution:_
+
+a.
+
+$$
+\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 2 & b_1 \\
+3 & 4 & b_2 \\
+4 & 6 & b_3 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 2 & b_1 \\
+0 & -2 & b_2 - 3b_1 \\
+4 & 6 & b_3 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 2 & b_1 \\
+0 & -2 & b_2 - 3b_1 \\
+0 & -2 & b_3 - 4b_1 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 2 & b_1 \\
+0 & -2 & b_2 - 3b_1 \\
+0 & 0 & b_3 - b_2 - b_1 \\
+\end{array}\right] \to
+$$
+
+By looking at the last row as the $0$ row, we see that $b_3 - b_2 - b_1$ is a
+special solution in $N(A^{\mathbf{T}})$, so we can derive that
+$(-1, -1, 1) \in N(A^{\mathbf{T}})$.
+
+b.
+
+$$
+\left[\begin{array}{cc}
+A & b \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 2 & b_1 \\
+2 & 3 & b_2 \\
+2 & 4 & b_3 \\
+2 & 5 & b_4 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 2 & b_1 \\
+0 & -1 & b_2 - 2b_1 \\
+0 & 0 & b_3 - 2b_1 \\
+0 & 1 & b_4 - 2b_1 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 2 & b_1 \\
+0 & -1 & b_2 - 2b_1 \\
+0 & 0 & b_3 - 2b_1 \\
+0 & 0 & b_4 + b_2 - 4b_1 \\
+\end{array}\right]
+$$
+
+So, from the $0$ rows, we can derive that
+$\left\{(-2, 0, 1, 0), (-4, 1, 0, 1)\right\} \in N(A^{\mathbf{T}})$.
+
 20.
 
 a. Check that the solutions to $Ax = \mathbf{0}$ are perpendicular to the rows
@@ -10161,20 +10407,161 @@ $$
 b. How many independent solutions to $A^{\mathbf{T}}y = \mathbf{0}$? Why does
 $y^{\mathbf{T}} = \text{row } 3 \text{ of } E^{-1}$?
 
+_Solution:_
+
+a.
+
+First, let's find the "solutions", meaning special solutions, meaning solve
+$N(A)$ and then see if they are perpendicular to the rows of $A$. Since we are
+given $A$ in the form of $ER$ (elimination matrix times reduced row echelon
+matrix), we can find $N(A)$ by inspecting the free columns of $R$, which are
+columns 2 and 4.
+
+Let $x_2 = 1, x_4 = 0$, then:
+
+$$ x_3 + 3x_4 = 0 \Rightarrow x_3 + 3(0) = 0 \Rightarrow x_3 = 0 $$
+
+$$ 4x_1 + 2x_2 + 0x_3 + 1x_4 = 0 \Rightarrow 4x_1 + 2(1) + 0(0) + 1(0) = 0 \Rightarrow 4x_1 + 2 = 0 \Rightarrow 4x_1 = -2 \Rightarrow x_1 = -\frac{1}{2} $$
+
+$$ \left(-\frac{1}{2}, 1, 0, 0 \right) $$
+
+Let $x_2 = 0, x_4 = 1$, then:
+
+$$ x_3 + 3x_4 = 0 \Rightarrow x_3 + 3(1) = 0 \Rightarrow x_3 = -3 $$
+
+$$ 4x_1 + 2x_2 + 0x_3 + 1x_4 = 0 \Rightarrow 4x_1 + 2(0) + 0(-3) + 1(1) = 0 \Rightarrow 4x_1 + 1 = 0 \Rightarrow 4x_1 = -1 \Rightarrow x_1 = -\frac{1}{4} $$
+
+$$ \left(-\frac{1}{4}, 0, -3, 1\right) $$
+
+If these vectors are perpendicular to the rows of $A$, then we should be able to
+dot product each of them with the nonzero rows of $R$ and get $0$.
+
+$$
+\left[\begin{array}{cccc}
+4 & 2 & 0 & 1 \\
+0 & 0 & 1 & 3 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+\begin{bmatrix}{}-\frac{1}{2}\\1\\0\\0\end{bmatrix} =
+\begin{bmatrix}{}0\\0\\0\end{bmatrix}
+$$
+
+$$
+\left[\begin{array}{cccc}
+4 & 2 & 0 & 1 \\
+0 & 0 & 1 & 3 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+\begin{bmatrix}{}-\frac{1}{4}\\0\\-3\\1\end{bmatrix} =
+\begin{bmatrix}{}0\\0\\0\end{bmatrix}
+$$
+
+So these vectors are indeed perpendicular to the rows of $A$.
+
+b.
+
+Here we are tasked with finding how many special solutions are in
+$N(A^{\mathbf{T}})$. We should have $m - r = 3 - 2 = 1$ special solutions. We
+should be able to find it by looking for the free row, which is $y_3$. The
+reason $y^{\mathbf{T}} = \text{row } 3 \text{ of } E^{-1}$ is because after
+elimination from $E$ on $A$, we are left with the third $0$ row in $R$. Undoing
+it in $E^{-1}$ will yield $y^{\mathbf{T}}$.
+
 21. Suppose $A$ is the sum of two matrices of rank one:
     $A = uv^{\mathbf{T}} + wz^{\mathbf{T}}$.
 
 a. Which vectors span the column space of $A$?
 
+The column space is spanned by $u$ and $w$.
+
 b. Which vectors span the row space of $A$?
+
+The row space is spanned by $v^{\mathbf{T}}$ and $z^{\mathbf{T}}$.
 
 c. The rank is less than $2$ if ____ or if ____.
 
+$u$ and $w$ are dependent; $v$ and $z$ are dependent
+
 d. Compute $A$ and its rank if $u = z = (1, 0, 0)$ and $v = w = (0, 0, 1)$.
+
+$$ uv^{\mathbf{T}} + wz^{\mathbf{T}} =
+\begin{bmatrix}{}1\\0\\0\end{bmatrix}
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+\end{array}\right] +
+\begin{bmatrix}{}0\\0\\1\end{bmatrix}
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ =
+\left[\begin{array}{ccc}
+1 \cdot 0 & 1 \cdot 0 & 1 \cdot 1 \\
+0 \cdot 0 & 0 \cdot 0 & 0 \cdot 1 \\
+0 \cdot 0 & 0 \cdot 0 & 0 \cdot 1 \\
+\end{array}\right] +
+\left[\begin{array}{ccc}
+0 \cdot 1 & 0 \cdot 0 & 0 \cdot 0 \\
+0 \cdot 1 & 0 \cdot 0 & 0 \cdot 0 \\
+1 \cdot 1 & 1 \cdot 0 & 1 \cdot 0 \\
+\end{array}\right]
+$$
+
+$$ =
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right] +
+\left[\begin{array}{ccc}
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+1 & 0 & 0
+\end{array}\right] =
+\left[\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+1 & 0 & 0
+\end{array}\right]
+$$
+
+So the rank is $2$.
 
 22. Construct $A = uv^{\mathbf{T}} + wz^{\mathbf{T}}$ whose column space has
     basis $(1, 2, 4)$, $(2, 2, 1)$ and whose row space has basis
     $(1, 0), (1, 1)$. Write $A$ as (3 by 2) times (2 by 2).
+
+_Solution:_
+
+The column space gives us the base of the left matrix:
+
+$$
+\left[\begin{array}{cc}
+1 & 2 \\
+2 & 2 \\
+4 & 1 \\
+\end{array}\right]
+$$
+
+The row space gives us the right matrix:
+
+$$
+\left[\begin{array}{cc}
+1 & 2 \\
+2 & 2 \\
+4 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 0 \\
+1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+3 & 2 \\
+4 & 2 \\
+5 & 1 \\
+\end{array}\right] = A
+$$
 
 23. Without multiplying matrices, find bases for the row and column spaces of
     $A$:
@@ -10193,23 +10580,86 @@ $$
 
 How do you know from these shapes that $A$ cannot be invertible?
 
+_Solution:_
+
+As in 22, we can see that $C(A) = \left\{(1, 4, 2), (2, 5, 7)\right\}$ and
+$C(A^{\mathbf{T}}) = \left\{(3, 0, 3), (1, 1, 2)\right\}$.
+
+The rank of their product (which is a 3 by 3 matrix), cannot be larger than 3,
+but the rank of both of the given matrices can not be larger than 2. For their
+product matrix $A$ to be invertible, the matrix must be full rank, but from
+these matrices we can see that the rank of the product is at most $2$, as the
+product matrix of any two matrices can only have the rank of the minimum of the
+two given matrices. It can be concluded that $A$ cannot be invertible.
+
 24. (Important) $A^{\mathbf{T}}y = d$ is solvable when $d$ is in which of the
     four subspaces? The solution $y$ is unique when the ____ contains only the
     zero vector.
+
+_Solution:_
+
+Recall that $Ax = b$ is solvable when $b$ is in $C(A)$.
+
+$A^{\mathbf{T}}y = d$ is solvable when $d$ is in $C(A^{\mathbf{T}})$
+
+The solution $y$ is unique when $N(A^{\mathbf{T}})$
 
 25. True or false (with a reason or a counterexample):
 
 a. $A$ and $A^{\mathbf{T}}$ have the same number of pivots.
 
+This is true, transposing a matrix simply "flips" the position of the pivots,
+but does not remove any of them.
+
 b. $A$ and $A^{\mathbf{T}}$ have the same left nullspace.
+
+False, consider $A = \left[\begin{array}{cc}1 & 0 \\\end{array}\right]$, then
+$A^{\mathbf{T}} = \begin{bmatrix}{}1\\0\end{bmatrix}$, then $N(A)$ (the left
+nullspace of $A^{\mathbf{t}}$) is not empty, while $N(A^{\mathbf{T}})$ (which is
+the left nullspace of $A$) is empty (except for the $\mathbf{0}$ row).
 
 c. If the row space equals the column space then $A^{\mathbf{T}} = A$.
 
+False, $A$ can be invertible and unsymmetric where $C(A) = C(A^{\mathbf{T}})$,
+but obviously $A \neq A^{\mathbf{T}}$.
+
 d. If $A^{\mathbf{T}} = -A$ then the row space of $A$ equals the column space.
+
+True, since $A$ and $-A$ have the same row and column space, it follows that if
+$A^{\mathbf{T}} = -A$, then the row space of $A$ equals the column space of $A$.
 
 26. If $a, b, c$ are given with $a \neq 0$, how would you choose $d$ so that
     $\left[\begin{array}{cc}a & b \\c & d \\\end{array}\right]$ has rank 1? Find
     a basis for the row space and nullspace. Show they are perpendicular!
+
+_Solution:_
+
+_How would you choose $d$ so that
+$\left[\begin{array}{cc}a & b \\c & d \\\end{array}\right]$ has rank 1?:_
+
+In order to choose $d$ so that the above matrix has rank 1, you would need to
+ensure that $d = kb$, for some scalar multiple $k$. We know that for elimination
+to take place then that $c = ka$. It follows from algebra that
+$k = \dfrac{c}{a}$. Thus, by substitution,
+$d = kb \Rightarrow d = \left(\dfrac{c}{a}\right)b = \dfrac{bc}{a}$.
+
+This equivalency must hold for the above matrix to be rank 1.
+
+_Find a basis for the row space and nullspace. Show they are perpendicular!:_
+
+$$ C(A^{\mathbf{T}}) = \left\{\begin{bmatrix}{}a\\b\end{bmatrix}\right\} $$
+
+Since the column $\begin{bmatrix}{}b\\d\end{bmatrix}$ is free, this means the
+nullspace is
+
+$$ N(A) = \left\{\begin{bmatrix}{}-b\\a\end{bmatrix}\right\} $$
+
+For two vectors to be perpendicular, the dot product of the two matrices must
+equal $0$.
+
+$$ (-b)(a) + (b)(a) = 0 $$
+
+Perpendicular.
 
 27. Find the ranks of the 8 by 8 checkerboard matrix $B$ and the chess matrix
     $C$:
@@ -10240,5 +10690,9 @@ The numbers $r, n, b, q, k, p$ are all different. Find bases for the row space
 and left nullspace of $B$ and $C$. Challenge problem: Find a basis for the
 nullspace of $C$.
 
+Omitted.
+
 28. Can tic-tac-toe be completed (5 ones and 4 zeros in $A$) so that rank
     $(A) = 2$ but neither side passed up a winning move?
+
+Omitted.
