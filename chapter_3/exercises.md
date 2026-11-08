@@ -9023,6 +9023,29 @@ Page 201
 
 a. If a 7 by 9 matrix has rank 5, what are the dimensions of the four subspaces?
 
+_Solution:_
+
+Referring to our notes on this we have:
+
+(1.) The _row space_ is $C(A^{\mathbf{T}})$, a subspace of $\R^n$.
+
+(2.) The _column space_ is $C(A)$, a subspace of $\R^m$.
+
+(3.) The _nullspace_ is $N(A)$, a subspace of $\R^n$.
+
+(4.) The _left nullspace_ is $N(A^{\mathbf{T}})$, a subspace of $\R^m$. This is
+our new space.
+
+So:
+
+(1.) Since this 7 by 9 matrix has rank 5, the row space $C(A^{\mathbf{T}}) = 5$.
+
+(2.) Similarly $C(A) = 5$.
+
+(3.) $N(A) = n - r = 9 - 5 = 4$.
+
+(4.) $N(A^{\mathbf{T}}) = m - r = 7 - 5 = 2$.
+
 b. If a 3 by 4 matrix has rank 3, what are its column space and left nullspace?
 
 2. Find bases and dimensions for the four subspaces associated with $A$ and $B$:
@@ -9040,6 +9063,143 @@ $$ B =
 2 & 5 & 8 \\
 \end{array}\right]
 $$
+
+_Solution:_
+
+_For $A$:_
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 2 & 4 \\
+2 & 4 & 8 \\
+\end{array}\right]
+$$
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 2 & 4 \\
+2 & 4 & 8 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+1 & 2 & 4 \\
+0 & 0 & 0 \\
+\end{array}\right] = R
+$$
+
+We can clearly see that $r = 1$.
+
+(1.) $C(A^{\mathbf{T}}) = r = 1$
+
+So the basis for $A^{\mathbf{T}}$ is $(1, 2, 4)$
+
+(2.) $C(A) = r = 1$
+
+So the basis for $A$ = $(1, 2)$
+
+(3.) $N(A) = n - r = 3 - 1 = 2$
+
+To find $N(A)$, we have to plug in $1, 0$ for the free variables, so:
+
+$$ 1x + 2y + 4z = 0 $$
+
+Choose $y = 1, z = 0$:
+
+$$ 1x + 2y + 4z = 0 \Rightarrow 1x + 2(1) + 4(0) = 0 \Rightarrow x + 2 = 0 \Rightarrow x = -2 $$
+
+So one special solution is $(-2, 1, 0)$.
+
+Choose $y = 0, z = 1$:
+
+$$ 1x + 2y + 4z = 0 \Rightarrow 1x + 2(0) + 4(1) = 0 \Rightarrow x + 4 = 0 \Rightarrow x = -4 $$
+
+So one special solution is $(-4, 0, 1)$.
+
+These two vectors constitute the bases for $N(A)$, so the bases for $N(A)$ is:
+
+$$ (-2, 1, 0), (-4, 0, 1) $$
+
+(4.) $N(A^{\mathbf{T}}) = m - r = 2 - 1 = 1$
+
+Eliminate on $A^{\mathbf{T}}$:
+
+$$ A^{\mathbf{T}} =
+\left[\begin{array}{cc}
+1 & 2 \\
+2 & 4 \\
+4 & 8 \\
+\end{array}\right] \to
+\left[\begin{array}{cc}
+1 & 2 \\
+0 & 0 \\
+4 & 8 \\
+\end{array}\right] \to
+\left[\begin{array}{cc}
+1 & 2 \\
+0 & 0 \\
+0 & 0 \\
+\end{array}\right] = R^{\mathbf{T}}
+$$
+
+So, fill in for $y = 1$:
+
+$$ x + 2y = 0 \Rightarrow x + 2(1) = 0 \Rightarrow x = -2 $$
+
+So our special solution, $N(A^{\mathbf{T}})$, and the basis for
+$N(A^{\mathbf{T}})$ is $(-2, 1)$.
+
+_For $B$:_
+
+$$ B =
+\left[\begin{array}{ccc}
+1 & 2 & 4 \\
+2 & 5 & 8 \\
+\end{array}\right]
+$$
+
+Eliminate:
+
+$$ B =
+\left[\begin{array}{ccc}
+1 & 2 & 4 \\
+2 & 5 & 8 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+1 & 2 & 4 \\
+0 & 1 & 0 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+1 & 0 & 4 \\
+0 & 1 & 0 \\
+\end{array}\right] = R
+$$
+
+So, $r = 2$, and thus $C(A) = 2, C(A^{\mathbf{T}}) = 2$,
+$N(A) = n - r = 3 - 2 = 1, N(A^{\mathbf{T}}) = m - r = 2 - 2 = \mathbf{0}$.
+
+Thus the dimension for $C(A), C(A^{\mathbf{T}})$ is $\R^2$.
+
+The dimension for $N(A)$ is $\R^1$, and the dimension for $N(A^{\mathbf{T}})$ is
+$\Z$ (the zero space).
+
+The bases for $C(A)$ is $(1, 2), (2, 5)$.
+
+The bases for $C(A^{\mathbf{T}}) = (1, 2, 4), (2, 5, 8)$ (look at the rows for
+this though).
+
+The bases for $N(A)$ and can be found by looking for the special solutions:
+
+$$
+x + 4z = 0 \\
+y = 0 \\
+$$
+
+Choose $z = 1$:
+
+$$ x + 4z = 0 \Rightarrow x + 4(1) = 0 \Rightarrow x = -4 $$
+
+So our special solution, $N(A)$, and the bases for $N(A)$ is $(-4, 0, 1)$.
+
+$N(A^{\mathbf{T}})$, and the bases for $N(A^{\mathbf{T}})$ is $\mathbf{0}$.
 
 3. Find a basis for each of the four subspaces associated with $A$:
 
@@ -9061,6 +9221,139 @@ $$ A =
 \end{array}\right]
 $$
 
+_Solution:_
+
+First we have to find the four subspaces,
+$C(A), C(A^{\mathbf{T}}), N(A), N(A^{\mathbf{T}})$.
+
+Strang tries to help us out here by showing the $LU$ form of $A$, but we'll
+still need $R$ here, so let's just do that:
+
+$$ A =
+\left[\begin{array}{ccccc}
+0 & 1 & 2 & 3 & 4 \\
+0 & 1 & 2 & 4 & 6 \\
+0 & 0 & 0 & 1 & 2 \\
+\end{array}\right] \to
+\left[\begin{array}{ccccc}
+0 & 1 & 2 & 3 & 4 \\
+0 & 0 & 0 & 1 & 2 \\
+0 & 0 & 0 & 1 & 2 \\
+\end{array}\right] \to
+\left[\begin{array}{ccccc}
+0 & 1 & 2 & 3 & 4 \\
+0 & 0 & 0 & 1 & 2 \\
+0 & 0 & 0 & 0 & 0 \\
+\end{array}\right] \to
+\left[\begin{array}{rrrrr}
+0 & 1 & 2 & 0 & -2 \\
+0 & 0 & 0 & 1 & 2 \\
+0 & 0 & 0 & 0 & 0 \\
+\end{array}\right] = R
+$$
+
+Quickly, we can find the dimensions of each subspace,
+$C(A) = 2, C(A^{\mathbf{T}}) = 2, N(A) = n - r = 5 - 2 = 3, N(A^{\mathbf{T}}) = m - r = 3 - 2 = 1$.
+So we at least know how many vectors in each subspace we should be looking for.
+
+The basis for $C(A)$ is $(1, 1, 0), (3, 4, 1)$.
+
+The basis for $C(A^{\mathbf{T}})$ is $(0, 1, 2, 0, -2), (0, 0, 0, 1, 2)$.
+
+To find the basis for $N(A)$, we'll need to plug in $1, 0$'s for our free
+variables:
+
+$$
+0x_1 + x_2 + 2x_3 - 2x_5 = 0 \\
+x_4 + 2x_5 = 0 \\
+$$
+
+Choose $x_1 = 1, x_3 = 0, x_5 = 0$:
+
+$$ x_4 + 2x_5 = 0 \Rightarrow x_4 + 2(0) = 0 \Rightarrow x_4 = 0 $$
+
+$$ 0x_1 + x_2 + 2x_3 - 2x_5 = 0 \Rightarrow 0(1) + x_2 + 2(0) - 2(0) = 0 \Rightarrow x_2 = 0 $$
+
+So one special solution is $(1, 0, 0, 0, 0)$.
+
+Choose $x_1 = 0, x_3 = 1, x_5 = 0$:
+
+$$ x_4 + 2x_5 = 0 \Rightarrow x_4 + 2(0) = 0 \Rightarrow x_4 = 0 $$
+
+$$ x_2 + 2x_3 - 2x_5 = 0 \Rightarrow x_2 + 2(1) - 2(0) = 0 \Rightarrow x_2 = -2 $$
+
+So another special solution is $(0, -2, 1, 0, 0)$.
+
+Choose $x_1 = 0, x_3 = 0, x_5 = 1$:
+
+$$ x_4 + 2x_5 = 0 \Rightarrow x_4 + 2(1) = 0 \Rightarrow x_4 = -2 $$
+
+$$ x_2 + 2x_3 - 2x_5 = 0 \Rightarrow x_2 + 2(0) - 2(1) = 0 \Rightarrow x_2 = 2$$
+
+So another special solution is $(0, 2, 0, -2, 1)$.
+
+Thus the bases for $N(A)$ is
+$(1, 0, 0, 0, 0), (0, -2, 1, 0, 0), (0, 2, 0, -2, 1)$.
+
+Now to find the bases for $N(A^{\mathbf{T}})$.
+
+Let's transpose $A^{\mathbf{T}}$ and find $R^{\mathbf{T}}$:
+
+$$ A^{\mathbf{T}} =
+\left[\begin{array}{ccc}
+0 & 0 & 0 \\
+1 & 1 & 0 \\
+2 & 2 & 0 \\
+3 & 4 & 1 \\
+4 & 6 & 2 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+0 & 0 & 0 \\
+1 & 1 & 0 \\
+0 & 0 & 0 \\
+3 & 4 & 1 \\
+4 & 6 & 2 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+0 & 0 & 0 \\
+1 & 1 & 0 \\
+0 & 0 & 0 \\
+0 & 1 & 1 \\
+4 & 6 & 2 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+0 & 0 & 0 \\
+1 & 1 & 0 \\
+0 & 0 & 0 \\
+0 & 1 & 1 \\
+0 & 2 & 2 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc}
+0 & 0 & 0 \\
+1 & 1 & 0 \\
+0 & 0 & 0 \\
+0 & 1 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+0 & 0 & 0 \\
+1 & 0 & -1 \\
+0 & 0 & 0 \\
+0 & 1 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right] = R^{\mathbf{T}}
+$$
+
+Now to find $N(A^{\mathbf{T}})$:
+
+Choose $x_3 = 1$:
+
+$$ 1x_2 + 1x_3 = 0 \Rightarrow x_2 + 1(1) = 0 \Rightarrow x_2 = -1  $$
+
+$$ 1x_1 + 0x_2 + (-1)x_3 = 0 \Rightarrow x_1 + 0(-1) + (-1)(1) \Rightarrow x_1 = 1 $$
+
+So the basis for $N(A^{\mathbf{T}})$ is $(1, -1, 1)$.
+
 4. Construct a matrix with the required property or explain why this is
    impossible:
 
@@ -9069,19 +9362,242 @@ $\begin{bmatrix}{}1\\1\\0\end{bmatrix}, \begin{bmatrix}{}0\\0\\1\end{bmatrix}$,
 row space contains
 $\begin{bmatrix}{}1\\2\end{bmatrix}, \begin{bmatrix}{}2\\5\end{bmatrix}$.
 
+_Solution:_
+
+This is asking us to construct a matrix where $C(A)$ has $(1, 1, 0), (0, 0, 1)$
+and $C(A^{\mathbf{T}})$ has $(1, 2), (2, 5)$.
+
+Let's start with $C(A^{\mathbf{T}})$:
+
+$$ A^{\mathbf{T}} =
+\left[\begin{array}{cc}
+1 & 2 \\
+2 & 5 \\
+\end{array}\right]
+$$
+
+Now reduce to $R$:
+
+$$ A^{\mathbf{T}} =
+\left[\begin{array}{cc}
+1 & 2 \\
+2 & 5 \\
+\end{array}\right] \to
+\left[\begin{array}{cc}
+1 & 2 \\
+0 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 1 \\
+\end{array}\right] = R^{\mathbf{T}} = I
+$$
+
+Now, transpose this back to get $R$ (which is $I$ again):
+
+$$ R =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+Now, these must be rows of $A$, which means that in order to have $C(A)$ have
+$(1, 1, 0), (0, 0, 1)$, this means that we have a 3 by 2 matrix:
+
+$$ A =
+\left[\begin{array}{cc}
+1 & 0 \\
+1 & 0 \\
+0 & 1 \\
+\end{array}\right]
+$$
+
 b. Column space has basis $\begin{bmatrix}{}1\\1\\3\end{bmatrix}$, nullspace has
 basis $\begin{bmatrix}{}3\\1\\1\end{bmatrix}$.
 
+_Solution:_
+
+For the nullspace to have $(3, 1, 1)$, this means that this is a special
+solution, and that for that special solution: $x_1 = 3, x_2 = 1, x_3 = 1$, it
+follows that:
+
+$$ 3y_1 + 1y_2 + 1y_3 = 0 $$
+
+Since the $C(A)$ has a single vector, this means that $r = 1$.
+
+Since the $N(A)$ has a single vector, this means that
+$n - r = 1 \Rightarrow n - 1 = 1 \Rightarrow n = 2$, but since the nullspace
+vector has $3$ components, then $n = 3$ since a solution for $Ax = \mathbf{0}$
+where the column space has a $3 \times 1$ vector implies that $Ax = \mathbf{0}$
+is $(3 \times n) \times (n \times 1)$. Recall that in order for this to be
+possible $n = 3$, which we have established $n = 2 \neq 3$.
+
+Thus this is impossible.
+
 c. Dimension of nullspace $= 1 +$ dimension of left nullspace.
+
+The easiest way to express this would be for $N(A)$ to have $1$ special
+solutions, and for $N(A^{\mathbf{T}})$ to have $0$ special solutions.
+
+Recall that if $m - r = 0$, then that means $m = r$, and there are no special
+solutions. Similarly recall that if $n - r = 1$, then that means that
+$n = 1 + r$, and there are $1$ special solutions.
+
+So we need a matrix with 1 free variable and 1 pivot, this is accomplished with
+a basic matrix:
+
+$$ A =
+\left[\begin{array}{cc}
+1 & 1 \\
+\end{array}\right]
+$$
 
 d. Nullspace contains $\begin{bmatrix}{}1\\3\end{bmatrix}$, column space
 contains $\begin{bmatrix}{}3\\1\end{bmatrix}$.
 
+Since $C(A)$ has a single vector, this means that $r = 1$.
+
+Then, since $N(A)$ has a single vector, this means that
+$n - r = 1 \Rightarrow n - (1) = 1 \Rightarrow n = 2$. So we know our matrix has
+2 columns.
+
+Since $(1, 3)$ is in $N(A)$, we know:
+
+$$ y_1 + 3y_2 = 0 $$
+
+From the column space having $(3, 1)$, and because we know $n = 2$, we know we
+can construct our matrix
+
+$$ A =
+\left[\begin{array}{cc}
+3 & ? \\
+1 & ? \\
+\end{array}\right]
+$$
+
+For each row, we must solve:
+
+$$ y_1 + 3y_2 = 0 $$
+
+We can think of this as:
+
+$$ a + 3b = 0 $$
+
+where $a$ is the first component of our row, and $b$ is the second. Since the
+column space has $(3, 1)$, we can fill this in for $a, b$:
+
+$$ 3 + 3b = 0 \Rightarrow b = -1 $$
+
+$$ A =
+\left[\begin{array}{rr}
+3 & -1 \\
+1 & ? \\
+\end{array}\right]
+$$
+
+$$ 1 + 3b = 0 \Rightarrow b = -\frac{1}{3} $$
+
+$$ A =
+\left[\begin{array}{rr}
+3 & -1 \\
+1 & -\frac{1}{3} \\
+\end{array}\right]
+$$
+
 e. Row space $=$ column space, nullspace $\neq$ left nullspace.
+
+Here, we are saying that $C(A^{\mathbf{T}}) = C(A)$, but
+$N(A) \neq N(A^{\mathbf{T}})$.
+
+If $C(A^{\mathbf{T}}) = C(A)$, this implies that $m = n$ (a square matrix). It
+is trivially true that $r$ is the same for both.
+
+Since $N(A) \neq N(A^{\mathbf{T}})$, this implies that
+$n - r \neq m - r \Rightarrow n \neq m$, which contradicts our previous
+conclusion that $m = n$.
+
+Thus this matrix cannot exist.
 
 5. If $\mathbf{V}$ is the subspace spanned by $(1, 1, 0)$ and $(2, 1, 0)$, find
    a matrix $A$ that has $\mathbf{V}$ as its row space. Find a matrix $B$ that
    has $\mathbf{V}$ as its nullspace. Multiply $AB$.
+
+_Solution:_
+
+_Find a matrix $A$ that has $\mathbf{V}$ as its row space:_
+
+Here we are tasked with finding a matrix $A$ such that
+$C(A^{\mathbf{T}}) = \mathbf{V}$.
+
+For simplicity's sake, we can first attempt to define $A^{\mathbf{T}}$ as:
+
+$$ A^{\mathbf{T}} =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+2 & 1 & 0\\
+\end{array}\right]
+$$
+
+And then simply find $A$:
+
+$$ A =
+\left[\begin{array}{cc}
+1 & 2 \\
+1 & 1 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+_Find a matrix $B$ that has $\mathbf{V}$ as its nullspace:_
+
+Here we are tasked with finding an $B$ where $N(B) = \mathbf{V}$.
+
+Since $N(B) = \mathbf{V}$ has two vectors, this means that $n - r = 2$, and that
+we have two special solutions $(1, 1, 1)$ and $(2, 1, 0)$.
+
+Thus it must be true that:
+
+$$
+y_1 + y_2 + y_3 = 0 \\
+2y_1 + y_2 + 0y_3 = 0 \\
+$$
+
+So, we must find a row that satisfies both simultaneously.
+
+$$ y_1 + y_2 + y_3 = 2y_1 + y_2 $$
+
+$$ y_3 = y_1 $$
+
+We must further evaluate to ensure all conditions are met:
+
+$$ 2y_1 + y_2 = 0 \to y_2 = -2y_1 \to y_2 = -2y_3 $$
+
+We know we must have 2 free variables, and that $n - r = 2$. If we let $n = 3$,
+and $r = 1$ (for simplicity's sake), we have enough information to construct a
+matrix $B$:
+
+$$ B =
+\left[\begin{array}{ccc}
+1 & -2 & 1 \\
+\end{array}\right]
+$$
+
+_Multiply $AB$:_
+
+$$ AB =
+\left[\begin{array}{cc}
+1 & 2 \\
+1 & 1 \\
+0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & -2 & 1 \\
+\end{array}\right]
+$$
+
+This is not possible since $(3 \times 2) \times (1 \times 3)$ is what we are
+being asked to matrix multiply, and $2 \neq 1$.
 
 6. Without using elimination, find dimensions and bases for the four subspaces
    for
@@ -9098,10 +9614,225 @@ and
 
 $$ B = \begin{bmatrix}{}1\\4\\5\end{bmatrix} $$
 
+_Solution:_
+
+_For $A$:_
+
+$$ A =
+\left[\begin{array}{cccc}
+0 & 3 & 3 & 3 \\
+0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 1 \\
+\end{array}\right]
+$$
+
+Here, we can trivially see that the second row is all $0$'s, so we have two
+independent columns (rows 1 and 3). It follows that $r = 2$. Our row space thus
+is (and the basis for the row space is):
+
+$$ C(A^{\mathbf{T}}) =
+\left\{
+\begin{bmatrix}{}0\\3\\3\\3\end{bmatrix},
+\begin{bmatrix}{}0\\1\\0\\1\end{bmatrix}
+\right\}
+$$
+
+It has $2$ dimensions
+
+Our column space can be found simply by finding the pivot columns, so $C(A)$ and
+the basis for $C(A)$ is:
+
+$$ C(A) =
+\left\{
+\begin{bmatrix}{}3\\0\\1\end{bmatrix},
+\begin{bmatrix}{}3\\0\\0\end{bmatrix}
+\right\}
+$$
+
+It has dimension $2$.
+
+We know that $r = 2$, so $n - r = 4 - 2 = 2$, so $N(A)$ has $2$ special
+solutions (2 free variables).
+
+We know columns $1$ and columns $4$ are free columns.
+
+Choose $x_1 = 1, x_4 = 0$:
+
+$$
+0x_1 + 3x_2 + 3x_3 + 3x_4 = 0 \\
+0x_1 + 1x_2 + 0x_3 + 1x_4 = 0 \\
+$$
+
+$$ 0x_1 + 1x_2 + 0x_3 + 1x_4 = 0 \Rightarrow 0(1) + x_2 + 0 = 0 \Rightarrow x_2 = 0 $$
+
+$$ 0x_1 + 3x_2 + 3x_3 + 3x_4 = 0 \Rightarrow 0(1) + 3(0) + 3x_3 + 3(0) = 0 \Rightarrow x_3 = 0 $$
+
+Thus one of our special solutions is $(1, 0, 0, 0)$.
+
+Choose $x_1 = 0, x_4 = 1$:
+
+$$ 0x_1 + 1x_2 + 0x_3 + 1x_4 = 0 \Rightarrow x_2 + 1(1) = 0 \Rightarrow x_2 = -1 $$
+
+$$ 0x_1 + 3x_2 + 3x_3 + 3x_4 = 0 \Rightarrow 3(-1) + 3x_3 + 3(1) = 0 \Rightarrow x_3 = 0 $$
+
+So our other special solution is $(0, -1, 0, 1)$.
+
+Thus $N(A)$, and the basis of $N(A)$ is:
+
+$$ N(A) =
+\left\{
+\begin{bmatrix}{}1\\0\\0\\0\end{bmatrix},
+\begin{bmatrix}{}0\\-1\\0\\1\end{bmatrix}
+\right\}
+$$
+
+Now we must find $N(A^{\mathbf{T}})$.
+
+We know we have $r = 2$, $m = 3$, so we have $m - r = 3 - 2 = 1$ special
+solution/free variable (which we can see from the $0$ row as well).
+
+Since $r_2$ is the $0$ row, we can simply conclude that:
+
+$$ N(A^{\mathbf{T}}) =
+\left\{
+\begin{bmatrix}{}0\\1\\0\end{bmatrix}
+\right\}
+$$
+
+_For $B$:_
+
+$$ B = \begin{bmatrix}{}1\\4\\5\end{bmatrix} $$
+
+$$ C(A^{\mathbf{T}}) =
+\begin{bmatrix}{}1\end{bmatrix}
+$$
+
+$$ C(A) =
+\begin{bmatrix}{}1\\4\\5\end{bmatrix}
+$$
+
+$$ N(A) = \mathbf{0} $$
+
+For $N(A^{\mathbf{T}})$, choose $y_2 = 1, y_3 = 0$:
+
+$$ y_1 + 4y_2 + 5y_3 = 0 \to y_1 + 4(1) + 5(0) \to y_1 = -4 $$
+
+$$ (-4, 1, 0) $$
+
+Choose $y_2 = 0, y_3 = 1$:
+
+$$ y_1 + 4y_2 + 5y_3 = 0 \to y_1 + 4(0) + 5(1) \to y_1 = -5 $$
+
+$$ (-5, 0, 1) $$
+
+$$ N(A^{\mathbf{T}}) =
+\left\{
+\begin{bmatrix}{}-4\\1\\0\end{bmatrix},
+\begin{bmatrix}{}-5\\0\\1\end{bmatrix}
+\right\}
+$$
+
 7. Suppose the 3 by 3 matrix $A$ is invertible. Write down bases for the four
    subspaces for $A$, and also for the 3 by 6 matrix
-   $B = \left[\begin{array}{cc|c}A & A \\\end{array}\right]$. (The basis for
-   $\Z$ is empty.)
+   $B = \left[\begin{array}{cc}A & A \\\end{array}\right]$. (The basis for $\Z$
+   is empty.)
+
+_Write down bases for the four subspaces for $A$:_
+
+Since $A$ is invertible, this means that $A$ has full rank, in other words
+$r = 3$ (since $A$ is $3 \times 3$). Take the most simple form of $A$ and
+$A^{-1}$ as:
+
+$$ AA^{-1} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] = I
+$$
+
+Then:
+
+$$ C(A^{\mathbf{T}}) =
+\left\{
+\begin{bmatrix}{}1\\0\\0\end{bmatrix},
+\begin{bmatrix}{}0\\1\\0\end{bmatrix},
+\begin{bmatrix}{}0\\0\\1\end{bmatrix},
+\right\}
+$$
+
+Thus the base for $C(A^{\mathbf{T}})$ is $\R^3$.
+
+$$ C(A) =
+\left\{
+\begin{bmatrix}{}1\\0\\0\end{bmatrix},
+\begin{bmatrix}{}0\\1\\0\end{bmatrix},
+\begin{bmatrix}{}0\\0\\1\end{bmatrix},
+\right\}
+$$
+
+Thus the base for $C(A)$ is $\R^3$.
+
+$$ N(A) = \mathbf{0} $$
+
+Thus the base for $N(A)$ is $\Z$.
+
+$$ N(A^{\mathbf{T}}) = \mathbf{0} $$
+
+Thus the base for $N(A^{\mathbf{T}})$ is $\Z$.
+
+_And also for the 3 by 6 matrix
+$B = \left[\begin{array}{cc}A & A \\\end{array}\right]$:_
+
+$$ C(B^{\mathbf{T}}) =
+\left\{
+\begin{bmatrix}{}1\\0\\0\end{bmatrix},
+\begin{bmatrix}{}0\\1\\0\end{bmatrix},
+\begin{bmatrix}{}0\\0\\1\end{bmatrix},
+\begin{bmatrix}{}1\\0\\0\end{bmatrix},
+\begin{bmatrix}{}0\\1\\0\end{bmatrix},
+\begin{bmatrix}{}0\\0\\1\end{bmatrix},
+\right\}
+$$
+
+Thus the base for $C(A^{\mathbf{T}})$ is $\R^3$.
+
+$$ C(B) =
+\left\{
+\begin{bmatrix}{}1\\0\\0\end{bmatrix},
+\begin{bmatrix}{}0\\1\\0\end{bmatrix},
+\begin{bmatrix}{}0\\0\\1\end{bmatrix},
+\right\}
+$$
+
+Thus the base for $C(A)$ is $\R^3$.
+
+Now, for $N(B)$, we have $n - r = 6 - 3 = 3$ special solutions/free variables.
+
+Inspecting $B$ reveals that these three free variables are in $x_4, x_5, x_6$,
+and that they must be the negative of $x_1, x_2, x_3$, so:
+
+$$ N(B) =
+\left\{
+\begin{bmatrix}{}-1\\0\\0\\1\\0\\0\end{bmatrix},
+\begin{bmatrix}{}0\\-1\\0\\0\\1\\0\end{bmatrix},
+\begin{bmatrix}{}0\\0\\-1\\0\\0\\1\end{bmatrix}
+\right\}
+$$
+
+$$ N(B^{\mathbf{T}}) = \mathbf{0} $$
+
+Thus the base for $N(A^{\mathbf{T}})$ is $\Z$.
 
 8. What are the dimensions of the four subspaces for $A, B$, and $C$, if $I$ is
    the 3 by 3 identity matrix and $0$ is the 3 by 2 zero matrix?
@@ -9125,18 +9856,113 @@ and
 
 $$ C = [0] $$
 
+_Solution:_
+
+_For $A$:_
+
+$$ A =
+\left[\begin{array}{cc}
+I & 0 \\
+\end{array}\right]
+$$
+
+The dimension of $C(A^{\mathbf{T}})$ is $3$ since we have no $0$ rows.
+
+The dimension of $C(A)$ is $3$, since we have $3$ pivot rows and $2$ $0$/free
+columns.
+
+The dimension of $N(A)$ is $2$, since $n - r = 5 - 3 = 2$.
+
+The dimension of $N(A^{\mathbf{T}})$ is $0$ since $m - r = 3 - 3 = 0$.
+
+_For $B$:_
+
+$$ B =
+\left[\begin{array}{cc}
+I & I \\
+0^{\mathbf{T}} & 0^{\mathbf{T}} \\
+\end{array}\right]
+$$
+
+The dimension of $C(B^{\mathbf{T}})$ is $3$ since we have $6$ rows and $3$ $0$
+rows.
+
+The dimension of $C(B)$ is $3$ since we have $3$ pivot columns and $0$ free
+columns.
+
+The dimension of $N(B)$ is $3$ since $n - r = 6 - 3 = 3$.
+
+The dimension of $N(B^{\mathbf{T}})$ is $2$ since $m - r = 5 - 3 = 2$.
+
+_For $C$:_
+
+$$ C = [0] $$
+
+The dimension of $C(C^{\mathbf{T}})$ is $0$ since we have $3$ total rows and $3$
+zero rows ($3 - 3 = 0$).
+
+The dimension of $C(C)$ is $0$ since we have $0$ pivot columns.
+
+The dimension of $N(C)$ is $2$ since $n - r = 2 - 0 = 2$.
+
+The dimension of $N(C^{\mathbf{T}})$ is $3$ since $m - r = 3 - 0 = 3$.
+
 9. Which subspaces are the same for these matrices of different sizes?
 
 a. $[A]$ and $\begin{bmatrix}{}A\\A\end{bmatrix}$
 
+These two matrices have the same row space and same nullspace.
+
 b. $\begin{bmatrix}{}A\\A\end{bmatrix}$ and
 $\left[\begin{array}{cc}A & A \\A & A \\\end{array}\right]$
 
+These two matrices have the same column space and the same left nullspace.
+
 Prove that all three of those matrices have the _same rank_ $r$.
+
+All three of these matrices have the same $r$ because they all share the same
+column space.
+
+Consider that:
+
+$$ C(A) = C\left(\begin{bmatrix}{}A\\A\end{bmatrix}\right) $$
+
+This is because:
+
+$$ \begin{bmatrix}{}A\\A\end{bmatrix}x = \begin{bmatrix}{}Ax\\Ax\end{bmatrix} $$
+
+And this spans the same space as $Ax$ does on its own.
+
+Then:
+
+$$ C\left(\begin{bmatrix}{}A\\A\end{bmatrix}\right) =
+C\left(
+\left[\begin{array}{cc}
+A & A \\
+A & A \\
+\end{array}\right]
+\right)
+$$
+
+Because the second column of $A$'s adds nothing new (they are all just free
+variables).
 
 10. If the entries of a 3 by 3 matrix are chosen randomly between $0$ and $1$,
     what are the most likely dimensions of the four subspaces? What if the
     random matrix is 3 by 5?
+
+_Solution:_
+
+For a 3 by 3 matrix with random values between $0$ and $1$ populating the
+matrix, it is likely that we will have full rank $r = 3$. Then the dimensions of
+$C(A), C(A^{\mathbf{T}})$ are $r = 3$, and the dimension of $N(A)$ is
+$n - r = 3 - 3 = 0$, and the dimension of $N(A^{\mathbf{T}})$ is
+$m - r = 3 - 3 = 0$.
+
+For a 3 by 5 matrix with random values between $0$ and $1$ populating the
+matrix, it is likely that we will have rank $r = 3$, with two free variables.
+Then $C(A), C(A^{\mathbf{T}}) = 3 = r$, and $N(A) = n - r = 5 - 3 = 2$, and
+$N(A^{\mathbf{T}}) = 3 - 3 = 0$.
 
 11. (Important) $A$ is an $m$ by $n$ matrix of rank $r$. Suppose there are right
     sides $b$ for which $Ax = b$ has _no solution_.
@@ -9144,20 +9970,82 @@ Prove that all three of those matrices have the _same rank_ $r$.
 a. What are all inequalities ($<$ or $\leq$) that must be true between $m, n$
 and $r$?
 
+No solution means that $r < m$ and $r \leq n$. There is no way to compare $m$
+and $n$.
+
 b. How do you know that $A^{\mathbf{T}} = 0$ has solutions other than
 $y = \mathbf{0}$?
+
+Since $m - r > 0$, the left nullspace must have a nonzero vector.
 
 12. Construct a matrix with $(1, 0, 1)$ and $(1, 2, 0)$ as a basis for its row
     space and its column space. Why can't this be a basis for the row space and
     nullspace?
 
+_Solution:_
+
+$$ C(A^{\mathbf{T}}) =
+\left\{
+\begin{bmatrix}{}1\\0\\1\end{bmatrix},
+\begin{bmatrix}{}1\\2\\0\end{bmatrix}
+\right\}
+$$
+
+$$ C(A) =
+\left\{
+\begin{bmatrix}{}1\\0\\1\end{bmatrix},
+\begin{bmatrix}{}1\\2\\0\end{bmatrix}
+\right\}
+$$
+
+Since $C(A), C(A^{\mathbf{T}})$ have 2 vectors, it follows that $r = 2$. Since
+$C(A^{\mathbf{T}})$ has $3$ components, we can infer that $n = 3$. Similarly,
+since $C(A)$ has $3$ components, we can infer that $m = 3$.
+
+One method is simply to multiply a 3 x 2 matrix by a 2 x 3 matrix with the same
+components:
+
+$$
+\left[\begin{array}{cc}
+1 & 1 \\
+0 & 2 \\
+1 & 0 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 0 & 1 \\
+1 & 2 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+2 & 2 & 1 \\
+2 & 4 & 0 \\
+1 & 0 & 1 \\
+\end{array}\right]
+$$
+
+The reason this can't be both the basis for the row space and the nullspace is
+because the nullspace is spanned by a single vector (as defined by the free
+variable), whereas the row space is spanned by 2 vectors (different dimensions).
+
 13. True or false (with a reason or a counterexample):
 
 a. If $m = n$ then the row space of $A$ equals the column space.
 
+False. Even though $m = n$, this doesn't mean that every row is equal to every
+column, and this automatically means that the row space does not always equal
+the column space.
+
 b. The matrices $A$ and $-A$ share the same four subspaces.
 
+True. Since $-1$ is just a scalar on all components of $A$, this would not
+change any of the linear combinations, and thus would not change the subspaces.
+
 c. If $A$ and $B$ share the same four subspaces then $A$ is a multiple of $B$.
+
+False, consider if $B = A^{-1}$, where $A$ and $B$ have the same dimensions,
+then $A$ and $B$ share the same four subspaces, but $B$ is not a multiple of
+$A$.
+
+(LEFT OFF HERE.)
 
 14. Without computing $A$, find bases for its four fundamental subspaces:
 
