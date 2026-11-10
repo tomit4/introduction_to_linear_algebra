@@ -29,6 +29,30 @@ Page 205
 
 ---
 
+Page 206
+
+_The row space is perpendicular to the nullspace_. Every row of $A$ is
+perpendicular to every solution of $Ax = \mathbf{0}$. That gives the $90\degree$
+angle on the left side of the figure. This perpendicularity of subspaces is Part
+2 of the Fundamental Theorem of Linear Algebra.
+
+_The column space is perpendicular to the nullspace of $A^{\mathbf{T}}$_. When
+$b$ is outside the column space - when we want to solve $Ax = b$ and can't do
+it - then this nullspace of $A^{\mathbf{T}}$ comes into its own. It contains the
+error $e = b - Ax$ in the "least-squares" solution. Least squares is the key
+application of linear algebra in this chapter.
+
+---
+
+Page 206
+
+**DEFINITION**
+
+Two subspaces $V$ and $W$ of a vector space are _orthogonal_ if every vector $v$
+in $V$ is perpendicular to every vector $w$ in $W$.
+
+---
+
 Page 207
 
 Every vector $x$ in the nullspace is perpendicular to every row of $A$, because
@@ -42,6 +66,30 @@ Page 207
 Every vector $y$ in the nullspace of $A^{\mathbf{T}}$ is perpendicular to every
 column of $A$. The left nullspace $N(A^{\mathbf{T}})$ and the column space
 $C(A)$ are orthogonal in $\R^m$.
+
+---
+
+Page 208
+
+**DEFINITION**
+
+The _orthogonal complement of a subspace $V$ contains _every_ vector that is
+perpendicular to $V$. This orthogonal subspace is denoted by $V^{\perp}$
+(pronounced "$V$" perp).
+
+By this definition, the nullspace is the orthogonal complement of the row space.
+_Every_ $x$ that is perpendicular to the rows satisfies $Ax = \mathbf{0}$, and
+lies in the nullspace.
+
+The reverse is also true. _If $v$ is orthogonal to the nullspace, it must be in
+the row space_. Otherwise we could add this $v$ as an extra row of the matrix,
+without changing its nullspace. The row space would grow, which breaks the law
+$r + (n - r) = n$. We conclude that the nullspace complement $N(A)^{\perp}$ is
+exactly the row space $C(A^{\mathbf{T}})$.
+
+In the same way, the left nullspace and column space are orthogonal in $\R^m$,
+and they are orthogonal complements. Their dimensions $r$ and $m - r$ add to the
+full dimension $m$.
 
 ---
 
