@@ -1377,3 +1377,170 @@ Lines meeting in $\R^3$ at the zero vector can not be orthogonal.
     of subspaces can $v$ _not_ be in?
 
 Omitted.
+
+---
+
+Page 225
+
+## Problem Set 4.2
+
+**Questions 1-9 ask for projections $p$ onto lines. Also errors $e = b - p$ and
+matrices $P$.**
+
+1. Project the vector $b$ onto the line through $a$. Check that $e$ is
+   perpendicular to $a$:
+
+a. $b = \begin{bmatrix}{}1\\2\\2\end{bmatrix}$ and
+$a = \begin{bmatrix}{}1\\1\\1\end{bmatrix}$
+
+b. $b = \begin{bmatrix}{}1\\3\\1\end{bmatrix}$ and
+$a = \begin{bmatrix}{}-1\\-3\\-1\end{bmatrix}$
+
+2. _Draw_ the projection of $b$ onto $a$ and also compute it from
+   $p = \hat{x}a$:
+
+a. $b = \begin{bmatrix}{}\cos\theta\\\sin\theta\end{bmatrix}$ and
+$a = \begin{bmatrix}{}1\\0\end{bmatrix}$
+
+b. $b = \begin{bmatrix}{}1\\2\end{bmatrix}$ and
+$a = \begin{bmatrix}{}1\\-1\end{bmatrix}$
+
+3. In Problem 1, find the projection matrix
+   $P = aa^{\mathbf{T}}/a^{\mathbf{T}}a$ onto the line through each vector $a$.
+   Verify in both cases that $P^2 = P$. Multiply $Pb$ in each case to compute
+   the projection $p$.
+
+4. Construct the projection matrices $P_1$ and $P_2$ onto the lines through the
+   $a$'s in Problem 2. Is it true that $(P_1 + P_2)^2 = P_1 + P_2$? This _would_
+   be true if $P_1P_2 = 0$.
+
+5. Compute the projection matrices $aa^{\mathbf{T}}/a^{\mathbf{T}}a$ onto the
+   lines through $a_1 = (-1, 2, 2)$ and $a_2 = (2, 2, -1)$. Multiply those
+   projection matrices and explain why their product $P_1P_2$ is what it is.
+
+6. Project $b = (1, 0, 0)$ onto the lines through $a_1$ and $a_2$ in Problem 5
+   and also onto $a_3 = (2, -1, 2)$. Add up the three projections
+   $p_1 + p_2 + p_3$.
+
+7. Continuing Problems 5-6, find the projection matrix $P_3$ onto
+   $a_3 = (2, -1, 2)$. Verify that $P_1 + P_2 + P_3 = I$. This is because the
+   basis $a_1, a_2, a_3$ is orthogonal!
+
+(See Page 226 for figures)
+
+8. Project the vector $b = (1, 1)$ onto the lines through $a_1 = (1, 0)$ and
+   $a_2 = (1, 2)$. Draw the projections $p_1$ and $p_2$ and add $p_1 + p_2$. The
+   projections do not add to $b$ because the $a$'s are not orthogonal.
+
+9. In Problem 8, the projection of $b$ onto the _plane_ of $a_1$ and $a_2$ will
+   equal $b$. Find $P = A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}$ for
+   $A = \left[\begin{array}{cc}a_1 & a_2 \\\end{array}\right] = \left[\begin{array}{cc}1 & 1 \\0 & 2 \\\end{array}\right] =$
+   invertible matrix.
+
+10. Project $a_1 = (1, 0)$ onto $a_2 = (1, 2)$. Then project the result back
+    onto $a_1$. Draw these projections and multiply the projection matrices
+    $P_1P_2$: Is this a projection?
+
+**Questions 11-20 ask for projections, and projection matrices, onto
+subspaces.**
+
+11. Project $b$ onto the column space of $A$ by solving
+    $A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$ and $p = A\hat{x}$:
+
+a. $A = \left[\begin{array}{cc}1 & 1 \\0 & 1 \\0 & 0 \\\end{array}\right]$ and
+$b = \begin{bmatrix}{}2\\3\\4\end{bmatrix}$
+
+b. $A = \left[\begin{array}{cc}1 & 1 \\1 & 1 \\0 & 1 \\\end{array}\right]$ and
+$b = \begin{bmatrix}{}4\\4\\6\end{bmatrix}$
+
+Find $e = b - p$. It should be perpendicular to the columns of $A$.
+
+12. Compute the projection matrices $P_1$ and $P_2$ onto the column spaces in
+    Problem 11. Verify that $P_1b$ gives the first projection $p_1$. Also verify
+    $P_2^2 = P_2$.
+
+13. (Quick and Recommended) Suppose $A$ is the $4$ by $4$ identity matrix with
+    its last column removed. $A$ is $4$ by $3$. Project $b = (1, 2, 3, 4)$ onto
+    the column space of $A$. What shape is the projection matrix $P$ and what is
+    $P$?
+
+14. Suppose $b$ equals $2$ times the first column of $A$. What is the projection
+    of $b$ onto the column space of $A$? Is $P = I$ for sure in this case?
+    Compute $p$ and $P$ when $b = (0, 2, 4)$ and the columns of $A$ are
+    $(0, 1, 2)$ and $(1, 2, 0)$.
+
+15. If $A$ is doubled, then $P = 2A(4A^{\mathbf{T}}A)^{-1}2A^{\mathbf{T}}$. This
+    is the same as $A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}$. The column space of
+    $2A$ is the same as ____. Is $\hat{x}$ the same for $A$ and $2A$?
+
+16. What linear combination of $(1, 2, -1)$ and $(1, 0, 1)$ is closest to
+    $b = (2, 1, 1)$?
+
+17. (_Important_) If $P^2 = P$ show that $(I - P)^2 = I - P$. When $P$ projects
+    onto the column space of $A$, $I - P$ projects onto the ____.
+
+18.
+
+a. If $P$ is the $2$ by $2$ projection matrix onto the line through $(1, 1)$,
+then $I - P$ is the projection matrix onto ____.
+
+b. If $P$ is the $3$ by $3$ projection matrix onto the line through $(1, 1, 1)$,
+then $I - P$ is the projection matrix onto ____.
+
+19. To find the projection matrix onto the plane $x - y - 2z = 0$, choose two
+    vectors in that plane and make them the columns of $A$. The plane will be
+    the column space of $A$! Then compute
+    $P = A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}$.
+
+20. To find the projection matrix $P$ onto the same plane $x - y - 2z = 0$,
+    write down a vector $e$ that is perpendicular to that plane. Compute the
+    projection $Q = ee^{\mathbf{T}}/e^{\mathbf{T}}e$ and then $P = I - Q$.
+
+**Questions 21-26 show that projection matrices satisfy $P^2 = P$ and
+$P^{\mathbf{T}} = P$.
+
+21. Multiply the matrix $P = A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}$ by itself.
+    Cancel to prove that $P^2 = P$. Explain why $P(Pb)$ always equals $Pb$: The
+    vector $Pb$ is in the column space of $A$ so its projection onto that column
+    space is ____.
+
+22. Prove that $P = A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}$ is symmetric by
+    computing $P^{\mathbf{T}}$. Remember that the inverse of a symmetric matrix
+    is symmetric.
+
+23. If $A$ is square and invertible, the warning against splitting
+    $(A^{\mathbf{T}}A)^{-1}$ does not apply. Is it true that
+    $AA^{-1}(A^{\mathbf{T}})^{-1}A^{\mathbf{T}} = I$. _When $A$ is invertible,
+    why is $P = I$_? _What is the error $e$?_
+
+24. The nullspace of $A^{\mathbf{T}}$ is ____ to the column space $C(A)$. So if
+    $A^{\mathbf{T}}b = \mathbf{0}$, the projection of $b$ onto $C(A)$ should be
+    $p =$ ____. Check that $P = A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}$ gives
+    this answer.
+
+25. The projection matrix $P$ onto an $n$-dimensional subspace of $\R^m$ has
+    rank $r = n$. _Reason:_ The projections $Pb$ fill the subspace $S$. So $S$
+    is the ____ of $P$.
+
+26. If an $m$ by $m$ matrix has $A^2 = A$ and its rank is $m$, prove that
+    $A = I$.
+
+27. The important fact that ends the section is this: _If
+    $A^{\mathbf{T}}Ax = \mathbf{0}$ then $Ax = \mathbf{0}$_. _New Proof_: The
+    vector $Ax$ is in the nullspace of ____. $Ax$ is always in the column space
+    of ____. To be in both of those perpendicular spaces, $Ax$ must be zero.
+
+28. Use $P^{\mathbf{T}} = P$ and $P^2 = P$ to prove that the length squared of
+    column $2$ always equals the diagonal entry $P_{22}$. This number is
+    $\dfrac{2}{6} = \dfrac{4}{36} + \dfrac{4}{36} + \dfrac{4}{36}$ for
+
+$$ P =
+\frac{1}{6}\left[\begin{array}{rrr}
+5 & 2 & -1 \\
+2 & 2 & 2 \\
+-1 & 2 & 5 \\
+\end{array}\right]
+$$
+
+29. If $B$ has rank $m$ (full row rank, independent rows) show that
+    $BB^{\mathbf{T}}$ is invertible.

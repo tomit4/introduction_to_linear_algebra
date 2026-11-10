@@ -138,3 +138,87 @@ solution.
 
 4. Any $n$ independent vectors in $\R^n$ span $\R^n$. Any $n$ spanning vectors
    are independent.
+
+---
+
+Page 217
+
+## 4.2 Projections
+
+---
+
+Page 217
+
+1. The projection of a vector $b$ onto the line through $a$ is the closest point
+   $p = a(a^{\mathbf{T}}b/a^{\mathbf{T}}a)$.
+
+2. The error $e = b - p$ is perpendicular to $a$: Right triangle $bpe$ has
+   $\|p\|^2 + \|e\|^2 = \|b\|^2$.
+
+3. The **projection** of $b$ onto a subspace $S$ is the closest vector $p$ in
+   $S$; $b - p$ is orthogonal to $S$.
+
+4. $A^{\mathbf{T}}A$ is invertible (and symmetric) only if $A$ has independent
+   columns: $N(A^{\mathbf{T}}A) = N(A)$.
+
+5. Then the projection of $b$ onto the column space of $A$ is the vector
+   $p = A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}b$.
+
+6. The **projection matrix** onto $C(A)$ is
+   $\boxed{P = A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}}$. It has $p = Pb$ and
+   $P^2 = P = P^{\mathbf{T}}$.
+
+---
+
+Page 219
+
+The projection of $b$ onto the line through $a$ is the vector
+
+$$ p = \hat{x}a = \frac{a^{\mathbf{T}}b}{a^{\mathbf{T}}a}a $$
+
+Special case 1: If $b = a$ then $\hat{x} = 1$. The projection of $a$ onto $a$ is
+itself. $Pa = a$.
+
+Special case 2: If $b$ is perpendicular to $a$ then $a^{\mathbf{T}}b = 0$. The
+projection is $p = \mathbf{0}$.
+
+---
+
+Page 220
+
+Projection matrix $P$
+
+$$ p = a\hat{x} = a\frac{a^{\mathbf{T}}b}{a^{\mathbf{T}}a} = Pb $$
+
+when the matrix is
+
+$$ P = \frac{aa^{\mathbf{T}}}{a^{\mathbf{T}}a} $$
+
+---
+
+Page 223
+
+$A^{\mathbf{T}}A$ is invertible if and only if $A$ has linearly independent
+columns.
+
+---
+
+Page 224
+
+**REVIEW OF THE KEY IDEAS**
+
+1. The projection of $b$ onto the line through $a$ is
+   $p = a\hat{x} = a(a^{\mathbf{T}}b/a^{\mathbf{T}}a)$.
+
+2. The rank one projection matrix $P = aa^{\mathbf{T}}/a^{\mathbf{T}}a$
+   multiplies $b$ to produce $p$.
+
+3. Projecting $b$ onto a subspace leaves $e = b - p$ perpendicular to the
+   subspace.
+
+4. When $A$ has full rank $n$, the equation
+   $A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$ leads to $\hat{x}$ and
+   $p = A\hat{x}$.
+
+5. The projection matrix $P = A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}$ has
+   $P^{\mathbf{T}} = P$ and $P^2 = P$ and $Pb = p$.
