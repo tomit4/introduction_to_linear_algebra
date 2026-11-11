@@ -1393,8 +1393,65 @@ matrices $P$.**
 a. $b = \begin{bmatrix}{}1\\2\\2\end{bmatrix}$ and
 $a = \begin{bmatrix}{}1\\1\\1\end{bmatrix}$
 
+_Solution:_
+
+When Strang says "project the _vector_ onto the _line_", he means find $p$,
+which in turns means finding $\hat{x}$.
+
+$$ \hat{x} = \frac{a^{\mathbf{T}}b}{a^{\mathbf{T}}a} $$
+
+$$ \hat{x} = \frac{5}{3} $$
+
+$$ p = \hat{x}a = \frac{5}{3}a = \begin{bmatrix}{}\frac{5}{3}\\\frac{5}{3}\\\frac{5}{3}\end{bmatrix} $$
+
+Check that $e \perp a$:
+
+$$ e = b - p $$
+
+$$ e = \begin{bmatrix}{}1\\2\\2\end{bmatrix} - \begin{bmatrix}{}\frac{5}{3}\\\frac{5}{3}\\\frac{5}{3}\end{bmatrix} $$
+
+$$ e = \begin{bmatrix}{}-\frac{2}{3}\\\frac{1}{3}\\\frac{1}{3}\end{bmatrix} $$
+
+so $e^{\mathbf{T}} \cdot a = 0$ if $e \perp a$:
+
+$$ e^{\mathbf{T}} \cdot a =
+\left[\begin{array}{ccc}
+-\frac{2}{3} & \frac{1}{3} & \frac{1}{3} \\
+\end{array}\right]
+\cdot \begin{bmatrix}{}1\\1\\1\end{bmatrix} =
+\left(-\frac{2}{3}\right)(1) + \left(\frac{1}{3}\right)(1) + \left(\frac{1}{3}\right)(1) = 0
+$$
+
+So indeed $e \perp a$.
+
 b. $b = \begin{bmatrix}{}1\\3\\1\end{bmatrix}$ and
 $a = \begin{bmatrix}{}-1\\-3\\-1\end{bmatrix}$
+
+_Solution:_
+
+Again, Strang wants us to find $p$, which means first finding $\hat{x}$
+
+$$ \hat{x} = \frac{a^{\mathbf{T}}b}{a^{\mathbf{T}}a} $$
+
+$$ \hat{x} = \frac{-11}{11} = -1 $$
+
+$$ p = \hat{x}a $$
+
+$$ p = (-1)\begin{bmatrix}{}-1\\-3\\-1\end{bmatrix} $$
+
+$$ p = \begin{bmatrix}{}1\\3\\1\end{bmatrix} $$
+
+Check that $e \perp a$:
+
+$$ e = b - p $$
+
+$$ e = \begin{bmatrix}{}1\\3\\1\end{bmatrix} - \begin{bmatrix}{}1\\3\\1\end{bmatrix} = \begin{bmatrix}{}0\\0\\0\end{bmatrix} $$
+
+Note that since $e = 0$, this means that $Ax = b$ is solvable!
+
+$$ e^{\mathbf{T}} \cdot a = 0 \Leftrightarrow e \perp a $$
+
+Since $\mathbf{0}$ is perpendicular to any vector, $e \perp a$.
 
 2. _Draw_ the projection of $b$ onto $a$ and also compute it from
    $p = \hat{x}a$:
@@ -1402,25 +1459,432 @@ $a = \begin{bmatrix}{}-1\\-3\\-1\end{bmatrix}$
 a. $b = \begin{bmatrix}{}\cos\theta\\\sin\theta\end{bmatrix}$ and
 $a = \begin{bmatrix}{}1\\0\end{bmatrix}$
 
-b. $b = \begin{bmatrix}{}1\\2\end{bmatrix}$ and
+_Solution:_
+
+This isn't all that different from Problem 1, find $p$, which means find
+$\hat{x}$.
+
+$$ \hat{x} = \frac{a^{\mathbf{T}}b}{a^{\mathbf{T}}a} $$
+
+$$ \hat{x} = \frac{\cos\theta}{1} $$
+
+$$ \hat{x} = \cos\theta $$
+
+$$ p = \hat{x}a $$
+
+$$ p = \cos\theta \cdot \begin{bmatrix}{}1\\0\end{bmatrix} $$
+
+$$ p = \begin{bmatrix}{}\cos\theta\\0\end{bmatrix} $$
+
+b. $b = \begin{bmatrix}{}1\\1\end{bmatrix}$ and
 $a = \begin{bmatrix}{}1\\-1\end{bmatrix}$
+
+_Solution:_
+
+$$ \hat{x} = \frac{a^{\mathbf{T}}b}{a^{\mathbf{T}}a} $$
+
+$$ \hat{x} = \frac{0}{2} = 0 $$
+
+$$ p = \hat{x}a $$
+
+$$ p = 0 \cdot \begin{bmatrix}{}1\\-1\end{bmatrix} $$
+
+$$ p = \begin{bmatrix}{}0\\0\end{bmatrix} $$
 
 3. In Problem 1, find the projection matrix
    $P = aa^{\mathbf{T}}/a^{\mathbf{T}}a$ onto the line through each vector $a$.
    Verify in both cases that $P^2 = P$. Multiply $Pb$ in each case to compute
    the projection $p$.
 
+a.
+
+_Solution:_
+
+$$ b = \begin{bmatrix}{}1\\2\\2\end{bmatrix}, a = \begin{bmatrix}{}1\\1\\1\end{bmatrix} $$
+
+Here we are tasked with finding the projection matrix $P$ onto the line through
+$a$.
+
+Now, recall that the formula for finding the Projection matrix $P$ is:
+
+$$ P = \frac{aa^{\mathbf{T}}}{a^{\mathbf{T}}a} $$
+
+Thus, for this case, $P$ is:
+
+$$ aa^{\mathbf{T}} =
+\begin{bmatrix}{}1\\1\\1\end{bmatrix}
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+\end{array}\right]
+$$
+
+$$ P =
+\frac{1}{3}
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+\end{array}\right]
+$$
+
+Now, we must verify that $P^2 = P$
+
+$$ P^2 = P \cdot P
+\left[\begin{array}{ccc}
+\frac{1}{3} & \frac{1}{3} & \frac{1}{3} \\
+\frac{1}{3} & \frac{1}{3} & \frac{1}{3} \\
+\frac{1}{3} & \frac{1}{3} & \frac{1}{3} \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+\frac{1}{3} & \frac{1}{3} & \frac{1}{3} \\
+\frac{1}{3} & \frac{1}{3} & \frac{1}{3} \\
+\frac{1}{3} & \frac{1}{3} & \frac{1}{3} \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+\frac{3}{9} & \frac{3}{9} & \frac{3}{9} \\
+\frac{3}{9} & \frac{3}{9} & \frac{3}{9} \\
+\frac{3}{9} & \frac{3}{9} & \frac{3}{9} \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+\frac{1}{3} & \frac{1}{3} & \frac{1}{3} \\
+\frac{1}{3} & \frac{1}{3} & \frac{1}{3} \\
+\frac{1}{3} & \frac{1}{3} & \frac{1}{3} \\
+\end{array}\right] = P
+$$
+
+Now we must compute $Pb = p$:
+
+$$ Pb =
+\left[\begin{array}{ccc}
+\frac{1}{3} & \frac{1}{3} & \frac{1}{3} \\
+\frac{1}{3} & \frac{1}{3} & \frac{1}{3} \\
+\frac{1}{3} & \frac{1}{3} & \frac{1}{3} \\
+\end{array}\right]
+\begin{bmatrix}{}1\\2\\2\end{bmatrix} =
+\begin{bmatrix}{}\frac{5}{3}\\\frac{5}{3}\\\frac{5}{3}\end{bmatrix} =
+\frac{1}{3}\begin{bmatrix}{}5\\5\\5\end{bmatrix} = p
+$$
+
+Note that this $p$ matches our solution in Problem 1a.
+
+b.
+
+_Solution:_
+
+$$ b = \begin{bmatrix}{}1\\3\\1\end{bmatrix}, a = \begin{bmatrix}{}-1\\-3\\-1\end{bmatrix} $$
+
+$$ P = \frac{aa^{\mathbf{T}}}{a^{\mathbf{T}}a} $$
+
+$$ aa^{\mathbf{T}} =
+\begin{bmatrix}{}-1\\-3\\-1\end{bmatrix}
+\left[\begin{array}{rrr}
+-1 & -3 & -1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 3 & 1 \\
+3 & 9 & 3 \\
+1 & 3 & 1 \\
+\end{array}\right]
+$$
+
+$$ P =
+\frac{1}{11}
+\left[\begin{array}{ccc}
+1 & 3 & 1 \\
+3 & 9 & 3 \\
+1 & 3 & 1 \\
+\end{array}\right]
+$$
+
+Verify that $P^2 = P$
+
+$$ P^2 = P \cdot P =
+\left[\begin{array}{ccc}
+\frac{1}{11} & \frac{3}{11} & \frac{1}{11} \\
+\frac{3}{11} & \frac{9}{11} & \frac{3}{11} \\
+\frac{1}{11} & \frac{3}{11} & \frac{1}{11} \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+\frac{1}{11} & \frac{3}{11} & \frac{1}{11} \\
+\frac{3}{11} & \frac{9}{11} & \frac{3}{11} \\
+\frac{1}{11} & \frac{3}{11} & \frac{1}{11} \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+\frac{1}{11} & \frac{3}{11} & \frac{1}{11} \\
+\frac{3}{11} & \frac{9}{11} & \frac{3}{11} \\
+\frac{1}{11} & \frac{3}{11} & \frac{1}{11} \\
+\end{array}\right] = P
+$$
+
+Show that $Pb = p$:
+
+$$ Pb =
+\left[\begin{array}{ccc}
+\frac{1}{11} & \frac{3}{11} & \frac{1}{11} \\
+\frac{3}{11} & \frac{9}{11} & \frac{3}{11} \\
+\frac{1}{11} & \frac{3}{11} & \frac{1}{11} \\
+\end{array}\right]
+\begin{bmatrix}{}1\\3\\1\end{bmatrix} =
+\begin{bmatrix}{}1\\3\\1\end{bmatrix} = p
+$$
+
+And again, this matches $p$ in Problem 1b.
+
 4. Construct the projection matrices $P_1$ and $P_2$ onto the lines through the
    $a$'s in Problem 2. Is it true that $(P_1 + P_2)^2 = P_1 + P_2$? This _would_
    be true if $P_1P_2 = 0$.
+
+_Solution:_
+
+a. $a = \begin{bmatrix}{}1\\0\end{bmatrix}$
+
+$$ P_1 = \frac{aa^{\mathbf{T}}}{a^{\mathbf{T}}a} $$
+
+$$ P_1 = \frac{aa^{\mathbf{T}}}{1} $$
+
+$$ P_1 = aa^{\mathbf{T}} =
+\begin{bmatrix}{}1\\0\end{bmatrix}
+\left[\begin{array}{cc}
+1 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+b. $a = \begin{bmatrix}{}1\\-1\end{bmatrix}$
+
+$$ P_2 = \frac{aa^{\mathbf{T}}}{a^{\mathbf{T}}a} $$
+
+$$ P_2 = \frac{1}{2}aa^{\mathbf{T}} =
+\frac{1}{2}
+\begin{bmatrix}{}1\\-1\end{bmatrix}
+\left[\begin{array}{cc}
+1 & -1 \\
+\end{array}\right] =
+\frac{1}{2}
+\left[\begin{array}{rr}
+1 & -1 \\
+-1 & 1 \\
+\end{array}\right]
+$$
+
+_Is it true that $(P_1 + P_2)^2 = P_1 + P_2$? This _would_ be true if
+$P_1P_2 = 0$:_
+
+$$ P_1 + P_2 =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 0 \\
+\end{array}\right] +
+\left[\begin{array}{rr}
+\frac{1}{2} & -\frac{1}{2} \\
+-\frac{1}{2} & \frac{1}{2} \\
+\end{array}\right] =
+\left[\begin{array}{rr}
+\frac{3}{2} & -\frac{1}{2} \\
+-\frac{1}{2} & \frac{1}{2} \\
+\end{array}\right]
+$$
+
+$$ (P_1 + P_2)^2 =
+\left[\begin{array}{rr}
+\frac{3}{2} & -\frac{1}{2} \\
+-\frac{1}{2} & \frac{1}{2} \\
+\end{array}\right]
+\left[\begin{array}{rr}
+\frac{3}{2} & -\frac{1}{2} \\
+-\frac{1}{2} & \frac{1}{2} \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+\frac{5}{2} & -1 \\
+-1 & \frac{1}{2} \\
+\end{array}\right] \neq (P_1 + P_2)
+$$
 
 5. Compute the projection matrices $aa^{\mathbf{T}}/a^{\mathbf{T}}a$ onto the
    lines through $a_1 = (-1, 2, 2)$ and $a_2 = (2, 2, -1)$. Multiply those
    projection matrices and explain why their product $P_1P_2$ is what it is.
 
+_Solution:_
+
+$$ a_1 = \begin{bmatrix}{}-1\\2\\2\end{bmatrix}, a_2 = \begin{bmatrix}{}2\\2\\-1\end{bmatrix} $$
+
+$$ P_1 = \frac{a_1(a_1)^{\mathbf{T}}}{(a_1)^{\mathbf{T}}a_1} $$
+
+$$ P_1 = \frac{1}{9}a_1(a_1)^{\mathbf{T}} $$
+
+$$ a_1(a_1)^{\mathbf{T}} =
+\begin{bmatrix}{}-1\\2\\2\end{bmatrix}
+\left[\begin{array}{rrr}
+-1 & 2 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & -2 & -2 \\
+-2 & 4 & 4 \\
+-2 & 4 & 4 \\
+\end{array}\right]
+$$
+
+$$ P_1 =
+\frac{1}{9}
+\left[\begin{array}{rrr}
+1 & -2 & -2 \\
+-2 & 4 & 4 \\
+-2 & 4 & 4 \\
+\end{array}\right]
+$$
+
+$$ P_2 = \frac{a_2(a_2)^{\mathbf{T}}}{(a_2)^{\mathbf{T}}a_2} $$
+
+$$ P_2 = \frac{1}{9}a_2(a_2)^{\mathbf{T}} $$
+
+$$ a_2(a_2)^{\mathbf{T}} =
+\begin{bmatrix}{}2\\2\\-1\end{bmatrix}
+\left[\begin{array}{rrr}
+2 & 2 & -1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+4 & 4 & -2 \\
+4 & 4 & -2 \\
+-2 & -2 & 1 \\
+\end{array}\right]
+$$
+
+$$ P_2 =
+\frac{1}{9}
+\left[\begin{array}{rrr}
+4 & 4 & -2 \\
+4 & 4 & -2 \\
+-2 & -2 & 1 \\
+\end{array}\right]
+$$
+
+_Multiply those projection matrices and explain why their product $P_1P_2$ is
+what it is:_
+
+$$ P_1P_2 =
+\left(
+\frac{1}{9}
+\left[\begin{array}{rrr}
+1 & -2 & -2 \\
+-2 & 4 & 4 \\
+-2 & 4 & 4 \\
+\end{array}\right]
+\right) \cdot
+\left(
+\frac{1}{9}
+\left[\begin{array}{rrr}
+4 & 4 & -2 \\
+4 & 4 & -2 \\
+-2 & -2 & 1 \\
+\end{array}\right]
+\right)
+$$
+
+$$ P_1P_2 =
+\frac{1}{81}
+\left[\begin{array}{ccc}
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right] = \mathbf{0}
+$$
+
+Since $P_1P_2 = \mathbf{0}$, this means that $a_1 \perp a_2$.
+
 6. Project $b = (1, 0, 0)$ onto the lines through $a_1$ and $a_2$ in Problem 5
    and also onto $a_3 = (2, -1, 2)$. Add up the three projections
    $p_1 + p_2 + p_3$.
+
+_Solution:_
+
+$$ p_1 = P_1b $$
+
+$$ P_1b =
+\frac{1}{9}
+\left[\begin{array}{rrr}
+1 & -2 & -2 \\
+-2 & 4 & 4 \\
+-2 & 4 & 4 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\0\\0\end{bmatrix} =
+\frac{1}{9}
+\begin{bmatrix}{}1\\-2\\-2\end{bmatrix} =
+\begin{bmatrix}{}\frac{1}{9}\\-\frac{2}{9}\\-\frac{2}{9}\end{bmatrix} = p_1
+$$
+
+$$ p_2 = P_2b $$
+
+$$ P_2b =
+\frac{1}{9}
+\left[\begin{array}{rrr}
+4 & 4 & -2 \\
+4 & 4 & -2 \\
+-2 & -2 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\0\\0\end{bmatrix} =
+\frac{1}{9}
+\begin{bmatrix}{}4\\4\\-2\end{bmatrix} =
+\begin{bmatrix}{}\frac{4}{9}\\\frac{4}{9}\\-\frac{2}{9}\end{bmatrix} = p_2
+$$
+
+$$ a_3 = \begin{bmatrix}{}2\\-1\\2\end{bmatrix} $$
+
+$$ p_3 = P_3b $$
+
+$$ P_3 = \frac{a_3(a_3)^{\mathbf{T}}}{(a_3)^{\mathbf{T}}a_3} $$
+
+$$ P_3 = \frac{1}{9}a_3(a_3)^{\mathbf{T}} $$
+
+$$ a_3(a_3)^{\mathbf{T}} =
+\begin{bmatrix}{}2\\-1\\2\end{bmatrix}
+\left[\begin{array}{rrr}
+2 & -1 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+4 & -2 & 4 \\
+-2 & 1 & -2 \\
+4 & -2 & 4 \\
+\end{array}\right]
+$$
+
+$$ P_3 =
+\frac{1}{9}
+\left[\begin{array}{rrr}
+4 & -2 & 4 \\
+-2 & 1 & -2 \\
+4 & -2 & 4 \\
+\end{array}\right]
+$$
+
+$$ P_3b =
+\frac{1}{9}
+\left[\begin{array}{rrr}
+4 & -2 & 4 \\
+-2 & 1 & -2 \\
+4 & -2 & 4 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\0\\0\end{bmatrix} =
+\frac{1}{9}
+\begin{bmatrix}{}4\\-2\\4\end{bmatrix} =
+\begin{bmatrix}{}\frac{4}{9}\\-\frac{2}{9}\\\frac{4}{9}\end{bmatrix} = p_3
+$$
+
+_Add up the three projections $p_1 + p_2 + p_3$:_
+
+$$ p_1 + p_2 + p_3 =
+\begin{bmatrix}{}\frac{1}{9}\\-\frac{2}{9}\\-\frac{2}{9}\end{bmatrix} +
+\begin{bmatrix}{}\frac{4}{9}\\\frac{4}{9}\\-\frac{2}{9}\end{bmatrix} +
+\begin{bmatrix}{}\frac{4}{9}\\-\frac{2}{9}\\\frac{4}{9}\end{bmatrix} =
+\begin{bmatrix}{}1\\0\\0\end{bmatrix} = b
+$$
 
 7. Continuing Problems 5-6, find the projection matrix $P_3$ onto
    $a_3 = (2, -1, 2)$. Verify that $P_1 + P_2 + P_3 = I$. This is because the
@@ -1428,18 +1892,263 @@ $a = \begin{bmatrix}{}1\\-1\end{bmatrix}$
 
 (See Page 226 for figures)
 
+Omitted, but take note of what is being said here.
+
 8. Project the vector $b = (1, 1)$ onto the lines through $a_1 = (1, 0)$ and
    $a_2 = (1, 2)$. Draw the projections $p_1$ and $p_2$ and add $p_1 + p_2$. The
    projections do not add to $b$ because the $a$'s are not orthogonal.
+
+_Solution:_
+
+$$ p_1 = a_1\hat{x}_1 = a_1\frac{(a_1)^{\mathbf{T}}b}{(a_1)^{\mathbf{T}}a_1} = P_1b $$
+
+$$ p_1 = a_1\frac{(a_1)^{\mathbf{T}}b}{1} = P_1b $$
+
+$$ p_1 = a_1(a_1)^{\mathbf{T}}b = P_1b $$
+
+$$ a_1(a_1)^{\mathbf{T}} =
+\begin{bmatrix}{}1\\0\end{bmatrix}
+\left[\begin{array}{cc}
+1 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+$$ p_1 = a_1(a_1)^{\mathbf{T}}b =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 0 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\1\end{bmatrix} =
+\begin{bmatrix}{}1\\0\end{bmatrix} = P_1b
+$$
+
+$$ p_2 = a_2\hat{x}_2 = a_2\frac{(a_2)^{\mathbf{T}}b}{(a_2)^{\mathbf{T}}a_2} = P_2b $$
+
+$$ p_2 = \frac{1}{5}a_2(a_2)^{\mathbf{T}}b = P_2b $$
+
+$$ a_2(a_2)^{\mathbf{T}} =
+\begin{bmatrix}{}1\\2\end{bmatrix}
+\left[\begin{array}{cc}
+1 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 2 \\
+2 & 4 \\
+\end{array}\right]
+$$
+
+$$ p_2 = \frac{1}{5}a_2(a_2)^{\mathbf{T}}b =
+\frac{1}{5}
+\left[\begin{array}{cc}
+1 & 2 \\
+2 & 4 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\1\end{bmatrix} =
+\frac{1}{5}
+\begin{bmatrix}{}3\\6\end{bmatrix} =
+\frac{3}{5}
+\begin{bmatrix}{}1\\2\end{bmatrix} = P_2b
+$$
+
+_Add $p_1 + p_2$:_
+
+$$ p_1 + p_2 =
+\begin{bmatrix}{}1\\0\end{bmatrix} +
+\frac{3}{5}
+\begin{bmatrix}{}1\\2\end{bmatrix} =
+\frac{1}{5}
+\begin{bmatrix}{}8\\6\end{bmatrix} \neq b
+$$
 
 9. In Problem 8, the projection of $b$ onto the _plane_ of $a_1$ and $a_2$ will
    equal $b$. Find $P = A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}$ for
    $A = \left[\begin{array}{cc}a_1 & a_2 \\\end{array}\right] = \left[\begin{array}{cc}1 & 1 \\0 & 2 \\\end{array}\right] =$
    invertible matrix.
 
+_Solution:_
+
+$$ A^{\mathbf{T}}A =
+\left[\begin{array}{cc}
+1 & 0 \\
+1 & 2 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 1 \\
+0 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 5 \\
+\end{array}\right]
+$$
+
+Now use Gauss-Jordan elimination to find $(A^{\mathbf{T}}A)^{-1}$:
+
+$$
+\left[\begin{array}{cc|cc}
+1 & 1 & 1 & 0 \\
+1 & 5 & 0 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{cc|cc}
+1 & 1 & 1 & 0 \\
+0 & 4 & -1 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{cc|cc}
+1 & 1 & 1 & 0 \\
+0 & 1 & -\frac{1}{4} & \frac{1}{4} \\
+\end{array}\right] \to
+\left[\begin{array}{cc|cc}
+1 & 0 & \frac{5}{4} & -\frac{1}{4} \\
+0 & 1 & -\frac{1}{4} & \frac{1}{4} \\
+\end{array}\right]
+$$
+
+$$ \to
+\left[\begin{array}{rr}
+\frac{5}{4} & -\frac{1}{4} \\
+-\frac{1}{4} & \frac{1}{4}
+\end{array}\right] = (A^{\mathbf{T}}A)^{-1}
+$$
+
+$$ A(A^{\mathbf{T}}A)^{-1} =
+\left[\begin{array}{cc}
+1 & 1 \\
+0 & 2 \\
+\end{array}\right]
+\left[\begin{array}{rr}
+\frac{5}{4} & -\frac{1}{4} \\
+-\frac{1}{4} & \frac{1}{4}
+\end{array}\right] =
+\left[\begin{array}{rr}
+1 & 0 \\
+-\frac{1}{2} & \frac{1}{2} \\
+\end{array}\right]
+$$
+
+$$ A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}} =
+\left[\begin{array}{rr}
+1 & 0 \\
+-\frac{1}{2} & \frac{1}{2} \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 0 \\
+1 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 1 \\
+\end{array}\right] = I
+$$
+
+The easier thing to do is to recognize that we can rewrite
+$(A^{\mathbf{T}}A)^{-1}$ as $A^{-1}(A^{\mathbf{T}})^{-1}$. Note that we can only
+do this because $A$ is invertible (otherwise this is _not_ allowed). Once we do
+that though, everything cancels out and leaves us with $I$.
+
 10. Project $a_1 = (1, 0)$ onto $a_2 = (1, 2)$. Then project the result back
     onto $a_1$. Draw these projections and multiply the projection matrices
     $P_1P_2$: Is this a projection?
+
+_Solution:_
+
+Here, don't get confused, "Project some vector onto some other vector" here
+means treat $b$ as the first vector prior to the wording "onto", and $a$ as the
+other vector after the wording "onto".
+
+The classic formula:
+
+$$ P = \frac{aa^{\mathbf{T}}}{a^{\mathbf{T}}a} $$
+
+Becomes:
+
+$$ P_2 = \frac{a_2(a_2)^{\mathbf{T}}}{(a_2)^{\mathbf{T}}a_2} $$
+
+Now to solve:
+
+$$ P_2 = \frac{1}{5}a_2(a_2)^{\mathbf{T}}$$
+
+$$ a_2(a_2)^{\mathbf{T}} =
+\begin{bmatrix}{}1\\2\end{bmatrix}
+\left[\begin{array}{cc}
+1 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 2 \\
+2 & 4 \\
+\end{array}\right]
+$$
+
+$$ P_2 = \frac{1}{5}a_2(a_2)^{\mathbf{T}} =
+\frac{1}{5}
+\left[\begin{array}{cc}
+1 & 2 \\
+2 & 4 \\
+\end{array}\right]
+$$
+
+$$ P_2a_1 =
+\frac{1}{5}
+\left[\begin{array}{cc}
+1 & 2 \\
+2 & 4 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\0\end{bmatrix} =
+\frac{1}{5}
+\begin{bmatrix}{}1\\2\end{bmatrix} =
+\begin{bmatrix}{}\frac{1}{5}\\\frac{2}{5}\end{bmatrix}
+$$
+
+_Then project the result back onto $a_1$:_
+
+$$ P_1 = \frac{a_1(a_1)^{\mathbf{T}}}{(a_1)^{\mathbf{T}}a_1} $$
+
+$$ P_1 = \frac{a_1(a_1)^{\mathbf{T}}}{1} $$
+
+$$ P_1 = a_1(a_1)^{\mathbf{T}} =
+\begin{bmatrix}{}1\\0\end{bmatrix}
+\left[\begin{array}{cc}
+1 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+$$ P_1P_2a_1 =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 0 \\
+\end{array}\right]
+\begin{bmatrix}{}\frac{1}{5}\\\frac{2}{5}\end{bmatrix} =
+\begin{bmatrix}{}\frac{1}{5}\\0\end{bmatrix} \neq a_1 = (1, 0)
+$$
+
+_Draw these projections and multiply the projection matrices $P_1P_2$. Is this a
+projection?:_
+
+$$ P_1P_2 =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+\frac{1}{5} & \frac{2}{5} \\
+\frac{2}{5} & \frac{4}{5} \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+\frac{1}{5} & \frac{2}{5} \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+No, this is not a projection, since $P_1P_2 \neq (P_1P_2)^2$.
+
+(LEFT OFF HERE)
 
 **Questions 11-20 ask for projections, and projection matrices, onto
 subspaces.**
