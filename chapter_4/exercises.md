@@ -2148,65 +2148,974 @@ $$
 
 No, this is not a projection, since $P_1P_2 \neq (P_1P_2)^2$.
 
-(LEFT OFF HERE)
-
 **Questions 11-20 ask for projections, and projection matrices, onto
 subspaces.**
 
 11. Project $b$ onto the column space of $A$ by solving
     $A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$ and $p = A\hat{x}$:
 
+Find $e = b - p$. It should be perpendicular to the columns of $A$.
+
 a. $A = \left[\begin{array}{cc}1 & 1 \\0 & 1 \\0 & 0 \\\end{array}\right]$ and
 $b = \begin{bmatrix}{}2\\3\\4\end{bmatrix}$
+
+_Solution:_
+
+Here, solve for $\hat{x}$ by solving $A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$,
+then compute $p = A\hat{x}$.
+
+$$ A^{\mathbf{T}} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+\end{array}\right]
+$$
+
+$$ A^{\mathbf{T}}A =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 1 \\
+0 & 1 \\
+0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 2 \\
+\end{array}\right]
+$$
+
+$$ A^{\mathbf{T}}Ax =
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 2 \\
+\end{array}\right]
+\begin{bmatrix}{}x_1\\x_2\end{bmatrix} =
+\begin{bmatrix}{}x_1 + x_2\\x_1 + 2x_2\end{bmatrix}
+$$
+
+$$ A^{\mathbf{T}}b =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+\end{array}\right]
+\begin{bmatrix}{}b_1\\b_2\\b_3\end{bmatrix} =
+\begin{bmatrix}{}b_1\\b_1 + b_2\end{bmatrix} =
+\begin{bmatrix}{}2\\2 + 3\end{bmatrix} =
+\begin{bmatrix}{}2\\5\end{bmatrix}
+$$
+
+$$ A^{\mathbf{T}}Ax = \begin{bmatrix}{}x_1 + x_2\\x_1 + 2x_2\end{bmatrix} = \begin{bmatrix}{}2\\5\end{bmatrix} = A^{\mathbf{T}}b $$
+
+$$
+x_1 + x_2 = 2 \\
+x_1 + 2x_2 = 5 \\
+$$
+
+$$ (x_1 + 2x_2 = 5) - (x_1 + x_2 = 2) \Rightarrow x_2 = 3 $$
+
+$$ x_1 + (3) = 2 \Rightarrow x_1 = -1 $$
+
+Check:
+
+$$ (-1) + 2(3) = -1 + 6 = 5 = 5 $$
+
+So:
+
+$$ \hat{x} = \begin{bmatrix}{}-1\\3\end{bmatrix} $$
+
+Now solve $p = A\hat{x}$:
+
+$$ p = A\hat{x} =
+\left[\begin{array}{cc}
+1 & 1 \\
+0 & 1 \\
+0 & 0 \\
+\end{array}\right]
+\begin{bmatrix}{}-1\\3\end{bmatrix} =
+\begin{bmatrix}{}2\\3\\0\end{bmatrix}
+$$
+
+_Find $e = b - p$:_
+
+$$ e = b - p =
+\begin{bmatrix}{}2\\3\\4\end{bmatrix} - \begin{bmatrix}{}2\\3\\0\end{bmatrix} = \begin{bmatrix}{}0\\0\\4\end{bmatrix}
+$$
+
+$$ A^{\mathbf{T}}e =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+\end{array}\right]
+\begin{bmatrix}{}0\\0\\4\end{bmatrix} =
+\begin{bmatrix}{}0\\0\end{bmatrix} = \mathbf{0} \Rightarrow e \perp C(A)
+$$
 
 b. $A = \left[\begin{array}{cc}1 & 1 \\1 & 1 \\0 & 1 \\\end{array}\right]$ and
 $b = \begin{bmatrix}{}4\\4\\6\end{bmatrix}$
 
-Find $e = b - p$. It should be perpendicular to the columns of $A$.
+_Solution:_
+
+$$ A^{\mathbf{T}} =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+1 & 1 & 1 \\
+\end{array}\right]
+$$
+
+$$ A^{\mathbf{T}}A =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+1 & 1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 1 \\
+0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+2 & 2 \\
+2 & 3 \\
+\end{array}\right]
+$$
+
+$$ A^{\mathbf{T}}A\hat{x} =
+\left[\begin{array}{cc}
+2 & 2 \\
+2 & 3 \\
+\end{array}\right]
+\begin{bmatrix}{}\hat{x}_1\\\hat{x}_2\end{bmatrix} =
+\begin{bmatrix}{}2\hat{x}_1 + 2\hat{x}_2\\2\hat{x}_1 + 3\hat{x}_2\end{bmatrix}
+$$
+
+$$ A^{\mathbf{T}}b =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+1 & 1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}4\\4\\6\end{bmatrix} =
+\begin{bmatrix}{}8\\14\end{bmatrix}
+$$
+
+$$ A^{\mathbf{T}}A\hat{x} =
+\begin{bmatrix}{}2\hat{x}_1 + 2\hat{x}_2\\2\hat{x}_1 + 3\hat{x}_2\end{bmatrix} =
+\begin{bmatrix}{}8\\14\end{bmatrix} =
+A^{\mathbf{T}}b
+$$
+
+$$
+2\hat{x}_1 + 2\hat{x}_2 = 8 \\
+2\hat{x}_1 + 3\hat{x}_2 = 14 \\
+$$
+
+$$
+(2\hat{x}_1 + 3\hat{x}_2 = 14) - (2\hat{x}_1 + 2\hat{x}_2 = 8) \Rightarrow \hat{x}_2 = 6
+$$
+
+$$ 2\hat{x}_1 + 3(6) = 14 \Rightarrow 2\hat{x}_1 + 18 = 14 \Rightarrow 2\hat{x}_1 = -4 \Rightarrow \hat{x}_1 = -2 $$
+
+Check:
+
+$$ 2(-2) + 2(6) = -4 + 12 = 8 = 8 $$
+
+$$ \hat{x} = \begin{bmatrix}{}-2\\6\end{bmatrix} $$
+
+$$ p = A\hat{x} =
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 1 \\
+0 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}-2\\6\end{bmatrix} =
+\begin{bmatrix}{}4\\4\\6\end{bmatrix}
+$$
+
+_Find $e = b - p$:_
+
+$$ e = b - p =
+\begin{bmatrix}{}4\\4\\6\end{bmatrix} -
+\begin{bmatrix}{}4\\4\\6\end{bmatrix} = \mathbf{0} \Rightarrow b \in C(A)
+$$
 
 12. Compute the projection matrices $P_1$ and $P_2$ onto the column spaces in
     Problem 11. Verify that $P_1b$ gives the first projection $p_1$. Also verify
     $P_2^2 = P_2$.
+
+_Solution:_
+
+a.
+
+_Compute the projection matrices $P_1$ and $P_2$ onto the column spaces in
+Problem 11:_
+
+Recall the generic Projection matrix formula:
+
+$$ P = A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}} $$
+
+$$ A^{\mathbf{T}}A =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 1 \\
+0 & 1 \\
+0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 2 \\
+\end{array}\right]
+$$
+
+Use Gauss-Jordan elimination to find $(A^{\mathbf{T}}A)^{-1}$:
+
+$$
+\left[\begin{array}{cc|cc}
+1 & 1 & 1 & 0 \\
+1 & 2 & 0 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{cc|cc}
+1 & 1 & 1 & 0 \\
+0 & 1 & -1 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{cc|cc}
+1 & 0 & 2 & -1 \\
+0 & 1 & -1 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{rr}
+2 & -1 \\
+-1 & 1 \\
+\end{array}\right]
+= (A^{\mathbf{T}}A)^{-1}
+$$
+
+$$ A(A^{\mathbf{T}}A)^{-1} =
+\left[\begin{array}{cc}
+1 & 1 \\
+0 & 1 \\
+0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{rr}
+2 & -1 \\
+-1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 0 \\
+-1 & 1 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+$$ A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}} =
+\left[\begin{array}{cc}
+1 & 0 \\
+-1 & 1 \\
+0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right] = P_1
+$$
+
+This is the projection matrix onto $C(A)$, which in this case is the $xy$ plane.
+
+_Verify that $P_1b$ gives the first projection $p_1$:_
+
+$$ P_1b =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right]
+\begin{bmatrix}{}2\\3\\4\end{bmatrix} =
+\begin{bmatrix}{}2\\3\\0\end{bmatrix} = p
+$$
+
+b.
+
+_Compute the projection matrices $P_1$ and $P_2$ onto the column spaces in
+Problem 11:_
+
+$$ A^\mathbf{T}A =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+1 & 1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 1 \\
+0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+2 & 2 \\
+2 & 3 \\
+\end{array}\right]
+$$
+
+Use Gauss-Jordan elimination to find $(A^\mathbf{T}A)^{-1}$:
+
+$$
+\left[\begin{array}{cc|cc}
+2 & 2 & 1 & 0 \\
+2 & 3 & 0 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{cc|cc}
+2 & 2 & 1 & 0 \\
+0 & 1 & -1 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{cc|cc}
+1 & 1 & \frac{1}{2} & 0 \\
+0 & 1 & -1 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{cc|cc}
+1 & 0 & \frac{3}{2} & -1 \\
+0 & 1 & -1 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\to
+\left[\begin{array}{rr}
+\frac{3}{2} & -1 \\
+-1 & 1 \\
+\end{array}\right] = (A^{\mathbf{T}}A)^{-1}
+$$
+
+$$ A(A^{\mathbf{T}}A)^{-1} =
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 1 \\
+0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rr}
+\frac{3}{2} & -1 \\
+-1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+\frac{1}{2} & 0 \\
+\frac{1}{2} & 0 \\
+-1 & 1 \\
+\end{array}\right]
+$$
+
+$$ A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}} =
+\left[\begin{array}{cc}
+\frac{1}{2} & 0 \\
+\frac{1}{2} & 0 \\
+-1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+1 & 1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+\frac{1}{2} & \frac{1}{2} & 0 \\
+\frac{1}{2} & \frac{1}{2} & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] = P_2
+$$
+
+_Also verify $P_2^2 = P_2$:_
+
+$$ P_2^2 = P_2 \cdot P_2 =
+\left[\begin{array}{ccc}
+\frac{1}{2} & \frac{1}{2} & 0 \\
+\frac{1}{2} & \frac{1}{2} & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+\frac{1}{2} & \frac{1}{2} & 0 \\
+\frac{1}{2} & \frac{1}{2} & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+\frac{1}{2} & \frac{1}{2} & 0 \\
+\frac{1}{2} & \frac{1}{2} & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] = P_2
+$$
 
 13. (Quick and Recommended) Suppose $A$ is the $4$ by $4$ identity matrix with
     its last column removed. $A$ is $4$ by $3$. Project $b = (1, 2, 3, 4)$ onto
     the column space of $A$. What shape is the projection matrix $P$ and what is
     $P$?
 
+_Solution:_
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ C(A) = \left\{\begin{bmatrix}{}1\\0\\0\\0\end{bmatrix}, \begin{bmatrix}{}0\\1\\0\\0\end{bmatrix}, \begin{bmatrix}{}0\\0\\1\\0\end{bmatrix}\right\} $$
+
+Now, compute $P = A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}$:
+
+$$ A^{\mathbf{T}}A =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] = I
+$$
+
+So:
+
+$$ P = A(I)A^{\mathbf{T}} $$
+
+$$ P = AA^{\mathbf{T}} $$
+
+$$ AA^{\mathbf{T}} =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right] = P
+$$
+
+Then, calculate the projection of $Pb$, which will give us the projection of $b$
+on $C(A)$.
+
+$$ Pb =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\2\\3\\4\end{bmatrix} =
+\begin{bmatrix}{}1\\2\\3\\0\end{bmatrix}
+$$
+
+The shape of the projection matrix $P$ is $4$ by $4$, and it is the projection
+onto the $x, y, z$ plane of $A$.
+
 14. Suppose $b$ equals $2$ times the first column of $A$. What is the projection
     of $b$ onto the column space of $A$? Is $P = I$ for sure in this case?
     Compute $p$ and $P$ when $b = (0, 2, 4)$ and the columns of $A$ are
     $(0, 1, 2)$ and $(1, 2, 0)$.
 
+_Solution:_
+
+_What is the projection of $b$ onto the column space of $A$?:_
+
+In the standard formula of $Ax = b$, since $b$ is $2a_{i1} \in A$, it follows
+that $b \in C(A)$, and so the projection of $b$ onto $C(A)$ is $b$ itself.
+
+_Is $P = I$ for sure in this case?:_
+
+Not necessarily, in order for $P = I$, $A$ must be an invertible square matrix,
+which is not defined in the problem statement.
+
+_Compute $p$ and $P$ when $b = (0, 2, 4)$ and the columns of $A$ are $(0, 1, 2)$
+and $(1, 2, 0)$:_
+
+$$ A =
+\left[\begin{array}{cc}
+0 & 1 \\
+1 & 2 \\
+2 & 0 \\
+\end{array}\right]
+$$
+
+$$ P = A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}} $$
+
+$$ A^{\mathbf{T}}A =
+\left[\begin{array}{ccc}
+0 & 1 & 2 \\
+1 & 2 & 0 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+0 & 1 \\
+1 & 2 \\
+2 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+5 & 2 \\
+2 & 5 \\
+\end{array}\right]
+$$
+
+Now via Gauss-Jordan elimination, find $(A^{\mathbf{T}}A)^{-1}$:
+
+$$
+\left[\begin{array}{cc|cc}
+5 & 2 & 1 & 0 \\
+2 & 5 & 0 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{cc|cc}
+5 & 2 & 1 & 0 \\
+0 & \frac{21}{5} & -\frac{2}{5} & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{cc|cc}
+5 & 2 & 1 & 0 \\
+0 & 1 & -\frac{2}{21} & \frac{5}{21} \\
+\end{array}\right] \to
+\left[\begin{array}{cc|cc}
+1 & \frac{2}{5} & \frac{1}{5} & 0 \\
+0 & 1 & -\frac{2}{21} & \frac{5}{21} \\
+\end{array}\right]
+$$
+
+$$ \to
+\left[\begin{array}{cc|cc}
+1 & 0 & \frac{5}{21} & -\frac{2}{21} \\
+0 & 1 & -\frac{2}{21} & \frac{5}{21} \\
+\end{array}\right] \to
+\left[\begin{array}{rr}
+\frac{5}{21} & -\frac{2}{21} \\
+-\frac{2}{21} & \frac{5}{21} \\
+\end{array}\right] = (A^{\mathbf{T}}A)^{-1}
+$$
+
+$$ A(A^{\mathbf{T}}A)^{-1} =
+\left[\begin{array}{cc}
+0 & 1 \\
+1 & 2 \\
+2 & 0 \\
+\end{array}\right]
+\left[\begin{array}{rr}
+\frac{5}{21} & -\frac{2}{21} \\
+-\frac{2}{21} & \frac{5}{21} \\
+\end{array}\right] =
+\left[\begin{array}{rr}
+-\frac{2}{21} & \frac{5}{21} \\
+\frac{1}{21} & \frac{8}{21} \\
+\frac{10}{21} & -\frac{4}{21} \\
+\end{array}\right]
+$$
+
+$$ A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}} =
+\frac{1}{21}
+\left[\begin{array}{rr}
+-2 & 5 \\
+1 & 8 \\
+10 & -4 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+0 & 1 & 2 \\
+1 & 2 & 0 \\
+\end{array}\right] =
+\frac{1}{21}
+\left[\begin{array}{rrr}
+5 & 8 & -4 \\
+8 & 17 & 2 \\
+-4 & 2 & 20 \\
+\end{array}\right] = P
+$$
+
+$$ Pb =
+\frac{1}{21}
+\left[\begin{array}{rrr}
+5 & 8 & -4 \\
+8 & 17 & 2 \\
+-4 & 2 & 20 \\
+\end{array}\right]
+\begin{bmatrix}{}0\\2\\4\end{bmatrix} =
+\frac{1}{21}
+\begin{bmatrix}{}0\\42\\84\end{bmatrix} =
+\begin{bmatrix}{}0\\2\\4\end{bmatrix} = p = b
+$$
+
 15. If $A$ is doubled, then $P = 2A(4A^{\mathbf{T}}A)^{-1}2A^{\mathbf{T}}$. This
     is the same as $A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}$. The column space of
     $2A$ is the same as ____. Is $\hat{x}$ the same for $A$ and $2A$?
 
+_Solution:_
+
+_The column space of $2A$ is the same as (?):_
+
+$A$
+
+_Is $\hat{x}$ the same for $A$ and $2A$?:_
+
+Consider that:
+
+$$ \hat{x} = \frac{a^{\mathbf{T}}b}{a^{\mathbf{T}}a} $$
+
+So when we apply $2A$
+
+$$ \hat{x} = \frac{(2a)^{\mathbf{T}}b}{(2a)^{\mathbf{T}}2a} $$
+
+$$ \hat{x} = \frac{a^{\mathbf{T}}b}{a^{\mathbf{T}}2a} $$
+
+So actually $\hat{x}$ is not the same for $A$ as for $2A$, in fact $\hat{x}$ is
+halved for $2A$.
+
 16. What linear combination of $(1, 2, -1)$ and $(1, 0, 1)$ is closest to
     $b = (2, 1, 1)$?
 
+_Solution:_
+
+Put the two given vectors in a matrix $A$, then solve for
+$A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$:
+
+$$ A =
+\left[\begin{array}{rr}
+1 & 1 \\
+2 & 0 \\
+-1 & 1 \\
+\end{array}\right]
+$$
+
+$$ A^{\mathbf{T}}A =
+\left[\begin{array}{rrr}
+1 & 2 & -1 \\
+1 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rr}
+1 & 1 \\
+2 & 0 \\
+-1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+6 & 0 \\
+0 & 2 \\
+\end{array}\right]
+$$
+
+$$ A^{\mathbf{T}}A\hat{x} =
+\left[\begin{array}{cc}
+6 & 0 \\
+0 & 2 \\
+\end{array}\right]
+\begin{bmatrix}{}\hat{x}_1\\\hat{x}_2\end{bmatrix} =
+\begin{bmatrix}{}6\hat{x}_1\\2\hat{x}_2\end{bmatrix}
+$$
+
+$$ A^{\mathbf{T}}b =
+\left[\begin{array}{rrr}
+1 & 2 & -1 \\
+1 & 0 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}2\\1\\1\end{bmatrix} =
+\begin{bmatrix}{}3\\3\end{bmatrix}
+$$
+
+$$
+6\hat{x}_1 = 3 \\
+2\hat{x}_2 = 3 \\
+$$
+
+$$
+\hat{x}_1 = \frac{1}{2} \\
+\hat{x}_2 = \frac{3}{2} \\
+$$
+
+$$ \hat{x} =
+\frac{1}{2}
+\begin{bmatrix}{}1\\3\end{bmatrix}
+$$
+
+So, the closest linear combination to $b$ is:
+
+$$ p = A\hat{x} = \frac{1}{2}\begin{bmatrix}{}1\\2\\-1\end{bmatrix} + \frac{3}{2}\begin{bmatrix}{}1\\0\\1\end{bmatrix} $$
+
 17. (_Important_) If $P^2 = P$ show that $(I - P)^2 = I - P$. When $P$ projects
     onto the column space of $A$, $I - P$ projects onto the ____.
+
+_Solution:_
+
+_If $P^2 = P$ show that $(I - P)^2 = I - P$:_
+
+**Proof:**
+
+Suppose $P^2 = P$.
+
+It is to be shown that $(I - P)^2 = I - P$.
+
+Consider that:
+
+$$ (I - P)^2 = (I - P)(I - P) $$
+
+$$ = I^2 - PI  - IP + P^2 $$
+
+Since the any matrix multiplied by the identity matrix $I$ returns that matrix,
+it follows that $I^2 = I$.
+
+$$ = I - PI  - IP + P^2 $$
+
+By the supposition, since $P^2 = P$, we can substitute as follows:
+
+$$ = I - PI  - IP + P $$
+
+Once again, since $I$ multiplied by any matrix returns that matrix, we have:
+
+$$ = I - P - P + P $$
+
+$$ = I - 2P + P $$
+
+$$ = I - P $$
+
+This is what was to be shown.
+
+Q.E.D.
+
+_When $P$ projects onto the column space of $A$, $I - P$ projects onto the (?):_
+
+left nullspace, $N(A^{\mathbf{T}})$.
+
+This follows as $(I - P)b = b - Pb = b - p = e$. As long as $e \neq 0$, it
+follows that $e \in N(A^{\mathbf{T}})$.
 
 18.
 
 a. If $P$ is the $2$ by $2$ projection matrix onto the line through $(1, 1)$,
 then $I - P$ is the projection matrix onto ____.
 
+_Solution:_
+
+We need a vector that when multiplied by $(1, 1)$ gives $0$.
+
+$$ \begin{bmatrix}{}v_1\\v_2\end{bmatrix} \cdot \begin{bmatrix}{}1\\1\end{bmatrix} = 0 $$
+
+$$ v_1(1) + v_2(1) = 0 $$
+
+$$ v_1 + v_2 = 0 $$
+
+$$ v_1 = -v_2 $$
+
+So $v = \begin{bmatrix}{}1\\-1\end{bmatrix}$.
+
+So if $P$ projects onto the line through $(1, 1)$, then $I - P$ is the
+projection matrix onto $(1, -1)$.
+
 b. If $P$ is the $3$ by $3$ projection matrix onto the line through $(1, 1, 1)$,
 then $I - P$ is the projection matrix onto ____.
+
+_Solution:_
+
+$I - P$ is the projection matrix onto the plane:
+
+$$ x + y + z = 0 $$
+
+which is perpendicular to $(1, 1, 1)$.
 
 19. To find the projection matrix onto the plane $x - y - 2z = 0$, choose two
     vectors in that plane and make them the columns of $A$. The plane will be
     the column space of $A$! Then compute
     $P = A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}$.
 
+_Solution:_
+
+_To find the projection matrix onto the plane $x - y - 2z = 0$, choose two
+vectors in that plane and make them the columns of $A$:_
+
+$$ x - y - 2z = 0 $$
+
+Choose $y = 1, z = 0$:
+
+$$ x - (1) - 2(0) = 0 \Rightarrow x = 1 $$
+
+one vector then is $\begin{bmatrix}{}1\\1\\0\end{bmatrix}$
+
+Choose $y = 0, z = 1$:
+
+$$ x - (0) - 2(1) = 0 \Rightarrow x = 2 $$
+
+another vector then is $\begin{bmatrix}{}2\\0\\1\end{bmatrix}$
+
+Now make them the columns of $A$:
+
+$$ A =
+\left[\begin{array}{cc}
+1 & 2 \\
+1 & 0 \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+_Then compute $P = A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}$:_
+
+$$ A^{\mathbf{T}}A =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+2 & 0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 2 \\
+1 & 0 \\
+0 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+2 & 2 \\
+2 & 5 \\
+\end{array}\right]
+$$
+
+Find $(A^{\mathbf{T}}A)^{-1}$ via Guass-Jordan:
+
+$$
+\left[\begin{array}{cc|cc}
+2 & 2 & 1 & 0 \\
+2 & 5 & 0 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{cc|cc}
+2 & 2 & 1 & 0 \\
+0 & 3 & -1 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{cc|cc}
+2 & 2 & 1 & 0 \\
+0 & 1 & -\frac{1}{3} & \frac{1}{3} \\
+\end{array}\right] \to
+\left[\begin{array}{cc|cc}
+1 & 1 & \frac{1}{2} & 0 \\
+0 & 1 & -\frac{1}{3} & \frac{1}{3} \\
+\end{array}\right]
+$$
+
+$$ \to
+\left[\begin{array}{cc|cc}
+1 & 0 & \frac{5}{6} & -\frac{1}{3} \\
+0 & 1 & -\frac{1}{3} & \frac{1}{3} \\
+\end{array}\right] \to
+\left[\begin{array}{rr}
+\frac{5}{6} & -\frac{1}{3} \\
+-\frac{1}{3} & \frac{1}{3} \\
+\end{array}\right] = (A^{\mathbf{T}}A)^{-1}
+$$
+
+$$ A(A^{\mathbf{T}}A)^{-1} =
+\left[\begin{array}{cc}
+1 & 2 \\
+1 & 0 \\
+0 & 1 \\
+\end{array}\right]
+\left[\begin{array}{rr}
+\frac{5}{6} & -\frac{1}{3} \\
+-\frac{1}{3} & \frac{1}{3} \\
+\end{array}\right] =
+\left[\begin{array}{rr}
+\frac{1}{6} & \frac{1}{3} \\
+\frac{5}{6} & -\frac{1}{3} \\
+-\frac{1}{3} & \frac{1}{3} \\
+\end{array}\right]
+$$
+
+$$ A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}} =
+\left[\begin{array}{rr}
+\frac{1}{6} & \frac{1}{3} \\
+\frac{5}{6} & -\frac{1}{3} \\
+-\frac{1}{3} & \frac{1}{3} \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+2 & 0 & 1 \\
+\end{array}\right] =
+\frac{1}{6}
+\left[\begin{array}{rrr}
+5 & 1 & 2 \\
+1 & 5 & -2 \\
+2 & -2 & 2 \\
+\end{array}\right] = P
+$$
+
 20. To find the projection matrix $P$ onto the same plane $x - y - 2z = 0$,
     write down a vector $e$ that is perpendicular to that plane. Compute the
     projection $Q = ee^{\mathbf{T}}/e^{\mathbf{T}}e$ and then $P = I - Q$.
 
+_Solution:_
+
+With $e$ being perpendicular to the plane $x - y - 2z = 0$, it is sufficient to
+define $e$ as a vector with those coefficients as its components:
+
+$$ e = \begin{bmatrix}{}1\\-1\\-2\end{bmatrix} $$
+
+Now, to compute $Q$:
+
+$$ ee^{\mathbf{T}} =
+\begin{bmatrix}{}1\\-1\\-2\end{bmatrix}
+\left[\begin{array}{ccc}
+1 & -1 & -2 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & -1 & -2 \\
+-1 & 1 & 2 \\
+-2 & 2 & 4 \\
+\end{array}\right]
+$$
+
+$$ e^{\mathbf{T}}e =
+\left[\begin{array}{ccc}
+1 & -1 & -2 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\-1\\-2\end{bmatrix} =
+(1)(1) + (-1)(-1) + (-2)(-2) =
+1 + 1 + 4 = 6
+$$
+
+$$ Q = \frac{ee^{\mathbf{T}}}{e^{\mathbf{T}}e} =
+\frac{1}{6}
+\left[\begin{array}{rrr}
+1 & -1 & -2 \\
+-1 & 1 & 2 \\
+-2 & 2 & 4 \\
+\end{array}\right]
+$$
+
+Now compute $P = I - Q$:
+
+$$ I - Q =
+\left[\begin{array}{cc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right] -
+\frac{1}{6}
+\left[\begin{array}{rrr}
+1 & -1 & -2 \\
+-1 & 1 & 2 \\
+-2 & 2 & 4 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+\frac{5}{6} & \frac{1}{6} & \frac{1}{3} \\
+\frac{1}{6} & \frac{5}{6} & -\frac{1}{3} \\
+\frac{1}{3} & -\frac{1}{3} & \frac{1}{3} \\
+\end{array}\right] = P
+$$
+
+This matches the $P$ from problem 19.
+
 **Questions 21-26 show that projection matrices satisfy $P^2 = P$ and
 $P^{\mathbf{T}} = P$.
+
+(LEFT OFF HERE)
 
 21. Multiply the matrix $P = A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}$ by itself.
     Cancel to prove that $P^2 = P$. Explain why $P(Pb)$ always equals $Pb$: The
