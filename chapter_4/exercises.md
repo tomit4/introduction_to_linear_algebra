@@ -3113,40 +3113,167 @@ $$
 This matches the $P$ from problem 19.
 
 **Questions 21-26 show that projection matrices satisfy $P^2 = P$ and
-$P^{\mathbf{T}} = P$.
-
-(LEFT OFF HERE)
+$P^{\mathbf{T}} = P$.**
 
 21. Multiply the matrix $P = A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}$ by itself.
     Cancel to prove that $P^2 = P$. Explain why $P(Pb)$ always equals $Pb$: The
     vector $Pb$ is in the column space of $A$ so its projection onto that column
     space is ____.
 
+_Solution:_
+
+_Multiply the matrix $P = A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}$ by itself.
+Cancel to prove that $P^2 = P$:_
+
+$$ (A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}})(A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}) $$
+
+$$ = A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}} $$
+
+$$ = A(A^{\mathbf{T}}A)^{-1}IA^{\mathbf{T}} $$
+
+$$ = A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}} = P $$
+
+_Explain why $P(Pb)$ always equals $Pb$: The vector $Pb$ is in the column space
+of $A$ so its projection onto that column space is (?):_
+
+$Pb$
+
 22. Prove that $P = A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}$ is symmetric by
     computing $P^{\mathbf{T}}$. Remember that the inverse of a symmetric matrix
     is symmetric.
+
+_Solution:_
+
+**Proof:**
+
+Suppose $P$ is a projection onto a matrix $A$. It is to be shown that $P$ is
+symmetric. This is demonstrated by showing that $P = P^{\mathbf{T}}$.
+
+By the definition of a projection:
+
+$$ P = A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}} $$
+
+If we then take the transpose of $P$, $P^{\mathbf{T}}$:
+
+$$ P^{\mathbf{T}} = (A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}})^{\mathbf{T}} $$
+
+By the "distributive" property of transposition:
+
+$$ P^{\mathbf{T}} = (A^{\mathbf{T}})^{\mathbf{T}}((A^{\mathbf{T}}A)^{-1})^{\mathbf{T}}(A^{\mathbf{T}}) $$
+
+Now, transpose of a transpose negates that transposition, so:
+
+$$ P^{\mathbf{T}} = A((A^{\mathbf{T}}A)^{-1})^{\mathbf{T}}A^{\mathbf{T}} $$
+
+Since $(A^{\mathbf{T}}A)^{-1}$ is symmetric, it follows that
+$((A^{\mathbf{T}}A)^{-1})^{\mathbf{T}} = (A^{\mathbf{T}}A)^{-1}$:
+
+$$ P^{\mathbf{T}} = A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}} = P $$
+
+By the definition of symmetric, it can be concluded that $P$ is symmetric.
+
+This is what was to be shown.
+
+Q.E.D.
 
 23. If $A$ is square and invertible, the warning against splitting
     $(A^{\mathbf{T}}A)^{-1}$ does not apply. Is it true that
     $AA^{-1}(A^{\mathbf{T}})^{-1}A^{\mathbf{T}} = I$. _When $A$ is invertible,
     why is $P = I$_? _What is the error $e$?_
 
+_Solution:_
+
+_When $A$ is invertible, why is $P = I$?:_
+
+When $A$ is invertible, this means that $C(A) = R^n$. In other words, the column
+space of $A$ is all of $R^n$.
+
+_What is the error $e$?:_
+
+This results in $P = I$, and thus $e = \mathbf{0}$.
+
 24. The nullspace of $A^{\mathbf{T}}$ is ____ to the column space $C(A)$. So if
     $A^{\mathbf{T}}b = \mathbf{0}$, the projection of $b$ onto $C(A)$ should be
     $p =$ ____. Check that $P = A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}$ gives
     this answer.
 
+_Solution:_
+
+_The nullspace of $A^{\mathbf{T}}$ is (?) to the column space $C(A)$:_
+
+orthogonal
+
+_So if $A^{\mathbf{T}}b = \mathbf{0}$, the projection of $b$ onto $C(A)$ should
+be $p =$ (?):_
+
+$\mathbf{0}$
+
+_Check that $P = A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}$ gives this answer:_
+
+$$ Pb = A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}b $$
+
+$$ Pb = A(A^{\mathbf{T}}A)^{-1}\mathbf{0} $$
+
+$$ Pb = \mathbf{0} $$
+
 25. The projection matrix $P$ onto an $n$-dimensional subspace of $\R^m$ has
     rank $r = n$. _Reason:_ The projections $Pb$ fill the subspace $S$. So $S$
     is the ____ of $P$.
 
+_Solution:_
+
+_So $S$ is the (?) of $P$:_
+
+column space
+
 26. If an $m$ by $m$ matrix has $A^2 = A$ and its rank is $m$, prove that
     $A = I$.
+
+**Proof:**
+
+Suppose $A$ is any $m$ by $m$ matrix where $A$'s rank is $m$, $r = m$.
+Furthermore, suppose $A^2 = A$.
+
+It is to be demonstrated that $A = I$.
+
+Since $r = m$, it follows that $A$ is invertible, in other words, $A^{-1}$
+exists.
+
+Since we know that $A^{-1}$ exists, multiply $A^2 = A$ by $A^{-1}$:
+
+$$ A^2(A^{-1}) = AA^{-1} $$
+
+By the definition of inverses and identity, we can substitute the right-hand
+side of this equation as shown:
+
+$$ A^2(A^{-1}) = I $$
+
+Now, simply expand out $A^2$:
+
+$$ AA(A^{-1}) = I $$
+
+$$ AI = I $$
+
+$$ A = I $$
+
+This is what was to be shown.
+
+Q.E.D.
 
 27. The important fact that ends the section is this: _If
     $A^{\mathbf{T}}Ax = \mathbf{0}$ then $Ax = \mathbf{0}$_. _New Proof_: The
     vector $Ax$ is in the nullspace of ____. $Ax$ is always in the column space
     of ____. To be in both of those perpendicular spaces, $Ax$ must be zero.
+
+_Solution:_
+
+_The vector $Ax$ is in the nullspace of (?):_
+
+$A^{\mathbf{T}}$
+
+_$Ax$ is always in the column space of (?):_
+
+$A$
 
 28. Use $P^{\mathbf{T}} = P$ and $P^2 = P$ to prove that the length squared of
     column $2$ always equals the diagonal entry $P_{22}$. This number is
@@ -3160,5 +3287,31 @@ $$ P =
 \end{array}\right]
 $$
 
+_Solution:_
+
+Note that here "length" of a column refers to the Euclidean norm of the three
+coordinates (see [scratch.md](./scratch.md))
+
+Thus
+$\|\text{col } 2\|^2 = \left(\dfrac{2}{6}\right)^2 + \left(\dfrac{2}{6}\right)^2 + \left(\dfrac{2}{6}\right)^2 = \dfrac{2}{6} = P_{22}$.
+
+**Proof:**
+
+Since $P^2 = P = P^{\mathbf{T}}$, we can write $P^2 = P^{\mathbf{T}}P = P$.
+
+Now, consider especially $P^{\mathbf{T}}P$, when we multiply these two
+projection matrices together, we get the dot product of $P$'s rows times $P$'s
+columns. If we then consider the length of column $2$, this will always be the
+Euclidean norm length, which sums all the components of the second column of
+$P^{\mathbf{T}}P$ squared.
+
+It follows that since $P^{\mathbf{T}}P = P$, that the $(2, 2)$ entry of
+$P^{\mathbf{T}}P = P_{22}$. Thus it follows that $\|\text{col } 2\|^2 = P_{22}$.
+
+Q.E.D.
+
 29. If $B$ has rank $m$ (full row rank, independent rows) show that
     $BB^{\mathbf{T}}$ is invertible.
+
+$A^{\mathbf{T}}$ has independent columns so $A^{\mathbf{T}}A$ (which is
+$BB^{\mathbf{T}}$) must be invertible.
