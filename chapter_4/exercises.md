@@ -3315,3 +3315,157 @@ Q.E.D.
 
 $A^{\mathbf{T}}$ has independent columns so $A^{\mathbf{T}}A$ (which is
 $BB^{\mathbf{T}}$) must be invertible.
+
+---
+
+Page 240
+
+## Problem Set 4.3
+
+**Problems 1-11 use four data points $b = (0, 8, 8, 20)$ to bring out the key
+ideas.**
+
+(See Page 240 for Figure 4.9)
+
+1. With $b = 0, 8, 8, 20$ at $t = 0, 1, 3, 4$, set up and solve the normal
+   equations $A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$. Fro the best straight
+   line in Figure 4.9a, find its four heights $p_i$ and four errors $e_i$. What
+   is the minimum value $E = e_1^2 + e_2^2 + e_3^2 + e_4^2$?
+
+2. (Line $C + Dt$ does go through $p$'s) With $b = 0, 8, 8, 20$ at times
+   $t = 0, 1, 3, 4$, write down the four equations $Ax = b$ (unsolvable). Change
+   the measurements to $p = 1, 5, 13, 17$ and find an exact solution to
+   $A\hat{x} = p$.
+
+3. Check that $e = b - p = (-1, 3, -5, 3)$ is perpendicular to both columns of
+   the same matrix $A$. What is the shortest distance $\|e\|$ from $b$ to the
+   column space of $A$?
+
+4. (By calculus) Write down $E = \|Ax - b\|^2$ as a sum of four squares - the
+   last one is $(C + 4D - 20)^2$. Find the derivative equations
+   $\dfrac{\partial E}{\partial C} = 0$ and
+   $\dfrac{\partial E}{\partial D} = 0$. Divide by $2$ to obtgain the normal
+   equations $A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$.
+
+5. Find the height $C$ of the best _horizontal line_ to fit $b = (0, 8, 8, 20)$.
+   An exact fit would solve the unsolvable equations
+   $C = 0, C = 8, C = 8, C = 20$. Find the $4$ by $1$ matrix $A$ in these
+   equations and solve $A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$. Draw the
+   horizontal line at height $\hat{x} = C$ and the four errors in $e$.
+
+6. Project $b = (0, 8, 8, 20)$ onto the line through $a = (1, 1, 1, 1)$. Find
+   $\hat{x} = \dfrac{a^{\mathbf{T}}b}{a^{\mathbf{T}}a}$ and the projection
+   $p = \hat{x}a$. Check that $e = b - p$ is perpendicular to $a$, and find the
+   shortest distance $\|e\|$ from $b$ to the line through $a$.
+
+7. Find the closest line $b = Dt$, _through the origin_, to the same four
+   points. An exact fit would solve
+   $D \cdot 0 = 0, D \cdot 1 = 8, D \cdot 3 = 8, D \cdot 4 = 20$. Find the $4$
+   by $1$ matrix and solve $A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$. Redraw
+   Figure 4.9a showing the best line $b = Dt$ and the $e$'s.
+
+8. Project $b = (0, 8, 8, 20)$ onto the line through $a = (0, 1, 3, 4)$. Find
+   $\hat{x} = D$ and $p = \hat{x}a$. The best $C$ in Problems 5-6 and the best
+   $D$ i Problems 7-8 do _not_ agree with the best $(C, D)$ in Problems 1-4.
+   That is because $(1, 1, 1, 1)$ and $(0, 1, 3, 4)$ are ____ perpendicular.
+
+9. For the closest parabola $b = C + Dt + Et^2$ to the same four points, write
+   down the unsolvable equations $Ax = b$ in three unknowns $x = (C, D, E)$. Set
+   up the three normal equations $A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$
+   (solution not required). In Figure 4.9a you are now fitting a parabola to $4$
+   points - what is happening in Figure 4.9b?
+
+10. For the closest cubic $b = C + Dt + Et^2 + Ft^3$ to the same four points,
+    write down the four equations $Ax = b$. Solve them by elimination. In Figure
+    4.9a this cubic now goes exactly through the points. What are $p$ and $e$?
+
+11. The average of the four times is
+    $\hat{t} = \dfrac{1}{4}(0 + 1 + 3 + 4) = 2$. The average of the four $b$'s
+    is $\hat{b} = \dfrac{1}{4}(0 + 8 + 8 + 20) = 9$.
+
+a. Verify that the best line goes through the center point
+$(\hat{t}, \hat{b}) = (2, 9)$.
+
+b. Explain why $C + D\hat{t} = \hat{b}$ comes from the first equation in
+$A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$.
+
+**Questions 12-16 introduce basic ideas of statistics - the foundation for least
+squares.**
+
+12. (Recommended) This problem projects $b = (b_1, \dots, b_m)$ onto the line
+    through $a = (1, \dots, 1)$. We solve $m$ equations $ax = b$ in $1$ unknown
+    (by least squares).
+
+a. Solve $a^{\mathbf{T}}a\hat{x} = a^{\mathbf{T}}b$ to show that $\hat{x}$ is
+the _mean_ (the average) of the $b$'s.
+
+b. Find $e = b - a\hat{x}$ and the _variance_ $\|e\|^2$ and the _standard
+deviation_ $\|e\|$.
+
+c. The horizontal line $\hat{b} = 3$ is closest to $b = (1, 2, 6)$. Check that
+$p = (3, 3, 3)$ is perpendicular to $e$ and find the $3$ by $3$ projection
+matrix $P$.
+
+13. First assumption behind least squares: $Ax = b$ - (_noise $e$ with mean
+    zero_). Multiply the error vectors $e = b - Ax$ by
+    $(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}$ to get $\hat{x} - x$ on the right.
+    The estimation errors $\hat{x} - x$ also average zero. The estimate
+    $\hat{x}$ is _unbiased_.
+
+14. Second assumption behind least squares: The $m$ errors $e_i$ are independent
+    with variance $\sigma^2$, so the average of $(b - Ax)(b - Ax)^{\mathbf{T}}$
+    is $\sigma^2I$. Multiply on the left by
+    $(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}$ and on the right by
+    $A(A^{\mathbf{T}}A)^{-1}$ to show that the average matrix
+    $(\hat{x} - x)(\hat{x} - x)^{\mathbf{T}}$ is
+    $\sigma^2(A^{\mathbf{T}}A)^{-1}$. This is the _covariance matrix $W$_ in
+    Section 10.2.
+
+15. A doctor takes $4$ readings of your heart rate. The best solution to
+    $x = b_1, \dots, x = b_4$ is the average $\hat{x}$ of $b_1, \dots, b_4$. The
+    matrix $A$ is a column of $1$'s. Problem 14 gives the expected error
+    $(\hat{x} - x)^2$ as $\sigma^2(A^{\mathbf{T}}A)}^{-1} =$ ____. _By
+    averaging, the variance drops from $\sigma^2$ to $\dfrac{\sigma^2}{4}$_ .
+
+16. If you know the average $\hat{x}_9$ of $9$ numbers $b_1, \dots, b_9$, how
+    can you quickly find the average $\hat{x}_{10}$ with one more number
+    $b_{10}$? The idea of _recursive_ least squares is to avoid adding $10$
+    numbers. What number multiplies $\hat{x}_9$ in computing $\hat{x}_{10}$?
+
+$$ \hat{x}_{10} = \frac{1}{10}b_{10} + \text{____}\hat{x}_9 = \frac{1}{10}(b_1 + \cdots b_{10}) $$
+
+as in Worked Example 4.2 C.
+
+**Questions 17-24 give more practice with $\hat{x}$ and $p$ and $e$.**
+
+17. Write down three equations for the line $b = C + Dt$ to go through $b = 7$
+    at $t = -1$, $b = 7$ at $t = 1$, and $b = 21$ at $t = 2$. Find the least
+    squares solution $\hat{x} = (C, D)$ and draw the closest line.
+
+18. Find the projection $p = A\hat{x}$ in Problem 17. This gives the three
+    heights of the closest line. Show that the error vector is $e = (2, -6, 4)$.
+    Why is $Pe = \mathbf{0}$?
+
+19. Suppose the measurements at $t = -1, 1, 2$ are the errors $2, -6, 4$ in
+    Problem 18. Compute $\hat{x}$ and the closest line to these new
+    measurements. Explain the answer: $b = (2, -6, 4)$ is perpendicular to ____
+    so the projection is $p = \mathbf{0}$.
+
+20. Suppose the measurements at $t = -1, 1, 2$ are $b = (5, 13, 17)$. Compute
+    $\hat{x}$ and the closest line and $e$. The error is $e = \mathbf{0}$
+    because this $b$ is ____.
+
+21. Which of the four subspaces contains the error vector $e$? Which contains
+    $p$? Which contains $\hat{x}$? What is the nullspace of $A$?
+
+22. Find the best line $C + Dt$ to fit $b = 4, 2, -1, 0, 0$ at times
+    $t = -2, -1, 0, 1, 2$.
+
+23. Is the error vector $e$ orthogonal to $b$ or $p$ or $e$ or $\hat{x}$? Show
+    that $\|e\|^2$ equals $e^{\mathbf{T}}b$ which equals
+    $b^{\mathbf{T}}b - p^{\mathbf{T}}b$. This is the smallest total error $E$.
+
+24. The partial derivatives of $\|Ax\|^2$ with respect to $x_1, \dots, x_n$ fill
+    the vector $2A^{\mathbf{T}}Ax$. The derivatives of $2b^{\mathbf{T}}Ax$ fill
+    the vector $2A^{\mathbf{T}}b$. So the derivatives of $\|Ax - b\|^2$ are zero
+    when ____.

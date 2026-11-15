@@ -222,3 +222,82 @@ Page 224
 
 5. The projection matrix $P = A(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}$ has
    $P^{\mathbf{T}} = P$ and $P^2 = P$ and $Pb = p$.
+
+---
+
+Page 230
+
+## 4.3 Least Squares Approximations
+
+1. Solving $\boxed{A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b}$ gives the
+   projection $p = A\hat{x}$ of $b$ onto the column space of $A$.
+
+2. When $Ax = b$ has no solution, $\hat{x}$ is the "least-squares solution":
+   $\|b - A\hat{x}\|^2 =$ minimum.
+
+3. Setting partial derivatives of $E = \|Ax - b\|^2$ to zero
+   $\left(\frac{\partial E}{\partial x_i} = 0\right)$ also produces
+   $A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$.
+
+4. To fit points $(t_1, b_2), \dots, (t_m, b_m)$ by a straight line, $A$ has
+   columns $(1, \dots, 1)$ and $(t_1, \dots, t_m)$.
+
+5. In that case $A^{\mathbf{T}}A$ is the $2$ by $2$ matrix
+   $\left[\begin{array}{cc}m & \sum{t_i} \\\sum{t_i} & \sum{t_i^2} \\\end{array}\right]$
+   and $A^\mathbf{T}b$ is the vector
+   $\begin{bmatrix}{}\sum{b_i}\\\sum{t_ib_i}\end{bmatrix}$.
+
+---
+
+Page 230
+
+When $Ax = b$ has no solution, multiply by $A^{\mathbf{T}}$ and solve
+$A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$.
+
+---
+
+Page 233
+
+The partial derivatives of $\|Ax - b\|^2$ are zero when
+$A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$.
+
+---
+
+Page 235
+
+The line $C + Dt$ minimizes $e_1^2 + \cdots + e_m^2 = \|Ax - b\|^2$ when
+$A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$:
+
+$$ A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b \quad
+\left[\begin{array}{cc}
+m & \sum{t_i} \\
+\sum{t_i} & \sum{t_i^2} \\
+\end{array}\right]
+\begin{bmatrix}{}C\\D\end{bmatrix} =
+\begin{bmatrix}{}\sum{b_i}\\\sum{t_ib_i}\end{bmatrix}
+$$
+
+---
+
+Page 238
+
+**REVIEW OF THE KEY IDEAS**
+
+1. The least squares solution $\hat{x}$ minimizes
+   $\|Ax - b\|^2 = x^{\mathbf{T}}A^{\mathbf{T}}Ax - 2x^{\mathbf{T}}A^{\mathbf{T}}b + b^{\mathbf{T}}b$.
+   This is $E$, the sum of squares of the errors in the $m$ equations ($m > n$).
+
+2. The best $\hat{x}$ comes from the normal equations
+   $A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$. $E$ is a minimum.
+
+3. To fit $m$ points by a line $b = C + Dt$, the normal equations give $C$ and
+   $D$.
+
+4. The heights of the best line are $p = (p_1, \dots, p_m)$. The vertical
+   distances to the data points are the errors $e = (e_1, \dots, e_m)$. A key
+   equation is $A^{\mathbf{T}}e = \mathbf{0}$.
+
+5. If we try to fit $m$ points by a combination of $n < m$ functions, the $m$
+   equations $Ax = b$ are generally unsolvable. The $n$ equations
+   $A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$ give the least squares solution -
+   the combination with the smallest $\text{MSE}$ (mean square error).
