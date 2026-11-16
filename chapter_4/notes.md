@@ -301,3 +301,116 @@ Page 238
    equations $Ax = b$ are generally unsolvable. The $n$ equations
    $A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$ give the least squares solution -
    the combination with the smallest $\text{MSE}$ (mean square error).
+
+---
+
+Page 244
+
+## 4.4 Orthonormal Bases and Gram-Schmidt
+
+---
+
+Page 244
+
+1. The columns $q_1, \dots, q_n$ are orthonormal if
+   $q_i^{\mathbf{T}}q_j = \left\{\begin{array}{}0 \text{ for } i \neq j \\ 1 \text{ for } i = j \end{array}\right\}$.
+   Then $\boxed{Q^{\mathbf{T}}Q = I}$.
+
+2. If $Q$ is also square, then $QQ^{\mathbf{T}} = I$ and
+   $\boxed{Q^{\mathbf{T}} = Q^{-1}}$. $Q$ is an "orthogonal matrix".
+
+3. The least squares solution to $Qx = b$ is $\hat{x} = Q^{\mathbf{T}}b$.
+   Projection of $b$: $p = QQ^{\mathbf{T}}b = Pb$.
+
+4. The **Gram-Schmidt** process takes independent $a_i$ to orthonormal $q_i$.
+   Start with $q_1 = \dfrac{a_1}{\|a_1\|}$.
+
+5. $q_i$ is $\dfrac{(a_i - \text{projection } p_i)}{\|a_i - p_i\|}$; projection
+   $p_i = (a_i^{\mathbf{T}}q_1)q_1 + \cdots + (a_i^{\mathbf{T}}q_{i - 1})q_{i - 1}$.
+
+6. Each $a_i$ will be a combination of $q_1$ to $q_i$. Then $A = QR$; orthogonal
+   $Q$ and triangular $R$.
+
+---
+
+Page 244
+
+**DEFINITION**
+
+The vectors $q_1, \dots, q_n$ are orthonormal if
+
+$$
+q_i^{\mathbf{T}}q_j =
+\begin{cases}
+0 & \text{when } i \neq j \quad (\text{orthogonal vectors}) \\
+1 & \text{when } i = j \quad (\text{unit vectors: } \|q_i\| = 1)
+\end{cases}
+$$
+
+A matrix with orthonormal columns is assigned the special letter $Q$.
+
+---
+
+Page 248
+
+**First Gram-Schmidt step**
+
+$$ B = b - \frac{A^{\mathbf{T}}b}{A^{\mathbf{T}}A}A $$
+
+---
+
+Page 248
+
+**Next Gram-Schmidt step**
+
+$$ C = c - \frac{A^{\mathbf{T}}c}{A^{\mathbf{T}}A}A = \frac{B^{\mathbf{T}}c}{B^{\mathbf{T}}B}B $$
+
+---
+
+Page 250
+
+**(Gram-Schmidt)** From independent vectors $a_1, \dots, a_n$, Gram-Schmidt
+constructs orthonormal vectors $q_1, \dots, q_n$. The matrices with these
+columns satisfy $A = QR$. Then $R = Q^{\mathbf{T}}A$ is **upper triangular**
+because later $q$'s are orthogonal to earlier $a$'s.
+
+---
+
+Page 251
+
+**Least squares**
+
+$$ R^{\mathbf{T}}R\hat{x} = R^{\mathbf{T}}Q^{\mathbf{T}}b $$
+
+or
+
+$$ R\hat{x} = Q^{\mathbf{T}}b $$
+
+or
+
+$$ \hat{x} = R^{-1}Q^{\mathbf{T}}b $$
+
+---
+
+Page 252
+
+**REVIEW OF THE KEY IDEAS**
+
+1. If the orthonormal vectors $q_1, \dots, q_n$ are the columns of $Q$, then
+   $q_i^{\mathbf{T}}q_j = 0$ and $q_i^{\mathbf{T}}q_i = 1$ translate into the
+   matrix multiplication $Q^{\mathbf{T}}Q = I$.
+
+2. If $Q$ is square (an **orthogonal matrix**) then $Q^{\mathbf{T}} = Q^{-1}$:
+   _transpose_ $=$ _inverse_.
+
+3. The length of $Qx$ equals the length of $x$: $\|Qx\| = \|x\|$.
+
+4. The projection onto the column space of $Q$ spanned by the $q$'s is
+   $P = QQ^{\mathbf{T}}$.
+
+5. If $Q$ is square then $P = QQ^{\mathbf{T}} = I$ and every
+   $b = q_1(q_1^{\mathbf{T}}b) + \cdots + q_n(q_n^{\mathbf{T}}b)$.
+
+6. Gram-Schmidt produces orthonormal vectors $q_1, q_2, q_3$ from independent
+   $a, b, c$. In matrix form this is the factorization
+   $A = QR = (\text{orthogonal } Q)(\text{triangular} R)$.

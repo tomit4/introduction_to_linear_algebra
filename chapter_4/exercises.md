@@ -4580,3 +4580,352 @@ $\|e\|^2 = e^{\mathbf{T}}(b - p) = e^{\mathbf{T}}b = b^{\mathbf{T}}b - b^{\mathb
     when ____.
 
 Omitted.
+
+---
+
+Page 253
+
+## Problem Set 4.4
+
+**Problems 1-12 are about orthogonal vectors and orthogonal matrices.**
+
+1. Are these pairs of vectors orthonormal or only orthogonal or only
+   independent?
+
+a. $\begin{bmatrix}{}1\\0\end{bmatrix}$ and
+$\begin{bmatrix}{}-1\\1\end{bmatrix}$
+
+b. $\begin{bmatrix}{}.6\\.8\end{bmatrix}$ and
+$\begin{bmatrix}{}.4\\-.3\end{bmatrix}$
+
+c. $\begin{bmatrix}{}\cos\theta\\\sin\theta\end{bmatrix}$ and
+$\begin{bmatrix}{}-\sin\theta\\\cos\theta\end{bmatrix}$
+
+Change the second vector when necessary to produce orthonormal vectors.
+
+2. The vectors $(2, 2, -1)$ and $(-1, 2, 2)$ are orthogonal. Divide them by
+   their lengths to find orthonormal vectors $q_1$ and $q_2$. Put those into the
+   columns of $Q$ and multiply $Q^{\mathbf{T}}Q$ and $QQ^{\mathbf{T}}$.
+
+3.
+
+a. If $A$ has three orthogonal columns each of length $4$, what is
+$A^{\mathbf{T}}A$?
+
+b. If $A$ has three orthogonal columns of length $1, 2, 3$, what is
+$A^{\mathbf{T}}A$?
+
+4. Give an example of each of the following:
+
+a. A matrix $Q$ that has orthonormal columns but $QQ^{\mathbf{T}} \neq I$.
+
+b. Two orthogonal vectors that are not linearly independent.
+
+c. An orthonormal basis for $\R^3$, including the vector
+$q_1 = \dfrac{(1, 1, 1)}{\sqrt{3}}$.
+
+6. If $Q_1$ and $Q_2$ are orthogonal matrices, show that their product $Q_1Q_2$
+   is also an orthogonal matrix. (Use $Q^{\mathbf{T}}Q = I$.)
+
+7. If $Q$ has orthonormal columns, what is the least squares solution $\hat{x}$
+   to $Qx = b$?
+
+8. If $q_1$ and $q_2$ are orthonormal vectors in $\R^5$, what combination ____
+   $q_1 +$ ____ $q_2$ is closest to a given vector $b$?
+
+9.
+
+a. Compute $P = QQ^{\mathbf{T}}$ when $q_1 = (.8, .6, 0)$ and
+$q_2 = (-.6, .8, 0)$. Verify that $P^2 = P$.
+
+b. Prove that always $(QQ^{\mathbf{T}})^2 = QQ^{\mathbf{T}}$ by using
+$Q^{\mathbf{T}}Q = I$. Then $P = QQ^{\mathbf{T}}$ is the projection matrix onto
+the column space of $Q$.
+
+10. Orthonormal vectors are automatically linearly independent.
+
+a. Vector proof: When $c_1q_1 + c_2q_2 + c_3q_3 = \mathbf{0}$, what dot product
+leads to $c_1 = 0$? Similarly $c_2 = 0$ and $c_3 = 0$. Thus the $q$'s are
+independent.
+
+b. Matrix proof: Show that $Qx = \mathbf{0}$ leads to $x = \mathbf{0}$. Since
+$Q$ may be rectangular, you can use $Q^{\mathbf{T}}$ but not $Q^{-1}$.
+
+11.
+
+a. Gram-Schmidt: Find orthonormal vectors $q_1$ and $q_2$ in the plane spanned
+by $a = (1, 3, 4, 5, 7)$ and $b = (-6, 6, 8, 0, 8)$.
+
+b. Which vector in this plane is closest to $(1, 0, 0, 0, 0)$?
+
+12. If $a_1, a_2, a_3$ is a basis for $\R^3$, any vector $b$ can be written as
+
+$$ b = x_1a_1 + x_2a_2 + x_3a_3 $$
+
+or
+
+$$
+\left[\begin{array}{ccc}
+& & \\
+a_1 & a_2 & a_3 \\
+& & \\
+\end{array}\right]
+\begin{bmatrix}{}x_1\\x_2\\x_3\end{bmatrix} = b
+$$
+
+a. Suppose the $a$'s are orthonormal. Show that $x_1 = a_1^{\mathbf{T}}b$.
+
+b. Suppose the $a$'s are orthogonal. Show that
+$x_1 = \dfrac{a_1^{\mathbf{T}}b}{a_1^{\mathbf{T}}a_1}$.
+
+c. If the $a$'s are independent, $x_1$ is the first component of ____ times $b$.
+
+**Problems 13-25 are about the Gram-Schmidt process and $A = QR$.**
+
+13. What multiple of $a = \begin{bmatrix}{}1\\1\end{bmatrix}$ should be
+    subtracted from $b = \begin{bmatrix}{}4\\0\end{bmatrix}$ to make the result
+    $B$ orthogonal to $a$? Sketch a figure to show $a, b$, and $B$.
+
+14. Complete the Gram-Schmidt process in Problem 13 by computing
+    $q_1 = \dfrac{a}{\|a\|}$ and $q_2 = \dfrac{B}{\|B\|}$ and factoring into
+    $QR$:
+
+$$
+\left[\begin{array}{cc}
+1 & 4 \\
+1 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+q_1 & q_2 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+\|a\| & \text{?} \\
+0 & \|B\| \\
+\end{array}\right]
+$$
+
+15.
+
+a. Find orthonormal vectors $q_1, q_2, q_3$ such that $q_1, q_2$ span the column
+space of
+
+$$ A =
+\left[\begin{array}{rr}
+1 & 1 \\
+2 & -1 \\
+-2 & 4 \\
+\end{array}\right]
+$$
+
+b. Which of the four fundamental subspaces contains $q_3$?
+
+c. Solve $Ax = (1, 2, 7)$ by least squares.
+
+16. What multiple of $a = (4, 5, 2, 2)$ is closest to $b = (1, 2, 0, 0)$? Find
+    orthonormal vectors $q_1$ and $q_2$ in the plane of $a$ and $b$.
+
+17. Find the projection of $b$ onto the line through $a$:
+
+$$ a = \begin{bmatrix}{}1\\1\\1\end{bmatrix} $$
+
+and
+
+$$ b = \begin{bmatrix}{}1\\3\\5\end{bmatrix} $$
+
+and
+
+$$ p = \text{?} $$
+
+and
+
+$$ e = b - p = \text{?} $$
+
+Compute the orthonormal vectors $q_1 = \dfrac{a}{\|a\|}$ and
+$q_2 = \dfrac{e}{\|e\|}$.
+
+18. (Recommended) Find orthogonal vectors $A, B, C$ by Gram-Schmidt from
+    $a, b, c$:
+
+$$ a = (1, -1, 0, 0) \quad b = (0, 1, -1, 0) \quad c = (0, 0, 1, -1) $$
+
+$A, B, C$ and $a, b, c$ are bases for the vectors perpendicular to
+$d = (1, 1, 1, 1)$.
+
+19. If $A = QR$ then $A^{\mathbf{T}}A = R^{\mathbf{T}}R =$ ____ triangular times
+    ____ triangular. _Gram-Schmidt on $A$ corresponds to elimination on
+    $A^{\mathbf{T}}A$_. The pivots for $A^{\mathbf{T}}A$ must be the squares of
+    diagonal entries of $R$. Find $Q$ and $R$ by Gram-Schmidt for this $A$:
+
+$$ A =
+\left[\begin{array}{rr}
+-1 & 1 \\
+2 & 1 \\
+2 & 4 \\
+\end{array}\right]
+$$
+
+and
+
+$$ A^{\mathbf{T}}A =
+\left[\begin{array}{cc}
+9 & 9 \\
+9 & 18 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 0 \\
+1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+9 & \\
+& 9 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 1 \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+20. True or false (give an example in either case):
+
+a. $Q^{-1}$ is an orthogonal matrix when $Q$ is an orthogonal matrix.
+
+b. If $Q$ ($3$ by $2$) has orthogonal columns then $\|Qx\|$ always equals
+$\|x\|$.
+
+21. Find an orthonormal basis for the column space of $A$:
+
+$$ A =
+\left[\begin{array}{rr}
+1 & -2 \\
+1 & 0 \\
+1 & 1 \\
+1 & 3 \\
+\end{array}\right]
+$$
+
+and
+
+$$ b =
+\begin{bmatrix}{}-4\\-3\\3\\0\end{bmatrix}
+$$
+
+Then compute the projection of $b$ onto that column space.
+
+22. Find orthogonal vectors $A, B, C$ by Gram-Schmidt from
+
+$$ a = \begin{bmatrix}{}1\\1\\2\end{bmatrix} $$
+
+and
+
+$$ b = \begin{bmatrix}{}1\\-1\\0\end{bmatrix} $$
+
+and
+
+$$ c = \begin{bmatrix}{}1\\0\\4\end{bmatrix} $$
+
+23. Find $q_1, q_2, q_3$ (orthonormal) as combinations of $a, b, c$ (independent
+    columns). Then write $A$ as $QR$:
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 2 & 4 \\
+0 & 0 & 5 \\
+0 & 3 & 6 \\
+\end{array}\right]
+$$
+
+24.
+
+a. Find a basis for the subspace $S$ in $\R^4$ spanned by all solutions of
+
+$$ x_1 + x_2 + x_3 - x_4 = 0 $$
+
+b. Find a basis for the orthogonal complement $S^{\perp}$.
+
+c. Find $b_1$ in $S$ and $b_2$ in $S^{\perp}$ so that
+$b_1 + b_2 = b = (1, 1, 1, 1)$.
+
+25. If $ad - bc > 0$, the entries in $A = QR$ are
+
+$$
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right] =
+\frac{
+\left[\begin{array}{cc}
+a & -c \\
+c & a \\
+\end{array}\right]
+\left[\begin{array}{cc}
+a^2 + c^2 & ab + cd \\
+0 & ad - bc \\
+\end{array}\right]
+}{
+\sqrt{a^2 + c^2} \quad
+\sqrt{a^2 + c^2}
+}
+$$
+
+Write $A = QR$ when $a, b, c, d = 2, 1, 1, 1$ and also $1, 1, 1, 1$. Which entry
+of $R$ becomes zero when the columns are dependent and Gram-Schmidt breaks down?
+
+**Problems 26-29 use the $QR$ code in equation (11). It executes Gram-Schmidt.**
+
+26. Show why $C$ (found via $C^*$ in the steps after (11)) is equal to $C$ in
+    equation (8).
+
+27. Equation (8) subtracts from $c$ its components along $A$ and $B$. Why not
+    subtract the components along $a$ and along $b$?
+
+28. Where are the $mn^2$ multiplications in equation (11)?
+
+29. Omitted (no MATLAB) .
+
+**Problems 30-25 involve orthogonal matrices that are special.**
+
+30. The first four _wavelets_ are in the columns of this wavelet matrix $W$:
+
+$$ W =
+\frac{1}{2}
+\left[\begin{array}{rrrr}
+1 & 1 & \sqrt{2} & 0 \\
+1 & 1 & -\sqrt{2} & 0 \\
+1 & -1 & 0 & \sqrt{2} \\
+1 & -1 & 0 & -\sqrt{2} \\
+\end{array}\right]
+$$
+
+What is special about the columns? Find the inverse wavelet transform $W^{-1}$.
+
+31.
+
+a. Choose $c$ so that $Q$ is an orthogonal matrix:
+
+$$ Q =
+c\left[\begin{array}{rrrr}
+1 & -1 & -1 & -1 \\
+-1 & 1 & -1 & -1 \\
+-1 & -1 & 1 & -1 \\
+-1 & -1 & -1 & 1 \\
+\end{array}\right]
+$$
+
+Project $b = (1, 1, 1, 1)$ onto the first column. Then project $b$ onto the
+plane of the first two columns.
+
+32. If $u$ is a unit vector, then $Q = I - 2uu^{\mathbf{T}}$ is a reflection
+    matrix (Example 3). Find $Q_1$ from $u = (0, 1)$ and $Q_2$ from
+    $u = \left(0, \dfrac{\sqrt{2}}{2}, \dfrac{\sqrt{2}}{2}\right)$. Draw the
+    reflections when $Q_1$ and $Q_2$ multiply the vectors $(1, 2)$ and
+    $(1, 1, 1)$.
+
+33. Find all matrices that are both orthogonal and lower triangular.
+
+34. $Q = I - 2uu^{\mathbf{T}}$ is a reflection matrix when
+    $u^{\mathbf{T}}u = 1$. Two reflections give $Q^2 = I$.
+
+a. Show that $Qu = -u$. The mirror is perpendicular to $u$.
+
+b. Find $Qv$ when $u^{\mathbf{T}}v = 0$. The mirror contains $v$. It reflects to
+itself.
