@@ -3328,24 +3328,266 @@ ideas.**
 (See Page 240 for Figure 4.9)
 
 1. With $b = 0, 8, 8, 20$ at $t = 0, 1, 3, 4$, set up and solve the normal
-   equations $A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$. Fro the best straight
+   equations $A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$. For the best straight
    line in Figure 4.9a, find its four heights $p_i$ and four errors $e_i$. What
    is the minimum value $E = e_1^2 + e_2^2 + e_3^2 + e_4^2$?
+
+_Solution:_
+
+_With $b = 0, 8, 8, 20$ at $t = 0, 1, 3, 4$, set up and solve the normal
+equations $A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$:_
+
+Recall slope intercept form from algebra: $y = mx + b$. This is the same as what
+Strang presents as the equation for a line: $b = C + Dt$, where
+$y \leftrightarrow b, m \leftrightarrow D, x \leftrightarrow t, b \leftrightarrow C$.
+
+Thus when defining a matrix $A$ (we are given $b$), we are concerned with these
+two columns, $C$ and $Dt$. Since the coefficient of $C$ never changes in this
+case of fitting a line, the first column of $A$ is always just all $1$'s. The
+only number that changes is $D$, which has coefficients based off the input,
+$t$.
+
+Thus, define $A$ and $b$ as :
+
+$$ A =
+\left[\begin{array}{cc}
+1 & 0 \\
+1 & 1 \\
+1 & 3 \\
+1 & 4 \\
+\end{array}\right],
+b = \begin{bmatrix}{}0\\8\\8\\20\end{bmatrix}
+$$
+
+We are now ready to set up $A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$, and solve
+for $\hat{x}$.
+
+$$ A^{\mathbf{T}}A =
+\left[\begin{array}{cccc}
+1 & 1 & 1 & 1 \\
+0 & 1 & 3 & 4 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 0 \\
+1 & 1 \\
+1 & 3 \\
+1 & 4 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+4 & 8 \\
+8 & 26 \\
+\end{array}\right]
+$$
+
+$$ A^{\mathbf{T}}b =
+\left[\begin{array}{cccc}
+1 & 1 & 1 & 1 \\
+0 & 1 & 3 & 4 \\
+\end{array}\right]
+\begin{bmatrix}{}0\\8\\8\\20\end{bmatrix} =
+\begin{bmatrix}{}36\\112\end{bmatrix}
+$$
+
+$$ A^{\mathbf{T}}A\hat{x} =
+\left[\begin{array}{cc}
+4 & 8 \\
+8 & 26 \\
+\end{array}\right]
+\begin{bmatrix}{}\hat{x}_1\\\hat{x}_2\end{bmatrix} =
+\begin{bmatrix}{}36\\112\end{bmatrix} =
+A^{\mathbf{T}}b
+$$
+
+$$
+4\hat{x}_1 + 8\hat{x}_2 = 36 \\
+8\hat{x}_1 + 26\hat{x}_2 = 112 \\
+$$
+
+Let's just use a little elimination here:
+
+$$
+\left[\begin{array}{cc|c}
+4 & 8 & 36 \\
+8 & 26 & 112 \\
+\end{array}\right] \to
+\left[\begin{array}{cc|c}
+4 & 8 & 36 \\
+0 & 10 & 40 \\
+\end{array}\right]
+$$
+
+So:
+
+$$ 10\hat{x}_2 = 40 \to \hat{x}_2 = 4 $$
+
+Then:
+
+$$ 4\hat{x}_1 + 8\hat{x}_2 = 36 \to 4\hat{x}_1 + 8(4) = 36 \to 4\hat{x}_1 = 4 \to \hat{x}_1 = 1 $$
+
+Thus:
+
+$$ \boxed{\hat{x} = \begin{bmatrix}{}1\\4\end{bmatrix}} $$
+
+And the best line fit is $b = 1 + 4t$.
+
+_For the best straight line in Figure 4.9a, find its four heights $p_i$ and four
+errors $e_i$:_
+
+Recall that $p = A\hat{x}$. So;
+
+$$ p = A\hat{x} =
+\left[\begin{array}{cc}
+1 & 0 \\
+1 & 1 \\
+1 & 3 \\
+1 & 4 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\4\end{bmatrix} =
+\begin{bmatrix}{}1\\5\\13\\17\end{bmatrix}
+$$
+
+Thus the four heights are $p_1 = 1, p_2 = 5, p_3 = 13, p_4 = 17$.
+
+Recall also that $e = b - p$, so:
+
+$$ e = b - p =
+\begin{bmatrix}{}0\\8\\8\\20\end{bmatrix} -
+\begin{bmatrix}{}1\\5\\13\\17\end{bmatrix} =
+\begin{bmatrix}{}-1\\3\\-5\\3\end{bmatrix}
+$$
+
+Thus the four errors are $e_1 = -1, e_2 = 3, e_3 = -5, e_4 = 3$.
+
+_What is the minimum value $E = e_1^2 + e_2^2 + e_3^2 + e_4^2$?:_
+
+Simply calculate $E$:
+
+$$ E = \|e\|^2 = (-1)^2 + (3)^2 + (-5)^2 + (3)^2 = 1 + 9 + 25 + 9 = 44 $$
 
 2. (Line $C + Dt$ does go through $p$'s) With $b = 0, 8, 8, 20$ at times
    $t = 0, 1, 3, 4$, write down the four equations $Ax = b$ (unsolvable). Change
    the measurements to $p = 1, 5, 13, 17$ and find an exact solution to
    $A\hat{x} = p$.
 
+_Solution:_
+
+Here, we simply write out our vector for $x$, which is
+$\begin{bmatrix}{}C\\D\end{bmatrix}$, set $Ax = b$, and note that it is
+unsolvable:
+
+$$ Ax =
+\left[\begin{array}{cc}
+1 & 0 \\
+1 & 1 \\
+1 & 3 \\
+1 & 4 \\
+\end{array}\right]
+\begin{bmatrix}{}C\\D\end{bmatrix} =
+\begin{bmatrix}{}0\\8\\8\\20\end{bmatrix} = b
+$$
+
+The most obvious reason this is unsolvable is the fact that both $C + D = 8$ and
+$C + 3D = 8$.
+
+Since $p$ is the projection of $b$ onto $C(A)$, $A\hat{x} = p$ has an exact
+solution.
+
+$$ p = \begin{bmatrix}{}1\\5\\13\\17\end{bmatrix} $$
+
+We can then replace $b$ with $p$ and solve for the best possible $x$, $\hat{x}$
+(as we did in problem 1), and get
+$\hat{x} = \begin{bmatrix}{}1\\4\end{bmatrix}$.
+
 3. Check that $e = b - p = (-1, 3, -5, 3)$ is perpendicular to both columns of
    the same matrix $A$. What is the shortest distance $\|e\|$ from $b$ to the
    column space of $A$?
 
+_Solution:_
+
+_Check that $e = b - p = (-1, 3, -5, 3)$ is perpendicular to both columns of the
+same matrix $A$:_
+
+$$ e_{\mathbf{T}}A_{i1} =
+\left[\begin{array}{rrrr}
+-1 & 3 & -5 & 3 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\1\\1\\1\end{bmatrix} =
+(-1)(1) + (3)(1) + (-5)(1) + (3)(1) = -1 + 3 - 5 + 3 = 0
+$$
+
+$$ e_{\mathbf{T}}A_{i2} =
+\left[\begin{array}{rrrr}
+-1 & 3 & -5 & 3 \\
+\end{array}\right]
+\begin{bmatrix}{}0\\1\\3\\4\end{bmatrix} =
+(-1)(0) + (3)(1) + (-5)(3) + (3)(4) = 0 + 3 - 15 + 12 = 0
+$$
+
+Thus $e \perp A_{i1}$ and $e \perp A_{i2}$.
+
+_What is the shortest distance $\|e\|$ from $b$ to the column space of $A$?:_
+
+As calculated in problem 1 for $E$, we determined that $E = \|e\|^2 = 44$. Thus
+the shortest distance $\|e\|$ is:
+
+$$ \|e\| = \sqrt{44} $$
+
+This follows from the definition of euclidean norm distances and by extension,
+the Pythagorean theorem.
+
 4. (By calculus) Write down $E = \|Ax - b\|^2$ as a sum of four squares - the
    last one is $(C + 4D - 20)^2$. Find the derivative equations
    $\dfrac{\partial E}{\partial C} = 0$ and
-   $\dfrac{\partial E}{\partial D} = 0$. Divide by $2$ to obtgain the normal
+   $\dfrac{\partial E}{\partial D} = 0$. Divide by $2$ to obtain the normal
    equations $A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$.
+
+_Solution:_
+
+_(By calculus) Write down $E = \|Ax - b\|^2$ as a sum of four squares - the last
+one is $(C + 4D - 20)^2$:_
+
+$$ E = (C + 0D - 0)^2 + (C + 1D - 8)^2 + (C + 3D - 8)^2 + (C + 4D - 20)^2 $$
+
+_Find the derivative equations $\dfrac{\partial E}{\partial C} = 0$ and
+$\dfrac{\partial E}{\partial D} = 0$:_
+
+$$ \frac{\partial E}{\partial C} = 2C + 2(C + D - 8) + 2(C + 3D - 8) + 2(C + 4D - 20) = 0 $$
+
+$$ \frac{\partial E}{\partial D} = 0 + [1 \cdot 2(C + D - 8)] + [3 \cdot 2(C + 3D - 8)] + [4 \cdot 2(C + 4D - 20)] = 0 $$
+
+Note that partial derivatives are generally covered in calculus 3 (which I
+haven't taken). That said, note that this is simply applying the chain rule and
+understanding that partial derivatives treat the "non-given" variables as
+constants instead of variables, and we only solve for the variable that is
+"given".
+
+_Divide by $2$ to obtain the normal equations
+$A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$:_
+
+$$ \frac{\partial E}{\partial C} \cdot \frac{1}{2} = C + (C + D - 8) + (C + 3D - 8) + (C + 4D - 20) = 4C + 8D - 36 = 0 $$
+
+$$ \frac{\partial E}{\partial D} \cdot \frac{1}{2} = (C + D - 8) + 3(C + 3D - 8) + 4(C + 4D - 20) = 8C + 26D - 112 = 0 $$
+
+First, notice that this evaluates to:
+
+$$
+4C + 8D = 36 \\
+8C + 26D = 112 \\
+$$
+
+Notice that we can line these equations up to form:
+
+$$
+\left[\begin{array}{cc}
+4 & 8 \\
+8 & 26 \\
+\end{array}\right]
+\begin{bmatrix}{}C\\D\end{bmatrix} =
+\begin{bmatrix}{}36\\112\end{bmatrix}
+$$
+
+And this is what we used to solve for $\hat{x}$ in problem 1. In other words
+this is the final form of solving $A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$.
 
 5. Find the height $C$ of the best _horizontal line_ to fit $b = (0, 8, 8, 20)$.
    An exact fit would solve the unsolvable equations
@@ -3353,10 +3595,113 @@ ideas.**
    equations and solve $A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$. Draw the
    horizontal line at height $\hat{x} = C$ and the four errors in $e$.
 
+_Solution:_
+
+_Find the height $C$ of the best horizontal line to fit $b = (0, 8, 8, 20)$:_
+
+To find the height of the best horizontal line, simply remove the second vector
+$t$ from $A$, and only consider the first column of all $1$'s. This is us solely
+considering the vector $C$:
+
+$$ A =
+\begin{bmatrix}{}1\\1\\1\\1\end{bmatrix}
+$$
+
+Then, solve for $A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$:
+
+$$ A^{\mathbf{T}}A =
+\left[\begin{array}{cc}
+1 & 1 & 1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\1\\1\\1\end{bmatrix} = [4]
+$$
+
+$$ A^{\mathbf{T}}b =
+\left[\begin{array}{cccc}
+1 & 1 & 1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}0\\8\\8\\20\end{bmatrix} = [36]
+$$
+
+$$ A^{\mathbf{T}}A\hat{x} =
+[4][C] = [36] \to \boxed{C = 9}
+$$
+
+_Find the $4$ by $1$ matrix $A$ in these equations and solve
+$A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$:_
+
+We just did that, we found $C$ above.
+
+_Draw the horizontal line at height $\hat{x} = C$ and the four errors in $e$:_
+
+Notice that this changes $e$:
+
+$$ e = b - p =
+\begin{bmatrix}{}0\\8\\8\\20\end{bmatrix} - \begin{bmatrix}{}9\\9\\9\\9\end{bmatrix} =
+\begin{bmatrix}{}-9\\-1\\-1\\11\end{bmatrix}
+$$
+
+Notice that when multiplied by each column of $A$, we still get $0$, and thus
+$e \perp A_{ij}$.
+
 6. Project $b = (0, 8, 8, 20)$ onto the line through $a = (1, 1, 1, 1)$. Find
    $\hat{x} = \dfrac{a^{\mathbf{T}}b}{a^{\mathbf{T}}a}$ and the projection
    $p = \hat{x}a$. Check that $e = b - p$ is perpendicular to $a$, and find the
    shortest distance $\|e\|$ from $b$ to the line through $a$.
+
+_Solution:_
+
+_Project $b = (0, 8, 8, 20)$ onto the line through $a = (1, 1, 1, 1)$. Find
+$\hat{x} = \dfrac{a^{\mathbf{T}}b}{a^{\mathbf{T}}a}$ and the projection
+$p = \hat{x}a$:_
+
+Recall that to calculate a projection, it is sufficient to calculate $\hat{x}$:
+
+$$ \hat{x} = \frac{a^{\mathbf{T}}b}{a^{\mathbf{T}}a} $$
+
+$$ a^{\mathbf{T}}b =
+\left[\begin{array}{cccc}
+1 & 1 & 1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}0\\8\\8\\20\end{bmatrix} = [36]
+$$
+
+$$ a^{\mathbf{T}}a =
+\left[\begin{array}{cccc}
+1 & 1 & 1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\1\\1\\1\end{bmatrix} = [4]
+$$
+
+$$ \hat{x} = \frac{36}{4} = 9 $$
+
+And thus the projection, which is $p = \hat{x}a$ is:
+
+$$ p = \hat{x}a =
+9 \cdot \begin{bmatrix}{}1\\1\\1\\1\end{bmatrix} = \begin{bmatrix}{}9\\9\\9\\9\end{bmatrix}
+$$
+
+_Check that $e = b - p$ is perpendicular to $a$:_
+
+$$ e = b - p =
+\begin{bmatrix}{}0\\8\\8\\20\end{bmatrix} - \begin{bmatrix}{}9\\9\\9\\9\end{bmatrix} =
+\begin{bmatrix}{}-9\\-1\\-1\\11\end{bmatrix}
+$$
+
+$$ e^{\mathbf{T}} \cdot a =
+\left[\begin{array}{rrrr}
+-9 & -1 & -1 & 11 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\1\\1\\1\end{bmatrix} = 0
+$$
+
+And thus $e \perp a$.
+
+_And find the shortest distance $\|e\|$ from $b$ to the line through $a$:_
+
+$$ E = \|e\|^2 = (-9)^2 + (-1)^2 + (-1)^2 + (11)^2 = 204 $$
+
+$$ \|e\| = \sqrt{204} $$
 
 7. Find the closest line $b = Dt$, _through the origin_, to the same four
    points. An exact fit would solve
@@ -3364,10 +3709,100 @@ ideas.**
    by $1$ matrix and solve $A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$. Redraw
    Figure 4.9a showing the best line $b = Dt$ and the $e$'s.
 
+_Solution:_
+
+_Find the closest line $b = Dt$, through the origin, to the same four points. An
+exact fit would solve
+$D \cdot 0 = 0, D \cdot 1 = 8, D \cdot 3 = 8, D \cdot 4 = 20$:_
+
+This is similar to problem 5, where we found the best _horizontal line_ to fit
+$b$. Instead here, we are tasked with finding the closest line $b = Dt$, so
+simply make $A$ the sole column of $t$.
+
+$$ A =
+\begin{bmatrix}{}0\\1\\3\\4\end{bmatrix}
+$$
+
+Then solve $A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$:
+
+$$ A^{\mathbf{T}}A =
+\left[\begin{array}{cccc}
+0 & 1 & 3 & 4 \\
+\end{array}\right]
+\begin{bmatrix}{}0\\1\\3\\4\end{bmatrix} = 26
+$$
+
+$$ A^{\mathbf{T}}b =
+\left[\begin{array}{cccc}
+0 & 1 & 3 & 4 \\
+\end{array}\right]
+\begin{bmatrix}{}0\\8\\8\\20\end{bmatrix} = 112
+$$
+
+_Find the $4$ by $1$ matrix and solve
+$A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$:_
+
+$$ 26\hat{x} = 112 \to \hat{x} = \frac{56}{13} = D $$
+
+Note that $D$ is a scalar, to find the vector $p$: $p = D \cdot a$:
+
+$$ p = D \cdot t =
+\frac{56}{13}
+\begin{bmatrix}{}0\\1\\3\\4\end{bmatrix} =
+\begin{bmatrix}{}0\\\frac{56}{13}\\\frac{168}{13}\\\frac{224}{13}\end{bmatrix}
+$$
+
+_Redraw Figure 4.9a showing the best line $b = Dt$ and the $e$'s:_
+
+$$ e = b - p =
+\begin{bmatrix}{}0\\8\\8\\20\end{bmatrix} -
+\begin{bmatrix}{}0\\\frac{56}{13}\\\frac{168}{13}\\\frac{224}{13}\end{bmatrix} =
+\begin{bmatrix}{}0\\\frac{48}{13}\\-\frac{64}{13}\\\frac{36}{13}\end{bmatrix}
+$$
+
+Drawing done by hand.
+
 8. Project $b = (0, 8, 8, 20)$ onto the line through $a = (0, 1, 3, 4)$. Find
    $\hat{x} = D$ and $p = \hat{x}a$. The best $C$ in Problems 5-6 and the best
    $D$ i Problems 7-8 do _not_ agree with the best $(C, D)$ in Problems 1-4.
    That is because $(1, 1, 1, 1)$ and $(0, 1, 3, 4)$ are ____ perpendicular.
+
+_Project $b = (0, 8, 8, 20)$ onto the line through $a = (0, 1, 3, 4)$. Find
+$\hat{x} = D$ and $p = \hat{x}a$:_
+
+$$ \hat{x} = \frac{a^{\mathbf{T}}b}{a^{\mathbf{T}}a} $$
+
+$$ a^{\mathbf{T}}b =
+\left[\begin{array}{cccc}
+0 & 1 & 3 & 4 \\
+\end{array}\right]
+\begin{bmatrix}{}0\\8\\8\\20\end{bmatrix} = 112
+$$
+
+$$ a^{\mathbf{T}}a =
+\left[\begin{array}{cccc}
+0 & 1 & 3 & 4 \\
+\end{array}\right]
+\begin{bmatrix}{}0\\1\\3\\4\end{bmatrix} = 26
+$$
+
+$$ \hat{x} = \frac{112}{26} = \frac{56}{13}  $$
+
+Recall from problem 8, that this is $\hat{x} = D$.
+
+Recall that we solved $p = \hat{x}a$ in problem 8 as well as:
+
+$$ p = D \cdot t =
+\frac{56}{13}
+\begin{bmatrix}{}0\\1\\3\\4\end{bmatrix} =
+\begin{bmatrix}{}0\\\frac{56}{13}\\\frac{168}{13}\\\frac{224}{13}\end{bmatrix}
+$$
+
+_The best $C$ in Problems 5-6 and the best $D$ in Problems 7-8 do _not_ agree
+with the best $(C, D)$ in Problems 1-4. That is because $(1, 1, 1, 1)$ and
+$(0, 1, 3, 4)$ are (?) perpendicular:_
+
+not
 
 9. For the closest parabola $b = C + Dt + Et^2$ to the same four points, write
    down the unsolvable equations $Ax = b$ in three unknowns $x = (C, D, E)$. Set
@@ -3375,9 +3810,154 @@ ideas.**
    (solution not required). In Figure 4.9a you are now fitting a parabola to $4$
    points - what is happening in Figure 4.9b?
 
+_Solution:_
+
+_For the closest parabola $b = C + Dt + Et^2$ to the same four points, write
+down the unsolvable equations $Ax = b$ in three unknowns $x = (C, D, E)$:_
+
+Recall that by least squares, since we have three terms, we need a third column
+for $t^2$ in $A$:
+
+$$ Ax = b \to
+\left[\begin{array}{cc}
+1 & 0 & 0 \\
+1 & 1 & 1 \\
+1 & 3 & 9 \\
+1 & 4 & 16 \\
+\end{array}\right]
+\begin{bmatrix}{}C\\D\\E\end{bmatrix} =
+\begin{bmatrix}{}0\\8\\8\\20\end{bmatrix}
+$$
+
+_Set up the three normal equations $A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$
+(solution not required):_
+
+$$ A^{\mathbf{T}}A =
+\left[\begin{array}{cccc}
+1 & 1 & 1 & 1 \\
+0 & 1 & 3 & 4 \\
+0 & 1 & 9 & 16 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 1 \\
+1 & 3 & 9 \\
+1 & 4 & 16 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+4 & 8 & 26 \\
+8 & 26 & 92 \\
+26 & 92 & 338 \\
+\end{array}\right]
+$$
+
+$$ A^{\mathbf{T}}b = \left[\begin{array}{cccc} 1 & 1 & 1 & 1 \\ 0 & 1 & 3 & 4 \\
+0 & 1 & 9 & 16 \\ \end{array}\right] \begin{bmatrix}{}0\\8\\8\\20\end{bmatrix} =
+\begin{bmatrix}{}36\\112\\400\end{bmatrix}
+$$
+
+$$ A^{\mathbf{T}}A\hat{x} =
+\left[\begin{array}{ccc}
+4 & 8 & 26 \\
+8 & 26 & 92 \\
+26 & 92 & 338 \\
+\end{array}\right]
+\begin{bmatrix}{}C\\D\\E\end{bmatrix} =
+\begin{bmatrix}{}36\\112\\400\end{bmatrix} = A^{\mathbf{T}}b
+$$
+
+_In Figure 4.9a you are now fitting a parabola to $4$ points - what is happening
+in Figure 4.9b?:_
+
+In the original 4.9b, the closest line $C + Dt$ matched $Ca_1 + Da_2$ in $\R^4$.
+Here, we are fitting the closest parabola $C + Dt + Et^2$ matched
+$Ca_1 + Da_2 + Ea_3$ in $\R^4$. With four points and three unknowns, the
+parabola still resides within $\R^4$.
+
 10. For the closest cubic $b = C + Dt + Et^2 + Ft^3$ to the same four points,
     write down the four equations $Ax = b$. Solve them by elimination. In Figure
     4.9a this cubic now goes exactly through the points. What are $p$ and $e$?
+
+_Solution:_
+
+_For the closest cubic $b = C + Dt + Et^2 + Ft^3$ to the same four points, write
+down the four equations $Ax = b$. Solve them by elimination:_
+
+$$ Ax = b \to
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+1 & 1 & 1 & 1 \\
+1 & 3 & 9 & 27 \\
+1 & 4 & 16 & 64 \\
+\end{array}\right]
+\begin{bmatrix}{}C\\D\\E\\F\end{bmatrix} = \begin{bmatrix}{}0\\8\\8\\20\end{bmatrix}
+$$
+
+Solving by elimination:
+
+$$
+\left[\begin{array}{cccc|c}
+1 & 0 & 0 & 0 & 0 \\
+1 & 1 & 1 & 1 & 8 \\
+1 & 3 & 9 & 27 & 8 \\
+1 & 4 & 16 & 64 & 20 \\
+\end{array}\right] \to
+\left[\begin{array}{cccc|c}
+1 & 0 & 0 & 0 & 0 \\
+0 & 1 & 1 & 1 & 8 \\
+0 & 3 & 9 & 27 & 8 \\
+0 & 4 & 16 & 64 & 20 \\
+\end{array}\right] \to
+\left[\begin{array}{cccc|c}
+1 & 0 & 0 & 0 & 0 \\
+0 & 1 & 1 & 1 & 8 \\
+0 & 3 & 9 & 27 & 8 \\
+0 & 4 & 16 & 64 & 20 \\
+\end{array}\right]
+$$
+
+$$ \to
+\left[\begin{array}{cccc|r}
+1 & 0 & 0 & 0 & 0 \\
+0 & 1 & 1 & 1 & 8 \\
+0 & 0 & 6 & 24 & -16 \\
+0 & 4 & 16 & 64 & 20 \\
+\end{array}\right] \to
+\left[\begin{array}{cccc|r}
+1 & 0 & 0 & 0 & 0 \\
+0 & 1 & 1 & 1 & 8 \\
+0 & 0 & 6 & 24 & -16 \\
+0 & 0 & 0 & 12 & 20 \\
+\end{array}\right] = U
+$$
+
+Thus we are left with:
+
+$$
+1C + 0D + 0E + 0F = 0 \\
+0C + 1D + 1E + 1F = 8 \\
+0C + 0D + 6E + 24F = -16 \\
+0C + 0D + 0E + 12F = 20 \\
+$$
+
+Solving:
+
+$$ 12F = 20 \Rightarrow F = \frac{5}{3} $$
+
+$$ 6E + 24F = -16 \Rightarrow 6E + 24\left(\frac{5}{3}\right) = -16 \Rightarrow 6E + 40 = -16 \Rightarrow 6E = -56 \Rightarrow E = -\frac{28}{3} $$
+
+$$ 1D + 1E + 1F = 8 \Rightarrow D + \left(-\frac{28}{3}\right) + \left(\frac{5}{3}\right) = 8 \Rightarrow D - \frac{23}{3} = 8 \Rightarrow D = \frac{47}{3} $$
+
+$$ 1C + 0D + 0E + 0F = 0 \Rightarrow C = 0 $$
+
+Thus:
+
+$$ x = \begin{bmatrix}{}0\\\frac{47}{3}\\-\frac{28}{3}\\\frac{5}{3}\end{bmatrix} $$
+
+_In Figure 4.9a this cubic now goes exactly through the points. What are $p$ and
+$e$?:_
+
+Since $b \in C(A)$, it follows that $p = b$ and $e = \mathbf{0}$.
 
 11. The average of the four times is
     $\hat{t} = \dfrac{1}{4}(0 + 1 + 3 + 4) = 2$. The average of the four $b$'s
@@ -3386,8 +3966,35 @@ ideas.**
 a. Verify that the best line goes through the center point
 $(\hat{t}, \hat{b}) = (2, 9)$.
 
+_Solution:_
+
+Recall that our best line fit from Problem 1 was determined to be $b = 1 + 4t$.
+
+The center point $(\hat{t}, \hat{b}) = (2, 9)$ indeed satisfies this best line
+equation:
+
+$$ b = 1 + 4t $$
+
+$$ 9 = 1 + 4(2) $$
+
+$$ 9 = 9 $$
+
 b. Explain why $C + D\hat{t} = \hat{b}$ comes from the first equation in
 $A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$.
+
+_Solution:_
+
+Consider that the first equation can be interpreted as:
+
+$$ Cm + D\sum{t_i} = \sum_{b_i} $$
+
+Where $m$ is simply the number of points, then if we divide by $m$ (getting the
+average of both $b$ and $t$, yielding $\hat{b}$ and $\hat{t}$ respectively),
+this yields:
+
+$$ C + D\hat{t} = \hat{b} $$
+
+This shows that the best line goes through $\hat{b}$ at time $\hat{t}$.
 
 **Questions 12-16 introduce basic ideas of statistics - the foundation for least
 squares.**
@@ -3399,18 +4006,135 @@ squares.**
 a. Solve $a^{\mathbf{T}}a\hat{x} = a^{\mathbf{T}}b$ to show that $\hat{x}$ is
 the _mean_ (the average) of the $b$'s.
 
+_Solution:_
+
+$$ a^{\mathbf{T}}a\hat{x} = a^{\mathbf{T}}b $$
+
+Consider that since $a = (1, \dots, 1)$, this means that $a^{\mathbf{T}}a = m$,
+where $m$ is simply the number of coordinates in $a$ (that importantly also
+corresponds to the number of coordinates in $b$).
+
+Additionally, $a^{\mathbf{T}}b = \sum_{i = 1}^{m}{b_i}$ by similar reasoning
+(that $a$ simply dot products all the $b$'s by $1$'s).
+
+Thus we have:
+
+$$ m\hat{x} = \sum_{i = 1}^{m}{b_i} $$
+
+By algebra then:
+
+$$ \hat{x} = \frac{1}{m}\sum_{i = 1}^{m}{b_i} $$
+
+This is the average/mean of the $b$'s (the sum of all $b$'s divided by the
+number of coordinates in all of $b$).
+
 b. Find $e = b - a\hat{x}$ and the _variance_ $\|e\|^2$ and the _standard
 deviation_ $\|e\|$.
+
+_Solution:_
+
+$$ e = b - a\hat{x} $$
+
+Since $a\hat{x}$ is just $(1, \dots, 1)$ multiplied by the mean of $b$, this is
+just the mean of $b$. This means that the Euclidean norm of $e$ can be expressed
+as:
+
+$$ \|e\|^2 = \sum_{i = 1}^{m}{\left(b_i - \frac{1}{m}\sum_{i = 1}^{m}{b_i}\right)^2} $$
+
+And this means that the variance $\|e\|$, denoted $\sigma$, can be expressed as
+the square root of this:
+
+$$ \sigma = \|e\| = \sqrt{\sum_{i = 1}^{m}{\left(b_i - \frac{1}{m}\sum_{i = 1}^{m}{b_i}\right)^2}} $$
 
 c. The horizontal line $\hat{b} = 3$ is closest to $b = (1, 2, 6)$. Check that
 $p = (3, 3, 3)$ is perpendicular to $e$ and find the $3$ by $3$ projection
 matrix $P$.
+
+_Solution:_
+
+$$ e = b - p $$
+
+$$ e = \begin{bmatrix}{}1\\2\\6\end{bmatrix} - \begin{bmatrix}{}3\\3\\3\end{bmatrix} =
+\begin{bmatrix}{}-2\\-1\\3\end{bmatrix}
+$$
+
+$$ e^{\mathbf{t}} \cdot p =
+\left[\begin{array}{rrr}
+-2 & -1 & 3 \\
+\end{array}\right]
+\begin{bmatrix}{}3\\3\\3\end{bmatrix} =
+(-2)(3) + (-1)(3) + (3)(3) = 0 \to e \perp p
+$$
+
+Recall that $P = \dfrac{aa^{\mathbf{T}}}{a^{\mathbf{T}}a}$.
+
+Now, we know that since $b$ has $3$ components, then $a$ must also have three
+components, and by the problem statement we know that every component of $a$ is
+$1$, so:
+
+$$ aa^{\mathbf{T}} =
+\begin{bmatrix}{}1\\1\\1\end{bmatrix}
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+\end{array}\right]
+$$
+
+$$ a^{\mathbf{T}}a =
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\1\\1\end{bmatrix} = 3
+$$
+
+Thus we can express $P$ as:
+
+$$ P =
+\frac{1}{3}
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+\end{array}\right]
+$$
 
 13. First assumption behind least squares: $Ax = b$ - (_noise $e$ with mean
     zero_). Multiply the error vectors $e = b - Ax$ by
     $(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}$ to get $\hat{x} - x$ on the right.
     The estimation errors $\hat{x} - x$ also average zero. The estimate
     $\hat{x}$ is _unbiased_.
+
+_Solution:_
+
+$$ e = b - p $$
+
+$$ e = b - A\hat{x} $$
+
+$$ (A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}e = (A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}(b - A\hat{x}) $$
+
+Notice that $e = b - Ax \to b = Ax + e$, thus, by substitution:
+
+$$ = (A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}(Ax + e - A\hat{x}) $$
+
+Distribution is messy, but:
+
+$$ = (A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}(Ax) + (A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}e - (A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}A\hat{x} $$
+
+$$ = Ix + Ie - I\hat{x} $$
+
+$$ = x + e - \hat{x} $$
+
+Now, so far we have:
+
+$$ (A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}e = x + e - \hat{x}$$
+
+Evaluating:
+
+$$ (A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}e - e = x - \hat{x} $$
 
 14. Second assumption behind least squares: The $m$ errors $e_i$ are independent
     with variance $\sigma^2$, so the average of $(b - Ax)(b - Ax)^{\mathbf{T}}$
@@ -3421,20 +4145,53 @@ matrix $P$.
     $\sigma^2(A^{\mathbf{T}}A)^{-1}$. This is the _covariance matrix $W$_ in
     Section 10.2.
 
+_Solution:_
+
+This one I just take from Strang, it's not intuitive:
+
+The matrix $(\hat{x} - x)(\hat{x} - x)^{\mathbf{T}}$ is
+$(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}(b - Ax)(b - Ax)^{\mathbf{T}}A(A^{\mathbf{T}}A)^{-1}$.
+When the average of $(b - Ax)(b - Ax)^{\mathbf{T}}$ is $\sigma^2I$, the average
+of $(\hat{x} - x)(\hat{x} - x)^{\mathbf{T}}$ will be the _output covariance
+matrix_ $(A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}\sigma^2AA(A^{\mathbf{T}}A)^{-1}$
+which simplifies to $\sigma^2(A^{\mathbf{T}}A)^{-1}$. That gives the average of
+the squared output errors $\hat{x} - x$.
+
 15. A doctor takes $4$ readings of your heart rate. The best solution to
     $x = b_1, \dots, x = b_4$ is the average $\hat{x}$ of $b_1, \dots, b_4$. The
     matrix $A$ is a column of $1$'s. Problem 14 gives the expected error
-    $(\hat{x} - x)^2$ as $\sigma^2(A^{\mathbf{T}}A)}^{-1} =$ ____. _By
-    averaging, the variance drops from $\sigma^2$ to $\dfrac{\sigma^2}{4}$_ .
+    $(\hat{x} - x)^2$ as $\sigma^2(A^{\mathbf{T}}A)^{-1} =$ ____. _By averaging,
+    the variance drops from $\sigma^2$ to $\dfrac{\sigma^2}{4}$_ .
+
+_Solution:_
+
+Strang gives us the solution:
+
+$$ \sigma^2(A^{\mathbf{T}}A)^{-1} = \frac{\sigma^2}{4} $$
+
+When the columns of $A$'s are all $1$' and there are $4$ components.
+
+In layman's terms, since the doctor took 4 measurements, the variance (the
+variance in accuracy from the true heart rate) is divided by $4$. In short, the
+more measurements one takes, the closer to the accurate heart rate we get.
 
 16. If you know the average $\hat{x}_9$ of $9$ numbers $b_1, \dots, b_9$, how
     can you quickly find the average $\hat{x}_{10}$ with one more number
     $b_{10}$? The idea of _recursive_ least squares is to avoid adding $10$
     numbers. What number multiplies $\hat{x}_9$ in computing $\hat{x}_{10}$?
 
-$$ \hat{x}_{10} = \frac{1}{10}b_{10} + \text{____}\hat{x}_9 = \frac{1}{10}(b_1 + \cdots b_{10}) $$
+$$ \hat{x}_{10} = \frac{1}{10}b_{10} + \text{\_\_\_\_}\hat{x}_9 = \frac{1}{10}(b_1 + \cdots + b_{10}) $$
 
 as in Worked Example 4.2 C.
+
+_Solution:_
+
+We are working in averages, if we know that we have $10$ components/data points,
+and we already know the average of the previous $9$ data points, then it stands
+to reason that we can simply take the average of the single data point and sum
+it with the previous. This can be expressed as:
+
+$$ \frac{1}{10}b_{10} + \frac{9}{10}\hat{x}_9 = \frac{1}{10}(b_1 + \cdots + b_{10}) $$
 
 **Questions 17-24 give more practice with $\hat{x}$ and $p$ and $e$.**
 
@@ -3442,30 +4199,384 @@ as in Worked Example 4.2 C.
     at $t = -1$, $b = 7$ at $t = 1$, and $b = 21$ at $t = 2$. Find the least
     squares solution $\hat{x} = (C, D)$ and draw the closest line.
 
+_Solution:_
+
+$$
+C - D = 7 \\
+C + D = 7 \\
+C + 2D = 21 \\
+$$
+
+$$
+\left[\begin{array}{rr}
+1 & -1 \\
+1 & 1 \\
+1 & 2 \\
+\end{array}\right]
+\begin{bmatrix}{}C\\D\end{bmatrix} =
+\begin{bmatrix}{}7\\7\\21\end{bmatrix}
+$$
+
+Notice that this is unsolvable (3 independent points, 2 unknowns).
+
+Thus we find $\hat{x}$:
+
+$$ A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b $$
+
+$$ A^{\mathbf{T}}A =
+\left[\begin{array}{rrr}
+1 & 1 & 1 \\
+-1 & 1 & 2 \\
+\end{array}\right]
+\left[\begin{array}{rr}
+1 & -1 \\
+1 & 1 \\
+1 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+3 & 2 \\
+2 & 6 \\
+\end{array}\right]
+$$
+
+$$ A^{\mathbf{T}}b =
+\left[\begin{array}{rrr}
+1 & 1 & 1 \\
+-1 & 1 & 2 \\
+\end{array}\right]
+\begin{bmatrix}{}7\\7\\21\end{bmatrix} =
+\begin{bmatrix}{}35\\42\end{bmatrix}
+$$
+
+$$ A^{\mathbf{T}}A\hat{x} =
+\left[\begin{array}{cc}
+3 & 2 \\
+2 & 6 \\
+\end{array}\right]
+\begin{bmatrix}{}C\\D\end{bmatrix} =
+\begin{bmatrix}{}35\\42\end{bmatrix} = A^{\mathbf{T}}b
+$$
+
+And now we solve by elimination:
+
+$$
+\left[\begin{array}{cc|c}
+3 & 2 & 35 \\
+2 & 6 & 42 \\
+\end{array}\right] \to
+\left[\begin{array}{cc|c}
+3 & 2 & 35 \\
+0 & \frac{14}{3} & \frac{56}{3} \\
+\end{array}\right] \to
+$$
+
+$$ \frac{14}{3}D = \frac{56}{3} \Rightarrow D = 4 $$
+
+$$ 3C + 2D = 35 \Rightarrow 3C + 2(4) = 35 \Rightarrow 3C + 8 = 35 \Rightarrow 3C = 27 \Rightarrow C = 9 $$
+
+Thus $\hat{x} = \begin{bmatrix}{}9\\4\end{bmatrix}$.
+
 18. Find the projection $p = A\hat{x}$ in Problem 17. This gives the three
     heights of the closest line. Show that the error vector is $e = (2, -6, 4)$.
     Why is $Pe = \mathbf{0}$?
+
+_Solution:_
+
+$$ p = A\hat{x} =
+\left[\begin{array}{rr}
+1 & -1 \\
+1 & 1 \\
+1 & 2 \\
+\end{array}\right]
+\begin{bmatrix}{}9\\4\end{bmatrix} =
+\begin{bmatrix}{}5\\13\\17\end{bmatrix}
+$$
+
+$$ e = b - p $$
+
+$$ e =
+\begin{bmatrix}{}7\\7\\21\end{bmatrix} -
+\begin{bmatrix}{}5\\13\\17\end{bmatrix} =
+\begin{bmatrix}{}2\\-6\\4\end{bmatrix}
+$$
+
+Consider:
+
+$$ Pe = P(b - p) = Pb - Pp = p - p = \mathbf{0} $$
+
+Briefly, the reason $Pp = p$ is because $p \in C(A)$, so projecting it again
+does nothing.
 
 19. Suppose the measurements at $t = -1, 1, 2$ are the errors $2, -6, 4$ in
     Problem 18. Compute $\hat{x}$ and the closest line to these new
     measurements. Explain the answer: $b = (2, -6, 4)$ is perpendicular to ____
     so the projection is $p = \mathbf{0}$.
 
+Here only $b$ changes from Problems 17/18, so:
+
+$$ A^{\mathbf{T}}A =
+\left[\begin{array}{rrr}
+1 & 1 & 1 \\
+-1 & 1 & 2 \\
+\end{array}\right]
+\left[\begin{array}{rr}
+1 & -1 \\
+1 & 1 \\
+1 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+3 & 2 \\
+2 & 6 \\
+\end{array}\right]
+$$
+
+$$ A^{\mathbf{T}}b =
+\left[\begin{array}{rrr}
+1 & 1 & 1 \\
+-1 & 1 & 2 \\
+\end{array}\right]
+\begin{bmatrix}{}2\\-6\\4\end{bmatrix} =
+\begin{bmatrix}{}0\\0\end{bmatrix}
+$$
+
+Solving for $\hat{x}$
+
+$$ A^{\mathbf{T}}A\hat{x} =
+\left[\begin{array}{cc}
+3 & 2 \\
+2 & 6 \\
+\end{array}\right]
+\begin{bmatrix}{}C\\D\end{bmatrix} =
+\begin{bmatrix}{}0\\0\end{bmatrix} = A^{\mathbf{T}}b
+$$
+
+Solving by elimination:
+
+$$
+\left[\begin{array}{cc|c}
+3 & 2 & 0 \\
+2 & 6 & 0 \\
+\end{array}\right] \to
+\left[\begin{array}{cc|c}
+3 & 2 & 0 \\
+0 & \frac{14}{3} & 0 \\
+\end{array}\right] \to
+$$
+
+So:
+
+$$ \frac{14}{3}D = 0 \Rightarrow D = 0 $$
+
+$$ 3C + 2D = 0 \Rightarrow 3C + 2(0) = 0 \Rightarrow 3C = 0 \Rightarrow C = 0 $$
+
+So our new $\hat{x}$ is:
+
+$$ \hat{x} = \begin{bmatrix}{}0\\0\end{bmatrix} $$
+
+The closest line to these new measurements is $p$:
+
+$$ p = A\hat{x} =
+\left[\begin{array}{rr}
+1 & -1 \\
+1 & 1 \\
+1 & 2 \\
+\end{array}\right]
+\begin{bmatrix}{}0\\0\end{bmatrix} =
+\begin{bmatrix}{}0\\0\\0\end{bmatrix}
+$$
+
+Since $b = e$, it follows that $b \in C(A)$, thus $b \perp p$.
+
 20. Suppose the measurements at $t = -1, 1, 2$ are $b = (5, 13, 17)$. Compute
     $\hat{x}$ and the closest line and $e$. The error is $e = \mathbf{0}$
     because this $b$ is ____.
 
+_Solution:_
+
+$$ A =
+\left[\begin{array}{rr}
+1 & -1 \\
+1 & 1 \\
+1 & 2 \\
+\end{array}\right]
+$$
+
+$$ A^{\mathbf{T}}A =
+\left[\begin{array}{rrr}
+1 & 1 & 1 \\
+-1 & 1 & 2 \\
+\end{array}\right]
+\left[\begin{array}{rr}
+1 & -1 \\
+1 & 1 \\
+1 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+3 & 2 \\
+2 & 6 \\
+\end{array}\right]
+$$
+
+$$ A^{\mathbf{T}}b =
+\left[\begin{array}{rrr}
+1 & 1 & 1 \\
+-1 & 1 & 2 \\
+\end{array}\right]
+\begin{bmatrix}{}5\\13\\17\end{bmatrix} =
+\begin{bmatrix}{}35\\42\end{bmatrix}
+$$
+
+$$ A^{\mathbf{T}}A\hat{x} =
+\left[\begin{array}{cc}
+3 & 2 \\
+2 & 6 \\
+\end{array}\right]
+\begin{bmatrix}{}C\\D\end{bmatrix} =
+\begin{bmatrix}{}35\\42\end{bmatrix} = A^{\mathbf{T}}b
+$$
+
+$$
+\left[\begin{array}{cc|c}
+3 & 2 & 35 \\
+2 & 6 & 42 \\
+\end{array}\right] \to
+\left[\begin{array}{cc|c}
+3 & 2 & 35 \\
+0 & \frac{14}{3} & \frac{56}{3} \\
+\end{array}\right]
+$$
+
+$$ \frac{14}{3}D = \frac{56}{3} \Rightarrow D = 4 $$
+
+$$ 3C + 2D = 35 \Rightarrow 3C + 2(4) = 35 \Rightarrow 3C + 8 = 35 \Rightarrow 3C = 27 \Rightarrow C = 9 $$
+
+$$ \hat{x} = \begin{bmatrix}{}9\\4\end{bmatrix} $$
+
+$$ p = A\hat{x} =
+\left[\begin{array}{rr}
+1 & -1 \\
+1 & 1 \\
+1 & 2 \\
+\end{array}\right]
+\begin{bmatrix}{}9\\4\end{bmatrix} =
+\begin{bmatrix}{}5\\13\\17\end{bmatrix} = b
+$$
+
+$$ e = b - p =
+\begin{bmatrix}{}5\\13\\17\end{bmatrix} - \begin{bmatrix}{}5\\13\\17\end{bmatrix} = \mathbf{0}
+$$
+
+The error is $e = \mathbf{0}$ because this $b$ is $p$. In other words
+$b \in C(A)$.
+
 21. Which of the four subspaces contains the error vector $e$? Which contains
     $p$? Which contains $\hat{x}$? What is the nullspace of $A$?
 
+_Solution:_
+
+_Which of the four subspaces contains the error vector $e$?:_
+
+$$ N(A^{\mathbf{T}}) $$
+
+_Which contains $p$?:_
+
+$C(A)$
+
+_Which contains $\hat{x}$?:_
+
+$C(A^{\mathbf{T}})$
+
+_What is the nullspace of $A$?:_
+
+$$ N(A) = \{\mathbf{0}\} $$
+
 22. Find the best line $C + Dt$ to fit $b = 4, 2, -1, 0, 0$ at times
     $t = -2, -1, 0, 1, 2$.
+
+_Solution:_
+
+Find $\hat{x}$ and apply it to $b = C + Dt$.
+
+$$ A =
+\left[\begin{array}{rr}
+1 & -2 \\
+1 & -1 \\
+1 & 0 \\
+1 & 1 \\
+1 & 2 \\
+\end{array}\right]
+$$
+
+$$ A^{\mathbf{T}}A =
+\left[\begin{array}{rrrrr}
+1 & 1 & 1 & 1 & 1 \\
+-2 & -1 & 0 & 1 & 2 \\
+\end{array}\right]
+\left[\begin{array}{rr}
+1 & -2 \\
+1 & -1 \\
+1 & 0 \\
+1 & 1 \\
+1 & 2 \\
+\end{array}\right] =
+\left[\begin{array}{rr}
+5 & 0 \\
+0 & 10 \\
+\end{array}\right]
+$$
+
+$$ A^{\mathbf{T}}b =
+\left[\begin{array}{rrrrr}
+1 & 1 & 1 & 1 & 1 \\
+-2 & -1 & 0 & 1 & 2 \\
+\end{array}\right]
+\begin{bmatrix}{}4\\2\\-1\\0\\0\end{bmatrix} =
+\begin{bmatrix}{}5\\-10\end{bmatrix}
+$$
+
+$$ A^{\mathbf{T}}A\hat{x} =
+\left[\begin{array}{rr}
+5 & 0 \\
+0 & 10 \\
+\end{array}\right]
+\begin{bmatrix}{}C\\D\end{bmatrix} =
+\begin{bmatrix}{}5\\-10\end{bmatrix} = A^{\mathbf{T}}b
+$$
+
+$$
+\left[\begin{array}{rr|r}
+5 & 0 & 5 \\
+0 & 10 & -10 \\
+\end{array}\right]
+$$
+
+$$ 10D = -10 \Rightarrow D = -1 $$
+
+$$ 5C + 0D = 5 \Rightarrow 5C = 5 \Rightarrow C = 1 $$
+
+$$ \hat{x} = \begin{bmatrix}{}1\\-1\end{bmatrix} $$
+
+So our best answer is $b = 1 - t$.
 
 23. Is the error vector $e$ orthogonal to $b$ or $p$ or $e$ or $\hat{x}$? Show
     that $\|e\|^2$ equals $e^{\mathbf{T}}b$ which equals
     $b^{\mathbf{T}}b - p^{\mathbf{T}}b$. This is the smallest total error $E$.
 
+_Solution:_
+
+_Is the error vector $e$ orthogonal to $b$ or $p$ or $e$ or $\hat{x}$?:_
+
+$e$ is orthogonal to $p \in R^m$.
+
+_Show that $\|e\|^2$ equals $e^{\mathbf{T}}b$ which equals
+$b^{\mathbf{T}}b - p^{\mathbf{T}}b$:_
+
+Then
+$\|e\|^2 = e^{\mathbf{T}}(b - p) = e^{\mathbf{T}}b = b^{\mathbf{T}}b - b^{\mathbf{T}}p$.
+
 24. The partial derivatives of $\|Ax\|^2$ with respect to $x_1, \dots, x_n$ fill
     the vector $2A^{\mathbf{T}}Ax$. The derivatives of $2b^{\mathbf{T}}Ax$ fill
     the vector $2A^{\mathbf{T}}b$. So the derivatives of $\|Ax - b\|^2$ are zero
     when ____.
+
+Omitted.
