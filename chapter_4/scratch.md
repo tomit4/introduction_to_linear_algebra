@@ -59,3 +59,23 @@ These notes were garnered from watching this
 [Archimedes Notes Video](https://www.youtube.com/watch?v=NXfqOol1Ku0).
 
 ---
+
+**On finding orthonormal vectors from vectors using Gram-Schmidt:**
+
+Strang doesn't really cover finding orthnormal vectors using Gram-Schmidt, only
+finding orthogonal matrices $Q$. The first vector can be found simply:
+
+$$ q_1 = \frac{a}{\|a\|} $$
+
+Where $a$ is the first column of linearly independent $A$.
+
+But when finding the next orthonormal vector, we have to use a modified version
+of the Gram-Schmidt formula:
+
+$$ q_2 = \frac{b - (q_1^{\mathbf{T}}b)q_1}{\|b - (q_1^{\mathbf{T}}b)q_1\|} $$
+
+where $b$ is the second column of $A$.
+
+This continues on per $q$.
+
+---

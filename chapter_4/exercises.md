@@ -4603,9 +4603,120 @@ $\begin{bmatrix}{}-\sin\theta\\\cos\theta\end{bmatrix}$
 
 Change the second vector when necessary to produce orthonormal vectors.
 
+_Solution:_
+
+a. $\begin{bmatrix}{}1\\0\end{bmatrix}$ and
+$\begin{bmatrix}{}-1\\1\end{bmatrix}$
+
+Not orthogonal, therefore not orthonormal, but yes independent.
+
+New second vector to produce orthonormal vectors:
+
+$$ \begin{bmatrix}{}0\\1\end{bmatrix} $$
+
+b. $\begin{bmatrix}{}.6\\.8\end{bmatrix}$ and
+$\begin{bmatrix}{}.4\\-.3\end{bmatrix}$
+
+Orthogonal (since $(0.6)(0.4) + (.8)(-.3) = 0$). Not orthonormal, since the
+second vector's euclidean norm is $\sqrt{.4^2 + (-.3)^2} = 0.5 \neq 1$. They are
+independent.
+
+New second vector to produce orthonomral vectors:
+
+$$ \begin{bmatrix}{}.8\\-.6\end{bmatrix} $$
+
+c. $\begin{bmatrix}{}\cos\theta\\\sin\theta\end{bmatrix}$ and
+$\begin{bmatrix}{}-\sin\theta\\\cos\theta\end{bmatrix}$
+
+Orthogonal since $(\cos\theta(-\sin\theta)) + \sin\theta\cos\theta = 0$.
+Orthonormal since $\sqrt{\cos^2\theta + \sin^2\theta} = 1$. Independent.
+
+Additionally we have
+$\sqrt{(-\sin\theta)^2 + \cos^2\theta} = \sqrt{\sin^2\theta + \cos^2\theta} = 1$.
+
+Both of these follow from the Pythagorean identity for cosine/sine:
+$\cos^2\theta + \sin^2\theta = 1$.
+
 2. The vectors $(2, 2, -1)$ and $(-1, 2, 2)$ are orthogonal. Divide them by
    their lengths to find orthonormal vectors $q_1$ and $q_2$. Put those into the
    columns of $Q$ and multiply $Q^{\mathbf{T}}Q$ and $QQ^{\mathbf{T}}$.
+
+_Solution:_
+
+_The vectors $(2, 2, -1)$ and $(-1, 2, 2)$ are orthogonal. Divide them by their
+lengths to find orthonormal vectors $q_1$ and $q_2$:_
+
+Let's denote these vectors $A$ and $B$ as such:
+
+$$ A = \begin{bmatrix}{}2\\2\\-1\end{bmatrix}, B = \begin{bmatrix}{}-1\\2\\2\end{bmatrix} $$
+
+Then:
+
+$$ q_1 = \frac{A}{\|A\|} $$
+
+$$ \|A\| = \sqrt{(2)^2 + (2)^2 + (-1)^2} = \sqrt{9} = 3 $$
+
+$$ q_1 = \frac{1}{3}\begin{bmatrix}{}2\\2\\-1\end{bmatrix} = \begin{bmatrix}{}\frac{2}{3}\\\frac{2}{3}\\-\frac{1}{3}\end{bmatrix} $$
+
+$$ q_2 = \frac{B}{\|B\|} $$
+
+$$ \|B\| = \sqrt{(-1)^2 + (2)^2 + (2)^2} = \sqrt{9} = 3 $$
+
+$$ q_2 = \frac{1}{3}\begin{bmatrix}{}-1\\2\\2\end{bmatrix} = \begin{bmatrix}{}-\frac{1}{3}\\\frac{2}{3}\\\frac{2}{3}\end{bmatrix} $$
+
+_Put those into the columns of $Q$ and multiply $Q^{\mathbf{T}}Q$ and
+$QQ^{\mathbf{T}}$:_
+
+$$ Q =
+\frac{1}{3}\left[\begin{array}{rr}
+2 & -1 \\
+2 & 2 \\
+-1 & 2 \\
+\end{array}\right]
+$$
+
+$$ Q^{\mathbf{T}}Q =
+\frac{1}{3}
+\left[\begin{array}{rrr}
+2 & 2 & -1 \\
+-1 & 2 & 2 \\
+\end{array}\right]
+\frac{1}{3}
+\left[\begin{array}{rr}
+2 & -1 \\
+2 & 2 \\
+-1 & 2 \\
+\end{array}\right]  =
+\frac{1}{9}
+\left[\begin{array}{cc}
+9 & 0 \\
+0 & 9 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 1 \\
+\end{array}\right] = I
+$$
+
+$$ QQ^{\mathbf{T}} =
+\frac{1}{3}
+\left[\begin{array}{rr}
+2 & -1 \\
+2 & 2 \\
+-1 & 2 \\
+\end{array}\right]
+\frac{1}{3}
+\left[\begin{array}{rrr}
+2 & 2 & -1 \\
+-1 & 2 & 2 \\
+\end{array}\right] =
+\frac{1}{9}
+\left[\begin{array}{rrr}
+5 & 2 & -4 \\
+2 & 8 & 2 \\
+-4 & 2 & 5 \\
+\end{array}\right]
+$$
 
 3.
 
@@ -4615,32 +4726,380 @@ $A^{\mathbf{T}}A$?
 b. If $A$ has three orthogonal columns of length $1, 2, 3$, what is
 $A^{\mathbf{T}}A$?
 
+_Solution:_
+
+a. $A^{\mathbf{T}}A = 16I$
+
+This is because when Strang says length, always remember he means Euclidean
+Norm! So if
+$\|A\| = 4 \Rightarrow 4 = \sqrt{a_1^2 + a_2^2 + \dots + a_n^2} \Rightarrow 4^2 = 16$.
+
+b. $A^{\mathbf{T}}A$ will be diagonal with diagonal entries $1, 4, 9$.
+
 4. Give an example of each of the following:
 
 a. A matrix $Q$ that has orthonormal columns but $QQ^{\mathbf{T}} \neq I$.
 
+$$ Q =
+\left[\begin{array}{rr}
+1 & 0 \\
+0 & 1 \\
+0 & 0 \\
+\end{array}\right]
+$$
+
+$$ QQ^{\mathbf{T}} =
+\left[\begin{array}{rr}
+1 & 0 \\
+0 & 1 \\
+0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right] \neq I
+$$
+
+Notice that when choosing each $q$ column, we either had to choose a standard
+unit vector or use a fraction that sums up to where their Euclidean Norm Length
+ends up being $\sqrt{1} = 1$.
+
 b. Two orthogonal vectors that are not linearly independent.
+
+$$ a = \begin{bmatrix}{}0\\0\end{bmatrix}, b = \begin{bmatrix}{}1\\0\end{bmatrix} $$
 
 c. An orthonormal basis for $\R^3$, including the vector
 $q_1 = \dfrac{(1, 1, 1)}{\sqrt{3}}$.
 
+Here, we can use Gram-Schmidt's formula to find $q_2, q_3$.
+
+Let $A = a = \dfrac{1}{\sqrt{3}}\begin{bmatrix}{}1\\1\\1\end{bmatrix}$.
+
+Now starting the Gram-Schmidt formula:
+
+$$ B = b - \frac{A^{\mathbf{T}}b}{A^{\mathbf{T}}A}A $$
+
+Since we don't have a $b$, we have to choose a vector $b$ that is not linearly
+dependent on $a$. Say $b = \begin{bmatrix}{}1\\1\\0\end{bmatrix}$.
+
+$$ B = \begin{bmatrix}{}1\\1\\0\end{bmatrix} - \frac{A^{\mathbf{T}}b}{A^{\mathbf{T}}A}A $$
+
+$$ A^{\mathbf{T}}A = \left(\frac{1}{\sqrt{3}}\right)\left(\frac{1}{\sqrt{3}}\right) + \left(\frac{1}{\sqrt{3}}\right)\left(\frac{1}{\sqrt{3}}\right) + \left(\frac{1}{\sqrt{3}}\right)\left(\frac{1}{\sqrt{3}}\right) = \frac{1}{3} + \frac{1}{3} + \frac{1}{3} = 1 $$
+
+$$ A^{\mathbf{T}}b =
+\frac{1}{\sqrt{3}}
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\1\\0\end{bmatrix} =
+\frac{2}{\sqrt{3}}
+$$
+
+$$ B = \begin{bmatrix}{}1\\1\\0\end{bmatrix} - \frac{2}{\sqrt{3}}\begin{bmatrix}{}\frac{1}{\sqrt{3}}\\\frac{1}{\sqrt{3}}\\\frac{1}{\sqrt{3}}\end{bmatrix} $$
+
+$$ = \begin{bmatrix}{}\frac{1}{3}\\\frac{1}{3}\\-\frac{2}{3}\end{bmatrix} $$
+
+$$ q_2 = \frac{B}{\|B\|} $$
+
+$$ \|B\| = \sqrt{\left(\frac{1}{3}\right)^2 + \left(\frac{1}{3}\right)^2 + \left(-\frac{2}{3}\right)^2} $$
+
+$$ = \frac{\sqrt{6}}{3} $$
+
+$$ q_2 = \frac{3}{\sqrt{6}}\begin{bmatrix}{}\frac{1}{3}\\\frac{1}{3}\\-\frac{2}{3}\end{bmatrix} = \begin{bmatrix}{}\frac{1}{\sqrt{6}}\\\frac{1}{\sqrt{6}}\\-\frac{\sqrt{6}}{3}\end{bmatrix}$$
+
+$$ C = c - \frac{A^{\mathbf{T}}c}{A^{\mathbf{T}}A}A - \frac{B^{\mathbf{T}}c}{B^{\mathbf{T}}B}B $$
+
+Keep it simple and choose $c = (0, 0, 1)$. We already know
+$A^{\mathbf{T}}A = 1$.
+
+$$ C = c - A^{\mathbf{T}}cA - \frac{B^{\mathbf{T}}c}{B^{\mathbf{T}}B}B $$
+
+$$ A^{\mathbf{T}}c =
+\frac{1}{\sqrt{3}}
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}0\\0\\1\end{bmatrix} = \frac{1}{\sqrt{3}}
+$$
+
+$$ C = c - A - \frac{B^{\mathbf{T}}c}{B^{\mathbf{T}}B}B $$
+
+$$ B^{\mathbf{T}}B =
+\left[\begin{array}{ccc}
+\frac{1}{3} & \frac{1}{3} & -\frac{2}{3} \\
+\end{array}\right]
+\begin{bmatrix}{}\frac{1}{3}\\\frac{1}{3}\\-\frac{2}{3}\end{bmatrix} =
+\frac{2}{3}
+$$
+
+$$ B^{\mathbf{T}}c =
+\left[\begin{array}{ccc}
+\frac{1}{3} & \frac{1}{3} & -\frac{2}{3} \\
+\end{array}\right]
+\begin{bmatrix}{}0\\0\\1\end{bmatrix} =
+-\frac{2}{3}
+$$
+
+$$ C = \begin{bmatrix}{}0\\0\\1\end{bmatrix} - \frac{1}{\sqrt{3}}\begin{bmatrix}{}1\\1\\1\end{bmatrix} - \left(\frac{3}{2}\right)\left(-\frac{2}{3}\right)\begin{bmatrix}{}\frac{1}{3}\\\frac{1}{3}\\-\frac{2}{3}\end{bmatrix} $$
+
+$$ = \begin{bmatrix}{}-\frac{1}{\sqrt{3}}\\-\frac{1}{\sqrt{3}}\\1 - \frac{1}{\sqrt{3}}\end{bmatrix} - (-1)\begin{bmatrix}{}\frac{1}{3}\\\frac{1}{3}\\-\frac{2}{3}\end{bmatrix} $$
+
+$$ = \begin{bmatrix}{}-\frac{1}{\sqrt{3}}\\-\frac{1}{\sqrt{3}}\\1 - \frac{1}{\sqrt{3}}\end{bmatrix} + \begin{bmatrix}{}\frac{1}{3}\\\frac{1}{3}\\-\frac{2}{3}\end{bmatrix} $$
+
+$$ = \begin{bmatrix}{}\frac{1}{3} -\frac{1}{\sqrt{3}}\\\frac{1}{3} - \frac{1}{\sqrt{3}}\\\frac{1}{3} - \frac{1}{\sqrt{3}}\end{bmatrix}$$
+
+$$ q_3 = \frac{C}{\|C\|} $$
+
+$$ \|C\| = \sqrt{\left(\frac{1}{3} - \frac{1}{\sqrt{3}}\right)^2 + \left(\frac{1}{3} - \frac{1}{\sqrt{3}}\right)^2 + \left(\frac{1}{3} - \frac{1}{\sqrt{3}}\right)^2} $$
+
+$$ = 1 - \frac{1}{\sqrt{3}}$$
+
+$$ q_3 = \frac{1}{1 - \frac{1}{\sqrt{3}}}\begin{bmatrix}{}\frac{1}{3} - \frac{1}{\sqrt{3}}\\\frac{1}{3} - \frac{1}{\sqrt{3}}\\\frac{1}{3} - \frac{1}{\sqrt{3}}\end{bmatrix} $$
+
+$$ q_3 = \begin{bmatrix}{}-3\sqrt{3} - \frac{9}{2}\\-3\sqrt{3} - \frac{9}{2}\\-3\sqrt{3} - \frac{9}{2}\end{bmatrix}$$
+
+Aborted here. We get the idea, and this is getting too messy.
+
+Ultimately omitted.
+
+5. Find two orthogonal vectors in the plane $x + y + 2z = 0$. Make them
+   orthonormal.
+
+_Solution:_
+
+_Find two orthogonal vectors in the plane $x + y + 2z = 0$:_
+
+The given vector is:
+
+$$ a_1 = \begin{bmatrix}{}1\\1\\2\end{bmatrix} $$
+
+To find orthogonal vectors to $a_1$, just choose $a_1^{\mathbf{T}}a_2 = 0$, and
+same for $a_3$.
+
+Simple ones would be $(1)(2) + (1)(2) + (2)(-2) = 0$, so:
+
+$$ a_2 = \begin{bmatrix}{}2\\2\\-2\end{bmatrix} $$
+
+So here we have $a_1 \perp a_2$, but to choose $a_3$, we'll need $a_1 \perp a_3$
+and $a_2 \perp a_3$. We could use Gram-Schmidt, but more simpy will be to choose
+any vector that satisfies $x + y + 2z = 0$ that is $\perp a_2$ and $\perp a_1$.
+Notice that we are solving for 3 unknowns here, so set up a matrix:
+
+$$
+\left[\begin{array}{ccc|c}
+1 & 1 & 2 & 0 \\
+2 & 2 & -2 & 0 \\
+\end{array}\right]
+$$
+
+Now choose a third row that is independent of the third, but satisfies $= 0$ .
+
+$$
+\left[\begin{array}{ccc|c}
+1 & 1 & 2 & 0 \\
+2 & 2 & -2 & 0 \\
+1 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+Now eliminate:
+
+$$
+\left[\begin{array}{ccc|c}
+1 & 1 & 2 & 0 \\
+2 & 2 & -2 & 0 \\
+1 & 0 & 0 & 0 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc|c}
+1 & 1 & 2 & 0 \\
+2 & 2 & -2 & 0 \\
+0 & -1 & -2 & 0 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc|c}
+1 & 1 & 2 & 0 \\
+0 & 0 & -6 & 0 \\
+0 & -1 & -2 & 0 \\
+\end{array}\right] \to
+\left[\begin{array}{ccc|c}
+1 & 1 & 2 & 0 \\
+0 & -1 & -2 & 0 \\
+0 & 0 & -6 & 0 \\
+\end{array}\right]
+$$
+
+From $-6z = 0 \Rightarrow z = 0$, we plug this into $a_1$ to find
+$x + y = 0 \Rightarrow x = -y$, so we can get away with:
+
+$$ a_3 = \begin{bmatrix}{}1\\-1\\0\end{bmatrix} $$
+
+So we found two orthogonal vectors in the plane of $x + y + 2z = 0$, and they
+are:
+
+$$ a_2 = \begin{bmatrix}{}2\\2\\-2\end{bmatrix}, a_3 = \begin{bmatrix}{}1\\-1\\0\end{bmatrix} $$
+
+_Make them orthonormal:_
+
+$$ q_2 = \frac{a_2}{\|a_2\|} $$
+
+$$ \|a_2\| = \sqrt{(2)^2 + (2)^2 + (-2)^2} = 2\sqrt{3} $$
+
+$$ q_2 = \frac{1}{2\sqrt{3}}\begin{bmatrix}{}2\\2\\-2\end{bmatrix} = \begin{bmatrix}{}\frac{1}{\sqrt{3}}\\\frac{1}{\sqrt{3}}\\-\frac{1}{\sqrt{3}}\end{bmatrix} $$
+
+$$ q_3 = \frac{a_3}{\|a_3\|} $$
+
+$$ \|a_3\| = \sqrt{(1)^2 + (-1)^2 + (0)^2} = \sqrt{2} $$
+
+$$ q_3 = \frac{1}{\sqrt{2}}\begin{bmatrix}{}1\\-1\\0\end{bmatrix} = \begin{bmatrix}{}\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}}\\0\end{bmatrix} $$
+
 6. If $Q_1$ and $Q_2$ are orthogonal matrices, show that their product $Q_1Q_2$
    is also an orthogonal matrix. (Use $Q^{\mathbf{T}}Q = I$.)
+
+_Solution:_
+
+**Proof:**
+
+Suppose $Q_1$ and $Q_2$ are both orthogonal matrices.
+
+It is to be shown that $Q_1Q_2$ is orthogonal.
+
+Since, by the supposition, both $Q_1$ and $Q_2$ are orthogonal, it follows that
+$Q_1^{\mathbf{T}}Q_1 = I$ and $Q_2^{\mathbf{T}}Q_2 = I$.
+
+Consider then what happens if we take their multiple and attempt to apply the
+same principle:
+
+$$ (Q_1Q_2)^{\mathbf{T}}(Q_1Q_2) $$
+
+"Distributing" the transposition results in:
+
+$$ = Q_2^{\mathbf{T}}Q_1^{\mathbf{T}}Q_1Q_2 $$
+
+By the identity property of orthogonal matrices (as stated above), the middle
+term $Q_1^{\mathbf{T}}Q_1 = I$, thus by substitution:
+
+$$ = Q_2^{\mathbf{T}}(I)Q_2 $$
+
+And of course, $IQ_2 = Q_2$, so:
+
+$$ = Q_2^{\mathbf{T}}Q_2 $$
+
+And by similar logic, we know that $Q_2^{\mathbf{T}}Q = I$, so, once again, by
+substitution:
+
+$$ = I $$
+
+This is what was to be shown.
+
+Q.E.D.
 
 7. If $Q$ has orthonormal columns, what is the least squares solution $\hat{x}$
    to $Qx = b$?
 
+When Gram-Schmidt gives $Q$ with orthonormal columns,
+$Q^{\mathbf{T}}Q\hat{x} = Q^{\mathbf{T}}b$. Recall the similarity this has to
+the previous section where we covered projection and established solving for
+$\hat{x}$ with $A^{\mathbf{T}}A\hat{x} = A^{\mathbf{T}}b$.
+
+Unlike our solution with $A$, however, our solution with $Q$ is a bit more
+succinct. Since $Q^{\mathbf{T}}Q = I$, we can simply find $\hat{x}$ like so:
+
+$$ \hat{x} = Q^{\mathbf{T}}b $$
+
 8. If $q_1$ and $q_2$ are orthonormal vectors in $\R^5$, what combination ____
    $q_1 +$ ____ $q_2$ is closest to a given vector $b$?
+
+_Solution:_
+
+_What combination (?) $q_1 +$ (?) $q_2$ is closest to a given vector $b$?:_
+
+We are being asked what linear combination expresses a projection vector $p$
+that is closest to $b$. This is just the dot product of each $q$ with $b$.
+
+$$ p = (q_1^{\mathbf{T}}b)q_1 + (q_2^{\mathbf{T}}b)q_2 $$
 
 9.
 
 a. Compute $P = QQ^{\mathbf{T}}$ when $q_1 = (.8, .6, 0)$ and
 $q_2 = (-.6, .8, 0)$. Verify that $P^2 = P$.
 
+_Solution:_
+
+$$ P = QQ^{\mathbf{T}} =
+\left[\begin{array}{rr}
+.8 & -.6 \\
+.6 & .8 \\
+0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+.8 & .6 & 0 \\
+-.6 & .8 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ P^2 = PP =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 0 \\
+\end{array}\right] = P
+$$
+
 b. Prove that always $(QQ^{\mathbf{T}})^2 = QQ^{\mathbf{T}}$ by using
 $Q^{\mathbf{T}}Q = I$. Then $P = QQ^{\mathbf{T}}$ is the projection matrix onto
 the column space of $Q$.
+
+_Solution:_
+
+**Proof:**
+
+Suppose $Q$ is an orthogonal matrix.
+
+It is to be demonstrated that $(QQ^{\mathbf{T}})^2 = QQ^{\mathbf{T}}$.
+
+Consider:
+
+$$ (QQ^{\mathbf{T}})^2 $$
+
+By exponentiation, we can "expand" this out to :
+
+$$ = (QQ^{\mathbf{T}})(QQ^{\mathbf{T}}) $$
+
+Remove the parentheses:
+
+$$ = QQ^{\mathbf{T}}QQ^{\mathbf{T}} $$
+
+Now, by the definition of orthogonal matrices $Q^{\mathbf{T}}Q = I$, so, by
+substitution:
+
+$$ = Q(I)Q^{\mathbf{T}} $$
+
+And, of course, $I(Q^{\mathbf{T}}) = Q^{\mathbf{T}}$, so:
+
+$$ = QQ^{\mathbf{T}} $$
+
+This is what was to be demonstrated.
+
+Q.E.D.
 
 10. Orthonormal vectors are automatically linearly independent.
 
@@ -4648,15 +5107,164 @@ a. Vector proof: When $c_1q_1 + c_2q_2 + c_3q_3 = \mathbf{0}$, what dot product
 leads to $c_1 = 0$? Similarly $c_2 = 0$ and $c_3 = 0$. Thus the $q$'s are
 independent.
 
+_Solution:_
+
+**Proof:**
+
+Suppose $q_1, q_2, q_3$ are orthonormal vectors.
+
+It is to be shown that $q_1, q_2, q_3$ are linearly independent.
+
+Consider a linear equation $c_1q_1 + c_2q_2 + c_3q_3 = \mathbf{0}$. This would
+be linearly independent.
+
+If we take the product of this equation with $q_1^{\mathbf{T}}$:
+
+$$ q_1^{\mathbf{T}}(c_1q_1 + c_2q_2 + c_3q_3) = q_1^{\mathbf{T}}\mathbf{0} $$
+
+$$ q_1^{\mathbf{T}}c_1q_1 + q_1^{\mathbf{T}}c_2q_2 + q_1^{\mathbf{T}}c_3q_3 = 0 $$
+
+Recall that orthonormal vectors are defined such that:
+
+$$
+q_i^{\mathbf{T}}q_j =
+\begin{cases}
+0 & \text{when } i \neq j \\
+1 & \text{when } i = j
+\end{cases}
+$$
+
+We can therefore apply this orthnormal property to our linear equation as:
+
+$$ c_1(1) + c_2(0) + c_3(0) = 0 $$
+
+$$ c_1 = 0 $$
+
+Similarly, $c_2 = 0$ and $c_3 = 0$.
+
+This is sufficient to demonstrate that $q_1, q_2, q_3$ are linearly independent.
+
+Q.E.D.
+
 b. Matrix proof: Show that $Qx = \mathbf{0}$ leads to $x = \mathbf{0}$. Since
 $Q$ may be rectangular, you can use $Q^{\mathbf{T}}$ but not $Q^{-1}$.
+
+_Solution:_
+
+**Proof:**
+
+Suppose $Q$ is an orthogonal matrix and $x$ is any vector such that:
+
+$$ Qx = \mathbf{0} $$
+
+It is to shown that $x = \mathbf{0}$.
+
+Consider when both sides of $Qx = \mathbf{0}$ are multiplied by
+$Q^{\mathbf{T}}$:
+
+$$ Q^{\mathbf{T}}Qx =  \mathbf{0} $$
+
+By the identity property of orthogonal matrices, $Q^{\mathbf{T}}Q = I$, thus by
+substitution:
+
+$$ Ix =  \mathbf{0} $$
+
+$$ x = \mathbf{0} $$
+
+This is what was to be shown.
+
+It can be concluded that all columns of $Q$ are linearly independent.
+
+Q.E.D.
 
 11.
 
 a. Gram-Schmidt: Find orthonormal vectors $q_1$ and $q_2$ in the plane spanned
 by $a = (1, 3, 4, 5, 7)$ and $b = (-6, 6, 8, 0, 8)$.
 
+$$ q_1 = \frac{a}{\|a\|} $$
+
+$$ \|a\| = \sqrt{(1)^2 + (3)^2 + (4)^2 + (5)^2 + (7)^2} $$
+
+$$ = \sqrt{1 + 9 + 16 + 25 + 49} $$
+
+$$ = \sqrt{100} = 10 $$
+
+$$ q_1 = \frac{1}{10}\begin{bmatrix}{}1\\3\\4\\5\\7\end{bmatrix} $$
+
+To get $q_2$, it's not as straight forward, as we need $q_2 \perp q_1$. To do
+this then, we'll need the following formula for Gram-Schmidt on vectors:
+
+$$ q_2 = \frac{b - (q_1^{\mathbf{T}}b)q_1}{\|b - (q_1^{\mathbf{T}}b)q_1\|} $$
+
+$$ q_1^{\mathbf{T}}b =
+\frac{1}{10}
+\left[\begin{array}{ccccc}
+1 & 3 & 4 & 5 & 7 \\
+\end{array}\right]
+\begin{bmatrix}{}-6\\6\\8\\0\\8\end{bmatrix} =
+\frac{1}{10}(100) = 10
+$$
+
+$$ (q_1^{\mathbf{T}}b)q_1 = 10q_1 =
+10\left(\frac{1}{10}\right)\begin{bmatrix}{}1\\3\\4\\5\\7\end{bmatrix} =
+\begin{bmatrix}{}1\\3\\4\\5\\7\end{bmatrix}
+$$
+
+$$ b - (q_1^{\mathbf{T}}b)q_1 =
+\begin{bmatrix}{}-6\\6\\8\\0\\8\end{bmatrix} - \begin{bmatrix}{}1\\3\\4\\5\\7\end{bmatrix} =
+\begin{bmatrix}{}-7\\3\\4\\-5\\1\end{bmatrix}
+$$
+
+$$ \|b - (q_1^{\mathbf{T}}b)q_1\| =
+\sqrt{(-7)^2 + (3)^2 + (4)^2 + (-5)^2 + (1)^2} = \sqrt{100} = 10
+$$
+
+$$ q_2 = \frac{1}{10}\begin{bmatrix}{}-7\\3\\4\\-5\\1\end{bmatrix} $$
+
 b. Which vector in this plane is closest to $(1, 0, 0, 0, 0)$?
+
+_Solution:_
+
+To solve, you must put $q_1, q_2$ as a matrix $Q$, then take
+$QQ^{\mathbf{T}}\begin{bmatrix}{}1\\0\\0\\0\\0\end{bmatrix}$ to find the closest
+vector.
+
+$$ q_1 = \frac{1}{10}\begin{bmatrix}{}1\\3\\4\\5\\7\end{bmatrix} $$
+
+$$ q_2 = \frac{1}{10}\begin{bmatrix}{}-7\\3\\4\\-5\\1\end{bmatrix} $$
+
+$$ QQ^{\mathbf{T}} =
+\frac{1}{10}
+\left[\begin{array}{rr}
+1 & -7 \\
+3 & 3 \\
+4 & 4 \\
+5 & -5 \\
+7 & 1 \\
+\end{array}\right]
+\frac{1}{10}
+\left[\begin{array}{rr}
+1 & 3 & 4 & 5 & 7 \\
+-7 & 3 & 4 & -5 & 1 \\
+\end{array}\right] =
+\frac{1}{100}
+\left[\begin{array}{rrrrr}
+50 & -18 & -24 & 40 & 0 \\
+-18 & 18 & 24 & 0 & 24 \\
+-24 & 24 & 32 & 0 & 32 \\
+40 & 0 & 0 & 50 & 30 \\
+0 & 24 & 32 & 30 & 50 \\
+\end{array}\right]
+$$
+
+$$ QQ^{\mathbf{T}}\begin{bmatrix}{}1\\0\\0\\0\\0\end{bmatrix} = \frac{1}{100}
+\left[\begin{array}{rrrrr} 50 & -18 & -24 & 40 & 0 \\ -18 & 18 & 24 & 0 & 24 \\
+-24 & 24 & 32 & 0 & 32 \\ 40 & 0 & 0 & 50 & 30 \\ 0 & 24 & 32 & 30 & 50 \\
+\end{array}\right] \begin{bmatrix}{}1\\0\\0\\0\\0\end{bmatrix} =
+\boxed{\frac{1}{100}
+\begin{bmatrix}{}50\\-18\\-24\\40\\0\end{bmatrix}}
+$$
 
 12. If $a_1, a_2, a_3$ is a basis for $\R^3$, any vector $b$ can be written as
 
@@ -4675,16 +5283,83 @@ $$
 
 a. Suppose the $a$'s are orthonormal. Show that $x_1 = a_1^{\mathbf{T}}b$.
 
+_Solution:_
+
+$$ a_1^{\mathbf{T}}b = a_1^{\mathbf{T}}(x_1a_1 + x_2a_2 + x_3a_3) $$
+
+$$ = a_1^{\mathbf{T}}x_1a_1 + a_1^{\mathbf{T}}x_2a_2 + a_1^{\mathbf{T}}x_3a_3 $$
+
+Again, recall the laws of orthonormal, where each of these dot products is
+either $1$ or $0$ ($1$ if $i = j$, $0$ if $i \neq j$):
+
+$$ = a_1^{\mathbf{T}}x_1a_1 + 0 + 0 $$
+
+$$ = x_1(a_1^{\mathbf{T}}a_1) = x_1(1) = x_1 $$
+
 b. Suppose the $a$'s are orthogonal. Show that
 $x_1 = \dfrac{a_1^{\mathbf{T}}b}{a_1^{\mathbf{T}}a_1}$.
 
+_Solution:_
+
+As in part (a), we have already shown that $a_1^{\mathbf{T}}a_1 = 1$, this
+leaves us to show:
+
+$$ x_1 = a_1^{\mathbf{T}}b $$
+
+And we also showed that in part (a).
+
+This makes sense since in part (a), we assume that all the $a$'s are
+orthonormal, which are orthogonal by definition.
+
 c. If the $a$'s are independent, $x_1$ is the first component of ____ times $b$.
+
+_Solution:_
+
+$A^{-1}$
+
+This follows from the standard $Ax = b$, if we solve for $x$ we get
+$x = A^{-1}b$ when $A$ is independent, and thus it follows that the first
+component $x_1$ would be the first component of $A^{-1}$ times $b$.
 
 **Problems 13-25 are about the Gram-Schmidt process and $A = QR$.**
 
 13. What multiple of $a = \begin{bmatrix}{}1\\1\end{bmatrix}$ should be
     subtracted from $b = \begin{bmatrix}{}4\\0\end{bmatrix}$ to make the result
     $B$ orthogonal to $a$? Sketch a figure to show $a, b$, and $B$.
+
+_Solution:_
+
+Recall the generic Gram-Schmidt process:
+
+$$ B = b - \frac{A^{\mathbf{T}}b}{A^{\mathbf{T}}A}A $$
+
+When applied to our specific vectors, this is:
+
+$$ B = b - \frac{a^{\mathbf{T}}b}{a^{\mathbf{T}}a}a $$
+
+Let's now evaluate and solve:
+
+$$ a^{\mathbf{T}}a =
+\left[\begin{array}{cc}
+1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\1\end{bmatrix} = 2
+$$
+
+$$ a^{\mathbf{T}}b =
+\left[\begin{array}{cc}
+1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}4\\0\end{bmatrix} = 4
+$$
+
+$$ B = \begin{bmatrix}{}4\\0\end{bmatrix} - \frac{1}{2}(4)\begin{bmatrix}{}1\\1\end{bmatrix} $$
+
+$$ = \begin{bmatrix}{}4\\0\end{bmatrix} - 2\begin{bmatrix}{}1\\1\end{bmatrix} $$
+
+$$ = \begin{bmatrix}{}4\\0\end{bmatrix} - \begin{bmatrix}{}2\\2\end{bmatrix} $$
+
+$$ = \begin{bmatrix}{}2\\-2\end{bmatrix} $$
 
 14. Complete the Gram-Schmidt process in Problem 13 by computing
     $q_1 = \dfrac{a}{\|a\|}$ and $q_2 = \dfrac{B}{\|B\|}$ and factoring into
@@ -4704,6 +5379,56 @@ q_1 & q_2 \\
 \end{array}\right]
 $$
 
+_Solution:_
+
+$$ q_1 = \frac{a}{\|a\|} $$
+
+$$ \|a\| = \sqrt{(1)^2 + (1)^2} = \sqrt{2} $$
+
+$$ q_1 = \frac{1}{\sqrt{2}}\begin{bmatrix}{}1\\1\end{bmatrix} $$
+
+$$ q_1 = \begin{bmatrix}{}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\end{bmatrix} $$
+
+$$ q_2 = \frac{B}{\|B\|} $$
+
+$$ \|B\| = \sqrt{(2)^2 + (-2)^2} = 2\sqrt{2} $$
+
+$$ q_2 = \frac{1}{2\sqrt{2}}\begin{bmatrix}{}2\\-2\end{bmatrix}$$
+
+$$ q_2 = \begin{bmatrix}{}\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}}\end{bmatrix} $$
+
+$$
+\left[\begin{array}{cc}
+1 & 4 \\
+1 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\
+\end{array}\right]
+\left[\begin{array}{cc}
+\sqrt{2} & ? \\
+0 & 2\sqrt{2} \\
+\end{array}\right]
+$$
+
+$$ \frac{1}{\sqrt{2}}(?) + \frac{1}{\sqrt{2}}2\sqrt{2} = 4 $$
+
+$$ \frac{1}{\sqrt{2}}(?) + 2 = 4 $$
+
+$$ \frac{1}{\sqrt{2}}(?) = 2 $$
+
+$$ ? = 2\sqrt{2} $$
+
+Thus:
+
+$$ QR =
+\left[\begin{array}{cc}
+\sqrt{2} & 2\sqrt{2} \\
+0 & 2\sqrt{2} \\
+\end{array}\right]
+$$
+
 15.
 
 a. Find orthonormal vectors $q_1, q_2, q_3$ such that $q_1, q_2$ span the column
@@ -4717,12 +5442,274 @@ $$ A =
 \end{array}\right]
 $$
 
+_Solution:_
+
+$$ q_1 = \frac{a_1}{\|a_1\|} $$
+
+$$ \|a_1\| = \sqrt{(1)^2 + (2)^2 + (-2)^2} = \sqrt{9} = 3 $$
+
+$$ q_1 = \frac{1}{3}\begin{bmatrix}{}1\\2\\-2\end{bmatrix} = \begin{bmatrix}{}\frac{1}{3}\\\frac{2}{3}\\-\frac{2}{3}\end{bmatrix} $$
+
+$$ q_2 = \frac{a_2 - (q_1^{\mathbf{T}}a_2)q_1}{\|a_2 - (q_1^{\mathbf{T}}a_2)q_1\|} $$
+
+$$ q_1^{\mathbf{T}}a_2 =
+\left[\begin{array}{rrr}
+\frac{1}{3} & \frac{2}{3} & -\frac{2}{3} \\
+\end{array}\right]
+\begin{bmatrix}{}1\\-1\\4\end{bmatrix} = -3
+$$
+
+$$ (q_1^{\mathbf{T}}a_2)q_1 =
+-3
+\begin{bmatrix}{}\frac{1}{3}\\\frac{2}{3}\\-\frac{2}{3}\end{bmatrix} =
+\begin{bmatrix}{}-1\\-2\\2\end{bmatrix}
+$$
+
+$$ a_2 - (q_1^{\mathbf{T}}a_2)q_1 =
+\begin{bmatrix}{}1\\-1\\4\end{bmatrix} - \begin{bmatrix}{}-1\\-2\\2\end{bmatrix} =
+\begin{bmatrix}{}2\\1\\2\end{bmatrix}
+$$
+
+$$ \|a_2 - (q_1^{\mathbf{T}}a_2)q_1\| =
+\sqrt{(2)^2 + (1)^2 + (2)^2} = \sqrt{9} = 3
+$$
+
+$$ q_2 = \frac{1}{3}\begin{bmatrix}{}2\\1\\2\end{bmatrix} =
+\begin{bmatrix}{}\frac{2}{3}\\\frac{1}{3}\\\frac{2}{3}\end{bmatrix}
+$$
+
+For $q_3$, we don't have a third column $a_3$, thus we must choose an $a_3$ that
+is $\notin C(A)$ or more specifically $\in N(A^{\mathbf{T}})$.
+
+Recall that finding a vector $v \in N(A^{\mathbf{T}})$ has us solving for $v$ in
+$A^{\mathbf{T}}v = \mathbf{0}$:
+
+$$ A^{\mathbf{T}}v =
+\left[\begin{array}{rrr}
+1 & 2 & -2 \\
+1 & -1 & 4 \\
+\end{array}\right]
+$$
+
+Now reduce to reduced row echelon form $R$:
+
+$$ A^{\mathbf{T}}v =
+\left[\begin{array}{rrr}
+1 & 2 & -2 \\
+1 & -1 & 4 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 2 & -2 \\
+0 & -3 & 6 \\
+\end{array}\right] \to
+\left[\begin{array}{rrr}
+1 & 2 & -2 \\
+0 & 1 & -2 \\
+\end{array}\right] = R
+$$
+
+Solve:
+
+$$ 1v_2 + (-2)v_3 = 0 \Rightarrow v_2 - 2v_3 = 0 \Rightarrow v_2 = 2v_3 $$
+
+$$ 1v_1 + 2v_2 + (-2)v_3 = 0 \Rightarrow v_1 + 2(2v_3) - 2v_3 = 0 \Rightarrow v_1 + 4v_3 - 2v_3 = 0 \Rightarrow v_1 + 2v_3 = 0 \Rightarrow v_1 = -2v_3 $$
+
+So, choose $v_3 = 1$, then:
+
+$$ v_1 = -2, v_2 = 2, v_3 = 1 $$
+
+Thus our third column, $v = a_3$, to be chosen is:
+
+$$ a_3 = v = \begin{bmatrix}{}-2\\2\\1\end{bmatrix} $$
+
+Finally! So now follow the Gram-Schmidt formula for vectors for this $a_3$:
+
+$$ q_3 = \frac{a_3 - (q_2^{\mathbf{T}}a_3)q_2}{\|a_3 - (q_2^{\mathbf{T}}a_3)q_2\|} $$
+
+$$ q_2^{\mathbf{T}}a_3 =
+\left[\begin{array}{ccc}
+\frac{2}{3} & \frac{1}{3} & \frac{2}{3} \\
+\end{array}\right]
+\begin{bmatrix}{}-2\\2\\1\end{bmatrix} = 0
+$$
+
+$$ (q_2^{\mathbf{T}}a_3)q_2 =
+0\begin{bmatrix}{}\frac{2}{3}\\\frac{1}{3}\\\frac{2}{3}\end{bmatrix} = \begin{bmatrix}{}0\\0\\0\end{bmatrix}
+$$
+
+$$ a_3 - (q_2^{\mathbf{T}}a_3)q_2 =
+\begin{bmatrix}{}-2\\2\\1\end{bmatrix} - \begin{bmatrix}{}0\\0\\0\end{bmatrix} =
+\begin{bmatrix}{}-2\\2\\1\end{bmatrix}
+$$
+
+$$ \|a_3 - (q_2^{\mathbf{T}}a_3)q_2\| =
+\sqrt{(-2)^2 + (2)^2 + (1)^2} = \sqrt{9} = 3
+$$
+
+$$ q_3 = \frac{1}{3}\begin{bmatrix}{}-2\\2\\1\end{bmatrix} =
+\begin{bmatrix}{}-\frac{2}{3}\\\frac{2}{3}\\\frac{1}{3}\end{bmatrix}
+$$
+
 b. Which of the four fundamental subspaces contains $q_3$?
+
+_Solution:_
+
+$$ q_3 \in N(A^{\mathbf{T}}) $$
 
 c. Solve $Ax = (1, 2, 7)$ by least squares.
 
+_Solution:_
+
+Recall the basic formula for finding $\hat{x}$:
+
+$$ \hat{x} = (A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}b $$
+
+$$ A^{\mathbf{T}}A =
+\left[\begin{array}{rrr}
+1 & 2 & -2 \\
+1 & -1 & 4 \\
+\end{array}\right]
+\left[\begin{array}{rr}
+1 & 1 \\
+2 & -1 \\
+-2 & 4 \\
+\end{array}\right] =
+\left[\begin{array}{rr}
+9 & -9 \\
+-9 & 18 \\
+\end{array}\right]
+$$
+
+Use Gauss-Jordan to find $(A^{\mathbf{T}}A)^{-1}$:
+
+$$
+\left[\begin{array}{rr|rr}
+9 & -9 & 1 & 0 \\
+-9 & 18 & 0 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{rr|rr}
+9 & -9 & 1 & 0 \\
+0 & 9 & 1 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{rr|rr}
+9 & 0 & 2 & 1 \\
+0 & 9 & 1 & 1 \\
+\end{array}\right]
+$$
+
+$$ \to
+\left[\begin{array}{rr|rr}
+9 & 0 & 2 & 1 \\
+0 & 1 & \frac{1}{9} & \frac{1}{9} \\
+\end{array}\right] \to
+\left[\begin{array}{rr|rr}
+1 & 0 & \frac{2}{9} & \frac{1}{9} \\
+0 & 1 & \frac{1}{9} & \frac{1}{9} \\
+\end{array}\right]
+$$
+
+$$ (A^{\mathbf{T}}A)^{-1} =
+\left[\begin{array}{rr}
+\frac{2}{9} & \frac{1}{9} \\
+\frac{1}{9} & \frac{1}{9} \\
+\end{array}\right]
+$$
+
+$$ (A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}} =
+\left[\begin{array}{rr}
+\frac{2}{9} & \frac{1}{9} \\
+\frac{1}{9} & \frac{1}{9} \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 & 2 & -2 \\
+1 & -1 & 4 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+\frac{1}{3} & \frac{1}{3} & 0 \\
+\frac{2}{9} & \frac{1}{9} & \frac{2}{9} \\
+\end{array}\right]
+$$
+
+$$ (A^{\mathbf{T}}A)^{-1}A^{\mathbf{T}}b =
+\left[\begin{array}{rrr}
+\frac{1}{3} & \frac{1}{3} & 0 \\
+\frac{2}{9} & \frac{1}{9} & \frac{2}{9} \\
+\end{array}\right]
+\begin{bmatrix}{}1\\2\\7\end{bmatrix} =
+\boxed{\begin{bmatrix}{}1\\2\end{bmatrix} = \hat{x}}
+$$
+
 16. What multiple of $a = (4, 5, 2, 2)$ is closest to $b = (1, 2, 0, 0)$? Find
     orthonormal vectors $q_1$ and $q_2$ in the plane of $a$ and $b$.
+
+_Solution:_
+
+_What multiple of $a = (4, 5, 2, 2)$ is closest to $b = (1, 2, 0, 0)$?:_
+
+This is just finding $p$, recall that $p$ is:
+
+$$ p = \frac{a^{\mathbf{T}}b}{a^{\mathbf{T}}a}a $$
+
+$$ a^{\mathbf{T}}a =
+\left[\begin{array}{cccc}
+4 & 5 & 2 & 2 \\
+\end{array}\right]
+\begin{bmatrix}{}4\\5\\2\\2\end{bmatrix} = 49
+$$
+
+$$ a^{\mathbf{T}}b =
+\left[\begin{array}{cccc}
+4 & 5 & 2 & 2 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\2\\0\\0\end{bmatrix} = 14
+$$
+
+$$ p = \frac{14}{49}a = \frac{2}{7}a $$
+
+$$ p =
+\frac{2}{7}
+\begin{bmatrix}{}4\\5\\2\\2\end{bmatrix} =
+\begin{bmatrix}{}\frac{8}{7}\\\frac{10}{7}\\\frac{4}{7}\\\frac{4}{7}\end{bmatrix}
+$$
+
+_Find orthonormal vectors $q_1$ and $q_2$ in the plane of $a$ and $b$:_
+
+$$ q_1 = \frac{a}{\|a\|} $$
+
+$$ \|a\| = \sqrt{(4)^2 + (5)^2 + (2)^2 + (2)^2} = \sqrt{16 + 25 + 4 + 4} = \sqrt{49} = 7 $$
+
+$$ q_1 = \frac{1}{7}\begin{bmatrix}{}4\\5\\2\\2\end{bmatrix} = \begin{bmatrix}{}\frac{4}{7}\\\frac{5}{7}\\\frac{2}{7}\\\frac{2}{7}\end{bmatrix} $$
+
+$$ q_2 = \frac{b - (q_1^{\mathbf{T}}b)q_1}{\|b - (q_1^{\mathbf{T}}b)q_1\|} $$
+
+$$ q_1^{\mathbf{T}}b =
+\left[\begin{array}{cccc}
+\frac{4}{7} & \frac{5}{7} & \frac{2}{7} & \frac{2}{7} \\
+\end{array}\right]
+\begin{bmatrix}{}1\\2\\0\\0\end{bmatrix} = 2
+$$
+
+$$ (q_1^{\mathbf{T}}b)q_1 =
+2
+\begin{bmatrix}{}\frac{4}{7}\\\frac{5}{7}\\\frac{2}{7}\\\frac{2}{7}\end{bmatrix} =
+\begin{bmatrix}{}\frac{8}{7}\\\frac{10}{7}\\\frac{4}{7}\\\frac{4}{7}\end{bmatrix}
+$$
+
+$$ b - (q_1^{\mathbf{T}}b)q_1 =
+\begin{bmatrix}{}1\\2\\0\\0\end{bmatrix} -
+\begin{bmatrix}{}\frac{8}{7}\\\frac{10}{7}\\\frac{4}{7}\\\frac{4}{7}\end{bmatrix} =
+\begin{bmatrix}{}-\frac{1}{7}\\\frac{4}{7}\\-\frac{4}{7}\\-\frac{4}{7}\end{bmatrix}
+$$
+
+$$ \|b - (q_1^{\mathbf{T}}b)q_1\| =
+\sqrt{\left(-\frac{1}{7}\right)^2 + \left(\frac{4}{7}\right)^2 + \left(-\frac{4}{7}\right)^2 + \left(-\frac{4}{7}\right)^2} = 1
+$$
+
+$$ q_2 = \frac{1}{1}
+\begin{bmatrix}{}-\frac{1}{7}\\\frac{4}{7}\\-\frac{4}{7}\\-\frac{4}{7}\end{bmatrix}
+$$
+
+Notice that $q_2 = b - p$.
 
 17. Find the projection of $b$ onto the line through $a$:
 
@@ -4742,6 +5729,51 @@ $$ e = b - p = \text{?} $$
 
 Compute the orthonormal vectors $q_1 = \dfrac{a}{\|a\|}$ and
 $q_2 = \dfrac{e}{\|e\|}$.
+
+_Solution:_
+
+$$ p = \frac{a^{\mathbf{T}}b}{a^{\mathbf{T}}a}a $$
+
+$$ a^{\mathbf{T}}a =
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\1\\1\end{bmatrix} = 3
+$$
+
+$$ a^{\mathbf{T}}b =
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\3\\5\end{bmatrix} = 9
+$$
+
+$$ p = \frac{1}{3}(9)a = 3a =
+3\begin{bmatrix}{}1\\1\\1\end{bmatrix} = \begin{bmatrix}{}3\\3\\3\end{bmatrix}
+$$
+
+$$ e = b - p =
+\begin{bmatrix}{}1\\3\\5\end{bmatrix} - \begin{bmatrix}{}3\\3\\3\end{bmatrix} =
+\begin{bmatrix}{}-2\\0\\2\end{bmatrix}
+$$
+
+$$ q_1 = \frac{a}{\|a\|} $$
+
+$$ \|a\| = \sqrt{(1)^2 + (1)^2 + (1)^2} = \sqrt{3} $$
+
+$$ q_1 = \frac{1}{\sqrt{3}}\begin{bmatrix}{}1\\1\\1\end{bmatrix} =
+\begin{bmatrix}{}\frac{1}{\sqrt{3}}\\\frac{1}{\sqrt{3}}\\\frac{1}{\sqrt{3}}\end{bmatrix}
+$$
+
+$$ q_2 = \frac{e}{\|e\|} $$
+
+$$ \|e\| = \sqrt{(-2)^2 + (0)^2 + (2)^2} = \sqrt{8} = 2\sqrt{2} $$
+
+$$ q_2 = \frac{1}{2\sqrt{2}}\begin{bmatrix}{}-2\\0\\2\end{bmatrix} =
+\begin{bmatrix}{}-\frac{1}{\sqrt{2}}\\0\\\frac{1}{\sqrt{2}}\end{bmatrix}
+$$
+
+(LEFT OFF HERE).
 
 18. (Recommended) Find orthogonal vectors $A, B, C$ by Gram-Schmidt from
     $a, b, c$:
