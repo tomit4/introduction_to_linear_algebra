@@ -5773,8 +5773,6 @@ $$ q_2 = \frac{1}{2\sqrt{2}}\begin{bmatrix}{}-2\\0\\2\end{bmatrix} =
 \begin{bmatrix}{}-\frac{1}{\sqrt{2}}\\0\\\frac{1}{\sqrt{2}}\end{bmatrix}
 $$
 
-(LEFT OFF HERE).
-
 18. (Recommended) Find orthogonal vectors $A, B, C$ by Gram-Schmidt from
     $a, b, c$:
 
@@ -5782,6 +5780,69 @@ $$ a = (1, -1, 0, 0) \quad b = (0, 1, -1, 0) \quad c = (0, 0, 1, -1) $$
 
 $A, B, C$ and $a, b, c$ are bases for the vectors perpendicular to
 $d = (1, 1, 1, 1)$.
+
+_Solution:_
+
+$$ A = a = \begin{bmatrix}{}1\\-1\\0\\0\end{bmatrix} $$
+
+$$ B = b - \frac{A^{\mathbf{T}}b}{A^{\mathbf{T}}A}A $$
+
+$$ A^{\mathbf{T}}A =
+\left[\begin{array}{rrrr}
+1 & -1 & 0 & 0 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\-1\\0\\0\end{bmatrix} = 2
+$$
+
+$$ A^{\mathbf{T}}b =
+\left[\begin{array}{rrrr}
+1 & -1 & 0 & 0 \\
+\end{array}\right]
+\begin{bmatrix}{}0\\1\\-1\\0\end{bmatrix} = -1
+$$
+
+$$ B = \begin{bmatrix}{}0\\1\\-1\\0\end{bmatrix} - \frac{1}{2}(-1)\begin{bmatrix}{}1\\-1\\0\\0\end{bmatrix} $$
+
+$$ B = \begin{bmatrix}{}0\\1\\-1\\0\end{bmatrix} + \frac{1}{2}\begin{bmatrix}{}1\\-1\\0\\0\end{bmatrix} $$
+
+$$ B = \begin{bmatrix}{}0\\1\\-1\\0\end{bmatrix} + \begin{bmatrix}{}\frac{1}{2}\\-\frac{1}{2}\\0\\0\end{bmatrix} $$
+
+$$ B = \begin{bmatrix}{}\frac{1}{2}\\\frac{1}{2}\\-1\\0\end{bmatrix} $$
+
+$$ C = c - \frac{A^{\mathbf{T}}c}{A^{\mathbf{T}}A}A - \frac{B^{\mathbf{T}}c}{B^{\mathbf{T}}B}B $$
+
+$$ A^{\mathbf{T}c} =
+\left[\begin{array}{rrrr}
+1 & -1 & 0 & 0 \\
+\end{array}\right]
+\begin{bmatrix}{}0\\0\\1\\-1\end{bmatrix} = 0
+$$
+
+$$ C = \begin{bmatrix}{}0\\0\\1\\-1\end{bmatrix} - \frac{1}{2}(0)\begin{bmatrix}{}1\\-1\\0\\0\end{bmatrix} - \frac{B^{\mathbf{T}}c}{B^{\mathbf{T}}B}B $$
+
+$$ C = \begin{bmatrix}{}0\\0\\1\\-1\end{bmatrix} - \frac{B^{\mathbf{T}}c}{B^{\mathbf{T}}B}B $$
+
+$$ B^{\mathbf{T}}B =
+\left[\begin{array}{rrrr}
+\frac{1}{2} & \frac{1}{2} & -1 & 0 \\
+\end{array}\right]
+\begin{bmatrix}{}\frac{1}{2}\\\frac{1}{2}\\-1\\0\end{bmatrix} = \frac{3}{2}
+$$
+
+$$ B^{\mathbf{T}}c =
+\left[\begin{array}{rrrr}
+\frac{1}{2} & \frac{1}{2} & -1 & 0 \\
+\end{array}\right]
+\begin{bmatrix}{}0\\0\\1\\-1\end{bmatrix} = -1
+$$
+
+$$ C = \begin{bmatrix}{}0\\0\\1\\-1\end{bmatrix} - \frac{2}{3}(-1)\begin{bmatrix}{}\frac{1}{2}\\\frac{1}{2}\\-1\\0\end{bmatrix} $$
+
+$$ C = \begin{bmatrix}{}0\\0\\1\\-1\end{bmatrix} + \frac{2}{3}\begin{bmatrix}{}\frac{1}{2}\\\frac{1}{2}\\-1\\0\end{bmatrix} $$
+
+$$ C = \begin{bmatrix}{}0\\0\\1\\-1\end{bmatrix} + \begin{bmatrix}{}\frac{1}{3}\\\frac{1}{3}\\-\frac{2}{3}\\0\end{bmatrix} $$
+
+$$ C = \begin{bmatrix}{}\frac{1}{3}\\\frac{1}{3}\\\frac{1}{3}\\-1\end{bmatrix} $$
 
 19. If $A = QR$ then $A^{\mathbf{T}}A = R^{\mathbf{T}}R =$ ____ triangular times
     ____ triangular. _Gram-Schmidt on $A$ corresponds to elimination on
@@ -5817,12 +5878,231 @@ $$ A^{\mathbf{T}}A =
 \end{array}\right]
 $$
 
+_Solution:_
+
+_If $A = QR$ then $A^{\mathbf{T}}A = R^{\mathbf{T}}R =$ (?) triangular times (?)
+triangular:_
+
+Consider $R = Q^{\mathbf{T}}A$, so then:
+
+$$ R^{\mathbf{T}}R = (Q^{\mathbf{T}}A)^{\mathbf{T}}Q^{\mathbf{T}}A $$
+
+$$ R^{\mathbf{T}}R = A^{\mathbf{T}}QQ^{\mathbf{T}}A $$
+
+$$ R^{\mathbf{T}}R = A^{\mathbf{T}}IA $$
+
+$$ R^{\mathbf{T}}R = A^{\mathbf{T}}A $$
+
+Thus this is _lower_ triangular times _upper_ triangular, or akin to $LU$.
+
+_Find $Q$ and $R$ by Gram-Schmidt for this $A$:_
+
+$$ A =
+\left[\begin{array}{rr}
+-1 & 1 \\
+2 & 1 \\
+2 & 4 \\
+\end{array}\right]
+$$
+
+Here, denote $a$ as the first column vector of this matrix $A$:
+
+$$ q_1 = \frac{a}{\|a\|} $$
+
+$$ \|a\| = \sqrt{(-1)^2 + (2)^2 + (2)^2} = \sqrt{9} = 3 $$
+
+$$ q_1 = \frac{1}{3}\begin{bmatrix}{}-1\\2\\2\end{bmatrix} =
+\begin{bmatrix}{}-\frac{1}{3}\\\frac{2}{3}\\\frac{2}{3}\end{bmatrix}
+$$
+
+Denote $b$ as the second column vector of $A$:
+
+$$ q_1 = b - \frac{q_1^{\mathbf{T}}b}{q_1^{\mathbf{T}}q_1}q_1 $$
+
+$$ q_1^{\mathbf{T}}q_1 =
+\left[\begin{array}{rrr}
+-\frac{1}{3} & \frac{2}{3} & \frac{2}{3} \\
+\end{array}\right]
+\begin{bmatrix}{}-\frac{1}{3}\\\frac{2}{3}\\\frac{2}{3}\end{bmatrix} = 1
+$$
+
+$$ q_1^{\mathbf{T}}b =
+\left[\begin{array}{rrr}
+-\frac{1}{3} & \frac{2}{3} & \frac{2}{3} \\
+\end{array}\right]
+\begin{bmatrix}{}1\\1\\4\end{bmatrix} = 3
+$$
+
+$$ q_2 = \begin{bmatrix}{}1\\1\\4\end{bmatrix} - \frac{1}{1}(3)\begin{bmatrix}{}-\frac{1}{3}\\\frac{2}{3}\\\frac{2}{3}\end{bmatrix} $$
+
+$$ q_2 = \begin{bmatrix}{}1\\1\\4\end{bmatrix} - \begin{bmatrix}{}-1\\2\\2\end{bmatrix} $$
+
+$$ q_2 = \begin{bmatrix}{}2\\-1\\2\end{bmatrix} $$
+
+Here, we have to remember to normalize $q_2$, as I forgot to denote this
+differently, let's just call this $q_2^*$:
+
+$$ q_2^* = \frac{q_2}{\|q_2\|} $$
+
+$$ \|q_2\| = \sqrt{(2)^2 + (-1)^2 + (2)^2} = \sqrt{9} = 3 $$
+
+$$ q_2^* = \frac{1}{3}\begin{bmatrix}{}2\\-1\\2\end{bmatrix} =
+\begin{bmatrix}{}\frac{2}{3}\\-\frac{1}{3}\\\frac{2}{3}\end{bmatrix}
+$$
+
+Thus $Q$ is:
+
+$$ Q =
+\left[\begin{array}{rr}
+-\frac{1}{3} & \frac{2}{3} \\
+\frac{2}{3} & -\frac{1}{3} \\
+\frac{2}{3} & \frac{2}{3} \\
+\end{array}\right]
+$$
+
+To find $R$, recall that $R = Q^{\mathbf{T}}A$:
+
+$$ Q^{\mathbf{T}}A =
+\left[\begin{array}{rrr}
+-\frac{1}{3} & \frac{2}{3} & \frac{2}{3} \\
+\frac{2}{3} & -\frac{1}{3} & \frac{2}{3} \\
+\end{array}\right]
+\left[\begin{array}{rr}
+-1 & 1 \\
+2 & 1 \\
+2 & 4 \\
+\end{array}\right] =
+\left[\begin{array}{rr}
+3 & 3 \\
+0 & 3 \\
+\end{array}\right] = R
+$$
+
+_And find $Q$ and $R$ by Gram-Schmidt for this $A$:_
+
+$$ A^{\mathbf{T}}A =
+\left[\begin{array}{cc}
+9 & 9 \\
+9 & 18 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+1 & 0 \\
+1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+9 & \\
+& 9 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+1 & 1 \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+The problem statement gives us the property that
+$A^{\mathbf{T}}A = R^{\mathbf{T}}R$.
+
+Consider the $R$ from the previous part:
+
+$$ R =
+\left[\begin{array}{cc}
+3 & 3 \\
+0 & 3 \\
+\end{array}\right]
+$$
+
+Then:
+
+$$ R^{\mathbf{T}}R =
+\left[\begin{array}{cc}
+3 & 0 \\
+3 & 3 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+3 & 3 \\
+0 & 3 \\
+\end{array}\right] =
+\left[\begin{array}{rr}
+9 & 9 \\
+9 & 18 \\
+\end{array}\right] = A^{\mathbf{T}}A
+$$
+
+So we have the same $R$ from the first part, indicating we have the same $A$.
+
+Now, to find $Q$, notice that $A = QR \Rightarrow Q = AR^{-1}$.
+
+First, find $R^{-1}$ by Gauss-Jordan elimination:
+
+$$
+\left[\begin{array}{rr|rr}
+3 & 3 & 1 & 0 \\
+0 & 3 & 0 & 1 \\
+\end{array}\right] \to
+\left[\begin{array}{rr|rr}
+3 & 3 & 1 & 0 \\
+0 & 1 & 0 & \frac{1}{3} \\
+\end{array}\right] \to
+\left[\begin{array}{rr|rr}
+1 & 1 & \frac{1}{3} & 0 \\
+0 & 1 & 0 & \frac{1}{3} \\
+\end{array}\right] \to
+\left[\begin{array}{rr|rr}
+1 & 0 & \frac{1}{3} & -\frac{1}{3} \\
+0 & 1 & 0 & \frac{1}{3} \\
+\end{array}\right]
+$$
+
+$$ R^{-1} =
+\left[\begin{array}{rr}
+\frac{1}{3} & -\frac{1}{3} \\
+0 & \frac{1}{3} \\
+\end{array}\right]
+$$
+
+$$ AR^{-1} =
+\left[\begin{array}{rr}
+-1 & 1 \\
+2 & 1 \\
+2 & 4 \\
+\end{array}\right]
+\left[\begin{array}{rr}
+\frac{1}{3} & -\frac{1}{3} \\
+0 & \frac{1}{3} \\
+\end{array}\right] =
+\left[\begin{array}{rr}
+-\frac{1}{3} & \frac{2}{3} \\
+ \frac{2}{3} & -\frac{1}{3} \\
+\frac{2}{3} & \frac{2}{3} \\
+\end{array}\right] = Q
+$$
+
+Notice that this $Q$ also matches our previous part as well (we just found it
+using a different method). Note that it should have followed that since $R$ and
+$A$ from the previous part were the same as this, we would have gotten the same
+$Q$.
+
 20. True or false (give an example in either case):
 
 a. $Q^{-1}$ is an orthogonal matrix when $Q$ is an orthogonal matrix.
 
+True, since $Q^{\mathbf{T}}Q = I$, it follows that $Q^{\mathbf{T}} = Q^{-1}$.
+Since the orthogonality of $Q$ implies the orthogonality of $Q^{\mathbf{T}}$,
+this in turn implies the orthogonality of $Q^{-1}$.
+
 b. If $Q$ ($3$ by $2$) has orthogonal columns then $\|Qx\|$ always equals
 $\|x\|$.
+
+True, consider expanding $Q$ as such:
+
+$$ Qx = q_1x_1 + q_2x_2 $$
+
+Then:
+
+$$ \|Qx\| = x_1^2 + x_2^2 = \|x\| $$
+
+The reason the $q$'s go away is because $q_1 \cdot q_2 = 0$ by the laws of
+orthogonality.
 
 21. Find an orthonormal basis for the column space of $A$:
 
@@ -5843,6 +6123,110 @@ $$
 
 Then compute the projection of $b$ onto that column space.
 
+_Solution:_
+
+_Find an orthonormal basis for the column space of $A$:_
+
+$$ A =
+\left[\begin{array}{rr}
+1 & -2 \\
+1 & 0 \\
+1 & 1 \\
+1 & 3 \\
+\end{array}\right]
+$$
+
+$$ q_1 = \frac{a_1}{\|a_1\|} $$
+
+$$ \|a_1\| = \sqrt{(1)^2 + (1)^2 + (1)^2 + (1)^2} = 2 $$
+
+$$ q_1 = \frac{1}{2}\begin{bmatrix}{}1\\1\\1\\1\end{bmatrix} =
+\begin{bmatrix}{}\frac{1}{2}\\\frac{1}{2}\\\frac{1}{2}\\\frac{1}{2}\end{bmatrix}
+$$
+
+$$ q_2^* = a_2 - \frac{(q_1^{\mathbf{T}}a_2)q_1}{q_1^{\mathbf{T}}q_1} $$
+
+$$ q_1^{\mathbf{T}}q_1 =
+\left[\begin{array}{rrrr}
+\frac{1}{2} & \frac{1}{2} & \frac{1}{2} & \frac{1}{2} \\
+\end{array}\right]
+\begin{bmatrix}{}\frac{1}{2}\\\frac{1}{2}\\\frac{1}{2}\\\frac{1}{2}\end{bmatrix} = 1
+$$
+
+$$ q_1^{\mathbf{T}}a_2 =
+\left[\begin{array}{rrrr}
+\frac{1}{2} & \frac{1}{2} & \frac{1}{2} & \frac{1}{2} \\
+\end{array}\right]
+\begin{bmatrix}{}-2\\0\\1\\3\end{bmatrix} = 1
+$$
+
+$$ q_2^* = \begin{bmatrix}{}-2\\0\\1\\3\end{bmatrix} - \frac{1}{1}(1)\begin{bmatrix}{}\frac{1}{2}\\\frac{1}{2}\\\frac{1}{2}\\\frac{1}{2}\end{bmatrix} $$
+
+$$ q_2^* = \begin{bmatrix}{}-2\\0\\1\\3\end{bmatrix} - \begin{bmatrix}{}\frac{1}{2}\\\frac{1}{2}\\\frac{1}{2}\\\frac{1}{2}\end{bmatrix} $$
+
+$$ q_2^* = \begin{bmatrix}{}-\frac{5}{2}\\-\frac{1}{2}\\\frac{1}{2}\\\frac{5}{2}\end{bmatrix} $$
+
+$$ q_2 = \frac{q_2^*}{\|q_2^*\|} $$
+
+$$ \|q_2^*\| = \sqrt{\left(-\frac{5}{2}\right)^2 + \left(-\frac{1}{2}\right)^2 + \left(\frac{1}{2}\right)^2 + \left(\frac{5}{2}\right)^2} = \sqrt{13} $$
+
+$$ q_2 = \frac{1}{\sqrt{13}}\begin{bmatrix}{}-\frac{5}{2}\\-\frac{1}{2}\\\frac{1}{2}\\\frac{5}{2}\end{bmatrix} $$
+
+$$ q_2 = \begin{bmatrix}{}-\frac{5}{2\sqrt{13}}\\-\frac{1}{2\sqrt{13}}\\\frac{1}{2\sqrt{13}}\\\frac{5}{2\sqrt{13}}\end{bmatrix} $$
+
+So the orthonormal basis for the column space of $A$ is:
+
+$$ Q =
+\left[\begin{array}{rr}
+\frac{1}{2} & -\frac{5}{2\sqrt{13}} \\
+\frac{1}{2} & -\frac{1}{2\sqrt{13}} \\
+\frac{1}{2} & \frac{1}{2\sqrt{13}} \\
+\frac{1}{2} & \frac{5}{2\sqrt{13}} \\
+\end{array}\right]
+$$
+
+_Then compute the projection of $b$ onto that column space:_
+
+$$ b =
+\begin{bmatrix}{}-4\\-3\\3\\0\end{bmatrix}
+$$
+
+So $p$ is the projection of $b$ onto $C(A)$ as:
+
+$$ p = (q_1^{\mathbf{T}}b)q_1 + (q_2^{\mathbf{T}}b)q_2 $$
+
+This is equivalent to $p = QQ^{\mathbf{T}}b$. Let's do this version:
+
+$$ QQ^{\mathbf{T}} =
+\left[\begin{array}{rr}
+\frac{1}{2} & -\frac{5}{2\sqrt{13}} \\
+\frac{1}{2} & -\frac{1}{2\sqrt{13}} \\
+\frac{1}{2} & \frac{1}{2\sqrt{13}} \\
+\frac{1}{2} & \frac{5}{2\sqrt{13}} \\
+\end{array}\right]
+\left[\begin{array}{rrrr}
+\frac{1}{2} & \frac{1}{2} & \frac{1}{2} & \frac{1}{2} \\
+-\frac{5}{2\sqrt{13}} & -\frac{1}{2\sqrt{13}} & \frac{1}{2\sqrt{13}} & \frac{5}{2\sqrt{13}} \\
+\end{array}\right] =
+\left[\begin{array}{rrrr}
+\frac{19}{26} & \frac{9}{26} & \frac{2}{13} & -\frac{3}{13} \\
+\frac{9}{26} & \frac{7}{26} & \frac{3}{13} & \frac{2}{13} \\
+\frac{2}{13} & \frac{3}{13} & \frac{7}{26} & \frac{9}{26} \\
+-\frac{3}{13} & \frac{2}{13} & \frac{9}{26} & \frac{19}{26} \\
+\end{array}\right]
+$$
+
+$$ QQ^{\mathbf{T}}b =
+\left[\begin{array}{rrrr}
+\frac{19}{26} & \frac{9}{26} & \frac{2}{13} & -\frac{3}{13} \\
+\frac{9}{26} & \frac{7}{26} & \frac{3}{13} & \frac{2}{13} \\
+\frac{2}{13} & \frac{3}{13} & \frac{7}{26} & \frac{9}{26} \\
+-\frac{3}{13} & \frac{2}{13} & \frac{9}{26} & \frac{19}{26} \\
+\end{array}\right]
+\begin{bmatrix}{}-4\\-3\\3\\0\end{bmatrix} =
+\begin{bmatrix}{}-\frac{7}{2}\\-\frac{3}{2}\\-\frac{1}{2}\\\frac{3}{2}\end{bmatrix} = p
+$$
+
 22. Find orthogonal vectors $A, B, C$ by Gram-Schmidt from
 
 $$ a = \begin{bmatrix}{}1\\1\\2\end{bmatrix} $$
@@ -5855,6 +6239,72 @@ and
 
 $$ c = \begin{bmatrix}{}1\\0\\4\end{bmatrix} $$
 
+_Solution:_
+
+Notice we are finding _orthogonal_ vectors, not orthonormal, so just find
+$A, B, C$, not $q_1, q_2, q_3$.
+
+$$ A = a = \begin{bmatrix}{}1\\1\\2\end{bmatrix} $$
+
+$$ B = b - \frac{A^{\mathbf{T}}b}{A^{\mathbf{T}}A}A $$
+
+$$ A^{\mathbf{T}}A =
+\left[\begin{array}{rrr}
+1 & 1 & 2 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\1\\2\end{bmatrix} = 6
+$$
+
+$$ A^{\mathbf{T}}b =
+\left[\begin{array}{rrr}
+1 & 1 & 2 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\-1\\0\end{bmatrix} = 0
+$$
+
+$$ B = b - \frac{1}{6}(0)\begin{bmatrix}{}1\\1\\2\end{bmatrix} $$
+
+$$ B = \begin{bmatrix}{}1\\-1\\0\end{bmatrix} $$
+
+$$ B = b - \frac{A^{\mathbf{T}}b}{A^{\mathbf{T}}A}A $$
+
+$$ C = c - \frac{A^{\mathbf{T}}c}{A^{\mathbf{T}}A}A - \frac{B^{\mathbf{T}}c}{B^{\mathbf{T}}B}B $$
+
+$$ A^{\mathbf{T}}c =
+\left[\begin{array}{rrr}
+1 & 1 & 2 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\0\\4\end{bmatrix} = 9
+$$
+
+$$ C = \begin{bmatrix}{}1\\0\\4\end{bmatrix} - \frac{1}{6}(9)\begin{bmatrix}{}1\\1\\2\end{bmatrix} - \frac{B^{\mathbf{T}}c}{B^{\mathbf{T}}B}B $$
+
+$$ C = \begin{bmatrix}{}1\\0\\4\end{bmatrix} - \frac{3}{2}\begin{bmatrix}{}1\\1\\2\end{bmatrix} - \frac{B^{\mathbf{T}}c}{B^{\mathbf{T}}B}B $$
+
+$$ C = \begin{bmatrix}{}1\\0\\4\end{bmatrix} - \begin{bmatrix}{}\frac{3}{2}\\\frac{3}{2}\\3\end{bmatrix} - \frac{B^{\mathbf{T}}c}{B^{\mathbf{T}}B}B $$
+
+$$ C = \begin{bmatrix}{}-\frac{1}{2}\\-\frac{3}{2}\\1\end{bmatrix} - \frac{B^{\mathbf{T}}c}{B^{\mathbf{T}}B}B $$
+
+$$ B^{\mathbf{T}}B =
+\left[\begin{array}{rrr}
+1 & -1 & 0 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\-1\\0\end{bmatrix} = 2
+$$
+
+$$ B^{\mathbf{T}}c =
+\left[\begin{array}{rrr}
+1 & -1 & 0 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\0\\4\end{bmatrix} = 1
+$$
+
+$$ C = \begin{bmatrix}{}-\frac{1}{2}\\-\frac{3}{2}\\1\end{bmatrix} - \frac{1}{2}(1)\begin{bmatrix}{}1\\-1\\0\end{bmatrix} $$
+
+$$ C = \begin{bmatrix}{}-\frac{1}{2}\\-\frac{3}{2}\\1\end{bmatrix} - \begin{bmatrix}{}\frac{1}{2}\\-\frac{1}{2}\\0\end{bmatrix} $$
+
+$$ C = \begin{bmatrix}{}-1\\-1\\1\end{bmatrix} $$
+
 23. Find $q_1, q_2, q_3$ (orthonormal) as combinations of $a, b, c$ (independent
     columns). Then write $A$ as $QR$:
 
@@ -5866,16 +6316,207 @@ $$ A =
 \end{array}\right]
 $$
 
+_Solution:_
+
+$$ q_1 = \frac{a}{\|a\|} $$
+
+$$ \|a\| = \sqrt{(1)^2 + (0)^2 + (0)^2} = 1 $$
+
+$$ q_1 = \frac{1}{1}\begin{bmatrix}{}1\\0\\0\end{bmatrix} = \begin{bmatrix}{}1\\0\\0\end{bmatrix} $$
+
+$$ q_2^* = b - \frac{q_1^{\mathbf{T}}b}{q_1^{\mathbf{T}}q_1}q_1 $$
+
+$$ q_1^{\mathbf{T}}q_1 =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\0\\0\end{bmatrix} = 1
+$$
+
+$$ q_1^{\mathbf{T}}b =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+\end{array}\right]
+\begin{bmatrix}{}2\\0\\3\end{bmatrix} = 2
+$$
+
+$$ q_2^* = \begin{bmatrix}{}2\\0\\3\end{bmatrix} - \frac{1}{1}(2)\begin{bmatrix}{}1\\0\\0\end{bmatrix}$$
+
+$$ q_2^* = \begin{bmatrix}{}2\\0\\3\end{bmatrix} - \begin{bmatrix}{}2\\0\\0\end{bmatrix}$$
+
+$$ q_2^* = \begin{bmatrix}{}0\\0\\3\end{bmatrix} $$
+
+$$ q_2 = \frac{q_2^*}{\|q_2^*\|} $$
+
+$$ \|q_2^*\| = \sqrt{(0)^2 + (0)^2 + (3)^2} = \sqrt{9} = 3 $$
+
+$$ q_2 = \frac{1}{3}\begin{bmatrix}{}0\\0\\3\end{bmatrix} =
+\begin{bmatrix}{}0\\0\\1\end{bmatrix}
+$$
+
+$$ q_3^* = c - \frac{q_1^{\mathbf{T}}c}{q_1^{\mathbf{T}}q_1}q_1 - \frac{q_2^{\mathbf{T}}c}{q_2^{\mathbf{T}}q_2}q_2 $$
+
+$$ q_1^{\mathbf{T}}c =
+\left[\begin{array}{rrr}
+1 & 0 & 0 \\
+\end{array}\right]
+\begin{bmatrix}{}4\\5\\6\end{bmatrix} = 4
+$$
+
+$$ q_3^* = \begin{bmatrix}{}4\\5\\6\end{bmatrix} - \frac{1}{1}(4)\begin{bmatrix}{}1\\0\\0\end{bmatrix} - \frac{q_2^{\mathbf{T}}c}{q_2^{\mathbf{T}}q_2}q_2 $$
+
+$$ q_3^* = \begin{bmatrix}{}4\\5\\6\end{bmatrix} - \begin{bmatrix}{}4\\0\\0\end{bmatrix} - \frac{q_2^{\mathbf{T}}c}{q_2^{\mathbf{T}}q_2}q_2 $$
+
+$$ q_3^* = \begin{bmatrix}{}0\\5\\6\end{bmatrix} - \frac{q_2^{\mathbf{T}}c}{q_2^{\mathbf{T}}q_2}q_2 $$
+
+$$ q_2^{\mathbf{T}}q_2 =
+\left[\begin{array}{rrr}
+0 & 0 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}0\\0\\1\end{bmatrix} = 1
+$$
+
+$$ q_2^{\mathbf{T}}c =
+\left[\begin{array}{rrr}
+0 & 0 & 1 \\
+\end{array}\right]
+\begin{bmatrix}{}4\\5\\6\end{bmatrix} = 6
+$$
+
+$$ q_3^* = \begin{bmatrix}{}0\\5\\6\end{bmatrix} - \frac{1}{1}(6)\begin{bmatrix}{}0\\0\\1\end{bmatrix} $$
+
+$$ q_3^* = \begin{bmatrix}{}0\\5\\6\end{bmatrix} - \begin{bmatrix}{}0\\0\\6\end{bmatrix} $$
+
+$$ q_3^* = \begin{bmatrix}{}0\\5\\0\end{bmatrix} $$
+
+$$ q_3 = \frac{q_3^*}{\|q_3^*\|} $$
+
+$$ \|q_3^*\| = \sqrt{(0)^2 + (5)^2 + (0)^2} = \sqrt{25} = 5 $$
+
+$$ q_3 = \frac{1}{5}\begin{bmatrix}{}0\\5\\0\end{bmatrix} = \begin{bmatrix}{}0\\1\\0\end{bmatrix} $$
+
+Thus $Q$ is:
+
+$$ Q =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+\end{array}\right]
+$$
+
+To find $R$, recall
+$A = QR \Rightarrow R = Q^{-1}A \Rightarrow R = Q^{\mathbf{T}}A$
+
+$$ Q^{\mathbf{T}}A
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 2 & 4 \\
+0 & 0 & 5 \\
+0 & 3 & 6 \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+1 & 2 & 4 \\
+0 & 3 & 6 \\
+0 & 0 & 5 \\
+\end{array}\right] = R
+$$
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+1 & 2 & 4 \\
+0 & 3 & 6 \\
+0 & 0 & 5 \\
+\end{array}\right] = QR
+$$
+
 24.
 
 a. Find a basis for the subspace $S$ in $\R^4$ spanned by all solutions of
 
 $$ x_1 + x_2 + x_3 - x_4 = 0 $$
 
+_Solution:_
+
+We can find the special solutions in the $N(A)$:
+
+Choose $x_2 = 1, x_3 = 0, x_4 = 0$:
+
+$$ x_1 + x_2 + x_3 - x_4 = 0 \to x_1 + 1 + 0 - 0 = 0 \to x_1 = -1 $$
+
+$$ s_1 = (-1, 1, 0, 0) $$
+
+Choose $x_2 = 0, x_3 = 1, x_4 = 0$:
+
+$$ x_1 + x_2 + x_3 - x_4 = 0 \to x_1 + 0 + 1 - 0 = 0 \to x_1 = -1 $$
+
+$$ s_2 = (-1, 0, 1, 0) $$
+
+Choose $x_2 = 0, x_3 = 0, x_4 = 1$:
+
+$$ x_1 + x_2 + x_3 - x_4 = 0 \to x_1 + 0 + 0 - 1 = 0 \to x_1 = 1 $$
+
+$$ s_3 = (1, 0, 0, 1) $$
+
+$$ S = \text{span}\left\{\begin{bmatrix}{}-1\\1\\0\\0\end{bmatrix}, \begin{bmatrix}{}-1\\0\\1\\0\end{bmatrix}, \begin{bmatrix}{}1\\0\\0\\1\end{bmatrix}\right\} $$
+
 b. Find a basis for the orthogonal complement $S^{\perp}$.
+
+_Solution:_
+
+This is just the row space $C(A^{\mathbf{T}})$, which is just:
+
+$$ S^{\perp} = \text{span}\left\{\begin{bmatrix}{}1\\1\\1\\-1\end{bmatrix}\right\} $$
 
 c. Find $b_1$ in $S$ and $b_2$ in $S^{\perp}$ so that
 $b_1 + b_2 = b = (1, 1, 1, 1)$.
+
+_Solution:_
+
+So $b_1$ is the projection of $b$ onto $S$, and $b_2$ is the projection of $b$
+onto $S^{\perp}$.
+
+$$ b_2 = \frac{a^{\mathbf{T}}b}{a^{\mathbf{T}}a} $$
+
+Where $a$ is the basis vector of $S^{\mathbf{T}}$.
+
+$$ a^{\mathbf{T}}a =
+\left[\begin{array}{rrr}
+1 & 1 & 1 & -1 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\1\\1\\-1\end{bmatrix} = 4
+$$
+
+$$ a^{\mathbf{T}}b =
+\left[\begin{array}{rrr}
+1 & 1 & 1 & -1 \\
+\end{array}\right]
+\begin{bmatrix}{}1\\1\\1\\1\end{bmatrix} = 3
+$$
+
+$$ b_2 = \frac{1}{4}(3)\begin{bmatrix}{}1\\1\\1\\-1\end{bmatrix} $$
+
+$$ b_2 = \frac{3}{4}\begin{bmatrix}{}1\\1\\1\\-1\end{bmatrix} $$
+
+$$ b_2 = \begin{bmatrix}{}\frac{3}{4}\\\frac{3}{4}\\\frac{3}{4}\\-\frac{3}{4}\end{bmatrix} $$
+
+Rather than going through a long series of Gram-Schmidt projections, let's just
+find $b_1$ as:
+
+$$ b_1 = b - b_2 $$
+
+$$ b_1 = \begin{bmatrix}{}1\\1\\1\\1\end{bmatrix} - \begin{bmatrix}{}\frac{3}{4}\\\frac{3}{4}\\\frac{3}{4}\\-\frac{3}{4}\end{bmatrix} $$
+
+$$ b_1 = \begin{bmatrix}{}\frac{1}{4}\\\frac{1}{4}\\\frac{1}{4}\\\frac{7}{4}\end{bmatrix} $$
 
 25. If $ad - bc > 0$, the entries in $A = QR$ are
 
@@ -5902,19 +6543,206 @@ $$
 Write $A = QR$ when $a, b, c, d = 2, 1, 1, 1$ and also $1, 1, 1, 1$. Which entry
 of $R$ becomes zero when the columns are dependent and Gram-Schmidt breaks down?
 
+_Solution:_
+
+Substituting in $a, b, c, d = 2, 1, 1, 1$:
+
+$$
+\left[\begin{array}{cc}
+2 & 1 \\
+1 & 1 \\
+\end{array}\right] =
+\frac{
+\left[\begin{array}{cc}
+2 & -1 \\
+1 & 2 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+2^2 + 1^2 & (2)(1) + (1)(1) \\
+0 & (2)(1) - (1)(1) \\
+\end{array}\right]
+}{
+\sqrt{(2)^2 + (1)^2} \quad
+\sqrt{(2)^2 + (1)^2}
+}
+$$
+
+Simplifying:
+
+$$
+\left[\begin{array}{cc}
+2 & 1 \\
+1 & 1 \\
+\end{array}\right] =
+\frac{
+\left[\begin{array}{cc}
+2 & -1 \\
+1 & 2 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+5 & 3 \\
+0 & 1 \\
+\end{array}\right]
+}{
+\sqrt{5} \quad
+\sqrt{5}
+}
+$$
+
+$$
+\left[\begin{array}{cc}
+2 & 1 \\
+1 & 1 \\
+\end{array}\right] =
+\frac{1}{5}
+\left[\begin{array}{rr}
+2 & -1 \\
+1 & 2 \\
+\end{array}\right]
+\left[\begin{array}{rr}
+5 & 3 \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc}
+2 & 1 \\
+1 & 1 \\
+\end{array}\right] =
+\frac{1}{5}
+\left[\begin{array}{rr}
+10 & 5 \\
+5 & 5 \\
+\end{array}\right]
+$$
+
+$$
+\left[\begin{array}{cc}
+2 & 1 \\
+1 & 1 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+2 & 1 \\
+1 & 1 \\
+\end{array}\right]
+$$
+
+$R$ does not break down at any point because $R$ is in upper echelon form.
+
+Substituting in $a, b, c, d = 1, 1, 1, 1$:
+
+$$
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 1 \\
+\end{array}\right] =
+\frac{
+\left[\begin{array}{cc}
+1 & -1 \\
+1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+(1)^2 + (1)^2 & (1)(1) + (1)(1) \\
+0 & (1)(1) - (1)(1) \\
+\end{array}\right]
+}{
+\sqrt{(1)^2 + (1)^2} \quad
+\sqrt{(1)^2 + (1)^2}
+}
+$$
+
+Simplifying:
+
+$$
+\left[\begin{array}{cc}
+1 & 1 \\
+1 & 1 \\
+\end{array}\right] =
+\frac{
+\left[\begin{array}{cc}
+1 & -1 \\
+1 & 1 \\
+\end{array}\right]
+\left[\begin{array}{cc}
+2 & 2 \\
+0 & 0 \\
+\end{array}\right]
+}{
+\sqrt{2} \quad
+\sqrt{2}
+}
+$$
+
+Here, $R$ breaks down at $R_{22}$, and $R$ is no longer in upper echelon form.
+
+This means that Gram-Schmidt breaks down because if $R$ has a $0$ in the second
+column. This indicates that one column is dependent on another.
+
 **Problems 26-29 use the $QR$ code in equation (11). It executes Gram-Schmidt.**
 
 26. Show why $C$ (found via $C^*$ in the steps after (11)) is equal to $C$ in
     equation (8).
 
+_Solution:_
+
+In equation (8), we see the last step of a three part Gram-Schmidt process:
+
+$$ C = c - \frac{A^{\mathbf{T}}c}{A^{\mathbf{T}}A}A - \frac{B^{\mathbf{T}}c}{B^{\mathbf{T}}B}B $$
+
+In equation (11), we see an evaluation from $C^*$ to $C$:
+
+$$ C^* = a_3 - (q_1^{\mathbf{T}}a_3)q_1 \quad C = C^* - (q_2^{\mathbf{T}}C^*)q_2 \quad q_3 = \frac{C}{\|C\|} $$
+
+Consider that:
+
+$$ (q_2^{\mathbf{T}}C^*)q_2 = \frac{B^{\mathbf{T}}c}{B^{\mathbf{T}}B}B $$
+
+This follows from $q_2 = \dfrac{B}{\|B\|}$.
+
+Similarly,
+
+$$ (q_1^{\mathbf{T}}a_3)q_1 = \frac{A^{\mathbf{T}}c}{A^{\mathbf{T}}A}A  $$
+
+because $q_1 = \frac{A}{\|A\|}$ which is orthogonal to $q_2$.
+
 27. Equation (8) subtracts from $c$ its components along $A$ and $B$. Why not
     subtract the components along $a$ and along $b$?
 
+_Solution:_
+
+This one is taken directly from Strang:
+
+When $a$ and $b$ are not orthogonal, the projections onto these lines _do not
+add_ to the projection onto the plane of $a$ and $b$. We must use the orthogonal
+$A$ and $B$ (or orthonormal $q_1$ and $q_2$) to be allowed to add projections on
+those lines.
+
 28. Where are the $mn^2$ multiplications in equation (11)?
+
+_Solution:_
+
+The $mn^2$ multiplications occur when in each dot product that occurs during the
+Gram-Schmidt process. Consider the standard evaluation for $B$:
+
+$$ B = b - \frac{A^{\mathbf{T}}b}{A^{\mathbf{T}}A}A $$
+
+The denominator $A^{\mathbf{T}}A$ takes $m$ operations.
+
+Similarly, the numerator $A^{\mathbf{T}}A$ takes $m$ operations.
+
+These steps are then done $n^2$ times as we take the dot product of them all to
+find $Q$, totaling in $mn^2$ operations.
+
+_Strang's answer:_
+
+There are $\dfrac{1}{2}m^2n$ multiplications to find the numbers $r_{kj}$ and
+the same for $v_{ij}$, see Page 251 for reference to the summation equation
+Strang is referring to.
 
 29. Omitted (no MATLAB) .
 
-**Problems 30-25 involve orthogonal matrices that are special.**
+**Problems 30-34 involve orthogonal matrices that are special.**
 
 30. The first four _wavelets_ are in the columns of this wavelet matrix $W$:
 
@@ -5929,6 +6757,8 @@ $$ W =
 $$
 
 What is special about the columns? Find the inverse wavelet transform $W^{-1}$.
+
+Omitted.
 
 31.
 
@@ -5946,18 +6776,28 @@ $$
 Project $b = (1, 1, 1, 1)$ onto the first column. Then project $b$ onto the
 plane of the first two columns.
 
+Omitted.
+
 32. If $u$ is a unit vector, then $Q = I - 2uu^{\mathbf{T}}$ is a reflection
     matrix (Example 3). Find $Q_1$ from $u = (0, 1)$ and $Q_2$ from
     $u = \left(0, \dfrac{\sqrt{2}}{2}, \dfrac{\sqrt{2}}{2}\right)$. Draw the
     reflections when $Q_1$ and $Q_2$ multiply the vectors $(1, 2)$ and
     $(1, 1, 1)$.
 
+Omitted.
+
 33. Find all matrices that are both orthogonal and lower triangular.
+
+Omitted.
 
 34. $Q = I - 2uu^{\mathbf{T}}$ is a reflection matrix when
     $u^{\mathbf{T}}u = 1$. Two reflections give $Q^2 = I$.
 
 a. Show that $Qu = -u$. The mirror is perpendicular to $u$.
 
+Omitted.
+
 b. Find $Qv$ when $u^{\mathbf{T}}v = 0$. The mirror contains $v$. It reflects to
 itself.
+
+Omitted.
