@@ -1766,3 +1766,568 @@ $$
 
 Since we get to $A$ by elimination and a single row exchange, we can conclude
 that $\det B = -\det A$, and thus $\det B = -6$.
+
+---
+
+## Problem Set 5.2
+
+**Problems 1-10 use the big formula with $n!$ terms:
+$|A| = \sum\pm a_{1\alpha}a_{2\beta} \cdots a_{n\omega}$. Every term uses each
+row and each column once.**
+
+1. Compute the determinants of $A, B, C$ from six terms. Are their rows
+   independent?
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+3 & 1 & 2 \\
+3 & 2 & 1 \\
+\end{array}\right]
+$$
+
+$$ B =
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+4 & 4 & 4 \\
+5 & 6 & 7 \\
+\end{array}\right]
+$$
+
+$$ C =
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+1 & 1 & 0 \\
+1 & 0 & 0 \\
+\end{array}\right]
+$$
+
+2. Compute the determinants of $A, B, C, D$. Are their columns independent?
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+1 & 0 & 1 \\
+0 & 1 & 1 \\
+\end{array}\right]
+$$
+
+$$ B =
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9 \\
+\end{array}\right]
+$$
+
+$$ C =
+\left[\begin{array}{cc}
+A & 0 \\
+0 & A \\
+\end{array}\right]
+$$
+
+$$ D =
+\left[\begin{array}{cc}
+A & 0 \\
+0 & B \\
+\end{array}\right]
+$$
+
+3. Show that $\det A = 0$, regardless of the five nonzeros marked by $x$'s:
+
+$$ A =
+\left[\begin{array}{ccc}
+x & x & x \\
+0 & 0 & x \\
+0 & 0 & x \\
+\end{array}\right]
+$$
+
+What are the cofactors of row $1$?
+
+What is the rank of $A$?
+
+What are the $6$ terms in $\det A$?
+
+4. Find two ways to choose nonzeros from four different rows and columns:
+
+$$ A =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 1 \\
+0 & 1 & 1 & 1 \\
+1 & 1 & 0 & 1 \\
+1 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+$$ B =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 2 \\
+0 & 3 & 4 & 5 \\
+5 & 4 & 0 & 3 \\
+2 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+($B$ has the same zeros as $A$).
+
+Is $\det A$ equal to $1 + 1$ or $1 - 1$ or $-1 - 1$? What is $\det B$?
+
+5. Place the smallest number of zeros in a $4$ by $4$ matrix that will guarantee
+   $\det A = 0$. Place as many zeros as possible while still allowing
+   $\det A \neq 0$.
+
+6.
+
+a. If $a_{11} = a_{22} = a_{33} = 0$, how many of the six terms in $\det A$ will
+be zero?
+
+b. If $a_{11} = a_{22} = a_{33} = a_{44} = 0$, how many of the $24$ products
+$a_{1j}a_{2k}a_{3l}a_{4m}$ are sure to be zero?
+
+7. How many $5$ by $5$ permutation matrices have $\det P = +1$? Those are even
+   permutations. Find one that needs four exchanges to reach the identity
+   matrix.
+
+8. If $\det A$ is not zero, at least one of the $n!$ terms in formula (8) is not
+   zero. Deduce from the big formula that some ordering of the rows of $A$
+   leaves no zeros on the diagonal. (Don't use $P$ from elimination; that $PA$
+   can have zeros on the diagonal.)
+
+9. Show that $4$ is the largest determinant for a $3$ by $3$ matrix of $1$'s and
+   $-1$'s.
+
+10. How many permutations of $(1, 2, 3, 4)$ are even and what are they? Extra
+    credit: What are all the possible $4$ by $4$ determinants of
+    $I + P_{\text{even}}$?
+
+**Problems 11-22 use cofactors $C_{ij} = (-1)^{i + j}\det M_{ij}$. Remove row
+$i$ and column $j$.**
+
+11. Find all cofactors and put them into cofactor matrices $C, D$. Find $AC$ and
+    $\det B$.
+
+$$ A =
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right]
+$$
+
+$$ B =
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 0 & 0 \\
+\end{array}\right]
+$$
+
+12. Find the cofactor matrix $C$ and multiply $A$ times $C^{\mathbf{T}}$.
+    Compare $AC^{\mathbf{T}}$ with $A^{-1}$:
+
+$$ A =
+\left[\begin{array}{rrr}
+2 & -1 & 0 \\
+-1 & 2 & -1 \\
+0 & -1 & 2 \\
+\end{array}\right]
+$$
+
+$$ A^{-1} =
+\frac{1}{4}
+\left[\begin{array}{ccc}
+3 & 2 & 1 \\
+2 & 4 & 2 \\
+1 & 2 & 3 \\
+\end{array}\right]
+$$
+
+13. The $n$ by $n$ determinant $C_n$ has $1$'s above and below the main
+    diagonal:
+
+$$ C_1 = |0| $$
+
+$$ C_2 =
+\begin{vmatrix}
+0 & 1 \\
+1 & 0 \\
+\end{vmatrix}
+$$
+
+$$ C_3 =
+\begin{vmatrix}
+0 & 1 & 0 \\
+1 & 0 & 1 \\
+0 & 1 & 0 \\
+\end{vmatrix}
+$$
+
+$$ C_4 =
+\begin{vmatrix}
+0 & 1 & 0 & 0 \\
+1 & 0 & 1 & 0 \\
+0 & 1 & 0 & 1 \\
+0 & 0 & 1 & 0 \\
+\end{vmatrix}
+$$
+
+a. What are these determinants $C_1, C_2, C_3, C_4$?
+
+b. By cofactors find the relation between $C_n$ and $C_{n - 1}$ and $C_{n - 2}$.
+Find $C_{10}$.
+
+14. The matrices in Problem 13 have $1$'s just above and below the main
+    diagonal. Going down the matrix, which order of columns (if any) gives all
+    $1$'s? Explain why that permutation is _even_ for $n = 4, 8, 12, \dots$ and
+    _odd_ for $n = 2, 6, 10, \dots$. Then
+
+$$ C_n = 0(\text{odd }n) $$
+
+$$ C_n = 1(n = 4, 8, \dots) $$
+
+$$ C_n = -1(n = 2, 6, \cdots) $$
+
+15. The tridiagonal $1, 1, 1$ matrix of order $n$ has determinant $E_n$:
+
+$$ E_1 = |1| $$
+
+$$ E_2 =
+\begin{vmatrix}
+1 & 1 \\
+1 & 1 \\
+\end{vmatrix}
+$$
+
+$$ E_3 =
+\begin{vmatrix}
+1 & 1 & 0 \\
+1 & 1 & 1 \\
+0 & 1 & 1 \\
+\end{vmatrix}
+$$
+
+$$ E_4 =
+\begin{vmatrix}
+1 & 1 & 0 & 0 \\
+1 & 1 & 1 & 0 \\
+0 & 1 & 1 & 1 \\
+0 & 0 & 1 & 1 \\
+\end{vmatrix}
+$$
+
+a. By cofactors show that $E_n = E_{n - 1} - E_{n - 2}$.
+
+b. Starting from $E_1 = 1$ and $E_2 = 0$ find $E_3, E_4, \dots, E_8$.
+
+c. By noticing how these numbers eventually repeat, find $E_{100}$.
+
+16. $F_n$ is the determinant of the $1, 1, -1$ tridiagonal matrix of order $n$:
+
+$$ F_2 =
+\begin{vmatrix}
+1 & -1 \\
+1 & 1 \\
+\end{vmatrix} = 2
+$$
+
+$$ F_3 =
+\begin{vmatrix}
+1 & -1 & 0 \\
+1 & 1 & -1 \\
+0 & 1 & 1 \\
+\end{vmatrix} = 3
+$$
+
+$$ F_4 =
+\begin{vmatrix}
+1 & -1 &  & \\
+1 & 1 & -1 & \\
+& 1 & 1 & -1 \\
+& & 1 & 1 \\
+\end{vmatrix} \neq 4
+$$
+
+Expand in cofactors to show that $F_n = F_{n - 1} + F_{n - 2}$. These
+determinants are _Fibonacci numbers_ $1, 2, 3, 5, 8, 13, \dots$. The sequence
+usually starts $1, 1, 2, 3$ (with two $1$'s) so our $F_n$ is the usual
+$F_{n + 1}$.
+
+17. The matrix $B_n$ is the $-1, 2, -1$ matrix $A_n$ except that $b_{11} = 1$
+    instead of $a_{11} = 1$. Using cofactors of the _last_ row of $B_4$ show
+    that $|B_4| = 2|B_3| - |B_2| = 1$.
+
+$$ B_4 =
+\left[\begin{array}{rrrr}
+1 & -1 & & \\
+-1 & 2 & -1 & \\
+& -1 & 2 & -1 \\
+& & -1 & 2 \\
+\end{array}\right]
+$$
+
+$$ B_3
+\left[\begin{array}{rrr}
+1 & -1 & \\
+-1 & 2 & -1 \\
+& -1 & 2 \\
+\end{array}\right]
+$$
+
+$$ B_3 =
+\left[\begin{array}{rr}
+1 & -1 \\
+-1 & 2 \\
+\end{array}\right]
+$$
+
+The recursion $|B_n| = 2|B_{n - 1}| - |B_{n - 2}|$ is satisfied when every
+$|B_n| = 1$. This recursion is the same as for the $A$'s in Example 6. The
+difference 8s in the starting values $1, 1, 1$ for the determinants of sizes
+$n = 1, 2, 3$.
+
+18. Go back to $B_n$ in Problem 17. It is the same as $A_n$ except for
+    $b_{11} = 1$. So use linearity in the first row, where
+    $\left[\begin{array}{rrr}1 & -1 & 0 \\\end{array}\right]$ equals
+    $\left[\begin{array}{rrr}2 & -1 & 0 \\\end{array}\right]$ minus
+    $\left[\begin{array}{rrr}1 & 0 & 0 \\\end{array}\right]$:
+
+$$ |B_n| =
+\begin{vmatrix}
+1 & -1 & & 0 \\
+-1 & & & \\
+& & A_{n - 1} & \\
+0 & & & & \\
+\end{vmatrix} =
+\begin{vmatrix}
+2 & -1 & & 0 \\
+-1 & & & \\
+& & A_{n - 1} & \\
+0 & & & & \\
+\end{vmatrix} =
+\begin{vmatrix}
+1 & 0 & & 0 \\
+-1 & & & \\
+& & A_{n - 1} & \\
+0 & & & & \\
+\end{vmatrix}
+$$
+
+Linearity gives $|B_n| = |A_n| - |A_{n - 1}| =$ ____.
+
+19. Explain why the $4$ by $4$ Vandermonde determinant contains $x^3$ but not
+    $x^4$ or $x^5$:
+
+$$ V_4 =
+\det
+\left[\begin{array}{cccc}
+1 & a & a^2 & a^3 \\
+1 & b & b^2 & b^3 \\
+1 & c & c^2 & c^3 \\
+1 & x & x^2 & x^3 \\
+\end{array}\right]
+$$
+
+The determinant is zero at $x =$ ____, ____, and ____. The cofactor of $x^3$ is
+$V_3 = (b - a)(c - a)(c - b)$. Then
+$V_4 = (b - a)(c - a)(c - b)(x - a)(x - b)(x - c)$.
+
+20. Find $G_2$ and $G_3$ and then by row operations $G_4$. Can you predict
+    $G_n$?
+
+$$ G_2 =
+\begin{vmatrix}
+0 & 1 \\
+1 & 0 \\
+\end{vmatrix}
+$$
+
+$$ G_3 =
+\begin{vmatrix}
+0 & 1 & 1 \\
+1 & 0 & 1 \\
+1 & 1 & 0 \\
+\end{vmatrix}
+$$
+
+$$ G_4 =
+\begin{vmatrix}
+0 & 1 & 1 & 1 \\
+1 & 0 & 1 & 1 \\
+1 & 1 & 0 & 1 \\
+1 & 1 & 1 & 0 \\
+\end{vmatrix}
+$$
+
+21. Compute $S_1, S_2, S_3$ for these $1, 3, 1$ matrices. By Fibonacci guess and
+    check $S_4$.
+
+$$ S_1 = |3| $$
+
+$$ S_2 =
+\begin{vmatrix}
+3 & 1 \\
+1 & 3 \\
+\end{vmatrix}
+$$
+
+$$ S_3 =
+\begin{vmatrix}
+3 & 1 & 0 \\
+1 & 3 & 1 \\
+0 & 1 & 3 \\
+\end{vmatrix}
+$$
+
+22. Change $3$ to $2$ in the upper left corner of the matrices in Problem 21.
+    Why does that subtract $S_{n - 1}$ from the determinant $S_n$? Show that the
+    determinants of the new matrices become the Fibonacci numbers $2, 5, 13$
+    (always $F_{2n + 1}$).
+
+**Problems 23-26 are about block matrices and block determinants.**
+
+23. With $2$ by $2$ blocks in $4$ by $4$ matrices, you cannot always use block
+    determinants:
+
+$$
+\begin{vmatrix}
+A & B \\
+0 & D \\
+\end{vmatrix} = |A||D|
+$$
+
+but
+
+$$
+\begin{vmatrix}
+A & B \\
+C & D \\
+\end{vmatrix} \neq |A||D| - |C||B|
+$$
+
+a. Why is the first statement true? Somehow $B$ doesn't enter.
+
+b. Show by example that equality fails (as shown) when $C$ enters.
+
+c. Show by example that the answer $\det(AD - CB)$ is also wrong.
+
+24. With block multiplication, $A = LU$ has $A_k = L_kU_k$ in the top left
+    corner:
+
+$$ A =
+\left[\begin{array}{cc}
+A_k & \text{*} \\
+\text{*} & \text{*} \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+L_k & 0 \\
+\text{*} & \text{*} \\
+\end{array}\right]
+\left[\begin{array}{cc}
+U_k & \text{*} \\
+0 & \text{*} \\
+\end{array}\right]
+$$
+
+a. Suppose the first three pivots of $A$ are $2, 3, -1$. What are the
+determinants of $L_1, L_2, L_3$ (with diagonal $1$'s) and $U_1, U_2, U_3$ and
+$A_1, A_2, A_3$?
+
+b. If $A_1, A_2, A_3$ have determinants $5, 6, 7$ find the three pivots from
+equation (3).
+
+25. Block elimination subtracts $CA^{-1}$ times the first row
+    $\left[\begin{array}{cc}A & B\end{array}\right]$ from the second row
+    $\left[\begin{array}{cc|c}C & D \\\end{array}\right]$. This leaves the
+    _Schur complement_ $D - CA^{-1}B$ in the corner:
+
+$$
+\left[\begin{array}{rr}
+I & 0 \\
+-CA^{-1} & I \\
+\end{array}\right]
+\left[\begin{array}{cc}
+A & B \\
+C & D \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+A & B \\
+0 & D - CA^{-1}B \\
+\end{array}\right]
+$$
+
+Take determinants of these block matrices to prove correct rules if $A^{-1}$
+exists:
+
+$$
+\begin{vmatrix}
+A & B \\
+C & D \\
+\end{vmatrix} =
+|A||D - CA^{-1}B| =
+|AD - CB| \text{ provided } AC = CA
+$$
+
+26. If $A$ is $m$ by $n$ and $B$ is $n$ by $m$, block multiplication gives
+    $\det M = \det AB$:
+
+$$ M =
+\left[\begin{array}{rr}
+0 & A \\
+-B & I \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+AB & A \\
+0 & I \\
+\end{array}\right]
+\left[\begin{array}{rr}
+I & 0 \\
+-B & I \\
+\end{array}\right]
+$$
+
+If $A$ is a single row and $B$ is a single column what is $\det M$? If $A$ is a
+column and $B$ is a row what is $\det M$? Do a $3$ by $3$ example of each.
+
+27. (A calculus question) Show that the derivative of $\det A$ with respect to
+    $a_{11}$ is the cofactor $C_{11}$. The other entries are fixed - we are only
+    changing $a_{11}$.
+
+28. A $3$ by $3$ determinant has three products "down to the right" and three
+    "down to the left" with minus signs. Compute the six terms like
+    $(1)(5)(9) = 45$ to find $D$.
+
+(See Page 282 for figure).
+
+29. For $E_4$ in Problem 15, five of the $4! = 24$ terms in the big formula (8)
+    are nonzero. Find those five terms to show that $E_4 = -1$.
+
+30. For the $4$ by $4$ tridiagonal second difference matrix (entries
+    $-1, 2, -1$) find the five terms in the big formula that give
+    $\det A = 16 - 4 - 4 - 4 + 1$.
+
+31. Find the determinant of this cyclic $P$ by cofactors of row $1$ and then the
+    "big formula". How many exchanges reorder $4, 1, 2, 3$ into $1, 2, 3, 4$? Is
+    $|P^2| = 1$ or $-1$?
+
+$$ P =
+\left[\begin{array}{cccc}
+0 & 0 & 0 & 1 \\
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+\end{array}\right]
+$$
+
+$$ P^2 =
+\left[\begin{array}{cccc}
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+0 & I \\
+I & 0 \\
+\end{array}\right]
+$$
