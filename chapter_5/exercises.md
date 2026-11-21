@@ -1802,6 +1802,52 @@ $$ C =
 \end{array}\right]
 $$
 
+_Solution:_
+
+For $A$:
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+3 & 1 & 2 \\
+3 & 2 & 1 \\
+\end{array}\right]
+$$
+
+$$ |A| = (+1)[(1)(1)(1)] + (-1)[(1)(2)(2)] + (-1)[(2)(3)(1)] + (+1)[(2)(2)(3)] + (+1)[(3)(3)(2)] + (-1)[(3)(1)(3)] = 12 $$
+
+Rows are independent.
+
+For $B$:
+
+$$ B =
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+4 & 4 & 4 \\
+5 & 6 & 7 \\
+\end{array}\right]
+$$
+
+$$ |B| = (+1)[(1)(4)(7)] + (-1)[(1)(4)(6)] + (-1)[(2)(4)(7)] + (+1)[(2)(4)(5)] + (+1)[(3)(4)(6)] + (-1)[(3)(4)(5)] = 0 $$
+
+The rows are dependent (you can also see that row 3 is the sum of row 1 + row
+2).
+
+For $C$:
+
+$$ C =
+\left[\begin{array}{ccc}
+1 & 1 & 1 \\
+1 & 1 & 0 \\
+1 & 0 & 0 \\
+\end{array}\right]
+$$
+
+$$ |C| = (+1)[(1)(1)(0)] + (-1)[(1)(0)(0)] + (-1)[(1)(1)(0)] + (+1)[(1)(0)(1)] + (+1)[(1)(1)(0)] + (-1)[(1)(1)(1)] = -1 $$
+
+Rows are independent. Notice that you can omit all but the last term as the rest
+contain $0$'s.
+
 2. Compute the determinants of $A, B, C, D$. Are their columns independent?
 
 $$ A =
@@ -1834,6 +1880,64 @@ A & 0 \\
 \end{array}\right]
 $$
 
+_Solution:_
+
+For $A$:
+
+$$ A =
+\left[\begin{array}{ccc}
+1 & 1 & 0 \\
+1 & 0 & 1 \\
+0 & 1 & 1 \\
+\end{array}\right]
+$$
+
+$$ A = (-1)[(1)(1)(1)] + (-1)[(1)(1)(1)] = -2 $$
+
+Here, notice we omitted multiplications that had a $0$ in it.
+
+$A$ is linearly independent.
+
+For $B$:
+
+$$ B =
+\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9 \\
+\end{array}\right]
+$$
+
+$$ |B| = (+1)[(1)(5)(9)] + (-1)[(1)(6)(8)] + (-1)[(2)(4)(9)] + (+1)[(2)(6)(7)] + (+1)[(3)(4)(8)] + (-1)[(3)(5)(7)] = 0 $$
+
+The columns of $B$ are dependent.
+
+For $C$:
+
+$$ C =
+\left[\begin{array}{cc}
+A & 0 \\
+0 & A \\
+\end{array}\right]
+$$
+
+$$ |C| = (+1)[|A||A|] + (-1)[(0)(0)] = 4 $$
+
+Independent.
+
+For $D$:
+
+$$ D =
+\left[\begin{array}{cc}
+A & 0 \\
+0 & B \\
+\end{array}\right]
+$$
+
+$$ |D| = (+1)[|A||B|] = 0 $$
+
+Dependent.
+
 3. Show that $\det A = 0$, regardless of the five nonzeros marked by $x$'s:
 
 $$ A =
@@ -1849,6 +1953,24 @@ What are the cofactors of row $1$?
 What is the rank of $A$?
 
 What are the $6$ terms in $\det A$?
+
+_Solution:_
+
+_What are the cofactors of row $1$?:_
+
+$$
+C_{11} = (+1)[0x] + (-1)[x0] = 0 \\
+C_{12} = (-1)[0x] + (+1)[x0] = 0 \\
+C_{13} = (+1)[00] + (-1)[00] = 0 \\
+$$
+
+_What is the rank of $A$?:_
+
+$$ r = 2 $$
+
+_What are the $6$ terms in $\det A$?:_
+
+All $6$ terms in $\det A$ are $0$.
 
 4. Find two ways to choose nonzeros from four different rows and columns:
 
@@ -1874,33 +1996,170 @@ $$
 
 Is $\det A$ equal to $1 + 1$ or $1 - 1$ or $-1 - 1$? What is $\det B$?
 
+_Solution:_
+
+For four different rows, you can choose $a_{11}a_{23}a_{32}a_{44}$. This takes
+one row exchange, so the determinant of this choice is $-1[(1)(1)(1)(1)] = -1$.
+
+For columns, you can choose $a_{14}a_{23}a_{32}a_{11}$. This takes two row
+exchanges, so the determinant of this choice is $+1$.
+
+The
+$\det A = |a_{11}a_{23}a_{32}a_{44}| + |a_{14}a_{23}a_{32}a_{11}| = (-1) + 1 = 0$.
+
+The $\det B = (-1)[(1)(4)(4)(1)] + (+1)[(2)(4)(4)(2)] = 48 $$
+
+Notice that despite the $0$'s being in the same place for both $A$ and $B$ does
+_not_ mean that $|A| = |B|$.
+
 5. Place the smallest number of zeros in a $4$ by $4$ matrix that will guarantee
    $\det A = 0$. Place as many zeros as possible while still allowing
    $\det A \neq 0$.
+
+_Solution:_
+
+_Place the smallest number of zeros in a $4$ by $4$ matrix that will guarantee
+$\det A = 0$:_
+
+$$ A =
+\left[\begin{array}{cccc}
+1 & 1 & 1 & 1 \\
+1 & 1 & 1 & 1 \\
+1 & 1 & 1 & 1 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right]
+$$
+
+Simply having a row of $0$'s (4 $0$'s) will guarantee the determinant is $0$
+(you could also have a column of $0$'s).
+
+_Place as many zeros as possible while still allowing $\det A \neq 0$:_
+
+$$ A =
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+Notice that this is just $I$, but this is the most amount of $0$'s allowed
+($16 - 4 = 12$) while still having $\det A \neq 0$.
 
 6.
 
 a. If $a_{11} = a_{22} = a_{33} = 0$, how many of the six terms in $\det A$ will
 be zero?
 
+$4$. Visualize it mentally, if we have $0$'s along the diagonal and fill the
+rest with $1$'s, the six terms with non-zero values will be all multiples along
+the opposite diagonals, with exception of $a_{11}a_{23}a_{32}$ since
+$a_{11} = 0$.
+
+$$ A =
+\left[\begin{array}{ccc}
+0 & 1 & 1 \\
+1 & 0 & 1 \\
+1 & 1 & 0 \\
+\end{array}\right]
+$$
+
+$$
+a_{11}a_{22}a_{33} = 0 \\
+a_{11}a_{23}a_{32} = 0 \\
+a_{12}a_{21}a_{33} = 0 \\
+a_{12}a_{23}a_{31} = 1 \\
+a_{13}a_{21}a_{32} = 1 \\
+a_{13}a_{22}a_{31} = 0 \\
+$$
+
 b. If $a_{11} = a_{22} = a_{33} = a_{44} = 0$, how many of the $24$ products
 $a_{1j}a_{2k}a_{3l}a_{4m}$ are sure to be zero?
+
+Just visualize this one to help:
+
+$$ A =
+\left[\begin{array}{cccc}
+0 & 1 & 1 & 1 \\
+1 & 0 & 1 & 1 \\
+1 & 1 & 0 & 1 \\
+1 & 1 & 1 & 0 \\
+\end{array}\right]
+$$
+
+For sake of expediency, the answer is $24 - 9 = 15$.
+
+There is a general derangement formula that will give you this, but is beyond
+the scope of this chapter:
+
+$$ D_n = n!\sum_{k = 0}^{n}{\frac{(-1)^{k}}{k!}} $$
 
 7. How many $5$ by $5$ permutation matrices have $\det P = +1$? Those are even
    permutations. Find one that needs four exchanges to reach the identity
    matrix.
+
+_Solution:_
+
+_How many $5$ by $5$ permutation matrices have $\det P = +1$?:_
+
+There are $\frac{5!}{2} = 60$ 5 by 5 permutation matrices that have
+$\det P = +1$.
+
+_Find one that needs four exchanges to reach the identity matrix:_
+
+$$ P =
+\left[\begin{array}{ccccc}
+0 & 0 & 0 & 1 & 0 \\
+1 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
 
 8. If $\det A$ is not zero, at least one of the $n!$ terms in formula (8) is not
    zero. Deduce from the big formula that some ordering of the rows of $A$
    leaves no zeros on the diagonal. (Don't use $P$ from elimination; that $PA$
    can have zeros on the diagonal.)
 
+_Solution:_
+
+The big formula is:
+
+$$ \sum(\det P)a_{1\alpha}a_{2\beta} \cdots a_{n \omega} $$
+
+It follows that at least one of the $n!$ terms of the above summation is not $0$
+if $\det A \neq 0$. Via permutation (row exchanges), it makes sense that we can
+move rows $1, 2, \dots, n$ to rows $\alpha, \beta, \dots, \omega$ until there
+are no $0$'s along the main diagonal if $\det A \neq 0$.
+
 9. Show that $4$ is the largest determinant for a $3$ by $3$ matrix of $1$'s and
    $-1$'s.
+
+_Solution:_
+
+We know there are $3! = 6$ possible permutations from 3 by 3 matrix. Let $q$ be
+the number of $-1$ terms in the Big Formula and $6 - q$ $1$ terms. Then the
+$\det A = q + 6 - q = 6 = \text{even}$, so any non-even determinant is not
+possible, and $\det A = 6$ is also not possible since not all permutations are
+even nor are all permutations odd. If $3$ permutations are odd, and $3$
+permutations are even, if this $A$ had all $1$'s or all $-1$'s, the determinant
+would be $0$. Thus it follows that the maximum determinant must be $4$.
 
 10. How many permutations of $(1, 2, 3, 4)$ are even and what are they? Extra
     credit: What are all the possible $4$ by $4$ determinants of
     $I + P_{\text{even}}$?
+
+_Solution:_
+
+_How many permutations of $(1, 2, 3, 4)$ are even and what are they?:_
+
+There are $\frac{4!}{2} = 12$ even permutations.
+
+$$ (1, 2, 3, 4), (4, 3, 2, 1), (3, 1, 4, 2), (2, 1, 4, 3) $$
+
+and $8$ other permutations where one number stays in place.
 
 **Problems 11-22 use cofactors $C_{ij} = (-1)^{i + j}\det M_{ij}$. Remove row
 $i$ and column $j$.**
@@ -1923,6 +2182,79 @@ $$ B =
 \end{array}\right]
 $$
 
+_Solution:_
+
+First let's find $C$ from $A$:
+
+$$
+C_{11} = (-1)^{1 + 1}\det([d]) = 1 \cdot |d| = |d| = d \\
+C_{12} = (-1)^{1 + 2}\det([c]) = (-1) \cdot |c| = -c \\
+C_{21} = (-1)^{2 + 1}\det([b]) = (-1) \cdot |b| = -b \\
+C_{22} = (-1)^{2 + 2}\det([a]) = (1) \cdot |a| = a \\
+$$
+
+Now assemble cofactor matrix $C$:
+
+$$ C =
+\left[\begin{array}{rr}
+d & -c \\
+-b & a \\
+\end{array}\right]
+$$
+
+Now find $AC$:
+
+$$ AC =
+\left[\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right]
+\left[\begin{array}{rr}
+d & -c \\
+-b & a \\
+\end{array}\right] =
+\left[\begin{array}{cc}
+ad - b^2 & ba - ac \\
+cd - db & ad - c^2 \\
+\end{array}\right]
+$$
+
+Now define $D$ from $B$:
+
+$$
+D_{11} = (-1)^{1 + 1}\det\left[\begin{array}{cc}5 & 6 \\0 & 0 \\\end{array}\right] = 1 \cdot 0 = 0 \\
+D_{12} = (-1)^{1 + 2}\det\left[\begin{array}{cc}4 & 6 \\7 & 0 \\\end{array}\right] = (-1) \cdot (-42) = 42 \\
+D_{13} = (-1)^{1 + 3}\det\left[\begin{array}{cc}4 & 5 \\7 & 0 \\\end{array}\right] = 1 \cdot (-35) = -35 \\
+D_{21} = (-1)^{2 + 1}\det\left[\begin{array}{cc}2 & 3 \\0 & 0 \\\end{array}\right] = (-1) \cdot 0 = 0 \\
+D_{22} = (-1)^{2 + 2}\det\left[\begin{array}{cc}1 & 3 \\7 & 0 \\\end{array}\right] = 1 \cdot (-21) = -21 \\
+D_{23} = (-1)^{2 + 3}\det\left[\begin{array}{cc}1 & 2 \\7 & 0 \\\end{array}\right] = (-1) \cdot (-14) = 14 \\
+D_{31} = (-1)^{3 + 1}\det\left[\begin{array}{cc}2 & 3 \\5 & 6 \\\end{array}\right] = 1 \cdot (-3) = -3 \\
+D_{32} = (-1)^{3 + 2}\det\left[\begin{array}{cc}1 & 3 \\4 & 6 \\\end{array}\right] = (-1) \cdot (-6) = 6 \\
+D_{33} = (-1)^{3 + 3}\det\left[\begin{array}{cc}1 & 2 \\4 & 5 \\\end{array}\right] = 1 \cdot (-3) = -3 \\
+$$
+
+So cofactor matrix $D$ is:
+
+$$ D =
+\left[\begin{array}{rrr}
+0 & 42 & -35 \\
+0 & -21 & 14 \\
+-3 & 6 & -3 \\
+\end{array}\right]
+$$
+
+Now find $\det B$:
+
+$$ \det B = b_{i1}D_{i1} + b_{i2}D_{i2} + \cdots + b_{in}D_{in} $$
+
+so:
+
+$$ \det B = (1)(0) + (2)(42) + (3)(-35) = -21 $$
+
+You can use any row, but only one row to evaluate $\det B$. Note here that the
+reason we don't sum ALL of them is because each evaluation of each $b_{ij}$
+yields $D_{ij}$ from the 2 by 2 submatrix left on the remaining rows.
+
 12. Find the cofactor matrix $C$ and multiply $A$ times $C^{\mathbf{T}}$.
     Compare $AC^{\mathbf{T}}$ with $A^{-1}$:
 
@@ -1942,6 +2274,64 @@ $$ A^{-1} =
 1 & 2 & 3 \\
 \end{array}\right]
 $$
+
+_Solution:_
+
+Find all $C_{ij}$:
+
+$$
+C_{11} = (-1)^{1 + 1}\det\left[\begin{array}{rr} 2 & -1 \\ -1 & 2 \\ \end{array}\right] = 1 \cdot 3 = 3 \\
+C_{12} = (-1)^{1 + 2}\det\left[\begin{array}{rr}-1 & -1 \\0 & 2 \\\end{array}\right] = (-1) \cdot (-2) = 2 \\
+C_{13} = (-1)^{1 + 3}\det\left[\begin{array}{rr}-1 & 2 \\0 & -1 \\\end{array}\right] = 1 \cdot 1 = 1 \\
+C_{21} = (-1)^{2 + 1}\det\left[\begin{array}{rr}-1 & 0 \\-1 & 2 \\\end{array}\right] = (-1) \cdot (-2) = 2 \\
+C_{22} = (-1)^{2 + 2}\det\left[\begin{array}{rr}2 & 0 \\0 & 2 \\\end{array}\right] = 1  \cdot 4 = 4 \\
+C_{23} = (-1)^{2 + 3}\det\left[\begin{array}{rr}2 & -1 \\0 & -1 \\\end{array}\right] = (-1) \cdot (-2) = 2 \\
+C_{31} = (-1)^{3 + 1}\det\left[\begin{array}{rr}-1 & 0 \\2 & -1 \\\end{array}\right] = 1 \cdot 1 = 1 \\
+C_{32} = (-1)^{3 + 2}\det\left[\begin{array}{rr}2 & 0 \\-1 & -1 \\\end{array}\right] = (-1) \cdot (-2) = 2 \\
+C_{33} = (-1)^{3 + 3}\det\left[\begin{array}{rr}2 & -1 \\-1 & 2 \\\end{array}\right] = 1 \cdot 3 = 3
+$$
+
+Compile into $C$:
+
+$$ C =
+\left[\begin{array}{ccc}
+3 & 2 & 1 \\
+2 & 4 & 2 \\
+1 & 2 & 3 \\
+\end{array}\right]
+$$
+
+Transpose to $C^{\mathbf{T}}$:
+
+$$ C^{\mathbf{T}} =
+\left[\begin{array}{ccc}
+3 & 2 & 1 \\
+2 & 4 & 2 \\
+1 & 2 & 3 \\
+\end{array}\right] = C
+$$
+
+Evaluate $AC^{\mathbf{T}}$:
+
+$$ AC^{\mathbf{T}} =
+\left[\begin{array}{rrr}
+2 & -1 & 0 \\
+-1 & 2 & -1 \\
+0 & -1 & 2 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+3 & 2 & 1 \\
+2 & 4 & 2 \\
+1 & 2 & 3 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+4 & 0 & 0 \\
+0 & 4 & 0 \\
+0 & 0 & 4 \\
+\end{array}\right] = 4I
+$$
+
+Notice that $A^{-1} = \frac{1}{4}C^{\mathbf{T}}$.
 
 13. The $n$ by $n$ determinant $C_n$ has $1$'s above and below the main
     diagonal:
@@ -1974,8 +2364,28 @@ $$
 
 a. What are these determinants $C_1, C_2, C_3, C_4$?
 
+$$
+C_1 = 0, \\
+C_2 = -1 \\
+$$
+
+$$ C_3 = (-1)^{1 + 2}\det\left[\begin{array}{cc}1 & 1 \\0 & 0 \\\end{array}\right] = (-1) \cdot 0 = 0 $$
+
+$$ C_4 = (-1)^{1 + 2}\det\left[\begin{array}{ccc}1 & 1 & 0 \\0 & 0 & 1 \\0 & 1 & 0 \\\end{array}\right] = (-1) \cdot ((+1)C_2 + (-1)(0)) = (-1) \cdot ((+1)(-1) + 0) = (-1) \cdot (-1) = 1 $$
+
+$$
+C_1 = 0, \\
+C_2 = -1 \\
+C_3 = 0, \\
+C_4 = 1 \\
+$$
+
 b. By cofactors find the relation between $C_n$ and $C_{n - 1}$ and $C_{n - 2}$.
 Find $C_{10}$.
+
+$$ C_1 = 0, C_2 = -1, C_3 = -C_{3 - 2}, C_4 = -C_{4 - 2} $$
+
+$$ C_{10} = -C_8 = C_6 = -C_4 = C_2 = -1 $$
 
 14. The matrices in Problem 13 have $1$'s just above and below the main
     diagonal. Going down the matrix, which order of columns (if any) gives all
@@ -1987,6 +2397,23 @@ $$ C_n = 0(\text{odd }n) $$
 $$ C_n = 1(n = 4, 8, \dots) $$
 
 $$ C_n = -1(n = 2, 6, \cdots) $$
+
+_Solution:_
+
+_Going down the matrix, which order of columns (if any) gives all $1$'s?:_
+
+In order for the columns to give all $1$'s, we must choose an entry that starts
+with $1$, and then has diagonals that don't multiply by $0$. These occur where
+the column begins with $1$, so that would be column $2$ for $C_2$, $C_3$, $C_4$.
+Then, we must pick accordingly so that we don't get $0$, so for $C_2$ we would
+choose column $1$, no such entry exists for $C_3$ as that will always result in
+$0$, then for $C_4$ we would choose column $2$, then $1$ then $4$, then $3$.
+
+_Explain why that permutation is _even_ for $n = 4, 8, 12, \dots$ and odd for
+$n = 2, 6, 10, \dots$:_
+
+It follows that this particular $C$ requires $n/2$ row exchanges to sort it into
+the identity matrix.
 
 15. The tridiagonal $1, 1, 1$ matrix of order $n$ has determinant $E_n$:
 
@@ -2018,9 +2445,38 @@ $$
 
 a. By cofactors show that $E_n = E_{n - 1} - E_{n - 2}$.
 
+_Solution:_
+
+Since row $1$ of any $E$ is always just two $1$'s followed by endless $0$'s, it
+suffices to calculate the coefficient's of only these $1$'s.
+
+$$ C_{11} = (-1)^{1 + 1}\det(E_{n - 1}) $$
+
+$$ C_{12} = (-1)^{1 + 2}\det(E_{n - 2}) $$
+
+So,
+
+$$ E_n = E_{n - 1} - E_{n - 2} $$
+
 b. Starting from $E_1 = 1$ and $E_2 = 0$ find $E_3, E_4, \dots, E_8$.
 
+$$
+E_1 = 1, \\
+E_2 = 0, \\
+E_3 = E_2 - E_1 = -1, \\
+E_4 = E_3 - E_2 = -1 \\
+E_5 = E_4 - E_3 = 0 \\
+E_6 = E_5 - E_4 = 1 \\
+E_7 = E_6 - E_5 = 1 \\
+E_8 = E_7 - E_6 = 0 \\
+$$
+
 c. By noticing how these numbers eventually repeat, find $E_{100}$.
+
+From $E_3$ onward, we notice we have a repeating six cycle. Since the cycle
+starts at $E_3$, we can take $100 - 2 = 98$. Then $98 \mod 6 = 2$, This means
+that $E_{100} = \text{the second element of the cycle}$, and this means
+$E_{100} = E_{2 + 2} = E_4 = -1$.
 
 16. $F_n$ is the determinant of the $1, 1, -1$ tridiagonal matrix of order $n$:
 
@@ -2052,6 +2508,24 @@ Expand in cofactors to show that $F_n = F_{n - 1} + F_{n - 2}$. These
 determinants are _Fibonacci numbers_ $1, 2, 3, 5, 8, 13, \dots$. The sequence
 usually starts $1, 1, 2, 3$ (with two $1$'s) so our $F_n$ is the usual
 $F_{n + 1}$.
+
+_Solution:_
+
+For every $F$, the first row is always $(1, -1, 0, 0, 0, \dots, 0)$. It suffices
+to simply take the cofactor of these first two elements:
+
+$$ C_{11} = (-1)^{1 + 1}(F_{n - 1}) = F_{n - 1} $$
+
+$$ C_{12} = (-1)^{1 + 2}(F_{n - 2}) = -F_{n - 2} $$
+
+But, since this second $C_{12}$ always starts with a $-1$, this is reversed for
+that specific $a_{12}$:
+
+$$ a_{12} = (-1)C_{12} = (-1)[(-1)^{1 + 2}(F_{n - 2})] = F_{n - 2} $$
+
+This leaves a general formula for $F_n$:
+
+$$ F_n = C_{11} + a_{12}C_{12} = F_{n - 1} + (-1)(-F_{n - 2}) = F_{n - 1} + F_{n - 2} $$
 
 17. The matrix $B_n$ is the $-1, 2, -1$ matrix $A_n$ except that $b_{11} = 1$
     instead of $a_{11} = 1$. Using cofactors of the _last_ row of $B_4$ show
@@ -2086,6 +2560,46 @@ $|B_n| = 1$. This recursion is the same as for the $A$'s in Example 6. The
 difference 8s in the starting values $1, 1, 1$ for the determinants of sizes
 $n = 1, 2, 3$.
 
+_Solution:_
+
+The last row of every $B_n$ is $(0, 0, \dots, 0, -1, 2)$. It suffices to find
+the cofactors of these last two elements:
+
+$$ C_{nn} = (-1)^{2n}|B_{n - 1}| = 1(|B_{n - 1}|) = |B_{n - 1}| $$
+
+$$ C_{n, n - 1} = (-1)^{2n - 1}(-|B_{n - 2}|) = -1(-|B_{n - 2}|) = |B_{n - 2}| $$
+
+Note here that the reason we have $|B_{n - 2}|$ and not $-|B_{n - 2}|$ is
+because after we eliminate for $C_{nn}$, we are left with the $-1$ in the
+remaining entry right above the bottom $2$ is $-1$. We multiply this because it
+is the only nonzero entry left in the remaining submatrix.
+
+Now, since last entry of $B_n$, $b_{nn}$, is always $2$, it suffices to multiply
+$C_{nn}$ by that to get the first term of $|B_n|$:
+
+$$ |B_n| = 2C_{nn} + \dots = 2|B_{n - 1}| + \dots $$
+
+Similarly, we multiply $-1$ by the $b_{n, n - 1}$ with $C_{n, n - 1}$ to get our
+next term:
+
+$$ |B_n| = 2C_{nn} + (-1)C_{n, n - 1} = 2|B_{n - 1}| - |B_{n - 2}| $$
+
+$$ |B_n| = 2|B_{n - 1}| - |B_{n - 2}| $$
+
+Now, if we fill in for $|B_4|$:
+
+$$ |B_4| = 2|B_{4 - 1}| - |B_{4 - 2}| $$
+
+$$ |B_4| = 2|B_3| - |B_2| $$
+
+$$ |B_4| = 2|B_3| - 1 $$
+
+$$ |B_4| = 2(1) - 1 $$
+
+$$ |B_4| = 2 - 1 $$
+
+$$ |B_4| = 1 $$
+
 18. Go back to $B_n$ in Problem 17. It is the same as $A_n$ except for
     $b_{11} = 1$. So use linearity in the first row, where
     $\left[\begin{array}{rrr}1 & -1 & 0 \\\end{array}\right]$ equals
@@ -2115,6 +2629,8 @@ $$
 
 Linearity gives $|B_n| = |A_n| - |A_{n - 1}| =$ ____.
 
+$$ (n + 1) - n = 1 $$
+
 19. Explain why the $4$ by $4$ Vandermonde determinant contains $x^3$ but not
     $x^4$ or $x^5$:
 
@@ -2131,6 +2647,15 @@ $$
 The determinant is zero at $x =$ ____, ____, and ____. The cofactor of $x^3$ is
 $V_3 = (b - a)(c - a)(c - b)$. Then
 $V_4 = (b - a)(c - a)(c - b)(x - a)(x - b)(x - c)$.
+
+_Solution:_
+
+Since $x, x^2, x^3$ are all in the same row, they never multiply each other in
+$\det V_4$. The determinant is zero at $x = a$ or $b$ or $c$ because of equal
+rows! So $\det V$ has factors $(x - a)(x - b)(x - c)$. Multiply by the cofactor
+$V_3$. The Vandermonde matrix $V_{ij} = (x_i)^{j - 1}$ is for fitting a
+polynomial $p(x) = b$ at the points $x_i$. It has $\det V =$ product of all
+$x_k - x_m$ for $k > m$.
 
 20. Find $G_2$ and $G_3$ and then by row operations $G_4$. Can you predict
     $G_n$?
@@ -2159,6 +2684,127 @@ $$ G_4 =
 \end{vmatrix}
 $$
 
+_Solution:_
+
+Find $G_2$:
+
+$$ G_2 =
+\begin{vmatrix}
+0 & 1 \\
+1 & 0 \\
+\end{vmatrix}
+$$
+
+$$ G_2 = (0)(0) - (1)(1) = -1 $$
+
+Find $G_3$:
+
+$$ G_3 =
+\begin{vmatrix}
+0 & 1 & 1 \\
+1 & 0 & 1 \\
+1 & 1 & 0 \\
+\end{vmatrix}
+$$
+
+$$
+C_{11} = (-1)^{1 + 1}G_2 = 1 \cdot (-1) = -1 \\
+C_{12} = (-1)^{1 + 2}\det\left[\begin{array}{cc} 1 & 1 \\ 1 & 0 \\ \end{array}\right] = (-1) \cdot [(1)(0) - (1)(1)] = (-1) \cdot (-1) = 1 \\
+C_{13} = (-1)^{1 + 3}\det\left[\begin{array}{cc}1 & 0 \\1 & 1 \\\end{array}\right] =  (1) \cdot [(1)(1) - (0)(1)] = 1 \cdot 1 = 1 \\
+$$
+
+$$ G_3 = 0C_{11} + 1C_{12} + 1C_{13} $$
+
+$$ G_3 = 0(-1) + 1(1) + 1(1) = 2 $$
+
+Find $G_4$:
+
+$$ G_4 =
+\begin{vmatrix}
+0 & 1 & 1 & 1 \\
+1 & 0 & 1 & 1 \\
+1 & 1 & 0 & 1 \\
+1 & 1 & 1 & 0 \\
+\end{vmatrix}
+$$
+
+This is easier just to get $G_4$ into $U$, multiply the pivots, then multiply by
+$\pm 1$ based off permutation.
+
+$$ G_4 =
+\begin{vmatrix}
+0 & 1 & 1 & 1 \\
+1 & 0 & 1 & 1 \\
+1 & 1 & 0 & 1 \\
+1 & 1 & 1 & 0 \\
+\end{vmatrix} \to
+\begin{vmatrix}
+1 & 0 & 1 & 1 \\
+0 & 1 & 1 & 1 \\
+1 & 1 & 0 & 1 \\
+1 & 1 & 1 & 0 \\
+\end{vmatrix} \to
+\begin{vmatrix}
+1 & 0 & 1 & 1 \\
+1 & 1 & 1 & 0 \\
+0 & 1 & 1 & 1 \\
+1 & 1 & 0 & 1 \\
+\end{vmatrix}
+$$
+
+Three row exchanges, $-1 \cdot$ final determinant.
+
+$$ \to
+\begin{vmatrix}
+1 & 0 & 1 & 1 \\
+1 & 1 & 1 & 0 \\
+0 & 1 & 1 & 1 \\
+1 & 1 & 0 & 1 \\
+\end{vmatrix} \to
+\begin{vmatrix}
+1 & 0 & 1 & 1 \\
+0 & 1 & 0 & -1 \\
+0 & 1 & 1 & 1 \\
+1 & 1 & 0 & 1 \\
+\end{vmatrix} \to
+\begin{vmatrix}
+1 & 0 & 1 & 1 \\
+0 & 1 & 0 & -1 \\
+0 & 0 & 1 & 2 \\
+1 & 1 & 0 & 1 \\
+\end{vmatrix} \to
+\begin{vmatrix}
+1 & 0 & 1 & 1 \\
+0 & 1 & 0 & -1 \\
+0 & 0 & 1 & 2 \\
+0 & 1 & -1 & 0 \\
+\end{vmatrix}
+$$
+
+$$ \to
+\begin{vmatrix}
+1 & 0 & 1 & 1 \\
+0 & 1 & 0 & -1 \\
+0 & 0 & 1 & 2 \\
+0 & 0 & -1 & 1 \\
+\end{vmatrix} \to
+\begin{vmatrix}
+1 & 0 & 1 & 1 \\
+0 & 1 & 0 & -1 \\
+0 & 0 & 1 & 2 \\
+0 & 0 & 0 & 3 \\
+\end{vmatrix} = U
+$$
+
+So determinant is $(1)(1)(1)(3) = (-1)3 = -3$.
+
+$$ G_4 = -3 $$
+
+The general $G_n$ increments, but multiplies odd number by $-1$. A formula for
+this then is:
+
+$$ G_n = (-1)^{n - 1}(n - 1) $$
+
 21. Compute $S_1, S_2, S_3$ for these $1, 3, 1$ matrices. By Fibonacci guess and
     check $S_4$.
 
@@ -2179,10 +2825,110 @@ $$ S_3 =
 \end{vmatrix}
 $$
 
+_Solution:_
+
+$$ S_1 = |3| = 3 $$
+
+$$ S_2 = (3)(3) - (1)(1) = 8 $$
+
+$$ S_3 =
+\begin{vmatrix}
+3 & 1 & 0 \\
+1 & 3 & 1 \\
+0 & 1 & 3 \\
+\end{vmatrix} \to
+\begin{vmatrix}
+3 & 1 & 0 \\
+0 & \frac{8}{3} & 1 \\
+0 & 1 & 3 \\
+\end{vmatrix} \to
+\begin{vmatrix}
+3 & 1 & 0 \\
+0 & \frac{8}{3} & 1 \\
+0 & 0 & \frac{21}{8} \\
+\end{vmatrix} = U
+$$
+
+$$ S_3 = (3)\left(\frac{8}{3}\right)\left(\frac{21}{8}\right) = 21 $$
+
+Guess for $S_4$:
+
+Fibonacci goes $1 + 1 + 2 + 3 + 5 + 8 + 13 + 21 + 34 + 55$. It appears $S$ skips
+every other fib number.
+
+Thus guess $S_4 = 55$.
+
+Check:
+
+$$ S_4 =
+\begin{vmatrix}
+3 & 1 & 0 & 1 \\
+1 & 3 & 1 & 0 \\
+0 & 1 & 3 & 1 \\
+1 & 0 & 1 & 3 \\
+\end{vmatrix}
+$$
+
+$$ S_4 =
+\begin{vmatrix}
+3 & 1 & 0 & 1 \\
+1 & 3 & 1 & 0 \\
+0 & 1 & 3 & 1 \\
+1 & 0 & 1 & 3 \\
+\end{vmatrix} \to
+\begin{vmatrix}
+3 & 1 & 0 & 1 \\
+0 & \frac{8}{3} & 1 & -\frac{1}{3} \\
+0 & 1 & 3 & 1 \\
+1 & 0 & 1 & 3 \\
+\end{vmatrix} \to
+\begin{vmatrix}
+3 & 1 & 0 & 1 \\
+0 & \frac{8}{3} & 1 & -\frac{1}{3} \\
+0 & 0 & \frac{21}{8} & \frac{9}{8} \\
+1 & 0 & 1 & 3 \\
+\end{vmatrix} \to
+$$
+
+$$ \to
+\begin{vmatrix}
+3 & 1 & 0 & 1 \\
+0 & \frac{8}{3} & 1 & -\frac{1}{3} \\
+0 & 0 & \frac{21}{8} & \frac{9}{8} \\
+0 & -\frac{1}{3} & 1 & \frac{8}{3} \\
+\end{vmatrix} \to
+\begin{vmatrix}
+3 & 1 & 0 & 1 \\
+0 & \frac{8}{3} & 1 & -\frac{1}{3} \\
+0 & 0 & \frac{21}{8} & \frac{9}{8} \\
+0 & 0 & 1 & 3 \\
+\end{vmatrix} \to
+\begin{vmatrix}
+3 & 1 & 0 & 1 \\
+0 & \frac{8}{3} & 1 & -\frac{1}{3} \\
+0 & 0 & \frac{21}{8} & \frac{9}{8} \\
+0 & 0 & 0 & \frac{18}{7} \\
+\end{vmatrix} = U
+$$
+
+$$ S_4 = 3 \cdot \frac{8}{3} \cdot \frac{21}{8} \cdot \frac{18}{7} = 54 $$
+
+Somewhere the math went wrong, who cares, you get the idea.
+
 22. Change $3$ to $2$ in the upper left corner of the matrices in Problem 21.
     Why does that subtract $S_{n - 1}$ from the determinant $S_n$? Show that the
     determinants of the new matrices become the Fibonacci numbers $2, 5, 13$
     (always $F_{2n + 1}$).
+
+_Solution:_
+
+Changing the upper left $3$ to $2$ reduces each count by $1$, causing the fib
+sequence to become the true Fibonacci sequence (since we're no longer skipping
+every other fib number).
+
+Anyways, the new stupid determinant formula is the classic fib sequence:
+
+$$ S_n - S_{n - 1} = F_{2n + 2} - F_{2n} = F_{2n + 1} $$
 
 **Problems 23-26 are about block matrices and block determinants.**
 
@@ -2207,9 +2953,73 @@ $$
 
 a. Why is the first statement true? Somehow $B$ doesn't enter.
 
+_Solution:_
+
+$B$ is irrelevant because every entry is entry is multiplied by the $\mathbf{0}$
+matrix. Another way of thinking of this is that this is in Upper triangular form
+and you can just multiply the "pivots".
+
 b. Show by example that equality fails (as shown) when $C$ enters.
 
 c. Show by example that the answer $\det(AD - CB)$ is also wrong.
+
+_Solution:_
+
+Both (b) and \(c\) can be demonstrated together. Consider:
+
+$$ A =
+\left[\begin{array}{cc}
+1 & 0 \\
+0 & 0 \\
+\end{array}\right], \quad
+B =
+\left[\begin{array}{cc}
+0 & 0 \\
+1 & 0 \\
+\end{array}\right], \quad
+C =
+\left[\begin{array}{cc}
+0 & 1 \\
+0 & 0 \\
+\end{array}\right], \quad
+D =
+\left[\begin{array}{cc}
+0 & 0 \\
+0 & 1 \\
+\end{array}\right]
+$$
+
+This gives the overall matrix:
+
+$$
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{array}\right]
+$$
+
+Then, simply permute to the identity:
+
+$$ \to
+\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{array}\right] = I
+$$
+
+One row exchange means $-1 \cdot$ final determinant.
+
+This is $-1 \cdot |I| = -1 \cdot 1 = -1$.
+
+Okay, so then what is $|A||D| - |C||B|$?:
+
+$$ |A| = 0, |D| = 0, |C| = 0, |B| = 0 $$
+
+So $|A||D| - |C||B| = (0)(0) - (0)(0) = 0 \neq -1$.
 
 24. With block multiplication, $A = LU$ has $A_k = L_kU_k$ in the top left
     corner:
@@ -2233,8 +3043,32 @@ a. Suppose the first three pivots of $A$ are $2, 3, -1$. What are the
 determinants of $L_1, L_2, L_3$ (with diagonal $1$'s) and $U_1, U_2, U_3$ and
 $A_1, A_2, A_3$?
 
+_Solution:_
+
+Recall that a lower triangular matrix is just the elimination steps multiplied
+together (the product of a bunch of $E$'s). This always results in diagonal
+pivots of $1$'s. Thus the determinant of all $L$'s is $1$.
+
+For $k = 1$, $\det(A_1) = \det(U_1) = |2| = 2$, for $k = 2$,
+$\det(A_2) = \det(U_2) = (2)(3) = 6$, finally for $k = 3$,
+$\det(A_3) = \det(U_3 = (2)(3)(-1) = -6$.
+
 b. If $A_1, A_2, A_3$ have determinants $5, 6, 7$ find the three pivots from
 equation (3).
+
+_Solution:_
+
+Equation (3) states:
+
+The $k$th pivot is
+
+$$ d_k = \frac{d_1d_2 \cdots d_k}{d_1d_2 \cdots d_{k - 1}} = \frac{\det A_k}{\det A_{k - 1}} $$
+
+$$ d_1 = \det A_1 = 5 $$
+
+$$ d_2 = \det A_2 = \frac{\det A_2}{\det A_{2 - 1}} = \frac{6}{5} $$
+
+$$ d_3 = \det A_3 = \frac{\det A_3}{\det A_{3 - 1}} = \frac{7}{6} $$
 
 25. Block elimination subtracts $CA^{-1}$ times the first row
     $\left[\begin{array}{cc}A & B\end{array}\right]$ from the second row
@@ -2268,6 +3102,28 @@ C & D \\
 |AD - CB| \text{ provided } AC = CA
 $$
 
+_Solution:_
+
+This looks complicated but consider the first block matrix:
+
+$$
+\left[\begin{array}{rr}
+I & 0 \\
+-CA^{-1} & I \\
+\end{array}\right]
+$$
+
+This is just $|I| \cdot |I| = 1 \cdot 1 = 1$ since $0 \cdot -CA^{-1} = 0$.
+
+Then consider that the final matrix (on the right of the equality) has a
+determinant of:
+
+$$ |A| \cdot |D - CA^{-1}B| $$
+
+The product rule says we can indeed just distribute $|A|$ here to:
+
+$$ |AD - ACA^{-1}B| = |AD - CB| $$
+
 26. If $A$ is $m$ by $n$ and $B$ is $n$ by $m$, block multiplication gives
     $\det M = \det AB$:
 
@@ -2289,9 +3145,36 @@ $$
 If $A$ is a single row and $B$ is a single column what is $\det M$? If $A$ is a
 column and $B$ is a row what is $\det M$? Do a $3$ by $3$ example of each.
 
+_Solution:_
+
+_If $A$ is a single row and $B$ is a single column what is $\det M$?:_
+
+If $A$ is a single row and $B$ is a single column, then their product is just a
+number or single element matrix.
+
+Then the determinant of $M$ is that number, since $ABI =  AB$ and the second
+matrix's determinant is just $|I||I| = 1$.
+
+$$ |M| = |AB| \cdot |I| = AB \cdot 1 = AB $$
+
+_If $A$ is a column and $B$ is a row what is $\det M$?:_
+
+In this case, $AB$ is a 3 by 3 matrix, in which case the determinant of $M$ is
+$|AB|$.
+
+$$ |M| = |AB| $$
+
+Additionally, note that any column times a row results in a rank 1 matrix,
+meaning that it's other two rows are dependent, and this ultimately means that
+$AB$ is singular, and thus:
+
+$$ |M| = 0 $$
+
 27. (A calculus question) Show that the derivative of $\det A$ with respect to
     $a_{11}$ is the cofactor $C_{11}$. The other entries are fixed - we are only
     changing $a_{11}$.
+
+Omitted.
 
 28. A $3$ by $3$ determinant has three products "down to the right" and three
     "down to the left" with minus signs. Compute the six terms like
@@ -2299,12 +3182,18 @@ column and $B$ is a row what is $\det M$? Do a $3$ by $3$ example of each.
 
 (See Page 282 for figure).
 
+Omitted.
+
 29. For $E_4$ in Problem 15, five of the $4! = 24$ terms in the big formula (8)
     are nonzero. Find those five terms to show that $E_4 = -1$.
+
+Omitted.
 
 30. For the $4$ by $4$ tridiagonal second difference matrix (entries
     $-1, 2, -1$) find the five terms in the big formula that give
     $\det A = 16 - 4 - 4 - 4 + 1$.
+
+Omitted.
 
 31. Find the determinant of this cyclic $P$ by cofactors of row $1$ and then the
     "big formula". How many exchanges reorder $4, 1, 2, 3$ into $1, 2, 3, 4$? Is
@@ -2331,3 +3220,5 @@ $$ P^2 =
 I & 0 \\
 \end{array}\right]
 $$
+
+Omitted.
